@@ -1,0 +1,744 @@
+/* Lake Dredging Page Styles */
+.lake-dredging-page {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  color: white;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  padding: 0 40px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  background: #f59e0b;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: transparent;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.secondary-button:hover {
+  background: white;
+  color: #1e40af;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Services Section */
+.services-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.services-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+.service-content {
+  padding: 25px;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #1e40af;
+}
+
+.service-content p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.service-benefits,
+.service-process,
+.service-equipment {
+  margin-bottom: 20px;
+}
+
+.service-benefits h4,
+.service-process h4,
+.service-equipment h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.service-benefits h4 {
+  color: #1e40af;
+}
+
+.service-process h4 {
+  color: #7c3aed;
+}
+
+.service-equipment h4 {
+  color: #dc2626;
+}
+
+.service-benefits ul,
+.service-process ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.service-benefits li,
+.service-process li {
+  margin-bottom: 5px;
+  color: #6b7280;
+}
+
+.service-benefits li:before {
+  content: "✅";
+  margin-right: 8px;
+}
+
+.service-process li:before {
+  content: "🔧";
+  margin-right: 8px;
+}
+
+.equipment-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.equipment-tag {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Methods Section */
+.methods-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.methods-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.methods-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.method-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-left: 4px solid #1e40af;
+}
+
+.method-card:hover {
+  transform: translateY(-3px);
+}
+
+.method-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #1e40af;
+}
+
+.method-description {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.method-best-for {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.method-advantages h4,
+.method-considerations h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.method-advantages h4 {
+  color: #1e40af;
+}
+
+.method-considerations h4 {
+  color: #dc2626;
+}
+
+.method-advantages ul,
+.method-considerations ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.method-advantages li,
+.method-considerations li {
+  margin-bottom: 5px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.method-advantages li:before {
+  content: "✅";
+  margin-right: 8px;
+}
+
+.method-considerations li:before {
+  content: "⚠️";
+  margin-right: 8px;
+}
+
+/* Lake Types Section */
+.lake-types-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.lake-types-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.lake-types-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.lake-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.lake-type-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-left: 4px solid #3b82f6;
+}
+
+.lake-type-card:hover {
+  transform: translateY(-3px);
+}
+
+.lake-type-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #1e40af;
+}
+
+.lake-type-description {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.lake-type-challenges h4,
+.lake-type-solutions h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.lake-type-challenges h4 {
+  color: #dc2626;
+}
+
+.lake-type-solutions h4 {
+  color: #059669;
+}
+
+.lake-type-challenges ul,
+.lake-type-solutions ul {
+  margin: 0;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.lake-type-challenges li,
+.lake-type-solutions li {
+  margin-bottom: 5px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.lake-type-challenges li:before {
+  content: "⚠️";
+  margin-right: 8px;
+}
+
+.lake-type-solutions li:before {
+  content: "✅";
+  margin-right: 8px;
+}
+
+/* Phases Section */
+.phases-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.phases-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.phases-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.phase-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-left: 4px solid #3b82f6;
+}
+
+.phase-card:hover {
+  transform: translateY(-3px);
+}
+
+.phase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.phase-header h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #1e40af;
+}
+
+.phase-duration {
+  background: #fef3c7;
+  color: #d97706;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.phase-activities h4,
+.phase-deliverables h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.phase-activities h4 {
+  color: #1e40af;
+}
+
+.phase-deliverables h4 {
+  color: #7c3aed;
+}
+
+.phase-activities ul,
+.phase-deliverables ul {
+  margin: 0;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.phase-activities li,
+.phase-deliverables li {
+  margin-bottom: 5px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.phase-activities li:before {
+  content: "🔧";
+  margin-right: 8px;
+}
+
+.phase-deliverables li:before {
+  content: "📋";
+  margin-right: 8px;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.benefits-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.benefit-category {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-left: 4px solid #1e40af;
+}
+
+.benefit-category:hover {
+  transform: translateY(-3px);
+}
+
+.benefit-category h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.benefit-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefit-category li {
+  padding: 8px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 25px;
+}
+
+.benefit-category li:before {
+  content: "✅";
+  color: #1e40af;
+  position: absolute;
+  left: 0;
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.why-choose-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #1e40af;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.reason-item {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.reason-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.reason-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #1e40af;
+}
+
+.reason-item p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Contact CTA */
+.contact-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  color: white;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #1e40af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .hero-content {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .services-grid,
+  .methods-grid,
+  .lake-types-grid,
+  .phases-grid,
+  .benefits-grid,
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .phase-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .services-section h2,
+  .methods-section h2,
+  .lake-types-section h2,
+  .phases-section h2,
+  .benefits-section h2,
+  .why-choose-section h2,
+  .contact-cta h2 {
+    font-size: 2rem;
+  }
+  
+  .service-card,
+  .method-card,
+  .lake-type-card,
+  .phase-card,
+  .benefit-category {
+    margin: 0 10px;
+  }
+}

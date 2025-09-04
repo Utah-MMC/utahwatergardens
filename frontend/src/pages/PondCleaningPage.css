@@ -1,0 +1,699 @@
+.pond-cleaning-page {
+  padding-top: 80px; /* Account for fixed header */
+}
+
+/* Hero Section */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #2a5298;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #1e3c72;
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+.secondary-button {
+  display: inline-block;
+  background: transparent;
+  color: #2a5298;
+  padding: 1rem 2rem;
+  border: 2px solid #2a5298;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background: #2a5298;
+  color: white;
+  text-decoration: none;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Why Clean Section */
+.why-clean-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.why-clean-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.why-clean-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.why-clean-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.why-clean-item {
+  text-align: center;
+  padding: 2rem;
+}
+
+.why-clean-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.why-clean-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.why-clean-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Cleaning Services Section */
+.cleaning-services-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.cleaning-services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cleaning-services-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cleaning-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.cleaning-service-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cleaning-service-card:hover {
+  transform: translateY(-5px);
+}
+
+.cleaning-service-image {
+  overflow: hidden;
+}
+
+.cleaning-service-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cleaning-service-card:hover .cleaning-service-image img {
+  transform: scale(1.05);
+}
+
+.cleaning-service-info {
+  padding: 1.5rem;
+}
+
+.cleaning-service-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.cleaning-service-info p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.cleaning-benefits h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.cleaning-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.cleaning-benefits li {
+  padding: 0.25rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.cleaning-benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2a5298;
+  font-weight: bold;
+}
+
+.cleaning-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid #eee;
+}
+
+.frequency {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #2a5298;
+  font-size: 1.1rem;
+}
+
+.cleaning-service-cta {
+  display: inline-block;
+  background: #2a5298;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.cleaning-service-cta:hover {
+  background: #1e3c72;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Cleaning Packages Section */
+.cleaning-packages-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.cleaning-packages-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cleaning-packages-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cleaning-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.cleaning-package-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cleaning-package-card:hover {
+  transform: translateY(-5px);
+}
+
+.cleaning-package-card.featured {
+  border: 3px solid #2a5298;
+  transform: scale(1.05);
+}
+
+.cleaning-package-card.featured:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.cleaning-package-image {
+  overflow: hidden;
+}
+
+.cleaning-package-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cleaning-package-card:hover .cleaning-package-image img {
+  transform: scale(1.05);
+}
+
+.cleaning-package-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.cleaning-package-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cleaning-package-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2a5298;
+  margin-bottom: 0.5rem;
+}
+
+.cleaning-package-duration {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.cleaning-package-services {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.cleaning-package-services li {
+  padding: 0.25rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.cleaning-package-services li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2a5298;
+  font-weight: bold;
+}
+
+.cleaning-package-cta {
+  display: inline-block;
+  background: #2a5298;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.cleaning-package-cta:hover {
+  background: #1e3c72;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Cleaning Process Section */
+.cleaning-process-section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.cleaning-process-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cleaning-process-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cleaning-process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.cleaning-process-step {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.cleaning-process-step:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: #2a5298;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.cleaning-process-step h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cleaning-process-step p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.cleaning-process-step img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Seasonal Cleaning Section */
+.seasonal-cleaning-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.seasonal-cleaning-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.seasonal-cleaning-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seasonal-cleaning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.seasonal-cleaning-item {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 2rem;
+  border-left: 4px solid #2a5298;
+}
+
+.seasonal-cleaning-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.seasonal-cleaning-item p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.seasonal-cleaning-item ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.seasonal-cleaning-item li {
+  padding: 0.25rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.seasonal-cleaning-item li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2a5298;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.seasonal-cleaning-cta {
+  display: inline-block;
+  background: #ff6b35;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.seasonal-cleaning-cta:hover {
+  background: #e55a2b;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Contact CTA */
+.contact-cta {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+  color: white;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  min-width: 200px;
+}
+
+.btn-primary {
+  background: #ff6b35;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #e55a2b;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .cleaning-services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cleaning-packages-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cleaning-package-card.featured {
+    transform: none;
+  }
+  
+  .cleaning-package-card.featured:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cleaning-process-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .seasonal-cleaning-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .why-clean-section h2,
+  .cleaning-services-section h2,
+  .cleaning-packages-section h2,
+  .cleaning-process-section h2,
+  .seasonal-cleaning-section h2,
+  .contact-cta h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cleaning-details {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

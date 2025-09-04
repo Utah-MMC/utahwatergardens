@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Debug - Utah Water Gardens</title>
+    <script src="lib/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e4d5c 0%, #7a9e7e 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        .qr-display {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .qr-display img {
+            border: 2px solid white;
+            border-radius: 10px;
+            background: white;
+            max-width: 100%;
+        }
+        button {
+            background: #1e4d5c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #2d6a7a;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.3);
+            border: 1px solid #4CAF50;
+        }
+        .error {
+            background: rgba(244, 67, 54, 0.3);
+            border: 1px solid #F44336;
+        }
+        .info {
+            background: rgba(33, 150, 243, 0.3);
+            border: 1px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 QR Code Library Debug</h1>
+        <p>Testing QR code library loading and functionality</p>
+        
+        <div class="test-section">
+            <h2>Library Status</h2>
+            <div id="libraryStatus" class="status">Checking library...</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Test QR Code Generation</h2>
+            <button onclick="testQRGeneration()">Generate Test QR Code</button>
+            <div id="qrResult" class="qr-display"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Equipment Test</h2>
+            <button onclick="testEquipmentQR()">Generate Equipment QR Code</button>
+            <div id="equipmentQRResult" class="qr-display"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Console Logs</h2>
+            <div id="consoleLogs" class="status info">
+                <p>Check browser console (F12) for detailed logs</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Test library loading
+        window.onload = function() {
+            const statusDiv = document.getElementById('libraryStatus');
+            console.log('Page loaded, checking QRCode library...');
+            
+            if (typeof QRCode !== 'undefined') {
+                statusDiv.innerHTML = '<strong>✅ SUCCESS:</strong> QR Code library loaded successfully!';
+                statusDiv.className = 'status success';
+                console.log('QRCode library is available:', typeof QRCode);
+                console.log('QRCode.CorrectLevel:', QRCode.CorrectLevel);
+            } else {
+                statusDiv.innerHTML = '<strong>❌ ERROR:</strong> QR Code library failed to load!';
+                statusDiv.className = 'status error';
+                console.error('QRCode library is not available');
+            }
+        };
+
+        function testQRGeneration() {
+            const resultDiv = document.getElementById('qrResult');
+            resultDiv.innerHTML = '<p>Generating test QR code...</p>';
+            
+            try {
+                if (typeof QRCode === 'undefined') {
+                    resultDiv.innerHTML = '<p style="color: #ff6b6b;">Error: QRCode library not available</p>';
+                    return;
+                }
+                
+                const testData = 'Test QR Code - Utah Water Gardens';
+                const qrDiv = document.createElement('div');
+                resultDiv.innerHTML = '';
+                resultDiv.appendChild(qrDiv);
+                
+                console.log('Creating QR code with data:', testData);
+                new QRCode(qrDiv, {
+                    text: testData,
+                    width: 200,
+                    height: 200,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+                
+                resultDiv.innerHTML += '<p style="margin-top: 15px; color: #4CAF50;"><strong>✅ QR Code generated successfully!</strong></p>';
+                console.log('QR code generated successfully');
+                
+            } catch (error) {
+                resultDiv.innerHTML = '<p style="color: #ff6b6b;">Error: ' + error.message + '</p>';
+                console.error('QR code generation error:', error);
+            }
+        }
+
+        function testEquipmentQR() {
+            const resultDiv = document.getElementById('equipmentQRResult');
+            resultDiv.innerHTML = '<p>Generating equipment QR code...</p>';
+            
+            try {
+                if (typeof QRCode === 'undefined') {
+                    resultDiv.innerHTML = '<p style="color: #ff6b6b;">Error: QRCode library not available</p>';
+                    return;
+                }
+                
+                const equipment = {
+                    id: 'FILTER-001',
+                    name: 'Water Filtration System',
+                    category: 'Filter'
+                };
+                
+                const data = JSON.stringify(equipment);
+                const qrDiv = document.createElement('div');
+                resultDiv.innerHTML = '';
+                resultDiv.appendChild(qrDiv);
+                
+                console.log('Creating equipment QR code with data:', data);
+                new QRCode(qrDiv, {
+                    text: data,
+                    width: 200,
+                    height: 200,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+                
+                resultDiv.innerHTML += '<p style="margin-top: 15px; color: #4CAF50;"><strong>✅ Equipment QR Code generated successfully!</strong></p>';
+                resultDiv.innerHTML += '<p style="color: #ccc; font-size: 14px;">Data: ' + data + '</p>';
+                console.log('Equipment QR code generated successfully');
+                
+            } catch (error) {
+                resultDiv.innerHTML = '<p style="color: #ff6b6b;">Error: ' + error.message + '</p>';
+                console.error('Equipment QR code generation error:', error);
+            }
+        }
+    </script>
+</body>
+</html> 

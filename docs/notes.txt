@@ -1,0 +1,376 @@
+﻿When I seen your post about needing a Technical Marketing Weapon I felt like you guys were speaking directly to me….
+
+
+
+
+
+
+My main focus lately has been keeping up on googles updates and staying up to date with the AI tools and open source LLMs
+
+
+
+
+Run Scraper:
+Pond_finder_scrapery.py
+Competitor_scraper
+
+
+Barcode Scanner: Idea is to scan the actual text from a sheet rather then put barcodes on each tool. Use search to find category or tool. Database on Supabase with test inventory.
+
+
+Also have the lead smart funnel (readme.md)
+
+
+
+
+Show SEO Examples
+Domain rating 4.1
+Give complete analysis of utahwatergardens.com
+
+
+Tip: Not fully indexed on Bing(no favicon/logo in results)
+Ahrefs shows different backlinks for domains https://www.utahwatergardens.com/ https://utahwatergardens.com/ (Fix navigation, robots.txt, sitemap.xml and schema markups
+Show how to nofollow backlinks to get DA up
+No popups after subscribe button
+Hamburger menus dont work on mobile.
+No cards and only text on ‘Services’ page
+Show blog 5 in 1 prompt example to show examples of automation and prompt workflow
+Explain why I use this blog format and structure and how it easily ranks top page and (AI overview, Events, snippet)
+Blog URLs too long but ranking well
+
+
+Ranking Keyword examples:
+cold turkey run prep (AI overview) and right sidebar
+Utah Valentines day traditions (1st)
+utah pace strategy
+Winter marathon running utah
+join usa cycling
+sub 3:45(top keyword)
+cyclists electrolyte guide
+cyclists natural electrolyte guide(ai overview)
+cycling hydration guide
+gran fondo mistakes
+best gran fondo
+gran fondo training guide(info)
+best marathon running watch in 2025(transactional)
+
+
+
+
+
+
+
+
+Ecommerce - Are you selling anywhere else? Amazon, ebay?
+
+
+How I use AI for automation. 
+My prompt workflows i use pretty much automate everything.
+Guest Post outreach
+Outlines (blogs, articles, posts, emails, adding events, puting spreadsheets of keywords or csv together
+Ideas for Techstacks
+DEBUGGING and Coding
+My Prompt Engineering allows me to automate and blog about any niche or industry.
+
+
+
+
+Informational Content Ideas (Easy to Rank)
+1. "How to Build a Pond in Utah: Step-by-Step Guide for Beginners"
+   * Target KW: "how to build a pond in Utah"
+2. "Best Pond Liner Options for Utah’s Harsh Climate"
+   * Target KW: "pond liners for Utah"
+3. "DIY Pond Construction: Cost Breakdown for Utah Homeowners"
+   * Target KW: "DIY pond cost Utah"
+4. "Utah Pond Depth Guide: How Deep Should Your Pond Be?"
+   * Target KW: "pond depth Utah winter"
+5. "Clay Soil Ponds in Utah: Pros, Cons, and How to Make It Work"
+   * Target KW: "building ponds in Utah clay soil"
+6. "Small Backyard Pond Ideas for Utah Homes"
+   * Target KW: "small pond designs Utah"
+7. "Permits and Zoning Laws for Building Ponds in Utah"
+   * Target KW: "Utah pond building permits"
+8. "Natural vs. Liner Ponds: Which Is Better for Utah?"
+   * Target KW: "natural pond vs liner Utah"
+9. "How to Choose the Right Pond Pump for Utah’s Altitude"
+   * Target KW: "pond pumps for high altitude Utah"
+10. "Utah Pond Shape Ideas: What Works Best for Your Yard?"
+* Target KW: "best pond shapes Utah"
+11. "Rock and Edging Materials for a Utah-Friendly Pond"
+* Target KW: "pond edging materials Utah"
+12. "How to Slope Your Utah Pond for Proper Drainage"
+* Target KW: "pond drainage Utah"
+13. "Shade Solutions for Utah Ponds to Reduce Evaporation"
+* Target KW: "pond shade ideas Utah"
+14. "Utah Pond Safety Tips for Homes with Kids or Pets"
+* Target KW: "pond safety Utah"
+15. "How to Plan a Utah Pond That Survives All Four Seasons"
+* Target KW: "four-season pond Utah"
+Transactional/Affiliate Content Ideas
+16. "Best Pond Liners for Utah (2025 Buyer’s Guide)"
+* Target KW: "best pond liner Utah" (Pillar Affiliate Post)
+17. "Top 5 Pond Pumps for Utah’s Climate (Tested & Reviewed)"
+* Target KW: "best pond pump Utah"
+18. "Where to Buy Pond Supplies in Utah (Local & Online)"
+* Target KW: "pond supplies Utah"
+19. "Hiring a Utah Pond Builder: What to Ask & Cost Estimates"
+* Target KW: "Utah pond builders cost"
+20. "Best Solar Pond Fountains for Utah’s Sunny Weather"
+* Target KW: "solar pond fountain Utah"
+
+
+
+
+
+
+Informational Articles (15 Easy-to-Rank Topics)
+1. "Utah Pond Maintenance Checklist: Seasonal Care for a Healthy Pond"
+   * Target KW: Utah pond maintenance checklist
+2. "How to Reduce Pond Evaporation in Utah’s Dry Climate"
+   * Target KW: reduce pond evaporation Utah
+3. "Winter Pond Care in Utah: Preventing Freeze Damage"
+   * Target KW: winterize pond Utah
+4. "Best Pond Filters for Utah’s Hard Water (2025 Guide)"
+   * Target KW: best pond filters Utah
+5. "How to Test & Balance Pond Water in Utah"
+   * Target KW: Utah pond water testing
+6. "Utah Pond Algae Control: Natural & Chemical Solutions"
+   * Target KW: pond algae control Utah
+7. "When to Clean Your Utah Pond (Signs It’s Time)"
+   * Target KW: how often to clean pond Utah
+8. "How to Fix a Leaking Pond in Utah (DIY Guide)"
+   * Target KW: Utah pond leak repair
+9. "Best Aerators for Utah Ponds (Oxygenation Tips)"
+   * Target KW: pond aerators Utah
+10. "Utah Pond Fish Care: Keeping Koi & Goldfish Healthy"
+* Target KW: Utah pond fish care
+11. "How to Protect Your Pond from Utah Wildlife (Herons, Raccoons)"
+* Target KW: protect pond from predators Utah
+12. "Pond Liner Repair in Utah: Quick Fixes & Long-Term Solutions"
+* Target KW: pond liner repair Utah
+13. "Best Beneficial Bacteria for Utah Ponds (2025 Reviews)"
+* Target KW: beneficial bacteria for ponds Utah
+14. "How to Lower pH in Utah Ponds (Hard Water Solutions)"
+* Target KW: lower pond pH Utah
+15. "Utah Pond Mosquito Control: Safe & Effective Methods"
+* Target KW: pond mosquito control Utah
+Affiliate Articles (5 Monetizable Posts)
+1. "5 Best Pond Pumps for Utah Climates (2025 Buyer’s Guide)"
+   * Target KW: best pond pumps Utah (Pillar Affiliate Post)
+2. "Top-Rated Pond Heaters for Utah Winters (Stay Ice-Free!)"
+   * Target KW: pond heaters Utah
+3. "Best UV Clarifiers for Utah Pond Algae (Tested & Reviewed)"
+   * Target KW: best UV clarifier for ponds Utah
+4. "Where to Buy Pond Plants in Utah (Online & Local Nurseries)"
+   * Target KW: buy pond plants Utah
+5. "Best Pond Kits for Utah Beginners (All-in-One Solutions)"
+   * Target KW: best pond kits Utah
+
+
+
+
+
+
+
+
+
+
+
+
+Sub-Niches for "Utah Ponds"
+1. Pond Construction & Design
+* How to build a pond in Utah’s clay soil
+* Best pond shapes and depths for Utah’s climate
+* DIY vs. professional pond installation costs in Utah
+* Small-space pond ideas for Utah backyards
+* Permits and zoning laws for Utah ponds
+2. Pond Maintenance & Care
+* Year-round Utah pond maintenance checklist
+* How to reduce evaporation in Utah ponds
+* Winterizing your pond: Utah-specific tips
+* Fixing common Utah pond leaks and liner issues
+* Utah pond water testing and treatment guide
+3. Fish & Wildlife Ponds
+* Best fish for Utah ponds (koi, goldfish, native species)
+* How to protect pond fish from Utah predators (herons, raccoons)
+* Creating a wildlife-friendly pond in Utah
+* Utah pond plants that attract birds and pollinators
+* Balancing ecosystem ponds in arid climates
+4. Water Features & Aesthetics
+* Utah pond waterfall and fountain ideas
+* Solar-powered pond pumps for Utah’s sunny climate
+* Lighting ideas to enhance your Utah pond at night
+* Rock and edging materials for natural-looking Utah ponds
+* Low-maintenance water features for Utah homeowners
+5. Troubleshooting Utah Pond Problems
+* How to control algae in Utah’s hard water
+* Dealing with pond mosquitoes in Utah
+* Utah pond ice prevention and de-icing solutions
+* Murky water fixes for Utah ponds
+* Repairing sun-damaged pond liners in Utah
+
+
+
+
+
+
+
+
+Perfect keywords niche to rank for
+
+
+utah pond design
+backyard ponds Utah
+koi ponds Utah climate
+pond maintenance dry climate
+best pond plants Utah
+how to prevent algae Utah ponds
+Utah pond fish species
+winter pond care Utah
+pond liner options Utah
+DIY pond Utah
+hard water pond solutions
+evaporation reduction ponds
+small water features Utah
+pond aeration high altitude
+Utah wildlife ponds
+natural swimming pond Utah
+pond filtration systems
+Utah pond regulations
+pond landscaping ideas
+cost to build pond Utah
+pond shade solutions
+pond pumps for cold weather
+Utah pond contractors
+pond leak repair
+solar pond fountains Utah
+pond algae control products
+pond fish predators Utah
+pond water testing Utah
+pond depth for freezing
+drought-resistant pond plants
+Utah pond ecosystem
+pond lighting ideas
+pond waterfall designs
+pond safety for kids
+Utah pond zoning laws
+pond cleaning schedule
+pond pH balance Utah
+pond moss removal
+beneficial bacteria ponds
+pond fish feeding tips
+pond winterization checklist
+pond liner vs. concrete
+pond cost calculator
+pond insurance Utah
+pond mosquito control
+pond edging materials
+pond depth for koi
+pond vs. water feature
+pond maintenance services Utah
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pond scraper analysis
+=== ENHANCED POND FINDINGS ANALYSIS ===
+Total findings: 72
+Areas searched: 5
+
+
+Findings by type:
+  real_estate: 11
+  directory: 16
+  social_media: 21
+  google_maps: 18
+  competitor_project: 6
+
+
+Top areas with findings:
+  Salt Lake City: 19
+  Provo: 14
+  Ogden: 13
+  Sandy: 11
+  West Jordan: 9
+  Various Utah Locations: 6
+
+
+Findings by status:
+  existing: 11
+  service_provider: 16
+  potential_customer: 21
+  business_location: 18
+  existing_customer: 6
+
+
+Findings by confidence level:
+  medium: 11
+  high: 40
+  low: 21
+
+
+Business types found:
+  pond_service: 16
+
+
+Social media platforms:
+  Facebook: 9
+  Twitter: 4
+  Instagram: 2
+  Pinterest: 5
+  Nextdoor: 1
+
+
+Potential customers identified: 27
+Existing water features found: 11
+High-confidence findings: 40
+
+
+=== SOCIAL MEDIA INSIGHTS ===
+Total social media posts found: 21
+Top social media platforms:
+  Facebook: 9
+  Pinterest: 5
+  Twitter: 4
+  Instagram: 2
+  Nextdoor: 1
+Top areas for social media activity:
+  Salt Lake City: 7
+  Provo: 5
+  West Jordan: 4
+  Sandy: 3
+  Ogden: 2

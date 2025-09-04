@@ -1,0 +1,789 @@
+/* Harvesting Page Styles */
+.harvesting-page {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 150, 105, 0.3) 0%,
+    rgba(16, 185, 129, 0.2) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 40px;
+}
+
+.hero-logo {
+  margin-bottom: 30px;
+}
+
+.hero-logo img {
+  max-width: 300px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  letter-spacing: -0.02em;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 32px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button.primary {
+  background: #0ea5e9;
+  color: white;
+  border-color: #0ea5e9;
+}
+
+.cta-button.primary:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.cta-button.secondary:hover {
+  background: white;
+  color: #059669;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 4;
+  overflow: visible; /* Changed back to visible to allow extended waves */
+  transition: transform 0.1s ease-out;
+  background: #ffffff; /* Solid white background to ensure opacity */
+}
+
+.hero-wave svg {
+  width: 200%; /* Much wider to ensure full coverage */
+  height: 100%;
+  display: block;
+  transition: all 0.3s ease;
+  margin-left: -50%; /* Center the much wider SVG */
+  transform-origin: center bottom;
+}
+
+.hero-wave svg path {
+  transition: all 0.3s ease;
+}
+
+/* Ensure waves stay connected to both sides */
+.hero-wave::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -50%; /* Adjusted to match the much wider SVG */
+  width: 200%; /* Increased to match the much wider SVG */
+  height: 100%;
+  /* Removed background gradient for natural flow */
+  z-index: -1;
+  opacity: 0; /* Make it invisible */
+}
+
+/* Prevent wave disconnection during animation */
+.hero-wave.scrolling svg {
+  transform: scale(1.02);
+  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
+}
+
+.hero-wave.scrolling svg path {
+  filter: brightness(1.05);
+}
+
+/* Wave hover effects */
+.hero-wave:hover svg {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.4));
+}
+
+.hero-wave:hover svg path {
+  filter: brightness(1.1);
+}
+
+/* Add subtle wave animation */
+@keyframes wave-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.hero-wave svg path:nth-child(1) {
+  animation: wave-float 6s ease-in-out infinite;
+}
+
+.hero-wave svg path:nth-child(2) {
+  animation: wave-float 8s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.hero-wave svg path:nth-child(3) {
+  animation: wave-float 10s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+/* Services Section */
+.services-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.services-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+.service-content {
+  padding: 25px;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #059669;
+}
+
+.service-content p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.service-benefits,
+.service-process,
+.service-equipment {
+  margin-bottom: 20px;
+}
+
+.service-benefits h4,
+.service-process h4,
+.service-equipment h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.service-benefits h4 {
+  color: #059669;
+}
+
+.service-process h4 {
+  color: #7c3aed;
+}
+
+.service-equipment h4 {
+  color: #dc2626;
+}
+
+.service-benefits ul,
+.service-process ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.service-benefits li,
+.service-process li {
+  margin-bottom: 5px;
+  color: #6b7280;
+}
+
+.service-benefits li:before {
+  content: "✅";
+  margin-right: 8px;
+}
+
+.service-process li:before {
+  content: "🔧";
+  margin-right: 8px;
+}
+
+.equipment-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.equipment-tag {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Methods Section */
+.methods-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.methods-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.methods-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.method-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-left: 4px solid #059669;
+}
+
+.method-card:hover {
+  transform: translateY(-3px);
+}
+
+.method-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #059669;
+}
+
+.method-description {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.method-best-for {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.method-advantages h4,
+.method-disadvantages h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.method-advantages h4 {
+  color: #059669;
+}
+
+.method-disadvantages h4 {
+  color: #dc2626;
+}
+
+.method-advantages ul,
+.method-disadvantages ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.method-advantages li,
+.method-disadvantages li {
+  margin-bottom: 5px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.method-advantages li:before {
+  content: "✅";
+  margin-right: 8px;
+}
+
+.method-disadvantages li:before {
+  content: "⚠️";
+  margin-right: 8px;
+}
+
+/* Seasonal Section */
+.seasonal-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.seasonal-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.seasonal-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.seasonal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.season-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.season-card:hover {
+  transform: translateY(-3px);
+}
+
+.season-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.season-header h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #059669;
+}
+
+.season-timing {
+  background: #fef3c7;
+  color: #d97706;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.season-activities h4,
+.season-considerations h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.season-activities h4 {
+  color: #059669;
+}
+
+.season-considerations h4 {
+  color: #7c3aed;
+}
+
+.season-activities ul {
+  margin: 0;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.season-activities li {
+  margin-bottom: 5px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.season-activities li:before {
+  content: "🌱";
+  margin-right: 8px;
+}
+
+.season-considerations p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.benefits-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.benefit-category {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-left: 4px solid #059669;
+}
+
+.benefit-category:hover {
+  transform: translateY(-3px);
+}
+
+.benefit-category h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.benefit-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefit-category li {
+  padding: 8px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 25px;
+}
+
+.benefit-category li:before {
+  content: "✅";
+  color: #059669;
+  position: absolute;
+  left: 0;
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.why-choose-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #059669;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.reason-item {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.reason-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.reason-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #059669;
+}
+
+.reason-item p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Contact CTA */
+.contact-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #059669;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero-logo img {
+    max-width: 200px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+  
+  .hero-content {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 70vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-logo img {
+    max-width: 180px;
+  }
+  
+  .cta-button {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Services Section */

@@ -1,0 +1,896 @@
+/* Seasonal Care Page Styles */
+.seasonal-care-page {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  padding: 0 40px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  background: #f59e0b;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: transparent;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.secondary-button:hover {
+  background: white;
+  color: #059669;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Seasons Section */
+.seasons-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.seasons-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.seasons-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.season-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.season-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.season-header {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.season-info {
+  flex: 1;
+}
+
+.season-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #059669;
+}
+
+.season-details {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.season-months,
+.season-temp {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.season-priority {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.season-priority.high {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.season-priority.medium {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.season-priority.low {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.season-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.season-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.season-content {
+  padding: 25px;
+}
+
+.season-description {
+  margin-bottom: 25px;
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.season-tasks,
+.season-tips,
+.season-warnings {
+  margin-bottom: 20px;
+}
+
+.season-tasks h4,
+.season-tips h4,
+.season-warnings h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.season-tasks h4 {
+  color: #059669;
+}
+
+.season-tips h4 {
+  color: #7c3aed;
+}
+
+.season-warnings h4 {
+  color: #dc2626;
+}
+
+.season-tasks ul,
+.season-tips ul,
+.season-warnings ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.season-tasks li,
+.season-tips li,
+.season-warnings li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.season-tasks li:before {
+  content: "✅";
+  color: #059669;
+  position: absolute;
+  left: 0;
+}
+
+.season-tips li:before {
+  content: "💡";
+  color: #7c3aed;
+  position: absolute;
+  left: 0;
+}
+
+.season-warnings li:before {
+  content: "⚠️";
+  color: #dc2626;
+  position: absolute;
+  left: 0;
+}
+
+/* Challenges Section */
+.challenges-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.challenges-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.challenges-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.challenge-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-left: 4px solid #059669;
+}
+
+.challenge-card:hover {
+  transform: translateY(-3px);
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.challenge-header h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #059669;
+}
+
+.challenge-season {
+  background: #a855f7;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.challenge-cause,
+.challenge-solution,
+.challenge-prevention {
+  margin-bottom: 15px;
+  color: #64748b;
+}
+
+.challenge-cause strong {
+  color: #dc2626;
+}
+
+.challenge-solution strong {
+  color: #059669;
+}
+
+.challenge-prevention strong {
+  color: #7c3aed;
+}
+
+/* Equipment Section */
+.equipment-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.equipment-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.equipment-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.equipment-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.equipment-card:hover {
+  transform: translateY(-3px);
+}
+
+.equipment-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+  text-align: center;
+}
+
+.equipment-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.equipment-essential h4,
+.equipment-optional h4,
+.equipment-maintenance h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.equipment-essential h4 {
+  color: #dc2626;
+}
+
+.equipment-optional h4 {
+  color: #7c3aed;
+}
+
+.equipment-maintenance h4 {
+  color: #059669;
+}
+
+.equipment-essential ul,
+.equipment-optional ul,
+.equipment-maintenance ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.equipment-essential li,
+.equipment-optional li,
+.equipment-maintenance li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.equipment-essential li:before {
+  content: "🔴";
+  position: absolute;
+  left: 0;
+}
+
+.equipment-optional li:before {
+  content: "🟡";
+  position: absolute;
+  left: 0;
+}
+
+.equipment-maintenance li:before {
+  content: "🔧";
+  position: absolute;
+  left: 0;
+}
+
+/* Feeding Section */
+.feeding-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.feeding-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.feeding-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.feeding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.feeding-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.feeding-card:hover {
+  transform: translateY(-3px);
+}
+
+.feeding-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.feeding-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feeding-frequency,
+.feeding-amount,
+.feeding-food,
+.feeding-temperature,
+.feeding-notes {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.feeding-frequency strong,
+.feeding-amount strong,
+.feeding-food strong,
+.feeding-temperature strong,
+.feeding-notes strong {
+  color: #374151;
+}
+
+/* Plant Care Section */
+.plant-care-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.plant-care-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.plant-care-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.plant-care-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.plant-care-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.plant-care-card:hover {
+  transform: translateY(-3px);
+}
+
+.plant-care-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+  text-align: center;
+}
+
+.plant-tasks h4,
+.plant-tips h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.plant-tasks h4 {
+  color: #059669;
+}
+
+.plant-tips h4 {
+  color: #7c3aed;
+}
+
+.plant-tasks ul,
+.plant-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plant-tasks li,
+.plant-tips li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.plant-tasks li:before {
+  content: "🌱";
+  color: #059669;
+  position: absolute;
+  left: 0;
+}
+
+.plant-tips li:before {
+  content: "💡";
+  color: #7c3aed;
+  position: absolute;
+  left: 0;
+}
+
+/* Emergency Section */
+.emergency-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.emergency-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.emergency-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.emergency-card {
+  background: #fef2f2;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-left: 4px solid #dc2626;
+}
+
+.emergency-card:hover {
+  transform: translateY(-3px);
+}
+
+.emergency-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.emergency-header h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #dc2626;
+}
+
+.emergency-season {
+  background: #dc2626;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.emergency-immediate,
+.emergency-followup,
+.emergency-prevention {
+  margin-bottom: 15px;
+}
+
+.emergency-immediate h4,
+.emergency-followup h4,
+.emergency-prevention h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+.emergency-immediate h4 {
+  color: #dc2626;
+}
+
+.emergency-followup h4 {
+  color: #059669;
+}
+
+.emergency-prevention h4 {
+  color: #7c3aed;
+}
+
+.emergency-immediate p,
+.emergency-followup p,
+.emergency-prevention p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.why-choose-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #059669;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.benefit-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #059669;
+}
+
+.benefit-item p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Contact CTA */
+.contact-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #059669;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .hero-content {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .seasons-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .season-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .season-details {
+    justify-content: center;
+  }
+  
+  .challenges-grid,
+  .equipment-grid,
+  .feeding-grid,
+  .plant-care-grid,
+  .emergency-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .challenge-header,
+  .emergency-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .seasons-section h2,
+  .challenges-section h2,
+  .equipment-section h2,
+  .feeding-section h2,
+  .plant-care-section h2,
+  .emergency-section h2,
+  .why-choose-section h2,
+  .contact-cta h2 {
+    font-size: 2rem;
+  }
+  
+  .season-card,
+  .challenge-card,
+  .equipment-card,
+  .feeding-card,
+  .plant-care-card,
+  .emergency-card {
+    margin: 0 10px;
+  }
+}

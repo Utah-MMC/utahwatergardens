@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Tool - Utah Water Gardens</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="lib/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3B4C7D 0%, #5A6B8C 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #3B4C7D;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            margin-bottom: 10px;
+        }
+
+
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #FF4500;
+        }
+
+        .btn {
+            background: #FF4500;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #3B4C7D;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #FF4500;
+        }
+
+        .barcode-display {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 2px dashed #e1e5e9;
+        }
+
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="images/utahWaterGardensLogoHoriz.webp" alt="Utah Water Gardens" class="logo-image">
+            </div>
+            <h1>🔍 Barcode Tool</h1>
+            <p>Product Management System</p>
+        </div>
+        
+        <div class="content">
+            <!-- Barcode Scanner Section -->
+            <div class="section">
+                <h2>📱 Scan Barcode</h2>
+                <div class="input-group">
+                    <label for="barcodeInput">Barcode Number:</label>
+                    <input type="text" id="barcodeInput" placeholder="Enter or scan barcode...">
+                </div>
+                <div class="btn-group">
+                    <button class="btn" onclick="scanBarcode()">🔍 Scan</button>
+                    <button class="btn btn-secondary" onclick="generateBarcode()">�� Generate</button>
+                    <button class="btn" onclick="generateQRCode()">📱 QR Code</button>
+                </div>
+                <div id="barcodeResult" class="result" style="display: none;"></div>
+            </div>
+
+            <!-- Product Information Section -->
+            <div class="section">
+                <h2>📦 Product Information</h2>
+                <div class="input-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" placeholder="Enter product name...">
+                </div>
+                <div class="input-group">
+                    <label for="productCategory">Category:</label>
+                    <select id="productCategory">
+                        <option value="">Select category...</option>
+                        <option value="pond_equipment">Pond Equipment</option>
+                        <option value="water_features">Water Features</option>
+                        <option value="landscaping">Landscaping</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="productDescription">Description:</label>
+                    <textarea id="productDescription" rows="3" placeholder="Enter product description..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="productPrice">Price ($):</label>
+                    <input type="number" id="productPrice" step="0.01" placeholder="0.00">
+                </div>
+                <div class="btn-group">
+                    <button class="btn" onclick="saveProduct()">💾 Save Product</button>
+                    <button class="btn btn-secondary" onclick="searchProduct()">🔍 Search</button>
+                </div>
+            </div>
+
+            <!-- Database Status -->
+            <div class="section">
+                <h2>🗄️ Database Status</h2>
+                <div id="dbStatus" class="status info">Connecting to Supabase...</div>
+                <div class="btn-group">
+                    <button class="btn" onclick="testConnection()">🔗 Test Connection</button>
+                    <button class="btn btn-secondary" onclick="viewProducts()">📋 View All Products</button>
+                </div>
+            </div>
+
+            <!-- Results Display -->
+            <div id="resultsContainer" class="section" style="display: none;">
+                <h2>📊 Results</h2>
+                <div id="resultsContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

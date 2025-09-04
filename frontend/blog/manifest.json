@@ -1,0 +1,19 @@
+{
+  "name": "Utah Water Gardens Blog",
+  "short_name": "UWG Blog",
+  "description": "Expert insights on pond design, water features, aquatic plants, and fish care for Utah's unique climate",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e3a8a",
+  "theme_color": "#1e3a8a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/utahWaterGardensLogoHoriz.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    }
+  ],
+  "categories": ["lifestyle", "home", "garden"],
+  "lang": "en-US"
+} 

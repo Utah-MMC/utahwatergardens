@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Test - Utah Water Gardens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .result {
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .test-button {
+            background: #3B4C7D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Functionality Test</h1>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search for equipment...">
+        </div>
+        
+        <div>
+            <button class="test-button" onclick="testSearch('filter')">Test: Filter</button>
+            <button class="test-button" onclick="testSearch('pump')">Test: Pump</button>
+            <button class="test-button" onclick="testSearch('FILTER-001')">Test: FILTER-001</button>
+        </div>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        // Sample inventory data
+        const inventoryData = [
+            {
+                id: 'FILTER-001',
+                name: 'Water Filter System',
+                category: 'Filter',
+                description: 'High-capacity water filtration system',
+                tags: ['filter', 'water', 'system', 'filtration']
+            },
+            {
+                id: 'PUMP-001',
+                name: 'Circulation Pump',
+                category: 'Pump',
+                description: 'Submersible circulation pump',
+                tags: ['pump', 'circulation', 'submersible']
+            }
+        ];
+
+        function testSearch(query) {
+            document.getElementById('searchInput').value = query;
+            performSearch();
+        }
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const resultsDiv = document.getElementById('results');
+            
+            if (!query) {
+                resultsDiv.innerHTML = '<p>Enter a search term...</p>';
+                return;
+            }
+
+            const results = inventoryData.filter(item => 
+                item.id.toLowerCase().includes(query) ||
+                item.name.toLowerCase().includes(query) ||
+                item.category.toLowerCase().includes(query) ||
+                item.description.toLowerCase().includes(query) ||
+                item.tags.some(tag => tag.toLowerCase().includes(query))
+            );
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = `<p>No results found for "${query}"</p>`;
+            } else {
+                let html = `<h3>Found ${results.length} result(s):</h3>`;
+                results.forEach(item => {
+                    html += `
+                        <div class="result">
+                            <h4>${item.name}</h4>
+                            <p><strong>ID:</strong> ${item.id}</p>
+                            <p><strong>Category:</strong> ${item.category}</p>
+                            <p><strong>Description:</strong> ${item.description}</p>
+                            <p><strong>Tags:</strong> ${item.tags.join(', ')}</p>
+                        </div>
+                    `;
+                });
+                resultsDiv.innerHTML = html;
+            }
+        }
+
+        // Add event listeners
+        document.getElementById('searchInput').addEventListener('input', performSearch);
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html> 

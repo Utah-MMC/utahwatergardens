@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Library Test - Utah Water Gardens</title>
+    <script src="lib/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e4d5c 0%, #7a9e7e 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        .qr-display {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .qr-display canvas {
+            border: 2px solid white;
+            border-radius: 10px;
+            background: white;
+        }
+        button {
+            background: #1e4d5c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #2d6a7a;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.3);
+            border: 1px solid #4CAF50;
+        }
+        .error {
+            background: rgba(244, 67, 54, 0.3);
+            border: 1px solid #F44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 QR Code Library Test</h1>
+        <p>Testing the local QR code library functionality</p>
+        
+        <div class="test-section">
+            <h2>Library Status</h2>
+            <div id="libraryStatus" class="status">Checking library...</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>QR Code Generation Test</h2>
+            <button onclick="testQRGeneration()">Generate Test QR Code</button>
+            <div id="qrResult" class="qr-display"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Data URL Test</h2>
+            <button onclick="testDataURL()">Generate Data URL</button>
+            <div id="dataURLResult"></div>
+        </div>
+    </div>
+
+    <script>
+        // Test library loading
+        window.onload = function() {
+            const statusDiv = document.getElementById('libraryStatus');
+            if (typeof QRCode !== 'undefined') {
+                statusDiv.innerHTML = '<strong>✅ SUCCESS:</strong> QR Code library loaded successfully!';
+                statusDiv.className = 'status success';
+            } else {
+                statusDiv.innerHTML = '<strong>❌ ERROR:</strong> QR Code library failed to load!';
+                statusDiv.className = 'status error';
+            }
+        };
+
+        function testQRGeneration() {
+            const resultDiv = document.getElementById('qrResult');
+            resultDiv.innerHTML = '<p>Generating QR code...</p>';
+            
+            try {
+                QRCode.toCanvas('Test QR Code - Utah Water Gardens', {
+                    size: 200,
+                    margin: 2
+                }, function(err, canvas) {
+                    if (err) {
+                        resultDiv.innerHTML = '<p style="color: #ff6b6b;">Error: ' + err.message + '</p>';
+                    } else {
+                        resultDiv.innerHTML = '<h3>Generated QR Code:</h3>';
+                        resultDiv.appendChild(canvas);
+                    }
+                });
+            } catch (error) {
+                resultDiv.innerHTML = '<p style="color: #ff6b6b;">Error: ' + error.message + '</p>';
+            }
+        }
+
+        function testDataURL() {
+            const resultDiv = document.getElementById('dataURLResult');
+            resultDiv.innerHTML = '<p>Generating Data URL...</p>';
+            
+            try {
+                QRCode.toDataURL('https://utahwatergardens.com', {
+                    size: 150,
+                    margin: 2
+                }, function(err, url) {
+                    if (err) {
+                        resultDiv.innerHTML = '<p style="color: #ff6b6b;">Error: ' + err.message + '</p>';
+                    } else {
+                        resultDiv.innerHTML = `
+                            <h3>Generated Data URL:</h3>
+                            <img src="${url}" alt="QR Code" style="border: 2px solid white; border-radius: 5px;">
+                            <p><small>Data URL length: ${url.length} characters</small></p>
+                        `;
+                    }
+                });
+            } catch (error) {
+                resultDiv.innerHTML = '<p style="color: #ff6b6b;">Error: ' + error.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html> 

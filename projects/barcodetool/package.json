@@ -1,0 +1,37 @@
+{
+  "name": "barcodetool",
+  "version": "1.0.0",
+  "description": "Barcode scanning and product management system for Utah Water Gardens",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "dev": "npx live-server --port=8000",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "barcode",
+    "inventory",
+    "product-management",
+    "supabase",
+    "utah-water-gardens"
+  ],
+  "author": "Utah Water Gardens",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.53.0",
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utahwatergardens/barcodetool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/utahwatergardens/barcodetool/issues"
+  },
+  "homepage": "https://github.com/utahwatergardens/barcodetool#readme"
+}

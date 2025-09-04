@@ -1,0 +1,73 @@
+# Utah Water Gardens Blog - Cursor AI Custom Instructions
+
+## Environment Setup
+- **Operating System**: Windows 10 (version 10.0.19045)
+- **Shell**: PowerShell (C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe)
+- **Workspace Path**: /j%3A/utahwatergardens/blog
+- **Project Type**: Static HTML/CSS blog for Utah Water Gardens
+
+## Project Overview
+This is a custom blog designed for Utah Water Gardens, focusing on water garden and pond-related content for Utah's unique climate. The blog is designed to be used as a WordPress subdomain (blog.utahwatergardens.com) but currently exists as a static site.
+
+## Key Project Details
+- **Primary Domain**: utahwatergardens.com
+- **Blog Subdomain**: blog.utahwatergardens.com
+- **Current Hosting**: Vercel (uwgblog.vercel.app)
+- **Brand Colors**: Primary Blue (#1e3a8a), Secondary Green (#059669), Accent Red (#dc2626)
+- **Font**: Inter (Google Fonts)
+- **Theme**: Water garden/nature focused with modern card-based design
+
+## Content Categories
+1. Pond Design 🌊
+2. Water Features 💧
+3. Fish Care 🐟
+4. Aquatic Plants 🌿
+5. Maintenance 🔧
+6. Utah Climate 🏔️
+7. SEO & Marketing (recent additions)
+
+## File Structure
+- `index.html` - Main blog homepage
+- `styles.css` - Main stylesheet (1747 lines)
+- `theme.css` - Additional theme styles
+- Multiple HTML guides for different topics
+- `images/` - Optimized images for the blog
+- `manifest.json` - PWA manifest
+- `sitemap.xml` - SEO sitemap
+- `robots.txt` - SEO robots file
+
+## Development Guidelines
+- Use PowerShell commands for terminal operations
+- Maintain responsive design for all devices
+- Follow SEO best practices with meta tags and structured data
+- Keep Utah-specific content focus
+- Maintain brand consistency with blue/green color scheme
+- Ensure fast loading times and mobile optimization
+
+## WordPress Integration
+The blog is designed for WordPress integration with:
+- Custom theme files provided
+- SEO-optimized structure
+- Mobile-responsive design
+- Newsletter signup functionality
+- Cross-linking with main website
+
+## Recent Additions
+- SEO strategy guides for 2025
+- Content marketing articles
+- Technical SEO checklists
+- Local SEO strategies
+- AI-powered SEO strategies
+
+## Technical Notes
+- All images are optimized with Topaz enhancement
+- Site uses modern CSS with CSS variables
+- PWA-ready with manifest.json
+- Structured for easy WordPress migration
+- Utah-specific SEO focus
+
+## Commands to Remember
+- Use `cd /j%3A/utahwatergardens/blog` to navigate to project
+- PowerShell commands: `Get-ChildItem`, `New-Item`, `Copy-Item`, etc.
+- File paths use Windows format with backslashes when needed
+- Use `Start-Process` for opening files in default applications

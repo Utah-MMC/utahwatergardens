@@ -1,0 +1,986 @@
+/* Water Treatments Page Styles */
+.water-treatments-page {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+  color: white;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  padding: 0 40px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  background: #f59e0b;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: transparent;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.secondary-button:hover {
+  background: white;
+  color: #0891b2;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Treatments Section */
+.treatments-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.treatments-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0891b2;
+}
+
+.treatments-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.treatment-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treatment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.treatment-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.treatment-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.treatment-card:hover .treatment-image img {
+  transform: scale(1.05);
+}
+
+.treatment-info {
+  padding: 25px;
+}
+
+.treatment-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #0891b2;
+}
+
+.treatment-info > p {
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.treatment-features h4,
+.treatment-products h4,
+.treatment-applications h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.treatment-features ul,
+.treatment-products ul,
+.treatment-applications ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.treatment-features li,
+.treatment-products li,
+.treatment-applications li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.treatment-features li:before {
+  content: "🧪";
+  color: #06b6d4;
+  position: absolute;
+  left: 0;
+}
+
+.treatment-products li:before {
+  content: "💧";
+  color: #0891b2;
+  position: absolute;
+  left: 0;
+}
+
+.treatment-applications li:before {
+  content: "→";
+  color: #06b6d4;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.treatment-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0891b2;
+  margin-bottom: 20px;
+}
+
+.treatment-cta {
+  background: #0891b2;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.treatment-cta:hover {
+  background: #0e7490;
+  transform: translateY(-2px);
+}
+
+/* Seasonal Section */
+.seasonal-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.seasonal-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0891b2;
+}
+
+.seasonal-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.seasonal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.seasonal-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seasonal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.seasonal-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.seasonal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.seasonal-card:hover .seasonal-image img {
+  transform: scale(1.05);
+}
+
+.seasonal-info {
+  padding: 25px;
+}
+
+.seasonal-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #0891b2;
+}
+
+.seasonal-info > p {
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.seasonal-treatments h4,
+.seasonal-benefits h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.seasonal-treatments ul,
+.seasonal-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.seasonal-treatments li,
+.seasonal-benefits li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.seasonal-treatments li:before {
+  content: "🌱";
+  color: #06b6d4;
+  position: absolute;
+  left: 0;
+}
+
+.seasonal-benefits li:before {
+  content: "✨";
+  color: #0891b2;
+  position: absolute;
+  left: 0;
+}
+
+.seasonal-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0891b2;
+  margin-bottom: 20px;
+}
+
+.seasonal-cta {
+  background: #0891b2;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.seasonal-cta:hover {
+  background: #0e7490;
+  transform: translateY(-2px);
+}
+
+/* Testing Section */
+.testing-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.testing-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0891b2;
+}
+
+.testing-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.testing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.testing-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.testing-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.testing-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.testing-card:hover .testing-image img {
+  transform: scale(1.05);
+}
+
+.testing-info {
+  padding: 25px;
+}
+
+.testing-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #0891b2;
+}
+
+.testing-info > p {
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.testing-features h4,
+.testing-applications h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.testing-features ul,
+.testing-applications ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.testing-features li,
+.testing-applications li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.testing-features li:before {
+  content: "🔬";
+  color: #06b6d4;
+  position: absolute;
+  left: 0;
+}
+
+.testing-applications li:before {
+  content: "📊";
+  color: #0891b2;
+  position: absolute;
+  left: 0;
+}
+
+.testing-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0891b2;
+  margin-bottom: 20px;
+}
+
+.testing-cta {
+  background: #0891b2;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.testing-cta:hover {
+  background: #0e7490;
+  transform: translateY(-2px);
+}
+
+/* Maintenance Section */
+.maintenance-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.maintenance-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0891b2;
+}
+
+.maintenance-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.maintenance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.maintenance-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.maintenance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.maintenance-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.maintenance-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.maintenance-card:hover .maintenance-image img {
+  transform: scale(1.05);
+}
+
+.maintenance-info {
+  padding: 25px;
+}
+
+.maintenance-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #0891b2;
+}
+
+.maintenance-info > p {
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.maintenance-includes h4,
+.maintenance-benefits h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.maintenance-includes ul,
+.maintenance-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.maintenance-includes li,
+.maintenance-benefits li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.maintenance-includes li:before {
+  content: "📋";
+  color: #06b6d4;
+  position: absolute;
+  left: 0;
+}
+
+.maintenance-benefits li:before {
+  content: "💎";
+  color: #0891b2;
+  position: absolute;
+  left: 0;
+}
+
+.maintenance-frequency {
+  margin-bottom: 15px;
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.maintenance-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0891b2;
+  margin-bottom: 20px;
+}
+
+.maintenance-cta {
+  background: #0891b2;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.maintenance-cta:hover {
+  background: #0e7490;
+  transform: translateY(-2px);
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.why-choose-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #0891b2;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.benefit-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #0891b2;
+}
+
+.benefit-item p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Tips Section */
+.tips-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.tips-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0891b2;
+}
+
+.tips-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.tips-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.tips-list h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #0891b2;
+}
+
+.tips-list ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.tips-list li {
+  padding: 8px 0;
+  color: #64748b;
+  position: relative;
+  padding-left: 25px;
+}
+
+.tips-list li:before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+}
+
+.tips-cta {
+  background: #0891b2;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.tips-cta:hover {
+  background: #0e7490;
+  transform: translateY(-2px);
+}
+
+.tips-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Packages Section */
+.packages-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.packages-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0891b2;
+}
+
+.packages-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.package-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.package-card.featured {
+  border: 3px solid #0891b2;
+  transform: scale(1.05);
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+.package-card.featured:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.package-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #0891b2;
+}
+
+.package-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0891b2;
+  margin-bottom: 15px;
+}
+
+.package-description {
+  color: #64748b;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.package-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.package-card li {
+  padding: 8px 0;
+  color: #64748b;
+  position: relative;
+  padding-left: 25px;
+}
+
+.package-card li:before {
+  content: "✓";
+  color: #06b6d4;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.package-cta {
+  background: #0891b2;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.package-cta:hover {
+  background: #0e7490;
+  transform: translateY(-2px);
+}
+
+/* Contact CTA */
+.contact-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+  color: white;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #0891b2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .hero-content {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .treatments-grid,
+  .seasonal-grid,
+  .testing-grid,
+  .maintenance-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .package-card.featured {
+    transform: none;
+  }
+  
+  .package-card.featured:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tips-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .treatments-section h2,
+  .seasonal-section h2,
+  .testing-section h2,
+  .maintenance-section h2,
+  .why-choose-section h2,
+  .tips-section h2,
+  .packages-section h2,
+  .contact-cta h2 {
+    font-size: 2rem;
+  }
+  
+  .treatment-card,
+  .seasonal-card,
+  .testing-card,
+  .maintenance-card {
+    margin: 0 10px;
+  }
+  
+  .package-card {
+    padding: 30px 20px;
+  }
+}

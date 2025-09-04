@@ -1,0 +1,547 @@
+.floating-plants-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 4rem 0;
+}
+
+.hero-content {
+  flex: 1;
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-button, .secondary-button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-button {
+  background: #ff6b35;
+  color: white;
+}
+
+.cta-button:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.secondary-button:hover {
+  background: white;
+  color: #1e3c72;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Plant Types */
+.plant-types {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.plant-types h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1e3c72;
+}
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.type-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.type-card:hover {
+  transform: translateY(-5px);
+}
+
+.type-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.type-card h3 {
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-size: 1.5rem;
+  color: #1e3c72;
+}
+
+.type-card p {
+  padding: 0 1.5rem 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.type-card ul {
+  padding: 0 1.5rem 1.5rem;
+  list-style: none;
+}
+
+.type-card li {
+  padding: 0.25rem 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 4rem 0;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1e3c72;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #1e3c72;
+}
+
+.benefit-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Care Guide */
+.care-guide {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.care-guide h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1e3c72;
+}
+
+.guide-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.guide-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1e3c72;
+}
+
+.guide-text ul {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.guide-text li {
+  margin-bottom: 0.5rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.guide-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Popular Varieties */
+.popular-varieties {
+  padding: 4rem 0;
+}
+
+.popular-varieties h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1e3c72;
+}
+
+.varieties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.variety-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.variety-card:hover {
+  transform: translateY(-5px);
+}
+
+.variety-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.variety-card h3 {
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-size: 1.5rem;
+  color: #1e3c72;
+}
+
+.variety-card p {
+  padding: 0 1.5rem 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.variety-details {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.variety-details span {
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Growth Control */
+.growth-control {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.growth-control h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1e3c72;
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.control-item {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.control-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.control-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #1e3c72;
+}
+
+.control-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Troubleshooting */
+.troubleshooting {
+  padding: 4rem 0;
+}
+
+.troubleshooting h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1e3c72;
+}
+
+.troubleshooting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.issue-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.issue-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #1e3c72;
+}
+
+.issue-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.issue-card strong {
+  color: #1e3c72;
+}
+
+/* Featured Products */
+.featured-products {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.featured-products h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1e3c72;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-size: 1.3rem;
+  color: #1e3c72;
+}
+
+.product-card p {
+  padding: 0 1.5rem 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.product-card .price {
+  display: block;
+  padding: 0 1.5rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff6b35;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary-button, .secondary-button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background: #ff6b35;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.secondary-button:hover {
+  background: white;
+  color: #1e3c72;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .types-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .guide-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .varieties-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .control-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .troubleshooting-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}

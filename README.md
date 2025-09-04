@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Utah Water Gardens - Complete Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains both a React web application and a Python web scraper for Utah Water Gardens.
 
-## Available Scripts
+## 🏗️ Project Structure
 
-In the project directory, you can run:
+```
+utahwatergardens/
+├── frontend/                 # React web application
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── README.md
+├── scraper/                  # Python web scraper
+│   ├── requirements.txt
+│   ├── main_lead_generator.py
+│   └── README.md
+├── docs/                     # Documentation
+├── assets/                   # Shared assets
+└── README.md                 # This file
+```
 
-### `npm start`
+## 🚀 Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend (React App)
+```bash
+cd frontend
+npm install
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Web Scraper
+```bash
+cd scraper
+pip install -r requirements.txt
+python main_lead_generator.py --mode full
+```
 
-### `npm test`
+## 📁 Detailed Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend (`/frontend`)
+- **React 19** application with modern routing
+- **Responsive design** optimized for all devices
+- **Component-based architecture** for maintainability
+- **CSS modules** for styling isolation
 
-### `npm run build`
+### Scraper (`/scraper`)
+- **Lead Generation System** for finding potential customers
+- **Competitor Analysis** tools
+- **Data Export** capabilities (CSV, JSON)
+- **Automated Email Campaigns**
+- **Analytics & Reporting**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Development
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend Development
+- Built with Create React App
+- Uses React Router for navigation
+- Responsive CSS with modern design principles
+- Optimized for SEO and performance
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Scraper Development
+- Python 3.8+ required
+- Modular architecture for easy maintenance
+- Comprehensive logging and error handling
+- Configurable via JSON files
 
-### `npm run eject`
+## 📊 Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Frontend
+- Home page with company overview
+- Services page showcasing offerings
+- About page with company information
+- Contact page with forms
+- Shop page for products
+- Resources page for customers
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Scraper
+- Multi-source lead generation
+- Intelligent lead scoring
+- Automated lead nurturing
+- Competitor analysis
+- Data analytics and reporting
+- CRM integration capabilities
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔧 Configuration
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Frontend
+- Environment variables in `.env` files
+- Build configuration in `package.json`
+- Deployment ready for Vercel/Netlify
 
-## Learn More
+### Scraper
+- Configuration in `config.json`
+- Email settings for campaigns
+- Database configuration
+- Logging preferences
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📈 Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Frontend
+- Build: `npm run build`
+- Deploy to Vercel, Netlify, or any static hosting
 
-### Code Splitting
+### Scraper
+- Can run on any Python-compatible server
+- Scheduled execution via cron jobs
+- Cloud deployment ready (AWS, GCP, Azure)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 Contributing
 
-### Analyzing the Bundle Size
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📄 License
 
-### Making a Progressive Web App
+This project is proprietary to Utah Water Gardens.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📞 Support
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For technical support or questions:
+- Email: icondumpsters@gmail.com
+- Phone: (801) 918-6000
+- Website: www.icondumpsters.com

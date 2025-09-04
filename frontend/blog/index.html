@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Utah Water Gardens - Pond & Water Feature Insights</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon Support -->
+  <link rel="icon" type="image/x-icon" href="images/utahWaterGardensLogoHoriz.webp" />
+  <link rel="apple-touch-icon" href="images/utahWaterGardensLogoHoriz.webp" />
+  <meta name="theme-color" content="#1e3a8a" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="description" content="Utah Water Gardens Blog - Expert insights on pond design, water features, aquatic plants, fish care, and creating beautiful water gardens in Utah's unique climate." />
+  <meta name="keywords" content="water gardens, pond design, Utah ponds, water features, aquatic plants, koi fish, pond maintenance, water garden blog" />
+  <meta name="author" content="Utah Water Gardens" />
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Blog | Utah Water Gardens" />
+  <meta property="og:description" content="Expert insights on pond design, water features, aquatic plants, fish care, and creating beautiful water gardens in Utah's unique climate." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blog.utahwatergardens.com/" />
+  <meta property="og:image" content="https://utahwatergardens.com/images/utahWaterGardensLogoHoriz.webp" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog | Utah Water Gardens" />
+  <meta name="twitter:description" content="Expert insights on pond design, water features, aquatic plants, fish care, and creating beautiful water gardens in Utah's unique climate." />
+  <meta name="twitter:image" content="https://utahwatergardens.com/images/utahWaterGardensLogoHoriz.webp" />
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://blog.utahwatergardens.com/" />
+  
+  <script>
+    // Enhanced download functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const downloadBtn = document.querySelector('.download-btn');
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', function(e) {
+          // Add a small delay to show the download is starting
+          this.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            this.style.transform = 'scale(1)';
+          }, 150);
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-flex">
+             <div class="logo">
+         <img src="images/utahWaterGardensLogoHoriz.webp" alt="Utah Water Gardens" class="logo-img">
+         <span class="logo-text">Blog</span>
+       </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#pond-design">Pond Design</a></li>
+          <li><a href="#pond-maintenance">Maintenance</a></li>
+          <li><a href="#fish-care">Fish Care</a></li>
+          <li><a href="#aquatic-plants">Plants</a></li>
+          <li><a href="#water-features">Features</a></li>
+          <li><a href="https://utahwatergardens.com" target="_blank">Main Site</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+         <div class="hero-background">
+       <img src="images/pexels-quang-nguyen-vinh-222549-2131828-topaz-sharpen.jpeg" alt="Beautiful Water Garden" class="hero-bg-image">
+       <div class="hero-overlay"></div>
+     </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Learn How To Properly <span class="highlight">Care For Your Pond</span>
+        </h1>
+        <p class="hero-sub">
+          Get expert insights on pond design, water features, aquatic plants, and fish care for Utah's unique climate. 
+          Learn how to create and maintain stunning water gardens that thrive year-round.
+        </p>
+        <div class="hero-cta">
+          <a href="https://utahwatergardens.com/contact" class="hero-cta-button" target="_blank">Get Your Free Consultation</a>
+          <a href="#pond-design" class="hero-cta-secondary">Explore Our Guides</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="categories-section">
+    <div class="container">
+      <h2>Explore Our Water Garden Topics</h2>
+      <div class="categories-grid">
+                 <div class="category-card" id="pond-design">
+           <img src="images/pondConstruction1000x800-768x614.webp" alt="Pond Design" class="category-image">
+           <h3>Pond Design</h3>
+           <p>Learn the fundamentals of designing beautiful, functional ponds that complement your landscape and thrive in Utah's climate</p>
+           <a href="pond-design-guide.html" class="category-link">READ MORE</a>
+         </div>
+         
+         <div class="category-card" id="pond-maintenance">
+           <img src="images/pondMaintenance-768x614.webp" alt="Pond Maintenance" class="category-image">
+           <h3>Pond Maintenance</h3>
+           <p>Essential maintenance tips and seasonal care guides to keep your water garden healthy and beautiful year-round</p>
+           <a href="pond-maintenance-guide.html" class="category-link">READ MORE</a>
+         </div>
+         
+         <div class="category-card" id="fish-care">
+           <img src="images/pondCleanings-768x614.webp" alt="Fish Care" class="category-image">
+           <h3>Fish Care</h3>
+           <p>Expert advice on keeping koi, goldfish, and other pond fish healthy and happy throughout all seasons</p>
+           <a href="fish-care-guide.html" class="category-link">READ MORE</a>
+         </div>
+         
+         <div class="category-card" id="aquatic-plants">
+           <img src="images/pondMaint-768x614.webp" alt="Aquatic Plants" class="category-image">
+           <h3>Aquatic Plants</h3>
+           <p>Discover the perfect plants for your water garden, from floating beauties to oxygenating plants that keep your pond healthy</p>
+           <a href="aquatic-plants-guide.html" class="category-link">READ MORE</a>
+         </div>
+         
+         <div class="category-card" id="water-features">
+           <img src="images/vacServices-768x614.webp" alt="Water Features" class="category-image">
+           <h3>Water Features</h3>
+           <p>Creative ideas for fountains, waterfalls, and other water features that add movement and sound to your garden</p>
+           <a href="water-features-guide.html" class="category-link">READ MORE</a>
+         </div>
+         
+         <div class="category-card" id="utah-climate">
+           <img src="images/pondConsultation1000x800-768x614.webp" alt="Utah Climate" class="category-image">
+           <h3>Utah Climate</h3>
+           <p>Specialized advice for water gardens in Utah's unique climate, from hot summers to cold winters</p>
+           <a href="utah-climate-guide.html" class="category-link">READ MORE</a>
+         </div>
+         
+         <div class="category-card" id="pond-equipment">
+           <img src="images/Pond-Supplies-768x614.webp" alt="Pond Equipment" class="category-image">
+           <h3>Pond Equipment</h3>
+           <p>Complete guides to pumps, filters, lighting, and other essential equipment for your water garden</p>
+           <a href="pond-liners-utah-guide.html" class="category-link">READ MORE</a>
+         </div>
+         
+         <div class="category-card" id="seasonal-care">
+           <img src="images/pondDredging-768x614.webp" alt="Seasonal Care" class="category-image">
+           <h3>Seasonal Care</h3>
+           <p>Seasonal maintenance schedules and preparation guides to keep your pond thriving throughout the year</p>
+           <a href="pond-maintenance-guide.html" class="category-link">READ MORE</a>
+         </div>
+         
+         <div class="category-card" id="troubleshooting">
+           <img src="images/pumpRepair-768x614.webp" alt="Troubleshooting" class="category-image">
+           <h3>Troubleshooting</h3>
+           <p>Common pond problems and solutions, from algae control to equipment repair and water quality issues</p>
+           <a href="pond-maintenance-guide.html" class="category-link">READ MORE</a>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Blog Layout with Sidebar -->
+  <section class="blog-layout">
+    <div class="container">
+      <div class="blog-main">
+        <h2>Latest Articles</h2>
+        <div class="articles-list">
+          <article class="article-item">
+            <div class="article-image">
+              <img src="images/unnamed (36)-topaz-enhance-3.4x.jpeg" alt="How to Build a Pond in Utah">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="article-category">Pond Design</span>
+                <span class="article-date">January 20, 2025</span>
+              </div>
+              <h3><a href="how-to-build-pond-utah-guide.html">How to Build a Pond in Utah: Step-by-Step Guide for Beginners</a></h3>
+              <p>Complete beginner's guide to building a pond in Utah's unique climate, from planning to completion. Learn essential techniques for creating a beautiful, functional water garden that thrives in our challenging environment.</p>
+              <a href="how-to-build-pond-utah-guide.html" class="read-more">Read Full Article →</a>
+            </div>
+          </article>
+
+          <article class="article-item">
+            <div class="article-image">
+              <img src="images/pexels-pixabay-235593-topaz-sharpen.jpeg" alt="Pond Liners for Utah">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="article-category">Pond Design</span>
+                <span class="article-date">January 22, 2025</span>
+              </div>
+              <h3><a href="pond-liners-utah-guide.html">Best Pond Liner Options for Utah's Harsh Climate</a></h3>
+              <p>Discover which pond liners work best in Utah's extreme temperatures and high altitude conditions. From EPDM to PVC, find the perfect liner for your water garden project.</p>
+              <a href="pond-liners-utah-guide.html" class="read-more">Read Full Article →</a>
+            </div>
+          </article>
+
+          <article class="article-item">
+            <div class="article-image">
+              <img src="images/pondConstruction1000x800-768x614.webp" alt="DIY Pond Cost Utah">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="article-category">Pond Design</span>
+                <span class="article-date">January 23, 2025</span>
+              </div>
+              <h3><a href="diy-pond-cost-utah.html">DIY Pond Construction: Cost Breakdown for Utah Homeowners</a></h3>
+              <p>Detailed cost breakdown for building your own pond in Utah, including materials, labor, and permits. Get realistic estimates for your water garden project.</p>
+              <a href="diy-pond-cost-utah.html" class="read-more">Read Full Article →</a>
+            </div>
+          </article>
+
+          <article class="article-item">
+            <div class="article-image">
+              <img src="images/pondMaintenance-768x614.webp" alt="Pond Depth Utah">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="article-category">Pond Design</span>
+                <span class="article-date">January 24, 2025</span>
+              </div>
+              <h3><a href="pond-depth-utah-guide.html">Utah Pond Depth Guide: How Deep Should Your Pond Be?</a></h3>
+              <p>Learn the optimal pond depth for Utah's climate to ensure fish survival and winter protection. Expert advice for creating the perfect depth for your water garden.</p>
+              <a href="pond-depth-utah-guide.html" class="read-more">Read Full Article →</a>
+            </div>
+          </article>
+
+          <article class="article-item">
+            <div class="article-image">
+              <img src="images/pondDredging-768x614.webp" alt="Clay Soil Ponds Utah">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="article-category">Pond Design</span>
+                <span class="article-date">January 25, 2025</span>
+              </div>
+              <h3><a href="clay-soil-ponds-utah-guide.html">Clay Soil Ponds in Utah: Pros, Cons, and How to Make It Work</a></h3>
+              <p>Expert guide to building successful ponds in Utah's clay soil with proper techniques and considerations. Turn challenging soil into a water garden advantage.</p>
+              <a href="clay-soil-ponds-utah-guide.html" class="read-more">Read Full Article →</a>
+            </div>
+          </article>
+
+          <article class="article-item">
+            <div class="article-image">
+              <img src="images/pondConsultation1000x800-768x614.webp" alt="Small Backyard Pond Ideas Utah">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="article-category">Pond Design</span>
+                <span class="article-date">January 26, 2025</span>
+              </div>
+              <h3><a href="small-backyard-pond-ideas-utah.html">Small Backyard Pond Ideas for Utah Homes: 15 Beautiful Designs</a></h3>
+              <p>Discover 15 beautiful small pond designs perfect for Utah homes and our challenging climate. Transform your backyard with these inspiring water garden concepts.</p>
+              <a href="small-backyard-pond-ideas-utah.html" class="read-more">Read Full Article →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="blog-sidebar">
+        <div class="sidebar-section">
+          <h3>Featured Posts</h3>
+          <div class="featured-posts">
+            <div class="featured-post">
+              <div class="featured-image">
+                <img src="images/pondConstruction1000x800-768x614.webp" alt="Pond Construction Guide">
+              </div>
+              <div class="featured-content">
+                <h4><a href="how-to-build-pond-utah-guide.html">How to Build a Pond in Utah: Complete Guide</a></h4>
+                <span class="featured-date">01/20/2025</span>
+              </div>
+            </div>
+            <div class="featured-post">
+              <div class="featured-image">
+                <img src="images/pondMaintenance-768x614.webp" alt="Pond Maintenance">
+              </div>
+              <div class="featured-content">
+                <h4><a href="pond-maintenance-guide.html">Essential Pond Maintenance for Utah Climate</a></h4>
+                <span class="featured-date">01/18/2025</span>
+              </div>
+            </div>
+            <div class="featured-post">
+              <div class="featured-image">
+                <img src="images/pondCleanings-768x614.webp" alt="Fish Care">
+              </div>
+              <div class="featured-content">
+                <h4><a href="fish-care-guide.html">Koi and Goldfish Care in Utah Winters</a></h4>
+                <span class="featured-date">01/15/2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Explore by Topic</h3>
+          <div class="tags-grid">
+            <a href="index.html?tag=pond-design" class="tag-item">Pond Design</a>
+            <a href="index.html?tag=pond-maintenance" class="tag-item">Pond Maintenance</a>
+            <a href="index.html?tag=fish-care" class="tag-item">Fish Care</a>
+            <a href="index.html?tag=aquatic-plants" class="tag-item">Aquatic Plants</a>
+            <a href="index.html?tag=water-features" class="tag-item">Water Features</a>
+            <a href="index.html?tag=utah-climate" class="tag-item">Utah Climate</a>
+            <a href="index.html?tag=pond-equipment" class="tag-item">Pond Equipment</a>
+            <a href="index.html?tag=seasonal-care" class="tag-item">Seasonal Care</a>
+            <a href="index.html?tag=troubleshooting" class="tag-item">Troubleshooting</a>
+            <a href="index.html?tag=koi-fish" class="tag-item">Koi Fish</a>
+            <a href="index.html?tag=pond-liners" class="tag-item">Pond Liners</a>
+            <a href="index.html?tag=pond-pumps" class="tag-item">Pond Pumps</a>
+            <a href="index.html?tag=pond-filters" class="tag-item">Pond Filters</a>
+            <a href="index.html?tag=algae-control" class="tag-item">Algae Control</a>
+            <a href="index.html?tag=winter-care" class="tag-item">Winter Care</a>
+            <a href="index.html?tag=summer-maintenance" class="tag-item">Summer Maintenance</a>
+            <a href="index.html?tag=pond-construction" class="tag-item">Pond Construction</a>
+            <a href="index.html?tag=water-quality" class="tag-item">Water Quality</a>
+            <a href="index.html?tag=pond-lighting" class="tag-item">Pond Lighting</a>
+            <a href="index.html?tag=pond-landscaping" class="tag-item">Pond Landscaping</a>
+          </div>
+        </div>
+
+                 <div class="sidebar-section">
+           <h3>Download Our Free Guide</h3>
+                       <div class="download-section">
+              <p>Get our comprehensive guide: "Building Your First Water Garden in Utah"</p>
+                           <a href="guide-content.html" class="download-btn" download="Building-Your-First-Water-Garden-Utah-Guide.html">
+               <span>Download Free Guide</span>
+               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                 <polyline points="7,10 12,15 17,10"></polyline>
+                 <line x1="12" y1="15" x2="12" y2="3"></line>
+               </svg>
+             </a>
+           </div>
+         </div>
+      </aside>
+    </div>
+  </section>
+
+
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-card">
+        <h2>Stay Updated with Water Garden Tips</h2>
+        <p>Get the latest articles, seasonal maintenance reminders, and exclusive water garden tips delivered to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Utah Water Gardens</h3>
+          <p>Creating beautiful water gardens and ponds throughout Utah since 2010.</p>
+          <div class="footer-links">
+            <a href="https://utahwatergardens.com">Main Website</a>
+            <a href="https://utahwatergardens.com/contact">Contact Us</a>
+            <a href="https://utahwatergardens.com/pond-services">Services</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Blog Categories</h3>
+          <ul class="footer-categories">
+            <li><a href="#pond-design">Pond Design</a></li>
+            <li><a href="#pond-maintenance">Maintenance</a></li>
+            <li><a href="#fish-care">Fish Care</a></li>
+            <li><a href="#aquatic-plants">Aquatic Plants</a></li>
+            <li><a href="#water-features">Water Features</a></li>
+            <li><a href="#utah-climate">Utah Climate</a></li>
+            <li><a href="#pond-equipment">Pond Equipment</a></li>
+            <li><a href="#seasonal-care">Seasonal Care</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+          </ul>
+        </div>
+                 <div class="footer-section">
+           <h3>Contact Info</h3>
+           <p>📍 5911 S 1300 E, Salt Lake City, Utah, 84121</p>
+           <p>📞 801-590-8516</p>
+           <p>✉️ contact@utahwatergardens.com</p>
+           <p>🕒 Mon-Sat: 10:00 AM - 6:00 PM</p>
+           <p>🚫 Closed Sunday</p>
+         </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Utah Water Gardens. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tag Filtering JavaScript -->
+  <script>
+    // Blog post data with tags
+    const blogPosts = [
+      {
+        title: "Complete Pond Maintenance Guide for Utah: Year-Round Care (2025)",
+        excerpt: "Master the essential maintenance tasks to keep your Utah pond healthy and beautiful throughout all seasons. From daily checks to seasonal deep cleaning, learn everything you need to know.",
+        image: "images/pondMaintenance-768x614.webp",
+        link: "pond-maintenance-guide.html",
+        category: "Pond Maintenance",
+        tags: ["pond-maintenance", "seasonal-care", "water-quality", "troubleshooting", "pond-equipment", "utah-climate"]
+      },
+      {
+        title: "Complete Aquatic Plants Guide for Utah Ponds: Best Plants & Care (2025)",
+        excerpt: "Discover the perfect aquatic plants for your Utah pond that can handle our extreme climate. Learn about hardy water lilies, marginal plants, and proper care techniques.",
+        image: "images/pexels-pixabay-235593-topaz-sharpen.jpeg",
+        link: "aquatic-plants-guide.html",
+        category: "Aquatic Plants",
+        tags: ["aquatic-plants", "pond-maintenance", "water-quality", "utah-climate", "seasonal-care", "pond-design"]
+      },
+      {
+        title: "Complete Fish Care Guide for Utah Ponds: Koi & Goldfish (2025)",
+        excerpt: "Learn everything about caring for fish in Utah's unique climate. From feeding schedules to winter survival, master the art of fish care for healthy, happy pond fish.",
+        image: "images/pondCleanings-768x614.webp",
+        link: "fish-care-guide.html",
+        category: "Fish Care",
+        tags: ["fish-care", "koi-fish", "water-quality", "pond-maintenance", "seasonal-care", "troubleshooting"]
+      },
+      {
+        title: "Complete Water Features Guide for Utah Ponds: Fountains, Waterfalls & More (2025)",
+        excerpt: "Transform your Utah pond into a dynamic water garden with beautiful fountains, waterfalls, streams, and other water features. Learn design considerations and maintenance.",
+        image: "images/vacServices-768x614.webp",
+        link: "water-features-guide.html",
+        category: "Water Features",
+        tags: ["water-features", "pond-design", "pond-equipment", "pond-maintenance", "utah-climate", "pond-construction"]
+      },
+      {
+        title: "Complete Guide to Pond Design in Utah",
+        excerpt: "Learn how to design a pond that thrives in Utah's unique climate. Expert tips on size, location, materials, and seasonal considerations for your water garden.",
+        image: "images/pondConstruction1000x800-768x614.webp",
+        link: "pond-design-guide.html",
+        category: "Pond Design",
+        tags: ["pond-design", "pond-construction", "utah-climate", "pond-equipment", "pond-maintenance", "seasonal-care"]
+      },
+      {
+        title: "How to Build a Pond in Utah: Complete DIY Guide (2025)",
+        excerpt: "Step-by-step guide to building your own pond in Utah's unique climate. Learn about materials, equipment, and techniques for creating a beautiful water garden.",
+        image: "images/unnamed (36)-topaz-enhance-3.4x.jpeg",
+        link: "how-to-build-pond-utah-guide.html",
+        category: "Pond Construction",
+        tags: ["pond-construction", "pond-design", "utah-climate", "pond-equipment", "pond-maintenance", "seasonal-care"]
+      },
+      {
+        title: "Utah Climate Guide for Ponds: Surviving Extreme Weather (2025)",
+        excerpt: "Master Utah's extreme climate challenges for your pond. Learn how to protect your water garden from scorching summers, freezing winters, and everything in between.",
+        image: "images/pexels-quang-nguyen-vinh-222549-2131828-topaz-sharpen.jpeg",
+        link: "utah-climate-guide.html",
+        category: "Utah Climate",
+        tags: ["utah-climate", "seasonal-care", "pond-maintenance", "water-quality", "troubleshooting"]
+      },
+      {
+        title: "Natural vs. Liner Ponds: Which Is Better for Utah? Complete Comparison (2025)",
+        excerpt: "Compare natural and liner ponds for Utah's climate. Learn the pros and cons of each approach and make the best choice for your water garden project.",
+        image: "images/pexels-pixabay-158623-topaz-sharpen.jpeg",
+        link: "natural-vs-liner-ponds-utah-guide.html",
+        category: "Pond Design",
+        tags: ["pond-design", "pond-construction", "utah-climate", "pond-liners", "water-quality"]
+      },
+      {
+        title: "Permits and Zoning Laws for Building Ponds in Utah: Complete Guide (2025)",
+        excerpt: "Navigate Utah's permit and zoning requirements for pond construction. Learn about regulations, application processes, and compliance for your water garden project.",
+        image: "images/pexels-mikebirdy-242258-topaz-sharpen.jpeg",
+        link: "utah-pond-building-permits-guide.html",
+        category: "Pond Construction",
+        tags: ["pond-construction", "pond-design", "utah-climate", "seasonal-care"]
+      },
+      {
+        title: "Small Backyard Pond Ideas for Utah Homes: 15 Beautiful Designs (2025)",
+        excerpt: "Discover 15 beautiful small pond designs perfect for Utah backyards. From container ponds to mini water gardens, find the perfect design for your space.",
+        image: "images/pexels-susana-landivar-479713-1188195-topaz-denoise.jpeg",
+        link: "small-backyard-pond-ideas-utah.html",
+        category: "Pond Design",
+        tags: ["pond-design", "pond-construction", "utah-climate", "seasonal-care"]
+      },
+      {
+        title: "Clay Soil Ponds in Utah: Complete Guide to Building & Maintaining (2025)",
+        excerpt: "Learn how to build and maintain ponds in Utah's clay soil. Discover techniques for working with clay soil and creating successful water gardens.",
+        image: "images/pondDredging-768x614.webp",
+        link: "clay-soil-ponds-utah-guide.html",
+        category: "Pond Construction",
+        tags: ["pond-construction", "pond-design", "utah-climate", "water-quality"]
+      },
+      {
+        title: "Utah Pond Depth Guide: How Deep Should Your Pond Be? (2025)",
+        excerpt: "Learn the optimal pond depth for Utah's climate and how it affects fish survival, water quality, and overall pond health.",
+        image: "images/pexels-jimbear-1335960-topaz-sharpen.jpeg",
+        link: "pond-depth-utah-guide.html",
+        category: "Pond Design",
+        tags: ["pond-design", "pond-construction", "utah-climate", "fish-care", "water-quality"]
+      },
+      {
+        title: "DIY Pond Construction: Cost Breakdown for Utah Homeowners (2025)",
+        excerpt: "Get a detailed cost breakdown for building your own pond in Utah, including materials, equipment, and professional services.",
+        image: "images/pexels-marta-dzedyshko-1042863-2067508-topaz-denoise-sharpen.jpeg",
+        link: "diy-pond-cost-utah.html",
+        category: "Pond Construction",
+        tags: ["pond-construction", "pond-design", "utah-climate", "pond-equipment"]
+      },
+      {
+        title: "Best Pond Liner Options for Utah's Harsh Climate: Complete Guide (2025)",
+        excerpt: "Discover which pond liners work best in Utah's extreme temperatures and high altitude conditions.",
+        image: "images/pexels-printproper-2803523-topaz-sharpen.jpeg",
+        link: "pond-liners-utah-guide.html",
+        category: "Pond Equipment",
+        tags: ["pond-liners", "pond-equipment", "pond-construction", "utah-climate", "water-quality"]
+      }
+    ];
+
+    // Function to filter posts by tag
+    function filterPostsByTag(tag) {
+      const articlesList = document.querySelector('.articles-list');
+      const filteredPosts = blogPosts.filter(post => post.tags.includes(tag));
+      
+      // Clear current articles
+      articlesList.innerHTML = '';
+      
+      if (filteredPosts.length === 0) {
+        articlesList.innerHTML = '<p class="no-results">No articles found for this tag. <a href="#" onclick="displayAllPosts(); return false;">View all articles</a></p>';
+        return;
+      }
+      
+      // Add filtered articles
+      filteredPosts.forEach(post => {
+        const articleHTML = `
+          <article class="article-item">
+            <div class="article-image">
+              <img src="${post.image}" alt="${post.title}">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="article-category">${post.category}</span>
+                <span class="article-date">January 15, 2025</span>
+              </div>
+              <h3><a href="${post.link}">${post.title}</a></h3>
+              <p>${post.excerpt}</p>
+              <a href="${post.link}" class="read-more">Read More →</a>
+            </div>
+          </article>
+        `;
+        articlesList.innerHTML += articleHTML;
+      });
+      
+      // Update page title to show filtered results
+      const pageTitle = document.querySelector('.blog-main h2');
+      if (pageTitle) {
+        pageTitle.textContent = `Articles tagged: ${tag.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}`;
+      }
+    }
+
+    // Function to handle URL parameters
+    function handleURLParams() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tag = urlParams.get('tag');
+      
+      if (tag) {
+        filterPostsByTag(tag);
+        
+        // Highlight the active tag in the sidebar
+        const tagLinks = document.querySelectorAll('.tag-item');
+        tagLinks.forEach(link => {
+          if (link.getAttribute('href').includes(tag)) {
+            link.style.backgroundColor = 'var(--accent)';
+            link.style.color = 'white';
+          }
+        });
+      }
+    }
+
+    // Add click handlers to tag links
+    function addTagClickHandlers() {
+      const tagLinks = document.querySelectorAll('.tag-item');
+      tagLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          const tag = href.split('=')[1];
+          
+          // Update URL without page reload
+          const newURL = `index.html?tag=${tag}`;
+          window.history.pushState({tag: tag}, '', newURL);
+          
+          filterPostsByTag(tag);
+          
+          // Update active tag styling
+          tagLinks.forEach(l => {
+            l.style.backgroundColor = '';
+            l.style.color = '';
+          });
+          this.style.backgroundColor = 'var(--accent)';
+          this.style.color = 'white';
+        });
+      });
+    }
+
+    // Function to display all posts
+    function displayAllPosts() {
+      const articlesList = document.querySelector('.articles-list');
+      
+      // Clear current articles
+      articlesList.innerHTML = '';
+      
+      // Add all articles
+      blogPosts.forEach(post => {
+        const articleHTML = `
+          <article class="article-item">
+            <div class="article-image">
+              <img src="${post.image}" alt="${post.title}">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="article-category">${post.category}</span>
+                <span class="article-date">January 15, 2025</span>
+              </div>
+              <h3><a href="${post.link}">${post.title}</a></h3>
+              <p>${post.excerpt}</p>
+              <a href="${post.link}" class="read-more">Read More →</a>
+            </div>
+          </article>
+        `;
+        articlesList.innerHTML += articleHTML;
+      });
+      
+      // Reset page title
+      const pageTitle = document.querySelector('.blog-main h2');
+      if (pageTitle) {
+        pageTitle.textContent = 'Latest Articles';
+      }
+    }
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      handleURLParams();
+      addTagClickHandlers();
+      
+      // If no tag is selected, display all posts
+      const urlParams = new URLSearchParams(window.location.search);
+      const tag = urlParams.get('tag');
+      if (!tag) {
+        displayAllPosts();
+      }
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', function() {
+      handleURLParams();
+    });
+  </script>
+</body>
+</html> 

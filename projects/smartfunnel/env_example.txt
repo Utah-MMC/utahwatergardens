@@ -1,0 +1,19 @@
+# SmartFunnel Configuration
+# Copy this file to .env and fill in your actual values
+
+# OpenAI API Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Google Sheets Configuration
+GOOGLE_SHEETS_CREDENTIALS_FILE=credentials.json
+GOOGLE_SHEET_ID=your_google_sheet_id_here
+
+# Email Configuration
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASSWORD=your_app_password_here
+
+# Scraping Configuration
+SCRAPING_DELAY=2
+MAX_RETRIES=3 

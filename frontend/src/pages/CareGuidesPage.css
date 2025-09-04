@@ -1,0 +1,813 @@
+/* Care Guides Page Styles */
+.care-guides-page {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  padding: 0 40px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  background: #f59e0b;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: transparent;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.secondary-button:hover {
+  background: white;
+  color: #059669;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Guides Section */
+.guides-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.guides-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.guides-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.guide-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.guide-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.guide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.guide-card:hover .guide-image img {
+  transform: scale(1.05);
+}
+
+.guide-info {
+  padding: 25px;
+}
+
+.guide-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #059669;
+}
+
+.guide-info > p {
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.guide-topics h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.guide-topics ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.guide-topics li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.guide-topics li:before {
+  content: "📖";
+  color: #10b981;
+  position: absolute;
+  left: 0;
+}
+
+.guide-details {
+  margin-bottom: 20px;
+}
+
+.guide-difficulty,
+.guide-duration {
+  margin-bottom: 10px;
+  color: #64748b;
+}
+
+.guide-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #059669;
+  margin-bottom: 20px;
+}
+
+.guide-cta {
+  background: #059669;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.guide-cta:hover {
+  background: #047857;
+  transform: translateY(-2px);
+}
+
+/* Tips Section */
+.tips-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.tips-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.tips-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.tip-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-3px);
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.tip-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #059669;
+}
+
+.tip-content p {
+  color: #64748b;
+  margin: 0;
+}
+
+/* Troubleshooting Section */
+.troubleshooting-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.troubleshooting-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.troubleshooting-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.troubleshooting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.troubleshooting-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.troubleshooting-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.troubleshooting-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.troubleshooting-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.troubleshooting-card:hover .troubleshooting-image img {
+  transform: scale(1.05);
+}
+
+.troubleshooting-info {
+  padding: 25px;
+}
+
+.troubleshooting-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #059669;
+}
+
+.troubleshooting-info > p {
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.troubleshooting-causes h4,
+.troubleshooting-solutions h4,
+.troubleshooting-prevention h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.troubleshooting-causes ul,
+.troubleshooting-solutions ul,
+.troubleshooting-prevention ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.troubleshooting-causes li,
+.troubleshooting-solutions li,
+.troubleshooting-prevention li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.troubleshooting-causes li:before {
+  content: "⚠️";
+  color: #ef4444;
+  position: absolute;
+  left: 0;
+}
+
+.troubleshooting-solutions li:before {
+  content: "✅";
+  color: #10b981;
+  position: absolute;
+  left: 0;
+}
+
+.troubleshooting-prevention li:before {
+  content: "🛡️";
+  color: #3b82f6;
+  position: absolute;
+  left: 0;
+}
+
+.troubleshooting-cta {
+  background: #059669;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.troubleshooting-cta:hover {
+  background: #047857;
+  transform: translateY(-2px);
+}
+
+/* Seasonal Section */
+.seasonal-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.seasonal-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.seasonal-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.seasonal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.seasonal-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seasonal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.seasonal-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.seasonal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.seasonal-card:hover .seasonal-image img {
+  transform: scale(1.05);
+}
+
+.seasonal-info {
+  padding: 25px;
+}
+
+.seasonal-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #059669;
+}
+
+.seasonal-info > p {
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.seasonal-timeline,
+.seasonal-priority {
+  margin-bottom: 15px;
+  color: #64748b;
+}
+
+.seasonal-tasks h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.seasonal-tasks ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.seasonal-tasks li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.seasonal-tasks li:before {
+  content: "📅";
+  color: #10b981;
+  position: absolute;
+  left: 0;
+}
+
+.seasonal-cta {
+  background: #059669;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.seasonal-cta:hover {
+  background: #047857;
+  transform: translateY(-2px);
+}
+
+/* Advanced Section */
+.advanced-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.advanced-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.advanced-section > .container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #64748b;
+}
+
+.advanced-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.advanced-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advanced-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.advanced-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.advanced-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.advanced-card:hover .advanced-image img {
+  transform: scale(1.05);
+}
+
+.advanced-info {
+  padding: 25px;
+}
+
+.advanced-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #059669;
+}
+
+.advanced-info > p {
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.advanced-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.advanced-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.advanced-content li {
+  padding: 5px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 20px;
+}
+
+.advanced-content li:before {
+  content: "🎓";
+  color: #10b981;
+  position: absolute;
+  left: 0;
+}
+
+.advanced-cta {
+  background: #059669;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.advanced-cta:hover {
+  background: #047857;
+  transform: translateY(-2px);
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.why-choose-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #059669;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.benefit-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #059669;
+}
+
+.benefit-item p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Contact CTA */
+.contact-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #059669;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .hero-content {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .guides-grid,
+  .troubleshooting-grid,
+  .advanced-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .seasonal-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .tip-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .guides-section h2,
+  .tips-section h2,
+  .troubleshooting-section h2,
+  .seasonal-section h2,
+  .advanced-section h2,
+  .why-choose-section h2,
+  .contact-cta h2 {
+    font-size: 2rem;
+  }
+  
+  .guide-card,
+  .troubleshooting-card,
+  .advanced-card {
+    margin: 0 10px;
+  }
+  
+  .seasonal-card {
+    margin: 0 10px;
+  }
+}
