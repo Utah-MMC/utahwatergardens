@@ -282,29 +282,84 @@
 
 /* Services Section */
 .services-overview {
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 2rem 0;
+  background: linear-gradient(to bottom, #1e40af 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.services-overview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.1) 20%,
+    rgba(0, 0, 0, 0.05) 40%,
+    rgba(30, 64, 175, 0.6) 70%,
+    rgba(30, 64, 175, 0.3) 90%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.services-overview::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(2px);
+  }
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 3;
 }
 
 .section-header h2 {
   font-size: 3rem;
   font-weight: 800;
-  color: #1e293b;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  background: linear-gradient(to bottom, #ffffff 0%, #1e40af 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  margin-bottom: 1rem;
+  text-shadow: none;
 }
 
 .section-header p {
   font-size: 1.2rem;
-  color: #64748b;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(30, 64, 175, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -314,7 +369,9 @@
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 3;
 }
 
 .service-card {
@@ -486,6 +543,147 @@
   border-radius: 12px;
 }
 
+/* Full Width Custom Solution CTA */
+.custom-solution-cta {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-solution-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.custom-solution-cta::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-background {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1e40af 100%);
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 70%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+.cta-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.custom-solution-cta .cta-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.custom-solution-cta .cta-content h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.custom-solution-cta .cta-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.custom-solution-cta .cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.custom-solution-cta .cta-buttons .btn {
+  min-width: 200px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.custom-solution-cta .cta-buttons .btn-primary {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.custom-solution-cta .cta-buttons .btn-primary:hover {
+  background: #e55a2b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.custom-solution-cta .cta-buttons .btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.custom-solution-cta .cta-buttons .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
 /* Responsive Design for Services */
 @media (max-width: 1200px) {
   .services-grid {
@@ -638,6 +836,30 @@
   }
   
   .cta-content p {
+    font-size: 1rem;
+  }
+  
+  /* Full Width CTA Responsive */
+  .custom-solution-cta {
+    padding: 2rem 0;
+  }
+  
+  .custom-solution-cta .cta-content h3 {
+    font-size: 2rem;
+  }
+  
+  .custom-solution-cta .cta-content p {
+    font-size: 1.1rem;
+  }
+  
+  .custom-solution-cta .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .custom-solution-cta .cta-buttons .btn {
+    min-width: 100%;
+    padding: 0.9rem 1.5rem;
     font-size: 1rem;
   }
   

@@ -233,7 +233,7 @@ const HomePage = () => {
         <div className="container">
           <div className="section-header">
             <h2>Our Services</h2>
-            <p>Comprehensive water garden solutions from design to maintenance</p>
+            <p>Your full-service pond business offering complete water garden solutions from design to maintenance</p>
           </div>
           <div className="services-grid">
             <div className="service-card">
@@ -317,14 +317,18 @@ const HomePage = () => {
             </div>
           </div>
           
-          <div className="services-cta">
-            <div className="cta-content">
-              <h3>Need a Custom Solution?</h3>
-              <p>Every property is unique. Let us create a water feature that perfectly fits your space and lifestyle.</p>
-              <div className="cta-buttons">
-                <a href="tel:(801) 590-8516" className="btn btn-primary">Call for Quote</a>
-                <Link to="/contact" className="btn btn-outline">Schedule Consultation</Link>
-              </div>
+        </div>
+      </section>
+
+      {/* Full Width CTA Section */}
+      <section className="custom-solution-cta">
+        <div className="cta-background">
+          <div className="cta-content">
+            <h3>Need a Custom Solution?</h3>
+            <p>Every property is unique. Let us create a water feature that perfectly fits your space and lifestyle.</p>
+            <div className="cta-buttons">
+              <a href="tel:(801) 590-8516" className="btn btn-primary btn-large">Call for Quote</a>
+              <Link to="/contact" className="btn btn-secondary btn-large">Schedule Consultation</Link>
             </div>
           </div>
         </div>

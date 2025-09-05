@@ -18,7 +18,7 @@ const Header = ({ className = '' }) => {
     if (activeDropdown === dropdownName) {
       setActiveDropdown(null);
     } else {
-      setActiveDropdown(null);
+      setActiveDropdown(dropdownName);
     }
   };
 

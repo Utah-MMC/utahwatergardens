@@ -118,8 +118,8 @@
 .footer-main {
   display: flex;
   align-items: flex-start;
-  padding: 4rem 0 3rem 0; /* Reduced padding for more compact footer */
-  gap: 4rem;
+  padding: 1rem 0 0.5rem 0; /* Extremely compact padding */
+  gap: 1.5rem;
   position: relative;
   z-index: 2; /* Ensure content appears above the wave */
 }
@@ -154,7 +154,7 @@
 
 .footer-links {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   flex: 2;
 }
 
@@ -163,17 +163,17 @@
 }
 
 .footer-column h4 {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .footer-column h5 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin: 2rem 0 1rem 0;
+  margin: 0.75rem 0 0.25rem 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.8);
@@ -186,13 +186,13 @@
 }
 
 .footer-column li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.125rem;
 }
 
 .footer-column a {
   color: white;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 400;
   transition: color 0.3s ease;
 }
@@ -289,12 +289,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 0.5rem 0;
 }
 
 .footer-bottom-left p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -314,8 +314,8 @@
 }
 
 .social-links a {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -332,7 +332,7 @@
 }
 
 .social-links i {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 /* Responsive Design */
@@ -348,8 +348,8 @@
   
   .footer-main {
     flex-direction: column;
-    gap: 3rem;
-    padding: 3.5rem 0 3rem 0; /* Reduced padding for compact footer */
+    gap: 1rem;
+    padding: 1.25rem 0 0.75rem 0; /* Ultra compact padding */
   }
   
   .footer-brand {
@@ -384,8 +384,8 @@
   }
   
   .footer-main {
-    padding: 3rem 0 2rem 0; /* Reduced padding for compact footer */
-    gap: 2rem;
+    padding: 1rem 0 0.5rem 0; /* Ultra compact padding */
+    gap: 1rem;
   }
   
   .brand-line {
@@ -436,7 +436,7 @@
   }
   
   .footer-main {
-    padding: 2.5rem 0 2rem 0; /* Reduced padding for compact footer */
+    padding: 0.75rem 0 0.5rem 0; /* Ultra compact padding */
   }
   
   .brand-line {

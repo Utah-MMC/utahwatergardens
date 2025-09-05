@@ -128,8 +128,8 @@ const Footer = () => {
           </div>
           <div className="footer-bottom-right">
             <div className="social-links">
-              <a href="https://instagram.com/utahwatergardens" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i className="fab fa-instagram"></i>
+              <a href="https://facebook.com/utahwatergardens" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i className="fab fa-facebook"></i>
               </a>
             </div>
           </div>
