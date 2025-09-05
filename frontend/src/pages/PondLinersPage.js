@@ -171,7 +171,7 @@ const PondLinersPage = () => {
       <section 
         className="hero-section"
         style={{
-          backgroundImage: `linear-gradient(rgba(5, 150, 105, 0.8), rgba(16, 185, 129, 0.8)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundImage: `linear-gradient(rgba(5, 150, 105, 0.8), rgba(16, 185, 129, 0.8)), url('/images/pond_liner_roll.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
