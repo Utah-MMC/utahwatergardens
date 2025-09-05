@@ -7,12 +7,12 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
   color: white;
   padding: 80px 0;
   display: flex;
   align-items: center;
-  min-height: 500px;
+  min-height: 100vh;
+  position: relative;
 }
 
 .hero-content {
@@ -113,7 +113,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -247,7 +247,7 @@
 
 .methods-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
@@ -344,7 +344,7 @@
 
 .pond-types-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
@@ -433,7 +433,7 @@
 
 .phases-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
@@ -533,7 +533,7 @@
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
@@ -591,7 +591,7 @@
 
 .reasons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
@@ -679,6 +679,7 @@
     flex-direction: column;
     text-align: center;
     padding: 60px 20px;
+    min-height: 100vh;
   }
   
   .hero-content {
@@ -695,9 +696,12 @@
   }
   
   .services-grid,
-  .methods-grid,
   .pond-types-grid,
-  .phases-grid,
+  .phases-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .methods-grid,
   .benefits-grid,
   .reasons-grid {
     grid-template-columns: 1fr;

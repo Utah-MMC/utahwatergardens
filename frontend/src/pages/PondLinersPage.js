@@ -168,7 +168,15 @@ const PondLinersPage = () => {
   return (
     <div className="pond-liners-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(5, 150, 105, 0.8), rgba(16, 185, 129, 0.8)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="hero-content">
           <h1>Pond Liners & Underlayment</h1>
           <p>Professional-grade pond liners and underlayment materials to create watertight, long-lasting ponds. From small garden features to large commercial installations.</p>
@@ -485,7 +493,15 @@ const PondLinersPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(5, 150, 105, 0.8), rgba(16, 185, 129, 0.8)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Build Your Pond?</h2>
           <p>Our experts can help you choose the perfect liner and underlayment for your project</p>

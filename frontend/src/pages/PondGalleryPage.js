@@ -89,7 +89,15 @@ const PondGalleryPage = () => {
 
   return (
     <div className="pond-gallery-page">
-      <div className="hero-section">
+      <div 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h1>Pond Gallery</h1>
           <p>Explore our portfolio of beautiful pond and water feature projects</p>

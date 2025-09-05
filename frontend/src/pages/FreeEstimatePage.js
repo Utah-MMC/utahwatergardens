@@ -73,7 +73,15 @@ This request was submitted from the Utah Water Gardens website.
   return (
     <div className="free-estimate-page">
       <div className="estimate-hero">
-        <div className="hero-background">
+        <div 
+          className="hero-background"
+          style={{
+            backgroundImage: `url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">

@@ -1,5 +1,5 @@
 .header {
-  background: rgba(0, 0, 0, 0.1);
+  background: transparent;
   color: white;
   position: fixed;
   top: 0;
@@ -18,7 +18,7 @@
 
 /* Top Section - Contact Info */
 .header-top {
-  background: rgba(0, 0, 0, 0.1);
+  background: transparent;
   padding: 0.25rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -60,6 +60,7 @@
   white-space: nowrap;
   display: inline-block;
   flex-shrink: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .contact-link:hover {
@@ -73,6 +74,7 @@
   white-space: nowrap;
   display: inline-block;
   flex-shrink: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* Main Header Section */
@@ -129,7 +131,7 @@
   font-weight: 700;
   color: white;
   margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   line-height: 1.2;
 }
 
@@ -139,6 +141,7 @@
   margin: 0;
   font-weight: 400;
   letter-spacing: 0.4px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .lotus-logo svg {
@@ -206,6 +209,7 @@
   position: relative;
   overflow: hidden;
   white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .dropdown-toggle {

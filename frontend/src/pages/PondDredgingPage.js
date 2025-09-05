@@ -214,7 +214,15 @@ const PondDredgingPage = () => {
   return (
     <div className="pond-dredging-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(15, 118, 110, 0.8), rgba(20, 184, 166, 0.8)), url('/images/IMG_2779-topaz-enhance-2x-sharpen.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="hero-content">
           <h1>Pond Dredging Services</h1>
           <p>Professional pond dredging services to restore depth, improve water quality, and enhance the health and beauty of your pond. Our expert team uses advanced equipment and techniques for optimal results.</p>
@@ -224,7 +232,7 @@ const PondDredgingPage = () => {
           </div>
         </div>
         <div className="hero-image">
-          <img src="/images/IMG_2782.jpg" alt="Professional pond dredging services for water quality improvement" />
+          <img src="/images/IMG_2779-topaz-enhance-2x-sharpen.jpeg" alt="Professional pond dredging services for water quality improvement" />
         </div>
       </section>
 

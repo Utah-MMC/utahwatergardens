@@ -39,6 +39,10 @@ const PageHero = ({
       alt: 'Stunning pond landscape with waterfall and rock features'
     },
     {
+      src: '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+      alt: 'Beautiful pond landscape with waterfall and rock features'
+    },
+    {
       src: '/images/koi.webp',
       alt: 'Vibrant koi pond with colorful fish and crystal clear water'
     },
@@ -64,19 +68,22 @@ const PageHero = ({
     }
   ];
 
-  // Get random image if no specific image is provided
-  const getRandomImage = () => {
+  // Get default image if no specific image is provided
+  const getDefaultImage = () => {
     if (backgroundImage) {
       return {
         src: backgroundImage,
         alt: backgroundImageAlt || 'Beautiful water garden'
       };
     }
-    const randomIndex = Math.floor(Math.random() * pondImages.length);
-    return pondImages[randomIndex];
+    // Use the specified default hero image
+    return {
+      src: '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+      alt: 'Beautiful pond landscape with waterfall and rock features'
+    };
   };
 
-  const selectedImage = getRandomImage();
+  const selectedImage = getDefaultImage();
 
   return (
     <div className="page-hero-wrapper">

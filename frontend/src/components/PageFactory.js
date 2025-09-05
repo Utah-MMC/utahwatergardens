@@ -45,7 +45,7 @@ export const createServiceAreaPage = (areaData) => {
       heroData={{
         title: `Pond Services in ${areaData.areaName}`,
         subtitle: `Professional pond maintenance, cleaning, and construction services in ${areaData.areaName}, Utah`,
-        backgroundImage: areaData.heroImage || '/images/IMG_2770.jpg',
+        backgroundImage: areaData.heroImage || '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
         backgroundImageAlt: `Pond services in ${areaData.areaName}, Utah`
       }}
       className="service-area-page"
@@ -100,7 +100,7 @@ export const createProductPage = (productData) => {
       heroData={{
         title: productData.name,
         subtitle: productData.description,
-        backgroundImage: productData.heroImage || '/images/IMG_2770.jpg',
+        backgroundImage: productData.heroImage || '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
         backgroundImageAlt: productData.name
       }}
       className="product-page"
@@ -146,7 +146,7 @@ export const createServicePage = (serviceData) => {
       heroData={{
         title: serviceData.name,
         subtitle: serviceData.description,
-        backgroundImage: serviceData.heroImage || '/images/IMG_2770.jpg',
+        backgroundImage: serviceData.heroImage || '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
         backgroundImageAlt: serviceData.name
       }}
       className="service-page"
@@ -203,7 +203,7 @@ export const createResourcePage = (resourceData) => {
       heroData={{
         title: resourceData.title,
         subtitle: resourceData.description,
-        backgroundImage: resourceData.heroImage || '/images/IMG_2770.jpg',
+        backgroundImage: resourceData.heroImage || '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
         backgroundImageAlt: resourceData.title
       }}
       className="resource-page"
