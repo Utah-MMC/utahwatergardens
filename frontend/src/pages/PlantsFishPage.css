@@ -193,6 +193,8 @@
   text-align: center;
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   color: white;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center the full-width element */
 }
 
 .contact-cta h2 {
@@ -280,6 +282,11 @@
   .services-section,
   .contact-cta {
     padding: 3rem 0;
+  }
+  
+  .contact-cta {
+    width: 100%; /* Reset to container width on mobile */
+    margin-left: 0; /* Reset margin on mobile */
   }
   
   .plants-section h2,

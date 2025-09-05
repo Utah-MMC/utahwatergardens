@@ -146,6 +146,17 @@
   .page-hero-subtitle {
     font-size: 1.1rem;
   }
+  
+  /* Resources page mobile adjustments */
+  .resources-page .page-hero-content {
+    justify-content: center; /* Center on mobile */
+    padding-right: 0;
+  }
+  
+  .resources-page .page-hero-text-content {
+    max-width: 90%; /* Use most of the width on mobile */
+    text-align: center; /* Center text on mobile */
+  }
 }
 
 /* Alternative style without background image */
@@ -184,22 +195,21 @@
   transform: scale(1.1); /* Slightly zoom in to focus on the driver area */
 }
 
-.resources-page .page-hero-text-content {
-  background: rgba(0, 0, 0, 0.4); /* Slightly more transparent to show driver better */
-  backdrop-filter: blur(8px); /* Reduce blur to show driver more clearly */
-  position: relative;
-  top: 20%; /* Move the overlay down to avoid covering the logo area */
-  margin-top: 2rem; /* Add some margin to create space */
-}
-
-/* Move the text content to the right side to avoid the worker's logo area */
+/* Position text overlay in the red circle area (right side) */
 .resources-page .page-hero-content {
   display: flex;
   justify-content: flex-end; /* Align content to the right */
+  align-items: center; /* Center vertically */
   padding-right: 2rem; /* Add padding from the right edge */
 }
 
 .resources-page .page-hero-text-content {
-  max-width: 600px; /* Reduce width to fit better on the right side */
-  margin-right: 0; /* Remove auto margin since we're positioning manually */
+  background: rgba(0, 0, 0, 0.4); /* Slightly more transparent to show driver better */
+  backdrop-filter: blur(8px); /* Reduce blur to show driver more clearly */
+  position: relative;
+  max-width: 500px; /* Reduce width to fit in the red circle area */
+  margin: 0; /* Remove all margins */
+  padding: 2rem; /* Add padding for better text spacing */
+  border-radius: 8px; /* Add rounded corners */
+  text-align: left; /* Align text to left within the overlay */
 }

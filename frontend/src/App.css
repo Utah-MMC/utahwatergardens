@@ -75,6 +75,36 @@ main {
   transform: translateY(-2px);
 }
 
+/* Global CTA Full-Width Rule */
+.contact-cta,
+.shop-cta,
+.shop-cta-section,
+.services-cta,
+.service-cta,
+.about-cta,
+.newsletter-signup,
+.custom-solution-cta,
+.get-started-cta {
+  width: 100vw !important; /* Full viewport width */
+  margin-left: calc(-50vw + 50%) !important; /* Center the full-width element */
+}
+
+/* Reset full-width on mobile for CTA sections */
+@media (max-width: 768px) {
+  .contact-cta,
+  .shop-cta,
+  .shop-cta-section,
+  .services-cta,
+  .service-cta,
+  .about-cta,
+  .newsletter-signup,
+  .custom-solution-cta,
+  .get-started-cta {
+    width: 100% !important; /* Reset to container width on mobile */
+    margin-left: 0 !important; /* Reset margin on mobile */
+  }
+}
+
 /* Utility Classes */
 .text-center {
   text-align: center;

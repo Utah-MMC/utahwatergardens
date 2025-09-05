@@ -78,9 +78,24 @@ const PondSuppliesPage = () => {
   return (
     <div className="pond-supplies-page">
       <div className="hero-section">
-        <div className="container">
-          <h1>Pond Supplies</h1>
-          <p>Everything you need to build, maintain, and enhance your pond</p>
+        <div className="hero-video">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="hero-video-bg"
+          >
+            <source src="/videos/supplies_prob4.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="hero-overlay"></div>
+        </div>
+        <div className="hero-content">
+          <div className="container">
+            <h1>Pond Supplies</h1>
+            <p>Everything you need to build, maintain, and enhance your pond</p>
+          </div>
         </div>
       </div>
 
