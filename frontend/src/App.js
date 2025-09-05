@@ -1,161 +1,178 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header.js';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import HomePage from './pages/HomePage';
-import ServicesPage from './pages/ServicesPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import ShopPage from './pages/ShopPage';
-import ResourcesPage from './pages/ResourcesPage';
+import PerformanceMonitor from './components/PerformanceMonitor';
 
-// New pages based on sitemap
-import PlantsFishPage from './pages/PlantsFishPage';
-import PondServicesPage from './pages/PondServicesPage';
-import PondSuppliesPage from './pages/PondSuppliesPage';
-import PondGalleryPage from './pages/PondGalleryPage';
+// Lazy load components for better performance
+const HomePage = lazy(() => import('./pages/HomePage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const ShopPage = lazy(() => import('./pages/ShopPage'));
+const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
+const PlantsFishPage = lazy(() => import('./pages/PlantsFishPage'));
+const PondServicesPage = lazy(() => import('./pages/PondServicesPage'));
+const PondSuppliesPage = lazy(() => import('./pages/PondSuppliesPage'));
+const PondGalleryPage = lazy(() => import('./pages/PondGalleryPage'));
+const FreeEstimatePage = lazy(() => import('./pages/FreeEstimatePage'));
 
-// Individual dropdown menu pages
-import AquaticPlantsPage from './pages/AquaticPlantsPage';
-import KoiGoldfishPage from './pages/KoiGoldfishPage';
-import WaterLiliesPage from './pages/WaterLiliesPage';
-import FloatingPlantsPage from './pages/FloatingPlantsPage';
-import PondDesignBuildPage from './pages/PondDesignBuildPage';
-import FiltrationSystemsPage from './pages/FiltrationSystemsPage';
-import MarginalPlantsPage from './pages/MarginalPlantsPage';
-import PondMaintenancePage from './pages/PondMaintenancePage';
-import WaterQualityTestingPage from './pages/WaterQualityTestingPage';
-import PondCleaningPage from './pages/PondCleaningPage';
-import EquipmentRepairPage from './pages/EquipmentRepairPage';
-import SeasonalServicesPage from './pages/SeasonalServicesPage';
-import PumpsAerationPage from './pages/PumpsAerationPage';
-import PondLinersPage from './pages/PondLinersPage';
-import WaterTreatmentsPage from './pages/WaterTreatmentsPage';
-import PondLightingPage from './pages/PondLightingPage';
-import ToolsAccessoriesPage from './pages/ToolsAccessoriesPage';
-import CareGuidesPage from './pages/CareGuidesPage';
-import PondTipsTricksPage from './pages/PondTipsTricksPage';
-import SeasonalCarePage from './pages/SeasonalCarePage';
-import TroubleshootingPage from './pages/TroubleshootingPage';
-import HarvestingPage from './pages/HarvestingPage';
-import LakeDredgingPage from './pages/LakeDredgingPage';
-import PondDredgingPage from './pages/PondDredgingPage';
-import TruxorServicePage from './pages/TruxorServicePage';
-import VideoTutorialsPage from './pages/VideoTutorialsPage';
-import FAQPage from './pages/FAQPage';
-import FreeEstimatePage from './pages/FreeEstimatePage';
+// Lazy load service area pages
+const SaltLakeCityPage = lazy(() => import('./pages/ServiceAreas/SaltLakeCityPage'));
+const WestJordanPage = lazy(() => import('./pages/ServiceAreas/WestJordanPage'));
+const SandyPage = lazy(() => import('./pages/ServiceAreas/SandyPage'));
+const MurrayPage = lazy(() => import('./pages/ServiceAreas/MurrayPage'));
+const WestValleyCityPage = lazy(() => import('./pages/ServiceAreas/WestValleyCityPage'));
+const SouthJordanPage = lazy(() => import('./pages/ServiceAreas/SouthJordanPage'));
+const RivertonPage = lazy(() => import('./pages/ServiceAreas/RivertonPage'));
+const HerrimanPage = lazy(() => import('./pages/ServiceAreas/HerrimanPage'));
+const BluffdalePage = lazy(() => import('./pages/ServiceAreas/BluffdalePage'));
+const DraperPage = lazy(() => import('./pages/ServiceAreas/DraperPage'));
+const MidvalePage = lazy(() => import('./pages/ServiceAreas/MidvalePage'));
+const TaylorsvillePage = lazy(() => import('./pages/ServiceAreas/TaylorsvillePage'));
+const KearnsPage = lazy(() => import('./pages/ServiceAreas/KearnsPage'));
+const MagnaPage = lazy(() => import('./pages/ServiceAreas/MagnaPage'));
+const MillcreekPage = lazy(() => import('./pages/ServiceAreas/MillcreekPage'));
+const HolladayPage = lazy(() => import('./pages/ServiceAreas/HolladayPage'));
+const CottonwoodHeightsPage = lazy(() => import('./pages/ServiceAreas/CottonwoodHeightsPage'));
+const ClearfieldPage = lazy(() => import('./pages/ServiceAreas/ClearfieldPage'));
+const BountifulPage = lazy(() => import('./pages/ServiceAreas/BountifulPage'));
+const KaysvillePage = lazy(() => import('./pages/ServiceAreas/KaysvillePage'));
+const FarmingtonPage = lazy(() => import('./pages/ServiceAreas/FarmingtonPage'));
+const CentervillePage = lazy(() => import('./pages/ServiceAreas/CentervillePage'));
+const NorthSaltLakePage = lazy(() => import('./pages/ServiceAreas/NorthSaltLakePage'));
+const WoodsCrossPage = lazy(() => import('./pages/ServiceAreas/WoodsCrossPage'));
+const SyracusePage = lazy(() => import('./pages/ServiceAreas/SyracusePage'));
+const ClintonPage = lazy(() => import('./pages/ServiceAreas/ClintonPage'));
+const RoyPage = lazy(() => import('./pages/ServiceAreas/RoyPage'));
+const SouthOgdenPage = lazy(() => import('./pages/ServiceAreas/SouthOgdenPage'));
+const WashingtonTerracePage = lazy(() => import('./pages/ServiceAreas/WashingtonTerracePage'));
+const RiverdalePage = lazy(() => import('./pages/ServiceAreas/RiverdalePage'));
+const PleasantViewPage = lazy(() => import('./pages/ServiceAreas/PleasantViewPage'));
+const NorthOgdenPage = lazy(() => import('./pages/ServiceAreas/NorthOgdenPage'));
+const OgdenPage = lazy(() => import('./pages/ServiceAreas/OgdenPage'));
+const LaytonPage = lazy(() => import('./pages/ServiceAreas/LaytonPage'));
+const LehiPage = lazy(() => import('./pages/ServiceAreas/LehiPage'));
+const AmericanForkPage = lazy(() => import('./pages/ServiceAreas/AmericanForkPage'));
+const PleasantGrovePage = lazy(() => import('./pages/ServiceAreas/PleasantGrovePage'));
+const LindonPage = lazy(() => import('./pages/ServiceAreas/LindonPage'));
+const SpanishForkPage = lazy(() => import('./pages/ServiceAreas/SpanishForkPage'));
+const SpringvillePage = lazy(() => import('./pages/ServiceAreas/SpringvillePage'));
+const MapletonPage = lazy(() => import('./pages/ServiceAreas/MapletonPage'));
+const PaysonPage = lazy(() => import('./pages/ServiceAreas/PaysonPage'));
+const SalemPage = lazy(() => import('./pages/ServiceAreas/SalemPage'));
+const CedarHillsPage = lazy(() => import('./pages/ServiceAreas/CedarHillsPage'));
+const AlpinePage = lazy(() => import('./pages/ServiceAreas/AlpinePage'));
+const HighlandPage = lazy(() => import('./pages/ServiceAreas/HighlandPage'));
+const SaratogaSpringsPage = lazy(() => import('./pages/ServiceAreas/SaratogaSpringsPage'));
+const EagleMountainPage = lazy(() => import('./pages/ServiceAreas/EagleMountainPage'));
+const CedarValleyPage = lazy(() => import('./pages/ServiceAreas/CedarValleyPage'));
+const GenolaPage = lazy(() => import('./pages/ServiceAreas/GenolaPage'));
+const GoshenPage = lazy(() => import('./pages/ServiceAreas/GoshenPage'));
+const WoodlandHillsPage = lazy(() => import('./pages/ServiceAreas/WoodlandHillsPage'));
+const ProvoPage = lazy(() => import('./pages/ServiceAreas/ProvoPage'));
+const OremPage = lazy(() => import('./pages/ServiceAreas/OremPage'));
+const KamasPage = lazy(() => import('./pages/ServiceAreas/KamasPage'));
+const OakleyPage = lazy(() => import('./pages/ServiceAreas/OakleyPage'));
+const FrancisPage = lazy(() => import('./pages/ServiceAreas/FrancisPage'));
+const HoytsvillePage = lazy(() => import('./pages/ServiceAreas/HoytsvillePage'));
+const PeoaPage = lazy(() => import('./pages/ServiceAreas/PeoaPage'));
+const SamakPage = lazy(() => import('./pages/ServiceAreas/SamakPage'));
+const SnydervillePage = lazy(() => import('./pages/ServiceAreas/SnydervillePage'));
+const PepperwoodPage = lazy(() => import('./pages/ServiceAreas/PepperwoodPage'));
+const RedLedgesPage = lazy(() => import('./pages/ServiceAreas/RedLedgesPage'));
+const GrantsvillePage = lazy(() => import('./pages/ServiceAreas/GrantsvillePage'));
+const StansburyParkPage = lazy(() => import('./pages/ServiceAreas/StansburyParkPage'));
+const LakePointPage = lazy(() => import('./pages/ServiceAreas/LakePointPage'));
+const ErdaPage = lazy(() => import('./pages/ServiceAreas/ErdaPage'));
+const StocktonPage = lazy(() => import('./pages/ServiceAreas/StocktonPage'));
+const VernonPage = lazy(() => import('./pages/ServiceAreas/VernonPage'));
+const WendoverPage = lazy(() => import('./pages/ServiceAreas/WendoverPage'));
+const DugwayPage = lazy(() => import('./pages/ServiceAreas/DugwayPage'));
+const IbapahPage = lazy(() => import('./pages/ServiceAreas/IbapahPage'));
+const HeberCityPage = lazy(() => import('./pages/ServiceAreas/HeberCityPage'));
+const MidwayPage = lazy(() => import('./pages/ServiceAreas/MidwayPage'));
+const CedarCityPage = lazy(() => import('./pages/ServiceAreas/CedarCityPage'));
+const StGeorgePage = lazy(() => import('./pages/ServiceAreas/StGeorgePage'));
+const MesquitePage = lazy(() => import('./pages/ServiceAreas/MesquitePage'));
+const NephiPage = lazy(() => import('./pages/ServiceAreas/NephiPage'));
+const MonaPage = lazy(() => import('./pages/ServiceAreas/MonaPage'));
+const MantiPage = lazy(() => import('./pages/ServiceAreas/MantiPage'));
+const EphraimPage = lazy(() => import('./pages/ServiceAreas/EphraimPage'));
+const RichfieldPage = lazy(() => import('./pages/ServiceAreas/RichfieldPage'));
+const SalinaPage = lazy(() => import('./pages/ServiceAreas/SalinaPage'));
+const DeltaPage = lazy(() => import('./pages/ServiceAreas/DeltaPage'));
+const FillmorePage = lazy(() => import('./pages/ServiceAreas/FillmorePage'));
+const BeaverPage = lazy(() => import('./pages/ServiceAreas/BeaverPage'));
+const MilfordPage = lazy(() => import('./pages/ServiceAreas/MilfordPage'));
+const EnochPage = lazy(() => import('./pages/ServiceAreas/EnochPage'));
+const ParowanPage = lazy(() => import('./pages/ServiceAreas/ParowanPage'));
+const HurricanePage = lazy(() => import('./pages/ServiceAreas/HurricanePage'));
+const LaVerkinPage = lazy(() => import('./pages/ServiceAreas/LaVerkinPage'));
+const VirginPage = lazy(() => import('./pages/ServiceAreas/VirginPage'));
+const SpringdalePage = lazy(() => import('./pages/ServiceAreas/SpringdalePage'));
+const IvinsPage = lazy(() => import('./pages/ServiceAreas/IvinsPage'));
+const SantaClaraPage = lazy(() => import('./pages/ServiceAreas/SantaClaraPage'));
+const WashingtonPage = lazy(() => import('./pages/ServiceAreas/WashingtonPage'));
+const LeedsPage = lazy(() => import('./pages/ServiceAreas/LeedsPage'));
+const CoalvillePage = lazy(() => import('./pages/ServiceAreas/CoalvillePage'));
+const ParkCityPage = lazy(() => import('./pages/ServiceAreas/ParkCityPage'));
+const TooelePage = lazy(() => import('./pages/ServiceAreas/TooelePage'));
 
-// Service Area Pages
-import SaltLakeCityPage from './pages/ServiceAreas/SaltLakeCityPage';
-import WestJordanPage from './pages/ServiceAreas/WestJordanPage';
-import SandyPage from './pages/ServiceAreas/SandyPage';
-import MurrayPage from './pages/ServiceAreas/MurrayPage';
-import WestValleyCityPage from './pages/ServiceAreas/WestValleyCityPage';
-import SouthJordanPage from './pages/ServiceAreas/SouthJordanPage';
-import RivertonPage from './pages/ServiceAreas/RivertonPage';
-import HerrimanPage from './pages/ServiceAreas/HerrimanPage';
-import BluffdalePage from './pages/ServiceAreas/BluffdalePage';
-import DraperPage from './pages/ServiceAreas/DraperPage';
-import MidvalePage from './pages/ServiceAreas/MidvalePage';
-import TaylorsvillePage from './pages/ServiceAreas/TaylorsvillePage';
-import KearnsPage from './pages/ServiceAreas/KearnsPage';
-import MagnaPage from './pages/ServiceAreas/MagnaPage';
-import MillcreekPage from './pages/ServiceAreas/MillcreekPage';
-import HolladayPage from './pages/ServiceAreas/HolladayPage';
-import CottonwoodHeightsPage from './pages/ServiceAreas/CottonwoodHeightsPage';
-import ClearfieldPage from './pages/ServiceAreas/ClearfieldPage';
-import BountifulPage from './pages/ServiceAreas/BountifulPage';
-import KaysvillePage from './pages/ServiceAreas/KaysvillePage';
-import FarmingtonPage from './pages/ServiceAreas/FarmingtonPage';
-import CentervillePage from './pages/ServiceAreas/CentervillePage';
-import NorthSaltLakePage from './pages/ServiceAreas/NorthSaltLakePage';
-import WoodsCrossPage from './pages/ServiceAreas/WoodsCrossPage';
-import SyracusePage from './pages/ServiceAreas/SyracusePage';
-import ClintonPage from './pages/ServiceAreas/ClintonPage';
-import RoyPage from './pages/ServiceAreas/RoyPage';
-import SouthOgdenPage from './pages/ServiceAreas/SouthOgdenPage';
-import WashingtonTerracePage from './pages/ServiceAreas/WashingtonTerracePage';
-import RiverdalePage from './pages/ServiceAreas/RiverdalePage';
-import PleasantViewPage from './pages/ServiceAreas/PleasantViewPage';
-import NorthOgdenPage from './pages/ServiceAreas/NorthOgdenPage';
-import OgdenPage from './pages/ServiceAreas/OgdenPage';
-import LaytonPage from './pages/ServiceAreas/LaytonPage';
-import LehiPage from './pages/ServiceAreas/LehiPage';
-import AmericanForkPage from './pages/ServiceAreas/AmericanForkPage';
-import PleasantGrovePage from './pages/ServiceAreas/PleasantGrovePage';
-import LindonPage from './pages/ServiceAreas/LindonPage';
-import SpanishForkPage from './pages/ServiceAreas/SpanishForkPage';
-import SpringvillePage from './pages/ServiceAreas/SpringvillePage';
-import MapletonPage from './pages/ServiceAreas/MapletonPage';
-import PaysonPage from './pages/ServiceAreas/PaysonPage';
-import SalemPage from './pages/ServiceAreas/SalemPage';
-import CedarHillsPage from './pages/ServiceAreas/CedarHillsPage';
-import AlpinePage from './pages/ServiceAreas/AlpinePage';
-import HighlandPage from './pages/ServiceAreas/HighlandPage';
-import SaratogaSpringsPage from './pages/ServiceAreas/SaratogaSpringsPage';
-import EagleMountainPage from './pages/ServiceAreas/EagleMountainPage';
-import CedarValleyPage from './pages/ServiceAreas/CedarValleyPage';
-import GenolaPage from './pages/ServiceAreas/GenolaPage';
-import GoshenPage from './pages/ServiceAreas/GoshenPage';
-import WoodlandHillsPage from './pages/ServiceAreas/WoodlandHillsPage';
-import ProvoPage from './pages/ServiceAreas/ProvoPage';
-import OremPage from './pages/ServiceAreas/OremPage';
-import KamasPage from './pages/ServiceAreas/KamasPage';
-import OakleyPage from './pages/ServiceAreas/OakleyPage';
-import FrancisPage from './pages/ServiceAreas/FrancisPage';
-import HoytsvillePage from './pages/ServiceAreas/HoytsvillePage';
-import PeoaPage from './pages/ServiceAreas/PeoaPage';
-import SamakPage from './pages/ServiceAreas/SamakPage';
-import SnydervillePage from './pages/ServiceAreas/SnydervillePage';
-import PepperwoodPage from './pages/ServiceAreas/PepperwoodPage';
-import RedLedgesPage from './pages/ServiceAreas/RedLedgesPage';
-import GrantsvillePage from './pages/ServiceAreas/GrantsvillePage';
-import StansburyParkPage from './pages/ServiceAreas/StansburyParkPage';
-import LakePointPage from './pages/ServiceAreas/LakePointPage';
-import ErdaPage from './pages/ServiceAreas/ErdaPage';
-import StocktonPage from './pages/ServiceAreas/StocktonPage';
-import VernonPage from './pages/ServiceAreas/VernonPage';
-import WendoverPage from './pages/ServiceAreas/WendoverPage';
-import DugwayPage from './pages/ServiceAreas/DugwayPage';
-import IbapahPage from './pages/ServiceAreas/IbapahPage';
-import HeberCityPage from './pages/ServiceAreas/HeberCityPage';
-import MidwayPage from './pages/ServiceAreas/MidwayPage';
-import CedarCityPage from './pages/ServiceAreas/CedarCityPage';
-import StGeorgePage from './pages/ServiceAreas/StGeorgePage';
-import MesquitePage from './pages/ServiceAreas/MesquitePage';
-import NephiPage from './pages/ServiceAreas/NephiPage';
-import MonaPage from './pages/ServiceAreas/MonaPage';
-import MantiPage from './pages/ServiceAreas/MantiPage';
-import EphraimPage from './pages/ServiceAreas/EphraimPage';
-import RichfieldPage from './pages/ServiceAreas/RichfieldPage';
-import SalinaPage from './pages/ServiceAreas/SalinaPage';
-import DeltaPage from './pages/ServiceAreas/DeltaPage';
-import FillmorePage from './pages/ServiceAreas/FillmorePage';
-import BeaverPage from './pages/ServiceAreas/BeaverPage';
-import MilfordPage from './pages/ServiceAreas/MilfordPage';
-import EnochPage from './pages/ServiceAreas/EnochPage';
-import ParowanPage from './pages/ServiceAreas/ParowanPage';
-import HurricanePage from './pages/ServiceAreas/HurricanePage';
-import LaVerkinPage from './pages/ServiceAreas/LaVerkinPage';
-import VirginPage from './pages/ServiceAreas/VirginPage';
-import SpringdalePage from './pages/ServiceAreas/SpringdalePage';
-import IvinsPage from './pages/ServiceAreas/IvinsPage';
-import SantaClaraPage from './pages/ServiceAreas/SantaClaraPage';
-import WashingtonPage from './pages/ServiceAreas/WashingtonPage';
-import LeedsPage from './pages/ServiceAreas/LeedsPage';
-import CoalvillePage from './pages/ServiceAreas/CoalvillePage';
-import ParkCityPage from './pages/ServiceAreas/ParkCityPage';
-import TooelePage from './pages/ServiceAreas/TooelePage';
+// Lazy load other pages
+const AquaticPlantsPage = lazy(() => import('./pages/AquaticPlantsPage'));
+const KoiGoldfishPage = lazy(() => import('./pages/KoiGoldfishPage'));
+const WaterLiliesPage = lazy(() => import('./pages/WaterLiliesPage'));
+const FloatingPlantsPage = lazy(() => import('./pages/FloatingPlantsPage'));
+const PondDesignBuildPage = lazy(() => import('./pages/PondDesignBuildPage'));
+const FiltrationSystemsPage = lazy(() => import('./pages/FiltrationSystemsPage'));
+const MarginalPlantsPage = lazy(() => import('./pages/MarginalPlantsPage'));
+const PondMaintenancePage = lazy(() => import('./pages/PondMaintenancePage'));
+const WaterQualityTestingPage = lazy(() => import('./pages/WaterQualityTestingPage'));
+const PondCleaningPage = lazy(() => import('./pages/PondCleaningPage'));
+const EquipmentRepairPage = lazy(() => import('./pages/EquipmentRepairPage'));
+const SeasonalServicesPage = lazy(() => import('./pages/SeasonalServicesPage'));
+const PumpsAerationPage = lazy(() => import('./pages/PumpsAerationPage'));
+const PondLinersPage = lazy(() => import('./pages/PondLinersPage'));
+const WaterTreatmentsPage = lazy(() => import('./pages/WaterTreatmentsPage'));
+const PondLightingPage = lazy(() => import('./pages/PondLightingPage'));
+const ToolsAccessoriesPage = lazy(() => import('./pages/ToolsAccessoriesPage'));
+const CareGuidesPage = lazy(() => import('./pages/CareGuidesPage'));
+const PondTipsTricksPage = lazy(() => import('./pages/PondTipsTricksPage'));
+const SeasonalCarePage = lazy(() => import('./pages/SeasonalCarePage'));
+const TroubleshootingPage = lazy(() => import('./pages/TroubleshootingPage'));
+const HarvestingPage = lazy(() => import('./pages/HarvestingPage'));
+const LakeDredgingPage = lazy(() => import('./pages/LakeDredgingPage'));
+const PondDredgingPage = lazy(() => import('./pages/PondDredgingPage'));
+const TruxorServicePage = lazy(() => import('./pages/TruxorServicePage'));
+const VideoTutorialsPage = lazy(() => import('./pages/VideoTutorialsPage'));
+const FAQPage = lazy(() => import('./pages/FAQPage'));
+
+// Loading component for Suspense
+const LoadingSpinner = () => (
+  <div style={{ 
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    height: '50vh',
+    fontSize: '1.2rem',
+    color: '#1e40af'
+  }}>
+    <div>Loading...</div>
+  </div>
+);
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <div className="App">
+        <PerformanceMonitor />
         <Header />
         <main>
+          <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             {/* Main Navigation Routes */}
             <Route path="/" element={<HomePage />} />
@@ -345,6 +362,7 @@ function App() {
             {/* Catch-all route for 404 errors */}
             <Route path="*" element={<HomePage />} />
           </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>

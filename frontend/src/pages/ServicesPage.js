@@ -136,7 +136,15 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="services-cta">
+      <section 
+        className="services-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Get Started?</h2>
           <p>Contact us today for a consultation or quote on your pond project.</p>

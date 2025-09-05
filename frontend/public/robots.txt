@@ -1,3 +1,23 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://utahwatergardens.com/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow all main content
+Allow: /plants-fish/
+Allow: /pond-services/
+Allow: /pond-supplies/
+Allow: /resources/
+Allow: /about/
+Allow: /contact/
+Allow: /shop/
+Allow: /service-areas/

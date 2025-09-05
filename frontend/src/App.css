@@ -23,6 +23,8 @@ main {
   padding-top: 80px; /* Updated for compressed header */
   min-height: calc(100vh - 80px);
   background: white;
+  position: relative;
+  z-index: 0; /* Ensure main content is below PageHero but above footer */
 }
 
 /* Button Styles */

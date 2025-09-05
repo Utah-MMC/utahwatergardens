@@ -1,5 +1,7 @@
 .resources-page {
   /* Removed min-height to allow proper footer positioning */
+  position: relative;
+  z-index: 2; /* Ensure content is above PageHero */
 }
 
 .hero-section {
@@ -31,6 +33,7 @@
 /* Resource Categories */
 .resource-categories {
   padding: 4rem 0;
+  margin-top: 2rem; /* Add margin to separate from PageHero */
 }
 
 .resource-categories h2 {
@@ -401,10 +404,48 @@
 
 /* Newsletter Signup */
 .newsletter-signup {
+  position: relative;
   padding: 4rem 0;
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   color: white;
   text-align: center;
+  overflow: hidden;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center the full-width element */
+}
+
+.newsletter-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.newsletter-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.newsletter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.newsletter-content {
+  position: relative;
+  z-index: 3;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .newsletter-signup h2 {
@@ -576,6 +617,15 @@
     width: 100%;
     max-width: 300px;
   }
+  
+  .newsletter-content {
+    padding: 0 1rem;
+  }
+  
+  .newsletter-signup {
+    width: 100%; /* Reset to container width on mobile */
+    margin-left: 0; /* Reset margin on mobile */
+  }
 }
 
 @media (max-width: 480px) {
@@ -619,5 +669,10 @@
   
   .links-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .newsletter-signup {
+    width: 100%; /* Reset to container width on mobile */
+    margin-left: 0; /* Reset margin on mobile */
   }
 }

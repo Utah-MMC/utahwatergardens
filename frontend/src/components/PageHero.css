@@ -2,6 +2,10 @@
   position: relative;
   margin-top: -80px; /* Negative margin to counteract main padding-top */
   padding-top: 80px; /* Add back the padding for content positioning */
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center the full-width element */
+  z-index: 1; /* Ensure it's above other content but below footer */
+  min-height: 400px; /* Ensure minimum height */
 }
 
 .page-hero {
@@ -10,7 +14,8 @@
   color: white;
   text-align: center;
   overflow: hidden;
-  min-height: 500px;
+  min-height: 400px; /* Reduced height to prevent covering content */
+  max-height: 500px; /* Added max height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,6 +37,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block; /* Ensure image is displayed */
 }
 
 .page-hero-overlay {
@@ -92,6 +98,8 @@
   .page-hero-wrapper {
     margin-top: -80px;
     padding-top: 80px;
+    width: 100%; /* Reset to container width on mobile */
+    margin-left: 0; /* Reset margin on mobile */
   }
   
   .page-hero {
@@ -117,6 +125,8 @@
   .page-hero-wrapper {
     margin-top: -80px;
     padding-top: 80px;
+    width: 100%; /* Reset to container width on mobile */
+    margin-left: 0; /* Reset margin on mobile */
   }
   
   .page-hero {
@@ -153,4 +163,43 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+/* Screen reader only class for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Resources page specific styling to show the driver and logo */
+.resources-page .page-hero-image {
+  object-position: center 30%; /* Move the image up to show the driver */
+  transform: scale(1.1); /* Slightly zoom in to focus on the driver area */
+}
+
+.resources-page .page-hero-text-content {
+  background: rgba(0, 0, 0, 0.4); /* Slightly more transparent to show driver better */
+  backdrop-filter: blur(8px); /* Reduce blur to show driver more clearly */
+  position: relative;
+  top: 20%; /* Move the overlay down to avoid covering the logo area */
+  margin-top: 2rem; /* Add some margin to create space */
+}
+
+/* Move the text content to the right side to avoid the worker's logo area */
+.resources-page .page-hero-content {
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+  padding-right: 2rem; /* Add padding from the right edge */
+}
+
+.resources-page .page-hero-text-content {
+  max-width: 600px; /* Reduce width to fit better on the right side */
+  margin-right: 0; /* Remove auto margin since we're positioning manually */
 }

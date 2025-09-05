@@ -1,0 +1,17 @@
+/* Page Template Styles */
+.page-template {
+  min-height: 100vh;
+}
+
+.page-template .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-template .container {
+    padding: 0 1rem;
+  }
+}

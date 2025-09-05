@@ -349,6 +349,7 @@ export const generateServiceAreaPage = (cityKey, cityData) => {
   return `import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/PageHero.js';
+import CTA from '../../components/CTA.js';
 import './ServiceAreaPage.css';
 
 const ${name.replace(/\s+/g, '')}Page = () => {
@@ -467,22 +468,10 @@ const ${name.replace(/\s+/g, '')}Page = () => {
           </div>
         </section>
 
-        <section 
-          className="contact-cta"
-          style={{
-            backgroundImage: \`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/cta-bg-enhanced.jpg')\`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          <h2>Ready to Get Started in ${name}?</h2>
-          <p>Contact us today for a free consultation and quote on your ${name} pond project.</p>
-          <div className="cta-buttons">
-            <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-            <Link to="/contact" className="btn btn-secondary">Get Free Quote</Link>
-          </div>
-        </section>
+        <CTA 
+          cityName="${name}"
+          secondaryButtonText="Get Free Quote"
+        />
       </div>
     </div>
   );

@@ -4,6 +4,8 @@
   padding: 0;
   margin-top: 0;
   position: relative;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center the full-width element */
 }
 
 /* Wavy Divider - Enhanced with Continuous Movement */
@@ -411,6 +413,11 @@
 }
 
 @media (max-width: 768px) {
+  .footer {
+    width: 100%; /* Reset to container width on mobile */
+    margin-left: 0; /* Reset margin on mobile */
+  }
+  
   .footer-wave {
     top: -100px; /* Adjusted to prevent blocking call buttons */
     height: 130px; /* Adjusted for compact footer */
@@ -467,6 +474,11 @@
 }
 
 @media (max-width: 480px) {
+  .footer {
+    width: 100%; /* Reset to container width on mobile */
+    margin-left: 0; /* Reset margin on mobile */
+  }
+  
   .footer-wave {
     top: -80px; /* Adjusted to prevent blocking call buttons */
     height: 120px; /* Adjusted for compact footer */
