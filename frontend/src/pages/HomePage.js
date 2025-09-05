@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 
@@ -40,13 +40,13 @@ const HomePage = () => {
   const resourcesPerSlide = 3;
   const totalResourceSlides = Math.ceil(allResources.length / resourcesPerSlide);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+  }, [totalSlides]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
+  }, [totalSlides]);
 
   const goToSlide = (slideIndex) => {
     setCurrentSlide(slideIndex);
@@ -60,10 +60,6 @@ const HomePage = () => {
     setCurrentResourceSlide((prev) => (prev - 1 + totalResourceSlides) % totalResourceSlides);
   };
 
-  const getCurrentProducts = () => {
-    const startIndex = currentSlide * productsPerSlide;
-    return allProducts.slice(startIndex, startIndex + productsPerSlide);
-  };
 
   const getCurrentResources = () => {
     const startIndex = currentResourceSlide * resourcesPerSlide;
@@ -181,7 +177,7 @@ const HomePage = () => {
       carousel.removeEventListener('mouseup', handleMouseUp);
       carousel.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [currentSlide]);
+  }, [currentSlide, nextSlide, prevSlide]);
 
   return (
     <div className="home-page">

@@ -47,15 +47,16 @@ const Footer = () => {
     // Add event listeners
     document.addEventListener('mousemove', handleMouseMove);
     
-    if (waveRef.current) {
-      waveRef.current.addEventListener('mouseleave', handleMouseLeave);
+    const currentWaveRef = waveRef.current;
+    if (currentWaveRef) {
+      currentWaveRef.addEventListener('mouseleave', handleMouseLeave);
     }
 
     // Cleanup
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
-      if (waveRef.current) {
-        waveRef.current.removeEventListener('mouseleave', handleMouseLeave);
+      if (currentWaveRef) {
+        currentWaveRef.removeEventListener('mouseleave', handleMouseLeave);
       }
     };
   }, []);
