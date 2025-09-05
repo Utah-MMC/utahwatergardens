@@ -237,12 +237,12 @@
 }
 
 .btn-primary {
-  background: #3b82f6;
+  background: #dc2626;
   color: white;
 }
 
 .btn-primary:hover {
-  background: #2563eb;
+  background: #b91c1c;
   transform: translateY(-2px);
 }
 
@@ -260,6 +260,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Plants & Fish page specific mobile hero adjustments */
+  .plants-fish-page .page-hero-wrapper {
+    padding-top: 175px; /* Add padding to move hero down under header */
+  }
+  
   .hero-section {
     padding: 3rem 0;
   }
@@ -314,6 +319,11 @@
 }
 
 @media (max-width: 480px) {
+  /* Plants & Fish page specific mobile hero adjustments for smaller screens */
+  .plants-fish-page .page-hero-wrapper {
+    padding-top: 70px; /* Slightly less padding for smaller screens */
+  }
+  
   .hero-section h1 {
     font-size: 2rem;
   }

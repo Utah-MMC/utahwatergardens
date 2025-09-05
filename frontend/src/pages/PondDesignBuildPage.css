@@ -494,6 +494,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Pond Design Build page specific mobile hero adjustments */
+  .pond-design-build-page .page-hero-wrapper {
+    padding-top: 175px; /* Add padding to move hero down under header */
+  }
+  
   .hero-section {
     flex-direction: column;
     text-align: center;
@@ -547,6 +552,11 @@
 }
 
 @media (max-width: 480px) {
+  /* Pond Design Build page specific mobile hero adjustments for smaller screens */
+  .pond-design-build-page .page-hero-wrapper {
+    padding-top: 150px; /* Slightly less padding for smaller screens */
+  }
+  
   .hero-content h1 {
     font-size: 2rem;
   }

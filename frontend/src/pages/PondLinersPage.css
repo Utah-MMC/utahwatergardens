@@ -974,12 +974,12 @@
 }
 
 .btn-primary {
-  background: #f59e0b;
+  background: #dc2626;
   color: white;
 }
 
 .btn-primary:hover {
-  background: #d97706;
+  background: #b91c1c;
   transform: translateY(-2px);
 }
 
@@ -996,6 +996,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Pond Liners page specific mobile hero adjustments */
+  .pond-liners-page .page-hero-wrapper {
+    padding-top: 175px; /* Add padding to move hero down under header */
+  }
+  
   .hero-section {
     flex-direction: column;
     text-align: center;
@@ -1044,6 +1049,11 @@
 }
 
 @media (max-width: 480px) {
+  /* Pond Liners page specific mobile hero adjustments for smaller screens */
+  .pond-liners-page .page-hero-wrapper {
+    padding-top: 150px; /* Slightly less padding for smaller screens */
+  }
+  
   .hero-content h1 {
     font-size: 2rem;
   }

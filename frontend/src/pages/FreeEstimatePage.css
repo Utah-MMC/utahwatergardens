@@ -189,7 +189,7 @@
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -202,9 +202,9 @@
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
 }
 
 .submit-btn:disabled {
@@ -245,6 +245,17 @@
   color: #475569;
   font-size: 0.95rem;
   line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.checkmark {
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
 }
 
 .process-steps {
@@ -260,7 +271,7 @@
 }
 
 .step-number {
-  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
   color: white;
   width: 32px;
   height: 32px;

@@ -6,6 +6,7 @@ const PageHero = ({
   subtitle,
   backgroundImage,
   backgroundImageAlt,
+  backgroundVideo,
   showBackgroundImage = true
 }) => {
   // Curated selection of pond images for variety
@@ -90,11 +91,33 @@ const PageHero = ({
       <section className="page-hero">
         {showBackgroundImage && (
           <div className="page-hero-background">
-            <img 
-              src={selectedImage.src} 
-              alt={selectedImage.alt}
-              className="page-hero-image"
-            />
+            {backgroundVideo ? (
+              <>
+                <video 
+                  className="page-hero-video"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster={selectedImage.src}
+                >
+                  <source src={backgroundVideo} type="video/mp4" />
+                  <source src={backgroundVideo} type="video/quicktime" />
+                  Your browser does not support the video tag.
+                </video>
+                <img 
+                  src={selectedImage.src} 
+                  alt={selectedImage.alt}
+                  className="page-hero-image page-hero-fallback"
+                />
+              </>
+            ) : (
+              <img 
+                src={selectedImage.src} 
+                alt={selectedImage.alt}
+                className="page-hero-image"
+              />
+            )}
             <div className="page-hero-overlay"></div>
           </div>
         )}

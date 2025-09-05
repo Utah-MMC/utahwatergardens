@@ -18,10 +18,10 @@ body {
   padding: 0 2rem;
 }
 
-/* Main Content - Account for fixed header */
+/* Main Content - No padding since header overlays content */
 main {
-  padding-top: 80px; /* Updated for compressed header */
-  min-height: calc(100vh - 80px);
+  padding-top: 0 !important; /* Remove padding so hero can start from top */
+  min-height: 100vh;
   background: white;
   position: relative;
   z-index: 0; /* Ensure main content is below PageHero but above footer */
@@ -42,12 +42,12 @@ main {
 }
 
 .btn-primary {
-  background: #1e40af;
+  background: #dc2626;
   color: white;
 }
 
 .btn-primary:hover {
-  background: #1d4ed8;
+  background: #b91c1c;
   transform: translateY(-2px);
 }
 

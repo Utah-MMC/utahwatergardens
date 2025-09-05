@@ -500,7 +500,7 @@
 }
 
 .btn-primary {
-  background: #ff6b35;
+  background: #dc2626;
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -512,7 +512,7 @@
 }
 
 .btn-primary:hover {
-  background: #e55a2b;
+  background: #b91c1c;
   color: white;
   text-decoration: none;
   transform: translateY(-1px);

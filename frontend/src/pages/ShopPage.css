@@ -6,9 +6,9 @@
 */
 
 :root {
-  --brand-900: #1e3c72;
-  --brand-800: #2a5298;
-  --brand-700: #1e40af;
+  --brand-900: #991b1b;
+  --brand-800: #b91c1c;
+  --brand-700: #dc2626;
   --accent: #ff6b35;
   --bg: #ffffff;
   --text: #333;
@@ -110,9 +110,21 @@
 }
 
 @media (max-width: 768px) {
+  /* Shop page specific mobile hero adjustments */
+  .shop-page .page-hero-wrapper {
+    padding-top: 175px; /* Add padding to move hero down under header */
+  }
+  
   .featured-grid { grid-template-columns: 1fr; }
   .products-grid { grid-template-columns: 1fr; }
   .shop-info-content { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  /* Shop page specific mobile hero adjustments for smaller screens */
+  .shop-page .page-hero-wrapper {
+    padding-top: 150px; /* Slightly less padding for smaller screens */
+  }
 }
 
 /* Motion preferences */

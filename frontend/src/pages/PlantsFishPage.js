@@ -76,6 +76,7 @@ const PlantsFishPage = () => {
       <PageHero 
         title="Plants & Fish"
         subtitle="Discover our comprehensive selection of aquatic plants and fish for your pond"
+        backgroundVideo="/videos/IMG_1548.MOV"
         backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
         backgroundImageAlt="Beautiful water garden with aquatic plants and fish"
       />

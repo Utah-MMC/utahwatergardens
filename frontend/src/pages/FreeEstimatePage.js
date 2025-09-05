@@ -265,11 +265,11 @@ This request was submitted from the Utah Water Gardens website.
               <div className="info-card">
                 <h3>Why Choose Utah Water Gardens?</h3>
                 <ul>
-                  <li>✓ 11+ years of experience in water garden design</li>
-                  <li>✓ Utah's largest selection of aquatic plants</li>
-                  <li>✓ Complete design, construction, and maintenance services</li>
-                  <li>✓ Licensed and insured professionals</li>
-                  <li>✓ 100% satisfaction guarantee</li>
+                  <li><span className="checkmark">✓</span> 11+ years of experience in water garden design</li>
+                  <li><span className="checkmark">✓</span> Utah's largest selection of aquatic plants</li>
+                  <li><span className="checkmark">✓</span> Complete design, construction, and maintenance services</li>
+                  <li><span className="checkmark">✓</span> Licensed and insured professionals</li>
+                  <li><span className="checkmark">✓</span> 100% satisfaction guarantee</li>
                 </ul>
               </div>
 

@@ -172,8 +172,8 @@ const PondLinersPage = () => {
       <PageHero 
         title="Pond Liners & Underlayment"
         subtitle="Professional-grade pond liners and underlayment materials to create watertight, long-lasting ponds. From small garden features to large commercial installations."
-        backgroundImage="/images/pond_liner_roll.jpg"
-        backgroundImageAlt="Professional pond liners and underlayment materials"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImageAlt="Beautiful pond with koi fish and natural stone edges"
       />
 
       {/* Liner Types */}
@@ -482,7 +482,7 @@ const PondLinersPage = () => {
       <section 
         className="contact-cta"
         style={{
-          backgroundImage: `linear-gradient(rgba(5, 150, 105, 0.8), rgba(16, 185, 129, 0.8)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

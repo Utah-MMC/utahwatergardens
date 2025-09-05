@@ -430,6 +430,11 @@
 }
 
 @media (max-width: 768px) {
+  /* Truxor Service page specific mobile hero adjustments */
+  .truxor-service-page .page-hero-wrapper {
+    padding-top: 175px; /* Add padding to move hero down under header */
+  }
+  
   .truxor-service-page {
     padding-top: 60px;
   }
@@ -473,6 +478,11 @@
 }
 
 @media (max-width: 480px) {
+  /* Truxor Service page specific mobile hero adjustments for smaller screens */
+  .truxor-service-page .page-hero-wrapper {
+    padding-top: 150px; /* Slightly less padding for smaller screens */
+  }
+  
   .overview-text h2,
   .attachments-section h2,
   .services-section h2,
