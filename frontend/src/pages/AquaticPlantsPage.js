@@ -1,24 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero';
 import './AquaticPlantsPage.css';
 
 const AquaticPlantsPage = () => {
   return (
     <div className="aquatic-plants-page">
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Aquatic Plants for Your Pond</h1>
-          <p>Transform your water garden with our premium selection of aquatic plants</p>
-          <div className="hero-buttons">
-            <Link to="/contact" className="cta-button">Get Expert Advice</Link>
-            <Link to="/plants-fish" className="secondary-button">View All Plants</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2775.jpg" alt="Beautiful floating aquatic plants in a serene pond" />
-        </div>
-      </section>
+      <PageHero 
+        title="Aquatic Plants for Your Pond"
+        subtitle="Transform your water garden with our premium selection of aquatic plants"
+        backgroundImage="/images/IMG_2775.jpg"
+        backgroundImageAlt="Beautiful floating aquatic plants in a serene pond"
+      />
 
       {/* Plant Categories */}
       <section className="plant-categories">

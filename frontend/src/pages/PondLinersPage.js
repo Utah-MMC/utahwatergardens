@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero';
 import './PondLinersPage.css';
 
 const PondLinersPage = () => {
@@ -168,27 +169,12 @@ const PondLinersPage = () => {
   return (
     <div className="pond-liners-page">
       {/* Hero Section */}
-      <section 
-        className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(5, 150, 105, 0.8), rgba(16, 185, 129, 0.8)), url('/images/pond_liner_roll.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="hero-content">
-          <h1>Pond Liners & Underlayment</h1>
-          <p>Professional-grade pond liners and underlayment materials to create watertight, long-lasting ponds. From small garden features to large commercial installations.</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Expert Advice</a>
-            <Link to="/pond-supplies" className="secondary-button">View All Supplies</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2775.jpg" alt="Professional pond liners and underlayment materials" />
-        </div>
-      </section>
+      <PageHero 
+        title="Pond Liners & Underlayment"
+        subtitle="Professional-grade pond liners and underlayment materials to create watertight, long-lasting ponds. From small garden features to large commercial installations."
+        backgroundImage="/images/pond_liner_roll.jpg"
+        backgroundImageAlt="Professional pond liners and underlayment materials"
+      />
 
       {/* Liner Types */}
       <section className="liner-types-section">

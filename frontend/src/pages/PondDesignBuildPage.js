@@ -1,24 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero';
 import './PondDesignBuildPage.css';
 
 const PondDesignBuildPage = () => {
   return (
     <div className="pond-design-build-page">
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Pond Design & Build Services</h1>
-          <p>Transform your backyard into a stunning water garden with our expert design and construction services</p>
-          <div className="hero-buttons">
-            <Link to="/contact" className="cta-button">Get Free Quote</Link>
-            <Link to="/pond-services" className="secondary-button">View All Services</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2770.jpg" alt="Beautiful custom water garden design with waterfall and lush plants" />
-        </div>
-      </section>
+      <PageHero 
+        title="Pond Design & Build Services"
+        subtitle="Transform your backyard into a stunning water garden with our expert design and construction services"
+        backgroundImage="/images/IMG_2770.jpg"
+        backgroundImageAlt="Beautiful custom water garden design with waterfall and lush plants"
+      />
 
       {/* Design Process */}
       <section className="design-process">

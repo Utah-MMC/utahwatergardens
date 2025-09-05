@@ -76,7 +76,7 @@ const PageHero = ({
         alt: backgroundImageAlt || 'Beautiful water garden'
       };
     }
-    // Use the specified default hero image
+    // Use the main background image for all pages
     return {
       src: '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
       alt: 'Beautiful pond landscape with waterfall and rock features'
