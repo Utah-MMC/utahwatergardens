@@ -121,7 +121,6 @@ const Footer = () => {
           </div>
         </div>
         
-        
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="footer-bottom-left">
@@ -129,14 +128,8 @@ const Footer = () => {
           </div>
           <div className="footer-bottom-right">
             <div className="social-links">
-              <a href="https://facebook.com/utahwatergardens" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <i className="fab fa-facebook"></i>
-              </a>
               <a href="https://instagram.com/utahwatergardens" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i className="fab fa-instagram"></i>
-              </a>
-              <a href="https://youtube.com/utahwatergardens" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                <i className="fab fa-youtube"></i>
               </a>
             </div>
           </div>

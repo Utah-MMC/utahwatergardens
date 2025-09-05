@@ -418,8 +418,8 @@ const HomePage = () => {
             </div>
             <div className="about-image">
               <img 
-                src="/images/IMG_2775.jpg" 
-                alt="Serene water garden with floating aquatic plants" 
+                src="/images/IMG_1398-topaz-sharpen-textai.jpeg" 
+                alt="Beautiful water feature with natural rocks and clear turquoise water" 
               />
             </div>
           </div>
