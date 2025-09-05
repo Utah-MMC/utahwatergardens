@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "_comment": "Force deployment with permission fix",
   "builds": [
     {
       "src": "package.json",
