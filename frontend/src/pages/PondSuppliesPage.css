@@ -1,5 +1,5 @@
 .pond-supplies-page {
-  min-height: 100vh;
+  /* Removed min-height to allow proper footer positioning */
 }
 
 .hero-section {

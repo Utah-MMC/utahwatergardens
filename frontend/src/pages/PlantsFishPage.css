@@ -1,5 +1,5 @@
 .plants-fish-page {
-  min-height: 100vh;
+  /* Removed min-height to allow proper footer positioning */
 }
 
 .hero-section {
@@ -42,8 +42,8 @@
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   margin-bottom: 3rem;
 }
 
@@ -291,7 +291,7 @@
   }
   
   .category-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
   
@@ -321,6 +321,11 @@
   .services-section h2,
   .contact-cta h2 {
     font-size: 1.8rem;
+  }
+  
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
   .category-content {

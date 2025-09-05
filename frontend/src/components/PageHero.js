@@ -93,10 +93,12 @@ const PageHero = ({
       
       <div className="page-hero-content">
         <div className="container">
-          <h1 className="page-hero-title">{title}</h1>
-          {subtitle && (
-            <p className="page-hero-subtitle">{subtitle}</p>
-          )}
+          <div className="page-hero-text-content">
+            <h1 className="page-hero-title">{title}</h1>
+            {subtitle && (
+              <p className="page-hero-subtitle">{subtitle}</p>
+            )}
+          </div>
         </div>
       </div>
     </section>

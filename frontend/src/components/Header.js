@@ -34,7 +34,7 @@ const Header = ({ className = '' }) => {
       items: [
         { name: 'Aquatic Plants', path: '/plants-fish/aquatic-plants' },
         { name: 'Koi & Goldfish', path: '/plants-fish/koi-goldfish' },
-        { name: 'Tropical Fish', path: '/plants-fish/tropical-fish' },
+        { name: 'Pond Pumps', path: '/pond-supplies/pumps-aeration' },
         { name: 'Water Lilies', path: '/plants-fish/water-lilies' },
         { name: 'Floating Plants', path: '/plants-fish/floating-plants' },
         { name: 'Marginal Plants', path: '/plants-fish/marginal-plants' }
@@ -52,7 +52,8 @@ const Header = ({ className = '' }) => {
         { name: 'Seasonal Services', path: '/pond-services/seasonal' },
         { name: 'Harvesting', path: '/pond-services/harvesting' },
         { name: 'Lake Dredging', path: '/pond-services/lake-dredging' },
-        { name: 'Pond Dredging', path: '/pond-services/pond-dredging' }
+        { name: 'Pond Dredging', path: '/pond-services/pond-dredging' },
+        { name: 'Truxor T50 Service', path: '/pond-services/truxor-t50' }
       ]
     },
     'pond-supplies': {
@@ -99,19 +100,15 @@ const Header = ({ className = '' }) => {
       <div className="header-top">
         <div className="header-container">
           <div className="contact-info">
-            <div className="contact-item">
-              <a href="tel:(801) 590-8516" className="contact-link">
-                (801) 590-8516
-              </a>
-            </div>
-            <div className="contact-item">
-              <a href="mailto:info@utahwatergardens.com" className="contact-link">
-                contact@utahwatergardens.com
-              </a>
-            </div>
-            <div className="contact-item">
-              <span className="contact-text">Mon-Sat: 10:30AM-6PM</span>
-            </div>
+            <a href="tel:(801) 590-8516" className="contact-link">
+              (801) 590-8516
+            </a>
+            <span className="contact-separator">•</span>
+            <a href="mailto:contact@utahwatergardens.com" className="contact-link">
+              contact@utahwatergardens.com
+            </a>
+            <span className="contact-separator">•</span>
+            <span className="contact-text">Mon-Sat: 10:30AM-6PM</span>
           </div>
         </div>
       </div>

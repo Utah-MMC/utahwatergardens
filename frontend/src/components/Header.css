@@ -1,13 +1,13 @@
 .header {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1d4ed8 100%);
+  background: rgba(0, 0, 0, 0.1);
   color: white;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header-container {
@@ -18,24 +18,38 @@
 
 /* Top Section - Contact Info */
 .header-top {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
   padding: 0.25rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-top .contact-info {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: nowrap !important;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  flex-direction: row !important;
 }
 
 .contact-info {
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 0.8rem;
+  flex-wrap: nowrap !important;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  flex-direction: row !important;
 }
 
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.75rem;
+.contact-separator {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  font-size: 0.8rem;
+  display: inline;
 }
 
 .contact-link {
@@ -43,6 +57,9 @@
   text-decoration: none;
   transition: all 0.3s ease;
   font-weight: 500;
+  white-space: nowrap;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .contact-link:hover {
@@ -53,6 +70,9 @@
 .contact-text {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 /* Main Header Section */
@@ -64,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.8rem;
+  gap: 0.5rem;
 }
 
 .logo-section {
@@ -173,15 +193,15 @@
   background: none;
   border: none;
   color: white;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 0.5rem 0.7rem;
-  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.2rem;
   text-decoration: none;
   position: relative;
   overflow: hidden;
@@ -193,14 +213,14 @@
   border: none;
   color: white;
   cursor: pointer;
-  padding: 0.2rem 0.3rem;
-  border-radius: 4px;
+  padding: 0.15rem 0.25rem;
+  border-radius: 3px;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px;
-  height: 20px;
+  min-width: 18px;
+  height: 18px;
 }
 
 .dropdown-toggle:hover {
@@ -250,7 +270,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1d4ed8 100%);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
@@ -312,7 +332,7 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.4rem;
   flex-shrink: 0;
   margin-left: auto;
 }
@@ -320,25 +340,27 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.65rem 1.3rem;
-  border-radius: 25px;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-compact {
-  padding: 0.35rem 0.7rem;
-  font-size: 0.7rem;
-  border-radius: 18px;
-  min-width: 80px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  border-radius: 16px;
+  min-width: 70px;
   justify-content: center;
+  gap: 0.2rem;
 }
 
 .btn::before {
@@ -357,15 +379,15 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #1e40af, #1d4ed8);
+  background: #00d4ff;
   color: white;
-  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  background: #0099cc;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
 }
 
 .btn-secondary {
@@ -404,6 +426,24 @@
 }
 
 /* Responsive Design */
+@media (min-width: 481px) {
+  .contact-info {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    display: flex !important;
+  }
+  
+  .contact-separator {
+    display: inline !important;
+  }
+  
+  .contact-link,
+  .contact-text {
+    display: inline-block !important;
+    flex-shrink: 0;
+  }
+}
+
 @media (max-width: 1024px) {
   .nav-list {
     gap: 1.2rem;
@@ -421,6 +461,11 @@
 @media (max-width: 768px) {
   .header-container {
     padding: 0 1rem;
+  }
+  
+  .contact-info {
+    gap: 0.6rem;
+    font-size: 0.7rem;
   }
   
   .header-content {
@@ -452,7 +497,7 @@
     order: 2;
     width: 100%;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 0.6rem;
   }
 
   .btn {
@@ -558,8 +603,13 @@
   
   .contact-info {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.3rem;
     text-align: center;
+    font-size: 0.7rem;
+  }
+  
+  .contact-separator {
+    display: none;
   }
 
   .header-actions {

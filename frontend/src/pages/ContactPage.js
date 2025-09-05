@@ -188,7 +188,7 @@ const ContactPage = () => {
             <div className="retail-highlight">
               <img src="/images/IMG_2776.jpg" alt="Fish selection" />
               <h3>Fish & Koi</h3>
-              <p>Healthy koi, goldfish, and tropical fish for your pond</p>
+              <p>Healthy koi, goldfish, and quality pond equipment for your water garden</p>
               <a href="tel:(801) 590-8516" className="retail-cta">Call for Fish Selection</a>
             </div>
             <div className="retail-highlight">
@@ -219,7 +219,15 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/cta-bg-enhanced.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Get Started?</h2>
           <p>Contact us today for a consultation or quote on your pond project.</p>

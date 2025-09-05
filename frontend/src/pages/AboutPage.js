@@ -94,9 +94,9 @@ const AboutPage = () => {
           <h2>Our Retail Expertise</h2>
           <div className="expertise-grid">
             <div className="expertise-item">
-              <img src="/images/IMG_2776.jpg" alt="Tropical fish selection" />
-              <h3>Fish & Aquatic Life</h3>
-              <p>Expert selection of koi, goldfish, and tropical fish for your pond ecosystem.</p>
+              <img src="/images/pumpRepair.webp" alt="Pond equipment and supplies" />
+              <h3>Pond Equipment</h3>
+              <p>Expert selection of koi, goldfish, and quality pond equipment for your water garden.</p>
             </div>
             <div className="expertise-item">
               <img src="/images/IMG_2780.jpg" alt="Water garden supplies" />

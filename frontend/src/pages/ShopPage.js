@@ -3,6 +3,28 @@ import PageHero from '../components/PageHero.js';
 import './ShopPage.css';
 
 const ShopPage = () => {
+  // Featured products section
+  const featuredProducts = [
+    {
+      name: 'Pond Liners',
+      image: '/images/IMG_2776.jpg',
+      description: 'High-quality EPDM and PVC pond liners - Essential for any pond project',
+      price: 'Varies by size',
+      phone: '(801) 590-8516',
+      featured: true,
+      badge: 'Most Popular'
+    },
+    {
+      name: 'Truxor T50 - NEW!',
+      image: '/images/truxor-equipment-1.jpg',
+      description: 'Revolutionary amphibious land and water tool for pond maintenance and cleaning',
+      price: 'Contact for pricing',
+      phone: '(801) 590-8516',
+      featured: true,
+      badge: 'New Equipment'
+    }
+  ];
+
   const products = [
     {
       id: 'aquatic-plants',
@@ -50,9 +72,9 @@ const ShopPage = () => {
           phone: '(801) 590-8516'
         },
         {
-          name: 'Tropical Fish',
-          image: '/images/IMG_2776.jpg',
-          description: 'Colorful tropical fish for warm water ponds',
+          name: 'Pond Pumps',
+          image: '/images/pumpRepair.webp',
+          description: 'Energy-efficient pumps and aeration systems',
           price: 'Contact for pricing',
           phone: '(801) 590-8516'
         },
@@ -143,6 +165,29 @@ const ShopPage = () => {
         </div>
       </section>
 
+      <section className="featured-products">
+        <div className="container">
+          <h2>Featured Products</h2>
+          <p>Our most popular items and newest equipment</p>
+          <div className="featured-grid">
+            {featuredProducts.map((product, index) => (
+              <div key={index} className="featured-product-card">
+                <div className="product-badge">{product.badge}</div>
+                <div className="product-image">
+                  <img src={product.image} alt={product.name} />
+                </div>
+                <div className="product-info">
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+                  <div className="product-price">{product.price}</div>
+                  <a href={`tel:${product.phone}`} className="btn btn-primary">Call for Details</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="products-section">
         <div className="container">
           {products.map((category) => (
@@ -172,8 +217,8 @@ const ShopPage = () => {
         <div className="container">
           <div className="shop-info-content">
             <div className="shop-info-text">
-              <h2>Visit Our Store</h2>
-              <p>Come visit our store to see our complete selection of aquatic plants, fish, and pond supplies. Our knowledgeable staff can help you choose the perfect plants and supplies for your pond.</p>
+              <h2>Visit Our Store Today!</h2>
+              <p><strong>See our Pond Liners and NEW Truxor T50 in person!</strong> Come visit our store to see our complete selection of aquatic plants, fish, and pond supplies. Our knowledgeable staff can help you choose the perfect plants and supplies for your pond.</p>
               <div className="shop-details">
                 <div className="shop-detail">
                   <i className="fas fa-map-marker-alt"></i>
@@ -188,7 +233,10 @@ const ShopPage = () => {
                   <span>Monday - Friday: 8:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 4:00 PM</span>
                 </div>
               </div>
-              <a href="tel:(801) 590-8516" className="btn btn-secondary">Call Us Now</a>
+              <div className="shop-cta-buttons">
+                <a href="tel:(801) 590-8516" className="btn btn-primary">Call Us Now</a>
+                <a href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Get Directions</a>
+              </div>
             </div>
             <div className="shop-info-image">
               <img 

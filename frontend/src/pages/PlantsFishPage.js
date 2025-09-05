@@ -39,10 +39,10 @@ const PlantsFishPage = () => {
       image: '/images/koi.webp'
     },
     {
-      name: 'Tropical Fish',
-      path: '/plants-fish/tropical-fish',
-      description: 'Colorful tropical fish for your pond',
-      image: '/images/IMG_2776.jpg'
+      name: 'Pond Pumps',
+      path: '/pond-supplies/pumps-aeration',
+      description: 'Energy-efficient pumps and aeration systems',
+      image: '/images/pumpRepair.webp'
     }
   ];
 
@@ -76,8 +76,8 @@ const PlantsFishPage = () => {
       <PageHero 
         title="Plants & Fish"
         subtitle="Discover our comprehensive selection of aquatic plants and fish for your pond"
-        backgroundImage="/images/IMG_2770.jpg"
-        backgroundImageAlt="Beautiful aquatic plants and fish selection for ponds"
+        backgroundImage="/images/cta-bg-enhanced.jpg"
+        backgroundImageAlt="Beautiful water garden with aquatic plants and fish"
       />
 
       <div className="container">
@@ -102,9 +102,9 @@ const PlantsFishPage = () => {
           </div>
         </section>
 
-        {/* Fish Section */}
+        {/* Fish & Equipment Section */}
         <section className="fish-section">
-          <h2>Fish & Koi</h2>
+          <h2>Fish & Equipment</h2>
           <div className="category-grid">
             {fishCategories.map((category, index) => (
               <div key={index} className="category-card">
@@ -158,7 +158,15 @@ const PlantsFishPage = () => {
         </section>
 
         {/* Contact CTA */}
-        <section className="contact-cta">
+        <section 
+          className="contact-cta"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/cta-bg-enhanced.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
           <h2>Need Help Choosing?</h2>
           <p>Our experts can help you select the perfect plants and fish for your pond</p>
           <div className="cta-buttons">

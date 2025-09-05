@@ -1,0 +1,327 @@
+import React, { useState } from 'react';
+import './FreeEstimatePage.css';
+
+const FreeEstimatePage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    projectType: '',
+    propertySize: '',
+    budget: '',
+    timeline: '',
+    message: '',
+    preferredContact: 'phone'
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Create email content
+      const emailContent = `
+New Free Estimate Request from Utah Water Gardens Website
+
+Contact Information:
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Preferred Contact Method: ${formData.preferredContact}
+
+Project Details:
+Project Type: ${formData.projectType}
+Property Size: ${formData.propertySize}
+Budget Range: ${formData.budget}
+Timeline: ${formData.timeline}
+
+Message:
+${formData.message}
+
+---
+This request was submitted from the Utah Water Gardens website.
+      `;
+
+      // Create mailto link
+      const subject = encodeURIComponent('New Free Estimate Request - Utah Water Gardens');
+      const body = encodeURIComponent(emailContent);
+      const mailtoLink = `mailto:jeremyuwg@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      setSubmitStatus('success');
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="free-estimate-page">
+      <div className="estimate-hero">
+        <div className="hero-background">
+          <div className="hero-overlay"></div>
+        </div>
+        <div className="hero-content">
+          <h1>Get Your Free Estimate</h1>
+          <p>Transform your property with a custom water garden designed just for you</p>
+        </div>
+      </div>
+
+      <div className="estimate-content">
+        <div className="container">
+          <div className="content-grid">
+            <div className="form-section">
+              <div className="form-header">
+                <h2>Request Your Free Estimate</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours with a detailed estimate for your water garden project.</p>
+              </div>
+
+              {submitStatus === 'success' && (
+                <div className="success-message">
+                  <h3>Thank you for your request!</h3>
+                  <p>Your email client should have opened with a pre-filled message. Please send the email to complete your estimate request.</p>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="error-message">
+                  <h3>Something went wrong</h3>
+                  <p>Please try again or call us directly at (801) 590-8516.</p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="estimate-form">
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="name">Full Name *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email">Email Address *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="phone">Phone Number *</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="preferredContact">Preferred Contact Method</label>
+                    <select
+                      id="preferredContact"
+                      name="preferredContact"
+                      value={formData.preferredContact}
+                      onChange={handleChange}
+                    >
+                      <option value="phone">Phone Call</option>
+                      <option value="email">Email</option>
+                      <option value="text">Text Message</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="projectType">Project Type *</label>
+                    <select
+                      id="projectType"
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Select Project Type</option>
+                      <option value="new-pond">New Pond Construction</option>
+                      <option value="pond-renovation">Pond Renovation</option>
+                      <option value="pond-maintenance">Pond Maintenance</option>
+                      <option value="water-feature">Water Feature</option>
+                      <option value="landscaping">Landscaping Integration</option>
+                      <option value="consultation">Consultation Only</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="propertySize">Property Size</label>
+                    <select
+                      id="propertySize"
+                      name="propertySize"
+                      value={formData.propertySize}
+                      onChange={handleChange}
+                    >
+                      <option value="">Select Property Size</option>
+                      <option value="small">Small (Under 1/4 acre)</option>
+                      <option value="medium">Medium (1/4 - 1 acre)</option>
+                      <option value="large">Large (1+ acres)</option>
+                      <option value="commercial">Commercial Property</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="budget">Budget Range</label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                    >
+                      <option value="">Select Budget Range</option>
+                      <option value="under-5k">Under $5,000</option>
+                      <option value="5k-10k">$5,000 - $10,000</option>
+                      <option value="10k-25k">$10,000 - $25,000</option>
+                      <option value="25k-50k">$25,000 - $50,000</option>
+                      <option value="over-50k">Over $50,000</option>
+                      <option value="flexible">Flexible</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="timeline">Project Timeline</label>
+                    <select
+                      id="timeline"
+                      name="timeline"
+                      value={formData.timeline}
+                      onChange={handleChange}
+                    >
+                      <option value="">Select Timeline</option>
+                      <option value="asap">ASAP</option>
+                      <option value="1-month">Within 1 Month</option>
+                      <option value="3-months">Within 3 Months</option>
+                      <option value="6-months">Within 6 Months</option>
+                      <option value="flexible">Flexible</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="message">Project Details & Special Requirements</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows="5"
+                    placeholder="Please describe your vision, any specific requirements, site conditions, or questions you have..."
+                  />
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="submit-btn"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending Request...' : 'Send Free Estimate Request'}
+                </button>
+              </form>
+            </div>
+
+            <div className="info-section">
+              <div className="info-card">
+                <h3>Why Choose Utah Water Gardens?</h3>
+                <ul>
+                  <li>✓ 11+ years of experience in water garden design</li>
+                  <li>✓ Utah's largest selection of aquatic plants</li>
+                  <li>✓ Complete design, construction, and maintenance services</li>
+                  <li>✓ Licensed and insured professionals</li>
+                  <li>✓ 100% satisfaction guarantee</li>
+                </ul>
+              </div>
+
+              <div className="info-card">
+                <h3>What to Expect</h3>
+                <div className="process-steps">
+                  <div className="step">
+                    <div className="step-number">1</div>
+                    <div className="step-content">
+                      <h4>Initial Consultation</h4>
+                      <p>We'll discuss your vision and assess your property</p>
+                    </div>
+                  </div>
+                  <div className="step">
+                    <div className="step-number">2</div>
+                    <div className="step-content">
+                      <h4>Custom Design</h4>
+                      <p>Detailed plans tailored to your space and budget</p>
+                    </div>
+                  </div>
+                  <div className="step">
+                    <div className="step-number">3</div>
+                    <div className="step-content">
+                      <h4>Professional Installation</h4>
+                      <p>Expert construction with quality materials</p>
+                    </div>
+                  </div>
+                  <div className="step">
+                    <div className="step-number">4</div>
+                    <div className="step-content">
+                      <h4>Ongoing Support</h4>
+                      <p>Maintenance services to keep your pond thriving</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="info-card">
+                <h3>Contact Information</h3>
+                <div className="contact-info">
+                  <div className="contact-item">
+                    <strong>Phone:</strong>
+                    <a href="tel:(801) 590-8516">(801) 590-8516</a>
+                  </div>
+                  <div className="contact-item">
+                    <strong>Email:</strong>
+                    <a href="mailto:jeremyuwg@gmail.com">jeremyuwg@gmail.com</a>
+                  </div>
+                  <div className="contact-item">
+                    <strong>Business Hours:</strong>
+                    <span>Mon-Sat: 10:30AM-6PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FreeEstimatePage;

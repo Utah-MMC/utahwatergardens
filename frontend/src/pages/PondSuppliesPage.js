@@ -181,7 +181,15 @@ const PondSuppliesPage = () => {
         </section>
 
         {/* Contact CTA */}
-        <section className="contact-cta">
+        <section 
+          className="contact-cta"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/cta-bg-enhanced.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
           <h2>Need Help Choosing?</h2>
           <p>Our experts can help you select the perfect supplies for your pond</p>
           <div className="cta-buttons">
