@@ -1,16 +1,5 @@
 {
   "version": 2,
-  "_comment": "Force deployment with permission fix",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build",
-        "buildCommand": "chmod +x node_modules/.bin/* && npm run build"
-      }
-    }
-  ],
   "rewrites": [
     {
       "source": "/static/(.*)",
