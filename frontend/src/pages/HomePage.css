@@ -1237,12 +1237,13 @@
 
 /* Contact CTA */
 .contact-cta {
-  padding: 4rem 0;
+  padding: 4rem 0 5rem 0; /* Added extra bottom padding to ensure space from footer wave */
   color: white;
   text-align: center;
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  margin-bottom: 2rem; /* Additional margin to prevent wave overlap */
 }
 
 .contact-cta h2 {

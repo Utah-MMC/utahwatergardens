@@ -4,6 +4,9 @@ import './Footer.css';
 
 const Footer = () => {
   const waveRef = useRef(null);
+  
+  // Debug log to ensure Footer is rendering
+  console.log('Footer component is rendering');
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -62,7 +65,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="footer">
+    <footer className="footer" style={{ backgroundColor: '#1e40af', color: 'white' }}>
       {/* Wavy Divider */}
       <div className="footer-wave" ref={waveRef}>
         <svg viewBox="0 0 1200 200" preserveAspectRatio="none">

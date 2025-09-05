@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero.js';
 import './ShopPage.css';
 
@@ -13,15 +14,6 @@ const ShopPage = () => {
       phone: '(801) 590-8516',
       featured: true,
       badge: 'Most Popular'
-    },
-    {
-      name: 'Truxor T50 - NEW!',
-      image: '/images/truxor-equipment-1.jpg',
-      description: 'Revolutionary amphibious land and water tool for pond maintenance and cleaning',
-      price: 'Contact for pricing',
-      phone: '(801) 590-8516',
-      featured: true,
-      badge: 'New Equipment'
     }
   ];
 
@@ -154,8 +146,8 @@ const ShopPage = () => {
     <div className="shop-page">
       <PageHero 
         title="Shop Our Products"
-        subtitle="Largest variety of aquatic plants and pond supplies in Utah"
-        backgroundImage="/images/IMG_2770.jpg"
+        subtitle="Largest variety of aquatic plants and pond supplies in Utah. Visit our store or shop online with delivery and scheduled pickup options"
+        backgroundImage="/images/IMG_2779-topaz-enhance-2x-sharpen.jpeg"
         backgroundImageAlt="Utah Water Gardens retail store with aquatic plants and supplies"
       />
       
@@ -168,10 +160,10 @@ const ShopPage = () => {
       <section className="featured-products">
         <div className="container">
           <h2>Featured Products</h2>
-          <p>Our most popular items and newest equipment</p>
+          <p>Our most popular items</p>
           <div className="featured-grid">
             {featuredProducts.map((product, index) => (
-              <div key={index} className="featured-product-card">
+              <Link key={index} to="/pond-supplies/liners" className="featured-product-card">
                 <div className="product-badge">{product.badge}</div>
                 <div className="product-image">
                   <img src={product.image} alt={product.name} />
@@ -182,7 +174,7 @@ const ShopPage = () => {
                   <div className="product-price">{product.price}</div>
                   <a href={`tel:${product.phone}`} className="btn btn-primary">Call for Details</a>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -194,19 +186,35 @@ const ShopPage = () => {
             <div key={category.id} className="product-category">
               <h2>{category.category}</h2>
               <div className="products-grid">
-                {category.items.map((product, index) => (
-                  <div key={index} className="product-card">
-                    <div className="product-image">
-                      <img src={product.image} alt={product.name} />
-                    </div>
-                    <div className="product-info">
-                      <h3>{product.name}</h3>
-                      <p>{product.description}</p>
-                      <div className="product-price">{product.price}</div>
-                      <a href={`tel:${product.phone}`} className="btn btn-primary">Call for Details</a>
-                    </div>
-                  </div>
-                ))}
+                {category.items.map((product, index) => {
+                  // Determine the appropriate link based on product name
+                  let linkPath = '/contact';
+                  if (product.name.includes('Water Lilies')) linkPath = '/plants-fish/water-lilies';
+                  else if (product.name.includes('Floating Plants')) linkPath = '/plants-fish/floating-plants';
+                  else if (product.name.includes('Marginal Plants')) linkPath = '/plants-fish/marginal-plants';
+                  else if (product.name.includes('Submerged Plants')) linkPath = '/plants-fish/aquatic-plants';
+                  else if (product.name.includes('Koi')) linkPath = '/plants-fish/koi-goldfish';
+                  else if (product.name.includes('Goldfish')) linkPath = '/plants-fish/koi-goldfish';
+                  else if (product.name.includes('Pond Pumps')) linkPath = '/pond-supplies/pumps-aeration';
+                  else if (product.name.includes('Pond Liners')) linkPath = '/pond-supplies/liners';
+                  else if (product.name.includes('Filtration Systems')) linkPath = '/pond-supplies/filtration';
+                  else if (product.name.includes('Water Treatments')) linkPath = '/pond-supplies/water-treatments';
+                  else if (product.name.includes('Spring Blooms') || product.name.includes('Summer Collection') || product.name.includes('Fall Preparations')) linkPath = '/plants-fish/aquatic-plants';
+
+                  return (
+                    <Link key={index} to={linkPath} className="product-card">
+                      <div className="product-image">
+                        <img src={product.image} alt={product.name} />
+                      </div>
+                      <div className="product-info">
+                        <h3>{product.name}</h3>
+                        <p>{product.description}</p>
+                        <div className="product-price">{product.price}</div>
+                        <a href={`tel:${product.phone}`} className="btn btn-primary">Call for Details</a>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           ))}
@@ -218,7 +226,7 @@ const ShopPage = () => {
           <div className="shop-info-content">
             <div className="shop-info-text">
               <h2>Visit Our Store Today!</h2>
-              <p><strong>See our Pond Liners and NEW Truxor T50 in person!</strong> Come visit our store to see our complete selection of aquatic plants, fish, and pond supplies. Our knowledgeable staff can help you choose the perfect plants and supplies for your pond.</p>
+              <p><strong>See our Pond Liners and complete selection in person!</strong> Come visit our store to see our complete selection of aquatic plants, fish, and pond supplies. We also offer delivery and scheduled pickup options for your convenience. Our knowledgeable staff can help you choose the perfect plants and supplies for your pond.</p>
               <div className="shop-details">
                 <div className="shop-detail">
                   <i className="fas fa-map-marker-alt"></i>
@@ -260,24 +268,24 @@ const ShopPage = () => {
         <div className="container">
           <h2>What Makes Our Retail Location Special</h2>
           <div className="highlights-grid">
-            <div className="highlight-card">
+            <Link to="/plants-fish/aquatic-plants" className="highlight-card">
               <img src="/images/IMG_2775.jpg" alt="Expert plant selection" />
               <h3>Expert Plant Selection</h3>
               <p>Our staff hand-picks the healthiest and most beautiful plants for your pond</p>
               <a href="tel:(801) 590-8516" className="highlight-cta">Call for Plant Advice</a>
-            </div>
-            <div className="highlight-card">
+            </Link>
+            <Link to="/plants-fish/aquatic-plants" className="highlight-card">
               <img src="/images/IMG_2779.jpg" alt="Seasonal availability" />
               <h3>Seasonal Availability</h3>
               <p>We stock plants that are appropriate for each season and Utah's climate</p>
               <a href="tel:(801) 590-8516" className="highlight-cta">Check Current Stock</a>
-            </div>
-            <div className="highlight-card">
+            </Link>
+            <Link to="/contact" className="highlight-card">
               <img src="/images/IMG_2780.jpg" alt="Local expertise" />
               <h3>Local Expertise</h3>
               <p>We know what works in Utah's unique environment and can guide your choices</p>
               <a href="tel:(801) 590-8516" className="highlight-cta">Get Local Advice</a>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

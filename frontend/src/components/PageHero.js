@@ -79,29 +79,31 @@ const PageHero = ({
   const selectedImage = getRandomImage();
 
   return (
-    <section className="page-hero">
-      {showBackgroundImage && (
-        <div className="page-hero-background">
-          <img 
-            src={selectedImage.src} 
-            alt={selectedImage.alt}
-            className="page-hero-image"
-          />
-          <div className="page-hero-overlay"></div>
-        </div>
-      )}
-      
-      <div className="page-hero-content">
-        <div className="container">
-          <div className="page-hero-text-content">
-            <h1 className="page-hero-title">{title}</h1>
-            {subtitle && (
-              <p className="page-hero-subtitle">{subtitle}</p>
-            )}
+    <div className="page-hero-wrapper">
+      <section className="page-hero">
+        {showBackgroundImage && (
+          <div className="page-hero-background">
+            <img 
+              src={selectedImage.src} 
+              alt={selectedImage.alt}
+              className="page-hero-image"
+            />
+            <div className="page-hero-overlay"></div>
+          </div>
+        )}
+        
+        <div className="page-hero-content">
+          <div className="container">
+            <div className="page-hero-text-content">
+              <h1 className="page-hero-title">{title}</h1>
+              {subtitle && (
+                <p className="page-hero-subtitle">{subtitle}</p>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

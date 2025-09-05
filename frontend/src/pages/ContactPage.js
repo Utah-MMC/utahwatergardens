@@ -36,8 +36,8 @@ const ContactPage = () => {
     <div className="contact-page">
       <PageHero 
         title="Contact Us"
-        subtitle="Get in touch for a consultation or quote on your pond project"
-        backgroundImage="/images/IMG_2770.jpg"
+        subtitle="Contact us for a consultation, visit our store to see our wide variety of plants and pond supplies, or shop online with delivery and scheduled pickup options"
+        backgroundImage="/images/uwg_image_1941-topaz-enhance-3.5x.jpeg"
         backgroundImageAlt="Professional pond consultation services"
       />
 
@@ -177,7 +177,7 @@ const ContactPage = () => {
       <section className="retail-highlights-section">
         <div className="container">
           <h2>Visit Our Store</h2>
-          <p>Come see our complete selection of aquatic plants, fish, and pond supplies</p>
+          <p>Come see our wide variety of aquatic plants, fish, and pond supplies. We also offer delivery and scheduled pickup options for your convenience.</p>
           <div className="retail-highlights-grid">
             <div className="retail-highlight">
               <img src="/images/IMG_2775.jpg" alt="Aquatic plant selection" />

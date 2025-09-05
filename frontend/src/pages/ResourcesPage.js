@@ -117,7 +117,7 @@ const ResourcesPage = () => {
       <PageHero 
         title="Resources"
         subtitle="Expert knowledge and guides to help you maintain a beautiful, healthy pond"
-        backgroundImage="/images/IMG_2770.jpg"
+        backgroundImage="/images/pondDredging-topaz-enhance-3.9x.jpeg"
         backgroundImageAlt="Comprehensive pond care resources and guides"
       />
 

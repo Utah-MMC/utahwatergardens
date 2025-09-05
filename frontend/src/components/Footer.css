@@ -6,106 +6,147 @@
   position: relative;
 }
 
-/* Wavy Divider */
+/* Wavy Divider - Enhanced with Continuous Movement */
 .footer-wave {
   position: absolute;
-  top: -150px; /* Reduced height for more compact footer */
+  top: -120px; /* Reduced further to prevent blocking call buttons */
   left: 0;
   width: 100%;
-  height: 200px; /* Reduced height for more compact footer */
+  height: 150px; /* Reduced height to prevent overlap with CTA */
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
   cursor: pointer;
   z-index: 1; /* Ensure wave is above footer background but below content */
+  animation: wave-container-float 12s ease-in-out infinite;
+}
+
+/* Subtle container animation for overall wave movement */
+@keyframes wave-container-float {
+  0%, 100% {
+    transform: rotate(180deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(180deg) translateY(-3px);
+  }
 }
 
 .footer-wave svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 200px; /* Reduced height for more compact footer */
+  height: 150px; /* Reduced height to match container */
 }
 
 .footer-wave .shape-fill {
   fill: #1e40af;
 }
 
-/* Wave Animation Layers */
+/* Wave Animation Layers - Enhanced Continuous Flow */
 .wave-layer-1 {
-  animation: wave-flow-1 8s ease-in-out infinite;
+  animation: wave-flow-1 6s ease-in-out infinite;
   transform-origin: center;
 }
 
 .wave-layer-2 {
-  animation: wave-flow-2 6s ease-in-out infinite;
+  animation: wave-flow-2 8s ease-in-out infinite;
   transform-origin: center;
-  animation-delay: -2s;
+  animation-delay: -1.5s;
 }
 
 .wave-layer-3 {
   animation: wave-flow-3 10s ease-in-out infinite;
   transform-origin: center;
-  animation-delay: -4s;
+  animation-delay: -3s;
 }
 
-/* Keyframe Animations */
+/* Enhanced Keyframe Animations - More Dynamic Wave Movement */
 @keyframes wave-flow-1 {
-  0%, 100% {
-    transform: translateY(0px) scaleY(1);
+  0% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
   }
   25% {
-    transform: translateY(-5px) scaleY(1.05);
+    transform: translateY(-8px) scaleY(1.08) translateX(2px);
   }
   50% {
-    transform: translateY(0px) scaleY(1);
+    transform: translateY(-3px) scaleY(1.02) translateX(0px);
   }
   75% {
-    transform: translateY(5px) scaleY(0.95);
+    transform: translateY(6px) scaleY(0.94) translateX(-2px);
+  }
+  100% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
   }
 }
 
 @keyframes wave-flow-2 {
-  0%, 100% {
-    transform: translateY(0px) scaleY(1);
+  0% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
   }
-  33% {
-    transform: translateY(8px) scaleY(0.9);
+  20% {
+    transform: translateY(5px) scaleY(0.92) translateX(-1px);
   }
-  66% {
-    transform: translateY(-3px) scaleY(1.1);
+  40% {
+    transform: translateY(-6px) scaleY(1.06) translateX(1px);
+  }
+  60% {
+    transform: translateY(3px) scaleY(0.98) translateX(0px);
+  }
+  80% {
+    transform: translateY(-4px) scaleY(1.04) translateX(-1px);
+  }
+  100% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
   }
 }
 
 @keyframes wave-flow-3 {
-  0%, 100% {
-    transform: translateY(0px) scaleY(1);
+  0% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
   }
-  20% {
-    transform: translateY(-4px) scaleY(1.05);
+  15% {
+    transform: translateY(-5px) scaleY(1.05) translateX(1px);
   }
-  40% {
-    transform: translateY(1.5px) scaleY(0.975);
+  30% {
+    transform: translateY(2px) scaleY(0.98) translateX(-1px);
+  }
+  45% {
+    transform: translateY(4px) scaleY(0.96) translateX(0px);
   }
   60% {
-    transform: translateY(3px) scaleY(0.95);
+    transform: translateY(-2px) scaleY(1.02) translateX(1px);
   }
-  80% {
-    transform: translateY(-1px) scaleY(1.025);
+  75% {
+    transform: translateY(3px) scaleY(0.99) translateX(-1px);
+  }
+  90% {
+    transform: translateY(-1px) scaleY(1.01) translateX(0px);
+  }
+  100% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
   }
 }
 
-/* Hover Effects */
+/* Enhanced Hover Effects - More Dynamic Interaction */
 .footer-wave:hover .wave-layer-1 {
-  animation-duration: 4s;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
 }
 
 .footer-wave:hover .wave-layer-2 {
-  animation-duration: 3s;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
 }
 
 .footer-wave:hover .wave-layer-3 {
   animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+
+/* Additional wave movement on hover */
+.footer-wave:hover {
+  transform: rotate(180deg) scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 .container {
@@ -338,12 +379,12 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .footer-wave {
-    top: -140px; /* Adjusted for compact footer */
-    height: 180px; /* Adjusted for compact footer */
+    top: -110px; /* Adjusted to prevent blocking call buttons */
+    height: 140px; /* Adjusted for compact footer */
   }
   
   .footer-wave svg {
-    height: 180px; /* Adjusted for compact footer */
+    height: 140px; /* Adjusted for compact footer */
   }
   
   .footer-main {
@@ -371,12 +412,12 @@
 
 @media (max-width: 768px) {
   .footer-wave {
-    top: -120px; /* Adjusted for compact footer */
-    height: 160px; /* Adjusted for compact footer */
+    top: -100px; /* Adjusted to prevent blocking call buttons */
+    height: 130px; /* Adjusted for compact footer */
   }
   
   .footer-wave svg {
-    height: 160px; /* Adjusted for compact footer */
+    height: 130px; /* Adjusted for compact footer */
   }
   
   .container {
@@ -427,12 +468,12 @@
 
 @media (max-width: 480px) {
   .footer-wave {
-    top: -100px; /* Adjusted for compact footer */
-    height: 140px; /* Adjusted for compact footer */
+    top: -80px; /* Adjusted to prevent blocking call buttons */
+    height: 120px; /* Adjusted for compact footer */
   }
   
   .footer-wave svg {
-    height: 140px; /* Adjusted for compact footer */
+    height: 120px; /* Adjusted for compact footer */
   }
   
   .footer-main {

@@ -22,8 +22,12 @@ const AboutPage = () => {
             </div>
             <div className="about-image">
               <img 
-                src="/images/pondMaintenance.webp" 
-                alt="Beautiful backyard pond with stone bridge" 
+                src="/images/IMG_2770.jpg" 
+                alt="Beautiful water feature with natural rocks and clear turquoise water" 
+                onError={(e) => {
+                  e.target.src = '/images/IMG_2775.jpg';
+                  e.target.alt = 'Beautiful water feature';
+                }}
               />
             </div>
           </div>
