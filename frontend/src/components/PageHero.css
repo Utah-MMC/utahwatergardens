@@ -1,7 +1,7 @@
 .page-hero-wrapper {
   position: relative;
   margin-top: -80px; /* Negative margin to counteract main padding-top */
-  padding-top: 80px; /* Add back the padding for content positioning */
+  padding-top: 0; /* Remove padding to start at very top */
   width: 100vw; /* Full viewport width */
   margin-left: calc(-50vw + 50%); /* Center the full-width element */
   z-index: 1; /* Ensure it's above other content but below footer */
@@ -10,7 +10,7 @@
 
 .page-hero {
   position: relative;
-  padding: 6rem 0 4rem 0;
+  padding: 8rem 0 4rem 0; /* Increased top padding to account for header */
   color: white;
   text-align: center;
   overflow: hidden;
@@ -97,13 +97,13 @@
 @media (max-width: 768px) {
   .page-hero-wrapper {
     margin-top: -80px;
-    padding-top: 80px;
+    padding-top: 0; /* Remove padding to start at very top */
     width: 100%; /* Reset to container width on mobile */
     margin-left: 0; /* Reset margin on mobile */
   }
   
   .page-hero {
-    padding: 5rem 0 3rem 0;
+    padding: 7rem 0 3rem 0; /* Increased top padding to account for header */
     min-height: 400px;
   }
   
@@ -124,13 +124,13 @@
 @media (max-width: 480px) {
   .page-hero-wrapper {
     margin-top: -80px;
-    padding-top: 80px;
+    padding-top: 0; /* Remove padding to start at very top */
     width: 100%; /* Reset to container width on mobile */
     margin-left: 0; /* Reset margin on mobile */
   }
   
   .page-hero {
-    padding: 4rem 0 2rem 0;
+    padding: 6rem 0 2rem 0; /* Increased top padding to account for header */
     min-height: 350px;
   }
   
