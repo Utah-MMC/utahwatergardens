@@ -22,8 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "optimize": "node scripts/build-optimize.js",
-    "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html",
-    "postinstall": "npm install --legacy-peer-deps"
+    "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html"
   },
   "eslintConfig": {
     "extends": [
