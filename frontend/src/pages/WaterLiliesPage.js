@@ -25,7 +25,7 @@ const WaterLiliesPage = () => {
         <div className="container">
           <h2>Types of Water Lilies</h2>
           <div className="types-grid">
-            <div className="type-card">
+            <Link to="/plants-fish/water-lilies" className="type-card">
               <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Hardy water lilies" />
               <h3>Hardy Water Lilies</h3>
               <p>Cold-tolerant lilies that survive freezing temperatures and return year after year.</p>
@@ -35,9 +35,9 @@ const WaterLiliesPage = () => {
                 <li>Wide range of colors</li>
                 <li>Perfect for Utah climate</li>
               </ul>
-            </div>
+            </Link>
             
-            <div className="type-card">
+            <Link to="/plants-fish/water-lilies" className="type-card">
               <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Tropical water lilies" />
               <h3>Tropical Water Lilies</h3>
               <p>Exotic lilies with vibrant colors and larger blooms, perfect for warm summer months.</p>
@@ -47,9 +47,9 @@ const WaterLiliesPage = () => {
                 <li>Night-blooming varieties</li>
                 <li>Fragrant flowers</li>
               </ul>
-            </div>
+            </Link>
             
-            <div className="type-card">
+            <Link to="/plants-fish/water-lilies" className="type-card">
               <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Dwarf water lilies" />
               <h3>Dwarf Water Lilies</h3>
               <p>Compact lilies perfect for small ponds and container water gardens.</p>
@@ -59,7 +59,7 @@ const WaterLiliesPage = () => {
                 <li>Container-friendly</li>
                 <li>Easy to maintain</li>
               </ul>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

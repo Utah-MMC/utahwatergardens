@@ -81,7 +81,7 @@ const MarginalPlantsPage = () => {
           <p>We offer the largest variety of marginal plants in Utah, perfect for creating natural pond borders</p>
           <div className="plants-grid">
             {marginalPlants.map((plant, index) => (
-              <div key={index} className="plant-card">
+              <Link key={index} to="/plants-fish/marginal-plants" className="plant-card">
                 <div className="plant-image">
                   <img src={plant.image} alt={plant.name} />
                 </div>
@@ -97,9 +97,9 @@ const MarginalPlantsPage = () => {
                     </ul>
                   </div>
                   <div className="plant-price">{plant.price}</div>
-                  <a href="tel:(801) 590-8516" className="plant-cta">Call for Availability</a>
+                  <a href="tel:(801) 590-8516" className="plant-cta" onClick={(e) => e.stopPropagation()}>Call for Availability</a>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

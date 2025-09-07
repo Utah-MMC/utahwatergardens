@@ -183,7 +183,7 @@ const PondLinersPage = () => {
           <p>We carry the highest quality pond liners from trusted manufacturers, ensuring your pond stays watertight for decades</p>
           <div className="liner-grid">
             {linerTypes.map((liner, index) => (
-              <div key={index} className="liner-card">
+              <Link key={index} to="/pond-supplies/liners" className="liner-card">
                 <div className="liner-image">
                   <img src={liner.image} alt={liner.name} />
                 </div>
@@ -215,9 +215,9 @@ const PondLinersPage = () => {
                     </ul>
                   </div>
                   <div className="liner-price">{liner.price}</div>
-                  <a href="tel:(801) 590-8516" className="liner-cta">Call for Availability</a>
+                  <a href="tel:(801) 590-8516" className="liner-cta" onClick={(e) => e.stopPropagation()}>Call for Availability</a>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -444,7 +444,7 @@ const PondLinersPage = () => {
           <h2>Complete Liner Packages</h2>
           <p>Save money with our complete liner installation packages</p>
           <div className="packages-grid">
-            <div className="package-card">
+            <Link to="/pond-supplies/liners" className="package-card">
               <h3>Basic Liner Package</h3>
               <div className="package-price">$4.50/sq ft</div>
               <div className="package-description">Perfect for small ponds and DIY projects</div>
@@ -455,9 +455,9 @@ const PondLinersPage = () => {
                 <li>Installation guide</li>
                 <li>Phone support</li>
               </ul>
-              <a href="tel:(801) 590-8516" className="package-cta">Call to Order</a>
-            </div>
-            <div className="package-card featured">
+              <a href="tel:(801) 590-8516" className="package-cta" onClick={(e) => e.stopPropagation()}>Call to Order</a>
+            </Link>
+            <Link to="/pond-supplies/liners" className="package-card featured">
               <h3>Professional Liner Package</h3>
               <div className="package-price">$8.50/sq ft</div>
               <div className="package-description">Ideal for medium to large residential ponds</div>
@@ -469,9 +469,9 @@ const PondLinersPage = () => {
                 <li>Warranty coverage</li>
                 <li>Post-installation support</li>
               </ul>
-              <a href="tel:(801) 590-8516" className="package-cta">Call to Order</a>
-            </div>
-            <div className="package-card">
+              <a href="tel:(801) 590-8516" className="package-cta" onClick={(e) => e.stopPropagation()}>Call to Order</a>
+            </Link>
+            <Link to="/pond-supplies/liners" className="package-card">
               <h3>Commercial Liner Package</h3>
               <div className="package-price">$15.50/sq ft</div>
               <div className="package-description">For large ponds and commercial applications</div>
@@ -484,8 +484,8 @@ const PondLinersPage = () => {
                 <li>24/7 support</li>
                 <li>Performance monitoring</li>
               </ul>
-              <a href="tel:(801) 590-8516" className="package-cta">Call to Order</a>
-            </div>
+              <a href="tel:(801) 590-8516" className="package-cta" onClick={(e) => e.stopPropagation()}>Call to Order</a>
+            </Link>
           </div>
         </div>
       </section>

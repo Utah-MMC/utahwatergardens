@@ -80,7 +80,7 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, '
 /* Why Choose Us */
 .why-choose-us { padding: clamp(2.5rem, 6vw, 4rem) 0; }
 .why-choose-us h2 { text-align: center; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: var(--brand-900); margin-bottom: 2rem; }
-.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 .feature-item { text-align: center; padding: 1.5rem; }
 .feature-icon { font-size: 2.25rem; margin-bottom: .75rem; }
 .feature-item h3 { color: var(--brand-900); margin-bottom: .5rem; font-size: 1.15rem; }

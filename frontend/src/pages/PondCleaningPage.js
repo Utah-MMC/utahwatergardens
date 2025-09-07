@@ -148,7 +148,7 @@ const PondCleaningPage = () => {
           <p>Comprehensive cleaning services tailored to your pond's specific needs</p>
           <div className="cleaning-services-grid">
             {cleaningServices.map((service, index) => (
-              <div key={index} className="cleaning-service-card">
+              <Link key={index} to="/pond-services/cleaning" className="cleaning-service-card">
                 <div className="cleaning-service-image">
                   <img src={service.image} alt={service.name} />
                 </div>
@@ -167,9 +167,9 @@ const PondCleaningPage = () => {
                     <span className="frequency">Frequency: {service.frequency}</span>
                     <span className="price">{service.price}</span>
                   </div>
-                  <a href="tel:(801) 590-8516" className="cleaning-service-cta">Call for Service</a>
+                  <a href="tel:(801) 590-8516" className="cleaning-service-cta" onClick={(e) => e.stopPropagation()}>Call for Service</a>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -182,7 +182,7 @@ const PondCleaningPage = () => {
           <p>Choose the cleaning package that fits your needs and budget</p>
           <div className="cleaning-packages-grid">
             {cleaningPackages.map((pkg, index) => (
-              <div key={index} className={`cleaning-package-card ${pkg.name === 'Standard Cleaning' ? 'featured' : ''}`}>
+              <Link key={index} to="/pond-services/cleaning" className={`cleaning-package-card ${pkg.name === 'Standard Cleaning' ? 'featured' : ''}`}>
                 <div className="cleaning-package-image">
                   <img src={pkg.image} alt={pkg.name} />
                 </div>
@@ -195,9 +195,9 @@ const PondCleaningPage = () => {
                       <li key={serviceIndex}>{service}</li>
                     ))}
                   </ul>
-                  <a href="tel:(801) 590-8516" className="cleaning-package-cta">Call for {pkg.name}</a>
+                  <a href="tel:(801) 590-8516" className="cleaning-package-cta" onClick={(e) => e.stopPropagation()}>Call for {pkg.name}</a>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

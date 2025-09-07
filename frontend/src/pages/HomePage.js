@@ -244,7 +244,7 @@ const HomePage = () => {
             <p>Your full-service pond business offering complete water garden solutions from design to maintenance</p>
           </div>
           <div className="services-grid">
-            <div className="service-card">
+            <Link to="/pond-services/design-build" className="service-card">
               <div className="service-image">
                 <img src="/images/pondConstruction1000x800.webp" alt="Custom pond construction services" />
               </div>
@@ -258,13 +258,13 @@ const HomePage = () => {
                   <li>Landscaping integration</li>
                 </ul>
                 <div className="service-buttons">
-                  <Link to="/pond-services/design-build" className="btn btn-primary">Learn More</Link>
-                  <a href="tel:(801) 590-8516" className="btn btn-secondary">Get Quote</a>
+                  <span className="btn btn-primary">Learn More</span>
+                  <a href="tel:(801) 590-8516" className="btn btn-secondary" onClick={(e) => e.stopPropagation()}>Get Quote</a>
                 </div>
               </div>
-            </div>
+            </Link>
             
-            <div className="service-card">
+            <Link to="/pond-services/maintenance" className="service-card">
               <div className="service-image">
                 <img src="/images/pondMaintenance.webp" alt="Professional pond maintenance services" />
               </div>
@@ -278,13 +278,13 @@ const HomePage = () => {
                   <li>Seasonal preparation</li>
                 </ul>
                 <div className="service-buttons">
-                  <Link to="/pond-services/maintenance" className="btn btn-primary">Learn More</Link>
-                  <a href="tel:(801) 590-8516" className="btn btn-secondary">Schedule Service</a>
+                  <span className="btn btn-primary">Learn More</span>
+                  <a href="tel:(801) 590-8516" className="btn btn-secondary" onClick={(e) => e.stopPropagation()}>Schedule Service</a>
                 </div>
               </div>
-            </div>
+            </Link>
             
-            <div className="service-card">
+            <Link to="/pond-and-lake-dredging" className="service-card">
               <div className="service-image">
                 <img src="/images/pondDredging-topaz-enhance-3.9x.jpeg" alt="Pond dredging and restoration services" />
               </div>
@@ -298,13 +298,13 @@ const HomePage = () => {
                   <li>Ecosystem rehabilitation</li>
                 </ul>
                 <div className="service-buttons">
-                  <Link to="/pond-services/pond-dredging" className="btn btn-primary">Learn More</Link>
-                  <a href="tel:(801) 590-8516" className="btn btn-secondary">Get Estimate</a>
+                  <span className="btn btn-primary">Learn More</span>
+                  <a href="tel:(801) 590-8516" className="btn btn-secondary" onClick={(e) => e.stopPropagation()}>Get Estimate</a>
                 </div>
               </div>
-            </div>
+            </Link>
             
-            <div className="service-card">
+            <Link to="/plants-fish" className="service-card">
               <div className="service-image">
                 <img src="/images/koi.webp" alt="Koi and fish stocking services" />
               </div>
@@ -318,11 +318,11 @@ const HomePage = () => {
                   <li>Expert planting & care</li>
                 </ul>
                 <div className="service-buttons">
-                  <Link to="/plants-fish" className="btn btn-primary">View Selection</Link>
-                  <a href="tel:(801) 590-8516" className="btn btn-secondary">Call for Stock</a>
+                  <span className="btn btn-primary">View Selection</span>
+                  <a href="tel:(801) 590-8516" className="btn btn-secondary" onClick={(e) => e.stopPropagation()}>Call for Stock</a>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
           
         </div>

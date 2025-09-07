@@ -101,7 +101,7 @@ const PondMaintenancePage = () => {
           <p>We offer comprehensive pond maintenance services to ensure your water feature remains healthy and beautiful</p>
           <div className="services-grid">
             {maintenanceServices.map((service, index) => (
-              <div key={index} className="service-card">
+              <Link key={index} to="/pond-services/maintenance" className="service-card">
                 <div className="service-image">
                   <img src={service.image} alt={service.name} />
                 </div>
@@ -120,9 +120,9 @@ const PondMaintenancePage = () => {
                     <span className="frequency">Frequency: {service.frequency}</span>
                     <span className="price">{service.price}</span>
                   </div>
-                  <a href="tel:(801) 590-8516" className="service-cta">Call for Service</a>
+                  <a href="tel:(801) 590-8516" className="service-cta" onClick={(e) => e.stopPropagation()}>Call for Service</a>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -205,7 +205,7 @@ const PondMaintenancePage = () => {
           <h2>Maintenance Plans</h2>
           <p>Choose the maintenance plan that fits your needs and budget</p>
           <div className="plans-grid">
-            <div className="plan-card">
+            <Link to="/pond-services/maintenance" className="plan-card">
               <h3>Basic Plan</h3>
               <div className="plan-price">$99/month</div>
               <ul className="plan-features">
@@ -214,9 +214,9 @@ const PondMaintenancePage = () => {
                 <li>Plant trimming</li>
                 <li>Emergency support</li>
               </ul>
-              <a href="tel:(801) 590-8516" className="plan-cta">Call for Basic Plan</a>
-            </div>
-            <div className="plan-card featured">
+              <a href="tel:(801) 590-8516" className="plan-cta" onClick={(e) => e.stopPropagation()}>Call for Basic Plan</a>
+            </Link>
+            <Link to="/pond-services/maintenance" className="plan-card featured">
               <h3>Standard Plan</h3>
               <div className="plan-price">$149/month</div>
               <ul className="plan-features">
@@ -227,9 +227,9 @@ const PondMaintenancePage = () => {
                 <li>Fish health monitoring</li>
                 <li>Priority support</li>
               </ul>
-              <a href="tel:(801) 590-8516" className="plan-cta">Call for Standard Plan</a>
-            </div>
-            <div className="plan-card">
+              <a href="tel:(801) 590-8516" className="plan-cta" onClick={(e) => e.stopPropagation()}>Call for Standard Plan</a>
+            </Link>
+            <Link to="/pond-services/maintenance" className="plan-card">
               <h3>Premium Plan</h3>
               <div className="plan-price">$199/month</div>
               <ul className="plan-features">
@@ -241,8 +241,8 @@ const PondMaintenancePage = () => {
                 <li>Seasonal preparation</li>
                 <li>24/7 emergency support</li>
               </ul>
-              <a href="tel:(801) 590-8516" className="plan-cta">Call for Premium Plan</a>
-            </div>
+              <a href="tel:(801) 590-8516" className="plan-cta" onClick={(e) => e.stopPropagation()}>Call for Premium Plan</a>
+            </Link>
           </div>
         </div>
       </section>

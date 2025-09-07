@@ -135,7 +135,7 @@ const PumpsAerationPage = () => {
           <p>We carry the largest selection of pond pumps in Utah, from small fountain pumps to large commercial systems</p>
           <div className="pump-grid">
             {pumpCategories.map((pump, index) => (
-              <div key={index} className="pump-card">
+              <Link key={index} to="/pond-supplies/pumps-aeration" className="pump-card">
                 <div className="pump-image">
                   <img src={pump.image} alt={pump.name} />
                 </div>
@@ -159,9 +159,9 @@ const PumpsAerationPage = () => {
                     </ul>
                   </div>
                   <div className="pump-price">{pump.price}</div>
-                  <a href="tel:(801) 590-8516" className="pump-cta">Call for Availability</a>
+                  <a href="tel:(801) 590-8516" className="pump-cta" onClick={(e) => e.stopPropagation()}>Call for Availability</a>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
