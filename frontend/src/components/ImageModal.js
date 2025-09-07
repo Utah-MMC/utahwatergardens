@@ -2,8 +2,6 @@ import React from 'react';
 import './ImageModal.css';
 
 const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt }) => {
-  if (!isOpen) return null;
-
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -27,6 +25,8 @@ const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt }) => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  if (!isOpen) return null;
 
   return (
     <div className="image-modal-overlay" onClick={handleOverlayClick}>
