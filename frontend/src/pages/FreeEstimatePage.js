@@ -320,7 +320,7 @@ This request was submitted from the Utah Water Gardens website.
                   </div>
                   <div className="contact-item">
                     <strong>Business Hours:</strong>
-                    <span>Mon-Sat: 10:30AM-6PM</span>
+                    <span>Mon-Sat: 10:00AM-6PM</span>
                   </div>
                 </div>
               </div>

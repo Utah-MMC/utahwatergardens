@@ -1,13 +1,13 @@
 .header {
-  background: rgba(0, 0, 0, 0.08) !important; /* More transparent header background */
+  background: rgba(0, 0, 0, 0.4) !important; /* More opaque header background */
   color: white;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1001; /* Higher than hero section to appear on top */
-  backdrop-filter: blur(5px) !important; /* Less blur for more transparency */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important; /* More subtle border */
+  backdrop-filter: blur(10px) !important; /* More blur for better readability */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; /* More visible border */
 }
 
 .header-container {
@@ -18,9 +18,9 @@
 
 /* Top Section - Contact Info */
 .header-top {
-  background: rgba(0, 0, 0, 0.05) !important; /* More transparent background */
+  background: rgba(0, 0, 0, 0.3) !important; /* More opaque background */
   padding: 0.25rem 0 !important; /* Small padding for contact info */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important; /* More subtle border */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important; /* More visible border */
 }
 
 .header-top .contact-info {
@@ -79,7 +79,7 @@
 
 /* Main Header Section */
 .header-main {
-  background: rgba(0, 0, 0, 0.05) !important; /* More transparent background */
+  background: rgba(0, 0, 0, 0.3) !important; /* More opaque background */
   padding: 0.4rem 0 !important; /* Small padding for navigation */
 }
 

@@ -161,7 +161,7 @@ export const generateSEOData = (pageType, pageData = {}) => {
           "address": structuredData.localBusiness.address,
           "telephone": siteConfig.phone,
           "openingHours": [
-            "Mo-Fr 09:00-18:00",
+            "Mo-Fr 10:00-18:00",
             "Sa 09:00-17:00"
           ]
         }

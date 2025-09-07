@@ -108,7 +108,7 @@ const Header = ({ className = '' }) => {
               contact@utahwatergardens.com
             </a>
             <span className="contact-separator">•</span>
-            <span className="contact-text">Mon-Sat: 10:30AM-6PM</span>
+            <span className="contact-text">Mon-Sat: 10:00AM-6PM</span>
           </div>
         </div>
       </div>

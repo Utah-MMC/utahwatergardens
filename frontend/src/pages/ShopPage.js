@@ -267,7 +267,7 @@ const ShopPage = () => {
       addressCountry: 'US',
     },
     openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '08:00', closes: '18:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '10:00', closes: '18:00' },
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '09:00', closes: '16:00' },
     ],
   }), []);
@@ -353,7 +353,7 @@ const ShopPage = () => {
                 </div>
                 <div className="shop-detail">
                   <i className="fas fa-clock" aria-hidden></i>
-                  <span>Monday - Friday: 8:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 4:00 PM</span>
+                  <span>Monday - Friday: 10:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 4:00 PM</span>
                 </div>
               </div>
               <div className="shop-cta-buttons">

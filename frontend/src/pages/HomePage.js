@@ -361,7 +361,7 @@ const HomePage = () => {
                   </div>
                   <div className="store-hours">
                     <strong>Store Hours:</strong><br />
-                    Mon-Sat: 10:30AM-6PM<br />
+                    Mon-Sat: 10:00AM-6PM<br />
                     Sunday: Closed
                   </div>
                 </div>
