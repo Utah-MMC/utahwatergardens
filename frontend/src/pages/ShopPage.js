@@ -1,418 +1,453 @@
-// ShopPage.jsx (revamped)
-// - Semantic/a11y improvements (nav, article, lists, ARIA labels)
-// - Reusable components (FeaturedProductCard, ProductCard, CategorySection)
-// - Lazy images + explicit sizes to reduce CLS
-// - Phone links normalized to tel:+18015908516
-// - JSON-LD for LocalBusiness + OfferCatalog
-// - Data moved outside the component to avoid re-creation
-
-import React, { memo, useMemo } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import PageHero from '../components/PageHero.js';
+import SEO from '../components/SEO';
+import { getAllPlants, createPlantSlug } from '../data/plantData';
 import './ShopPage.css';
 
-// ---------------------------------
-// Data
-// ---------------------------------
-
-const FEATURED_PRODUCTS = [
-  {
-    name: 'Pond Liners',
-    image: '/images/pond_liner_40mil.jpg',
-    width: 1000,
-    height: 600,
-    description: 'High-quality EPDM and PVC pond liners - Essential for any pond project',
-    price: 'Varies by size',
-    badge: 'Most Popular',
-    href: '/pond-supplies/liners',
-  },
-];
-
-const PRODUCTS = [
-  {
-    id: 'aquatic-plants',
-    category: 'Aquatic Plants',
-    items: [
-      {
-        name: 'Water Lilies',
-        image: '/images/waterLillies-topaz-enhance-4x.jpeg',
-        width: 1000,
-        height: 667,
-        description: 'Winter hardy water lilies in various colors',
-        price: '$15.99',
-        path: '/plants-fish/water-lilies',
-      },
-      {
-        name: 'Floating Plants',
-        image: '/images/IMG_2775.jpg',
-        width: 1000,
-        height: 667,
-        description: 'Water lettuce, water hyacinth, and duckweed for natural filtration',
-        price: '$8.99',
-        path: '/plants-fish/floating-plants',
-      },
-      {
-        name: 'Marginal Plants',
-        image: '/images/IMG_2779.jpg',
-        width: 1000,
-        height: 667,
-        description: 'Cattails, rushes, and other edge plants for pond borders',
-        price: '$12.99',
-        path: '/plants-fish/marginal-plants',
-      },
-      {
-        name: 'Submerged Plants',
-        image: '/images/IMG_2770.jpg',
-        width: 1000,
-        height: 667,
-        description: 'Anacharis, hornwort, and other oxygenating plants',
-        price: '$9.99',
-        path: '/plants-fish/aquatic-plants',
-      },
-    ],
-  },
-  {
-    id: 'fish-koi',
-    category: 'Fish & Koi',
-    items: [
-      {
-        name: 'Koi Fish',
-        image: '/images/koi-topaz-enhance-4x.jpeg',
-        width: 1000,
-        height: 667,
-        description: 'Beautiful koi in various sizes and colors',
-        price: 'Contact for pricing',
-        path: '/plants-fish/koi-goldfish',
-      },
-      {
-        name: 'Pond Pumps',
-        image: '/images/pumpRepair.webp',
-        width: 1000,
-        height: 667,
-        description: 'Energy-efficient pumps and aeration systems',
-        price: 'Contact for pricing',
-        path: '/pond-supplies/pumps-aeration',
-      },
-      {
-        name: 'Goldfish Varieties',
-        image: '/images/IMG_2780.jpg',
-        width: 1000,
-        height: 667,
-        description: 'Comet, shubunkin, and fancy goldfish',
-        price: 'Contact for pricing',
-        path: '/plants-fish/koi-goldfish',
-      },
-    ],
-  },
-  {
-    id: 'pond-supplies',
-    category: 'Pond Supplies',
-    items: [
-      {
-        name: 'Pond Liners',
-        image: '/images/pond_liner_roll.jpg',
-        width: 1000,
-        height: 667,
-        description: 'High-quality EPDM and PVC pond liners',
-        price: 'Varies by size',
-        path: '/pond-supplies/liners',
-      },
-      {
-        name: 'Filtration Systems',
-        image: '/images/IMG_2782.jpg',
-        width: 1000,
-        height: 667,
-        description: 'Complete pond filtration and UV systems',
-        price: 'Contact for pricing',
-        path: '/pond-supplies/filtration',
-      },
-      {
-        name: 'Pond Pumps',
-        image: '/images/pumpRepair.webp',
-        width: 1000,
-        height: 667,
-        description: 'Energy-efficient pond pumps in various sizes',
-        price: 'Contact for pricing',
-        path: '/pond-supplies/pumps-aeration',
-      },
-      {
-        name: 'Water Treatments',
-        image: '/images/IMG_2770.jpg',
-        width: 1000,
-        height: 667,
-        description: 'Dechlorinator, beneficial bacteria, and algae control',
-        price: 'Varies',
-        path: '/pond-supplies/water-treatments',
-      },
-    ],
-  },
-  {
-    id: 'seasonal-plants',
-    category: 'Seasonal Plants',
-    items: [
-      {
-        name: 'Spring Blooms',
-        image: '/images/IMG_2775.jpg',
-        width: 1000,
-        height: 667,
-        description: 'Early spring aquatic plants and flowers',
-        price: '$10.99 - $18.99',
-        path: '/plants-fish/aquatic-plants',
-      },
-      {
-        name: 'Summer Collection',
-        image: '/images/IMG_2779.jpg',
-        width: 1000,
-        height: 667,
-        description: 'Heat-loving tropical plants and water features',
-        price: '$12.99 - $24.99',
-        path: '/plants-fish/aquatic-plants',
-      },
-      {
-        name: 'Fall Preparations',
-        image: '/images/IMG_2780.jpg',
-        width: 1000,
-        height: 667,
-        description: 'Winter-hardy plants and fall maintenance supplies',
-        price: '$8.99 - $15.99',
-        path: '/plants-fish/aquatic-plants',
-      },
-    ],
-  },
-];
-
-// ---------------------------------
-// UI Primitives
-// ---------------------------------
-
-const FeaturedProductCard = memo(function FeaturedProductCard({ product }) {
-  return (
-    <Link to={product.href} className="featured-product-card" aria-label={`View ${product.name}`}>
-      {product.badge && <div className="product-badge" aria-hidden>{product.badge}</div>}
-      <div className="product-image">
-        <img
-          src={product.image}
-          alt={product.name}
-          loading="lazy"
-          width={product.width}
-          height={product.height}
-        />
-      </div>
-      <div className="product-info">
-        <h3>{product.name}</h3>
-        <p>{product.description}</p>
-        <div className="product-price">{product.price}</div>
-        <a href="tel:+18015908516" className="btn btn-primary" aria-label={`Call for ${product.name} details`}>
-          Call for Details
-        </a>
-      </div>
-    </Link>
-  );
-});
-
-const ProductCard = memo(function ProductCard({ item }) {
-  return (
-    <Link to={item.path} className="product-card" aria-label={`View ${item.name}`}>
-      <div className="product-image">
-        <img
-          src={item.image}
-          alt={item.name}
-          loading="lazy"
-          width={item.width}
-          height={item.height}
-        />
-      </div>
-      <div className="product-info">
-        <h3>{item.name}</h3>
-        <p>{item.description}</p>
-        <div className="product-price">{item.price}</div>
-        <a href="tel:+18015908516" className="btn btn-primary" aria-label={`Call about ${item.name}`}>
-          Call for Details
-        </a>
-      </div>
-    </Link>
-  );
-});
-
-const CategorySection = memo(function CategorySection({ category }) {
-  return (
-    <section className="product-category" aria-labelledby={`${category.id}-heading`}>
-      <h2 id={`${category.id}-heading`}>{category.category}</h2>
-      <div className="products-grid" role="list">
-        {category.items.map((item) => (
-          <ProductCard key={`${category.id}-${item.name}`} item={item} />
-        ))}
-      </div>
-    </section>
-  );
-});
-
-// ---------------------------------
-// Page
-// ---------------------------------
-
 const ShopPage = () => {
-  const businessSchema = useMemo(() => ({
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Utah Water Gardens',
-    url: 'https://www.utahwatergardens.com/shop',
-    telephone: '+1-801-590-8516',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '5911 S 1300 E',
-      addressLocality: 'Salt Lake City',
-      addressRegion: 'UT',
-      postalCode: '84121',
-      addressCountry: 'US',
-    },
-    openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '10:00', closes: '18:00' },
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '09:00', closes: '16:00' },
-    ],
-  }), []);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentPlantSlide, setCurrentPlantSlide] = useState(0);
+  
+  // All products from the shop
+  const allProducts = [
+    { name: 'Water Lilies', image: '/images/waterLillies.webp', category: 'Aquatic Plants', path: '/plants-fish/water-lilies' },
+    { name: 'Floating Plants', image: '/images/IMG_2775.jpg', category: 'Aquatic Plants', path: '/plants-fish/floating-plants' },
+    { name: 'Marginal Plants', image: '/images/IMG_2779.jpg', category: 'Aquatic Plants', path: '/plants-fish/marginal-plants' },
+    { name: 'Submerged Plants', image: '/images/IMG_2770.jpg', category: 'Aquatic Plants', path: '/plants-fish/aquatic-plants' },
+    { name: 'Koi Fish', image: '/images/koi.webp', category: 'Fish & Koi', path: '/plants-fish/koi-goldfish' },
+    { name: 'Pond Pumps', image: '/images/pumpRepair.webp', category: 'Pond Supplies', path: '/pond-supplies/pumps-aeration' },
+    { name: 'Goldfish Varieties', image: '/images/IMG_2780.jpg', category: 'Fish & Koi', path: '/plants-fish/koi-goldfish' },
+    { name: 'Pond Liners', image: '/images/IMG_2776.jpg', category: 'Pond Supplies', path: '/pond-supplies/liners' },
+    { name: 'Filtration Systems', image: '/images/IMG_2782.jpg', category: 'Pond Supplies', path: '/pond-supplies/filtration' },
+    { name: 'Pond Accessories', image: '/images/IMG_2782.jpg', category: 'Pond Supplies', path: '/pond-supplies/accessories' },
+    { name: 'Water Treatments', image: '/images/IMG_2770.jpg', category: 'Pond Supplies', path: '/pond-supplies/water-treatments' },
+    { name: 'Spring Blooms', image: '/images/IMG_2775.jpg', category: 'Seasonal Plants', path: '/plants-fish/aquatic-plants' },
+    { name: 'Summer Collection', image: '/images/IMG_2779.jpg', category: 'Seasonal Plants', path: '/plants-fish/aquatic-plants' },
+    { name: 'Fall Preparations', image: '/images/IMG_2780.jpg', category: 'Seasonal Plants', path: '/plants-fish/aquatic-plants' }
+  ];
 
-  const catalogSchema = useMemo(() => ({
-    '@context': 'https://schema.org',
-    '@type': 'OfferCatalog',
-    name: 'Pond Products Catalog',
-    itemListElement: PRODUCTS.map((cat) => ({
-      '@type': 'OfferCatalog',
-      name: cat.category,
-      itemListElement: cat.items.map((item) => ({
-        '@type': 'Offer',
-        itemOffered: { '@type': 'Product', name: item.name, description: item.description },
-        url: `https://www.utahwatergardens.com${item.path}`,
-      })),
-    })),
-  }), []);
+  // All plants from the plant data
+  const allPlants = getAllPlants();
+
+  const productsPerSlide = 4;
+  const totalSlides = Math.ceil(allProducts.length / productsPerSlide);
+
+  const plantsPerSlide = 4;
+  const totalPlantSlides = Math.ceil(allPlants.length / plantsPerSlide);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  }, [totalSlides]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  }, [totalSlides]);
+
+  const goToSlide = (slideIndex) => {
+    setCurrentSlide(slideIndex);
+  };
+
+  const nextPlantSlide = useCallback(() => {
+    setCurrentPlantSlide((prev) => (prev + 1) % totalPlantSlides);
+  }, [totalPlantSlides]);
+
+  const prevPlantSlide = useCallback(() => {
+    setCurrentPlantSlide((prev) => (prev - 1 + totalPlantSlides) % totalPlantSlides);
+  }, [totalPlantSlides]);
+
+  // Add touch/swipe and click-and-drag support for carousel
+  useEffect(() => {
+    const carousel = document.querySelector('.shop-grid');
+    if (!carousel) return;
+
+    let startX = 0;
+    let endX = 0;
+    let isDragging = false;
+    let isMouseDown = false;
+
+    const handleTouchStart = (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      carousel.classList.add('dragging');
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+    };
+
+    const handleTouchEnd = (e) => {
+      if (!isDragging) return;
+      endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      const threshold = 50;
+
+      if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+      carousel.classList.remove('dragging');
+      isDragging = false;
+    };
+
+    const handleMouseDown = (e) => {
+      startX = e.clientX;
+      isMouseDown = true;
+      isDragging = true;
+      carousel.classList.add('dragging');
+      e.preventDefault();
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isMouseDown || !isDragging) return;
+      e.preventDefault();
+    };
+
+    const handleMouseUp = (e) => {
+      if (!isMouseDown || !isDragging) return;
+      endX = e.clientX;
+      const diffX = startX - endX;
+      const threshold = 50;
+
+      if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+      carousel.classList.remove('dragging');
+      isMouseDown = false;
+      isDragging = false;
+    };
+
+    const handleMouseLeave = () => {
+      carousel.classList.remove('dragging');
+      isMouseDown = false;
+      isDragging = false;
+    };
+
+    carousel.addEventListener('touchstart', handleTouchStart, { passive: false });
+    carousel.addEventListener('touchmove', handleTouchMove, { passive: false });
+    carousel.addEventListener('touchend', handleTouchEnd, { passive: true });
+    carousel.addEventListener('mousedown', handleMouseDown);
+    carousel.addEventListener('mousemove', handleMouseMove);
+    carousel.addEventListener('mouseup', handleMouseUp);
+    carousel.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      carousel.removeEventListener('touchstart', handleTouchStart);
+      carousel.removeEventListener('touchmove', handleTouchMove);
+      carousel.removeEventListener('touchend', handleTouchEnd);
+      carousel.removeEventListener('mousedown', handleMouseDown);
+      carousel.removeEventListener('mousemove', handleMouseMove);
+      carousel.removeEventListener('mouseup', handleMouseUp);
+      carousel.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [currentSlide, nextSlide, prevSlide]);
 
   return (
-    <div className="shop-page">
-      <PageHero
-        title="Pond Supplies"
-        subtitle="Everything you need to build, maintain, and enhance your pond"
-        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
-        backgroundImageAlt="Beautiful pond landscape with waterfall and rock features"
+    <>
+      <SEO 
+        title="Pond Supplies & Aquatic Plants - Utah Water Gardens"
+        description="Shop our complete selection of pond supplies, aquatic plants, koi fish, and water garden accessories. Utah's largest variety of aquatic plants and pond equipment."
+        keywords="pond supplies, aquatic plants, koi fish, pond liners, pond pumps, water treatments, pond accessories, utah water gardens"
+        canonical="https://utahwatergardens.com/shop"
       />
-
-      {/* JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogSchema) }} />
-
-      <section className="shop-cta-section first-section-gradient" aria-labelledby="phone-cta">
-        <div className="container">
-          <a id="phone-cta" href="tel:+18015908516" className="hero-cta" aria-label="Call Utah Water Gardens at (801) 590-8516">
-            Call (801) 590-8516 for Expert Advice
-          </a>
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      <section className="featured-products" aria-labelledby="featured-heading">
-        <div className="container">
-          <h2 id="featured-heading">Featured Products</h2>
-          <p>Our most popular items</p>
-          <div className="featured-grid" role="list">
-            {FEATURED_PRODUCTS.map((p) => (
-              <FeaturedProductCard key={p.name} product={p} />
-            ))}
+      <div className="shop-page">
+        {/* Hero Section */}
+        <section className="shop-hero">
+          <div className="hero-background">
+            <img 
+              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
+              alt="Beautiful pond landscape with waterfall and rock features"
+              className="hero-image"
+            />
+            <div className="hero-overlay"></div>
           </div>
-        </div>
-      </section>
-
-      {/* Product Categories */}
-      <section className="products-section" aria-labelledby="products-heading">
-        <div className="container">
-          <h2 id="products-heading" className="sr-only">Product Categories</h2>
-          {PRODUCTS.map((category) => (
-            <CategorySection key={category.id} category={category} />
-          ))}
-        </div>
-      </section>
-
-      {/* Store Info */}
-      <section className="shop-info-section" aria-labelledby="visit-heading">
-        <div className="container">
-          <div className="shop-info-content">
-            <div className="shop-info-text">
-              <h2 id="visit-heading">Visit Our Store Today!</h2>
-              <p>
-                <strong>See our Pond Liners and complete selection in person!</strong> Come visit our store to see our
-                complete selection of aquatic plants, fish, and pond supplies. We also offer delivery and scheduled pickup
-                options for your convenience. Our knowledgeable staff can help you choose the perfect plants and supplies for your pond.
+          
+          <div className="hero-content">
+            <div className="hero-text-content">
+              <h1 className="hero-title">
+                Pond Supplies & 
+                <span className="hero-title-highlight"> Aquatic Plants</span>
+              </h1>
+              
+              <p className="hero-subtitle">
+                Everything you need to build, maintain, and enhance your pond. From beautiful aquatic plants to professional-grade equipment, we have Utah's largest selection.
               </p>
-              <div className="shop-details" itemScope itemType="https://schema.org/LocalBusiness">
-                <div className="shop-detail">
-                  <i className="fas fa-map-marker-alt" aria-hidden></i>
-                  <span itemProp="address">5911 S 1300 E, Salt Lake City, UT 84121</span>
-                </div>
-                <div className="shop-detail">
-                  <i className="fas fa-phone" aria-hidden></i>
-                  <a href="tel:+18015908516">(801) 590-8516</a>
-                </div>
-                <div className="shop-detail">
-                  <i className="fas fa-clock" aria-hidden></i>
-                  <span>Monday - Friday: 10:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 4:00 PM</span>
-                </div>
-              </div>
-              <div className="shop-cta-buttons">
-                <a href="tel:+18015908516" className="btn btn-primary">Call Us Now</a>
-                <a
-                  href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  Get Directions
+              
+              <div className="hero-buttons">
+                <a href="tel:(801) 590-8516" className="btn btn-primary btn-large">
+                  Call (801) 590-8516
                 </a>
+                <Link to="/plants-fish" className="btn btn-secondary btn-large">
+                  View Plants & Fish →
+                </Link>
               </div>
             </div>
-            <div className="shop-info-image">
-              <img src="/images/IMG_2770.jpg" alt="Our store and pond maintenance services" loading="lazy" width={1000} height={667} />
+          </div>
+        </section>
+
+        {/* Phone CTA Section */}
+        <section className="shop-cta-section first-section-gradient">
+          <div className="container">
+            <a href="tel:(801) 590-8516" className="hero-cta">
+              Call (801) 590-8516 for Expert Advice
+            </a>
+          </div>
+        </section>
+
+        {/* Featured Products */}
+        <section className="featured-products">
+          <div className="container">
+            <div className="section-header">
+              <h2>Featured Products</h2>
+              <p>Our most popular items and best sellers</p>
+            </div>
+            <div className="featured-grid">
+              <Link to="/pond-supplies/liners" className="featured-card">
+                <div className="featured-image">
+                  <img src="/images/pond_liner_40mil.jpg" alt="High-quality pond liners" />
+                  <div className="featured-badge">Most Popular</div>
+                </div>
+                <div className="featured-content">
+                  <h3>Pond Liners</h3>
+                  <p>High-quality EPDM and PVC pond liners - Essential for any pond project</p>
+                  <div className="featured-price">Varies by size</div>
+                  <a href="tel:(801) 590-8516" className="btn btn-primary" onClick={(e) => e.stopPropagation()}>
+                    Call for Details
+                  </a>
+                </div>
+              </Link>
+              
+              <Link to="/plants-fish/water-lilies" className="featured-card">
+                <div className="featured-image">
+                  <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Beautiful water lilies" />
+                  <div className="featured-badge">Best Seller</div>
+                </div>
+                <div className="featured-content">
+                  <h3>Water Lilies</h3>
+                  <p>Winter hardy water lilies in various colors for your pond</p>
+                  <div className="featured-price">$15.99</div>
+                  <a href="tel:(801) 590-8516" className="btn btn-primary" onClick={(e) => e.stopPropagation()}>
+                    Call for Stock
+                  </a>
+                </div>
+              </Link>
+              
+              <Link to="/pond-supplies/pumps-aeration" className="featured-card">
+                <div className="featured-image">
+                  <img src="/images/pumpRepair.webp" alt="Energy-efficient pond pumps" />
+                  <div className="featured-badge">Professional Grade</div>
+                </div>
+                <div className="featured-content">
+                  <h3>Pond Pumps</h3>
+                  <p>Energy-efficient pumps and aeration systems for healthy ponds</p>
+                  <div className="featured-price">Contact for pricing</div>
+                  <a href="tel:(801) 590-8516" className="btn btn-primary" onClick={(e) => e.stopPropagation()}>
+                    Get Quote
+                  </a>
+                </div>
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Phone CTA */}
-      <section className="shop-cta" aria-labelledby="help-heading">
-        <div className="container">
-          <h2 id="help-heading">Need Help Choosing?</h2>
-          <p>Our experts can help you select the perfect plants and supplies for your pond project.</p>
-          <a href="tel:+18015908516" className="btn btn-primary" aria-label="Call for assistance">
-            Call (801) 590-8516 for Assistance
-          </a>
-        </div>
-      </section>
-
-      {/* Retail Highlights */}
-      <section className="retail-highlights gradient-wipe-up" aria-labelledby="highlights-heading">
-        <div className="container">
-          <h2 id="highlights-heading">What Makes Our Retail Location Special</h2>
-          <div className="highlights-grid" role="list">
-            <Link to="/plants-fish/aquatic-plants" className="highlight-card" aria-label="Expert plant selection">
-              <img src="/images/IMG_2775.jpg" alt="Expert plant selection" loading="lazy" width={1000} height={667} />
-              <h3>Expert Plant Selection</h3>
-              <p>Our staff hand-picks the healthiest and most beautiful plants for your pond</p>
-              <a href="tel:+18015908516" className="highlight-cta">Call for Plant Advice</a>
-            </Link>
-            <Link to="/plants-fish/aquatic-plants" className="highlight-card" aria-label="Seasonal availability">
-              <img src="/images/IMG_2779.jpg" alt="Seasonal availability" loading="lazy" width={1000} height={667} />
-              <h3>Seasonal Availability</h3>
-              <p>We stock plants that are appropriate for each season and Utah's climate</p>
-              <a href="tel:+18015908516" className="highlight-cta">Check Current Stock</a>
-            </Link>
-            <Link to="/contact" className="highlight-card" aria-label="Local expertise">
-              <img src="/images/IMG_2780.jpg" alt="Local expertise" loading="lazy" width={1000} height={667} />
-              <h3>Local Expertise</h3>
-              <p>We know what works in Utah's unique environment and can guide your choices</p>
-              <a href="tel:+18015908516" className="highlight-cta">Get Local Advice</a>
-            </Link>
+        {/* Shop Categories */}
+        <section className="shop-categories">
+          <div className="container">
+            <div className="shop-header">
+              <div className="shop-title-section">
+                <h2>Shop by Category</h2>
+                <p>Browse our complete selection of pond supplies, aquatic plants, and fish. Everything you need for your water garden in one place.</p>
+              </div>
+              <div className="shop-navigation">
+                <div className="shop-arrows">
+                  <button className="arrow-btn" onClick={prevSlide} aria-label="Previous items">←</button>
+                  <button className="arrow-btn" onClick={nextSlide} aria-label="Next items">→</button>
+                </div>
+              </div>
+            </div>
+            
+            <div className="shop-carousel">
+              <div className="shop-grid" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                {Array.from({ length: totalSlides }, (_, slideIndex) => (
+                  <div key={slideIndex} className="shop-slide">
+                    {allProducts.slice(slideIndex * productsPerSlide, (slideIndex + 1) * productsPerSlide).map((product, index) => (
+                      <Link key={index} to={product.path} className="shop-item">
+                        <div className="shop-item-image">
+                          <img src={product.image} alt={product.name} />
+                        </div>
+                        <div className="shop-item-content">
+                          <h3>{product.name}</h3>
+                          <p className="shop-category">{product.category}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+              <div className="carousel-indicators">
+                {Array.from({ length: totalSlides }, (_, index) => (
+                  <button
+                    key={index}
+                    className={`indicator ${index === currentSlide ? 'active' : ''}`}
+                    onClick={() => goToSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        {/* Plants Collection */}
+        <section className="plants-preview">
+          <div className="container">
+            <div className="plants-header">
+              <div className="plants-title-section">
+                <h2>Our Plant Collection</h2>
+                <p>Explore our extensive collection of aquatic plants, from beautiful water lilies to hardy marginal plants. Each plant is carefully selected for Utah's climate and comes with detailed care instructions.</p>
+              </div>
+              <div className="plants-navigation">
+                <Link to="/plants-fish" className="plants-link">View All Plants</Link>
+                <div className="plants-arrows">
+                  <button className="arrow-btn" onClick={prevPlantSlide} aria-label="Previous plants">←</button>
+                  <button className="arrow-btn" onClick={nextPlantSlide} aria-label="Next plants">→</button>
+                </div>
+              </div>
+            </div>
+            
+            <div className="plants-carousel">
+              <div className="plants-grid" style={{ transform: `translateX(-${currentPlantSlide * 100}%)` }}>
+                {Array.from({ length: totalPlantSlides }, (_, slideIndex) => (
+                  <div key={slideIndex} className="plants-slide">
+                    {allPlants.slice(slideIndex * plantsPerSlide, (slideIndex + 1) * plantsPerSlide).map((plant, index) => (
+                      <Link key={index} to={`/plant/${createPlantSlug(plant.name)}`} className="plant-item">
+                        <div className="plant-item-image">
+                          <img src={plant.image} alt={plant.name} />
+                        </div>
+                        <div className="plant-item-content">
+                          <h3>{plant.name}</h3>
+                          <p className="plant-category">{plant.category}</p>
+                          <p className="plant-description">{plant.description}</p>
+                          <div className="plant-price">
+                            {plant.price && <span className="price">${plant.price}</span>}
+                            {plant.availability && <span className="availability">{plant.availability}</span>}
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+              <div className="carousel-indicators">
+                {Array.from({ length: totalPlantSlides }, (_, index) => (
+                  <button
+                    key={index}
+                    className={`indicator ${index === currentPlantSlide ? 'active' : ''}`}
+                    onClick={() => setCurrentPlantSlide(index)}
+                    aria-label={`Go to plant slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Store Info */}
+        <section className="store-info-section">
+          <div className="container">
+            <div className="store-info-content">
+              <div className="store-info-text">
+                <h2>Visit Our Store Today!</h2>
+                <p>
+                  <strong>See our complete selection in person!</strong> Come visit our store to see our
+                  complete selection of aquatic plants, fish, and pond supplies. We also offer delivery and scheduled pickup
+                  options for your convenience. Our knowledgeable staff can help you choose the perfect plants and supplies for your pond.
+                </p>
+                <div className="store-details">
+                  <div className="store-detail">
+                    <i className="fas fa-map-marker-alt" aria-hidden></i>
+                    <span>5911 S 1300 E, Salt Lake City, UT 84121</span>
+                  </div>
+                  <div className="store-detail">
+                    <i className="fas fa-phone" aria-hidden></i>
+                    <a href="tel:(801) 590-8516">(801) 590-8516</a>
+                  </div>
+                  <div className="store-detail">
+                    <i className="fas fa-clock" aria-hidden></i>
+                    <span>Monday - Friday: 10:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 4:00 PM</span>
+                  </div>
+                </div>
+                <div className="store-cta-buttons">
+                  <a href="tel:(801) 590-8516" className="btn btn-primary">Call Us Now</a>
+                  <a
+                    href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                  >
+                    Get Directions
+                  </a>
+                </div>
+              </div>
+              <div className="store-info-image">
+                <img src="/images/IMG_2770.jpg" alt="Our store and pond maintenance services" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Help CTA */}
+        <section className="help-cta">
+          <div className="container">
+            <h2>Need Help Choosing?</h2>
+            <p>Our experts can help you select the perfect plants and supplies for your pond project.</p>
+            <a href="tel:(801) 590-8516" className="btn btn-primary">
+              Call (801) 590-8516 for Assistance
+            </a>
+          </div>
+        </section>
+
+        {/* Retail Highlights */}
+        <section className="retail-highlights gradient-wipe-up">
+          <div className="container">
+            <h2>What Makes Our Retail Location Special</h2>
+            <div className="highlights-grid">
+              <Link to="/plants-fish/aquatic-plants" className="highlight-card">
+                <img src="/images/IMG_2775.jpg" alt="Expert plant selection" />
+                <h3>Expert Plant Selection</h3>
+                <p>Our staff hand-picks the healthiest and most beautiful plants for your pond</p>
+                <a href="tel:(801) 590-8516" className="highlight-cta" onClick={(e) => e.stopPropagation()}>
+                  Call for Plant Advice
+                </a>
+              </Link>
+              <Link to="/plants-fish/aquatic-plants" className="highlight-card">
+                <img src="/images/IMG_2779.jpg" alt="Seasonal availability" />
+                <h3>Seasonal Availability</h3>
+                <p>We stock plants that are appropriate for each season and Utah's climate</p>
+                <a href="tel:(801) 590-8516" className="highlight-cta" onClick={(e) => e.stopPropagation()}>
+                  Check Current Stock
+                </a>
+              </Link>
+              <Link to="/contact" className="highlight-card">
+                <img src="/images/IMG_2780.jpg" alt="Local expertise" />
+                <h3>Local Expertise</h3>
+                <p>We know what works in Utah's unique environment and can guide your choices</p>
+                <a href="tel:(801) 590-8516" className="highlight-cta" onClick={(e) => e.stopPropagation()}>
+                  Get Local Advice
+                </a>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 

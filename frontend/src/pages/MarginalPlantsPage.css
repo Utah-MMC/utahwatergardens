@@ -1,130 +1,44 @@
 .marginal-plants-page {
-  padding-top: 80px; /* Account for fixed header */
+  /* Removed min-height to allow proper footer positioning */
 }
 
-/* Hero Section */
-.hero-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Introduction Section */
+.intro-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  position: relative;
+  text-align: center;
 }
 
-/* First wave layer - baby blue (behind) */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,110C100,100,200,80,300,70C400,60,500,60,600,70C700,80,800,100,900,110C1000,120,1100,120,1150,120L1200,120V120H0Z' fill='%2387ceeb' fill-opacity='0.9'/%3E%3C/svg%3E") no-repeat center bottom;
-  background-size: cover;
-  z-index: 100;
-  pointer-events: none;
-}
-
-/* Second wave layer - dark blue (in front) */
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,100C100,80,200,40,300,30C400,20,500,40,600,50C700,60,800,60,900,50C1000,40,1100,20,1150,10L1200,0V120H0Z' fill='%231e40af' fill-opacity='1'/%3E%3C/svg%3E") no-repeat center bottom;
-  background-size: cover;
-  z-index: 101;
-  pointer-events: none;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
+.intro-section h2 {
+  font-size: 2.5rem;
+  color: #1e3a8a;
   margin-bottom: 2rem;
-  color: #666;
-  line-height: 1.6;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+.intro-section p {
+  font-size: 1.2rem;
+  color: #4b5563;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.cta-button {
-  display: inline-block;
-  background: #2a5298;
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background: #1e3c72;
-  transform: translateY(-2px);
-  color: white;
-  text-decoration: none;
-}
-
-.secondary-button {
-  display: inline-block;
-  background: transparent;
-  color: #2a5298;
-  padding: 1rem 2rem;
-  border: 2px solid #2a5298;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.secondary-button:hover {
-  background: #2a5298;
-  color: white;
-  text-decoration: none;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Plants Section */
-.plants-section {
+/* Plants Grid Section */
+.plants-grid-section {
   padding: 4rem 0;
-  /* background: white; - removed to allow gradient override */
+  background: #f8fafc;
 }
 
-.plants-section h2 {
+.plants-grid-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.plants-section > .container > p {
-  text-align: center;
-  font-size: 1.1rem;
+  color: #1e3a8a;
   margin-bottom: 3rem;
-  color: #666;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .plants-grid {
@@ -135,23 +49,29 @@
 
 .plant-card {
   background: white;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .plant-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: inherit;
 }
 
 .plant-image {
+  height: 250px;
   overflow: hidden;
 }
 
 .plant-image img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -161,266 +81,256 @@
 }
 
 .plant-info {
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 .plant-info h3 {
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #333;
 }
 
-.plant-info p {
-  color: #666;
-  line-height: 1.6;
+.scientific-name {
+  color: #6b7280;
+  font-style: italic;
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
-.plant-benefits h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.plant-benefits ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1rem;
-}
-
-.plant-benefits li {
-  padding: 0.25rem 0;
-  color: #666;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.plant-benefits li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #2a5298;
-  font-weight: bold;
-}
-
-.plant-price {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #2a5298;
-  margin-bottom: 1rem;
-}
-
-.plant-cta {
-  display: inline-block;
-  background: #2a5298;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.plant-cta:hover {
-  background: #1e3c72;
-  color: white;
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-
-/* Care Guide Section */
-.care-guide-section {
-  padding: 4rem 0;
-  background: #f8f9fa;
-}
-
-.care-guide-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
-}
-
-.care-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.care-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.care-text p {
-  color: #666;
+.description {
+  color: #4b5563;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
-.care-tips {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
+.plant-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.care-tips li {
-  padding: 0.5rem 0;
-  color: #666;
-  position: relative;
-  padding-left: 2rem;
+.spec {
+  font-size: 0.9rem;
+  color: #6b7280;
+  background: #f8fafc;
+  padding: 0.5rem;
+  border-radius: 6px;
 }
 
-.care-tips li::before {
-  content: "🌱";
-  position: absolute;
-  left: 0;
-  font-size: 1.2rem;
-}
-
-.care-cta {
-  display: inline-block;
-  background: #ff6b35;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
+.view-details {
+  display: block;
+  color: #3b82f6;
   font-weight: 500;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.care-cta:hover {
-  background: #e55a2b;
-  color: white;
-  text-decoration: none;
-  transform: translateY(-1px);
+.plant-card:hover .view-details {
+  opacity: 1;
 }
 
-.care-image img {
+/* Care Information Section */
+.care-info-section {
+  padding: 4rem 0;
+}
+
+.care-info-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 3rem;
+}
+
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.care-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-left: 4px solid #3b82f6;
+}
+
+.care-item h3 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.care-item p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.care-images {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.care-image {
   width: 100%;
-  height: 400px;
+  height: 60px;
   object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.care-image:hover {
+  transform: scale(1.05);
+}
+
+.clickable-image {
+  cursor: pointer;
+}
+
+.clickable-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Benefits Section */
 .benefits-section {
   padding: 4rem 0;
-  background: white;
+  background: #f8fafc;
 }
 
 .benefits-section h2 {
   text-align: center;
   font-size: 2.5rem;
+  color: #1e3a8a;
   margin-bottom: 3rem;
-  color: #333;
 }
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
 .benefit-item {
-  text-align: center;
+  background: white;
   padding: 2rem;
-}
-
-.benefit-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-left: 4px solid #10b981;
 }
 
 .benefit-item h3 {
-  font-size: 1.3rem;
+  color: #1e3a8a;
   margin-bottom: 1rem;
-  color: #333;
+  font-size: 1.3rem;
 }
 
 .benefit-item p {
-  color: #666;
+  color: #4b5563;
   line-height: 1.6;
 }
 
-/* Seasonal Section */
-.seasonal-section {
+/* Native Plants Section */
+.native-plants-section {
   padding: 4rem 0;
-  background: #f8f9fa;
+  background: #f0f9ff;
 }
 
-.seasonal-section h2 {
+.native-plants-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
 }
 
-.seasonal-grid {
+.native-plants-section > p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.native-highlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-.season-item {
+.native-item {
   background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease;
+  border-left: 4px solid #059669;
 }
 
-.season-item:hover {
-  transform: translateY(-5px);
-}
-
-.season-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.season-item h3 {
-  padding: 1.5rem 1.5rem 0.5rem;
-  color: #333;
+.native-item h4 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
   font-size: 1.3rem;
 }
 
-.season-item p {
-  padding: 0 1.5rem 1.5rem;
-  color: #666;
+.native-item p {
+  color: #4b5563;
   line-height: 1.6;
 }
 
-.seasonal-cta {
-  display: inline-block;
-  background: #2a5298;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  margin-bottom: 1.5rem;
+/* Services Section */
+.services-section {
+  padding: 4rem 0;
 }
 
-.seasonal-cta:hover {
-  background: #1e3c72;
-  color: white;
-  text-decoration: none;
-  transform: translateY(-1px);
+.services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.service-card h3 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.service-card p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 /* Contact CTA */
 .contact-cta {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
-  color: white;
   text-align: center;
+  color: white;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .contact-cta h2 {
@@ -448,95 +358,146 @@
   min-width: 200px;
 }
 
-.btn-primary {
-  background: #dc2626;
-  color: white;
+/* Button Styles */
+.btn {
+  display: inline-block;
   padding: 0.75rem 1.5rem;
-  border-radius: 5px;
   text-decoration: none;
+  border-radius: 6px;
   font-weight: 500;
+  text-align: center;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #dc2626;
+  color: white;
 }
 
 .btn-primary:hover {
   background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+}
+
+.btn-outline:hover {
+  background: #3b82f6;
   color: white;
-  text-decoration: none;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: #6c757d;
+  background: #6b7280;
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background: #5a6268;
-  color: white;
-  text-decoration: none;
-  transform: translateY(-1px);
+  background: #4b5563;
+  transform: translateY(-2px);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-section {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+  .container {
+    padding: 0 1rem;
   }
   
-  .hero-content h1 {
-    font-size: 2.5rem;
+  .intro-section,
+  .plants-grid-section,
+  .care-info-section,
+  .benefits-section,
+  .native-plants-section,
+  .services-section,
+  .contact-cta {
+    padding: 3rem 0;
   }
   
-  .care-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+  .intro-section h2,
+  .plants-grid-section h2,
+  .care-info-section h2,
+  .benefits-section h2,
+  .native-plants-section h2,
+  .services-section h2,
+  .contact-cta h2 {
+    font-size: 2rem;
   }
   
   .plants-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
-  .benefits-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .seasonal-grid {
+  .care-grid,
+  .benefits-grid,
+  .native-highlights {
     grid-template-columns: 1fr;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .care-images {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+  
+  .care-image {
+    height: 50px;
+  }
+  
+  .contact-cta {
+    width: 100%;
+    margin-left: 0;
   }
   
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  
-  .plants-section h2,
-  .care-guide-section h2,
+  .intro-section h2,
+  .plants-grid-section h2,
+  .care-info-section h2,
   .benefits-section h2,
-  .seasonal-section h2,
+  .native-plants-section h2,
+  .services-section h2,
   .contact-cta h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
+  .plant-info {
+    padding: 1.5rem;
+  }
+  
+  .care-item,
+  .benefit-item,
+  .native-item,
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .care-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem;
+  }
+  
+  .care-image {
+    height: 40px;
   }
 }

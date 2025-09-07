@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { getAllPlants, createPlantSlug } from '../data/plantData';
 import './HomePage.css';
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentResourceSlide, setCurrentResourceSlide] = useState(0);
+  const [currentPlantSlide, setCurrentPlantSlide] = useState(0);
   
   // All products from the shop page
   const allProducts = [
@@ -35,11 +37,17 @@ const HomePage = () => {
     { name: 'FAQ', image: '/images/IMG_2770.jpg', path: '/resources/faq', description: 'Answers to frequently asked questions' }
   ];
 
+  // All plants from the plant data
+  const allPlants = getAllPlants();
+
   const productsPerSlide = 4;
   const totalSlides = Math.ceil(allProducts.length / productsPerSlide);
   
   const resourcesPerSlide = 3;
   const totalResourceSlides = Math.ceil(allResources.length / resourcesPerSlide);
+
+  const plantsPerSlide = 4;
+  const totalPlantSlides = Math.ceil(allPlants.length / plantsPerSlide);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -60,6 +68,14 @@ const HomePage = () => {
   const prevResourceSlide = () => {
     setCurrentResourceSlide((prev) => (prev - 1 + totalResourceSlides) % totalResourceSlides);
   };
+
+  const nextPlantSlide = useCallback(() => {
+    setCurrentPlantSlide((prev) => (prev + 1) % totalPlantSlides);
+  }, [totalPlantSlides]);
+
+  const prevPlantSlide = useCallback(() => {
+    setCurrentPlantSlide((prev) => (prev - 1 + totalPlantSlides) % totalPlantSlides);
+  }, [totalPlantSlides]);
 
 
   const getCurrentResources = () => {
@@ -476,6 +492,59 @@ const HomePage = () => {
                   className={`indicator ${index === currentSlide ? 'active' : ''}`}
                   onClick={() => goToSlide(index)}
                   aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="plants-preview">
+        <div className="container">
+          <div className="plants-header">
+            <div className="plants-title-section">
+              <h2>Our Plant Collection</h2>
+              <p>Explore our extensive collection of aquatic plants, from beautiful water lilies to hardy marginal plants. Each plant is carefully selected for Utah's climate and comes with detailed care instructions.</p>
+            </div>
+            <div className="plants-navigation">
+              <Link to="/plants-fish" className="plants-link">View All Plants</Link>
+              <div className="plants-arrows">
+                <button className="arrow-btn" onClick={prevPlantSlide} aria-label="Previous plants">←</button>
+                <button className="arrow-btn" onClick={nextPlantSlide} aria-label="Next plants">→</button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="plants-carousel">
+            <div className="plants-grid" style={{ transform: `translateX(-${currentPlantSlide * 100}%)` }}>
+              {Array.from({ length: totalPlantSlides }, (_, slideIndex) => (
+                <div key={slideIndex} className="plants-slide">
+                  {allPlants.slice(slideIndex * plantsPerSlide, (slideIndex + 1) * plantsPerSlide).map((plant, index) => (
+                    <Link key={index} to={`/plant/${createPlantSlug(plant.name)}`} className="plant-item">
+                      <div className="plant-item-image">
+                        <img src={plant.image} alt={plant.name} />
+                      </div>
+                      <div className="plant-item-content">
+                        <h3>{plant.name}</h3>
+                        <p className="plant-category">{plant.category}</p>
+                        <p className="plant-description">{plant.description}</p>
+                        <div className="plant-price">
+                          {plant.price && <span className="price">${plant.price}</span>}
+                          {plant.availability && <span className="availability">{plant.availability}</span>}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <div className="carousel-indicators">
+              {Array.from({ length: totalPlantSlides }, (_, index) => (
+                <button
+                  key={index}
+                  className={`indicator ${index === currentPlantSlide ? 'active' : ''}`}
+                  onClick={() => setCurrentPlantSlide(index)}
+                  aria-label={`Go to plant slide ${index + 1}`}
                 />
               ))}
             </div>

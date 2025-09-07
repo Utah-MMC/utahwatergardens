@@ -1160,88 +1160,241 @@ const BlogPost = () => {
         <title>{post.title} | Utah Water Gardens Blog</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(', ')} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.image} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={post.image} />
         <link rel="canonical" href={`https://utahwatergardens.com/blog/${post.slug}`} />
+        <link rel="icon" href="/images/favicon.ico?v=3" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=3" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=3" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png?v=3" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png?v=3" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "description": post.excerpt,
+            "image": post.image,
+            "author": {
+              "@type": "Organization",
+              "name": post.author
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Utah Water Gardens",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "/images/utahWaterGardensLogo500x463.png"
+              }
+            },
+            "datePublished": post.date,
+            "dateModified": post.date,
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://utahwatergardens.com/blog/${post.slug}`
+            }
+          })}
+        </script>
       </Helmet>
 
-      {/* Article Header */}
-      <article className="blog-post">
+      {/* Hero Section */}
+      <section className="blog-hero">
+        <div className="hero-background">
+          <img src={post.image} alt={post.title} />
+          <div className="hero-overlay"></div>
+        </div>
         <div className="container">
-          <div className="post-header">
+          <div className="hero-content">
             <div className="breadcrumb">
-              <Link to="/blog">Blog</Link>
-              <span> / </span>
-              <span>{post.category}</span>
+              <Link to="/blog" className="breadcrumb-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="m15 18-6-6 6-6"/>
+                </svg>
+                Back to Blog
+              </Link>
+              <span className="breadcrumb-separator">/</span>
+              <span className="breadcrumb-current">{post.category}</span>
             </div>
             
-            <h1 className="post-title">{post.title}</h1>
+            <div className="post-category-badge">
+              <span className="category-tag">{post.category}</span>
+            </div>
             
-            <div className="post-meta">
+            <h1 className="hero-title">{post.title}</h1>
+            
+            <div className="hero-meta">
               <div className="meta-item">
-                <span className="meta-label">Published:</span>
-                <span className="meta-value">{new Date(post.date).toLocaleDateString()}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12,6 12,12 16,14"/>
+                </svg>
+                <span>{post.readTime}</span>
               </div>
               <div className="meta-item">
-                <span className="meta-label">Author:</span>
-                <span className="meta-value">{post.author}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <span>{new Date(post.date).toLocaleDateString('en-US', { 
+                  year: 'numeric', 
+                  month: 'long', 
+                  day: 'numeric' 
+                })}</span>
               </div>
               <div className="meta-item">
-                <span className="meta-label">Read Time:</span>
-                <span className="meta-value">{post.readTime}</span>
-              </div>
-              <div className="meta-item">
-                <span className="meta-label">Category:</span>
-                <span className="meta-value">{post.category}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>{post.author}</span>
               </div>
             </div>
             
-            <div className="post-tags">
+            <div className="hero-tags">
               {post.tags.map(tag => (
                 <span key={tag} className="tag">{tag}</span>
               ))}
             </div>
           </div>
-          
-          <div className="post-featured-image">
-            <img src={post.image} alt={post.title} />
-          </div>
-          
-          <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
-          
-          {/* Author Section */}
-          <div className="author-section">
-            <div className="author-info">
-              <div className="author-avatar">
-                <img src="/images/utahWaterGardensLogo500x463.png" alt="Utah Water Gardens" />
-              </div>
-              <div className="author-details">
-                <h3>{post.author}</h3>
-                <p className="author-bio">
-                  Utah Water Gardens is Utah's premier pond and water feature company, specializing in design, construction, and maintenance of beautiful water gardens throughout the state. With years of experience in Utah's unique climate, we provide expert guidance and professional services for all your pond needs.
-                </p>
-                <div className="author-links">
-                  <a href="/contact" className="author-link">Contact Us</a>
-                  <a href="/pond-services" className="author-link">Our Services</a>
-                  <a href="/pond-gallery" className="author-link">View Our Work</a>
+        </div>
+      </section>
+
+      {/* Article Content */}
+      <article className="blog-article">
+        <div className="container">
+          <div className="article-layout">
+            <div className="article-content">
+              <div className="content-wrapper">
+                <div className="post-excerpt">
+                  <p>{post.excerpt}</p>
+                </div>
+                
+                <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+                
+                {/* Call to Action */}
+                <div className="article-cta">
+                  <div className="cta-content">
+                    <h3>Ready to Create Your Dream Pond?</h3>
+                    <p>Let Utah Water Gardens help you design and build the perfect water feature for your Utah property.</p>
+                    <div className="cta-buttons">
+                      <Link to="/contact" className="cta-btn primary">
+                        Get Free Estimate
+                      </Link>
+                      <Link to="/pond-services" className="cta-btn secondary">
+                        View Our Services
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="cta-image">
+                    <img src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" alt="Beautiful Utah pond with water lilies" />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div className="post-footer">
-            <div className="share-buttons">
-              <h3>Share this article:</h3>
-              <div className="share-links">
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-                <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer">
-                  Twitter
-                </a>
-                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`} target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
+            
+            {/* Sidebar */}
+            <aside className="article-sidebar">
+              <div className="sidebar-widget author-widget">
+                <div className="widget-header">
+                  <h3>About the Author</h3>
+                </div>
+                <div className="author-card">
+                  <div className="author-avatar">
+                    <img src="/images/utahWaterGardensLogo500x463.png" alt="Utah Water Gardens" />
+                  </div>
+                  <div className="author-info">
+                    <h4>{post.author}</h4>
+                    <p className="author-bio">
+                      Utah's premier pond and water feature experts with years of experience in the state's unique climate.
+                    </p>
+                    <div className="author-links">
+                      <Link to="/contact" className="author-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                          <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Contact Us
+                      </Link>
+                      <Link to="/pond-services" className="author-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                          <polyline points="14,2 14,8 20,8"/>
+                          <line x1="16" y1="13" x2="8" y2="13"/>
+                          <line x1="16" y1="17" x2="8" y2="17"/>
+                          <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                        Our Services
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+              
+              <div className="sidebar-widget share-widget">
+                <div className="widget-header">
+                  <h3>Share This Article</h3>
+                </div>
+                <div className="share-buttons">
+                  <a 
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="share-btn facebook"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Facebook
+                  </a>
+                  <a 
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="share-btn twitter"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                    Twitter
+                  </a>
+                  <a 
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="share-btn linkedin"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+              
+              <div className="sidebar-widget table-of-contents">
+                <div className="widget-header">
+                  <h3>Table of Contents</h3>
+                </div>
+                <div className="toc-content">
+                  <p>This comprehensive guide covers:</p>
+                  <ul>
+                    <li>Planning and preparation</li>
+                    <li>Step-by-step construction</li>
+                    <li>Utah-specific considerations</li>
+                    <li>Maintenance and care</li>
+                    <li>Professional services</li>
+                  </ul>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </article>

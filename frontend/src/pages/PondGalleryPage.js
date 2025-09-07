@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import './PondGalleryPage.css';
 
 const PondGalleryPage = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const stats = [
+    { number: '500+', label: 'Projects Completed', icon: 'Projects' },
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '50+', label: 'Service Areas', icon: 'Areas' },
+    { number: '100%', label: 'Satisfaction Rate', icon: 'Quality' }
+  ];
 
   const galleryCategories = [
     {
@@ -11,42 +24,48 @@ const PondGalleryPage = () => {
       path: '/pond-gallery/residential',
       description: 'Beautiful residential pond installations',
       image: '/images/IMG_2770.jpg',
-      count: 12
+      count: 12,
+      features: ['Custom Design', 'Koi Ponds', 'Waterfalls', 'LED Lighting']
     },
     {
       name: 'Commercial Projects',
       path: '/pond-gallery/commercial',
       description: 'Large-scale commercial water features',
       image: '/images/pondConstruction1000x800.webp',
-      count: 8
+      count: 8,
+      features: ['Corporate Water Features', 'Fountains', 'Stone Work', 'Maintenance']
     },
     {
       name: 'Koi Ponds',
       path: '/pond-gallery/koi-ponds',
       description: 'Specialized koi pond designs',
       image: '/images/koi-topaz-enhance-4x.jpeg',
-      count: 15
+      count: 15,
+      features: ['Koi Fish', 'Filtration Systems', 'Aeration', 'Health Monitoring']
     },
     {
       name: 'Water Features',
       path: '/pond-gallery/water-features',
       description: 'Creative water feature installations',
       image: '/images/IMG_2770.jpg',
-      count: 10
+      count: 10,
+      features: ['Fountains', 'Streams', 'Waterfalls', 'Decorative Elements']
     },
     {
       name: 'Before & After',
       path: '/pond-gallery/before-after',
       description: 'Dramatic pond transformations',
       image: '/images/cleaningBefore1000x750.webp',
-      count: 6
+      count: 6,
+      features: ['Transformations', 'Renovations', 'Upgrades', 'Restorations']
     },
     {
       name: 'Customer Projects',
       path: '/pond-gallery/customer-projects',
       description: 'Projects completed for our valued customers',
       image: '/images/IMG_2775.jpg',
-      count: 20
+      count: 20,
+      features: ['Customer Stories', 'Testimonials', 'Case Studies', 'Success Stories']
     }
   ];
 
@@ -88,162 +107,253 @@ const PondGalleryPage = () => {
       );
 
   return (
-    <div className="pond-gallery-page">
-      <div 
-        className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container">
-          <h1>Pond Gallery</h1>
-          <p>Explore our portfolio of beautiful pond and water feature projects</p>
-        </div>
-      </div>
-
-      <div className="container">
-        {/* Gallery Categories */}
-        <section className="gallery-categories first-section-gradient">
-          <h2>Browse by Category</h2>
-          <div className="categories-grid">
-            {galleryCategories.map((category, index) => (
-              <div key={index} className="category-card">
-                <div className="category-image">
-                  <img src={category.image} alt={category.name} />
-                  <div className="category-overlay">
-                    <span className="project-count">{category.count} Projects</span>
+    <>
+      <SEO 
+        title="Pond Gallery - Our Beautiful Water Garden Projects | Utah Water Gardens"
+        description="Explore our stunning pond gallery featuring residential ponds, commercial water features, koi ponds, and water features. See our 500+ completed projects across Utah."
+        keywords="pond gallery, water garden projects, koi ponds, water features, residential ponds, commercial ponds, utah pond builders, pond design"
+        canonical="https://utahwatergardens.com/pond-gallery"
+      />
+      <div className={`pond-gallery-page ${isVisible ? 'visible' : ''}`}>
+        {/* Hero Section */}
+        <section className="pond-gallery-hero">
+          <div className="hero-background">
+            <img 
+              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
+              alt="Beautiful water garden gallery showcasing our pond projects"
+              className="hero-image"
+            />
+            <div className="hero-overlay"></div>
+          </div>
+          
+          <div className="hero-content">
+            <div className="hero-text-content">
+              <h1 className="hero-title">
+                Pond 
+                <span className="hero-title-highlight"> Gallery</span>
+              </h1>
+              
+              <p className="hero-subtitle">
+                Explore our stunning collection of water garden projects across Utah. 
+                From residential koi ponds to commercial water features.
+              </p>
+              
+              <div className="hero-stats">
+                {stats.map((stat, index) => (
+                  <div key={index} className="stat-item">
+                    <div className="stat-icon">{stat.icon}</div>
+                    <div className="stat-number">{stat.number}</div>
+                    <div className="stat-label">{stat.label}</div>
                   </div>
-                </div>
-                <div className="category-content">
-                  <h3>{category.name}</h3>
-                  <p>{category.description}</p>
-                  <Link to={category.path} className="btn btn-primary">
-                    View Projects
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Main Content */}
+        <section className="pond-gallery-main-content">
+          <div className="container">
+            <div className="page-intro">
+              <h2>Our Water Garden Portfolio</h2>
+              <p>
+                Discover the beauty and craftsmanship of our water garden projects. 
+                Each project is uniquely designed to complement its environment while 
+                providing years of enjoyment and natural beauty.
+              </p>
+            </div>
+
+            {/* Gallery Categories */}
+            <div className="gallery-categories">
+              <h2>Project Categories</h2>
+              <div className="categories-grid">
+                {galleryCategories.map((category, index) => (
+                  <Link key={index} to={category.path} className="category-card">
+                    <div className="category-image">
+                      <img src={category.image} alt={category.name} />
+                      <div className="category-overlay">
+                        <span className="category-icon">Gallery</span>
+                        <span className="category-count">{category.count} Projects</span>
+                      </div>
+                    </div>
+                    <div className="category-content">
+                      <h3>{category.name}</h3>
+                      <p>{category.description}</p>
+                      <div className="category-features">
+                        <h4>Features:</h4>
+                        <ul>
+                          {category.features.map((feature, featureIndex) => (
+                            <li key={featureIndex}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <span className="category-link">View {category.name} →</span>
+                    </div>
                   </Link>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
 
-        {/* Project Filters */}
-        <section className="project-filters">
-          <h2>Featured Projects</h2>
-          <div className="filter-tabs">
-            {filters.map((filter) => (
-              <button
-                key={filter.id}
-                className={`filter-tab ${activeFilter === filter.id ? 'active' : ''}`}
-                onClick={() => setActiveFilter(filter.id)}
-              >
-                {filter.name}
-                <span className="filter-count">({filter.count})</span>
-              </button>
-            ))}
-          </div>
-        </section>
+            {/* Featured Projects */}
+            <div className="featured-projects">
+              <h2>Featured Projects</h2>
+              <p>Showcasing some of our most impressive water garden installations</p>
+              
+              {/* Filter Buttons */}
+              <div className="project-filters">
+                {filters.map((filter) => (
+                  <button
+                    key={filter.id}
+                    className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
+                    onClick={() => setActiveFilter(filter.id)}
+                  >
+                    {filter.name} ({filter.count})
+                  </button>
+                ))}
+              </div>
 
-        {/* Featured Projects Grid */}
-        <section className="featured-projects">
-          <div className="projects-grid">
-            {filteredProjects.map((project, index) => (
-              <div key={index} className="project-card">
-                <div className="project-image">
-                  <img src={project.image} alt={project.title} />
-                  <div className="project-category">{project.category}</div>
-                </div>
-                <div className="project-content">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="project-features">
-                    {project.features.map((feature, featureIndex) => (
-                      <span key={featureIndex} className="feature-tag">
-                        {feature}
-                      </span>
-                    ))}
+              {/* Projects Grid */}
+              <div className="projects-grid">
+                {filteredProjects.map((project, index) => (
+                  <div key={index} className="project-card">
+                    <div className="project-image">
+                      <img src={project.image} alt={project.title} />
+                      <div className="project-category">{project.category}</div>
+                    </div>
+                    <div className="project-content">
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                      <div className="project-features">
+                        <h4>Features:</h4>
+                        <ul>
+                          {project.features.map((feature, featureIndex) => (
+                            <li key={featureIndex}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <button className="btn btn-outline">View Details</button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Our Projects */}
+        <section className="why-choose-section">
+          <div className="container">
+            <h2>Why Choose Our Water Garden Projects?</h2>
+            <div className="benefits-grid">
+              <div className="benefit-item">
+                <div className="benefit-icon">Design</div>
+                <h4>Custom Design</h4>
+                <p>Every project is uniquely designed for your space and preferences</p>
+              </div>
+              <div className="benefit-item">
+                <div className="benefit-icon">Quality</div>
+                <h4>Premium Materials</h4>
+                <p>We use only the highest quality materials and equipment</p>
+              </div>
+              <div className="benefit-item">
+                <div className="benefit-icon">Expertise</div>
+                <h4>Expert Installation</h4>
+                <p>Professional installation by our experienced team</p>
+              </div>
+              <div className="benefit-item">
+                <div className="benefit-icon">Support</div>
+                <h4>Ongoing Support</h4>
+                <p>Complete maintenance and support for all our projects</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="process-section">
+          <div className="container">
+            <h2>Our Project Process</h2>
+            <div className="process-steps">
+              <div className="process-step">
+                <div className="step-number">1</div>
+                <h3>Consultation</h3>
+                <p>We meet with you to understand your vision and requirements</p>
+              </div>
+              <div className="process-step">
+                <div className="step-number">2</div>
+                <h3>Design</h3>
+                <p>Create a custom design that fits your space and budget</p>
+              </div>
+              <div className="process-step">
+                <div className="step-number">3</div>
+                <h3>Installation</h3>
+                <p>Professional installation by our experienced team</p>
+              </div>
+              <div className="process-step">
+                <div className="step-number">4</div>
+                <h3>Support</h3>
+                <p>Ongoing maintenance and support for your water garden</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Store Information */}
+        <section className="store-info-section">
+          <div className="container">
+            <div className="store-info-content">
+              <div className="store-info-text">
+                <h2>Start Your Project Today</h2>
+                <p>
+                  Ready to create your own beautiful water garden? Contact us for a 
+                  free consultation and let us bring your vision to life.
+                </p>
+                <div className="store-details">
+                  <div className="store-detail">
+                    <i className="fas fa-map-marker-alt" aria-hidden></i>
+                    <span>5911 S 1300 E, Salt Lake City, UT 84121</span>
+                  </div>
+                  <div className="store-detail">
+                    <i className="fas fa-phone" aria-hidden></i>
+                    <a href="tel:(801) 590-8516">(801) 590-8516</a>
+                  </div>
+                  <div className="store-detail">
+                    <i className="fas fa-clock" aria-hidden></i>
+                    <span>Monday - Friday: 10:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 4:00 PM</span>
+                  </div>
+                </div>
+                <div className="store-cta-buttons">
+                  <a href="tel:(801) 590-8516" className="btn btn-primary">Call for Consultation</a>
+                  <Link to="/free-estimate" className="btn btn-secondary">Get Free Estimate</Link>
                 </div>
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Gallery Stats */}
-        <section className="gallery-stats">
-          <h2>Our Portfolio</h2>
-          <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-number">71+</div>
-              <div className="stat-label">Projects Completed</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">15+</div>
-              <div className="stat-label">Years Experience</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">100%</div>
-              <div className="stat-label">Customer Satisfaction</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Happy Customers</div>
-            </div>
-          </div>
-        </section>
-
-        {/* Customer Testimonials */}
-        <section className="customer-testimonials gradient-wipe-up">
-          <h2>What Our Customers Say</h2>
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"Utah Water Gardens transformed our backyard into a beautiful oasis. The koi pond is absolutely stunning!"</p>
-              </div>
-              <div className="testimonial-author">
-                <strong>Sarah M.</strong>
-                <span>Murray, UT</span>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"Professional service from start to finish. Our commercial water feature gets compliments daily."</p>
-              </div>
-              <div className="testimonial-author">
-                <strong>Mike R.</strong>
-                <span>Sandy, UT</span>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"The team at Utah Water Gardens exceeded our expectations. Highly recommend!"</p>
-              </div>
-              <div className="testimonial-author">
-                <strong>Jennifer L.</strong>
-                <span>West Jordan, UT</span>
+              <div className="store-info-image">
+                <img src="/images/IMG_2770.jpg" alt="Our water garden projects and installations" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Get Started CTA */}
-        <section className="get-started-cta">
-          <h2>Ready to Start Your Project?</h2>
-          <p>Let us help you create the pond of your dreams</p>
-          <div className="cta-buttons">
-            <a href="tel:(801) 590-8516" className="btn btn-primary">
-              Call (801) 590-8516
-            </a>
-            <Link to="/contact" className="btn btn-secondary">
-              Send Message
-            </Link>
+        {/* CTA Section */}
+        <section 
+          className="contact-cta"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <div className="container">
+            <h2>Ready to Create Your Dream Water Garden?</h2>
+            <p>Let us transform your space with a beautiful, custom water feature.</p>
+            <div className="cta-buttons">
+              <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
+              <Link to="/free-estimate" className="btn btn-secondary">Get Free Estimate</Link>
+            </div>
           </div>
         </section>
       </div>
-    </div>
+    </>
   );
 };
 

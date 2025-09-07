@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import './App.css';
 import Header from './components/Header.js';
 import Footer from './components/Footer';
@@ -22,6 +22,13 @@ const PondGalleryPage = lazy(() => import('./pages/PondGalleryPage'));
 const FreeEstimatePage = lazy(() => import('./pages/FreeEstimatePage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
+const PlantDetailPage = lazy(() => import('./pages/PlantDetailPage'));
+const WaterLiliesPage = lazy(() => import('./pages/WaterLiliesPage'));
+const MarginalPlantsPage = lazy(() => import('./pages/MarginalPlantsPage'));
+const FloatingPlantsPage = lazy(() => import('./pages/FloatingPlantsPage'));
+const ExpertTeamPage = lazy(() => import('./pages/ExpertTeamPage'));
+const PlantExpertsPage = lazy(() => import('./pages/PlantExpertsPage'));
+const MaintenanceCrewPage = lazy(() => import('./pages/MaintenanceCrewPage'));
 
 // Lazy load service area pages
 const SaltLakeCityPage = lazy(() => import('./pages/ServiceAreas/SaltLakeCityPage'));
@@ -128,11 +135,8 @@ const TooelePage = lazy(() => import('./pages/ServiceAreas/TooelePage'));
 // Lazy load other pages
 const AquaticPlantsPage = lazy(() => import('./pages/AquaticPlantsPage'));
 const KoiGoldfishPage = lazy(() => import('./pages/KoiGoldfishPage'));
-const WaterLiliesPage = lazy(() => import('./pages/WaterLiliesPage'));
-const FloatingPlantsPage = lazy(() => import('./pages/FloatingPlantsPage'));
 const PondDesignBuildPage = lazy(() => import('./pages/PondDesignBuildPage'));
 const FiltrationSystemsPage = lazy(() => import('./pages/FiltrationSystemsPage'));
-const MarginalPlantsPage = lazy(() => import('./pages/MarginalPlantsPage'));
 const PondMaintenancePage = lazy(() => import('./pages/PondMaintenancePage'));
 const WaterQualityTestingPage = lazy(() => import('./pages/WaterQualityTestingPage'));
 const PondCleaningPage = lazy(() => import('./pages/PondCleaningPage'));
@@ -171,6 +175,17 @@ const LoadingSpinner = () => (
 function App() {
   return (
     <HelmetProvider>
+      <Helmet>
+        <link rel="icon" href="/images/favicon.ico?v=3" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=3" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=3" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png?v=3" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png?v=3" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=3" />
+        <link rel="apple-touch-icon" sizes="192x192" href="/images/android-chrome-192x192.png?v=3" />
+        <link rel="shortcut icon" href="/images/favicon.ico?v=3" />
+        <meta name="theme-color" content="#1e40af" />
+      </Helmet>
       <Router>
         <ScrollToTop />
         <WaterRipple />
@@ -191,6 +206,15 @@ function App() {
             <Route path="/free-estimate" element={<FreeEstimatePage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/plant/:plantId" element={<PlantDetailPage />} />
+            <Route path="/plants-fish/water-lilies" element={<WaterLiliesPage />} />
+            <Route path="/plants-fish/marginal-plants" element={<MarginalPlantsPage />} />
+            <Route path="/plants-fish/floating-plants" element={<FloatingPlantsPage />} />
+            
+            {/* Team Pages */}
+            <Route path="/team/expert-team" element={<ExpertTeamPage />} />
+            <Route path="/team/plant-experts" element={<PlantExpertsPage />} />
+            <Route path="/team/maintenance-crew" element={<MaintenanceCrewPage />} />
             
             {/* Legacy routes for backward compatibility */}
             <Route path="/services" element={<ServicesPage />} />
@@ -200,9 +224,6 @@ function App() {
             {/* Plants & Fish Sub-routes */}
             <Route path="/plants-fish/aquatic-plants" element={<AquaticPlantsPage />} />
             <Route path="/plants-fish/koi-goldfish" element={<KoiGoldfishPage />} />
-            <Route path="/plants-fish/water-lilies" element={<WaterLiliesPage />} />
-            <Route path="/plants-fish/floating-plants" element={<FloatingPlantsPage />} />
-            <Route path="/plants-fish/marginal-plants" element={<MarginalPlantsPage />} />
             
             {/* Pond Services Sub-routes */}
             <Route path="/pond-services/design-build" element={<PondDesignBuildPage />} />

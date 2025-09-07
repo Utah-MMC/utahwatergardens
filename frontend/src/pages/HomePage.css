@@ -1467,6 +1467,184 @@
   }
 }
 
+/* Plants Preview */
+.plants-preview {
+  padding: 4rem 0;
+  background: #f8fafc;
+}
+
+.plants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.plants-title-section {
+  flex: 1;
+  max-width: 600px;
+}
+
+.plants-title-section h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #059669, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.plants-title-section p {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.plants-title-section strong {
+  color: #059669;
+  font-weight: 600;
+}
+
+.plants-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.plants-link {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 2px solid #059669;
+  transition: all 0.3s ease;
+}
+
+.plants-link:hover {
+  color: #10b981;
+  border-bottom-color: #10b981;
+}
+
+.plants-arrows {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.plants-carousel {
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.plants-grid {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.plants-grid.dragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+.plants-slide {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.plant-item {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.plant-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #059669;
+}
+
+.plant-item-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.plant-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.plant-item:hover .plant-item-image img {
+  transform: scale(1.05);
+}
+
+.plant-item-content {
+  padding: 1.5rem;
+}
+
+.plant-item-content h3 {
+  color: #1e293b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.plant-category {
+  color: #059669;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plant-description {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.plant-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.plant-price .price {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.plant-price .availability {
+  color: #059669;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 /* Resources Carousel Styles */
 .resources-preview {
   padding: 5rem 0;
@@ -1675,5 +1853,71 @@
   
   .resource-item-content p {
     font-size: 0.9rem;
+  }
+}
+
+/* Plants Section Responsive Styles */
+@media (max-width: 768px) {
+  .plants-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .plants-navigation {
+    align-items: center;
+  }
+  
+  .plants-title-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .plants-slide {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .plant-item-content {
+    padding: 1.25rem;
+  }
+  
+  .plant-item-content h3 {
+    font-size: 1rem;
+  }
+  
+  .plant-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .plants-title-section h2 {
+    font-size: 2rem;
+  }
+  
+  .plants-title-section p {
+    font-size: 1rem;
+  }
+  
+  .plants-slide {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .plant-item-content {
+    padding: 1rem;
+  }
+  
+  .plant-item-content h3 {
+    font-size: 0.95rem;
+  }
+  
+  .plant-category {
+    font-size: 0.8rem;
+  }
+  
+  .plant-description {
+    font-size: 0.85rem;
   }
 }

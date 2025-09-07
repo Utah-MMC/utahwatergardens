@@ -1,159 +1,363 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import PageHero from '../components/PageHero.js';
+import SEO from '../components/SEO';
 import './AboutPage.css';
 
 const AboutPage = () => {
+  const [activeTab, setActiveTab] = useState('story');
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const tabs = [
+    { id: 'story', label: 'Our Story', icon: 'Story' },
+    { id: 'mission', label: 'Our Mission', icon: 'Mission' },
+    { id: 'values', label: 'Our Values', icon: 'Values' },
+    { id: 'team', label: 'Our Team', icon: 'Team' }
+  ];
+
+  const stats = [
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '500+', label: 'Projects Completed', icon: 'Projects' },
+    { number: '1000+', label: 'Happy Customers', icon: 'Customers' },
+    { number: '50+', label: 'Plant Varieties', icon: 'Plants' }
+  ];
+
+  const values = [
+    {
+      title: 'Quality First',
+      description: 'We use only the highest quality materials and equipment to ensure your pond project exceeds expectations.',
+      icon: 'Quality'
+    },
+    {
+      title: 'Expert Knowledge',
+      description: 'Our team has years of experience in pond construction, maintenance, and aquatic plant care.',
+      icon: 'Expertise'
+    },
+    {
+      title: 'Customer Focus',
+      description: 'Your satisfaction is our priority. We work closely with you to bring your vision to life.',
+      icon: 'Service'
+    },
+    {
+      title: 'Local Expertise',
+      description: 'We understand Utah\'s unique climate and can recommend the best solutions for your location.',
+      icon: 'Local'
+    }
+  ];
+
+  const teamMembers = [
+    {
+      name: 'Expert Team',
+      role: 'Pond Specialists',
+      description: 'Our experienced team brings together expertise in pond construction, aquatic plant care, and water feature maintenance.',
+      image: '/images/IMG_2770.jpg'
+    },
+    {
+      name: 'Plant Experts',
+      role: 'Aquatic Specialists',
+      description: 'We have the largest selection of aquatic plants in Utah and the knowledge to help you choose the perfect ones.',
+      image: '/images/IMG_2775.jpg'
+    },
+    {
+      name: 'Maintenance Crew',
+      role: 'Care Specialists',
+      description: 'Our maintenance team ensures your pond stays healthy and beautiful year-round with professional care.',
+      image: '/images/IMG_2779.jpg'
+    }
+  ];
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'story':
+        return (
+          <div className="tab-content">
+            <div className="content-grid">
+              <div className="content-text">
+                <h3>Building Dreams, One Pond at a Time</h3>
+                <p>Utah Water Gardens was founded with a simple mission: to bring the beauty and tranquility of water features to homes and businesses throughout Utah. What started as a passion for aquatic plants and pond design has grown into Utah's premier water feature company.</p>
+                <p>Over the years, we've helped hundreds of customers transform their outdoor spaces with custom ponds, waterfalls, and aquatic gardens. Our expertise spans from intimate backyard water features to large commercial installations.</p>
+                <p>We pride ourselves on staying at the forefront of pond technology and design trends, while maintaining our commitment to quality craftsmanship and exceptional customer service.</p>
+                <div className="story-highlights">
+                  <div className="highlight-item">
+                    <span className="highlight-icon">Award</span>
+                    <span>Utah's Largest Aquatic Plant Selection</span>
+                  </div>
+                  <div className="highlight-item">
+                    <span className="highlight-icon">Licensed</span>
+                    <span>Licensed & Insured Professionals</span>
+                  </div>
+                  <div className="highlight-item">
+                    <span className="highlight-icon">Expert</span>
+                    <span>Expert Plant Care & Maintenance</span>
+                  </div>
+                </div>
+              </div>
+              <div className="content-image">
+                <img src="/images/IMG_2770.jpg" alt="Beautiful water feature construction" />
+              </div>
+            </div>
+          </div>
+        );
+      case 'mission':
+        return (
+          <div className="tab-content">
+            <div className="mission-content">
+              <div className="mission-statement">
+                <h3>Our Mission</h3>
+                <p className="mission-text">
+                  "To create and maintain beautiful water features that enhance our customers' lives while promoting sustainable aquatic ecosystems in Utah's unique environment."
+                </p>
+              </div>
+              <div className="mission-goals">
+                <div className="goal-item">
+                  <div className="goal-icon">Design</div>
+                  <h4>Creative Design</h4>
+                  <p>Transform your outdoor space with custom-designed water features that complement your landscape and lifestyle.</p>
+                </div>
+                <div className="goal-item">
+                  <div className="goal-icon">Sustainable</div>
+                  <h4>Sustainable Practices</h4>
+                  <p>Promote healthy aquatic ecosystems using environmentally friendly methods and native plant selections.</p>
+                </div>
+                <div className="goal-item">
+                  <div className="goal-icon">Education</div>
+                  <h4>Education & Support</h4>
+                  <p>Empower our customers with knowledge and ongoing support to maintain their water features successfully.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'values':
+        return (
+          <div className="tab-content">
+            <div className="values-grid">
+              {values.map((value, index) => (
+                <div key={index} className="value-card">
+                  <div className="value-icon">{value.icon}</div>
+                  <h4>{value.title}</h4>
+                  <p>{value.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      case 'team':
+        return (
+          <div className="tab-content">
+            <div className="team-grid">
+              {teamMembers.map((member, index) => {
+                const teamSlug = member.name.toLowerCase().replace(/\s+/g, '-');
+                return (
+                  <Link key={index} to={`/team/${teamSlug}`} className="team-card">
+                    <div className="team-image">
+                      <img src={member.image} alt={member.name} />
+                    </div>
+                    <div className="team-info">
+                      <h4>{member.name}</h4>
+                      <p className="team-role">{member.role}</p>
+                      <p className="team-description">{member.description}</p>
+                      <span className="team-link">Learn More →</span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="about-page">
-      <PageHero 
-        title="About Utah Water Gardens"
-        subtitle="Your trusted partner for pond and water feature solutions in Utah"
+    <>
+      <SEO 
+        title="About Utah Water Gardens - Utah's Premier Pond & Water Feature Company"
+        description="Learn about Utah Water Gardens, Utah's premier pond and water feature company. 15+ years of experience, 500+ projects completed, and Utah's largest selection of aquatic plants."
+        keywords="about utah water gardens, pond company utah, water feature experts, aquatic plant specialists, pond construction utah"
+        canonical="https://utahwatergardens.com/about"
       />
-
-      <section className="about-content-section first-section-gradient">
-        <div className="container">
-          <div className="about-content">
-            <div className="about-text">
-              <h2>Our Story</h2>
-              <p>Utah Water Gardens offers the largest variety of aquatic plants in Utah. We are your complete pond and water feature solution, handling everything from construction to maintenance.</p>
-              <p>Our team has years of experience in creating and maintaining beautiful water features that enhance your landscape and provide a peaceful retreat in your own backyard.</p>
-              <p>We pride ourselves on providing exceptional service and using the highest quality materials and equipment to ensure your pond project exceeds your expectations.</p>
-            </div>
-            <div className="about-image">
-              <img 
-                src="/images/IMG_2770.jpg" 
-                alt="Beautiful water feature with natural rocks and clear turquoise water" 
-                onError={(e) => {
-                  e.target.src = '/images/IMG_2775.jpg';
-                  e.target.alt = 'Beautiful water feature';
-                }}
-              />
-            </div>
+      <div className={`about-page ${isVisible ? 'visible' : ''}`}>
+        {/* Hero Section */}
+        <section className="about-hero">
+          <div className="hero-background">
+            <img 
+              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
+              alt="Beautiful pond landscape with waterfall and rock features"
+              className="hero-image"
+            />
+            <div className="hero-overlay"></div>
           </div>
-        </div>
-      </section>
-
-      <section className="services-overview-section">
-        <div className="container">
-          <h2>What We Do</h2>
-          <div className="services-overview-grid">
-            <div className="service-overview-item">
-              <img src="/images/IMG_2770.jpg" alt="Beautiful water garden construction services" />
-              <h3>Construction</h3>
-              <p>Custom design and construction of beautiful water features for your property.</p>
-            </div>
-            <div className="service-overview-item">
-              <img src="/images/IMG_2775.jpg" alt="Aquatic plant expertise and retail" />
-              <h3>Plant Expertise</h3>
-              <p>Largest selection of aquatic plants in Utah with expert advice for your pond.</p>
-            </div>
-            <div className="service-overview-item">
-              <img src="/images/IMG_2779.jpg" alt="Comprehensive pond maintenance services" />
-              <h3>Maintenance</h3>
-              <p>Regular maintenance to keep your pond healthy and beautiful year-round.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="why-choose-section">
-        <div className="container">
-          <h2>Why Choose Us</h2>
-          <div className="reasons-grid">
-            <div className="reason-item">
-              <div className="reason-icon">
-                <i className="fas fa-tools"></i>
+          
+          <div className="hero-content">
+            <div className="hero-text-content">
+              <h1 className="hero-title">
+                About 
+                <span className="hero-title-highlight"> Utah Water Gardens</span>
+              </h1>
+              
+              <p className="hero-subtitle">
+                Utah's premier pond and water feature company with over 15 years of experience creating beautiful aquatic landscapes.
+              </p>
+              
+              <div className="hero-stats">
+                {stats.map((stat, index) => (
+                  <div key={index} className="stat-item">
+                    <div className="stat-icon">{stat.icon}</div>
+                    <div className="stat-number">{stat.number}</div>
+                    <div className="stat-label">{stat.label}</div>
+                  </div>
+                ))}
               </div>
-              <h3>Expert Equipment</h3>
-              <p>We use professional-grade equipment including diver-operated dredges for thorough pond maintenance.</p>
-            </div>
-            <div className="reason-item">
-              <div className="reason-icon">
-                <i className="fas fa-leaf"></i>
-              </div>
-              <h3>Largest Plant Selection</h3>
-              <p>We offer the largest variety of aquatic plants in Utah to enhance your water feature.</p>
-            </div>
-            <div className="reason-item">
-              <div className="reason-icon">
-                <i className="fas fa-heart"></i>
-              </div>
-              <h3>Passion for Ponds</h3>
-              <p>Our team is passionate about creating and maintaining beautiful water features.</p>
-            </div>
-            <div className="reason-item">
-              <div className="reason-icon">
-                <i className="fas fa-clock"></i>
-              </div>
-              <h3>Years of Experience</h3>
-              <p>We have years of experience in pond construction and maintenance across Utah.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="retail-expertise-section">
-        <div className="container">
-          <h2>Our Retail Expertise</h2>
-          <div className="expertise-grid">
-            <div className="expertise-item">
-              <img src="/images/pumpRepair.webp" alt="Pond equipment and supplies" />
-              <h3>Pond Equipment</h3>
-              <p>Expert selection of koi, goldfish, and quality pond equipment for your water garden.</p>
+        {/* Main Content */}
+        <section className="about-main-content">
+          <div className="container">
+            {/* Tab Navigation */}
+            <div className="tab-navigation">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
+                  onClick={() => setActiveTab(tab.id)}
+                >
+                  <span className="tab-icon">{tab.icon}</span>
+                  <span className="tab-label">{tab.label}</span>
+                </button>
+              ))}
             </div>
-            <div className="expertise-item">
-              <img src="/images/IMG_2780.jpg" alt="Water garden supplies" />
-              <h3>Complete Supplies</h3>
-              <p>Everything you need from pond liners to filtration systems and water treatments.</p>
-            </div>
-            <div className="expertise-item">
-              <img src="/images/IMG_2782.jpg" alt="Professional equipment" />
-              <h3>Professional Equipment</h3>
-              <p>High-quality pumps, filters, and maintenance equipment for professional results.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="team-section gradient-wipe-up">
-        <div className="container">
-          <h2>Our Team</h2>
-          <div className="team-content">
-            <div className="team-text">
-              <p>Our experienced team of pond professionals is dedicated to providing exceptional service and creating beautiful water features that enhance your property.</p>
-              <p>We combine technical expertise with artistic vision to create ponds that are both functional and beautiful.</p>
-              <p>Visit our store to meet our knowledgeable staff and get expert advice on plants, fish, and supplies.</p>
-            </div>
-            <div className="team-image">
-              <img 
-                src="/images/IMG_2770.jpg" 
-                alt="Our professional pond maintenance team" 
-              />
+            {/* Tab Content */}
+            <div className="tab-content-container">
+              {renderTabContent()}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section 
-        className="about-cta"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container">
-          <h2>Ready to Get Started?</h2>
-          <p>Contact us today for a consultation or quote on your pond project.</p>
-          <div className="cta-buttons">
-            <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-            <Link to="/contact" className="btn btn-secondary">Send Message</Link>
+        {/* Services Overview */}
+        <section className="services-overview-section">
+          <div className="container">
+            <div className="section-header">
+              <h2>What We Do</h2>
+              <p>Comprehensive water feature solutions from design to maintenance</p>
+            </div>
+            <div className="services-overview-grid">
+              <Link to="/pond-services/design-build" className="service-overview-item">
+                <div className="service-image">
+                  <img src="/images/pondConstruction1000x800.webp" alt="Custom pond construction services" />
+                  <div className="service-overlay">
+                    <span className="service-icon">Construction</span>
+                  </div>
+                </div>
+                <div className="service-content">
+                  <h3>Construction</h3>
+                  <p>Custom design and construction of beautiful water features for your property.</p>
+                  <span className="service-link">Learn More →</span>
+                </div>
+              </Link>
+              
+              <Link to="/plants-fish" className="service-overview-item">
+                <div className="service-image">
+                  <img src="/images/IMG_2775.jpg" alt="Aquatic plant expertise and retail" />
+                  <div className="service-overlay">
+                    <span className="service-icon">Plants</span>
+                  </div>
+                </div>
+                <div className="service-content">
+                  <h3>Plant Expertise</h3>
+                  <p>Largest selection of aquatic plants in Utah with expert advice for your pond.</p>
+                  <span className="service-link">View Plants →</span>
+                </div>
+              </Link>
+              
+              <Link to="/pond-services/maintenance" className="service-overview-item">
+                <div className="service-image">
+                  <img src="/images/pondMaintenance.webp" alt="Professional pond maintenance services" />
+                  <div className="service-overlay">
+                    <span className="service-icon">Maintenance</span>
+                  </div>
+                </div>
+                <div className="service-content">
+                  <h3>Maintenance</h3>
+                  <p>Professional maintenance services to keep your pond healthy and beautiful year-round.</p>
+                  <span className="service-link">Schedule Service →</span>
+                </div>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        {/* Store Information */}
+        <section className="store-info-section">
+          <div className="container">
+            <div className="store-info-content">
+              <div className="store-info-text">
+                <h2>Visit Our Store</h2>
+                <p>
+                  Come visit our retail location to see our complete selection of aquatic plants, fish, and pond supplies. 
+                  Our knowledgeable staff is ready to help you choose the perfect additions for your water garden.
+                </p>
+                <div className="store-details">
+                  <div className="store-detail">
+                    <i className="fas fa-map-marker-alt" aria-hidden></i>
+                    <span>5911 S 1300 E, Salt Lake City, UT 84121</span>
+                  </div>
+                  <div className="store-detail">
+                    <i className="fas fa-phone" aria-hidden></i>
+                    <a href="tel:(801) 590-8516">(801) 590-8516</a>
+                  </div>
+                  <div className="store-detail">
+                    <i className="fas fa-clock" aria-hidden></i>
+                    <span>Monday - Friday: 10:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 4:00 PM</span>
+                  </div>
+                </div>
+                <div className="store-cta-buttons">
+                  <a href="tel:(801) 590-8516" className="btn btn-primary">Call Us Now</a>
+                  <a
+                    href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                  >
+                    Get Directions
+                  </a>
+                </div>
+              </div>
+              <div className="store-info-image">
+                <img src="/images/IMG_2770.jpg" alt="Our store and pond maintenance services" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section 
+          className="contact-cta"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <div className="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let us help you create the water feature of your dreams.</p>
+            <div className="cta-buttons">
+              <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
+              <Link to="/free-estimate" className="btn btn-secondary">Get Free Estimate</Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 

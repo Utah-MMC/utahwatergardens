@@ -1,300 +1,230 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero.js';
+import ImageModal from '../components/ImageModal';
+import { getPlantsByCategory, createPlantSlug } from '../data/plantData';
 import './FloatingPlantsPage.css';
 
 const FloatingPlantsPage = () => {
+  const floatingPlants = getPlantsByCategory('Floating Plants');
+  const [modalImage, setModalImage] = useState(null);
+  const [modalAlt, setModalAlt] = useState('');
+
+  const handleImageClick = (imageSrc, imageAlt) => {
+    setModalImage(imageSrc);
+    setModalAlt(imageAlt);
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+    setModalAlt('');
+  };
+
   return (
     <div className="floating-plants-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Floating Plants for Your Pond</h1>
-          <p>Add natural beauty and filtration to your water garden with our selection of floating aquatic plants</p>
-          <div className="hero-buttons">
-            <Link to="/contact" className="cta-button">Get Expert Advice</Link>
-            <Link to="/plants-fish" className="secondary-button">View All Plants</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2775.jpg" alt="Beautiful floating aquatic plants in a pond" />
-        </div>
-      </section>
+      <PageHero 
+        title="Floating Plants"
+        subtitle="Natural water coverage and filtration for your pond"
+        backgroundImage="/images/IMG_2775.jpg"
+        backgroundImageAlt="Beautiful floating plants on pond surface"
+      />
 
-      {/* Plant Types */}
-      <section className="plant-types first-section-gradient">
-        <div className="container">
-          <h2>Types of Floating Plants</h2>
-          <div className="types-grid">
-            <div className="type-card">
-              <img src="/images/IMG_2775.jpg" alt="Water hyacinth" />
-              <h3>Water Hyacinth</h3>
-              <p>Beautiful floating plants with purple flowers and thick, spongy leaves that provide excellent filtration.</p>
-              <ul>
-                <li>Purple flower spikes</li>
-                <li>Excellent water filtration</li>
-                <li>Fast growing</li>
-                <li>Provides fish shade</li>
-              </ul>
+      <div className="container">
+        {/* Introduction */}
+        <section className="intro-section">
+          <h2>Floating Plants Collection</h2>
+          <p>
+            Floating plants are essential for natural water coverage, algae control, and providing 
+            shade for fish. These plants float freely on the water surface, creating beautiful 
+            green carpets and helping to maintain water quality. Our collection includes both 
+            hardy and tropical varieties, perfect for different pond conditions and climates.
+          </p>
+        </section>
+
+        {/* Floating Plants Grid */}
+        <section className="plants-grid-section">
+          <h2>Our Floating Plants</h2>
+          <div className="plants-grid">
+            {floatingPlants.map((plant) => (
+              <Link 
+                key={plant.id}
+                to={`/plant/${plant.id}`}
+                className="plant-card"
+              >
+                <div className="plant-image">
+                  <img src={plant.image} alt={plant.name} />
+                </div>
+                <div className="plant-info">
+                  <h3>{plant.name}</h3>
+                  <p className="scientific-name">
+                    <em>{plant.scientificName}</em>
+                  </p>
+                  <p className="description">{plant.description}</p>
+                  <div className="plant-specs">
+                    <span className="spec">Height: {plant.specifications.height}</span>
+                    <span className="spec">Spread: {plant.specifications.spread}</span>
+                  </div>
+                  <span className="view-details">View Details →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Care Information */}
+        <section className="care-info-section">
+          <h2>Floating Plant Care Guide</h2>
+          <div className="care-grid">
+            <div className="care-item">
+              <h3>Simple Installation</h3>
+              <p>Simply place floating plants on the water surface - no planting required! They'll spread naturally across your pond.</p>
+              <div className="care-images">
+                <img src="/images/IMG_2770.jpg" alt="Simple installation example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Simple installation example")} />
+                <img src="/images/IMG_2775.jpg" alt="Water surface placement example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Water surface placement example")} />
+                <img src="/images/IMG_2779.jpg" alt="Natural spreading example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Natural spreading example")} />
+                <img src="/images/IMG_2780.jpg" alt="No planting required example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "No planting required example")} />
+                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Pond coverage example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Pond coverage example")} />
+              </div>
             </div>
-            
-            <div className="type-card">
-              <img src="/images/IMG_2775.jpg" alt="Water lettuce" />
-              <h3>Water Lettuce</h3>
-              <p>Rosette-forming plants with velvety leaves that create natural floating islands in your pond.</p>
-              <ul>
-                <li>Velvety green leaves</li>
-                <li>Rosette formation</li>
-                <li>Natural filtration</li>
-                <li>Fish habitat</li>
-              </ul>
+            <div className="care-item">
+              <h3>Light Requirements</h3>
+              <p>Most floating plants prefer partial shade to full sun. Some varieties can tolerate more shade than others.</p>
+              <div className="care-images">
+                <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Light requirements example" className="care-image clickable-image" onClick={() => handleImageClick("/images/waterLillies-topaz-enhance-4x.jpeg", "Light requirements example")} />
+                <img src="/images/IMG_2770.jpg" alt="Partial shade example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Partial shade example")} />
+                <img src="/images/IMG_2775.jpg" alt="Full sun example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Full sun example")} />
+                <img src="/images/IMG_2779.jpg" alt="Shade tolerance example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Shade tolerance example")} />
+                <img src="/images/IMG_2780.jpg" alt="Variety differences example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Variety differences example")} />
+              </div>
             </div>
-            
-            <div className="type-card">
-              <img src="/images/IMG_2775.jpg" alt="Duckweed" />
-              <h3>Duckweed</h3>
-              <p>Tiny floating plants that multiply quickly, providing excellent surface coverage and food for fish.</p>
-              <ul>
-                <li>Tiny floating leaves</li>
-                <li>Rapid multiplication</li>
-                <li>Fish food source</li>
-                <li>Surface coverage</li>
-              </ul>
+            <div className="care-item">
+              <h3>Nutrient Absorption</h3>
+              <p>These plants absorb nutrients directly from the water, helping to control algae and improve water quality naturally.</p>
+              <div className="care-images">
+                <img src="/images/IMG_2779.jpg" alt="Nutrient absorption example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Nutrient absorption example")} />
+                <img src="/images/IMG_2770.jpg" alt="Water quality improvement example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Water quality improvement example")} />
+                <img src="/images/IMG_2775.jpg" alt="Algae control example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Algae control example")} />
+                <img src="/images/IMG_2780.jpg" alt="Natural filtration example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Natural filtration example")} />
+                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Direct water absorption example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Direct water absorption example")} />
+              </div>
+            </div>
+            <div className="care-item">
+              <h3>Seasonal Management</h3>
+              <p>Some varieties are annual in Utah's climate and may need to be replaced each season or overwintered indoors.</p>
+              <div className="care-images">
+                <img src="/images/IMG_2780.jpg" alt="Seasonal management example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Seasonal management example")} />
+                <img src="/images/IMG_2770.jpg" alt="Annual varieties example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Annual varieties example")} />
+                <img src="/images/IMG_2775.jpg" alt="Seasonal replacement example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Seasonal replacement example")} />
+                <img src="/images/IMG_2779.jpg" alt="Overwintering example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Overwintering example")} />
+                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Utah climate example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Utah climate example")} />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Benefits Section */}
-      <section className="benefits-section">
-        <div className="container">
-          <h2>Benefits of Floating Plants</h2>
+        {/* Benefits */}
+        <section className="benefits-section">
+          <h2>Why Choose Floating Plants?</h2>
           <div className="benefits-grid">
             <div className="benefit-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
-  </svg>
-              </div>
-              <h3>Natural Filtration</h3>
-              <p>Absorb excess nutrients like nitrogen and phosphorus, helping to control algae growth naturally.</p>
+              <h3>Natural Algae Control</h3>
+              <p>Compete with algae for nutrients and block sunlight, naturally reducing algae growth</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#1e40af"/>
-                </svg>
-              </div>
               <h3>Fish Protection</h3>
-              <p>Provide shade and shelter for fish, helping to reduce stress and create natural spawning areas.</p>
+              <p>Provide essential shade and cover for fish, helping to reduce stress and improve health</p>
             </div>
             <div className="benefit-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#00BFFF"/>
-  </svg>
-              </div>
-              <h3>Water Quality</h3>
-              <p>Help maintain clear water by filtering out impurities and reducing water temperature fluctuations.</p>
+              <h3>Water Filtration</h3>
+              <p>Absorb excess nutrients and help maintain clear, healthy water conditions</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">🦋</div>
-              <h3>Wildlife Habitat</h3>
-              <p>Attract beneficial insects, frogs, and other wildlife to create a balanced ecosystem.</p>
+              <h3>Easy Maintenance</h3>
+              <p>Require minimal care and spread naturally, making them perfect for low-maintenance ponds</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Care Guide */}
-      <section className="care-guide">
-        <div className="container">
-          <h2>Floating Plant Care Guide</h2>
-          <div className="guide-content">
-            <div className="guide-text">
-              <h3>Planting & Placement</h3>
-              <ul>
-                <li>Simply place plants on water surface</li>
-                <li>Allow 30-40% surface coverage</li>
-                <li>Provide adequate light exposure</li>
-                <li>Ensure good water circulation</li>
-              </ul>
-              
-              <h3>Maintenance</h3>
-              <ul>
-                <li>Remove excess growth regularly</li>
-                <li>Trim dead or yellowing leaves</li>
-                <li>Control invasive species</li>
-                <li>Monitor for pests and diseases</li>
-              </ul>
-              
-              <h3>Seasonal Care</h3>
-              <ul>
-                <li>Spring: Introduce new plants</li>
-                <li>Summer: Regular maintenance</li>
-                <li>Fall: Remove tropical varieties</li>
-                <li>Winter: Protect hardy species</li>
-              </ul>
-            </div>
-            <div className="guide-image">
-              <img src="/images/IMG_2775.jpg" alt="Floating plant care guide" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Varieties */}
-      <section className="popular-varieties">
-        <div className="container">
-          <h2>Popular Floating Plant Varieties</h2>
-          <div className="varieties-grid">
-            <div className="variety-card">
-              <img src="/images/IMG_2775.jpg" alt="Water Hyacinth" />
+        {/* Plant Types */}
+        <section className="plant-types-section">
+          <h2>Types of Floating Plants</h2>
+          <div className="types-grid">
+            <div className="type-item">
               <h3>Water Hyacinth</h3>
-              <p>Fast-growing plant with beautiful purple flowers and excellent filtration properties.</p>
-              <div className="variety-details">
-                <span>Growth Rate: Fast</span>
-                <span>Flower Color: Purple</span>
-                <span>Hardiness: Tropical</span>
-              </div>
+              <p>Beautiful purple flowers and rapid growth. Excellent for large ponds and natural filtration.</p>
             </div>
-            
-            <div className="variety-card">
-              <img src="/images/IMG_2775.jpg" alt="Water Lettuce" />
+            <div className="type-item">
               <h3>Water Lettuce</h3>
-              <p>Rosette-forming plant with velvety leaves that create natural floating islands.</p>
-              <div className="variety-details">
-                <span>Growth Rate: Medium</span>
-                <span>Leaf Color: Green</span>
-                <span>Hardiness: Tropical</span>
-              </div>
+              <p>Soft, velvety leaves in rosette form. Perfect for smaller ponds and gentle water coverage.</p>
             </div>
-            
-            <div className="variety-card">
-              <img src="/images/IMG_2775.jpg" alt="Duckweed" />
+            <div className="type-item">
               <h3>Duckweed</h3>
-              <p>Tiny floating plants that provide excellent surface coverage and fish food.</p>
-              <div className="variety-details">
-                <span>Growth Rate: Very Fast</span>
-                <span>Size: Tiny</span>
-                <span>Hardiness: Hardy</span>
-              </div>
+              <p>Tiny floating plant that forms green carpets. Great for fish food and natural water coverage.</p>
+            </div>
+            <div className="type-item">
+              <h3>Azolla (Fairy Moss)</h3>
+              <p>Small floating fern that changes color seasonally. Adds unique texture and nitrogen fixation.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Growth Control */}
-      <section className="growth-control">
-        <div className="container">
-          <h2>Managing Plant Growth</h2>
-          <div className="control-grid">
-            <div className="control-item">
-              <div className="control-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                </svg>
-              </div>
-              <h3>Regular Trimming</h3>
-              <p>Remove excess growth to maintain 30-40% surface coverage for optimal pond health.</p>
+        {/* Services */}
+        <section className="services-section">
+          <h2>Related Services</h2>
+          <div className="services-grid">
+            <div className="service-card">
+              <h3>Floating Plant Installation</h3>
+              <p>Professional placement and management of floating plants for optimal pond health</p>
+              <a href="tel:(801) 590-8516" className="btn btn-outline">
+                Call for Installation
+              </a>
             </div>
-            <div className="control-item">
-              <div className="control-icon">🚫</div>
-              <h3>Invasive Control</h3>
-              <p>Monitor and control aggressive growers to prevent them from taking over your pond.</p>
+            <div className="service-card">
+              <h3>Pond Balance Consultation</h3>
+              <p>Expert advice on using floating plants to achieve perfect pond balance and water quality</p>
+              <a href="tel:(801) 590-8516" className="btn btn-outline">
+                Call for Consultation
+              </a>
             </div>
-            <div className="control-item">
-              <div className="control-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 4V2C15 1.45 14.55 1 14 1H10C9.45 1 9 1.45 9 2V4M15 4H9M15 4V6.5C15 7.33 15.67 8 16.5 8S18 7.33 18 6.5V4H15ZM9 4V6.5C9 7.33 8.33 8 7.5 8S6 7.33 6 6.5V4H9ZM12 8V20M12 20L9 17M12 20L15 17" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                </svg>
-              </div>
-              <h3>Seasonal Management</h3>
-              <p>Remove tropical varieties before frost and protect hardy species during winter.</p>
-            </div>
-            <div className="control-item">
-              <div className="control-icon">🔄</div>
-              <h3>Rotation System</h3>
-              <p>Rotate different plant varieties to maintain biodiversity and prevent overgrowth.</p>
+            <div className="service-card">
+              <h3>Seasonal Plant Management</h3>
+              <p>Help with seasonal care, overwintering, and replacement of floating plants</p>
+              <a href="tel:(801) 590-8516" className="btn btn-outline">
+                Call for Management
+              </a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Troubleshooting */}
-      <section className="troubleshooting">
-        <div className="container">
-          <h2>Common Issues & Solutions</h2>
-          <div className="troubleshooting-grid">
-            <div className="issue-card">
-              <h3>Yellowing Leaves</h3>
-              <p><strong>Cause:</strong> Nutrient deficiency or poor water quality</p>
-              <p><strong>Solution:</strong> Test water parameters and add aquatic fertilizer if needed</p>
-            </div>
-            <div className="issue-card">
-              <h3>Excessive Growth</h3>
-              <p><strong>Cause:</strong> Too many nutrients or warm water</p>
-              <p><strong>Solution:</strong> Remove excess plants and maintain proper coverage</p>
-            </div>
-            <div className="issue-card">
-              <h3>Plant Die-off</h3>
-              <p><strong>Cause:</strong> Cold temperatures or poor water conditions</p>
-              <p><strong>Solution:</strong> Check water quality and protect from extreme cold</p>
-            </div>
-            <div className="issue-card">
-              <h3>Pest Infestation</h3>
-              <p><strong>Cause:</strong> Aphids, snails, or other pests</p>
-              <p><strong>Solution:</strong> Remove affected plants and introduce natural predators</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      <section className="featured-products gradient-wipe-up">
-        <div className="container">
-          <h2>Featured Floating Plants</h2>
-          <div className="products-grid">
-            <div className="product-card">
-              <img src="/images/IMG_2775.jpg" alt="Water Hyacinth Bundle" />
-              <h3>Water Hyacinth Bundle</h3>
-              <p>Beautiful purple-flowered plants perfect for natural filtration.</p>
-              <span className="price">$12.99</span>
-            </div>
-            <div className="product-card">
-              <img src="/images/IMG_2775.jpg" alt="Water Lettuce Pack" />
-              <h3>Water Lettuce Pack</h3>
-              <p>Velvety green plants that create natural floating islands.</p>
-              <span className="price">$9.99</span>
-            </div>
-            <div className="product-card">
-              <img src="/images/IMG_2775.jpg" alt="Duckweed Starter" />
-              <h3>Duckweed Starter</h3>
-              <p>Tiny floating plants for rapid surface coverage and fish food.</p>
-              <span className="price">$6.99</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section 
-        className="cta-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container">
+        {/* Contact CTA */}
+        <section 
+          className="contact-cta"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
           <h2>Ready to Add Floating Plants to Your Pond?</h2>
-          <p>Our aquatic plant experts can help you choose the perfect floating plants for your water garden.</p>
+          <p>Contact us today to learn more about our floating plant collection and how they can improve your pond's health and beauty</p>
           <div className="cta-buttons">
-            <Link to="/contact" className="primary-button">Schedule Consultation</Link>
-            <Link to="/plants-fish" className="secondary-button">Browse All Plants</Link>
+            <a href="tel:(801) 590-8516" className="btn btn-primary">
+              Call (801) 590-8516
+            </a>
+            <Link to="/contact" className="btn btn-secondary">
+              Send Message
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+      
+      <ImageModal 
+        isOpen={!!modalImage}
+        onClose={closeModal}
+        imageSrc={modalImage}
+        imageAlt={modalAlt}
+      />
     </div>
   );
 };

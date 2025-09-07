@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import PageHero from '../components/PageHero.js';
+import SEO from '../components/SEO';
 import './PondServicesPage.css';
 
 const PondServicesPage = () => {
   const [expandedCounties, setExpandedCounties] = useState({});
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const toggleCounty = (county) => {
     setExpandedCounties(prev => ({
@@ -12,6 +17,13 @@ const PondServicesPage = () => {
       [county]: !prev[county]
     }));
   };
+
+  const stats = [
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '500+', label: 'Projects Completed', icon: 'Projects' },
+    { number: '50+', label: 'Service Areas', icon: 'Areas' },
+    { number: '100%', label: 'Satisfaction Rate', icon: 'Satisfaction' }
+  ];
 
   // Organize service areas by county
   const serviceAreasByCounty = {
@@ -50,53 +62,26 @@ const PondServicesPage = () => {
       { name: 'South Ogden', path: '/pond-services/south-ogden' },
       { name: 'Washington Terrace', path: '/pond-services/washington-terrace' },
       { name: 'Riverdale', path: '/pond-services/riverdale' },
+      { name: 'Fruit Heights', path: '/pond-services/fruit-heights' },
+      { name: 'West Bountiful', path: '/pond-services/west-bountiful' },
+      { name: 'Sunset', path: '/pond-services/sunset' },
+      { name: 'Hooper', path: '/pond-services/hooper' },
+      { name: 'Uintah', path: '/pond-services/uintah' },
       { name: 'Pleasant View', path: '/pond-services/pleasant-view' },
-      { name: 'North Ogden', path: '/pond-services/north-ogden' }
-    ],
-    'Utah County': [
-      { name: 'Provo', path: '/pond-services/provo' },
-      { name: 'Orem', path: '/pond-services/orem' },
-      { name: 'Lehi', path: '/pond-services/lehi' },
-      { name: 'American Fork', path: '/pond-services/american-fork' },
-      { name: 'Pleasant Grove', path: '/pond-services/pleasant-grove' },
-      { name: 'Lindon', path: '/pond-services/lindon' },
-      { name: 'Spanish Fork', path: '/pond-services/spanish-fork' },
-      { name: 'Springville', path: '/pond-services/springville' },
-      { name: 'Mapleton', path: '/pond-services/mapleton' },
-      { name: 'Payson', path: '/pond-services/payson' },
-      { name: 'Salem', path: '/pond-services/salem' },
-      { name: 'Cedar Hills', path: '/pond-services/cedar-hills' },
-      { name: 'Alpine', path: '/pond-services/alpine' },
-      { name: 'Highland', path: '/pond-services/highland' },
-      { name: 'Saratoga Springs', path: '/pond-services/saratoga-springs' },
-      { name: 'Eagle Mountain', path: '/pond-services/eagle-mountain' },
-      { name: 'Cedar Valley', path: '/pond-services/cedar-valley' },
-      { name: 'Genola', path: '/pond-services/genola' },
-      { name: 'Goshen', path: '/pond-services/goshen' },
-      { name: 'Woodland Hills', path: '/pond-services/woodland-hills' }
-    ],
-    'Summit County': [
-      { name: 'Coalville', path: '/pond-services/coalville' },
-      { name: 'Park City', path: '/pond-services/park-city' },
-      { name: 'Kamas', path: '/pond-services/kamas' },
-      { name: 'Oakley', path: '/pond-services/oakley' },
-      { name: 'Francis', path: '/pond-services/francis' },
-      { name: 'Hoytsville', path: '/pond-services/hoytsville' },
-      { name: 'Peoa', path: '/pond-services/peoa' },
-      { name: 'Samak', path: '/pond-services/samak' },
-      { name: 'Snyderville', path: '/pond-services/snyderville' }
-    ],
-    'Tooele County': [
-      { name: 'Tooele', path: '/pond-services/tooele' },
-      { name: 'Grantsville', path: '/pond-services/grantsville' },
-      { name: 'Stansbury Park', path: '/pond-services/stansbury-park' },
-      { name: 'Lake Point', path: '/pond-services/lake-point' },
-      { name: 'Erda', path: '/pond-services/erda' },
-      { name: 'Stockton', path: '/pond-services/stockton' },
-      { name: 'Vernon', path: '/pond-services/vernon' },
-      { name: 'Wendover', path: '/pond-services/wendover' },
-      { name: 'Dugway', path: '/pond-services/dugway' },
-      { name: 'Ibapah', path: '/pond-services/ibapah' },
+      { name: 'South Weber', path: '/pond-services/south-weber' },
+      { name: 'West Haven', path: '/pond-services/west-haven' },
+      { name: 'Harrisville', path: '/pond-services/harrisville' },
+      { name: 'Farr West', path: '/pond-services/farr-west' },
+      { name: 'Plain City', path: '/pond-services/plain-city' },
+      { name: 'Marriott-Slaterville', path: '/pond-services/marriott-slaterville' },
+      { name: 'Huntsville', path: '/pond-services/huntsville' },
+      { name: 'Eden', path: '/pond-services/eden' },
+      { name: 'Liberty', path: '/pond-services/liberty' },
+      { name: 'Mountain Green', path: '/pond-services/mountain-green' },
+      { name: 'Weber Canyon', path: '/pond-services/weber-canyon' },
+      { name: 'Warren', path: '/pond-services/warren' },
+      { name: 'West Warren', path: '/pond-services/west-warren' },
+      { name: 'Taylor', path: '/pond-services/taylor' },
       { name: 'Callao', path: '/pond-services/callao' },
       { name: 'Knolls', path: '/pond-services/knolls' },
       { name: 'Rush Valley', path: '/pond-services/rush-valley' },
@@ -148,214 +133,216 @@ const PondServicesPage = () => {
       path: '/pond-services/repair',
       description: 'Repair and maintenance of pond equipment',
       image: '/images/pumpRepair.webp',
-      features: ['Pump Repair', 'Filter Maintenance', 'Lighting Systems', 'Emergency Service']
+      features: ['Pump Repair', 'Filter Maintenance', 'Electrical Work', 'System Diagnostics']
+    },
+    {
+      name: 'Pond Dredging',
+      path: '/pond-services/dredging',
+      description: 'Professional dredging services to restore pond depth',
+      image: '/images/IMG_2770.jpg',
+      features: ['Sediment Removal', 'Depth Restoration', 'Water Quality Improvement', 'Equipment Rental']
     },
     {
       name: 'Water Quality Testing',
-      path: '/pond-services/water-quality',
-      description: 'Professional water quality analysis and treatment',
-      image: '/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg',
-      features: ['pH Testing', 'Chemical Analysis', 'Treatment Plans', 'Monitoring']
-    },
-    {
-      name: 'Pond Design & Build',
-      path: '/pond-services/design-build',
-      description: 'Custom pond design and construction services',
-      image: '/images/pondConstruction1000x800.webp',
-      features: ['Custom Design', 'Professional Installation', 'Quality Materials', 'Warranty']
+      path: '/pond-services/water-testing',
+      description: 'Comprehensive water quality analysis and treatment',
+      image: '/images/IMG_2782.jpg',
+      features: ['pH Testing', 'Chemical Analysis', 'Treatment Plans', 'Ongoing Monitoring']
     },
     {
       name: 'Seasonal Services',
       path: '/pond-services/seasonal',
-      description: 'Season-specific pond care and preparation',
-      image: '/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg',
-      features: ['Winter Prep', 'Spring Opening', 'Summer Care', 'Fall Cleanup']
-    }
-  ];
-
-  const additionalServices = [
-    {
-      name: 'Pond Dredging',
-      path: '/pond-and-lake-dredging',
-      description: 'Remove built-up sediment and restore pond depth'
-    },
-    {
-      name: 'Pond Repair & Rebuild',
-      path: '/pond-repair-and-rebuild',
-      description: 'Fix damage and restore pond functionality'
-    },
-    {
-      name: 'Pond Consultations',
-      path: '/pond-consultations',
-      description: 'Expert advice for pond planning and maintenance'
+      description: 'Season-specific care for your pond',
+      image: '/images/IMG_2775.jpg',
+      features: ['Spring Startup', 'Summer Care', 'Fall Cleanup', 'Winter Preparation']
     }
   ];
 
   return (
-    <div className="pond-services-page">
-      <PageHero 
-        title="Pond Services"
-        subtitle="Professional pond services to keep your water feature beautiful and healthy"
-        backgroundImage="/images/pond-services-hero.jpg"
-        backgroundImageAlt="Professional pond vacuum services and maintenance equipment"
+    <>
+      <SEO 
+        title="Pond Services - Professional Pond Care & Maintenance | Utah Water Gardens"
+        description="Professional pond services including cleaning, maintenance, repair, and dredging. Serving Salt Lake County, Davis County, and surrounding areas with 15+ years of experience."
+        keywords="pond services, pond cleaning, pond maintenance, pond repair, pond dredging, water quality testing, utah pond services, salt lake county pond services"
+        canonical="https://utahwatergardens.com/pond-services"
       />
-
-      <div className="container">
-        {/* Featured Services */}
-        <section className="featured-services first-section-gradient">
-          <h2>Featured Services</h2>
-          <p>Our most popular and essential pond services</p>
-          <div className="featured-services-grid">
-            {featuredServices.map((service, index) => (
-              <div key={index} className="featured-service-card">
-                <div className="service-badge">{service.badge}</div>
-                <div className="service-image">
-                  <img src={service.image} alt={service.name} />
-                </div>
-                <div className="service-content">
-                  <h3>{service.name}</h3>
-                  <p>{service.description}</p>
-                  <ul className="service-features">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex}>{feature}</li>
-                    ))}
-                  </ul>
-                  <div className="service-cta">
-                    <Link to={service.path} className="btn btn-primary">
-                      Learn More
-                    </Link>
-                    <a href="tel:(801) 590-8516" className="btn btn-secondary">
-                      Call (801) 590-8516
-                    </a>
+      <div className={`pond-services-page ${isVisible ? 'visible' : ''}`}>
+        {/* Hero Section */}
+        <section className="pond-services-hero">
+          <div className="hero-background">
+            <img 
+              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
+              alt="Professional pond services and maintenance"
+              className="hero-image"
+            />
+            <div className="hero-overlay"></div>
+          </div>
+          
+          <div className="hero-content">
+            <div className="hero-text-content">
+              <h1 className="hero-title">
+                Pond 
+                <span className="hero-title-highlight"> Services</span>
+              </h1>
+              
+              <p className="hero-subtitle">
+                Professional pond care and maintenance services to keep your water features healthy and beautiful year-round.
+              </p>
+              
+              <div className="hero-stats">
+                {stats.map((stat, index) => (
+                  <div key={index} className="stat-item">
+                    <div className="stat-icon">{stat.icon}</div>
+                    <div className="stat-number">{stat.number}</div>
+                    <div className="stat-label">{stat.label}</div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </section>
 
-        {/* Main Services */}
-        <section className="main-services">
-          <h2>All Our Services</h2>
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <div key={index} className="service-card">
-                <div className="service-image">
-                  <img src={service.image} alt={service.name} />
-                </div>
-                <div className="service-content">
-                  <h3>{service.name}</h3>
-                  <p>{service.description}</p>
-                  <ul className="service-features">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex}>{feature}</li>
-                    ))}
-                  </ul>
-                  <Link to={service.path} className="btn btn-primary">
-                    Learn More
+        {/* Main Content */}
+        <section className="pond-services-main-content">
+          <div className="container">
+            <div className="page-intro">
+              <h2>Professional Pond Services</h2>
+              <p>
+                From routine maintenance to specialized cleaning and repair services, we provide comprehensive 
+                care for your pond and water features. Our experienced team uses professional equipment and 
+                proven techniques to ensure your pond stays healthy and beautiful throughout the year.
+              </p>
+            </div>
+
+            {/* Featured Services */}
+            <div className="featured-services">
+              <h2>Our Most Popular Services</h2>
+              <div className="featured-grid">
+                {featuredServices.map((service, index) => (
+                  <Link key={index} to={service.path} className="featured-service-card">
+                    <div className="service-badge">{service.badge}</div>
+                    <div className="service-image">
+                      <img src={service.image} alt={service.name} />
+                      <div className="service-overlay">
+                        <span className="service-icon">Service</span>
+                      </div>
+                    </div>
+                    <div className="service-content">
+                      <h3>{service.name}</h3>
+                      <p>{service.description}</p>
+                      <div className="service-features">
+                        <h4>What's Included:</h4>
+                        <ul>
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <span className="service-link">Learn More →</span>
+                    </div>
                   </Link>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* All Services */}
+            <div className="all-services">
+              <h2>All Our Services</h2>
+              <div className="services-grid">
+                {services.map((service, index) => (
+                  <Link key={index} to={service.path} className="service-card">
+                    <div className="service-image">
+                      <img src={service.image} alt={service.name} />
+                      <div className="service-overlay">
+                        <span className="service-icon">Service</span>
+                      </div>
+                    </div>
+                    <div className="service-content">
+                      <h3>{service.name}</h3>
+                      <p>{service.description}</p>
+                      <div className="service-features">
+                        <ul>
+                          {service.features.map((feature, featureIndex) => (
+                            <li key={featureIndex}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <span className="service-link">View Details →</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Additional Services */}
-        <section className="additional-services">
-          <h2>Additional Services</h2>
-          <div className="additional-grid">
-            {additionalServices.map((service, index) => (
-              <div key={index} className="additional-card">
-                <h3>{service.name}</h3>
-                <p>{service.description}</p>
-                <Link to={service.path} className="btn btn-outline">
-                  View Details
-                </Link>
-              </div>
-            ))}
+        {/* Service Areas */}
+        <section className="service-areas-section">
+          <div className="container">
+            <h2>Service Areas</h2>
+            <p className="service-areas-intro">
+              We proudly serve the greater Salt Lake City area and surrounding communities. 
+              Click on any county to see the cities we service.
+            </p>
+            
+            <div className="counties-grid">
+              {Object.entries(serviceAreasByCounty).map(([county, cities]) => (
+                <div key={county} className="county-section">
+                  <button 
+                    className="county-header"
+                    onClick={() => toggleCounty(county)}
+                  >
+                    <h3>{county}</h3>
+                    <span className={`county-toggle ${expandedCounties[county] ? 'expanded' : ''}`}>
+                      {expandedCounties[county] ? '−' : '+'}
+                    </span>
+                  </button>
+                  
+                  {expandedCounties[county] && (
+                    <div className="cities-grid">
+                      {cities.map((city, index) => (
+                        <Link key={index} to={city.path} className="city-link">
+                          {city.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Why Choose Us */}
-        <section className="why-choose-us">
-          <h2>Why Choose Utah Water Gardens?</h2>
-          <div className="features-grid">
-            <div className="feature-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
-                </svg>
+        <section className="why-choose-section">
+          <div className="container">
+            <h2>Why Choose Our Pond Services?</h2>
+            <div className="benefits-grid">
+              <div className="benefit-item">
+                <div className="benefit-icon">Experience</div>
+                <h4>15+ Years Experience</h4>
+                <p>Over a decade of expertise in pond care and maintenance</p>
               </div>
-              <h3>Expert Team</h3>
-              <p>Years of experience in pond design and maintenance</p>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 1 5.1 3L9 6.9L6.9 9L3 5.1C1 7.1 1 10.1 3 12.1C4.9 14 7.6 14.5 9.9 13.6L19 22.7C19.3 23 19.7 23 20 23C20.3 23 20.7 22.7 21 22.4L22.4 21C22.7 20.7 22.7 20.3 22.7 19Z" fill="#6C757D"/>
-                </svg>
+              <div className="benefit-item">
+                <div className="benefit-icon">Equipment</div>
+                <h4>Professional Equipment</h4>
+                <p>State-of-the-art tools including our new Truxor T50</p>
               </div>
-              <h3>Quality Service</h3>
-              <p>Professional equipment and proven techniques</p>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#28A745"/>
-                </svg>
+              <div className="benefit-item">
+                <div className="benefit-icon">Service</div>
+                <h4>Comprehensive Service</h4>
+                <p>From routine maintenance to emergency repairs</p>
               </div>
-              <h3>Eco-Friendly</h3>
-              <p>Sustainable practices that protect your pond ecosystem</p>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="#007BFF"/>
-                </svg>
+              <div className="benefit-item">
+                <div className="benefit-icon">Local</div>
+                <h4>Local Expertise</h4>
+                <p>We understand Utah's unique climate and challenges</p>
               </div>
-              <h3>24/7 Support</h3>
-              <p>Emergency services when you need them most</p>
             </div>
           </div>
         </section>
-      </div>
 
-      {/* Service Areas - Full Width */}
-      <section className="service-areas gradient-wipe-up">
-        <div className="container">
-          <h2>Service Areas</h2>
-          <p>We proudly serve the greater Utah area from Ogden to Provo and Coalville to Tooele. Click on a county to see all cities we serve:</p>
-          <div className="counties-container">
-            {Object.entries(serviceAreasByCounty).map(([county, cities]) => (
-              <div key={county} className="county-dropdown">
-                <button 
-                  className="county-header"
-                  onClick={() => toggleCounty(county)}
-                  aria-expanded={expandedCounties[county]}
-                >
-                  <span className="county-name">{county}</span>
-                  <span className="county-count">({cities.length} cities)</span>
-                  <span className={`dropdown-arrow ${expandedCounties[county] ? 'expanded' : ''}`}>
-                    ▼
-                  </span>
-                </button>
-                <div className={`county-cities ${expandedCounties[county] ? 'expanded' : ''}`}>
-                  <div className="cities-grid">
-                    {cities.map((city, index) => (
-                      <Link key={index} to={city.path} className="city-link">
-                        {city.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="container">
-        {/* Contact CTA */}
+        {/* CTA Section */}
         <section 
           className="contact-cta"
           style={{
@@ -365,19 +352,17 @@ const PondServicesPage = () => {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          <h2>Ready to Get Started?</h2>
-          <p>Contact us today for a free consultation and quote</p>
-          <div className="cta-buttons">
-            <Link to="/contact" className="btn btn-primary">
-              Get Free Quote
-            </Link>
-            <Link to="/schedule" className="btn btn-outline">
-              Schedule Service
-            </Link>
+          <div className="container">
+            <h2>Ready to Schedule Your Pond Service?</h2>
+            <p>Contact us today for professional pond care and maintenance services.</p>
+            <div className="cta-buttons">
+              <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
+              <Link to="/free-estimate" className="btn btn-secondary">Get Free Estimate</Link>
+            </div>
           </div>
         </section>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,308 +1,207 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero.js';
+import ImageModal from '../components/ImageModal';
+import { getPlantsByCategory, createPlantSlug } from '../data/plantData';
 import './WaterLiliesPage.css';
 
 const WaterLiliesPage = () => {
+  const waterLilies = getPlantsByCategory('Water Lilies');
+  const [modalImage, setModalImage] = useState(null);
+  const [modalAlt, setModalAlt] = useState('');
+
+  const handleImageClick = (imageSrc, imageAlt) => {
+    setModalImage(imageSrc);
+    setModalAlt(imageAlt);
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+    setModalAlt('');
+  };
+
   return (
     <div className="water-lilies-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Water Lilies for Your Pond</h1>
-          <p>Transform your water garden with the timeless beauty and elegance of water lilies</p>
-          <div className="hero-buttons">
-            <Link to="/contact" className="cta-button">Get Expert Advice</Link>
-            <Link to="/plants-fish" className="secondary-button">View All Plants</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Beautiful water lilies in bloom" />
-        </div>
-      </section>
+      <PageHero 
+        title="Water Lilies"
+        subtitle="Discover our stunning collection of water lilies in various colors and sizes"
+        backgroundImage="/images/waterLillies-topaz-enhance-4x.jpeg"
+        backgroundImageAlt="Beautiful water lilies in a pond"
+      />
 
-      {/* Water Lily Types */}
-      <section className="lily-types first-section-gradient">
-        <div className="container">
-          <h2>Types of Water Lilies</h2>
-          <div className="types-grid">
-            <Link to="/plants-fish/water-lilies" className="type-card">
-              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Hardy water lilies" />
-              <h3>Hardy Water Lilies</h3>
-              <p>Cold-tolerant lilies that survive freezing temperatures and return year after year.</p>
-              <ul>
-                <li>Survive freezing temperatures</li>
-                <li>Return each spring</li>
-                <li>Wide range of colors</li>
-                <li>Perfect for Utah climate</li>
-              </ul>
-            </Link>
-            
-            <Link to="/plants-fish/water-lilies" className="type-card">
-              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Tropical water lilies" />
-              <h3>Tropical Water Lilies</h3>
-              <p>Exotic lilies with vibrant colors and larger blooms, perfect for warm summer months.</p>
-              <ul>
-                <li>Vibrant, exotic colors</li>
-                <li>Larger, more dramatic blooms</li>
-                <li>Night-blooming varieties</li>
-                <li>Fragrant flowers</li>
-              </ul>
-            </Link>
-            
-            <Link to="/plants-fish/water-lilies" className="type-card">
-              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Dwarf water lilies" />
-              <h3>Dwarf Water Lilies</h3>
-              <p>Compact lilies perfect for small ponds and container water gardens.</p>
-              <ul>
-                <li>Compact growth habit</li>
-                <li>Perfect for small ponds</li>
-                <li>Container-friendly</li>
-                <li>Easy to maintain</li>
-              </ul>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <div className="container">
+        {/* Introduction */}
+        <section className="intro-section">
+          <h2>Water Lilies Collection</h2>
+          <p>
+            Water lilies are the crown jewels of any water garden, providing stunning beauty, 
+            natural shade for fish, and helping to maintain water quality. Our collection features 
+            hardy varieties perfect for Utah's climate, from classic white and pink varieties to 
+            unique changeable colors that transform throughout the day.
+          </p>
+        </section>
 
-      {/* Popular Varieties */}
-      <section className="popular-varieties">
-        <div className="container">
-          <h2>Popular Water Lily Varieties</h2>
-          <div className="varieties-grid">
-            <div className="variety-card">
-              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Colorado water lily" />
-              <h3>Colorado</h3>
-              <p>Hardy variety with beautiful pink blooms that change color throughout the day.</p>
-              <div className="variety-details">
-                <span>Bloom Color: Pink</span>
-                <span>Spread: 4-6 feet</span>
-                <span>Hardiness: Zone 3-11</span>
-              </div>
-            </div>
-            
-            <div className="variety-card">
-              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Chromatella water lily" />
-              <h3>Chromatella</h3>
-              <p>Stunning yellow lily with large, fragrant blooms and beautiful mottled leaves.</p>
-              <div className="variety-details">
-                <span>Bloom Color: Yellow</span>
-                <span>Spread: 3-5 feet</span>
-                <span>Hardiness: Zone 3-11</span>
-              </div>
-            </div>
-            
-            <div className="variety-card">
-              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Pink Grapefruit water lily" />
-              <h3>Pink Grapefruit</h3>
-              <p>Exotic tropical lily with large, fragrant pink blooms and stunning foliage.</p>
-              <div className="variety-details">
-                <span>Bloom Color: Pink</span>
-                <span>Spread: 5-8 feet</span>
-                <span>Hardiness: Zone 9-11</span>
-              </div>
-            </div>
+        {/* Water Lilies Grid */}
+        <section className="plants-grid-section">
+          <h2>Our Water Lilies</h2>
+          <div className="plants-grid">
+            {waterLilies.map((plant) => (
+              <Link 
+                key={plant.id}
+                to={`/plant/${plant.id}`}
+                className="plant-card"
+              >
+                <div className="plant-image">
+                  <img src={plant.image} alt={plant.name} />
+                </div>
+                <div className="plant-info">
+                  <h3>{plant.name}</h3>
+                  <p className="scientific-name">
+                    <em>{plant.scientificName}</em>
+                  </p>
+                  <p className="description">{plant.description}</p>
+                  <div className="plant-specs">
+                    <span className="spec">Height: {plant.specifications.height}</span>
+                    <span className="spec">Bloom: {plant.specifications.bloomTime}</span>
+                  </div>
+                  <span className="view-details">View Details →</span>
+                </div>
+              </Link>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Planting Guide */}
-      <section className="planting-guide">
-        <div className="container">
-          <h2>Water Lily Planting Guide</h2>
-          <div className="guide-content">
-            <div className="guide-text">
-              <h3>Planting Depth</h3>
-              <ul>
-                <li>Hardy lilies: 12-18 inches deep</li>
-                <li>Tropical lilies: 18-24 inches deep</li>
-                <li>Dwarf lilies: 6-12 inches deep</li>
-                <li>Measure from water surface to pot top</li>
-              </ul>
-              
-              <h3>Planting Steps</h3>
-              <ul>
-                <li>Use aquatic planting soil and gravel</li>
-                <li>Plant in early spring for hardy varieties</li>
-                <li>Plant after last frost for tropical varieties</li>
-                <li>Fertilize with aquatic plant food</li>
-              </ul>
-              
-              <h3>Container Requirements</h3>
-              <ul>
-                <li>Use wide, shallow containers</li>
-                <li>Ensure adequate drainage holes</li>
-                <li>Fill with aquatic planting soil</li>
-                <li>Top with gravel to prevent soil loss</li>
-              </ul>
-            </div>
-            <div className="guide-image">
-              <img src="/images/IMG_2775.jpg" alt="Water lily planting guide" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Care & Maintenance */}
-      <section className="care-maintenance">
-        <div className="container">
-          <h2>Care & Maintenance</h2>
+        {/* Care Information */}
+        <section className="care-info-section">
+          <h2>Water Lily Care Guide</h2>
           <div className="care-grid">
             <div className="care-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
-  </svg>
+              <h3>Planting Depth</h3>
+              <p>Most water lilies prefer 12-24 inches of water depth. Plant in heavy clay soil in planting baskets for best results.</p>
+              <div className="care-images">
+                <img src="/images/IMG_2770.jpg" alt="Planting depth example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Planting depth example")} />
+                <img src="/images/IMG_2775.jpg" alt="Planting basket example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Planting basket example")} />
+                <img src="/images/IMG_2779.jpg" alt="Water depth example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Water depth example")} />
+                <img src="/images/IMG_2780.jpg" alt="Clay soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Clay soil example")} />
+                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Planting setup example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Planting setup example")} />
               </div>
+            </div>
+            <div className="care-item">
+              <h3>Sunlight Requirements</h3>
+              <p>Water lilies need 6-8 hours of direct sunlight daily for optimal flowering and growth.</p>
+              <div className="care-images">
+                <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Sunlight on water lilies" className="care-image clickable-image" onClick={() => handleImageClick("/images/waterLillies-topaz-enhance-4x.jpeg", "Sunlight on water lilies")} />
+                <img src="/images/IMG_2770.jpg" alt="Sunny pond example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Sunny pond example")} />
+                <img src="/images/IMG_2775.jpg" alt="Light conditions example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Light conditions example")} />
+                <img src="/images/IMG_2779.jpg" alt="Optimal lighting example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Optimal lighting example")} />
+                <img src="/images/IMG_2780.jpg" alt="Flowering in sun example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Flowering in sun example")} />
+              </div>
+            </div>
+            <div className="care-item">
               <h3>Fertilization</h3>
-              <p>Fertilize monthly during growing season with aquatic plant food tablets.</p>
+              <p>Fertilize monthly during the growing season with aquatic plant fertilizer tablets placed near the roots.</p>
+              <div className="care-images">
+                <img src="/images/IMG_2779.jpg" alt="Fertilizer application example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Fertilizer application example")} />
+                <img src="/images/IMG_2770.jpg" alt="Fertilizer tablets example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Fertilizer tablets example")} />
+                <img src="/images/IMG_2775.jpg" alt="Root feeding example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Root feeding example")} />
+                <img src="/images/IMG_2780.jpg" alt="Monthly care example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Monthly care example")} />
+                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Growing season care example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Growing season care example")} />
+              </div>
             </div>
             <div className="care-item">
-              <div className="care-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                </svg>
+              <h3>Winter Care</h3>
+              <p>In Utah's climate, most varieties are hardy. Trim back leaves in fall and protect from extreme cold.</p>
+              <div className="care-images">
+                <img src="/images/IMG_2780.jpg" alt="Winter preparation example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Winter preparation example")} />
+                <img src="/images/IMG_2770.jpg" alt="Fall trimming example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Fall trimming example")} />
+                <img src="/images/IMG_2775.jpg" alt="Cold protection example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Cold protection example")} />
+                <img src="/images/IMG_2779.jpg" alt="Utah climate example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Utah climate example")} />
+                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Hardy varieties example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Hardy varieties example")} />
               </div>
-              <h3>Pruning</h3>
-              <p>Remove dead leaves and spent flowers regularly to maintain plant health.</p>
-            </div>
-            <div className="care-item">
-              <div className="care-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 4V2C15 1.45 14.55 1 14 1H10C9.45 1 9 1.45 9 2V4M15 4H9M15 4V6.5C15 7.33 15.67 8 16.5 8S18 7.33 18 6.5V4H15ZM9 4V6.5C9 7.33 8.33 8 7.5 8S6 7.33 6 6.5V4H9ZM12 8V20M12 20L9 17M12 20L15 17" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                </svg>
-              </div>
-              <h3>Temperature</h3>
-              <p>Hardy lilies tolerate cold, tropical lilies need warm water (70°F+).</p>
-            </div>
-            <div className="care-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#00BFFF"/>
-  </svg>
-              </div>
-              <h3>Water Quality</h3>
-              <p>Maintain clear water and proper pH (6.5-7.5) for optimal growth.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Seasonal Care */}
-      <section className="seasonal-care">
-        <div className="container">
-          <h2>Seasonal Water Lily Care</h2>
-          <div className="seasons-grid">
-            <div className="season-card">
-              <h3>Spring</h3>
-              <p>Plant new lilies, divide overgrown plants, and begin fertilization schedule.</p>
-            </div>
-            <div className="season-card">
-              <h3>Summer</h3>
-              <p>Regular fertilization, deadheading spent blooms, and monitoring for pests.</p>
-            </div>
-            <div className="season-card">
-              <h3>Fall</h3>
-              <p>Reduce fertilization, prepare hardy lilies for winter, remove tropical varieties.</p>
-            </div>
-            <div className="season-card">
-              <h3>Winter</h3>
-              <p>Protect hardy lilies from ice damage, store tropical lilies indoors.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="benefits">
-        <div className="container">
-          <h2>Benefits of Water Lilies</h2>
+        {/* Benefits */}
+        <section className="benefits-section">
+          <h2>Why Choose Water Lilies?</h2>
           <div className="benefits-grid">
             <div className="benefit-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
-  </svg>
-              </div>
-              <h3>Visual Appeal</h3>
-              <p>Add stunning color and beauty to your pond throughout the growing season.</p>
+              <h3>Natural Shade</h3>
+              <p>Provide essential shade for fish and help control water temperature</p>
             </div>
             <div className="benefit-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
-  </svg>
-              </div>
-              <h3>Natural Filtration</h3>
-              <p>Help filter water and reduce algae growth by absorbing excess nutrients.</p>
+              <h3>Algae Control</h3>
+              <p>Help reduce algae growth by competing for nutrients and blocking sunlight</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#FF6B6B"/>
-                </svg>
-              </div>
-              <h3>Fish Habitat</h3>
-              <p>Provide shade, shelter, and spawning areas for pond fish.</p>
+              <h3>Beautiful Blooms</h3>
+              <p>Stunning flowers in various colors that bloom throughout the growing season</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
-                </svg>
-              </div>
-              <h3>Wildlife Attraction</h3>
-              <p>Attract beneficial insects, birds, and other wildlife to your garden.</p>
+              <h3>Wildlife Habitat</h3>
+              <p>Create shelter and habitat for beneficial insects and pond wildlife</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Featured Products */}
-      <section className="featured-products gradient-wipe-up">
-        <div className="container">
-          <h2>Featured Water Lilies</h2>
-          <div className="products-grid">
-            <div className="product-card">
-              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Colorado water lily" />
-              <h3>Colorado Hardy Water Lily</h3>
-              <p>Beautiful pink blooms that change color throughout the day.</p>
-              <span className="price">$29.99</span>
+        {/* Services */}
+        <section className="services-section">
+          <h2>Related Services</h2>
+          <div className="services-grid">
+            <div className="service-card">
+              <h3>Water Lily Installation</h3>
+              <p>Professional planting and placement of water lilies in your pond</p>
+              <a href="tel:(801) 590-8516" className="btn btn-outline">
+                Call for Installation
+              </a>
             </div>
-            <div className="product-card">
-              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Chromatella water lily" />
-              <h3>Chromatella Hardy Water Lily</h3>
-              <p>Stunning yellow blooms with fragrant flowers.</p>
-              <span className="price">$34.99</span>
+            <div className="service-card">
+              <h3>Pond Design Consultation</h3>
+              <p>Expert advice on water lily selection and pond layout</p>
+              <a href="tel:(801) 590-8516" className="btn btn-outline">
+                Call for Consultation
+              </a>
             </div>
-            <div className="product-card">
-              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Pink Grapefruit water lily" />
-              <h3>Pink Grapefruit Tropical Lily</h3>
-              <p>Exotic tropical variety with large, fragrant pink blooms.</p>
-              <span className="price">$39.99</span>
+            <div className="service-card">
+              <h3>Pond Maintenance</h3>
+              <p>Keep your water lilies healthy and your pond beautiful year-round</p>
+              <a href="tel:(801) 590-8516" className="btn btn-outline">
+                Call for Maintenance
+              </a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section 
-        className="cta-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container">
+        {/* Contact CTA */}
+        <section 
+          className="contact-cta"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
           <h2>Ready to Add Water Lilies to Your Pond?</h2>
-          <p>Our water lily experts can help you choose the perfect varieties for your water garden.</p>
+          <p>Contact us today to learn more about our water lily collection and how they can enhance your water garden</p>
           <div className="cta-buttons">
-            <Link to="/contact" className="primary-button">Schedule Consultation</Link>
-            <Link to="/plants-fish" className="secondary-button">Browse All Plants</Link>
+            <a href="tel:(801) 590-8516" className="btn btn-primary">
+              Call (801) 590-8516
+            </a>
+            <Link to="/contact" className="btn btn-secondary">
+              Send Message
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+      
+      <ImageModal 
+        isOpen={!!modalImage}
+        onClose={closeModal}
+        imageSrc={modalImage}
+        imageAlt={modalAlt}
+      />
     </div>
   );
 };

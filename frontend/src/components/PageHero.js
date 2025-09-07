@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './PageHero.css';
 
 const PageHero = ({
@@ -7,8 +7,18 @@ const PageHero = ({
   backgroundImage,
   backgroundImageAlt,
   backgroundVideo,
-  showBackgroundImage = true
+  showBackgroundImage = true,
+  showStats = false,
+  stats = [],
+  showCTA = false,
+  ctaButtons = []
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   // Curated selection of pond images for variety
   const pondImages = [
     {
@@ -87,7 +97,7 @@ const PageHero = ({
   const selectedImage = getDefaultImage();
 
   return (
-    <div className="page-hero-wrapper">
+    <div className={`page-hero-wrapper ${isVisible ? 'visible' : ''}`}>
       <section className="page-hero">
         {showBackgroundImage && (
           <div className="page-hero-background">
@@ -125,9 +135,41 @@ const PageHero = ({
         <div className="page-hero-content">
           <div className="container">
             <div className="page-hero-text-content">
-              <h1 className="page-hero-title">{title}</h1>
+              <h1 className="page-hero-title">
+                {title}
+              </h1>
               {subtitle && (
                 <p className="page-hero-subtitle">{subtitle}</p>
+              )}
+              
+              {/* Stats Section */}
+              {showStats && stats.length > 0 && (
+                <div className="page-hero-stats">
+                  {stats.map((stat, index) => (
+                    <div key={index} className="page-hero-stat-item">
+                      <div className="page-hero-stat-icon">{stat.icon}</div>
+                      <div className="page-hero-stat-number">{stat.number}</div>
+                      <div className="page-hero-stat-label">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              {/* CTA Buttons */}
+              {showCTA && ctaButtons.length > 0 && (
+                <div className="page-hero-cta">
+                  {ctaButtons.map((button, index) => (
+                    <a
+                      key={index}
+                      href={button.href}
+                      className={`page-hero-btn ${button.type || 'primary'}`}
+                      target={button.target || '_self'}
+                      rel={button.rel || ''}
+                    >
+                      {button.text}
+                    </a>
+                  ))}
+                </div>
               )}
             </div>
           </div>

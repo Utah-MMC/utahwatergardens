@@ -2,482 +2,340 @@
   /* Removed min-height to allow proper footer positioning */
 }
 
-/* Hero Section */
-.hero-section {
-  display: flex;
-  align-items: center;
-  min-height: 60vh;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  color: white;
-  padding: 4rem 0;
-  position: relative;
-}
-
-/* First wave layer - baby blue (behind) */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,110C100,100,200,80,300,70C400,60,500,60,600,70C700,80,800,100,900,110C1000,120,1100,120,1150,120L1200,120V120H0Z' fill='%2387ceeb' fill-opacity='0.9'/%3E%3C/svg%3E") no-repeat center bottom;
-  background-size: cover;
-  z-index: 100;
-  pointer-events: none;
-}
-
-/* Second wave layer - dark blue (in front) */
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,100C100,80,200,40,300,30C400,20,500,40,600,50C700,60,800,60,900,50C1000,40,1100,20,1150,10L1200,0V120H0Z' fill='%231e40af' fill-opacity='1'/%3E%3C/svg%3E") no-repeat center bottom;
-  background-size: cover;
-  z-index: 101;
-  pointer-events: none;
-}
-
-.hero-content {
-  flex: 1;
-  padding: 0 2rem;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.cta-button, .secondary-button {
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.cta-button {
-  background: #ff6b35;
-  color: white;
-}
-
-.cta-button:hover {
-  background: #e55a2b;
-  transform: translateY(-2px);
-}
-
-.secondary-button {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.secondary-button:hover {
-  background: white;
-  color: #1e3c72;
-}
-
-.hero-image {
-  flex: 1;
-  text-align: center;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* Plant Types */
-.plant-types {
+/* Introduction Section */
+.intro-section {
   padding: 4rem 0;
-  /* background: #f8f9fa; - removed to allow gradient override */
+  text-align: center;
 }
 
-.plant-types h2 {
-  text-align: center;
+.intro-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #1e3c72;
-}
-
-.types-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-.type-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.type-card:hover {
-  transform: translateY(-5px);
-}
-
-.type-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.type-card h3 {
-  padding: 1.5rem 1.5rem 0.5rem;
-  font-size: 1.5rem;
-  color: #1e3c72;
-}
-
-.type-card p {
-  padding: 0 1.5rem 1rem;
-  color: #666;
-  line-height: 1.6;
-}
-
-.type-card ul {
-  padding: 0 1.5rem 1.5rem;
-  list-style: none;
-}
-
-.type-card li {
-  padding: 0.25rem 0;
-  color: #555;
-  font-size: 0.9rem;
-}
-
-/* Benefits Section */
-.benefits-section {
-  padding: 4rem 0;
-}
-
-.benefits-section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #1e3c72;
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.benefit-item {
-  text-align: center;
-  padding: 2rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-.benefit-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.benefit-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #1e3c72;
-}
-
-.benefit-item p {
-  color: #666;
-  line-height: 1.6;
-}
-
-/* Care Guide */
-.care-guide {
-  padding: 4rem 0;
-  background: #f8f9fa;
-}
-
-.care-guide h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #1e3c72;
-}
-
-.guide-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.guide-text h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #1e3c72;
-}
-
-.guide-text ul {
+  color: #1e3a8a;
   margin-bottom: 2rem;
-  padding-left: 1.5rem;
 }
 
-.guide-text li {
-  margin-bottom: 0.5rem;
-  color: #666;
-  line-height: 1.6;
+.intro-section p {
+  font-size: 1.2rem;
+  color: #4b5563;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.guide-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* Popular Varieties */
-.popular-varieties {
+/* Plants Grid Section */
+.plants-grid-section {
   padding: 4rem 0;
+  background: #f8fafc;
 }
 
-.popular-varieties h2 {
+.plants-grid-section h2 {
   text-align: center;
   font-size: 2.5rem;
+  color: #1e3a8a;
   margin-bottom: 3rem;
-  color: #1e3c72;
 }
 
-.varieties-grid {
+.plants-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
 
-.variety-card {
+.plant-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: inherit;
+}
+
+.plant-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.plant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.variety-card:hover {
-  transform: translateY(-5px);
+.plant-card:hover .plant-image img {
+  transform: scale(1.05);
 }
 
-.variety-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+.plant-info {
+  padding: 2rem;
 }
 
-.variety-card h3 {
-  padding: 1.5rem 1.5rem 0.5rem;
+.plant-info h3 {
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
   font-size: 1.5rem;
-  color: #1e3c72;
 }
 
-.variety-card p {
-  padding: 0 1.5rem 1rem;
-  color: #666;
+.scientific-name {
+  color: #6b7280;
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.description {
+  color: #4b5563;
   line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-.variety-details {
-  padding: 0 1.5rem 1.5rem;
+.plant-specs {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.variety-details span {
-  color: #555;
+.spec {
   font-size: 0.9rem;
+  color: #6b7280;
+  background: #f8fafc;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.view-details {
+  display: block;
+  color: #3b82f6;
   font-weight: 500;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Growth Control */
-.growth-control {
+.plant-card:hover .view-details {
+  opacity: 1;
+}
+
+/* Care Information Section */
+.care-info-section {
   padding: 4rem 0;
-  background: #f8f9fa;
 }
 
-.growth-control h2 {
+.care-info-section h2 {
   text-align: center;
   font-size: 2.5rem;
+  color: #1e3a8a;
   margin-bottom: 3rem;
-  color: #1e3c72;
 }
 
-.control-grid {
+.care-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.control-item {
-  text-align: center;
-  padding: 2rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-.control-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.control-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #1e3c72;
-}
-
-.control-item p {
-  color: #666;
-  line-height: 1.6;
-}
-
-/* Troubleshooting */
-.troubleshooting {
-  padding: 4rem 0;
-}
-
-.troubleshooting h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #1e3c72;
-}
-
-.troubleshooting-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.issue-card {
+.care-item {
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-.issue-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #1e3c72;
-}
-
-.issue-card p {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-}
-
-.issue-card strong {
-  color: #1e3c72;
-}
-
-/* Featured Products */
-.featured-products {
-  padding: 4rem 0;
-  background: #f8f9fa;
-}
-
-.featured-products h2 {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #1e3c72;
+  border-left: 4px solid #3b82f6;
 }
 
-.products-grid {
+.care-item h3 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.care-item p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.care-images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
-.product-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-card img {
+.care-image {
   width: 100%;
-  height: 200px;
+  height: 60px;
   object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
-.product-card h3 {
-  padding: 1.5rem 1.5rem 0.5rem;
+.care-image:hover {
+  transform: scale(1.05);
+}
+
+.clickable-image {
+  cursor: pointer;
+}
+
+.clickable-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 4rem 0;
+  background: #f8fafc;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 3rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-left: 4px solid #10b981;
+}
+
+.benefit-item h3 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
   font-size: 1.3rem;
-  color: #1e3c72;
 }
 
-.product-card p {
-  padding: 0 1.5rem 1rem;
-  color: #666;
+.benefit-item p {
+  color: #4b5563;
   line-height: 1.6;
 }
 
-.product-card .price {
-  display: block;
-  padding: 0 1.5rem 1.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ff6b35;
+/* Plant Types Section */
+.plant-types-section {
+  padding: 4rem 0;
+  background: #f0f9ff;
 }
 
-/* CTA Section */
-.cta-section {
+.plant-types-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 3rem;
+}
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.type-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-left: 4px solid #0ea5e9;
+}
+
+.type-item h3 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.type-item p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Services Section */
+.services-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  color: white;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.cta-section h2 {
-  font-size: 2.5rem;
+.service-card h3 {
+  color: #1e3a8a;
   margin-bottom: 1rem;
-  color: white;
+  font-size: 1.5rem;
 }
 
-.cta-section p {
-  font-size: 1.2rem;
+.service-card p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Contact CTA */
+.contact-cta {
+  padding: 4rem 0;
+  text-align: center;
+  color: white;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.contact-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-cta p {
+  font-size: 1.1rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-buttons {
@@ -487,82 +345,109 @@
   flex-wrap: wrap;
 }
 
-.primary-button, .secondary-button {
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.cta-buttons .btn {
+  min-width: 200px;
 }
 
-.primary-button {
-  background: #ff6b35;
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #dc2626;
   color: white;
 }
 
-.primary-button:hover {
-  background: #e55a2b;
+.btn-primary:hover {
+  background: #b91c1c;
   transform: translateY(-2px);
 }
 
-.secondary-button {
+.btn-outline {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
 }
 
-.secondary-button:hover {
-  background: white;
-  color: #1e3c72;
+.btn-outline:hover {
+  background: #3b82f6;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #4b5563;
+  transform: translateY(-2px);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem 0;
+  .container {
+    padding: 0 1rem;
   }
   
-  .hero-content h1 {
+  .intro-section,
+  .plants-grid-section,
+  .care-info-section,
+  .benefits-section,
+  .plant-types-section,
+  .services-section,
+  .contact-cta {
+    padding: 3rem 0;
+  }
+  
+  .intro-section h2,
+  .plants-grid-section h2,
+  .care-info-section h2,
+  .benefits-section h2,
+  .plant-types-section h2,
+  .services-section h2,
+  .contact-cta h2 {
     font-size: 2rem;
   }
   
-  .hero-content p {
-    font-size: 1rem;
+  .plants-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
-  .hero-buttons {
-    justify-content: center;
-  }
-  
+  .care-grid,
+  .benefits-grid,
   .types-grid {
     grid-template-columns: 1fr;
   }
   
-  .benefits-grid {
+  .services-grid {
     grid-template-columns: 1fr;
   }
   
-  .guide-content {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .care-images {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
   }
   
-  .varieties-grid {
-    grid-template-columns: 1fr;
+  .care-image {
+    height: 50px;
   }
   
-  .control-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .troubleshooting-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .products-grid {
-    grid-template-columns: 1fr;
+  .contact-cta {
+    width: 100%;
+    margin-left: 0;
   }
   
   .cta-buttons {
@@ -570,7 +455,40 @@
     align-items: center;
   }
   
-  .container {
-    padding: 0 1rem;
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-section h2,
+  .plants-grid-section h2,
+  .care-info-section h2,
+  .benefits-section h2,
+  .plant-types-section h2,
+  .services-section h2,
+  .contact-cta h2 {
+    font-size: 1.8rem;
+  }
+  
+  .plant-info {
+    padding: 1.5rem;
+  }
+  
+  .care-item,
+  .benefit-item,
+  .type-item,
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  .care-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem;
+  }
+  
+  .care-image {
+    height: 40px;
   }
 }

@@ -1,223 +1,231 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero.js';
+import ImageModal from '../components/ImageModal';
+import { getPlantsByCategory, createPlantSlug } from '../data/plantData';
 import './MarginalPlantsPage.css';
 
 const MarginalPlantsPage = () => {
-  const marginalPlants = [
-    {
-      name: 'Cattails',
-      image: '/images/IMG_2779.jpg',
-      description: 'Classic marginal plants that provide height and texture to pond edges',
-      benefits: ['Natural filtration', 'Wildlife habitat', 'Erosion control'],
-      price: '$12.99'
-    },
-    {
-      name: 'Rushes',
-      image: '/images/IMG_2770.jpg',
-      description: 'Grass-like plants that add movement and natural beauty to pond borders',
-      benefits: ['Oxygen production', 'Water clarity', 'Low maintenance'],
-      price: '$9.99'
-    },
-    {
-      name: 'Pickerel Rush',
-      image: '/images/IMG_2775.jpg',
-      description: 'Beautiful flowering rush with blue-purple spikes in summer',
-      benefits: ['Attractive flowers', 'Butterfly attractant', 'Hardy perennial'],
-      price: '$14.99'
-    },
-    {
-      name: 'Golden Spike Rush',
-      image: '/images/IMG_2776.jpg',
-      description: 'Bright golden-yellow foliage that brightens pond edges',
-      benefits: ['Colorful foliage', 'Year-round interest', 'Disease resistant'],
-      price: '$11.99'
-    },
-    {
-      name: 'Equisetum',
-      image: '/images/IMG_2780.jpg',
-      description: 'Ancient horsetail plant with unique segmented stems',
-      benefits: ['Unique appearance', 'Natural water filter', 'Very hardy'],
-      price: '$13.99'
-    },
-    {
-      name: 'Umbrella Palm',
-      image: '/images/IMG_2782.jpg',
-      description: 'Tropical-looking plant with umbrella-shaped leaves',
-      benefits: ['Tropical appearance', 'Large leaves', 'Shade provider'],
-      price: '$16.99'
-    }
-  ];
+  const marginalPlants = getPlantsByCategory('Marginal Plants');
+  const [modalImage, setModalImage] = useState(null);
+  const [modalAlt, setModalAlt] = useState('');
 
-  const careTips = [
-    'Plant in shallow water (2-6 inches deep)',
-    'Provide full sun to partial shade',
-    'Fertilize monthly during growing season',
-    'Divide every 2-3 years to maintain health',
-    'Remove dead foliage in spring',
-    'Protect from extreme cold in winter'
-  ];
+  const handleImageClick = (imageSrc, imageAlt) => {
+    setModalImage(imageSrc);
+    setModalAlt(imageAlt);
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
+    setModalAlt('');
+  };
 
   return (
     <div className="marginal-plants-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Marginal Plants for Your Pond</h1>
-          <p>Add natural beauty and ecological benefits to your pond edges with our selection of marginal plants</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Expert Advice</a>
-            <Link to="/plants-fish" className="secondary-button">View All Plants</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2779.jpg" alt="Beautiful marginal plants along pond edge" />
-        </div>
-      </section>
+      <PageHero 
+        title="Marginal Plants"
+        subtitle="Perfect plants for pond edges and shallow water areas"
+        backgroundImage="/images/IMG_2779.jpg"
+        backgroundImageAlt="Beautiful marginal plants around a pond edge"
+      />
 
-      {/* Plant Selection */}
-      <section className="plants-section first-section-gradient">
-        <div className="container">
-          <h2>Our Marginal Plant Selection</h2>
-          <p>We offer the largest variety of marginal plants in Utah, perfect for creating natural pond borders</p>
+      <div className="container">
+        {/* Introduction */}
+        <section className="intro-section">
+          <h2>Marginal Plants Collection</h2>
+          <p>
+            Marginal plants are essential for creating natural, beautiful pond edges and providing 
+            habitat for wildlife. These plants thrive in shallow water and moist soil areas, 
+            creating a seamless transition between your pond and surrounding landscape. Our collection 
+            includes native Utah species and exotic varieties perfect for any water garden design.
+          </p>
+        </section>
+
+        {/* Marginal Plants Grid */}
+        <section className="plants-grid-section">
+          <h2>Our Marginal Plants</h2>
           <div className="plants-grid">
-            {marginalPlants.map((plant, index) => (
-              <Link key={index} to="/plants-fish/marginal-plants" className="plant-card">
+            {marginalPlants.map((plant) => (
+              <Link 
+                key={plant.id}
+                to={`/plant/${plant.id}`}
+                className="plant-card"
+              >
                 <div className="plant-image">
                   <img src={plant.image} alt={plant.name} />
                 </div>
                 <div className="plant-info">
                   <h3>{plant.name}</h3>
-                  <p>{plant.description}</p>
-                  <div className="plant-benefits">
-                    <h4>Benefits:</h4>
-                    <ul>
-                      {plant.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex}>{benefit}</li>
-                      ))}
-                    </ul>
+                  <p className="scientific-name">
+                    <em>{plant.scientificName}</em>
+                  </p>
+                  <p className="description">{plant.description}</p>
+                  <div className="plant-specs">
+                    <span className="spec">Height: {plant.specifications.height}</span>
+                    <span className="spec">Water Depth: {plant.specifications.waterDepth}</span>
                   </div>
-                  <div className="plant-price">{plant.price}</div>
-                  <a href="tel:(801) 590-8516" className="plant-cta" onClick={(e) => e.stopPropagation()}>Call for Availability</a>
+                  <span className="view-details">View Details →</span>
                 </div>
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Care Guide */}
-      <section className="care-guide-section">
-        <div className="container">
+        {/* Care Information */}
+        <section className="care-info-section">
           <h2>Marginal Plant Care Guide</h2>
-          <div className="care-content">
-            <div className="care-text">
-              <h3>Essential Care Tips</h3>
-              <p>Marginal plants are essential for creating natural pond ecosystems and providing habitat for wildlife.</p>
-              <ul className="care-tips">
-                {careTips.map((tip, index) => (
-                  <li key={index}>{tip}</li>
-                ))}
-              </ul>
-              <a href="tel:(801) 590-8516" className="care-cta">Call for Care Advice</a>
+          <div className="care-grid">
+            <div className="care-item">
+              <h3>Planting Zones</h3>
+              <p>Plant in shallow water (1-6 inches) or moist soil at pond edges. Most prefer the transition zone between water and land.</p>
+              <div className="care-images">
+                <img src="/images/IMG_2770.jpg" alt="Planting zones example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Planting zones example")} />
+                <img src="/images/IMG_2775.jpg" alt="Shallow water planting example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Shallow water planting example")} />
+                <img src="/images/IMG_2779.jpg" alt="Pond edge planting example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Pond edge planting example")} />
+                <img src="/images/IMG_2780.jpg" alt="Transition zone example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Transition zone example")} />
+                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Moist soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Moist soil example")} />
+              </div>
             </div>
-            <div className="care-image">
-              <img src="/images/IMG_2770.jpg" alt="Healthy marginal plants in pond" />
+            <div className="care-item">
+              <h3>Sunlight Requirements</h3>
+              <p>Most marginal plants prefer partial shade to full sun, depending on the species. Native varieties are adapted to local conditions.</p>
+              <div className="care-images">
+                <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Partial shade example" className="care-image clickable-image" onClick={() => handleImageClick("/images/waterLillies-topaz-enhance-4x.jpeg", "Partial shade example")} />
+                <img src="/images/IMG_2770.jpg" alt="Full sun example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Full sun example")} />
+                <img src="/images/IMG_2775.jpg" alt="Light conditions example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Light conditions example")} />
+                <img src="/images/IMG_2779.jpg" alt="Native varieties example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Native varieties example")} />
+                <img src="/images/IMG_2780.jpg" alt="Local adaptation example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Local adaptation example")} />
+              </div>
+            </div>
+            <div className="care-item">
+              <h3>Soil & Water</h3>
+              <p>Use heavy clay soil or aquatic planting mix. Keep soil consistently moist but not waterlogged for best results.</p>
+              <div className="care-images">
+                <img src="/images/IMG_2779.jpg" alt="Clay soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Clay soil example")} />
+                <img src="/images/IMG_2770.jpg" alt="Aquatic planting mix example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Aquatic planting mix example")} />
+                <img src="/images/IMG_2775.jpg" alt="Moist soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Moist soil example")} />
+                <img src="/images/IMG_2780.jpg" alt="Waterlogged prevention example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Waterlogged prevention example")} />
+                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Soil preparation example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Soil preparation example")} />
+              </div>
+            </div>
+            <div className="care-item">
+              <h3>Seasonal Care</h3>
+              <p>Many are hardy perennials that die back in winter and return in spring. Some may need protection in extreme cold.</p>
+              <div className="care-images">
+                <img src="/images/IMG_2780.jpg" alt="Seasonal care example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Seasonal care example")} />
+                <img src="/images/IMG_2770.jpg" alt="Hardy perennials example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Hardy perennials example")} />
+                <img src="/images/IMG_2775.jpg" alt="Winter dieback example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Winter dieback example")} />
+                <img src="/images/IMG_2779.jpg" alt="Spring return example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Spring return example")} />
+                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Cold protection example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Cold protection example")} />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Why Choose Marginal Plants */}
-      <section className="benefits-section">
-        <div className="container">
+        {/* Benefits */}
+        <section className="benefits-section">
           <h2>Why Choose Marginal Plants?</h2>
           <div className="benefits-grid">
             <div className="benefit-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
-  </svg>
-              </div>
-              <h3>Natural Filtration</h3>
-              <p>Marginal plants help filter water and remove excess nutrients naturally</p>
+              <h3>Natural Pond Edges</h3>
+              <p>Create beautiful, natural-looking pond perimeters that blend seamlessly with your landscape</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
-                </svg>
-              </div>
               <h3>Wildlife Habitat</h3>
-              <p>Provide shelter and food for frogs, birds, and beneficial insects</p>
+              <p>Provide essential habitat for frogs, dragonflies, and other beneficial pond wildlife</p>
             </div>
             <div className="benefit-item">
-              <div className="feature-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
-  </svg>
-              </div>
-              <h3>Visual Appeal</h3>
-              <p>Add height, texture, and seasonal interest to your pond</p>
+              <h3>Water Filtration</h3>
+              <p>Help filter water and absorb excess nutrients, improving overall pond health</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 8H20C21.1 8 22 8.9 22 10V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V10C2 8.9 2.9 8 4 8H6V6C6 3.79 7.79 2 10 2H14C16.21 2 18 3.79 18 6V8ZM16 8V6C16 4.9 15.1 4 14 4H10C8.9 4 8 4.9 8 6V8H16ZM4 10V20H20V10H4Z" fill="#1e40af"/>
-                </svg>
-              </div>
               <h3>Erosion Control</h3>
-              <p>Help stabilize pond edges and prevent soil erosion</p>
+              <p>Stabilize pond edges and prevent soil erosion with their extensive root systems</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Seasonal Availability */}
-      <section className="seasonal-section gradient-wipe-up">
-        <div className="container">
-          <h2>Seasonal Availability</h2>
-          <div className="seasonal-grid">
-            <div className="season-item">
-              <img src="/images/IMG_2775.jpg" alt="Spring marginal plants" />
-              <h3>Spring</h3>
-              <p>Early spring marginal plants and new growth</p>
-              <a href="tel:(801) 590-8516" className="seasonal-cta">Check Spring Stock</a>
+        {/* Native Plants Highlight */}
+        <section className="native-plants-section">
+          <h2>Native Utah Plants</h2>
+          <p>
+            We're proud to offer several native Utah marginal plants that are perfectly adapted to our local climate 
+            and provide excellent habitat for native wildlife. These plants require minimal care and are naturally 
+            resistant to local pests and diseases.
+          </p>
+          <div className="native-highlights">
+            <div className="native-item">
+              <h4>Utah Water Clover</h4>
+              <p>Native four-leaf clover-like plant perfect for naturalizing pond edges</p>
             </div>
-            <div className="season-item">
-              <img src="/images/IMG_2779.jpg" alt="Summer marginal plants" />
-              <h3>Summer</h3>
-              <p>Full-grown plants with flowers and foliage</p>
-              <a href="tel:(801) 590-8516" className="seasonal-cta">Check Summer Stock</a>
+            <div className="native-item">
+              <h4>Yerba Mansa</h4>
+              <p>Southwestern native with white flowers and aromatic leaves</p>
             </div>
-            <div className="season-item">
-              <img src="/images/IMG_2780.jpg" alt="Fall marginal plants" />
-              <h3>Fall</h3>
-              <p>Fall color and winter preparation plants</p>
-              <a href="tel:(801) 590-8516" className="seasonal-cta">Check Fall Stock</a>
+            <div className="native-item">
+              <h4>Red Mimulus</h4>
+              <p>Native plant with red tubular flowers that attract hummingbirds</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact CTA */}
-      <section 
-        className="contact-cta"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container">
-          <h2>Ready to Add Marginal Plants?</h2>
-          <p>Our experts can help you choose the perfect marginal plants for your pond</p>
+        {/* Services */}
+        <section className="services-section">
+          <h2>Related Services</h2>
+          <div className="services-grid">
+            <div className="service-card">
+              <h3>Pond Edge Design</h3>
+              <p>Professional design and installation of natural pond edges with marginal plants</p>
+              <a href="tel:(801) 590-8516" className="btn btn-outline">
+                Call for Design
+              </a>
+            </div>
+            <div className="service-card">
+              <h3>Plant Selection Consultation</h3>
+              <p>Expert advice on choosing the right marginal plants for your specific pond conditions</p>
+              <a href="tel:(801) 590-8516" className="btn btn-outline">
+                Call for Consultation
+              </a>
+            </div>
+            <div className="service-card">
+              <h3>Pond Maintenance</h3>
+              <p>Keep your marginal plants healthy and your pond edges beautiful year-round</p>
+              <a href="tel:(801) 590-8516" className="btn btn-outline">
+                Call for Maintenance
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact CTA */}
+        <section 
+          className="contact-cta"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <h2>Ready to Enhance Your Pond Edges?</h2>
+          <p>Contact us today to learn more about our marginal plant collection and how they can transform your pond</p>
           <div className="cta-buttons">
-            <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-            <Link to="/contact" className="btn btn-secondary">Send Message</Link>
+            <a href="tel:(801) 590-8516" className="btn btn-primary">
+              Call (801) 590-8516
+            </a>
+            <Link to="/contact" className="btn btn-secondary">
+              Send Message
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+      
+      <ImageModal 
+        isOpen={!!modalImage}
+        onClose={closeModal}
+        imageSrc={modalImage}
+        imageAlt={modalAlt}
+      />
     </div>
   );
 };
