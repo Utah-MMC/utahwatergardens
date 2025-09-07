@@ -79,16 +79,15 @@ const PondSuppliesPage = () => {
     <div className="pond-supplies-page">
       <div className="hero-section">
         <div className="hero-video">
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="hero-video-bg"
-          >
-            <source src="/videos/supplies_prob4.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div 
+            className="hero-image-bg"
+            style={{
+              backgroundImage: `url('/images/Pond-Supplies.webp')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          ></div>
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">
