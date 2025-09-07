@@ -529,6 +529,11 @@
     padding: 0 1rem;
   }
   
+  /* Hide the top contact section on mobile */
+  .header-top {
+    display: none !important;
+  }
+  
   .contact-info {
     gap: 0.4rem;
     font-size: 0.65rem;
@@ -831,29 +836,6 @@
     gap: 0.2rem;
   }
   
-  .contact-info {
-    font-size: 0.6rem;
-    gap: 0.3rem;
-    flex-direction: row !important; /* Keep horizontal but with smaller gaps */
-    align-items: center;
-    padding: 0.15rem 0;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .contact-separator {
-    display: inline !important; /* Keep separators but smaller */
-    font-size: 0.5rem;
-    margin: 0 0.15rem;
-  }
-  
-  .contact-link, .contact-text {
-    margin: 0;
-    text-align: center;
-    flex-shrink: 0;
-    white-space: nowrap;
-  }
-  
   .company-name {
     font-size: 1.2rem;
   }
@@ -880,30 +862,6 @@
   .header-container {
     padding: 0 0.5rem;
   }
-  
-  .contact-info {
-    font-size: 0.55rem;
-    gap: 0.2rem;
-    flex-direction: row !important; /* Keep horizontal even on very small screens */
-    align-items: center;
-    padding: 0.1rem 0;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .contact-link, .contact-text {
-    margin: 0;
-    text-align: center;
-    font-size: 0.55rem;
-    flex-shrink: 0;
-    white-space: nowrap;
-  }
-  
-  .contact-separator {
-    display: inline !important;
-    font-size: 0.4rem;
-    margin: 0 0.1rem;
-  }
 
   .header-actions {
     gap: 0.1rem;
@@ -921,20 +879,9 @@
   }
 }
 
-/* Ultra narrow screens - stack contact info vertically */
+/* Ultra narrow screens */
 @media (max-width: 320px) {
-  .contact-info {
-    flex-direction: column !important;
-    gap: 0.1rem;
-    padding: 0.1rem 0;
-  }
-  
-  .contact-separator {
-    display: none !important;
-  }
-  
-  .contact-link, .contact-text {
-    font-size: 0.5rem;
-    margin: 0.05rem 0;
+  .header-container {
+    padding: 0 0.4rem;
   }
 }
