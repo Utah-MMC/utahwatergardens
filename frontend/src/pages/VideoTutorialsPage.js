@@ -309,7 +309,7 @@ const VideoTutorialsPage = () => {
       </section>
 
       {/* Featured Videos */}
-      <section className="featured-section">
+      <section className="featured-section first-section-gradient">
         <div className="container">
           <h2>Featured Tutorials</h2>
           <p>Our most popular and comprehensive video guides</p>
@@ -456,7 +456,7 @@ const VideoTutorialsPage = () => {
       </section>
 
       {/* Video Tips */}
-      <section className="tips-section">
+      <section className="tips-section gradient-wipe-up">
         <div className="container">
           <h2>Video Learning Tips</h2>
           <div className="tips-grid">
@@ -485,7 +485,15 @@ const VideoTutorialsPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Need Help with a Specific Topic?</h2>
           <p>Our experts can provide personalized guidance and answer questions about any tutorial</p>

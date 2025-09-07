@@ -35,7 +35,7 @@ const PRODUCTS = [
     items: [
       {
         name: 'Water Lilies',
-        image: '/images/waterLillies.webp',
+        image: '/images/waterLillies-topaz-enhance-4x.jpeg',
         width: 1000,
         height: 667,
         description: 'Winter hardy water lilies in various colors',
@@ -77,7 +77,7 @@ const PRODUCTS = [
     items: [
       {
         name: 'Koi Fish',
-        image: '/images/koi.webp',
+        image: '/images/koi-topaz-enhance-4x.jpeg',
         width: 1000,
         height: 667,
         description: 'Beautiful koi in various sizes and colors',
@@ -300,7 +300,7 @@ const ShopPage = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogSchema) }} />
 
-      <section className="shop-cta-section" aria-labelledby="phone-cta">
+      <section className="shop-cta-section first-section-gradient" aria-labelledby="phone-cta">
         <div className="container">
           <a id="phone-cta" href="tel:+18015908516" className="hero-cta" aria-label="Call Utah Water Gardens at (801) 590-8516">
             Call (801) 590-8516 for Expert Advice
@@ -387,7 +387,7 @@ const ShopPage = () => {
       </section>
 
       {/* Retail Highlights */}
-      <section className="retail-highlights" aria-labelledby="highlights-heading">
+      <section className="retail-highlights gradient-wipe-up" aria-labelledby="highlights-heading">
         <div className="container">
           <h2 id="highlights-heading">What Makes Our Retail Location Special</h2>
           <div className="highlights-grid" role="list">

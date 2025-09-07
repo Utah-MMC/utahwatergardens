@@ -6,7 +6,15 @@ const FiltrationSystemsPage = () => {
   return (
     <div className="filtration-systems-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="hero-content">
           <h1>Pond Filtration Systems</h1>
           <p>Keep your pond water crystal clear with our premium filtration solutions</p>
@@ -21,7 +29,7 @@ const FiltrationSystemsPage = () => {
       </section>
 
       {/* Filtration Types */}
-      <section className="filtration-types">
+      <section className="filtration-types first-section-gradient">
         <div className="container">
           <h2>Types of Filtration Systems</h2>
           <div className="types-grid">
@@ -165,14 +173,14 @@ const FiltrationSystemsPage = () => {
               </ul>
             </div>
             <div className="guide-image">
-              <img src="/images/pondConstruction1000x800.webp" alt="Filtration system installation" />
+              <img src="/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg" alt="Filtration system installation" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Troubleshooting */}
-      <section className="troubleshooting">
+      <section className="troubleshooting gradient-wipe-up">
         <div className="container">
           <h2>Common Filtration Issues & Solutions</h2>
           <div className="issues-grid">

@@ -242,7 +242,7 @@ const TruxorServicePage = () => {
         </section>
 
         {/* Process Section */}
-        <section className="process-section">
+        <section className="process-section gradient-wipe-up">
           <h2>Our Service Process</h2>
           <div className="process-steps">
             <div className="process-step">

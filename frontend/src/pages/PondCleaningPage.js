@@ -96,7 +96,7 @@ const PondCleaningPage = () => {
       </section>
 
       {/* Why Clean Your Pond */}
-      <section className="why-clean-section">
+      <section className="why-clean-section first-section-gradient">
         <div className="container">
           <h2>Why Regular Pond Cleaning is Essential</h2>
           <p>Maintaining a clean pond is crucial for the health of your fish, plants, and overall ecosystem</p>
@@ -222,7 +222,7 @@ const PondCleaningPage = () => {
       </section>
 
       {/* Seasonal Cleaning */}
-      <section className="seasonal-cleaning-section">
+      <section className="seasonal-cleaning-section gradient-wipe-up">
         <div className="container">
           <h2>Seasonal Cleaning Schedule</h2>
           <p>Different seasons require different cleaning approaches</p>

@@ -90,7 +90,7 @@ This request was submitted from the Utah Water Gardens website.
         </div>
       </div>
 
-      <div className="estimate-content">
+      <div className="estimate-content first-section-gradient">
         <div className="container">
           <div className="content-grid">
             <div className="form-section">
@@ -261,7 +261,7 @@ This request was submitted from the Utah Water Gardens website.
               </form>
             </div>
 
-            <div className="info-section">
+            <div className="info-section gradient-wipe-up">
               <div className="info-card">
                 <h3>Why Choose Utah Water Gardens?</h3>
                 <ul>

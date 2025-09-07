@@ -15,7 +15,7 @@ const PondDesignBuildPage = () => {
       />
 
       {/* Design Process */}
-      <section className="design-process">
+      <section className="design-process first-section-gradient">
         <div className="container">
           <h2>Our Design & Build Process</h2>
           <div className="process-steps">
@@ -54,7 +54,7 @@ const PondDesignBuildPage = () => {
           <h2>Types of Ponds We Build</h2>
           <div className="types-grid">
             <div className="type-card">
-              <img src="/images/koi.webp" alt="Koi pond" />
+              <img src="/images/koi-topaz-enhance-4x.jpeg" alt="Koi pond" />
               <h3>Koi Ponds</h3>
               <p>Specialized ponds designed specifically for koi fish, featuring proper depth, filtration, and water quality management.</p>
               <ul>
@@ -78,7 +78,7 @@ const PondDesignBuildPage = () => {
             </div>
             
             <div className="type-card">
-              <img src="/images/pondConstruction1000x800.webp" alt="Swimming pond" />
+              <img src="/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg" alt="Swimming pond" />
               <h3>Swimming Ponds</h3>
               <p>Natural swimming areas that combine recreation with ecological benefits, using plants for water purification.</p>
               <ul>
@@ -152,7 +152,7 @@ const PondDesignBuildPage = () => {
               </ul>
             </div>
             <div className="materials-image">
-              <img src="/images/pondConstruction1000x800.webp" alt="Premium pond construction materials" />
+              <img src="/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg" alt="Premium pond construction materials" />
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@ const PondDesignBuildPage = () => {
           <h2>Recent Project Gallery</h2>
           <div className="gallery-grid">
             <div className="gallery-item">
-              <img src="/images/koi.webp" alt="Modern koi pond design" />
+              <img src="/images/koi-topaz-enhance-4x.jpeg" alt="Modern koi pond design" />
               <div className="gallery-overlay">
                 <h3>Modern Koi Pond</h3>
                 <p>Contemporary design with clean lines and premium materials</p>
@@ -178,7 +178,7 @@ const PondDesignBuildPage = () => {
               </div>
             </div>
             <div className="gallery-item">
-              <img src="/images/pondConstruction1000x800.webp" alt="Swimming pond" />
+              <img src="/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg" alt="Swimming pond" />
               <div className="gallery-overlay">
                 <h3>Swimming Pond</h3>
                 <p>Natural swimming area with plant filtration</p>
@@ -196,7 +196,7 @@ const PondDesignBuildPage = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="why-choose-us">
+      <section className="why-choose-us gradient-wipe-up">
         <div className="container">
           <h2>Why Choose Utah Water Gardens</h2>
           <div className="reasons-grid">
@@ -225,7 +225,15 @@ const PondDesignBuildPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
+      <section 
+        className="cta-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Start Your Pond Project?</h2>
           <p>Schedule a free consultation to discuss your vision and get a detailed quote for your custom water garden.</p>

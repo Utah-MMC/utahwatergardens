@@ -129,7 +129,7 @@
 
 .cta-button.secondary:hover {
   background: white;
-  color: #059669;
+  color: #1e40af;
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
@@ -144,92 +144,38 @@
   transform: translateX(4px);
 }
 
-.hero-wave {
+/* First wave layer - baby blue (behind) */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,110C100,100,200,80,300,70C400,60,500,60,600,70C700,80,800,100,900,110C1000,120,1100,120,1150,120L1200,120V120H0Z' fill='%2387ceeb' fill-opacity='0.9'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: cover;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Second wave layer - dark blue (in front) */
+.hero-section::after {
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 120px;
-  z-index: 4;
-  overflow: visible; /* Changed back to visible to allow extended waves */
-  transition: transform 0.1s ease-out;
-  background: #ffffff; /* Solid white background to ensure opacity */
-}
-
-.hero-wave svg {
-  width: 200%; /* Much wider to ensure full coverage */
-  height: 100%;
-  display: block;
-  transition: all 0.3s ease;
-  margin-left: -50%; /* Center the much wider SVG */
-  transform-origin: center bottom;
-}
-
-.hero-wave svg path {
-  transition: all 0.3s ease;
-}
-
-/* Ensure waves stay connected to both sides */
-.hero-wave::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: -50%; /* Adjusted to match the much wider SVG */
-  width: 200%; /* Increased to match the much wider SVG */
-  height: 100%;
-  /* Removed background gradient for natural flow */
-  z-index: -1;
-  opacity: 0; /* Make it invisible */
-}
-
-/* Prevent wave disconnection during animation */
-.hero-wave.scrolling svg {
-  transform: scale(1.02);
-  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
-}
-
-.hero-wave.scrolling svg path {
-  filter: brightness(1.05);
-}
-
-/* Wave hover effects */
-.hero-wave:hover svg {
-  transform: scale(1.05);
-  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.4));
-}
-
-.hero-wave:hover svg path {
-  filter: brightness(1.1);
-}
-
-/* Add subtle wave animation */
-@keyframes wave-float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-}
-
-.hero-wave svg path:nth-child(1) {
-  animation: wave-float 6s ease-in-out infinite;
-}
-
-.hero-wave svg path:nth-child(2) {
-  animation: wave-float 8s ease-in-out infinite;
-  animation-delay: -2s;
-}
-
-.hero-wave svg path:nth-child(3) {
-  animation: wave-float 10s ease-in-out infinite;
-  animation-delay: -4s;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,100C100,80,200,40,300,30C400,20,500,40,600,50C700,60,800,60,900,50C1000,40,1100,20,1150,10L1200,0V120H0Z' fill='%231e40af' fill-opacity='1'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: cover;
+  z-index: 101;
+  pointer-events: none;
 }
 
 /* Services Section */
 .services-section {
   padding: 80px 0;
-  background: #f8fafc;
+  /* background: #f8fafc; */ /* Commented out to allow gradient to show */
 }
 
 .container {
@@ -242,7 +188,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .services-section > .container > p {
@@ -295,7 +241,7 @@
 .service-content h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .service-content p {
@@ -318,7 +264,7 @@
 }
 
 .service-benefits h4 {
-  color: #059669;
+  color: #1e40af;
 }
 
 .service-process h4 {
@@ -376,7 +322,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .methods-section > .container > p {
@@ -398,7 +344,7 @@
   padding: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  border-left: 4px solid #059669;
+  border-left: 4px solid #1e40af;
 }
 
 .method-card:hover {
@@ -408,7 +354,7 @@
 .method-card h3 {
   font-size: 1.4rem;
   margin-bottom: 15px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .method-description {
@@ -433,7 +379,7 @@
 }
 
 .method-advantages h4 {
-  color: #059669;
+  color: #1e40af;
 }
 
 .method-disadvantages h4 {
@@ -473,7 +419,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .seasonal-section > .container > p {
@@ -511,12 +457,12 @@
 .season-header h3 {
   font-size: 1.3rem;
   margin: 0;
-  color: #059669;
+  color: #1e40af;
 }
 
 .season-timing {
   background: #fef3c7;
-  color: #d97706;
+  color: #b91c1c;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -531,7 +477,7 @@
 }
 
 .season-activities h4 {
-  color: #059669;
+  color: #1e40af;
 }
 
 .season-considerations h4 {
@@ -572,7 +518,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .benefits-section > .container > p {
@@ -594,7 +540,7 @@
   padding: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  border-left: 4px solid #059669;
+  border-left: 4px solid #1e40af;
 }
 
 .benefit-category:hover {
@@ -604,7 +550,7 @@
 .benefit-category h3 {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .benefit-category ul {
@@ -622,7 +568,7 @@
 
 .benefit-category li:before {
   content: "✅";
-  color: #059669;
+  color: #1e40af;
   position: absolute;
   left: 0;
 }
@@ -630,14 +576,14 @@
 /* Why Choose Section */
 .why-choose-section {
   padding: 80px 0;
-  background: #f8fafc;
+  /* background: #f8fafc; */ /* Commented out to allow gradient to show */
 }
 
 .why-choose-section h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .reasons-grid {
@@ -660,7 +606,7 @@
 .reason-item h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .reason-item p {
@@ -671,7 +617,7 @@
 /* Contact CTA */
 .contact-cta {
   padding: 80px 0;
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   color: white;
   text-align: center;
 }
@@ -721,7 +667,7 @@
 
 .btn-secondary:hover {
   background: white;
-  color: #059669;
+  color: #1e40af;
 }
 
 /* Responsive Design */

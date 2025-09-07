@@ -181,7 +181,7 @@ const FAQPage = () => {
       </section>
 
       {/* Quick Answers */}
-      <section className="quick-answers-section">
+      <section className="quick-answers-section first-section-gradient">
         <div className="container">
           <h2>Quick Answers</h2>
           <p>Get instant answers to the most common questions</p>
@@ -264,7 +264,7 @@ const FAQPage = () => {
       </section>
 
       {/* Still Have Questions */}
-      <section className="questions-section">
+      <section className="questions-section gradient-wipe-up">
         <div className="container">
           <h2>Still Have Questions?</h2>
           <p>Our pond experts are here to help with personalized advice and solutions</p>

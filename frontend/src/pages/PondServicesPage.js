@@ -112,7 +112,7 @@ const PondServicesPage = () => {
       name: 'Pond Cleaning',
       path: '/pond-services/cleaning',
       description: 'Deep cleaning and debris removal services with our NEW Truxor T50 equipment',
-      image: '/images/pondCleanings.webp',
+      image: '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
       features: ['Debris Removal', 'Algae Control', 'Filter Cleaning', 'Water Clarity'],
       featured: true,
       badge: 'Most Popular'
@@ -121,7 +121,7 @@ const PondServicesPage = () => {
       name: 'Pond Maintenance',
       path: '/pond-services/maintenance',
       description: 'Regular maintenance to keep your pond healthy and beautiful year-round',
-      image: '/images/pondMaintenance.webp',
+      image: '/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg',
       features: ['Water Testing', 'Plant Care', 'Fish Health', 'Seasonal Maintenance'],
       featured: true,
       badge: 'Essential Service'
@@ -133,14 +133,14 @@ const PondServicesPage = () => {
       name: 'Pond Cleaning',
       path: '/pond-services/cleaning',
       description: 'Deep cleaning and debris removal services',
-      image: '/images/pondCleanings.webp',
+      image: '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
       features: ['Debris Removal', 'Algae Control', 'Filter Cleaning', 'Water Clarity']
     },
     {
       name: 'Pond Maintenance',
       path: '/pond-services/maintenance',
       description: 'Regular maintenance to keep your pond healthy and beautiful',
-      image: '/images/pondMaintenance.webp',
+      image: '/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg',
       features: ['Water Testing', 'Plant Care', 'Fish Health', 'Seasonal Maintenance']
     },
     {
@@ -154,21 +154,21 @@ const PondServicesPage = () => {
       name: 'Water Quality Testing',
       path: '/pond-services/water-quality',
       description: 'Professional water quality analysis and treatment',
-      image: '/images/pondMaintenance.webp',
+      image: '/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg',
       features: ['pH Testing', 'Chemical Analysis', 'Treatment Plans', 'Monitoring']
     },
     {
       name: 'Pond Design & Build',
       path: '/pond-services/design-build',
       description: 'Custom pond design and construction services',
-      image: '/images/pondConstruction1000x800.webp',
+      image: '/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg',
       features: ['Custom Design', 'Professional Installation', 'Quality Materials', 'Warranty']
     },
     {
       name: 'Seasonal Services',
       path: '/pond-services/seasonal',
       description: 'Season-specific pond care and preparation',
-      image: '/images/pondMaintenance.webp',
+      image: '/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg',
       features: ['Winter Prep', 'Spring Opening', 'Summer Care', 'Fall Cleanup']
     }
   ];
@@ -202,7 +202,7 @@ const PondServicesPage = () => {
 
       <div className="container">
         {/* Featured Services */}
-        <section className="featured-services">
+        <section className="featured-services first-section-gradient">
           <h2>Featured Services</h2>
           <p>Our most popular and essential pond services</p>
           <div className="featured-services-grid">
@@ -305,7 +305,7 @@ const PondServicesPage = () => {
       </div>
 
       {/* Service Areas - Full Width */}
-      <section className="service-areas">
+      <section className="service-areas gradient-wipe-up">
         <div className="container">
           <h2>Service Areas</h2>
           <p>We proudly serve the greater Utah area from Ogden to Provo and Coalville to Tooele. Click on a county to see all cities we serve:</p>

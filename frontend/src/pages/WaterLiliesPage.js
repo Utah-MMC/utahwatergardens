@@ -16,17 +16,17 @@ const WaterLiliesPage = () => {
           </div>
         </div>
         <div className="hero-image">
-          <img src="/images/waterLillies.webp" alt="Beautiful water lilies in bloom" />
+          <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Beautiful water lilies in bloom" />
         </div>
       </section>
 
       {/* Water Lily Types */}
-      <section className="lily-types">
+      <section className="lily-types first-section-gradient">
         <div className="container">
           <h2>Types of Water Lilies</h2>
           <div className="types-grid">
             <div className="type-card">
-              <img src="/images/waterLillies.webp" alt="Hardy water lilies" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Hardy water lilies" />
               <h3>Hardy Water Lilies</h3>
               <p>Cold-tolerant lilies that survive freezing temperatures and return year after year.</p>
               <ul>
@@ -38,7 +38,7 @@ const WaterLiliesPage = () => {
             </div>
             
             <div className="type-card">
-              <img src="/images/waterLillies.webp" alt="Tropical water lilies" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Tropical water lilies" />
               <h3>Tropical Water Lilies</h3>
               <p>Exotic lilies with vibrant colors and larger blooms, perfect for warm summer months.</p>
               <ul>
@@ -50,7 +50,7 @@ const WaterLiliesPage = () => {
             </div>
             
             <div className="type-card">
-              <img src="/images/waterLillies.webp" alt="Dwarf water lilies" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Dwarf water lilies" />
               <h3>Dwarf Water Lilies</h3>
               <p>Compact lilies perfect for small ponds and container water gardens.</p>
               <ul>
@@ -70,7 +70,7 @@ const WaterLiliesPage = () => {
           <h2>Popular Water Lily Varieties</h2>
           <div className="varieties-grid">
             <div className="variety-card">
-              <img src="/images/waterLillies.webp" alt="Colorado water lily" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Colorado water lily" />
               <h3>Colorado</h3>
               <p>Hardy variety with beautiful pink blooms that change color throughout the day.</p>
               <div className="variety-details">
@@ -81,7 +81,7 @@ const WaterLiliesPage = () => {
             </div>
             
             <div className="variety-card">
-              <img src="/images/waterLillies.webp" alt="Chromatella water lily" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Chromatella water lily" />
               <h3>Chromatella</h3>
               <p>Stunning yellow lily with large, fragrant blooms and beautiful mottled leaves.</p>
               <div className="variety-details">
@@ -92,7 +92,7 @@ const WaterLiliesPage = () => {
             </div>
             
             <div className="variety-card">
-              <img src="/images/waterLillies.webp" alt="Pink Grapefruit water lily" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Pink Grapefruit water lily" />
               <h3>Pink Grapefruit</h3>
               <p>Exotic tropical lily with large, fragrant pink blooms and stunning foliage.</p>
               <div className="variety-details">
@@ -226,24 +226,24 @@ const WaterLiliesPage = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="featured-products">
+      <section className="featured-products gradient-wipe-up">
         <div className="container">
           <h2>Featured Water Lilies</h2>
           <div className="products-grid">
             <div className="product-card">
-              <img src="/images/waterLillies.webp" alt="Colorado water lily" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Colorado water lily" />
               <h3>Colorado Hardy Water Lily</h3>
               <p>Beautiful pink blooms that change color throughout the day.</p>
               <span className="price">$29.99</span>
             </div>
             <div className="product-card">
-              <img src="/images/waterLillies.webp" alt="Chromatella water lily" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Chromatella water lily" />
               <h3>Chromatella Hardy Water Lily</h3>
               <p>Stunning yellow blooms with fragrant flowers.</p>
               <span className="price">$34.99</span>
             </div>
             <div className="product-card">
-              <img src="/images/waterLillies.webp" alt="Pink Grapefruit water lily" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Pink Grapefruit water lily" />
               <h3>Pink Grapefruit Tropical Lily</h3>
               <p>Exotic tropical variety with large, fragrant pink blooms.</p>
               <span className="price">$39.99</span>
@@ -253,7 +253,15 @@ const WaterLiliesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
+      <section 
+        className="cta-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Add Water Lilies to Your Pond?</h2>
           <p>Our water lily experts can help you choose the perfect varieties for your water garden.</p>

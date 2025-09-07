@@ -44,23 +44,23 @@ const PageHero = ({
       alt: 'Beautiful pond landscape with waterfall and rock features'
     },
     {
-      src: '/images/koi.webp',
+      src: '/images/koi-topaz-enhance-4x.jpeg',
       alt: 'Vibrant koi pond with colorful fish and crystal clear water'
     },
     {
-      src: '/images/pondConstruction1000x800.webp',
+      src: '/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg',
       alt: 'Professional pond construction and design services'
     },
     {
-      src: '/images/pondMaintenance.webp',
+      src: '/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg',
       alt: 'Well-maintained pond with healthy aquatic plants'
     },
     {
-      src: '/images/pondCleanings.webp',
+      src: '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
       alt: 'Clean and clear pond water with natural filtration'
     },
     {
-      src: '/images/waterLillies.webp',
+      src: '/images/waterLillies-topaz-enhance-4x.jpeg',
       alt: 'Beautiful water lilies blooming on pond surface'
     },
     {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './HarvestingPage.css';
 
@@ -184,93 +184,6 @@ const HarvestingPage = () => {
     }
   ];
 
-  const waveRef = useRef(null);
-
-  useEffect(() => {
-    let ticking = false;
-    let lastScrollY = 0;
-    let lastMouseX = 0;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          if (waveRef.current) {
-            const scrolled = window.pageYOffset;
-            const deltaY = scrolled - lastScrollY;
-            const rate = scrolled * -0.1; // Reduced from -0.3 to -0.1 for subtler movement
-            const wave = waveRef.current;
-            
-            // Add scrolling class for enhanced effects
-            wave.classList.add('scrolling');
-            
-            // Apply very subtle horizontal wave motion based on scroll
-            wave.style.transform = `translateX(${rate}px)`;
-            
-            // Add vertical wave motion based on scroll direction
-            const wavePaths = wave.querySelectorAll('svg path');
-            wavePaths.forEach((path, index) => {
-              const speed = (index + 1) * 0.15; // Reduced from 0.2 for subtler effect
-              const yOffset = Math.sin(scrolled * 0.003 + index) * 6; // Reduced from 0.005 and 8
-              const scrollEffect = deltaY * 0.08 * speed; // Reduced from 0.1 for subtler effect
-              path.style.transform = `translateY(${yOffset + scrollEffect}px)`;
-            });
-            
-            lastScrollY = scrolled;
-            
-            // Remove scrolling class after animation
-            setTimeout(() => {
-              wave.classList.remove('scrolling');
-            }, 150);
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    const handleMouseMove = (e) => {
-      if (waveRef.current) {
-        const mouseX = e.clientX;
-        const deltaX = mouseX - lastMouseX;
-        const wave = waveRef.current;
-        
-        // Subtle wave response to mouse movement
-        const wavePaths = wave.querySelectorAll('svg path');
-        wavePaths.forEach((path, index) => {
-          const sensitivity = (index + 1) * 0.1;
-          const mouseEffect = deltaX * sensitivity;
-          const currentTransform = path.style.transform;
-          const yMatch = currentTransform.match(/translateY\(([^)]+)px\)/);
-          const yValue = yMatch ? parseFloat(yMatch[1]) : 0;
-          
-          path.style.transform = `translateY(${yValue + mouseEffect * 0.01}px)`;
-        });
-        
-        lastMouseX = mouseX;
-      }
-    };
-
-    const handleResize = () => {
-      if (waveRef.current) {
-        // Reset wave position on resize
-        waveRef.current.style.transform = 'translateX(0)';
-        const wavePaths = waveRef.current.querySelectorAll('svg path');
-        wavePaths.forEach(path => {
-          path.style.transform = 'translateY(0)';
-        });
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div className="harvesting-page">
@@ -282,10 +195,6 @@ const HarvestingPage = () => {
         </div>
         
         <div className="hero-content">
-          <div className="hero-logo">
-            <img src="/images/utahWaterGardensLogoHoriz.webp" alt="Utah Water Gardens Logo" />
-          </div>
-          
           <h1>Utah Water Gardens</h1>
           <p className="hero-subtitle">Professional Harvesting Services Since 1995</p>
           
@@ -311,17 +220,10 @@ const HarvestingPage = () => {
           </div>
         </div>
         
-        <div className="hero-wave" ref={waveRef}>
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" fill-rule="evenodd">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#ffffff" fill-opacity="1"></path>
-            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,12.24,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="#87ceeb" fill-opacity="1"></path>
-            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#0ea5e9" fill-opacity="1"></path>
-          </svg>
-        </div>
       </section>
 
       {/* Harvesting Services */}
-      <section className="services-section">
+      <section className="services-section first-section-gradient">
         <div className="container">
           <h2>Our Harvesting Services</h2>
           <p>Comprehensive harvesting solutions for all your pond management needs</p>
@@ -459,7 +361,7 @@ const HarvestingPage = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="why-choose-section">
+      <section className="why-choose-section gradient-wipe-up">
         <div className="container">
           <h2>Why Choose Utah Water Gardens for Harvesting</h2>
           <div className="reasons-grid">

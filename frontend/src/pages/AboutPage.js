@@ -11,7 +11,7 @@ const AboutPage = () => {
         subtitle="Your trusted partner for pond and water feature solutions in Utah"
       />
 
-      <section className="about-content-section">
+      <section className="about-content-section first-section-gradient">
         <div className="container">
           <div className="about-content">
             <div className="about-text">
@@ -116,7 +116,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="team-section">
+      <section className="team-section gradient-wipe-up">
         <div className="container">
           <h2>Our Team</h2>
           <div className="team-content">

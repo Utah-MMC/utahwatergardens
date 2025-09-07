@@ -454,7 +454,7 @@ const TroubleshootingPage = () => {
       </section>
 
       {/* Quick Emergency Fixes */}
-      <section className="emergency-section">
+      <section className="emergency-section first-section-gradient">
         <div className="container">
           <h2>Emergency Quick Fixes</h2>
           <p>Immediate solutions for urgent pond problems</p>
@@ -608,7 +608,7 @@ const TroubleshootingPage = () => {
       </section>
 
       {/* When to Call for Help */}
-      <section className="help-section">
+      <section className="help-section gradient-wipe-up">
         <div className="container">
           <h2>When to Call for Professional Help</h2>
           <div className="help-grid">
@@ -647,7 +647,15 @@ const TroubleshootingPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Need Immediate Help?</h2>
           <p>Our experts are available to help solve your pond problems quickly and effectively</p>

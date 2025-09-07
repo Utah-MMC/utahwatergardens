@@ -7,12 +7,41 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   color: white;
   padding: 80px 0;
   display: flex;
   align-items: center;
   min-height: 500px;
+  position: relative;
+}
+
+/* First wave layer - baby blue (behind) */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,110C100,100,200,80,300,70C400,60,500,60,600,70C700,80,800,100,900,110C1000,120,1100,120,1150,120L1200,120V120H0Z' fill='%2387ceeb' fill-opacity='0.9'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: cover;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Second wave layer - dark blue (in front) */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,100C100,80,200,40,300,30C400,20,500,40,600,50C700,60,800,60,900,50C1000,40,1100,20,1150,10L1200,0V120H0Z' fill='%231e40af' fill-opacity='1'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: cover;
+  z-index: 101;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -40,7 +69,7 @@
 }
 
 .cta-button {
-  background: #f59e0b;
+  background: #dc2626;
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -51,7 +80,7 @@
 }
 
 .cta-button:hover {
-  background: #d97706;
+  background: #b91c1c;
   transform: translateY(-2px);
 }
 
@@ -69,7 +98,7 @@
 
 .secondary-button:hover {
   background: white;
-  color: #059669;
+  color: #1e40af;
 }
 
 .hero-image {
@@ -88,7 +117,7 @@
 /* Seasons Section */
 .seasons-section {
   padding: 80px 0;
-  background: #f8fafc;
+  /* background: #f8fafc; - removed to allow gradient override */
 }
 
 .container {
@@ -101,7 +130,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .seasons-section > .container > p {
@@ -145,7 +174,7 @@
 .season-info h3 {
   font-size: 1.8rem;
   margin-bottom: 10px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .season-details {
@@ -178,7 +207,7 @@
 
 .season-priority.medium {
   background: #fffbeb;
-  color: #d97706;
+  color: #b91c1c;
 }
 
 .season-priority.low {
@@ -225,7 +254,7 @@
 }
 
 .season-tasks h4 {
-  color: #059669;
+  color: #1e40af;
 }
 
 .season-tips h4 {
@@ -255,7 +284,7 @@
 
 .season-tasks li:before {
   content: "✅";
-  color: #059669;
+  color: #1e40af;
   position: absolute;
   left: 0;
 }
@@ -284,7 +313,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .challenges-section > .container > p {
@@ -306,7 +335,7 @@
   padding: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  border-left: 4px solid #059669;
+  border-left: 4px solid #1e40af;
 }
 
 .challenge-card:hover {
@@ -323,7 +352,7 @@
 .challenge-header h3 {
   font-size: 1.3rem;
   margin: 0;
-  color: #059669;
+  color: #1e40af;
 }
 
 .challenge-season {
@@ -347,7 +376,7 @@
 }
 
 .challenge-solution strong {
-  color: #059669;
+  color: #1e40af;
 }
 
 .challenge-prevention strong {
@@ -364,7 +393,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .equipment-section > .container > p {
@@ -395,7 +424,7 @@
 .equipment-card h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
   text-align: center;
 }
 
@@ -422,7 +451,7 @@
 }
 
 .equipment-maintenance h4 {
-  color: #059669;
+  color: #1e40af;
 }
 
 .equipment-essential ul,
@@ -470,7 +499,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .feeding-section > .container > p {
@@ -502,7 +531,7 @@
 .feeding-card h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .feeding-details {
@@ -538,7 +567,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .plant-care-section > .container > p {
@@ -569,7 +598,7 @@
 .plant-care-card h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
   text-align: center;
 }
 
@@ -581,7 +610,7 @@
 }
 
 .plant-tasks h4 {
-  color: #059669;
+  color: #1e40af;
 }
 
 .plant-tips h4 {
@@ -605,7 +634,7 @@
 
 .plant-tasks li:before {
   content: "🌱";
-  color: #059669;
+  color: #1e40af;
   position: absolute;
   left: 0;
 }
@@ -627,7 +656,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .emergency-section > .container > p {
@@ -697,7 +726,7 @@
 }
 
 .emergency-followup h4 {
-  color: #059669;
+  color: #1e40af;
 }
 
 .emergency-prevention h4 {
@@ -722,7 +751,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .benefits-grid {
@@ -745,7 +774,7 @@
 .benefit-item h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .benefit-item p {
@@ -756,7 +785,7 @@
 /* Contact CTA */
 .contact-cta {
   padding: 80px 0;
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   color: white;
   text-align: center;
 }
@@ -806,7 +835,7 @@
 
 .btn-secondary:hover {
   background: white;
-  color: #059669;
+  color: #1e40af;
 }
 
 /* Responsive Design */

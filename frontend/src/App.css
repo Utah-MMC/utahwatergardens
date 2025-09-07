@@ -27,6 +27,40 @@ main {
   z-index: 0; /* Ensure main content is below PageHero but above footer */
 }
 
+/* Universal Blue Gradient for First Section After Hero */
+.first-section-gradient {
+  background: linear-gradient(to bottom, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #93c5fd 75%, #ffffff 100%) !important;
+  padding: 4rem 0 !important;
+  position: relative;
+  overflow: hidden;
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  z-index: 1 !important;
+}
+
+/* Override any existing background colors */
+.first-section-gradient * {
+  background: transparent !important;
+}
+
+/* Universal Blue Gradient Wipe Up - for sections above CTA */
+.gradient-wipe-up {
+  background: linear-gradient(to top, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #93c5fd 75%, #ffffff 100%) !important;
+  padding: 4rem 0 !important;
+  position: relative;
+  overflow: hidden;
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  z-index: 1 !important;
+}
+
+/* Override any existing background colors for wipe up */
+.gradient-wipe-up * {
+  background: transparent !important;
+}
+
 /* Button Styles */
 .btn {
   display: inline-block;

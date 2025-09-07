@@ -87,7 +87,15 @@ const WaterQualityTestingPage = () => {
   return (
     <div className="water-quality-testing-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="hero-content">
           <h1>Water Quality Testing Services</h1>
           <p>Professional water quality testing to ensure your pond maintains optimal conditions for fish and plants</p>
@@ -102,7 +110,7 @@ const WaterQualityTestingPage = () => {
       </section>
 
       {/* Why Water Testing Matters */}
-      <section className="importance-section">
+      <section className="importance-section first-section-gradient">
         <div className="container">
           <h2>Why Water Quality Testing Matters</h2>
           <p>Maintaining proper water quality is essential for a healthy pond ecosystem</p>
@@ -224,7 +232,7 @@ const WaterQualityTestingPage = () => {
       </section>
 
       {/* When to Test */}
-      <section className="when-to-test-section">
+      <section className="when-to-test-section gradient-wipe-up">
         <div className="container">
           <h2>When Should You Test Your Water?</h2>
           <div className="testing-schedule">

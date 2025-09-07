@@ -21,7 +21,7 @@ const FloatingPlantsPage = () => {
       </section>
 
       {/* Plant Types */}
-      <section className="plant-types">
+      <section className="plant-types first-section-gradient">
         <div className="container">
           <h2>Types of Floating Plants</h2>
           <div className="types-grid">
@@ -230,7 +230,7 @@ const FloatingPlantsPage = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="featured-products">
+      <section className="featured-products gradient-wipe-up">
         <div className="container">
           <h2>Featured Floating Plants</h2>
           <div className="products-grid">
@@ -257,7 +257,15 @@ const FloatingPlantsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
+      <section 
+        className="cta-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Add Floating Plants to Your Pond?</h2>
           <p>Our aquatic plant experts can help you choose the perfect floating plants for your water garden.</p>

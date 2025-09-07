@@ -75,7 +75,7 @@ const MarginalPlantsPage = () => {
       </section>
 
       {/* Plant Selection */}
-      <section className="plants-section">
+      <section className="plants-section first-section-gradient">
         <div className="container">
           <h2>Our Marginal Plant Selection</h2>
           <p>We offer the largest variety of marginal plants in Utah, perfect for creating natural pond borders</p>
@@ -157,7 +157,7 @@ const MarginalPlantsPage = () => {
       </section>
 
       {/* Seasonal Availability */}
-      <section className="seasonal-section">
+      <section className="seasonal-section gradient-wipe-up">
         <div className="container">
           <h2>Seasonal Availability</h2>
           <div className="seasonal-grid">
@@ -184,7 +184,15 @@ const MarginalPlantsPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Add Marginal Plants?</h2>
           <p>Our experts can help you choose the perfect marginal plants for your pond</p>

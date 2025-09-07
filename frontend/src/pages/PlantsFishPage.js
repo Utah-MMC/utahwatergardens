@@ -15,7 +15,7 @@ const PlantsFishPage = () => {
       name: 'Water Lilies',
       path: '/plants-fish/water-lilies',
       description: 'Stunning water lilies in various colors',
-      image: '/images/waterLillies.webp'
+      image: '/images/waterLillies-topaz-enhance-4x.jpeg'
     },
     {
       name: 'Floating Plants',
@@ -36,7 +36,7 @@ const PlantsFishPage = () => {
       name: 'Koi & Goldfish',
       path: '/plants-fish/koi-goldfish',
       description: 'Beautiful koi and goldfish varieties',
-      image: '/images/koi.webp'
+      image: '/images/koi-topaz-enhance-4x.jpeg'
     },
     {
       name: 'Pond Pumps',
@@ -83,7 +83,7 @@ const PlantsFishPage = () => {
 
       <div className="container">
         {/* Plants Section */}
-        <section className="plants-section">
+        <section className="plants-section first-section-gradient">
           <h2>Aquatic Plants</h2>
           <div className="category-grid">
             {plantCategories.map((category, index) => (
@@ -138,7 +138,7 @@ const PlantsFishPage = () => {
         </section>
 
         {/* Services */}
-        <section className="services-section">
+        <section className="services-section gradient-wipe-up">
           <h2>Related Services</h2>
           <div className="services-grid">
             <div className="service-card">

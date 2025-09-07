@@ -162,7 +162,7 @@ const SeasonalServicesPage = () => {
       </section>
 
       {/* Seasonal Services Overview */}
-      <section className="services-section">
+      <section className="services-section first-section-gradient">
         <div className="container">
           <h2>Our Seasonal Services</h2>
           <p>Each season brings unique challenges and opportunities for your pond. We provide specialized care for every time of year.</p>
@@ -339,7 +339,7 @@ const SeasonalServicesPage = () => {
       </section>
 
       {/* Emergency Seasonal Services */}
-      <section className="emergency-section">
+      <section className="emergency-section gradient-wipe-up">
         <div className="container">
           <h2>Emergency Seasonal Services</h2>
           <div className="emergency-content">

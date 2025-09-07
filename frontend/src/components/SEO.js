@@ -5,58 +5,38 @@ const SEO = ({
   title, 
   description, 
   keywords, 
-  image, 
-  url, 
-  type = 'website',
-  structuredData 
+  canonical, 
+  ogImage = '/images/og-image.jpg',
+  ogType = 'website',
+  noIndex = false 
 }) => {
-  const siteName = 'Utah Water Gardens';
-  const siteUrl = 'https://utahwatergardens.com';
-  const defaultImage = `${siteUrl}/images/utahWaterGardensLogo500x463.png`;
-  
-  const fullTitle = title ? `${title} | ${siteName}` : siteName;
-  const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
-  const fullImage = image ? `${siteUrl}${image}` : defaultImage;
+  const fullTitle = title ? `${title} | Utah Water Gardens` : 'Utah Water Gardens - Complete Pond & Water Feature Solutions';
+  const fullDescription = description || 'Utah\'s premier pond and water feature specialists. We design, build, and maintain beautiful custom ponds, waterfalls, and aquatic plant features throughout Utah.';
+  const fullKeywords = keywords || 'pond maintenance, pond cleaning, pond construction, pond dredging, aquatic plants, koi fish, pond supplies, utah water gardens';
+  const fullCanonical = canonical || 'https://utahwatergardens.com';
+  const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://utahwatergardens.com${ogImage}`;
 
   return (
     <Helmet>
-      {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="author" content="Utah Water Gardens" />
-      <meta name="robots" content="index, follow" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content={fullDescription} />
+      <meta name="keywords" content={fullKeywords} />
+      {canonical && <link rel="canonical" href={fullCanonical} />}
+      {noIndex && <meta name="robots" content="noindex, nofollow" />}
       
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={fullUrl} />
+      {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={fullImage} />
-      <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:description" content={fullDescription} />
+      <meta property="og:url" content={fullCanonical} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:image" content={fullOgImage} />
+      <meta property="og:site_name" content="Utah Water Gardens" />
       
       {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={fullUrl} />
-      <meta property="twitter:title" content={fullTitle} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={fullImage} />
-      
-      {/* Canonical URL */}
-      <link rel="canonical" href={fullUrl} />
-      
-      {/* Structured Data */}
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      )}
-      
-      {/* Preconnect to external domains for performance */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={fullDescription} />
+      <meta name="twitter:image" content={fullOgImage} />
     </Helmet>
   );
 };

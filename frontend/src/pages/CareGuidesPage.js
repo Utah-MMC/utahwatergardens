@@ -208,7 +208,7 @@ const CareGuidesPage = () => {
       </section>
 
       {/* Care Guides */}
-      <section className="guides-section">
+      <section className="guides-section first-section-gradient">
         <div className="container">
           <h2>Complete Care Guides</h2>
           <p>Step-by-step guides covering all aspects of pond care and maintenance</p>
@@ -378,7 +378,7 @@ const CareGuidesPage = () => {
       </section>
 
       {/* Why Choose Our Guides */}
-      <section className="why-choose-section">
+      <section className="why-choose-section gradient-wipe-up">
         <div className="container">
           <h2>Why Choose Our Care Guides?</h2>
           <div className="benefits-grid">
@@ -407,7 +407,15 @@ const CareGuidesPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Need Personalized Pond Care Advice?</h2>
           <p>Our experts can provide customized guidance for your specific pond and situation</p>

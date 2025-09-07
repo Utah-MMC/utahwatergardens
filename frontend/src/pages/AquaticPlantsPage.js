@@ -15,7 +15,7 @@ const AquaticPlantsPage = () => {
       />
 
       {/* Plant Categories */}
-      <section className="plant-categories">
+      <section className="plant-categories first-section-gradient">
         <div className="container">
           <h2>Types of Aquatic Plants</h2>
           <div className="categories-grid">
@@ -44,7 +44,7 @@ const AquaticPlantsPage = () => {
             </div>
             
             <div className="category-card">
-              <img src="/images/uwg_image_1941.jpg" alt="Marginal plants" />
+              <img src="/images/uwg_image_1941-topaz-enhance-3.5x.jpeg" alt="Marginal plants" />
               <h3>Marginal Plants</h3>
               <p>Plants that grow in shallow water or along the pond edges, creating natural borders and habitat.</p>
               <ul>
@@ -122,7 +122,7 @@ const AquaticPlantsPage = () => {
           <h2>Featured Aquatic Plants</h2>
           <div className="products-grid">
             <div className="product-card">
-              <img src="/images/waterLillies.webp" alt="Water Lily" />
+              <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Water Lily" />
               <h3>Water Lily 'Colorado'</h3>
               <p>Hardy water lily with beautiful pink blooms, perfect for medium to large ponds.</p>
               <span className="price">$24.99</span>
@@ -144,7 +144,7 @@ const AquaticPlantsPage = () => {
       </section>
 
       {/* Seasonal Care */}
-      <section className="seasonal-care">
+      <section className="seasonal-care gradient-wipe-up">
         <div className="container">
           <h2>Seasonal Care Calendar</h2>
           <div className="seasons-grid">
@@ -169,7 +169,15 @@ const AquaticPlantsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
+      <section 
+        className="cta-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Transform Your Pond?</h2>
           <p>Our aquatic plant experts are here to help you choose the perfect plants for your water garden.</p>

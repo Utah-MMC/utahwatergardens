@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -8,11 +9,11 @@ const HomePage = () => {
   
   // All products from the shop page
   const allProducts = [
-    { name: 'Water Lilies', image: '/images/waterLillies.webp', category: 'Aquatic Plants' },
+    { name: 'Water Lilies', image: '/images/waterLillies-topaz-enhance-4x.jpeg', category: 'Aquatic Plants' },
     { name: 'Floating Plants', image: '/images/IMG_2775.jpg', category: 'Aquatic Plants' },
     { name: 'Marginal Plants', image: '/images/IMG_2779.jpg', category: 'Aquatic Plants' },
     { name: 'Submerged Plants', image: '/images/IMG_2770.jpg', category: 'Aquatic Plants' },
-    { name: 'Koi Fish', image: '/images/koi.webp', category: 'Fish & Koi' },
+    { name: 'Koi Fish', image: '/images/koi-topaz-enhance-4x.jpeg', category: 'Fish & Koi' },
     { name: 'Pond Pumps', image: '/images/pumpRepair.webp', category: 'Pond Supplies' },
     { name: 'Goldfish Varieties', image: '/images/IMG_2780.jpg', category: 'Fish & Koi' },
     { name: 'Pond Liners', image: '/images/IMG_2776.jpg', category: 'Pond Supplies' },
@@ -180,7 +181,14 @@ const HomePage = () => {
   }, [currentSlide, nextSlide, prevSlide]);
 
   return (
-    <div className="home-page">
+    <>
+      <SEO 
+        title="Complete Pond & Water Feature Solutions"
+        description="Utah's premier pond and water feature specialists. We design, build, and maintain beautiful custom ponds, waterfalls, and aquatic plant features throughout Utah."
+        keywords="pond maintenance, pond cleaning, pond construction, pond dredging, aquatic plants, koi fish, pond supplies, utah water gardens, salt lake city pond services"
+        canonical="https://utahwatergardens.com"
+      />
+      <div className="home-page">
       <section className="hero">
         <div className="hero-background">
           <video 
@@ -229,7 +237,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="services-overview">
+      <section className="services-overview first-section-gradient">
         <div className="container">
           <div className="section-header">
             <h2>Our Services</h2>
@@ -238,7 +246,7 @@ const HomePage = () => {
           <div className="services-grid">
             <div className="service-card">
               <div className="service-image">
-                <img src="/images/pondConstruction1000x800.webp" alt="Custom pond construction services" />
+                <img src="/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg" alt="Custom pond construction services" />
               </div>
               <div className="service-content">
                 <h3>Pond Design & Construction</h3>
@@ -258,7 +266,7 @@ const HomePage = () => {
             
             <div className="service-card">
               <div className="service-image">
-                <img src="/images/pondMaintenance.webp" alt="Professional pond maintenance services" />
+                <img src="/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg" alt="Professional pond maintenance services" />
               </div>
               <div className="service-content">
                 <h3>Pond Maintenance & Care</h3>
@@ -278,7 +286,7 @@ const HomePage = () => {
             
             <div className="service-card">
               <div className="service-image">
-                <img src="/images/pondDredging.webp" alt="Pond dredging and restoration services" />
+                <img src="/images/pondDredging-topaz-enhance-3.9x.jpeg" alt="Pond dredging and restoration services" />
               </div>
               <div className="service-content">
                 <h3>Lake & Pond Dredging</h3>
@@ -298,7 +306,7 @@ const HomePage = () => {
             
             <div className="service-card">
               <div className="service-image">
-                <img src="/images/koi.webp" alt="Koi and fish stocking services" />
+                <img src="/images/koi-topaz-enhance-4x.jpeg" alt="Koi and fish stocking services" />
               </div>
               <div className="service-content">
                 <h3>Plants & Fish Stocking</h3>
@@ -475,7 +483,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="resources-preview">
+      <section className="resources-preview gradient-wipe-up">
         <div className="container">
           <div className="resources-header">
             <div className="resources-title-section">
@@ -538,6 +546,7 @@ const HomePage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

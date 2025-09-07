@@ -17,14 +17,14 @@ const PondGalleryPage = () => {
       name: 'Commercial Projects',
       path: '/pond-gallery/commercial',
       description: 'Large-scale commercial water features',
-      image: '/images/pondConstruction1000x800.webp',
+      image: '/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg',
       count: 8
     },
     {
       name: 'Koi Ponds',
       path: '/pond-gallery/koi-ponds',
       description: 'Specialized koi pond designs',
-      image: '/images/koi.webp',
+      image: '/images/koi-topaz-enhance-4x.jpeg',
       count: 15
     },
     {
@@ -55,7 +55,7 @@ const PondGalleryPage = () => {
       title: 'Murray Family Pond',
       category: 'Residential',
       description: 'A beautiful 500-gallon koi pond with waterfall',
-      image: '/images/koi.webp',
+      image: '/images/koi-topaz-enhance-4x.jpeg',
       features: ['Koi Fish', 'Waterfall', 'LED Lighting', 'Filtration System']
     },
     {
@@ -106,7 +106,7 @@ const PondGalleryPage = () => {
 
       <div className="container">
         {/* Gallery Categories */}
-        <section className="gallery-categories">
+        <section className="gallery-categories first-section-gradient">
           <h2>Browse by Category</h2>
           <div className="categories-grid">
             {galleryCategories.map((category, index) => (
@@ -196,7 +196,7 @@ const PondGalleryPage = () => {
         </section>
 
         {/* Customer Testimonials */}
-        <section className="customer-testimonials">
+        <section className="customer-testimonials gradient-wipe-up">
           <h2>What Our Customers Say</h2>
           <div className="testimonials-grid">
             <div className="testimonial-card">

@@ -16,17 +16,17 @@ const KoiGoldfishPage = () => {
           </div>
         </div>
         <div className="hero-image">
-          <img src="/images/koi.webp" alt="Beautiful koi fish swimming in a pond" />
+          <img src="/images/koi-topaz-enhance-4x.jpeg" alt="Beautiful koi fish swimming in a pond" />
         </div>
       </section>
 
       {/* Fish Categories */}
-      <section className="fish-categories">
+      <section className="fish-categories first-section-gradient">
         <div className="container">
           <h2>Types of Pond Fish</h2>
           <div className="categories-grid">
             <div className="category-card">
-              <img src="/images/koi.webp" alt="Koi fish" />
+              <img src="/images/koi-topaz-enhance-4x.jpeg" alt="Koi fish" />
               <h3>Koi Fish</h3>
               <p>Majestic Japanese carp known for their beautiful colors and graceful swimming patterns.</p>
               <ul>
@@ -50,7 +50,7 @@ const KoiGoldfishPage = () => {
             </div>
             
             <div className="category-card">
-              <img src="/images/uwg_image_1941.jpg" alt="Fish care" />
+              <img src="/images/uwg_image_1941-topaz-enhance-3.5x.jpeg" alt="Fish care" />
               <h3>Care & Maintenance</h3>
               <p>Essential information for keeping your pond fish healthy and happy year-round.</p>
               <ul>
@@ -70,7 +70,7 @@ const KoiGoldfishPage = () => {
           <h2>Popular Koi Varieties</h2>
           <div className="varieties-grid">
             <div className="variety-card">
-              <img src="/images/koi.webp" alt="Kohaku koi" />
+              <img src="/images/koi-topaz-enhance-4x.jpeg" alt="Kohaku koi" />
               <h3>Kohaku</h3>
               <p>Classic white koi with red markings. The most popular variety known for its clean, striking appearance.</p>
               <div className="variety-details">
@@ -80,7 +80,7 @@ const KoiGoldfishPage = () => {
             </div>
             
             <div className="variety-card">
-              <img src="/images/koi.webp" alt="Taisho Sanke koi" />
+              <img src="/images/koi-topaz-enhance-4x.jpeg" alt="Taisho Sanke koi" />
               <h3>Taisho Sanke</h3>
               <p>White koi with red and black markings. A stunning three-color variety highly prized by collectors.</p>
               <div className="variety-details">
@@ -90,7 +90,7 @@ const KoiGoldfishPage = () => {
             </div>
             
             <div className="variety-card">
-              <img src="/images/koi.webp" alt="Butterfly koi" />
+              <img src="/images/koi-topaz-enhance-4x.jpeg" alt="Butterfly koi" />
               <h3>Butterfly Koi</h3>
               <p>Long-finned koi with flowing fins that create a graceful, elegant swimming motion.</p>
               <div className="variety-details">
@@ -207,7 +207,7 @@ const KoiGoldfishPage = () => {
       </section>
 
       {/* Seasonal Care */}
-      <section className="seasonal-care">
+      <section className="seasonal-care gradient-wipe-up">
         <div className="container">
           <h2>Seasonal Fish Care</h2>
           <div className="seasons-grid">
@@ -232,7 +232,15 @@ const KoiGoldfishPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
+      <section 
+        className="cta-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Add Fish to Your Pond?</h2>
           <p>Our fish experts can help you choose the perfect koi and goldfish for your water garden.</p>

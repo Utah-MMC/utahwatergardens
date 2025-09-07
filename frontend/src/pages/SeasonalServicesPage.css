@@ -7,12 +7,41 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   color: white;
   padding: 80px 0;
   display: flex;
   align-items: center;
   min-height: 500px;
+  position: relative;
+}
+
+/* First wave layer - baby blue (behind) */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,110C100,100,200,80,300,70C400,60,500,60,600,70C700,80,800,100,900,110C1000,120,1100,120,1150,120L1200,120V120H0Z' fill='%2387ceeb' fill-opacity='0.9'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: cover;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Second wave layer - dark blue (in front) */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,100C100,80,200,40,300,30C400,20,500,40,600,50C700,60,800,60,900,50C1000,40,1100,20,1150,10L1200,0V120H0Z' fill='%231e40af' fill-opacity='1'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: cover;
+  z-index: 101;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -40,7 +69,7 @@
 }
 
 .cta-button {
-  background: #f59e0b;
+  background: #dc2626;
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -51,7 +80,7 @@
 }
 
 .cta-button:hover {
-  background: #d97706;
+  background: #b91c1c;
   transform: translateY(-2px);
 }
 
@@ -69,7 +98,7 @@
 
 .secondary-button:hover {
   background: white;
-  color: #059669;
+  color: #1e40af;
 }
 
 .hero-image {
@@ -101,7 +130,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .services-section > .container > p {
@@ -195,7 +224,7 @@
 
 .season-services li:before {
   content: "✓";
-  color: #10b981;
+  color: #3b82f6;
   position: absolute;
   left: 0;
   font-weight: bold;
@@ -229,7 +258,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .benefits-grid {
@@ -252,7 +281,7 @@
 .benefit-item h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .benefit-item p {
@@ -270,7 +299,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .tips-grid {
@@ -289,15 +318,15 @@
 }
 
 .tip-card.spring {
-  border-top-color: #10b981;
+  border-top-color: #3b82f6;
 }
 
 .tip-card.summer {
-  border-top-color: #f59e0b;
+  border-top-color: #dc2626;
 }
 
 .tip-card.fall {
-  border-top-color: #d97706;
+  border-top-color: #b91c1c;
 }
 
 .tip-card.winter {
@@ -345,7 +374,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .schedule-section > .container > p {
@@ -406,7 +435,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: #1e40af;
 }
 
 .packages-section > .container > p {
@@ -454,7 +483,7 @@
 .package-price {
   font-size: 2rem;
   font-weight: 700;
-  color: #059669;
+  color: #1e40af;
   margin-bottom: 15px;
 }
 
@@ -480,7 +509,7 @@
 
 .package-card li:before {
   content: "✓";
-  color: #10b981;
+  color: #3b82f6;
   position: absolute;
   left: 0;
   font-weight: bold;
@@ -575,7 +604,7 @@
 /* Contact CTA */
 .contact-cta {
   padding: 80px 0;
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   color: white;
   text-align: center;
 }
@@ -625,7 +654,7 @@
 
 .btn-secondary:hover {
   background: white;
-  color: #059669;
+  color: #1e40af;
 }
 
 /* Responsive Design */

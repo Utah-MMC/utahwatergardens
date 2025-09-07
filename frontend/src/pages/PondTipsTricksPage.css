@@ -40,7 +40,7 @@
 }
 
 .cta-button {
-  background: #f59e0b;
+  background: #dc2626;
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -51,7 +51,7 @@
 }
 
 .cta-button:hover {
-  background: #d97706;
+  background: #b91c1c;
   transform: translateY(-2px);
 }
 
@@ -88,7 +88,7 @@
 /* Tips Section */
 .tips-section {
   padding: 80px 0;
-  background: #f8fafc;
+  /* background: #f8fafc; - removed to allow gradient override */
 }
 
 .container {
@@ -606,7 +606,7 @@
 }
 
 .long-term h4 {
-  color: #10b981;
+  color: #3b82f6;
 }
 
 .prevention h4 {

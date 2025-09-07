@@ -41,7 +41,7 @@ const ContactPage = () => {
         backgroundImageAlt="Professional pond consultation services"
       />
 
-      <section className="contact-content">
+      <section className="contact-content first-section-gradient">
         <div className="container">
           <div className="contact-grid">
             <div className="contact-form-section">
@@ -201,7 +201,7 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <section className="map-section">
+      <section className="map-section gradient-wipe-up">
         <div className="container">
           <h2>Find Us</h2>
           <div className="map-container">

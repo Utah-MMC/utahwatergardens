@@ -95,7 +95,7 @@ const PondMaintenancePage = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="services-section">
+      <section className="services-section first-section-gradient">
         <div className="container">
           <h2>Our Maintenance Services</h2>
           <p>We offer comprehensive pond maintenance services to ensure your water feature remains healthy and beautiful</p>
@@ -184,7 +184,7 @@ const PondMaintenancePage = () => {
       </section>
 
       {/* Maintenance Plans */}
-      <section className="plans-section">
+      <section className="plans-section gradient-wipe-up">
         <div className="container">
           <h2>Maintenance Plans</h2>
           <p>Choose the maintenance plan that fits your needs and budget</p>
@@ -232,7 +232,15 @@ const PondMaintenancePage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Start Your Maintenance Plan?</h2>
           <p>Contact us today to discuss your pond maintenance needs</p>

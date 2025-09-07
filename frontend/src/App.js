@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 import Header from './components/Header.js';
 import Footer from './components/Footer';
@@ -166,9 +167,10 @@ const LoadingSpinner = () => (
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="App">
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="App">
         <PerformanceMonitor />
         <Header />
         <main>
@@ -366,7 +368,8 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
+      </Router>
+    </HelmetProvider>
   );
 }
 

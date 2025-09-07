@@ -177,7 +177,7 @@ const PondLinersPage = () => {
       />
 
       {/* Liner Types */}
-      <section className="liner-types-section">
+      <section className="liner-types-section first-section-gradient">
         <div className="container">
           <h2>Our Liner Selection</h2>
           <p>We carry the highest quality pond liners from trusted manufacturers, ensuring your pond stays watertight for decades</p>
@@ -427,7 +427,7 @@ const PondLinersPage = () => {
       </section>
 
       {/* Product Packages */}
-      <section className="packages-section">
+      <section className="packages-section gradient-wipe-up">
         <div className="container">
           <h2>Complete Liner Packages</h2>
           <p>Save money with our complete liner installation packages</p>

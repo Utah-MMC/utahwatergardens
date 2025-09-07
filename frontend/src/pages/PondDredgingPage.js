@@ -237,7 +237,7 @@ const PondDredgingPage = () => {
       </section>
 
       {/* Dredging Services */}
-      <section className="services-section">
+      <section className="services-section first-section-gradient">
         <div className="container">
           <h2>Our Pond Dredging Services</h2>
           <p>Comprehensive dredging solutions for all types of ponds and water features</p>
@@ -413,7 +413,7 @@ const PondDredgingPage = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="why-choose-section">
+      <section className="why-choose-section gradient-wipe-up">
         <div className="container">
           <h2>Why Choose Utah Water Gardens for Pond Dredging</h2>
           <div className="reasons-grid">
@@ -442,7 +442,15 @@ const PondDredgingPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Restore Your Pond?</h2>
           <p>Contact us to schedule a consultation and get a customized dredging plan for your pond</p>

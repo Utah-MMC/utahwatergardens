@@ -22,7 +22,7 @@ const ServicesPage = () => {
       id: 'pond-maintenance',
       title: 'Pond Maintenance',
       description: 'Regular maintenance services to keep your pond healthy and beautiful throughout the year.',
-      image: '/images/pondMaintenance.webp',
+      image: '/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg',
       features: [
         'Water quality testing',
         'Plant maintenance',
@@ -35,7 +35,7 @@ const ServicesPage = () => {
       id: 'pond-cleaning',
       title: 'Pond Cleaning',
       description: 'Professional cleaning services to remove debris, algae, and maintain optimal water quality.',
-      image: '/images/pondCleanings.webp',
+      image: '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
       features: [
         'Debris removal',
         'Algae control',
@@ -118,7 +118,7 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      <section className="equipment-section">
+      <section className="equipment-section gradient-wipe-up">
         <div className="container">
           <h2>Our Equipment</h2>
           <div className="equipment-grid">

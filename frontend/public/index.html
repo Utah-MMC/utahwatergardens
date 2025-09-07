@@ -29,6 +29,74 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Utah Water Gardens",
+      "description": "Complete pond and water feature solutions in Utah. From construction to maintenance, we handle everything for your aquatic paradise.",
+      "url": "https://utahwatergardens.com",
+      "telephone": "+1-801-555-0123",
+      "email": "info@utahwatergardens.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Water Garden Way",
+        "addressLocality": "Salt Lake City",
+        "addressRegion": "UT",
+        "postalCode": "84101",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.7608",
+        "longitude": "-111.8910"
+      },
+      "openingHours": "Mo-Fr 08:00-18:00,Sa 09:00-17:00",
+      "priceRange": "$$",
+      "image": "https://utahwatergardens.com/images/utahWaterGardensLogo500x463.png",
+      "logo": "https://utahwatergardens.com/images/utahWaterGardensLogo500x463.png",
+      "sameAs": [
+        "https://www.facebook.com/utahwatergardens",
+        "https://www.instagram.com/utahwatergardens"
+      ],
+      "serviceArea": {
+        "@type": "State",
+        "name": "Utah"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pond Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pond Design & Construction",
+              "description": "Custom pond design and construction services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pond Maintenance",
+              "description": "Regular pond cleaning and maintenance services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Aquatic Plants & Fish",
+              "description": "Premium aquatic plants and koi fish sales"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     

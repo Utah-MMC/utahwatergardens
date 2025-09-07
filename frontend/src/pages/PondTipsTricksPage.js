@@ -313,7 +313,7 @@ const PondTipsTricksPage = () => {
       </section>
 
       {/* Tip Categories */}
-      <section className="tips-section">
+      <section className="tips-section first-section-gradient">
         <div className="container">
           <h2>Expert Tips by Category</h2>
           <p>Professional tips organized by topic for easy reference</p>
@@ -494,7 +494,7 @@ const PondTipsTricksPage = () => {
       </section>
 
       {/* Why These Tips Work */}
-      <section className="why-choose-section">
+      <section className="why-choose-section gradient-wipe-up">
         <div className="container">
           <h2>Why These Tips Work</h2>
           <div className="benefits-grid">
@@ -523,7 +523,15 @@ const PondTipsTricksPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Need More Expert Tips?</h2>
           <p>Our specialists can provide personalized tips for your specific pond situation</p>

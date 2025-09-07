@@ -53,13 +53,13 @@ const PondSuppliesPage = () => {
       name: 'Premium Koi Food',
       category: 'Fish Care',
       price: '$24.99',
-      image: '/images/koi.webp'
+      image: '/images/koi-topaz-enhance-4x.jpeg'
     },
     {
       name: 'Water Lily Fertilizer',
       category: 'Plant Care',
       price: '$19.99',
-      image: '/images/waterLillies.webp'
+      image: '/images/waterLillies-topaz-enhance-4x.jpeg'
     },
     {
       name: 'Pond Net Cover',
@@ -101,7 +101,7 @@ const PondSuppliesPage = () => {
 
       <div className="container">
         {/* Supply Categories */}
-        <section className="supply-categories">
+        <section className="supply-categories first-section-gradient">
           <h2>Shop by Category</h2>
           <div className="categories-grid">
             {supplyCategories.map((category, index) => (
@@ -174,7 +174,7 @@ const PondSuppliesPage = () => {
         </section>
 
         {/* Special Offers */}
-        <section className="special-offers">
+        <section className="special-offers gradient-wipe-up">
           <h2>Special Offers</h2>
           <div className="offers-grid">
             <div className="offer-card">

@@ -166,7 +166,15 @@ const WaterTreatmentsPage = () => {
   return (
     <div className="water-treatments-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="hero-content">
           <h1>Water Treatments & Chemicals</h1>
           <p>Professional-grade water treatments and chemicals to maintain crystal clear, healthy pond water. From algae control to beneficial bacteria, we have everything you need.</p>
@@ -181,7 +189,7 @@ const WaterTreatmentsPage = () => {
       </section>
 
       {/* Treatment Categories */}
-      <section className="treatments-section">
+      <section className="treatments-section first-section-gradient">
         <div className="container">
           <h2>Our Treatment Selection</h2>
           <p>We carry the highest quality water treatments from trusted manufacturers, ensuring your pond stays healthy and clear</p>
@@ -399,7 +407,7 @@ const WaterTreatmentsPage = () => {
       </section>
 
       {/* Product Packages */}
-      <section className="packages-section">
+      <section className="packages-section gradient-wipe-up">
         <div className="container">
           <h2>Treatment Packages</h2>
           <p>Save money with our complete treatment packages</p>

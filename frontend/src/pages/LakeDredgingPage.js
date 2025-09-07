@@ -229,7 +229,7 @@ const LakeDredgingPage = () => {
       </section>
 
       {/* Dredging Services */}
-      <section className="services-section">
+      <section className="services-section first-section-gradient">
         <div className="container">
           <h2>Our Lake Dredging Services</h2>
           <p>Comprehensive dredging solutions for all types of lakes and water bodies</p>
@@ -405,7 +405,7 @@ const LakeDredgingPage = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="why-choose-section">
+      <section className="why-choose-section gradient-wipe-up">
         <div className="container">
           <h2>Why Choose Utah Water Gardens for Lake Dredging</h2>
           <div className="reasons-grid">

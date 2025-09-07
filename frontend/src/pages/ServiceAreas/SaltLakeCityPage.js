@@ -116,7 +116,7 @@ const SaltLakeCityPage = () => {
         </section>
 
         {/* Service Areas */}
-        <section className="nearby-areas">
+        <section className="nearby-areas gradient-wipe-up">
           <h2>We Also Serve These Nearby Areas</h2>
           <div className="areas-grid">
             <Link to="/pond-services/murray" className="area-link">Murray</Link>

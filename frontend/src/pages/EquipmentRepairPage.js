@@ -71,7 +71,15 @@ const EquipmentRepairPage = () => {
   return (
     <div className="equipment-repair-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="hero-content">
           <h1>Pond Equipment Repair Services</h1>
           <p>Professional repair and maintenance for all your pond equipment. Keep your pond running smoothly with our expert repair services.</p>
@@ -86,7 +94,7 @@ const EquipmentRepairPage = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="services-section">
+      <section className="services-section first-section-gradient">
         <div className="container">
           <h2>Our Equipment Repair Services</h2>
           <p>We repair all major brands and types of pond equipment with genuine parts and expert service</p>
@@ -216,7 +224,7 @@ const EquipmentRepairPage = () => {
       </section>
 
       {/* Maintenance Plans */}
-      <section className="maintenance-section">
+      <section className="maintenance-section gradient-wipe-up">
         <div className="container">
           <h2>Preventive Maintenance Plans</h2>
           <p>Regular maintenance prevents costly repairs. Choose a plan that fits your needs.</p>

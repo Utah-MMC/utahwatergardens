@@ -106,7 +106,15 @@ const PumpsAerationPage = () => {
   return (
     <div className="pumps-aeration-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="hero-content">
           <h1>Pond Pumps & Aeration Systems</h1>
           <p>Professional-grade pumps and aeration systems to keep your pond healthy, beautiful, and thriving. From small fountains to large commercial ponds.</p>
@@ -121,7 +129,7 @@ const PumpsAerationPage = () => {
       </section>
 
       {/* Pump Categories */}
-      <section className="pump-categories-section">
+      <section className="pump-categories-section first-section-gradient">
         <div className="container">
           <h2>Our Pump Selection</h2>
           <p>We carry the largest selection of pond pumps in Utah, from small fountain pumps to large commercial systems</p>
@@ -317,7 +325,7 @@ const PumpsAerationPage = () => {
       </section>
 
       {/* Product Packages */}
-      <section className="packages-section">
+      <section className="packages-section gradient-wipe-up">
         <div className="container">
           <h2>Complete System Packages</h2>
           <p>Save money with our complete pump and aeration packages</p>

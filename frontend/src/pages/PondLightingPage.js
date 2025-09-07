@@ -160,7 +160,15 @@ const PondLightingPage = () => {
   return (
     <div className="pond-lighting-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="hero-content">
           <h1>Pond Lighting & Illumination</h1>
           <p>Transform your pond into a magical nighttime oasis with our professional lighting solutions. From energy-efficient LEDs to stunning underwater effects, we have everything you need.</p>
@@ -175,7 +183,7 @@ const PondLightingPage = () => {
       </section>
 
       {/* Lighting Types */}
-      <section className="lighting-types-section">
+      <section className="lighting-types-section first-section-gradient">
         <div className="container">
           <h2>Our Lighting Selection</h2>
           <p>We carry the highest quality pond lighting from trusted manufacturers, ensuring beautiful and reliable illumination</p>
@@ -390,7 +398,7 @@ const PondLightingPage = () => {
       </section>
 
       {/* Product Packages */}
-      <section className="packages-section">
+      <section className="packages-section gradient-wipe-up">
         <div className="container">
           <h2>Lighting Packages</h2>
           <p>Save money with our complete lighting packages</p>

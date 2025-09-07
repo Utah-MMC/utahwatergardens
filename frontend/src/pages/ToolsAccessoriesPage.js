@@ -161,7 +161,15 @@ const ToolsAccessoriesPage = () => {
   return (
     <div className="tools-accessories-page">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="hero-content">
           <h1>Pond Tools & Accessories</h1>
           <p>Professional-grade tools and accessories to keep your pond in perfect condition. From maintenance tools to decorative accessories, we have everything you need for complete pond care.</p>
@@ -176,7 +184,7 @@ const ToolsAccessoriesPage = () => {
       </section>
 
       {/* Tool Categories */}
-      <section className="tools-section">
+      <section className="tools-section first-section-gradient">
         <div className="container">
           <h2>Our Tool Selection</h2>
           <p>We carry the highest quality pond tools from trusted manufacturers, ensuring reliable performance and long-lasting durability</p>
@@ -407,7 +415,7 @@ const ToolsAccessoriesPage = () => {
       </section>
 
       {/* Product Packages */}
-      <section className="packages-section">
+      <section className="packages-section gradient-wipe-up">
         <div className="container">
           <h2>Tool Packages</h2>
           <p>Save money with our complete tool packages</p>

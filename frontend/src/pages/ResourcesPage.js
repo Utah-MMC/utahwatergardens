@@ -226,7 +226,7 @@ const ResourcesPage = () => {
 
       <div className="container">
         {/* Resource Categories */}
-        <section className="resource-categories" aria-labelledby="browse-heading">
+        <section className="resource-categories first-section-gradient" aria-labelledby="browse-heading">
           <h2 id="browse-heading">Browse Resources</h2>
           <div className="categories-grid" role="list">
             {RESOURCE_CATEGORIES.map((category) => (
@@ -323,7 +323,7 @@ const ResourcesPage = () => {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="newsletter-signup" aria-labelledby="newsletter-heading">
+        <section className="newsletter-signup gradient-wipe-up" aria-labelledby="newsletter-heading">
           <div className="newsletter-background">
             <img 
               src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
