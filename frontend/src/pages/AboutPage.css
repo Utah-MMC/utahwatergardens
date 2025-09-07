@@ -20,6 +20,7 @@
   justify-content: center;
   color: white;
   overflow: hidden;
+  padding-top: 120px; /* More space from fixed header */
 }
 
 .hero-background {
@@ -656,6 +657,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .about-hero {
+    padding-top: 100px; /* More space from mobile header */
+  }
+  
   .hero-title {
     font-size: 2.5rem;
   }
