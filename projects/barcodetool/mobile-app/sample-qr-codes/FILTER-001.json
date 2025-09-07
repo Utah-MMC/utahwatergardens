@@ -1,0 +1,13 @@
+{
+  "equipmentId": "FILTER-001",
+  "name": "Primary Filter System",
+  "category": "Filtration",
+  "gps": {
+    "lat": 40.76078206688538,
+    "lng": -111.88702779340787,
+    "accuracy": 5,
+    "timestamp": "2025-07-30T22:16:18.223Z"
+  },
+  "generatedAt": "2025-07-30T22:16:18.223Z",
+  "type": "equipment"
+}

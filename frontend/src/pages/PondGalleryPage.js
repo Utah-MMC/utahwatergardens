@@ -17,7 +17,7 @@ const PondGalleryPage = () => {
       name: 'Commercial Projects',
       path: '/pond-gallery/commercial',
       description: 'Large-scale commercial water features',
-      image: '/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg',
+      image: '/images/pondConstruction1000x800.webp',
       count: 8
     },
     {

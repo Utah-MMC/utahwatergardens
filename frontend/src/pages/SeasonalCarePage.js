@@ -530,22 +530,38 @@ const SeasonalCarePage = () => {
           <h2>Why Seasonal Care Matters</h2>
           <div className="benefits-grid">
             <div className="benefit-item">
-              <div className="benefit-icon">🌱</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
+  </svg>
+              </div>
               <h3>Healthy Growth</h3>
               <p>Proper seasonal care ensures optimal plant and fish health throughout the year</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">💰</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#FFD700"/>
+                </svg>
+              </div>
               <h3>Cost Savings</h3>
               <p>Preventive care reduces the need for expensive repairs and replacements</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">⏰</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#6C757D"/>
+                </svg>
+              </div>
               <h3>Time Efficiency</h3>
               <p>Following seasonal schedules makes pond maintenance more manageable</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">📞</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="#007BFF"/>
+  </svg>
+              </div>
               <h3>Expert Support</h3>
               <p>Our specialists provide seasonal guidance tailored to your specific pond</p>
             </div>

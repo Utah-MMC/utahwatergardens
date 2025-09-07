@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple QR Generator - Utah Water Gardens</title>
+    <script src="qrcode.min.js"></script>
+    <script>
+        // QR code library loading
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof QRCode !== 'undefined') {
+                    console.log('QRCode library loaded successfully');
+                    if (window.onQRCodeLoaded) window.onQRCodeLoaded();
+                } else {
+                    console.error('QRCode library failed to load');
+                    showLibraryError();
+                }
+            }, 200);
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #3B4C7D 0%, #5A6B8C 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: #3B4C7D;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: -30px -30px 30px -30px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            margin-bottom: 10px;
+        }
+
+
+
+        .header h1 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #1e4d5c;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #1e4d5c 0%, #2d6a7a 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #7a9e7e;
+        }
+
+        .qr-result {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 2px dashed #e1e5e9;
+        }
+
+        .qr-result img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .qr-data-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+
+        .qr-data-section h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .qr-data-section pre {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            overflow-x: auto;
+            margin: 10px 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .library-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .library-error h3 {
+            margin-bottom: 10px;
+        }
+
+        .library-error button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+                         <div class="logo-container">
+                 <img src="../../images/utahWaterGardensLogoHoriz.webp" alt="Utah Water Gardens" class="logo-image">
+             </div>
+            <h1>Simple QR Code Generator</h1>
+            <p>Generate QR codes for any text or URL</p>
+        </div>
+
+        <div class="input-group">
+            <label for="qrText">Text or URL:</label>
+            <textarea id="qrText" rows="3" placeholder="Enter text or URL to encode in QR code...">https://utahwatergardens.com</textarea>
+        </div>
+
+        <div class="button-group">
+            <button class="btn" onclick="generateQR()">🔄 Generate QR Code</button>
+            <button class="btn btn-secondary" onclick="downloadQR()">💾 Download</button>
+            <button class="btn" onclick="printQR()">🖨️ Print</button>
+            <button class="btn" onclick="clearQR()">🗑️ Clear</button>
+        </div>
+
+        <div id="qrResult" class="qr-result" style="display: none;">
+            <!-- QR code will be generated here -->
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" style="background: #6c757d; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; display: inline-block;">← Back to Main Menu</a>
+        </div>
+    </div>
+
+    <script>
+        let currentQRDataURL = null;
+        let libraryLoaded = false;
+
+        // Function to show library error
+        function showLibraryError() {
+            const resultDiv = document.getElementById('qrResult');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <div class="library-error">
+                    <h3>⚠️ QR Code Library Error</h3>
+                    <p>The QR code library failed to load. This may be due to network issues or CDN problems.</p>
+                    <button onclick="location.reload()">🔄 Retry Loading</button>
+                </div>
+            `;
+        }
+
+        // Function called when QR code library is loaded
+        window.onQRCodeLoaded = function() {
+            libraryLoaded = true;
+            console.log('QR Code library ready');
+        };
+
+        // Initialize
+        window.onload = function() {
+            // Check if QRCode library is already loaded
+            if (typeof QRCode !== 'undefined') {
+                libraryLoaded = true;
+            } else {
+                // Library will be loaded by the script tag or fallback
+                console.log('Waiting for QRCode library to load...');
+            }
+        };
+
+        function generateQR() {
+            if (!libraryLoaded) {
+                alert('QR Code library not loaded yet. Please wait a moment and try again.');
+                return;
+            }
+
+            const text = document.getElementById('qrText').value.trim();
+            if (!text) {
+                alert('Please enter some text or URL');
+                return;
+            }
+
+            if (typeof QRCode === 'undefined') {
+                showLibraryError();
+                return;
+            }
+
+            // Create a temporary div to generate QR code
+            const tempDiv = document.createElement('div');
+            tempDiv.style.display = 'none';
+            document.body.appendChild(tempDiv);
+            
+            new QRCode(tempDiv, {
+                text: text,
+                width: 300,
+                height: 300,
+                colorDark: "#1e4d5c",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            
+            // Get the QR code image
+            const qrImage = tempDiv.querySelector('img');
+            const url = qrImage.src;
+            currentQRDataURL = url;
+            
+            // Remove temporary div
+            document.body.removeChild(tempDiv);
+            
+            const resultDiv = document.getElementById('qrResult');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <h3>Generated QR Code</h3>
+                <img src="${url}" alt="QR Code" style="width: 250px; height: 250px;">
+                <p style="margin-top: 15px; color: #666;">Text: ${text}</p>
+                <div class="qr-data-section">
+                    <h4>QR Code Data:</h4>
+                    <pre>${text}</pre>
+                </div>
+            `;
+        }
+
+        function downloadQR() {
+            if (!currentQRDataURL) {
+                alert('Please generate a QR code first');
+                return;
+            }
+
+            const link = document.createElement('a');
+            link.download = 'qr-code.png';
+            link.href = currentQRDataURL;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function printQR() {
+            if (!currentQRDataURL) {
+                alert('Please generate a QR code first');
+                return;
+            }
+
+            const text = document.getElementById('qrText').value.trim();
+            
+            // Create a temporary div to generate QR code for printing
+            const tempDiv = document.createElement('div');
+            tempDiv.style.display = 'none';
+            document.body.appendChild(tempDiv);
+            
+            new QRCode(tempDiv, {
+                text: text,
+                width: 300,
+                height: 300,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            
+            // Get the QR code image
+            const qrImage = tempDiv.querySelector('img');
+            const printQRURL = qrImage.src;
+            
+            // Remove temporary div
+            document.body.removeChild(tempDiv);
+            
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>QR Code Print</title>
+                        <style>
+                            body { 
+                                font-family: Arial, sans-serif; 
+                                text-align: center; 
+                                padding: 40px;
+                                margin: 0;
+                            }
+                            .qr-container {
+                                border: 3px solid #333;
+                                padding: 30px;
+                                display: inline-block;
+                                border-radius: 15px;
+                                background: white;
+                            }
+                            .qr-code-section {
+                                margin-bottom: 20px;
+                            }
+                            .qr-code-section h3 {
+                                margin: 0 0 15px 0;
+                                color: #333;
+                                font-size: 18px;
+                            }
+                            .qr-info {
+                                margin-top: 20px;
+                                font-size: 16px;
+                            }
+                            .data-section {
+                                margin-top: 20px;
+                                padding: 15px;
+                                background: #f8f9fa;
+                                border-radius: 10px;
+                                text-align: left;
+                            }
+                            .data-section h3 {
+                                margin: 0 0 10px 0;
+                                color: #333;
+                                font-size: 16px;
+                            }
+                            .data-section pre {
+                                background: #e9ecef;
+                                padding: 10px;
+                                border-radius: 5px;
+                                font-size: 12px;
+                                overflow-x: auto;
+                                margin: 10px 0;
+                                white-space: pre-wrap;
+                                word-break: break-all;
+                            }
+                            @media print {
+                                body { padding: 20px; }
+                                .qr-container { border: 2px solid #333; }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="qr-container">
+                            <div class="qr-code-section">
+                                <h3>Scannable QR Code</h3>
+                                <img src="${printQRURL}" alt="QR Code" style="width: 250px; height: 250px;">
+                            </div>
+                            <div class="qr-info">
+                                <p><strong>Generated:</strong> ${new Date().toLocaleDateString()}</p>
+                            </div>
+                            <div class="data-section">
+                                <h3>QR Code Data:</h3>
+                                <pre>${text}</pre>
+                            </div>
+                        </div>
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+        function clearQR() {
+            document.getElementById('qrText').value = '';
+            document.getElementById('qrResult').style.display = 'none';
+            currentQRDataURL = null;
+        }
+    </script>
+</body>
+</html> 

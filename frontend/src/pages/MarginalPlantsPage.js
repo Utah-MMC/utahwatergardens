@@ -133,17 +133,29 @@ const MarginalPlantsPage = () => {
           <h2>Why Choose Marginal Plants?</h2>
           <div className="benefits-grid">
             <div className="benefit-item">
-              <div className="benefit-icon">🌿</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
+  </svg>
+              </div>
               <h3>Natural Filtration</h3>
               <p>Marginal plants help filter water and remove excess nutrients naturally</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">🦋</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
+                </svg>
+              </div>
               <h3>Wildlife Habitat</h3>
               <p>Provide shelter and food for frogs, birds, and beneficial insects</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">🎨</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
+  </svg>
+              </div>
               <h3>Visual Appeal</h3>
               <p>Add height, texture, and seasonal interest to your pond</p>
             </div>

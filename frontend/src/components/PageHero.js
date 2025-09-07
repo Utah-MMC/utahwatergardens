@@ -48,7 +48,7 @@ const PageHero = ({
       alt: 'Vibrant koi pond with colorful fish and crystal clear water'
     },
     {
-      src: '/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg',
+      src: '/images/pondConstruction1000x800.webp',
       alt: 'Professional pond construction and design services'
     },
     {

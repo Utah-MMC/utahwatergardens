@@ -78,7 +78,7 @@ const PondDesignBuildPage = () => {
             </div>
             
             <div className="type-card">
-              <img src="/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg" alt="Swimming pond" />
+              <img src="/images/pondConstruction1000x800.webp" alt="Swimming pond" />
               <h3>Swimming Ponds</h3>
               <p>Natural swimming areas that combine recreation with ecological benefits, using plants for water purification.</p>
               <ul>
@@ -98,22 +98,38 @@ const PondDesignBuildPage = () => {
           <h2>Design Features & Options</h2>
           <div className="features-grid">
             <div className="feature-item">
-              <div className="feature-icon">🌊</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12S9.79 8 12 8 16 9.79 16 12 14.21 16 12 16Z" fill="#00BFFF"/>
+                </svg>
+              </div>
               <h3>Water Features</h3>
               <p>Waterfalls, streams, fountains, and bubblers that add movement, sound, and visual interest to your pond.</p>
             </div>
             <div className="feature-item">
-              <div className="feature-icon">🌿</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
+                </svg>
+              </div>
               <h3>Planting Zones</h3>
               <p>Carefully designed areas for marginal, floating, and submerged plants that create natural beauty and filtration.</p>
             </div>
             <div className="feature-item">
-              <div className="feature-icon">💡</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 21C9 21.55 9.45 22 10 22H14C14.55 22 15 21.55 15 21V20H9V21ZM12 2C8.14 2 5 5.14 5 9C5 11.38 6.19 13.47 8 14.74V17C8 17.55 8.45 18 9 18H15C15.55 18 16 17.55 16 17V14.74C17.81 13.47 19 11.38 19 9C19 5.14 15.86 2 12 2ZM12 4C14.76 4 17 6.24 17 9C17 11.76 14.76 14 12 14C9.24 14 7 11.76 7 9C7 6.24 9.24 4 12 4Z" fill="#FFD700"/>
+                </svg>
+              </div>
               <h3>Lighting Systems</h3>
               <p>Underwater and landscape lighting that showcases your pond day and night, extending enjoyment into evening hours.</p>
             </div>
             <div className="feature-item">
-              <div className="feature-icon">🔧</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 1 5.1 3L9 6.9L6.9 9L3 5.1C1 7.1 1 10.1 3 12.1C4.9 14 7.6 14.5 9.9 13.6L19 22.7C19.3 23 19.7 23 20 23C20.3 23 20.7 22.7 21 22.4L22.4 21C22.7 20.7 22.7 20.3 22.7 19Z" fill="#6C757D"/>
+                </svg>
+              </div>
               <h3>Smart Technology</h3>
               <p>Automated systems for water quality monitoring, remote control of features, and energy-efficient operation.</p>
             </div>
@@ -152,7 +168,7 @@ const PondDesignBuildPage = () => {
               </ul>
             </div>
             <div className="materials-image">
-              <img src="/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg" alt="Premium pond construction materials" />
+              <img src="/images/pondConstruction1000x800.webp" alt="Premium pond construction materials" />
             </div>
           </div>
         </div>
@@ -178,7 +194,7 @@ const PondDesignBuildPage = () => {
               </div>
             </div>
             <div className="gallery-item">
-              <img src="/images/pondConstruction1000x800-topaz-enhance-3.9x.jpeg" alt="Swimming pond" />
+              <img src="/images/pondConstruction1000x800.webp" alt="Swimming pond" />
               <div className="gallery-overlay">
                 <h3>Swimming Pond</h3>
                 <p>Natural swimming area with plant filtration</p>
@@ -201,22 +217,38 @@ const PondDesignBuildPage = () => {
           <h2>Why Choose Utah Water Gardens</h2>
           <div className="reasons-grid">
             <div className="reason-item">
-              <div className="reason-icon">🏆</div>
+              <div className="reason-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
+                </svg>
+              </div>
               <h3>25+ Years Experience</h3>
               <p>Decades of expertise in pond design and construction across Utah.</p>
             </div>
             <div className="reason-item">
-              <div className="reason-icon">👥</div>
+              <div className="reason-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 4C18.2 4 20 5.8 20 8C20 10.2 18.2 12 16 12C13.8 12 12 10.2 12 8C12 5.8 13.8 4 16 4ZM16 14C20.4 14 24 17.6 24 22H8C8 17.6 11.6 14 16 14ZM8 4C10.2 4 12 5.8 12 8C12 10.2 10.2 12 8 12C5.8 12 4 10.2 4 8C4 5.8 5.8 4 8 4ZM8 14C12.4 14 16 17.6 16 22H0C0 17.6 3.6 14 8 14Z" fill="#2E86AB"/>
+                </svg>
+              </div>
               <h3>Expert Team</h3>
               <p>Certified professionals with specialized training in aquatic systems.</p>
             </div>
             <div className="reason-item">
-              <div className="reason-icon">🔒</div>
+              <div className="reason-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 8H20C21.1 8 22 8.9 22 10V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V10C2 8.9 2.9 8 4 8H6V6C6 3.79 7.79 2 10 2H14C16.21 2 18 3.79 18 6V8ZM16 8V6C16 4.9 15.1 4 14 4H10C8.9 4 8 4.9 8 6V8H16ZM4 10V20H20V10H4Z" fill="#28A745"/>
+                </svg>
+              </div>
               <h3>Warranty Protection</h3>
               <p>Comprehensive warranties on materials, workmanship, and equipment.</p>
             </div>
             <div className="reason-item">
-              <div className="reason-icon">📱</div>
+              <div className="reason-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#007BFF"/>
+                </svg>
+              </div>
               <h3>Ongoing Support</h3>
               <p>Lifetime support and maintenance services for your water garden.</p>
             </div>

@@ -27,6 +27,13 @@ main {
   z-index: 0; /* Ensure main content is below PageHero but above footer */
 }
 
+/* App container for ripple effect */
+.App {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal scroll from ripple effects */
+}
+
 /* Universal Blue Gradient for First Section After Hero */
 .first-section-gradient {
   background: linear-gradient(to bottom, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #93c5fd 75%, #ffffff 100%) !important;

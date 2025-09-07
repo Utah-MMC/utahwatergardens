@@ -45,7 +45,7 @@ const VideoTutorialsPage = () => {
     },
     {
       name: 'Water Quality Management',
-      icon: '💧',
+      icon: 'water',
       description: 'Tutorials on maintaining crystal clear water and proper chemistry',
       videos: [
         {
@@ -82,7 +82,7 @@ const VideoTutorialsPage = () => {
     },
     {
       name: 'Fish Care & Health',
-      icon: '🐟',
+      icon: 'fish',
       description: 'Comprehensive guides for fish health, feeding, and disease prevention',
       videos: [
         {
@@ -119,7 +119,7 @@ const VideoTutorialsPage = () => {
     },
     {
       name: 'Plant Care & Maintenance',
-      icon: '🌱',
+      icon: 'plant',
       description: 'Tutorials on aquatic plant selection, planting, and maintenance',
       videos: [
         {
@@ -156,7 +156,7 @@ const VideoTutorialsPage = () => {
     },
     {
       name: 'Equipment Maintenance',
-      icon: '🔧',
+      icon: 'tools',
       description: 'How-to videos for maintaining and troubleshooting pond equipment',
       videos: [
         {
@@ -327,7 +327,7 @@ const VideoTutorialsPage = () => {
                   <div className="video-meta">
                     <span className="difficulty-badge">{video.difficulty}</span>
                     <span className="views">{video.views} views</span>
-                    <span className="rating">⭐ {video.rating}</span>
+                    <span className="rating">★ {video.rating}</span>
                   </div>
                   <button className="watch-button">Watch Now</button>
                 </div>
@@ -461,7 +461,11 @@ const VideoTutorialsPage = () => {
           <h2>Video Learning Tips</h2>
           <div className="tips-grid">
             <div className="tip-card">
-              <div className="tip-icon">📱</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#007BFF"/>
+  </svg>
+              </div>
               <h3>Watch on Any Device</h3>
               <p>Our videos are optimized for mobile, tablet, and desktop viewing</p>
             </div>
@@ -476,7 +480,11 @@ const VideoTutorialsPage = () => {
               <p>Don't hesitate to rewatch difficult sections until you understand</p>
             </div>
             <div className="tip-card">
-              <div className="tip-icon">📞</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="#007BFF"/>
+  </svg>
+              </div>
               <h3>Ask Questions</h3>
               <p>Call us if you need clarification on any video content</p>
             </div>

@@ -240,7 +240,11 @@ const FAQPage = () => {
           <p>Pro tips from our experienced pond professionals</p>
           <div className="tips-grid">
             <div className="tip-card">
-              <div className="tip-icon">💡</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9 21C9 21.55 9.45 22 10 22H14C14.55 22 15 21.55 15 21V20H9V21ZM12 2C8.14 2 5 5.14 5 9C5 11.38 6.19 13.47 8 14.74V17C8 17.55 8.45 18 9 18H15C15.55 18 16 17.55 16 17V14.74C17.81 13.47 19 11.38 19 9C19 5.14 15.86 2 12 2ZM12 4C14.76 4 17 6.24 17 9C17 11.76 14.76 14 12 14C9.24 14 7 11.76 7 9C7 6.24 9.24 4 12 4Z" fill="#FFD700"/>
+  </svg>
+              </div>
               <h3>Start Small</h3>
               <p>Begin with a smaller pond to learn the basics before investing in a large water feature. You can always expand later!</p>
             </div>
@@ -270,7 +274,11 @@ const FAQPage = () => {
           <p>Our pond experts are here to help with personalized advice and solutions</p>
           <div className="contact-options">
             <div className="contact-option">
-              <div className="contact-icon">📞</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="#007BFF"/>
+  </svg>
+              </div>
               <h3>Call Us</h3>
               <p>Speak directly with our pond experts</p>
               <a href="tel:(801) 590-8516" className="contact-button">(801) 590-8516</a>

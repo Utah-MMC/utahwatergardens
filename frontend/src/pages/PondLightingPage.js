@@ -352,22 +352,38 @@ const PondLightingPage = () => {
           <h2>Why Choose Our Pond Lighting?</h2>
           <div className="benefits-grid">
             <div className="benefit-item">
-              <div className="benefit-icon">💡</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 21C9 21.55 9.45 22 10 22H14C14.55 22 15 21.55 15 21V20H9V21ZM12 2C8.14 2 5 5.14 5 9C5 11.38 6.19 13.47 8 14.74V17C8 17.55 8.45 18 9 18H15C15.55 18 16 17.55 16 17V14.74C17.81 13.47 19 11.38 19 9C19 5.14 15.86 2 12 2ZM12 4C14.76 4 17 6.24 17 9C17 11.76 14.76 14 12 14C9.24 14 7 11.76 7 9C7 6.24 9.24 4 12 4Z" fill="#FFD700"/>
+                </svg>
+              </div>
               <h3>Energy Efficient</h3>
               <p>All our lighting uses LED technology for maximum energy efficiency and long life</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">🌙</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#4A90E2"/>
+                </svg>
+              </div>
               <h3>Beautiful Effects</h3>
               <p>Create stunning nighttime ambiance with our professional lighting solutions</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">🔧</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 1 5.1 3L9 6.9L6.9 9L3 5.1C1 7.1 1 10.1 3 12.1C4.9 14 7.6 14.5 9.9 13.6L19 22.7C19.3 23 19.7 23 20 23C20.3 23 20.7 22.7 21 22.4L22.4 21C22.7 20.7 22.7 20.3 22.7 19Z" fill="#6C757D"/>
+                </svg>
+              </div>
               <h3>Expert Installation</h3>
               <p>Our certified technicians ensure proper installation and optimal performance</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">💎</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
+                </svg>
+              </div>
               <h3>Quality Guarantee</h3>
               <p>All lighting comes with comprehensive warranties and satisfaction guarantee</p>
             </div>

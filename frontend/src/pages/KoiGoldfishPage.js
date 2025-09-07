@@ -183,17 +183,29 @@ const KoiGoldfishPage = () => {
           <h2>Pond Requirements for Fish</h2>
           <div className="requirements-grid">
             <div className="requirement-item">
-              <div className="requirement-icon">💧</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#00BFFF"/>
+  </svg>
+              </div>
               <h3>Water Depth</h3>
               <p>Minimum 2-3 feet deep for koi, 1-2 feet for goldfish to provide adequate swimming space and protection from predators.</p>
             </div>
             <div className="requirement-item">
-              <div className="requirement-icon">🌿</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
+  </svg>
+              </div>
               <h3>Plant Coverage</h3>
               <p>60-70% plant coverage provides shade, oxygen, and natural food sources while maintaining open swimming areas.</p>
             </div>
             <div className="requirement-item">
-              <div className="requirement-icon">🔧</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 1 5.1 3L9 6.9L6.9 9L3 5.1C1 7.1 1 10.1 3 12.1C4.9 14 7.6 14.5 9.9 13.6L19 22.7C19.3 23 19.7 23 20 23C20.3 23 20.7 22.7 21 22.4L22.4 21C22.7 20.7 22.7 20.3 22.7 19Z" fill="#6C757D"/>
+  </svg>
+              </div>
               <h3>Filtration System</h3>
               <p>Proper filtration is essential for maintaining water quality and supporting fish health in any size pond.</p>
             </div>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utah Water Gardens - Equipment Scanner</title>
+    <script src="https://unpkg.com/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #3B4C7D 0%, #5A6B8C 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            margin-bottom: 10px;
+        }
+
+
+        .camera-container {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .camera-placeholder {
+            text-align: center;
+            color: #6c757d;
+        }
+
+        .camera-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        #video {
+            width: 100%;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .scan-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .scan-button {
+            background: #FF4500;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+
+        .scan-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .map-button {
+            background: #7a9e7e;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+
+        .map-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .qr-button {
+            background: #d4af37;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+
+        .qr-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .result {
+            background: #f0f8ff;
+            border: 1px solid #7a9e7e;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .location-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .status {
+            color: #6c757d;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .demo-qr {
+            background: #f0f8ff;
+            border: 1px solid #d4af37;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .demo-qr h4 {
+            color: #1e4d5c;
+            margin-bottom: 10px;
+        }
+
+        .demo-qr p {
+            color: #1e4d5c;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .qr-codes-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .qr-code-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .qr-code-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+        }
+
+        .qr-code-info {
+            flex: 1;
+            margin-left: 10px;
+            text-align: left;
+        }
+
+        .qr-code-info h5 {
+            margin: 0;
+            color: #333;
+        }
+
+        .qr-code-info p {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .print-button {
+            background: #1e4d5c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .back-button {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+                 <div class="logo">
+                             <img src="../../images/utahWaterGardensLogoHoriz.webp" alt="Utah Water Gardens" class="logo-image">
+         </div>
+        
+        <div class="camera-container">
+            <div class="camera-placeholder" id="cameraPlaceholder">
+                <div class="camera-icon">📱</div>
+                <div>Mobile QR Scanner</div>
+                <div style="font-size: 12px; margin-top: 10px;">Camera access required</div>
+            </div>
+            <video id="video" autoplay playsinline></video>
+            <div class="scan-overlay" id="scanOverlay"></div>
+        </div>
+
+        <button class="scan-button" onclick="startCamera()">📷 Open Camera</button>
+        <button class="scan-button" onclick="stopCamera()" style="display: none;" id="stopButton">⏹️ Stop Camera</button>
+        <button class="map-button" onclick="showMap()">🗺️ View Equipment Map</button>
+        <button class="qr-button" onclick="showQRCodes()">🖨️ Print QR Codes</button>
+
+        <div class="demo-qr">
+            <h4>📋 Equipment QR Codes</h4>
+            <p><strong>FILTER-001:</strong> Water filtration system</p>
+            <p><strong>PUMP-001:</strong> Circulation pump</p>
+            <p><strong>VALVE-001:</strong> Control valve</p>
+        </div>
+
+        <div class="result" id="scanResult">
+            <h4>✅ Scan Complete!</h4>
+            <div id="equipmentInfo"></div>
+            <div class="location-info" id="locationInfo"></div>
+        </div>
+
+        <div class="status" id="status">Ready to scan equipment QR codes</div>
+
+        <a href="index.html" class="back-button">← Back to Main Menu</a>
+    </div>
+
+    <!-- QR Codes Modal -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>🖨️ Print Equipment QR Codes</h3>
+            <div class="qr-codes-section">
+                <div class="qr-code-item">
+                    <div class="qr-code-info">
+                        <h5>FILTER-001</h5>
+                        <p>Water Filtration System</p>
+                    </div>
+                    <img id="qrFilter" alt="QR Code">
+                    <button class="print-button" onclick="printQR('FILTER-001')">Print</button>
+                </div>
+                <div class="qr-code-item">
+                    <div class="qr-code-info">
+                        <h5>PUMP-001</h5>
+                        <p>Circulation Pump</p>
+                    </div>
+                    <img id="qrPump" alt="QR Code">
+                    <button class="print-button" onclick="printQR('PUMP-001')">Print</button>
+                </div>
+                <div class="qr-code-item">
+                    <div class="qr-code-info">
+                        <h5>VALVE-001</h5>
+                        <p>Control Valve</p>
+                    </div>
+                    <img id="qrValve" alt="QR Code">
+                    <button class="print-button" onclick="printQR('VALVE-001')">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let stream = null;
+        let scanning = false;
+        let scanInterval = null;
+
+        // Equipment data
+        const equipment = {
+            'FILTER-001': {
+                name: 'Water Filtration System',
+                category: 'Filter',
+                id: 'FILTER-001'
+            },
+            'PUMP-001': {
+                name: 'Circulation Pump',
+                category: 'Pump',
+                id: 'PUMP-001'
+            },
+            'VALVE-001': {
+                name: 'Control Valve',
+                category: 'Valve',
+                id: 'VALVE-001'
+            }
+        };
+
+        // Generate QR codes on page load
+        window.onload = function() {
+            generateQRCodes();
+        };
+
+        function generateQRCodes() {
+            Object.keys(equipment).forEach(id => {
+                const data = JSON.stringify(equipment[id]);
+                QRCode.toDataURL(data, { width: 200 }, function (err, url) {
+                    if (!err) {
+                        document.getElementById(`qr${id.split('-')[0]}`).src = url;
+                    }
+                });
+            });
+        }
+
+        function startCamera() {
+            const video = document.getElementById('video');
+            const cameraPlaceholder = document.getElementById('cameraPlaceholder');
+            const scanOverlay = document.getElementById('scanOverlay');
+            const stopButton = document.getElementById('stopButton');
+            const scanButton = document.querySelector('.scan-button');
+
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ 
+                    video: { 
+                        facingMode: 'environment',
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    } 
+                })
+                .then(function(mediaStream) {
+                    stream = mediaStream;
+                    video.srcObject = mediaStream;
+                    video.style.display = 'block';
+                    cameraPlaceholder.style.display = 'none';
+                    scanOverlay.style.display = 'block';
+                    stopButton.style.display = 'inline-block';
+                    scanButton.style.display = 'none';
+                    
+                    document.getElementById('status').textContent = 'Camera active - Point at QR code';
+                    
+                    // Start scanning
+                    startScanning();
+                })
+                .catch(function(err) {
+                    console.log('Camera error:', err);
+                    document.getElementById('status').textContent = 'Camera access denied. Please allow camera access.';
+                });
+            } else {
+                document.getElementById('status').textContent = 'Camera not supported in this browser';
+            }
+        }
+
+        function stopCamera() {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+                stream = null;
+            }
+            
+            const video = document.getElementById('video');
+            const cameraPlaceholder = document.getElementById('cameraPlaceholder');
+            const scanOverlay = document.getElementById('scanOverlay');
+            const stopButton = document.getElementById('stopButton');
+            const scanButton = document.querySelector('.scan-button');
+
+            video.style.display = 'none';
+            cameraPlaceholder.style.display = 'block';
+            scanOverlay.style.display = 'none';
+            stopButton.style.display = 'none';
+            scanButton.style.display = 'inline-block';
+            
+            if (scanInterval) {
+                clearInterval(scanInterval);
+                scanning = false;
+            }
+            
+            document.getElementById('status').textContent = 'Camera stopped';
+        }
+
+        function startScanning() {
+            if (scanning) return;
+            scanning = true;
+            
+            const video = document.getElementById('video');
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            
+            scanInterval = setInterval(() => {
+                if (video.videoWidth > 0) {
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    
+                    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+                    const code = jsQR(imageData.data, imageData.width, imageData.height);
+                    
+                    if (code) {
+                        try {
+                            const scanData = JSON.parse(code.data);
+                            if (scanData.id && equipment[scanData.id]) {
+                                processScan(scanData);
+                                stopCamera();
+                            }
+                        } catch (e) {
+                            console.log('Invalid QR code data');
+                        }
+                    }
+                }
+            }, 100);
+        }
+
+        function processScan(scanData) {
+            const status = document.getElementById('status');
+            const result = document.getElementById('scanResult');
+            const equipmentInfo = document.getElementById('equipmentInfo');
+            const locationInfo = document.getElementById('locationInfo');
+
+            status.textContent = 'Processing scan...';
+            
+            // Get current location
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        const accuracy = position.coords.accuracy;
+
+                        equipmentInfo.innerHTML = `
+                            <p><strong>Equipment:</strong> ${scanData.name}</p>
+                            <p><strong>Category:</strong> ${scanData.category}</p>
+                            <p><strong>ID:</strong> ${scanData.id}</p>
+                        `;
+
+                        locationInfo.innerHTML = `
+                            <p><strong>📍 Location:</strong> ${lat.toFixed(6)}, ${lng.toFixed(6)}</p>
+                            <p><strong>Accuracy:</strong> ${accuracy.toFixed(1)}m</p>
+                            <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
+                        `;
+
+                        result.style.display = 'block';
+                        status.textContent = 'Equipment location updated successfully!';
+                    },
+                    (error) => {
+                        equipmentInfo.innerHTML = `
+                            <p><strong>Equipment:</strong> ${scanData.name}</p>
+                            <p><strong>Category:</strong> ${scanData.category}</p>
+                            <p><strong>ID:</strong> ${scanData.id}</p>
+                        `;
+                        
+                        locationInfo.innerHTML = `
+                            <p><strong>⚠️ Location:</strong> Unable to get GPS location</p>
+                            <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
+                        `;
+
+                        result.style.display = 'block';
+                        status.textContent = 'Scan complete (location unavailable)';
+                    }
+                );
+            } else {
+                status.textContent = 'Geolocation not supported';
+            }
+        }
+
+        function showMap() {
+            alert('🗺️ Equipment Map\n\nThis would show all equipment locations on an interactive map.\n\nIn the full mobile app, this displays equipment markers with GPS coordinates.');
+        }
+
+        function showQRCodes() {
+            document.getElementById('qrModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('qrModal').style.display = 'none';
+        }
+
+        function printQR(equipmentId) {
+            const data = JSON.stringify(equipment[equipmentId]);
+            QRCode.toDataURL(data, { width: 300 }, function (err, url) {
+                if (!err) {
+                    const printWindow = window.open('', '_blank');
+                    printWindow.document.write(`
+                        <html>
+                            <head>
+                                <title>QR Code - ${equipmentId}</title>
+                                <style>
+                                    body { 
+                                        font-family: Arial, sans-serif; 
+                                        text-align: center; 
+                                        padding: 20px;
+                                    }
+                                    .qr-container {
+                                        border: 2px solid #333;
+                                        padding: 20px;
+                                        display: inline-block;
+                                        margin: 20px;
+                                    }
+                                    .equipment-info {
+                                        margin-top: 15px;
+                                        font-size: 18px;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class="qr-container">
+                                    <img src="${url}" alt="QR Code" style="width: 200px; height: 200px;">
+                                    <div class="equipment-info">
+                                        <h3>${equipment[equipmentId].name}</h3>
+                                        <p><strong>ID:</strong> ${equipmentId}</p>
+                                        <p><strong>Category:</strong> ${equipment[equipmentId].category}</p>
+                                    </div>
+                                </div>
+                            </body>
+                        </html>
+                    `);
+                    printWindow.document.close();
+                    printWindow.print();
+                }
+            });
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('qrModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html> 

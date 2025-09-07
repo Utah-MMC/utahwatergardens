@@ -6,6 +6,7 @@ import Header from './components/Header.js';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import PerformanceMonitor from './components/PerformanceMonitor';
+import WaterRipple from './components/WaterRipple.js';
 
 // Lazy load components for better performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -170,6 +171,7 @@ function App() {
     <HelmetProvider>
       <Router>
         <ScrollToTop />
+        <WaterRipple />
         <div className="App">
         <PerformanceMonitor />
         <Header />
@@ -367,7 +369,7 @@ function App() {
           </Suspense>
         </main>
         <Footer />
-      </div>
+        </div>
       </Router>
     </HelmetProvider>
   );

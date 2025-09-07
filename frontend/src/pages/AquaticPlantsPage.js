@@ -64,22 +64,38 @@ const AquaticPlantsPage = () => {
           <h2>Why Aquatic Plants Are Essential</h2>
           <div className="benefits-grid">
             <div className="benefit-item">
-              <div className="benefit-icon">🌿</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
+                </svg>
+              </div>
               <h3>Natural Filtration</h3>
               <p>Plants absorb excess nutrients and help maintain water clarity naturally.</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">🐟</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#FF6B6B"/>
+                </svg>
+              </div>
               <h3>Fish Habitat</h3>
               <p>Provide shelter, spawning areas, and natural food sources for your fish.</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">💧</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#00BFFF"/>
+                </svg>
+              </div>
               <h3>Oxygen Production</h3>
               <p>Submerged plants release oxygen during photosynthesis, vital for fish health.</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">🎨</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="#FFD700" stroke="#B8860B" strokeWidth="1"/>
+                </svg>
+              </div>
               <h3>Visual Appeal</h3>
               <p>Add color, texture, and natural beauty to your water garden.</p>
             </div>

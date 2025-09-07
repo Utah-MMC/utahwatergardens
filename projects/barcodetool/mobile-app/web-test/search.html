@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Utah Water Gardens</title>
+    <script src="qrcode.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #3B4C7D 0%, #5A6B8C 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: #3B4C7D;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: -30px -30px 30px -30px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 50px;
+            font-size: 18px;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-input:focus {
+            border-color: #FF4500;
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.2);
+        }
+
+        .search-button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #FF4500;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .search-button:hover {
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .test-button {
+            background: #FF4500;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .search-filters {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .filter-button {
+            background: #f8f9fa;
+            border: 2px solid #e1e5e9;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .filter-button.active {
+            background: #FF4500;
+            color: white;
+            border-color: #FF4500;
+        }
+
+        .search-stats {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .results-container {
+            margin-top: 30px;
+        }
+
+        .result-item {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .result-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .result-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #3B4C7D;
+            margin-bottom: 5px;
+        }
+
+        .result-category {
+            background: #e9ecef;
+            color: #666;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .result-id {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .result-description {
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .result-price {
+            color: #28a745;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .result-location {
+            color: #007bff;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .action-button {
+            background: #f8f9fa;
+            border: 1px solid #e1e5e9;
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .action-button:hover {
+            background: #FF4500;
+            color: white;
+            border-color: #FF4500;
+        }
+
+        .qr-preview {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .no-results h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .suggestions {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .suggestions h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .suggestion-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .suggestion-tag {
+            background: #e9ecef;
+            padding: 5px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.2s;
+        }
+
+        .suggestion-tag:hover {
+            background: #FF4500;
+            color: white;
+        }
+
+        .search-highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .back-button {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .back-button:hover {
+            background: #5a6268;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #FF4500;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .search-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .result-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .result-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="../../images/utahWaterGardensLogoHoriz.webp" alt="Utah Water Gardens" class="logo-image">
+            </div>
+            <h1>🔍 Search Inventory</h1>
+            <p>Find equipment, QR codes, and items instantly</p>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search for equipment, categories, IDs, or descriptions..." autocomplete="off">
+                <button onclick="performSearch()" class="search-button">🔍</button>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+                <button onclick="testSearch()" class="test-button">Test Search</button>
+                <button onclick="loadAllData()" class="test-button">Load All Data</button>
+            </div>
+            
+            <div class="search-filters">
+                <button class="filter-button active" data-filter="all">All Items</button>
+                <button class="filter-button" data-filter="products">Products</button>
+                <button class="filter-button" data-filter="equipment">Equipment</button>
+                <button class="filter-button" data-filter="category">Categories</button>
+                <button class="filter-button" data-filter="id">IDs</button>
+            </div>
+        </div>
+
+        <div class="search-stats" id="searchStats"></div>
+        
+        <div class="results-container" id="resultsContainer">
+            <div class="no-results">
+                <h3>Ready to Search</h3>
+                <p>Enter keywords to find equipment, QR codes, or inventory items</p>
+                <div class="suggestions">
+                    <h4>Popular Searches:</h4>
+                    <div class="suggestion-tags">
+                        <span class="suggestion-tag" onclick="searchFor('pond')">Pond</span>
+                        <span class="suggestion-tag" onclick="searchFor('pump')">Pump</span>
+                        <span class="suggestion-tag" onclick="searchFor('waterfall')">Waterfall</span>
+                        <span class="suggestion-tag" onclick="searchFor('UWG')">UWG</span>
+                        <span class="suggestion-tag" onclick="searchFor('filter')">Filter</span>
+                        <span class="suggestion-tag" onclick="searchFor('koi')">Koi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="back-button">← Back to Main Menu</a>
+        </div>
+    </div>
+
+    <script>
+        // Supabase configuration
+        const supabaseUrl = 'https://lfmrgwgcdcryokkcynau.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmbXJnd2djZGNyeW9ra2N5bmF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM5MDk5NjMsImV4cCI6MjA2OTQ4NTk2M30.1YrGSnZxtOsfZMPrOkOAf8cQbtIfKxm5eJX8XfxlnZ4';
+        
+        // Initialize Supabase client
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+        // Global variables
+        let allInventoryData = [];
+        let currentFilter = 'all';
+        let searchTimeout;
+
+        // Initialize search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load initial data
+            loadAllData();
+
+            // Add event listeners
+            document.getElementById('searchInput').addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    performSearch();
+                }, 300);
+            });
+
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Filter button event listeners
+            document.querySelectorAll('.filter-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                    performSearch();
+                });
+            });
+        });
+
+        // Load all data from Supabase
+        async function loadAllData() {
+            const resultsContainer = document.getElementById('resultsContainer');
+            resultsContainer.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading inventory data...</p></div>';
+
+            try {
+                // Load products
+                const { data: products, error: productsError } = await supabase
+                    .from('products')
+                    .select('*')
+                    .order('name');
+
+                if (productsError) {
+                    console.error('Error loading products:', productsError);
+                    throw productsError;
+                }
+
+                // Load equipment
+                const { data: equipment, error: equipmentError } = await supabase
+                    .from('equipment')
+                    .select('*')
+                    .order('name');
+
+                if (equipmentError) {
+                    console.error('Error loading equipment:', equipmentError);
+                    throw equipmentError;
+                }
+
+                // Combine and format data
+                allInventoryData = [];
+
+                // Add products
+                if (products) {
+                    products.forEach(product => {
+                        allInventoryData.push({
+                            id: product.barcode,
+                            name: product.name,
+                            category: product.category,
+                            description: product.description || '',
+                            price: product.price || 0,
+                            type: 'product',
+                            tags: [product.category, product.name.toLowerCase(), 'product'],
+                            qrData: JSON.stringify({
+                                id: product.barcode,
+                                name: product.name,
+                                category: product.category,
+                                type: 'product'
+                            }),
+                            created_at: product.created_at,
+                            updated_at: product.updated_at
+                        });
+                    });
+                }
+
+                // Add equipment
+                if (equipment) {
+                    equipment.forEach(item => {
+                        allInventoryData.push({
+                            id: item.id,
+                            name: item.name,
+                            category: item.category,
+                            description: `Equipment ID: ${item.id}`,
+                            type: 'equipment',
+                            tags: [item.category, item.name.toLowerCase(), 'equipment'],
+                            qrData: JSON.stringify({
+                                id: item.id,
+                                name: item.name,
+                                category: item.category,
+                                type: 'equipment',
+                                lat: item.last_known_lat,
+                                lng: item.last_known_lng
+                            }),
+                            location: item.last_known_lat && item.last_known_lng ? 
+                                `${item.last_known_lat.toFixed(4)}, ${item.last_known_lng.toFixed(4)}` : null,
+                            last_scanned: item.last_scanned,
+                            created_at: item.created_at,
+                            updated_at: item.updated_at
+                        });
+                    });
+                }
+
+                console.log('Loaded inventory data:', allInventoryData.length, 'items');
+                showInitialState();
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                resultsContainer.innerHTML = '<div class="error-message">Error loading inventory data. Please try again.</div>';
+            }
+        }
+
+        function searchFor(term) {
+            document.getElementById('searchInput').value = term;
+            performSearch();
+        }
+
+        function testSearch() {
+            document.getElementById('searchInput').value = 'pond';
+            performSearch();
+        }
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('resultsContainer');
+            const searchStats = document.getElementById('searchStats');
+
+            console.log('Search triggered with query:', query);
+
+            if (!query) {
+                showInitialState();
+                return;
+            }
+
+            resultsContainer.innerHTML = '<div class="loading"><div class="spinner"></div><p>Searching...</p></div>';
+
+            setTimeout(() => {
+                const results = searchInventory(query);
+                console.log('Search results:', results);
+                displayResults(results, query);
+            }, 300);
+        }
+
+        function searchInventory(query) {
+            const results = [];
+            const searchTerms = query.split(' ').filter(term => term.length > 0);
+
+            console.log('Searching inventory with query:', query);
+            console.log('Available items:', allInventoryData.length);
+
+            allInventoryData.forEach(item => {
+                let score = 0;
+                let matchedFields = [];
+
+                // Search in different fields
+                if (item.id.toLowerCase().includes(query)) {
+                    score += 100;
+                    matchedFields.push('ID');
+                }
+
+                if (item.name.toLowerCase().includes(query)) {
+                    score += 80;
+                    matchedFields.push('Name');
+                }
+
+                if (item.category && item.category.toLowerCase().includes(query)) {
+                    score += 60;
+                    matchedFields.push('Category');
+                }
+
+                if (item.description && item.description.toLowerCase().includes(query)) {
+                    score += 40;
+                    matchedFields.push('Description');
+                }
+
+                // Search in tags
+                if (item.tags) {
+                    item.tags.forEach(tag => {
+                        if (tag.toLowerCase().includes(query)) {
+                            score += 30;
+                            matchedFields.push('Tags');
+                        }
+                    });
+                }
+
+                // Multi-word search
+                searchTerms.forEach(term => {
+                    if (item.name.toLowerCase().includes(term)) score += 20;
+                    if (item.description && item.description.toLowerCase().includes(term)) score += 15;
+                    if (item.tags && item.tags.some(tag => tag.toLowerCase().includes(term))) score += 10;
+                });
+
+                // Apply filter
+                if (currentFilter !== 'all') {
+                    if (currentFilter === 'products' && item.type === 'product') {
+                        // Include product items
+                    } else if (currentFilter === 'equipment' && item.type === 'equipment') {
+                        // Include equipment items
+                    } else if (currentFilter === 'category' && item.category && item.category.toLowerCase().includes(query)) {
+                        // Include category matches
+                    } else if (currentFilter === 'id' && item.id.toLowerCase().includes(query)) {
+                        // Include ID matches
+                    } else {
+                        score = 0;
+                    }
+                }
+
+                if (score > 0) {
+                    console.log('Found match:', item.name, 'Score:', score, 'Fields:', matchedFields);
+                    results.push({
+                        ...item,
+                        score,
+                        matchedFields: [...new Set(matchedFields)]
+                    });
+                }
+            });
+
+            results.sort((a, b) => b.score - a.score);
+            console.log('Total results found:', results.length);
+            return results;
+        }
+
+        function displayResults(results, query) {
+            const resultsContainer = document.getElementById('resultsContainer');
+            const searchStats = document.getElementById('searchStats');
+
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<div class="no-results"><h3>No results found for "' + query + '"</h3><p>Try different keywords or check your spelling</p></div>';
+                searchStats.innerHTML = '';
+                return;
+            }
+
+            searchStats.innerHTML = 'Found ' + results.length + ' result' + (results.length !== 1 ? 's' : '') + ' for "' + query + '"';
+
+            let resultsHTML = '';
+            results.forEach(item => {
+                const highlightedName = highlightText(item.name, query);
+                const highlightedDescription = highlightText(item.description, query);
+                const highlightedId = highlightText(item.id, query);
+
+                resultsHTML += '<div class="result-item" onclick="showItemDetails(\'' + item.id + '\')">';
+                resultsHTML += '<div class="result-header">';
+                resultsHTML += '<div>';
+                resultsHTML += '<div class="result-title">' + highlightedName + '</div>';
+                resultsHTML += '<div class="result-id">' + highlightedId + '</div>';
+                resultsHTML += '</div>';
+                resultsHTML += '<div class="result-category">' + (item.category || 'N/A') + '</div>';
+                resultsHTML += '</div>';
+                resultsHTML += '<div class="result-description">' + highlightedDescription + '</div>';
+                
+                if (item.price && item.price > 0) {
+                    resultsHTML += '<div class="result-price">$' + parseFloat(item.price).toFixed(2) + '</div>';
+                }
+                
+                if (item.location) {
+                    resultsHTML += '<div class="result-location">📍 Location: ' + item.location + '</div>';
+                }
+                
+                resultsHTML += '<div class="qr-preview">';
+                resultsHTML += '<div id="qr-' + item.id + '"></div>';
+                resultsHTML += '</div>';
+                resultsHTML += '<div class="result-actions">';
+                resultsHTML += '<button class="action-button" onclick="event.stopPropagation(); printQR(\'' + item.id + '\')">🖨️ Print QR</button>';
+                resultsHTML += '<button class="action-button" onclick="event.stopPropagation(); viewDetails(\'' + item.id + '\')">📋 Details</button>';
+                resultsHTML += '<button class="action-button" onclick="event.stopPropagation(); editItem(\'' + item.id + '\')">✏️ Edit</button>';
+                resultsHTML += '</div>';
+                resultsHTML += '</div>';
+            });
+
+            resultsContainer.innerHTML = resultsHTML;
+
+            results.forEach(item => {
+                generateQRPreview(item.id, item.qrData);
+            });
+        }
+
+        function highlightText(text, query) {
+            if (!query || !text) return text || '';
+            const regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+
+        function generateQRPreview(id, data) {
+            const qrDiv = document.getElementById('qr-' + id);
+            if (qrDiv && typeof QRCode !== 'undefined') {
+                try {
+                    qrDiv.innerHTML = '';
+                    new QRCode(qrDiv, {
+                        text: data,
+                        width: 80,
+                        height: 80,
+                        colorDark: "#000000",
+                        colorLight: "#ffffff",
+                        correctLevel: QRCode.CorrectLevel.H
+                    });
+                } catch (error) {
+                    console.error('Error generating QR code:', error);
+                    qrDiv.innerHTML = '<p style="color: #666; font-size: 12px;">QR Code Error</p>';
+                }
+            }
+        }
+
+        function showInitialState() {
+            const resultsContainer = document.getElementById('resultsContainer');
+            const searchStats = document.getElementById('searchStats');
+            
+            resultsContainer.innerHTML = '<div class="no-results"><h3>Ready to Search</h3><p>Enter keywords to find equipment, QR codes, or inventory items</p><div class="suggestions"><h4>Popular Searches:</h4><div class="suggestion-tags"><span class="suggestion-tag" onclick="searchFor(\'pond\')">Pond</span><span class="suggestion-tag" onclick="searchFor(\'pump\')">Pump</span><span class="suggestion-tag" onclick="searchFor(\'waterfall\')">Waterfall</span><span class="suggestion-tag" onclick="searchFor(\'UWG\')">UWG</span><span class="suggestion-tag" onclick="searchFor(\'filter\')">Filter</span><span class="suggestion-tag" onclick="searchFor(\'koi\')">Koi</span></div></div></div>';
+            searchStats.innerHTML = 'Loaded ' + allInventoryData.length + ' items from database';
+        }
+
+        function showItemDetails(id) {
+            const item = allInventoryData.find(i => i.id === id);
+            if (item) {
+                let details = 'Item Details:\n\n';
+                details += 'ID: ' + item.id + '\n';
+                details += 'Name: ' + item.name + '\n';
+                details += 'Category: ' + (item.category || 'N/A') + '\n';
+                details += 'Type: ' + item.type + '\n';
+                details += 'Description: ' + (item.description || 'N/A') + '\n';
+                
+                if (item.price && item.price > 0) {
+                    details += 'Price: $' + parseFloat(item.price).toFixed(2) + '\n';
+                }
+                
+                if (item.location) {
+                    details += 'Location: ' + item.location + '\n';
+                }
+                
+                if (item.last_scanned) {
+                    details += 'Last Scanned: ' + new Date(item.last_scanned).toLocaleString() + '\n';
+                }
+                
+                alert(details);
+            }
+        }
+
+        function printQR(id) {
+            const item = allInventoryData.find(i => i.id === id);
+            if (item && typeof QRCode !== 'undefined') {
+                alert('Print functionality for ' + item.name + ' would be implemented here.');
+            }
+        }
+
+        function viewDetails(id) {
+            const item = allInventoryData.find(i => i.id === id);
+            if (item) {
+                alert('View details for ' + item.name + ' would open a detailed window here.');
+            }
+        }
+
+        function editItem(id) {
+            alert('Edit functionality for ' + id + ' would be implemented here. This could open a form to modify the item details.');
+        }
+    </script>
+</body>
+</html> 

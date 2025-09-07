@@ -116,17 +116,29 @@ const WaterQualityTestingPage = () => {
           <p>Maintaining proper water quality is essential for a healthy pond ecosystem</p>
           <div className="importance-grid">
             <div className="importance-item">
-              <div className="importance-icon">🐟</div>
+              <div className="importance-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#FF6B6B"/>
+                </svg>
+              </div>
               <h3>Fish Health</h3>
               <p>Poor water quality can stress fish, making them susceptible to disease and death</p>
             </div>
             <div className="importance-item">
-              <div className="importance-icon">🌿</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 6 17.25C7.12 17.25 8.25 16.75 9 16L17 8Z" fill="#32CD32"/>
+  </svg>
+              </div>
               <h3>Plant Growth</h3>
               <p>Aquatic plants need specific water conditions to thrive and provide natural filtration</p>
             </div>
             <div className="importance-item">
-              <div className="importance-icon">💧</div>
+              <div className="feature-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#00BFFF"/>
+  </svg>
+              </div>
               <h3>Water Clarity</h3>
               <p>Balanced water chemistry prevents algae blooms and maintains crystal clear water</p>
             </div>

@@ -1,0 +1,13 @@
+{
+  "equipmentId": "VALVE-001",
+  "name": "Control Valve Assembly",
+  "category": "Valves",
+  "gps": {
+    "lat": 40.76019261664769,
+    "lng": -111.8884898048234,
+    "accuracy": 5,
+    "timestamp": "2025-07-30T22:16:18.223Z"
+  },
+  "generatedAt": "2025-07-30T22:16:18.224Z",
+  "type": "equipment"
+}
