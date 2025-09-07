@@ -290,10 +290,10 @@ const ShopPage = () => {
   return (
     <div className="shop-page">
       <PageHero
-        title="Shop Our Products"
-        subtitle="Largest variety of aquatic plants and pond supplies in Utah. Visit our store or shop online with delivery and scheduled pickup options"
-        backgroundImage="/images/IMG_2779-topaz-enhance-2x-sharpen.jpeg"
-        backgroundImageAlt="Utah Water Gardens retail store with aquatic plants and supplies"
+        title="Pond Supplies"
+        subtitle="Everything you need to build, maintain, and enhance your pond"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImageAlt="Beautiful pond landscape with waterfall and rock features"
       />
 
       {/* JSON-LD */}

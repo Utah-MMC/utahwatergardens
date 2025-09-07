@@ -56,7 +56,7 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, '
 .main-services { padding: clamp(2.5rem, 6vw, 4rem) 0; }
 .main-services h2 { text-align: center; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: var(--brand-900); margin-bottom: 2rem; }
 
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 .service-card { background: var(--bg); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease; }
 .service-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .service-image { height: 200px; overflow: hidden; }
@@ -125,6 +125,13 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, '
 }
 
 /* Responsive tweaks */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   /* Pond Services page specific mobile hero adjustments */
   .pond-services-page .page-hero-wrapper {
@@ -132,6 +139,7 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, '
   }
   
   .featured-services-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

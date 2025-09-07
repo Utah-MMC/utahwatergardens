@@ -11,8 +11,8 @@ const WaterRipple = () => {
       ripple.style.width = "0px";
       ripple.style.height = "0px";
       ripple.style.borderRadius = "50%";
-      ripple.style.border = "2px solid rgba(255, 255, 255, 0.6)";
-      ripple.style.background = "radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)";
+      ripple.style.border = "1px solid rgba(255, 255, 255, 0.3)";
+      ripple.style.background = "radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 40%, transparent 70%)";
       ripple.style.pointerEvents = "none";
       ripple.style.zIndex = "9999";
       ripple.style.transform = "translate(-50%, -50%)";

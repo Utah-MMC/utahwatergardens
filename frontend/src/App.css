@@ -161,7 +161,40 @@ main {
 .mt-3 { margin-top: 1.5rem; }
 .mt-4 { margin-top: 2rem; }
 
-/* Responsive Design */
+/* Mobile-First Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-height: 44px; /* Touch-friendly minimum size */
+  }
+  
+  main {
+    padding-top: 80px; /* Reduced for mobile */
+  }
+  
+  /* Improve touch targets */
+  a, button, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Optimize text for mobile reading */
+  body {
+    font-size: 16px; /* Prevent zoom on iOS */
+    line-height: 1.5;
+  }
+  
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.3rem; }
+  h4 { font-size: 1.1rem; }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
@@ -170,9 +203,34 @@ main {
   .btn {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
+    min-height: 44px; /* Touch-friendly minimum size */
   }
   
   main {
     padding-top: 100px; /* Updated for mobile compressed header */
+  }
+  
+  /* Improve touch targets */
+  a, button, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Optimize text for mobile reading */
+  body {
+    font-size: 16px; /* Prevent zoom on iOS */
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Desktop optimizations */
+  .container {
+    padding: 0 2rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
   }
 }

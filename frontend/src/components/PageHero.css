@@ -180,21 +180,30 @@
   }
   
   .page-hero {
-    padding: 6rem 0 2rem 0; /* Increased top padding to account for header */
-    min-height: 350px;
+    padding: 5rem 0 2rem 0; /* Reduced top padding for mobile */
+    min-height: 300px; /* Reduced height for mobile */
   }
   
   .page-hero-text-content {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 0.75rem;
     margin: 0 0.5rem;
+    border-radius: 12px; /* Smaller border radius for mobile */
   }
   
   .page-hero-title {
-    font-size: 2.2rem;
+    font-size: 2rem; /* Slightly smaller for mobile */
+    line-height: 1.2;
+    margin-bottom: 1rem;
   }
   
   .page-hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  /* Optimize image loading for mobile */
+  .page-hero-image {
+    object-position: center 30%; /* Better positioning for mobile */
   }
   
   /* Resources page mobile adjustments */

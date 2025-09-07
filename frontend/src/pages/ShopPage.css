@@ -127,7 +127,59 @@
 @media (max-width: 480px) {
   /* Shop page specific mobile hero adjustments for smaller screens */
   .shop-page .page-hero-wrapper {
-    padding-top: 150px; /* Slightly less padding for smaller screens */
+    padding-top: 120px; /* Reduced padding for smaller screens */
+  }
+  
+  /* Mobile-first product card optimizations */
+  .product-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .product-image {
+    height: 200px; /* Reduced height for mobile */
+  }
+  
+  .product-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-info p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .product-price {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Mobile-optimized buttons */
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Mobile-optimized shop info */
+  .shop-info-content {
+    gap: 1rem;
+  }
+  
+  .shop-details {
+    gap: 0.75rem;
+  }
+  
+  .shop-detail {
+    font-size: 0.9rem;
+  }
+  
+  .shop-cta-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
 

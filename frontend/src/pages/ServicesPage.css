@@ -113,7 +113,7 @@
 
 .equipment-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
@@ -188,6 +188,13 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .service-card-large {
     grid-template-columns: 1fr;
@@ -196,6 +203,10 @@
   
   .service-image {
     height: 250px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
   }
   
   .service-content {
