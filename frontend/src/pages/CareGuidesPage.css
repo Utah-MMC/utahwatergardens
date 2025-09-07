@@ -373,21 +373,24 @@
 }
 
 .troubleshooting-causes li:before {
-  content: "⚠️";
+  content: "!";
   color: #ef4444;
   position: absolute;
   left: 0;
+  font-weight: bold;
 }
 
 .troubleshooting-solutions li:before {
-  content: "✅";
+  content: "✓";
   color: #3b82f6;
   position: absolute;
+  font-weight: bold;
   left: 0;
 }
 
 .troubleshooting-prevention li:before {
-  content: "🛡️";
+  content: "•";
+  font-weight: bold;
   color: #3b82f6;
   position: absolute;
   left: 0;

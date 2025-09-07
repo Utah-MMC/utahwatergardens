@@ -149,7 +149,11 @@ const EquipmentRepairPage = () => {
               <p>We use only genuine manufacturer parts to ensure quality and longevity</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">🛡️</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 8H20C21.1 8 22 8.9 22 10V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V10C2 8.9 2.9 8 4 8H6V6C6 3.79 7.79 2 10 2H14C16.21 2 18 3.79 18 6V8ZM16 8V6C16 4.9 15.1 4 14 4H10C8.9 4 8 4.9 8 6V8H16ZM4 10V20H20V10H4Z" fill="#1e40af"/>
+                </svg>
+              </div>
               <h3>Warranty Coverage</h3>
               <p>All repairs come with our comprehensive warranty for your peace of mind</p>
             </div>

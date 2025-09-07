@@ -5,6 +5,47 @@ import './FAQPage.css';
 const FAQPage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
 
+  const renderIcon = (iconType) => {
+    const iconProps = { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" };
+    
+    switch (iconType) {
+      case 'construction':
+        return (
+          <svg {...iconProps}>
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        );
+      case 'water':
+        return (
+          <svg {...iconProps}>
+            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#1e40af"/>
+          </svg>
+        );
+      case 'fish':
+        return (
+          <svg {...iconProps}>
+            <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#1e40af"/>
+          </svg>
+        );
+      case 'plants':
+        return (
+          <svg {...iconProps}>
+            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#1e40af"/>
+          </svg>
+        );
+      case 'tools':
+        return (
+          <svg {...iconProps}>
+            <path d="M22.7 19L13.6 9.9C14.5 7.6 14 4.9 12.1 3C10.1 1 7.1 1 5.1 3L9 6.9L6.9 9L3 5.1C1 7.1 1 10.1 3 12.1C4.9 14 7.6 14.5 9.9 13.6L19 22.7C19.3 23 19.7 23 20 23C20.3 23 20.7 22.7 21 22.4L22.4 21C22.7 20.7 22.7 20.3 22.7 19Z" fill="#1e40af"/>
+          </svg>
+        );
+      default:
+        return null;
+    }
+  };
+
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
@@ -12,7 +53,7 @@ const FAQPage = () => {
   const faqCategories = [
     {
       name: 'Pond Setup & Installation',
-      icon: '🏗️',
+      icon: 'construction',
       faqs: [
         {
           question: 'How much does it cost to build a pond?',
@@ -34,7 +75,7 @@ const FAQPage = () => {
     },
     {
       name: 'Water Quality & Maintenance',
-      icon: '💧',
+      icon: 'water',
       faqs: [
         {
           question: 'How often should I test my pond water?',
@@ -56,7 +97,7 @@ const FAQPage = () => {
     },
     {
       name: 'Fish Care & Health',
-      icon: '🐟',
+      icon: 'fish',
       faqs: [
         {
           question: 'How many fish can I put in my pond?',
@@ -78,7 +119,7 @@ const FAQPage = () => {
     },
     {
       name: 'Plants & Landscaping',
-      icon: '🌱',
+      icon: 'plants',
       faqs: [
         {
           question: 'What plants are best for ponds?',
@@ -100,7 +141,7 @@ const FAQPage = () => {
     },
     {
       name: 'Equipment & Troubleshooting',
-      icon: '🔧',
+      icon: 'tools',
       faqs: [
         {
           question: 'What size pump do I need?',
@@ -205,7 +246,7 @@ const FAQPage = () => {
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="faq-category">
               <div className="category-header">
-                <h3>{category.icon} {category.name}</h3>
+                <h3>{renderIcon(category.icon)} {category.name}</h3>
               </div>
               
               <div className="faq-list">
@@ -249,7 +290,11 @@ const FAQPage = () => {
               <p>Begin with a smaller pond to learn the basics before investing in a large water feature. You can always expand later!</p>
             </div>
             <div className="tip-card">
-              <div className="tip-icon">🌡️</div>
+              <div className="tip-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 4V2C15 1.45 14.55 1 14 1H10C9.45 1 9 1.45 9 2V4M15 4H9M15 4V6.5C15 7.33 15.67 8 16.5 8S18 7.33 18 6.5V4H15ZM9 4V6.5C9 7.33 8.33 8 7.5 8S6 7.33 6 6.5V4H9ZM12 8V20M12 20L9 17M12 20L15 17" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+              </div>
               <h3>Monitor Temperature</h3>
               <p>Water temperature affects fish health, plant growth, and algae development. Keep a thermometer handy and check regularly.</p>
             </div>
@@ -284,7 +329,12 @@ const FAQPage = () => {
               <a href="tel:(801) 590-8516" className="contact-button">(801) 590-8516</a>
             </div>
             <div className="contact-option">
-              <div className="contact-icon">✉️</div>
+              <div className="contact-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  <path d="M22 6L12 13L2 6" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+              </div>
               <h3>Send a Message</h3>
               <p>Get detailed answers via email</p>
               <Link to="/contact" className="contact-button">Contact Form</Link>

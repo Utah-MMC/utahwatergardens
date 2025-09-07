@@ -157,12 +157,20 @@ const WaterLiliesPage = () => {
               <p>Fertilize monthly during growing season with aquatic plant food tablets.</p>
             </div>
             <div className="care-item">
-              <div className="care-icon">✂️</div>
+              <div className="care-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+              </div>
               <h3>Pruning</h3>
               <p>Remove dead leaves and spent flowers regularly to maintain plant health.</p>
             </div>
             <div className="care-item">
-              <div className="care-icon">🌡️</div>
+              <div className="care-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 4V2C15 1.45 14.55 1 14 1H10C9.45 1 9 1.45 9 2V4M15 4H9M15 4V6.5C15 7.33 15.67 8 16.5 8S18 7.33 18 6.5V4H15ZM9 4V6.5C9 7.33 8.33 8 7.5 8S6 7.33 6 6.5V4H9ZM12 8V20M12 20L9 17M12 20L15 17" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+              </div>
               <h3>Temperature</h3>
               <p>Hardy lilies tolerate cold, tropical lilies need warm water (70°F+).</p>
             </div>

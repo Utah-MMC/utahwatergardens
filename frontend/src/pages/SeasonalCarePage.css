@@ -283,24 +283,27 @@
 }
 
 .season-tasks li:before {
-  content: "✅";
+  content: "✓";
   color: #1e40af;
   position: absolute;
   left: 0;
+  font-weight: bold;
 }
 
 .season-tips li:before {
-  content: "💡";
+  content: "•";
   color: #7c3aed;
   position: absolute;
   left: 0;
+  font-weight: bold;
 }
 
 .season-warnings li:before {
-  content: "⚠️";
+  content: "!";
   color: #dc2626;
   position: absolute;
   left: 0;
+  font-weight: bold;
 }
 
 /* Challenges Section */
@@ -484,9 +487,10 @@
 }
 
 .equipment-maintenance li:before {
-  content: "🔧";
+  content: "•";
   position: absolute;
   left: 0;
+  font-weight: bold;
 }
 
 /* Feeding Section */
@@ -633,17 +637,19 @@
 }
 
 .plant-tasks li:before {
-  content: "🌱";
+  content: "•";
   color: #1e40af;
   position: absolute;
   left: 0;
+  font-weight: bold;
 }
 
 .plant-tips li:before {
-  content: "💡";
+  content: "•";
   color: #7c3aed;
   position: absolute;
   left: 0;
+  font-weight: bold;
 }
 
 /* Emergency Section */

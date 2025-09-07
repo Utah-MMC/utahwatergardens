@@ -8,7 +8,7 @@ const VideoTutorialsPage = () => {
   const videoCategories = [
     {
       name: 'Pond Setup & Installation',
-      icon: '🏗️',
+      icon: 'construction',
       description: 'Step-by-step guides for building and installing ponds',
       videos: [
         {
@@ -361,7 +361,11 @@ const VideoTutorialsPage = () => {
                   </ul>
                 </div>
                 <div className="path-meta">
-                  <span className="estimated-time">⏱️ {path.estimatedTime}</span>
+                  <span className="estimated-time">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#1e40af"/>
+                    </svg> {path.estimatedTime}
+                  </span>
                   <button className="start-path-button">Start Learning Path</button>
                 </div>
               </div>
@@ -409,7 +413,11 @@ const VideoTutorialsPage = () => {
                     <div className="video-thumbnail">
                       <img src={video.thumbnail} alt={video.title} />
                       <div className="video-duration">{video.duration}</div>
-                      <div className="play-button">▶️</div>
+                      <div className="play-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 5V19L19 12L8 5Z" fill="white"/>
+                        </svg>
+                      </div>
                     </div>
                     <div className="video-content">
                       <h3>{video.title}</h3>

@@ -65,13 +65,13 @@ const RippleDemo = () => {
       <div className="demo-info">
         <h3>Features:</h3>
         <ul>
-          <li>✅ Respects user's motion preferences</li>
-          <li>✅ Multiple intensity levels (low, medium, high)</li>
-          <li>✅ Different color themes (default, pond, ocean, gold)</li>
-          <li>✅ Performance optimized with CSS transforms</li>
-          <li>✅ Automatic cleanup after animation</li>
-          <li>✅ Mobile and touch device optimized</li>
-          <li>✅ Dark mode support</li>
+          <li>✓ Respects user's motion preferences</li>
+          <li>✓ Multiple intensity levels (low, medium, high)</li>
+          <li>✓ Different color themes (default, pond, ocean, gold)</li>
+          <li>✓ Performance optimized with CSS transforms</li>
+          <li>✓ Automatic cleanup after animation</li>
+          <li>✓ Mobile and touch device optimized</li>
+          <li>✓ Dark mode support</li>
         </ul>
       </div>
     </div>

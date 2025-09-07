@@ -86,7 +86,7 @@ const PondTipsTricksPage = () => {
         'Monitor water parameters regularly',
         'Have backup equipment ready'
       ],
-      icon: '🛡️'
+      icon: 'shield'
     }
   ];
 

@@ -20,6 +20,8 @@ const PondServicesPage = lazy(() => import('./pages/PondServicesPage'));
 const PondSuppliesPage = lazy(() => import('./pages/PondSuppliesPage'));
 const PondGalleryPage = lazy(() => import('./pages/PondGalleryPage'));
 const FreeEstimatePage = lazy(() => import('./pages/FreeEstimatePage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 
 // Lazy load service area pages
 const SaltLakeCityPage = lazy(() => import('./pages/ServiceAreas/SaltLakeCityPage'));
@@ -187,6 +189,8 @@ function App() {
             <Route path="/pond-gallery" element={<PondGalleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/free-estimate" element={<FreeEstimatePage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             
             {/* Legacy routes for backward compatibility */}
             <Route path="/services" element={<ServicesPage />} />

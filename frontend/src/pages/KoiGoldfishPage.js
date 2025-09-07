@@ -210,7 +210,11 @@ const KoiGoldfishPage = () => {
               <p>Proper filtration is essential for maintaining water quality and supporting fish health in any size pond.</p>
             </div>
             <div className="requirement-item">
-              <div className="requirement-icon">🌡️</div>
+              <div className="requirement-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 4V2C15 1.45 14.55 1 14 1H10C9.45 1 9 1.45 9 2V4M15 4H9M15 4V6.5C15 7.33 15.67 8 16.5 8S18 7.33 18 6.5V4H15ZM9 4V6.5C9 7.33 8.33 8 7.5 8S6 7.33 6 6.5V4H9ZM12 8V20M12 20L9 17M12 20L15 17" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+              </div>
               <h3>Temperature Control</h3>
               <p>Monitor water temperature and provide shade during hot summer months to prevent stress.</p>
             </div>

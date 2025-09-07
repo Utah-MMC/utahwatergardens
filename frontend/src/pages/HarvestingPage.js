@@ -389,7 +389,13 @@ const HarvestingPage = () => {
               <p>Expert timing and seasonal planning for optimal harvesting results</p>
             </div>
             <div className="reason-item">
-              <div className="reason-icon">♻️</div>
+              <div className="reason-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#1e40af"/>
+                  <path d="M19 15L20.09 19.26L24 20L20.09 20.74L19 25L17.91 20.74L14 20L17.91 19.26L19 15Z" fill="#1e40af"/>
+                  <path d="M5 15L6.09 19.26L10 20L6.09 20.74L5 25L3.91 20.74L0 20L3.91 19.26L5 15Z" fill="#1e40af"/>
+                </svg>
+              </div>
               <h3>Sustainable Practices</h3>
               <p>Environmentally responsible harvesting that maintains ecosystem balance</p>
             </div>

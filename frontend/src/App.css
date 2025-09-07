@@ -174,7 +174,7 @@ main {
   }
   
   main {
-    padding-top: 80px; /* Reduced for mobile */
+    padding-top: 0; /* Remove padding to eliminate white space */
   }
   
   /* Improve touch targets */
@@ -207,7 +207,7 @@ main {
   }
   
   main {
-    padding-top: 100px; /* Updated for mobile compressed header */
+    padding-top: 0; /* Remove padding to eliminate white space */
   }
   
   /* Improve touch targets */

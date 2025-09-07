@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ className = '' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const headerRef = useRef(null);
   
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,16 +16,14 @@ const Header = ({ className = '' }) => {
   };
 
   const toggleDropdown = (dropdownName) => {
-    if (activeDropdown === dropdownName) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(dropdownName);
-    }
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
 
   const closeDropdown = () => {
     setActiveDropdown(null);
   };
+
+  // No need for click outside handler with hover dropdowns
 
   // Dropdown menu data
   const dropdownMenus = {
@@ -77,7 +76,8 @@ const Header = ({ className = '' }) => {
         { name: 'Seasonal Care', path: '/resources/seasonal-care' },
         { name: 'Troubleshooting', path: '/resources/troubleshooting' },
         { name: 'Video Tutorials', path: '/resources/video-tutorials' },
-        { name: 'FAQ', path: '/resources/faq' }
+        { name: 'FAQ', path: '/resources/faq' },
+        { name: 'Blog', path: '/blog' }
       ]
     },
     'pond-gallery': {
@@ -95,7 +95,7 @@ const Header = ({ className = '' }) => {
   };
 
   return (
-    <header className={`header ${className}`}>
+    <header ref={headerRef} className={`header ${className}`}>
       {/* Top Section - Contact Info */}
       <div className="header-top">
         <div className="header-container">
@@ -131,38 +131,48 @@ const Header = ({ className = '' }) => {
 
             {/* Navigation */}
             <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+              {isMenuOpen && (
+                <div className="mobile-menu-header">
+                  <h2 className="mobile-menu-title">Menu</h2>
+                  <button 
+                    className="mobile-menu-close" 
+                    onClick={closeMenu}
+                    aria-label="Close menu"
+                  >
+                    ✕
+                  </button>
+                </div>
+              )}
+              {isMenuOpen && (
+                <div className="header-actions">
+                  <a href="tel:(801) 590-8516" className="btn btn-primary btn-compact" onClick={closeMenu}>
+                    Call Now
+                  </a>
+                  <Link to="/contact" className="btn btn-secondary btn-compact" onClick={closeMenu}>
+                    Get Quote
+                  </Link>
+                </div>
+              )}
               <ul className="nav-list">
                 {Object.entries(dropdownMenus).map(([key, menu]) => (
                   <li 
                     key={key}
                     className="nav-item"
-                    onMouseEnter={() => setActiveDropdown(key)}
-                    onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <div className="nav-link-container">
                       <Link 
                         to={menu.mainPath}
-                        className={`nav-link ${activeDropdown === key ? 'active' : ''}`}
+                        className="nav-link"
                         onClick={() => {
                           closeMenu();
-                          closeDropdown();
                         }}
                       >
                         {menu.title}
                       </Link>
-                      <button 
-                        className="dropdown-toggle"
-                        onClick={() => toggleDropdown(key)}
-                        aria-label={`Toggle ${menu.title} dropdown`}
-                        aria-expanded={activeDropdown === key}
-                        aria-haspopup="true"
-                      >
-                        <span className="dropdown-arrow">▼</span>
-                      </button>
                     </div>
                     
                     {/* Dropdown Menu */}
-                    <div className={`dropdown-menu ${activeDropdown === key ? 'show' : ''}`}>
+                    <div className="dropdown-menu">
                       <div className="dropdown-content">
                         <div className="dropdown-header">
                           <h3>{menu.title}</h3>
@@ -174,7 +184,6 @@ const Header = ({ className = '' }) => {
                                 to={item.path} 
                                 onClick={() => {
                                   closeMenu();
-                                  closeDropdown();
                                 }}
                                 className="dropdown-link"
                               >
@@ -187,6 +196,7 @@ const Header = ({ className = '' }) => {
                     </div>
                   </li>
                 ))}
+                
               </ul>
             </nav>
 
@@ -201,7 +211,7 @@ const Header = ({ className = '' }) => {
             </div>
 
             {/* Mobile Menu Toggle */}
-            <div className="mobile-menu-toggle" onClick={toggleMenu}>
+            <div className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
               <span></span>
               <span></span>
               <span></span>

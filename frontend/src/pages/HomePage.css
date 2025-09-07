@@ -14,7 +14,7 @@
   overflow: hidden;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  padding-top: 120px; /* Add top padding to avoid header overlap */
+  padding-top: 0; /* Remove padding to eliminate white space */
 }
 
 /* First wave layer - baby blue (behind) */
@@ -84,7 +84,7 @@
   width: 100%;
   max-width: 500px; /* Even smaller width for more compact design */
   margin: 0 auto;
-  margin-top: 2rem; /* Additional top margin for header clearance */
+  margin-top: 0.5rem; /* Minimal top margin */
   padding: 1.5rem; /* Reduced padding for more compact look */
   text-align: center;
   background: rgba(0, 0, 0, 0.4); /* Much more transparent to show video */
@@ -230,13 +230,13 @@
 
 @media (max-width: 992px) {
   .hero {
-    padding-top: 100px; /* Slightly less padding on medium screens */
+    padding-top: 0; /* Remove padding to eliminate white space */
   }
   
   .hero-content {
     padding: 1.2rem; /* More compact padding on medium screens */
     margin: 0 1rem;
-    margin-top: 1.5rem; /* Maintain header clearance */
+    margin-top: 0.5rem; /* Minimal top margin */
     max-width: 450px; /* Maintain compact width */
   }
   
@@ -269,13 +269,13 @@
   .hero {
     height: 100vh;
     min-height: 600px;
-    padding-top: 90px; /* Adjust for smaller screens */
+    padding-top: 0; /* Remove padding to eliminate white space */
   }
   
   .hero-content {
     padding: 1rem; /* More compact padding on mobile */
     margin: 0 0.5rem;
-    margin-top: 1rem; /* Maintain header clearance */
+    margin-top: 0.5rem; /* Minimal top margin */
     max-width: 400px; /* Maintain compact width on mobile */
   }
   
@@ -303,13 +303,13 @@
   .hero {
     height: 100vh;
     min-height: 500px;
-    padding-top: 80px; /* Adjust for mobile screens */
+    padding-top: 0; /* Remove padding to eliminate white space */
   }
   
   .hero-content {
     padding: 1rem;
     margin: 0 0.25rem;
-    margin-top: 0.5rem; /* Maintain header clearance */
+    margin-top: 0.25rem; /* Minimal top margin */
     max-width: 100%; /* Ensure full width on small screens */
     box-sizing: border-box; /* Include padding in width calculation */
   }
@@ -841,6 +841,14 @@
     font-size: 1.8rem;
   }
   
+  .contact-cta h2 {
+    font-size: 2.2rem;
+  }
+  
+  .contact-cta p {
+    font-size: 1.1rem;
+  }
+  
   .cta-buttons {
     flex-direction: column;
     align-items: center;
@@ -866,6 +874,18 @@
   
   .service-image {
     height: 200px;
+  }
+  
+  .contact-cta {
+    padding: 3rem 0;
+  }
+  
+  .contact-cta h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-cta p {
+    font-size: 1rem;
   }
 }
 
@@ -1309,37 +1329,82 @@
 
 /* Contact CTA */
 .contact-cta {
-  padding: 4rem 0 5rem 0; /* Added extra bottom padding to ensure space from footer wave */
+  padding: 5rem 0 5rem 0; /* Added extra bottom padding to ensure space from footer wave */
   color: white;
   text-align: center;
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-bottom: 2rem; /* Additional margin to prevent wave overlap */
+  overflow: hidden;
+}
+
+.contact-cta .container {
+  position: relative;
 }
 
 .contact-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .contact-cta p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.95;
+  line-height: 1.6;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .cta-buttons .btn {
-  min-width: 200px;
+  min-width: 220px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.contact-cta .cta-buttons .btn-primary {
+  background: white;
+  color: #00d4ff;
+  border: 2px solid white;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.contact-cta .cta-buttons .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+.contact-cta .cta-buttons .btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.contact-cta .cta-buttons .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {

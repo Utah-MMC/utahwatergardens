@@ -79,7 +79,11 @@ const FloatingPlantsPage = () => {
               <p>Absorb excess nutrients like nitrogen and phosphorus, helping to control algae growth naturally.</p>
             </div>
             <div className="benefit-item">
-              <div className="benefit-icon">🐟</div>
+              <div className="benefit-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM12 6C8.69 6 6 8.69 6 12S8.69 6 12 6S18 8.69 18 12 15.31 18 12 18ZM12 8C9.79 8 8 9.79 8 12S9.79 16 12 16 16 14.21 16 12 14.21 8 12 8Z" fill="#1e40af"/>
+                </svg>
+              </div>
               <h3>Fish Protection</h3>
               <p>Provide shade and shelter for fish, helping to reduce stress and create natural spawning areas.</p>
             </div>
@@ -185,7 +189,11 @@ const FloatingPlantsPage = () => {
           <h2>Managing Plant Growth</h2>
           <div className="control-grid">
             <div className="control-item">
-              <div className="control-icon">✂️</div>
+              <div className="control-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+              </div>
               <h3>Regular Trimming</h3>
               <p>Remove excess growth to maintain 30-40% surface coverage for optimal pond health.</p>
             </div>
@@ -195,7 +203,11 @@ const FloatingPlantsPage = () => {
               <p>Monitor and control aggressive growers to prevent them from taking over your pond.</p>
             </div>
             <div className="control-item">
-              <div className="control-icon">🌡️</div>
+              <div className="control-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 4V2C15 1.45 14.55 1 14 1H10C9.45 1 9 1.45 9 2V4M15 4H9M15 4V6.5C15 7.33 15.67 8 16.5 8S18 7.33 18 6.5V4H15ZM9 4V6.5C9 7.33 8.33 8 7.5 8S6 7.33 6 6.5V4H9ZM12 8V20M12 20L9 17M12 20L15 17" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+              </div>
               <h3>Seasonal Management</h3>
               <p>Remove tropical varieties before frost and protect hardy species during winter.</p>
             </div>
