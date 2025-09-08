@@ -29,6 +29,42 @@ body {
   padding: 0 2rem;
 }
 
+/* Make containers full-width on mobile */
+@media (max-width: 768px) {
+  .container {
+    max-width: none !important;
+    padding: 0 1rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Make all sections full-width on mobile */
+  section {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    max-width: none !important;
+  }
+  
+  /* Make all divs with container class full-width */
+  div.container {
+    max-width: none !important;
+    padding: 0 1rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Make page wrappers full-width */
+  .pumps-aeration-page,
+  .service-area-page,
+  .page-hero-wrapper {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    max-width: none !important;
+  }
+}
+
 /* Main Content - No padding since header overlays content */
 main {
   padding-top: 0 !important; /* Remove padding so hero can start from top */
@@ -446,6 +482,57 @@ main {
 
 /* Global Mobile Overflow Prevention for All Pages */
 @media (max-width: 768px) {
+  /* Force hero full width on home page */
+  .home .hero {
+    width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    background: red !important;
+    z-index: 1000 !important;
+  }
+  
+  /* Resources section header on one line for mobile */
+  .home .section-head.row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+  
+  .home .section-head.row > div {
+    width: 100% !important;
+  }
+  
+  .home .section-head.row .btn {
+    white-space: nowrap !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .home .hero .hero-media {
+    width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  
+  .home .hero .hero-fallback {
+    width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  
+  .home .section:first-of-type {
+    margin-top: 100vh !important;
+    padding-top: 2rem !important;
+  }
+  
+  .home .section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
   /* Prevent horizontal overflow on all pages */
   * {
     max-width: 100% !important;

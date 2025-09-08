@@ -1,105 +1,25 @@
-/* CTA Component Styles */
-.contact-cta {
-  padding: 4rem 0;
-  color: white;
-  text-align: center;
+/* CTA Section Styles */
+.cta {
+  width: 100vw !important; /* Ensures the section spans the full viewport width */
+  margin-left: calc(-50vw + 50%) !important; /* Centers the section and offsets any parent container's centering */
+  margin-right: calc(-50vw + 50%) !important; /* Ensures right side also breaks out */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  padding-block: clamp(2.5rem, 6vw, 4rem);
   position: relative;
-  width: 100vw; /* Full viewport width */
-  margin-left: calc(-50vw + 50%); /* Center the full-width element */
+  left: 0;
+  right: 0;
+  max-width: none !important; /* Override any max-width constraints */
+  box-sizing: border-box;
 }
 
-.contact-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+.cta h2 {
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  margin: 0.25rem 0;
 }
 
-.contact-cta p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0.9;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.btn-primary {
-  background: #dc2626;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #b91c1c;
-  transform: translateY(-2px);
-  color: white;
-  text-decoration: none;
-}
-
-.btn-secondary {
-  background: #6c757d;
-  color: white;
-}
-
-.btn-secondary:hover {
-  background: #5a6268;
-  transform: translateY(-2px);
-  color: white;
-  text-decoration: none;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-cta {
-    width: 100%; /* Reset to container width on mobile */
-    margin-left: 0; /* Reset margin on mobile */
-    padding: 3rem 0;
-  }
-  
-  .contact-cta h2 {
-    font-size: 2rem;
-  }
-  
-  .contact-cta p {
-    font-size: 1.1rem;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .btn {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-cta h2 {
-    font-size: 1.8rem;
-  }
-  
-  .contact-cta p {
-    font-size: 1rem;
-  }
+.cta p {
+  opacity: 0.95;
 }

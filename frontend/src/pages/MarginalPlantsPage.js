@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero.js';
 import ImageModal from '../components/ImageModal';
+import CTA from '../components/CTA';
 import { getPlantsByCategory, createPlantSlug } from '../data/plantData';
 import './MarginalPlantsPage.css';
 
@@ -205,27 +206,8 @@ const MarginalPlantsPage = () => {
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section 
-          className="contact-cta"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          <h2>Ready to Enhance Your Pond Edges?</h2>
-          <p>Contact us today to learn more about our marginal plant collection and how they can transform your pond</p>
-          <div className="cta-buttons">
-            <a href="tel:(801) 590-8516" className="btn btn-primary">
-              Call (801) 590-8516
-            </a>
-            <Link to="/contact" className="btn btn-secondary">
-              Send Message
-            </Link>
-          </div>
-        </section>
+        {/* CTA Section */}
+        <CTA />
       </div>
       
         <ImageModal 

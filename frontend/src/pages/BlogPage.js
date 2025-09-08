@@ -8,6 +8,8 @@ const BlogPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState('newest');
 
   useEffect(() => {
     // Get today's date in YYYY-MM-DD format
@@ -24,6 +26,13 @@ const BlogPage = () => {
         category: 'Maintenance',
         readTime: '12 min read',
         image: '/images/pondMaintenance.webp',
+        images: [
+          '/images/pondMaintenance.webp',
+          '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
+          '/images/pondServices-2.png',
+          '/images/IMG_2770.jpg',
+          '/images/waterLillies.webp'
+        ],
         author: 'Utah Water Gardens Team',
         featured: true
       },
@@ -36,6 +45,13 @@ const BlogPage = () => {
         category: 'Construction',
         readTime: '15 min read',
         image: '/images/pondConstruction1000x800.webp',
+        images: [
+          '/images/pondConstruction1000x800.webp',
+          '/images/IMG_2779.jpg',
+          '/images/pond_liner_40mil.jpg',
+          '/images/IMG_2770.jpg',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
         author: 'Utah Water Gardens Team',
         featured: true
       },
@@ -48,6 +64,13 @@ const BlogPage = () => {
         category: 'Design',
         readTime: '10 min read',
         image: '/images/pondServices-2.png',
+        images: [
+          '/images/pondServices-2.png',
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+          '/images/waterLillies.webp'
+        ],
         author: 'Utah Water Gardens Team',
         featured: false
       },
@@ -60,6 +83,13 @@ const BlogPage = () => {
         category: 'Plants',
         readTime: '8 min read',
         image: '/images/plants500x500.webp',
+        images: [
+          '/images/plants500x500.webp',
+          '/images/waterLillies.webp',
+          '/images/IMG_2779.jpg',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+          '/images/pondServices-2.png'
+        ],
         author: 'Utah Water Gardens Team',
         featured: false
       },
@@ -72,6 +102,13 @@ const BlogPage = () => {
         category: 'Fish Care',
         readTime: '9 min read',
         image: '/images/koi.webp',
+        images: [
+          '/images/koi.webp',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png',
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
         author: 'Utah Water Gardens Team',
         featured: false
       },
@@ -84,6 +121,13 @@ const BlogPage = () => {
         category: 'Climate',
         readTime: '7 min read',
         image: '/images/hero-background.jpg',
+        images: [
+          '/images/hero-background.jpg',
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
         author: 'Utah Water Gardens Team',
         featured: false
       },
@@ -96,6 +140,13 @@ const BlogPage = () => {
         category: 'Supplies',
         readTime: '6 min read',
         image: '/images/pond_liner_40mil.jpg',
+        images: [
+          '/images/pond_liner_40mil.jpg',
+          '/images/pond_liner_roll.jpg',
+          '/images/pondConstruction1000x800.webp',
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg'
+        ],
         author: 'Utah Water Gardens Team',
         featured: false
       },
@@ -108,6 +159,13 @@ const BlogPage = () => {
         category: 'Features',
         readTime: '8 min read',
         image: '/images/waterLillies.webp',
+        images: [
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png'
+        ],
         author: 'Utah Water Gardens Team',
         featured: false
       },
@@ -230,6 +288,387 @@ const BlogPage = () => {
         image: '/images/waterLillies.webp',
         author: 'Utah Water Gardens Team',
         featured: false
+      },
+      // NEW SEO-OPTIMIZED BLOG POSTS
+      {
+        id: 'stunning-garden-pond-designs-small-spaces',
+        title: '10 Stunning Garden Pond Designs for Small Spaces: Maximize Your Backyard',
+        excerpt: 'Discover 10 innovative garden pond designs perfect for small spaces. Transform your limited backyard into a beautiful water garden with these creative solutions.',
+        slug: 'stunning-garden-pond-designs-small-spaces',
+        date: today,
+        category: 'Design',
+        readTime: '11 min read',
+        image: '/images/IMG_2779.jpg',
+        images: [
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png',
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: true
+      },
+      {
+        id: 'koi-pond-maintenance-seasonal-care-guide',
+        title: 'Koi Pond Maintenance: Complete Seasonal Care Guide for Utah',
+        excerpt: 'Master koi pond maintenance with our comprehensive seasonal care guide. Learn essential tasks for spring, summer, fall, and winter to keep your koi healthy year-round.',
+        slug: 'koi-pond-maintenance-seasonal-care-guide',
+        date: today,
+        category: 'Maintenance',
+        readTime: '14 min read',
+        image: '/images/koi.webp',
+        images: [
+          '/images/koi.webp',
+          '/images/pondMaintenance.webp',
+          '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: true
+      },
+      {
+        id: 'choose-right-water-feature-garden',
+        title: 'How to Choose the Right Water Feature for Your Garden: Complete Guide',
+        excerpt: 'Learn how to select the perfect water feature for your garden. Compare fountains, waterfalls, ponds, and streams to find the ideal match for your space and style.',
+        slug: 'choose-right-water-feature-garden',
+        date: today,
+        category: 'Design',
+        readTime: '9 min read',
+        image: '/images/waterLillies.webp',
+        images: [
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'benefits-adding-pond-landscape',
+        title: 'The Benefits of Adding a Pond to Your Landscape: Why You Need One',
+        excerpt: 'Discover the amazing benefits of adding a pond to your landscape. From increased property value to wildlife attraction, learn why ponds are essential for modern gardens.',
+        slug: 'benefits-adding-pond-landscape',
+        date: today,
+        category: 'Planning',
+        readTime: '8 min read',
+        image: '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+        images: [
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+          '/images/IMG_2779.jpg',
+          '/images/waterLillies.webp',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'diy-vs-professional-pond-installation',
+        title: 'DIY vs Professional Pond Installation: Which is Best for You?',
+        excerpt: 'Compare DIY vs professional pond installation. Learn the pros and cons of each approach, costs, time investment, and when to hire experts for your water garden project.',
+        slug: 'diy-vs-professional-pond-installation',
+        date: today,
+        category: 'Planning',
+        readTime: '12 min read',
+        image: '/images/pondConstruction1000x800.webp',
+        images: [
+          '/images/pondConstruction1000x800.webp',
+          '/images/IMG_2779.jpg',
+          '/images/pond_liner_40mil.jpg',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'wildlife-friendly-water-features-eco-gardens',
+        title: 'Wildlife-Friendly Water Features for Eco-Conscious Gardens',
+        excerpt: 'Create wildlife-friendly water features that support local ecosystems. Learn how to design ponds that attract birds, butterflies, and beneficial insects to your garden.',
+        slug: 'wildlife-friendly-water-features-eco-gardens',
+        date: today,
+        category: 'Design',
+        readTime: '10 min read',
+        image: '/images/plants500x500.webp',
+        images: [
+          '/images/plants500x500.webp',
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'large-koi-pond-build-salt-lake-city-case-study',
+        title: 'Case Study: Large Koi Pond Build in Salt Lake City - Complete Project',
+        excerpt: 'Follow our complete large koi pond build in Salt Lake City. See the challenges, solutions, and stunning results of this 15,000-gallon koi pond project.',
+        slug: 'large-koi-pond-build-salt-lake-city-case-study',
+        date: today,
+        category: 'Case Study',
+        readTime: '16 min read',
+        image: '/images/koi.webp',
+        images: [
+          '/images/koi.webp',
+          '/images/pondConstruction1000x800.webp',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: true
+      },
+      {
+        id: 'top-5-koi-pond-design-ideas-2025',
+        title: 'Top 5 Koi Pond Design Ideas for 2025: Trending Styles',
+        excerpt: 'Explore the top 5 trending koi pond design ideas for 2025. From modern minimalist to natural Japanese styles, find inspiration for your dream koi pond.',
+        slug: 'top-5-koi-pond-design-ideas-2025',
+        date: today,
+        category: 'Design',
+        readTime: '9 min read',
+        image: '/images/IMG_2770.jpg',
+        images: [
+          '/images/IMG_2770.jpg',
+          '/images/koi.webp',
+          '/images/IMG_2779.jpg',
+          '/images/pondServices-2.png',
+          '/images/waterLillies.webp'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'how-to-winterize-pond-utah-guide',
+        title: 'How to Winterize Your Pond in Utah: Complete Winter Preparation Guide',
+        excerpt: 'Learn how to properly winterize your pond in Utah\'s harsh climate. Essential steps to protect your fish, plants, and equipment during freezing temperatures.',
+        slug: 'how-to-winterize-pond-utah-guide',
+        date: today,
+        category: 'Maintenance',
+        readTime: '11 min read',
+        image: '/images/pondMaintenance.webp',
+        images: [
+          '/images/pondMaintenance.webp',
+          '/images/IMG_2779.jpg',
+          '/images/pondServices-2.png',
+          '/images/IMG_2770.jpg',
+          '/images/koi.webp'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'pond-aeration-importance-how-to-achieve',
+        title: 'The Importance of Pond Aeration and How to Achieve It: Complete Guide',
+        excerpt: 'Understand why pond aeration is crucial for healthy water gardens. Learn about different aeration methods, equipment, and installation tips for optimal results.',
+        slug: 'pond-aeration-importance-how-to-achieve',
+        date: today,
+        category: 'Maintenance',
+        readTime: '10 min read',
+        image: '/images/pondServices-2.png',
+        images: [
+          '/images/pondServices-2.png',
+          '/images/pondMaintenance.webp',
+          '/images/IMG_2770.jpg',
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'common-pond-problems-how-to-fix',
+        title: 'Common Pond Problems and How to Fix Them: Troubleshooting Guide',
+        excerpt: 'Solve common pond problems with our comprehensive troubleshooting guide. Learn how to fix algae blooms, cloudy water, fish health issues, and equipment failures.',
+        slug: 'common-pond-problems-how-to-fix',
+        date: today,
+        category: 'Maintenance',
+        readTime: '13 min read',
+        image: '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
+        images: [
+          '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
+          '/images/pondMaintenance.webp',
+          '/images/pondServices-2.png',
+          '/images/IMG_2770.jpg',
+          '/images/waterLillies.webp'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'eco-friendly-pond-maintenance-tips',
+        title: 'Eco-Friendly Pond Maintenance Tips: Sustainable Water Garden Care',
+        excerpt: 'Discover eco-friendly pond maintenance tips that protect the environment. Learn sustainable practices for water treatment, plant care, and equipment maintenance.',
+        slug: 'eco-friendly-pond-maintenance-tips',
+        date: today,
+        category: 'Maintenance',
+        readTime: '8 min read',
+        image: '/images/plants500x500.webp',
+        images: [
+          '/images/plants500x500.webp',
+          '/images/waterLillies.webp',
+          '/images/pondMaintenance.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+          '/images/IMG_2779.jpg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'aquatic-plants-role-pond-ecosystems',
+        title: 'The Role of Aquatic Plants in Pond Ecosystems: Nature\'s Filtration System',
+        excerpt: 'Learn how aquatic plants create healthy pond ecosystems. Discover which plants provide natural filtration, oxygen, and habitat for fish and wildlife.',
+        slug: 'aquatic-plants-role-pond-ecosystems',
+        date: today,
+        category: 'Plants',
+        readTime: '9 min read',
+        image: '/images/waterLillies.webp',
+        images: [
+          '/images/waterLillies.webp',
+          '/images/plants500x500.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'pond-safety-tips-families-children',
+        title: 'Pond Safety Tips for Families with Children: Creating Safe Water Gardens',
+        excerpt: 'Essential pond safety tips for families with children. Learn how to create beautiful water gardens that are safe for kids while maintaining aesthetic appeal.',
+        slug: 'pond-safety-tips-families-children',
+        date: today,
+        category: 'Safety',
+        readTime: '7 min read',
+        image: '/images/IMG_2779.jpg',
+        images: [
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg',
+          '/images/pondServices-2.png',
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'innovative-lighting-ideas-nighttime-pond',
+        title: 'Innovative Lighting Ideas for Nighttime Pond Enjoyment: Illuminate Your Water Garden',
+        excerpt: 'Transform your pond into a magical nighttime oasis with innovative lighting ideas. Learn about underwater lights, landscape lighting, and creative illumination techniques.',
+        slug: 'innovative-lighting-ideas-nighttime-pond',
+        date: today,
+        category: 'Design',
+        readTime: '8 min read',
+        image: '/images/IMG_2782.jpg',
+        images: [
+          '/images/IMG_2782.jpg',
+          '/images/IMG_2779.jpg',
+          '/images/IMG_2770.jpg',
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'pond-dredging-when-why-how-guide',
+        title: 'Pond Dredging: When, Why, and How - Complete Guide to Pond Restoration',
+        excerpt: 'Learn everything about pond dredging - when it\'s needed, why it\'s important, and how the process works. Restore your pond\'s depth and water quality with professional dredging.',
+        slug: 'pond-dredging-when-why-how-guide',
+        date: today,
+        category: 'Maintenance',
+        readTime: '12 min read',
+        image: '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
+        images: [
+          '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
+          '/images/pondMaintenance.webp',
+          '/images/pondServices-2.png',
+          '/images/IMG_2770.jpg',
+          '/images/waterLillies.webp'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'aquatic-plant-harvesting-management-guide',
+        title: 'Aquatic Plant Harvesting and Management: Keep Your Pond Balanced',
+        excerpt: 'Master aquatic plant harvesting and management techniques. Learn when and how to harvest plants to maintain perfect pond balance and water quality.',
+        slug: 'aquatic-plant-harvesting-management-guide',
+        date: today,
+        category: 'Maintenance',
+        readTime: '10 min read',
+        image: '/images/plants500x500.webp',
+        images: [
+          '/images/plants500x500.webp',
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg',
+          '/images/IMG_2779.jpg',
+          '/images/pondServices-2.png'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'lake-dredging-large-water-bodies-guide',
+        title: 'Lake Dredging for Large Water Bodies: Complete Restoration Guide',
+        excerpt: 'Comprehensive guide to lake dredging for large water bodies. Learn about the process, equipment, and benefits of professional lake restoration services.',
+        slug: 'lake-dredging-large-water-bodies-guide',
+        date: today,
+        category: 'Maintenance',
+        readTime: '14 min read',
+        image: '/images/pondServices-2.png',
+        images: [
+          '/images/pondServices-2.png',
+          '/images/pondCleanings-topaz-enhance-3.9x.jpeg',
+          '/images/pondMaintenance.webp',
+          '/images/IMG_2770.jpg',
+          '/images/waterLillies.webp'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'pond-filtration-systems-complete-guide',
+        title: 'Pond Filtration Systems: Complete Guide to Clean, Healthy Water',
+        excerpt: 'Master pond filtration systems with our complete guide. Learn about mechanical, biological, and UV filtration to maintain crystal-clear, healthy pond water.',
+        slug: 'pond-filtration-systems-complete-guide',
+        date: today,
+        category: 'Equipment',
+        readTime: '11 min read',
+        image: '/images/pondMaintenance.webp',
+        images: [
+          '/images/pondMaintenance.webp',
+          '/images/pondServices-2.png',
+          '/images/IMG_2770.jpg',
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
+      },
+      {
+        id: 'water-quality-testing-pond-health-guide',
+        title: 'Water Quality Testing for Pond Health: Essential Parameters Guide',
+        excerpt: 'Learn essential water quality testing for pond health. Understand pH, ammonia, nitrites, and other critical parameters to maintain optimal water conditions.',
+        slug: 'water-quality-testing-pond-health-guide',
+        date: today,
+        category: 'Maintenance',
+        readTime: '9 min read',
+        image: '/images/pondServices-2.png',
+        images: [
+          '/images/pondServices-2.png',
+          '/images/pondMaintenance.webp',
+          '/images/IMG_2770.jpg',
+          '/images/waterLillies.webp',
+          '/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg'
+        ],
+        author: 'Utah Water Gardens Team',
+        featured: false
       }
     ];
 
@@ -237,17 +676,48 @@ const BlogPage = () => {
     setLoading(false);
   }, []);
 
-  const featuredPosts = blogPosts.filter(post => post.featured);
-  const regularPosts = blogPosts.filter(post => {
-    if (activeFilter === 'all') return !post.featured;
-    return !post.featured && post.category.toLowerCase() === activeFilter;
-  });
 
   const handleFilterChange = (category) => {
     setActiveFilter(category);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSortChange = (sortType) => {
+    setSortBy(sortType);
+  };
+
   const categories = [...new Set(blogPosts.map(post => post.category))];
+
+  // Filter and sort posts
+  const filteredAndSortedPosts = blogPosts
+    .filter(post => {
+      const matchesFilter = activeFilter === 'all' || post.category.toLowerCase() === activeFilter.toLowerCase();
+      const matchesSearch = searchTerm === '' || 
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.category.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchesFilter && matchesSearch;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case 'newest':
+          return new Date(b.date) - new Date(a.date);
+        case 'oldest':
+          return new Date(a.date) - new Date(b.date);
+        case 'title':
+          return a.title.localeCompare(b.title);
+        case 'category':
+          return a.category.localeCompare(b.category);
+        default:
+          return 0;
+      }
+    });
+
+  const featuredPosts = filteredAndSortedPosts.filter(post => post.featured);
+  const regularPosts = filteredAndSortedPosts.filter(post => !post.featured);
 
   if (loading) {
     return (
@@ -317,26 +787,64 @@ const BlogPage = () => {
       {/* All Posts */}
       <section className="all-posts">
         <div className="container">
-          <div className="posts-header">
-            <h2>All Articles</h2>
-            <div className="category-filter">
-              <button 
-                className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
-                onClick={() => handleFilterChange('all')}
-              >
-                All
-              </button>
-              {categories.map(category => (
-                <button 
-                  key={category} 
-                  className={`filter-btn ${activeFilter === category.toLowerCase() ? 'active' : ''}`}
-                  onClick={() => handleFilterChange(category.toLowerCase())}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+        <div className="posts-header">
+          <h2>All Articles</h2>
+        </div>
+
+        {/* Blog Controls */}
+        <div className="blog-controls">
+          <div className="search-container">
+            <span className="search-icon">🔍</span>
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search articles..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
           </div>
+          
+          <div className="sort-controls">
+            <span className="sort-label">Sort by:</span>
+            <button 
+              className={`sort-btn ${sortBy === 'newest' ? 'active' : ''}`}
+              onClick={() => handleSortChange('newest')}
+            >
+              Newest
+            </button>
+            <button 
+              className={`sort-btn ${sortBy === 'oldest' ? 'active' : ''}`}
+              onClick={() => handleSortChange('oldest')}
+            >
+              Oldest
+            </button>
+            <button 
+              className={`sort-btn ${sortBy === 'title' ? 'active' : ''}`}
+              onClick={() => handleSortChange('title')}
+            >
+              Title
+            </button>
+          </div>
+        </div>
+
+        {/* Category Filter */}
+        <div className="category-filter">
+          <button 
+            className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
+            onClick={() => handleFilterChange('all')}
+          >
+            All
+          </button>
+          {categories.map(category => (
+            <button 
+              key={category} 
+              className={`filter-btn ${activeFilter === category.toLowerCase() ? 'active' : ''}`}
+              onClick={() => handleFilterChange(category.toLowerCase())}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
           
           <div className="posts-grid">
             {regularPosts.map(post => (

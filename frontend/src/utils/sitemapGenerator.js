@@ -1,4 +1,6 @@
 // Sitemap generator for SEO optimization
+import { getAllServicePageCombinations } from '../data/expandedServiceAreas.js';
+
 export const generateSitemap = () => {
   const baseUrl = 'https://utahwatergardens.com';
   const currentDate = new Date().toISOString().split('T')[0];
@@ -85,6 +87,18 @@ export const generateSitemap = () => {
     <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>`;
+  });
+
+  // Add service-specific pages for all cities
+  const servicePageCombinations = getAllServicePageCombinations();
+  servicePageCombinations.forEach(({ city, service, slug }) => {
+    sitemap += `
+  <url>
+    <loc>${baseUrl}/${slug}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>`;
   });
 

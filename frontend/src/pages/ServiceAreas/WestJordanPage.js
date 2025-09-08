@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/PageHero.js';
+import CTA from '../../components/CTA';
 import './ServiceAreaPage.css';
 
 const WestJordanPage = () => {
@@ -77,6 +78,7 @@ const WestJordanPage = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="West Jordan Service Area"
               ></iframe>
+            
             </div>
           </div>
         </section>
@@ -129,28 +131,15 @@ const WestJordanPage = () => {
             <Link to="/pond-services/sandy" className="area-link">Sandy</Link>
             <Link to="/pond-services/west-valley-city" className="area-link">West Valley City</Link>
           </div>
-        </section>
-
-        {/* Contact CTA */}
-        <section 
-          className="contact-cta"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          <h2>Ready to Get Started in West Jordan?</h2>
-          <p>Contact us today for a free consultation and quote on your West Jordan pond project.</p>
-          <div className="cta-buttons">
-            <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-            <Link to="/contact" className="btn btn-secondary">Get Free Quote</Link>
-          </div>
-        </section>
+          </section>
+        </div>
+        
+        
+        
+        {/* CTA Section - Outside container for full width */}
+        <CTA />
       </div>
-    </div>
-  );
+    );
 };
 
 export default WestJordanPage;

@@ -6,6 +6,10 @@
   transition: opacity 0.6s ease-in-out;
   overflow: hidden;
   box-sizing: border-box;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
 }
 
 /* Prevent any scrollbars in hero section */
@@ -30,6 +34,10 @@
   overflow: hidden;
   padding-top: 120px; /* More space from fixed header */
   box-sizing: border-box;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
 }
 
 /* First wave layer - baby blue (behind) */
@@ -64,25 +72,34 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   z-index: 1;
   overflow: hidden;
   box-sizing: border-box;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
 }
 
 .page-hero-image {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
   overflow: hidden;
   box-sizing: border-box;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
 }
 
 .page-hero-video {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
 }
 
 .page-hero-fallback {
@@ -96,8 +113,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
   background: rgba(0, 0, 0, 0.6);
   z-index: 2;
   overflow: hidden;
@@ -269,10 +289,29 @@
   
   .page-hero-content {
     padding: 1.5rem;
-    margin: 0 1rem;
-    max-width: calc(100% - 2rem);
+    margin: 0;
+    max-width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     overflow: hidden;
     box-sizing: border-box;
+  }
+  
+  /* Override container constraints on mobile */
+  .page-hero .container {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Ensure page hero wrapper is full width */
+  .page-hero-wrapper {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    max-width: none !important;
   }
   
   .page-hero-title {
@@ -321,10 +360,21 @@
   
   .page-hero-content {
     padding: 1rem;
-    margin: 0 0.5rem;
-    max-width: calc(100% - 1rem);
+    margin: 0;
+    max-width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     overflow: hidden;
     box-sizing: border-box;
+  }
+  
+  /* Ensure page hero wrapper is full width on small mobile too */
+  .page-hero-wrapper {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    max-width: none !important;
   }
   
   .page-hero-title {

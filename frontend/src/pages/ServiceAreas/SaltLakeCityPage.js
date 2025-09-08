@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../components/SEO';
 import PageHero from '../../components/PageHero.js';
+import CTA from '../../components/CTA';
 import './ServiceAreaPage.css';
 
 const SaltLakeCityPage = () => {
@@ -39,7 +41,92 @@ const SaltLakeCityPage = () => {
   ];
 
   return (
-    <div className="service-area-page">
+    <>
+      <SEO 
+        title="Pond Services Near Salt Lake City, UT | Utah Water Gardens"
+        description="Professional pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning services. Licensed & insured. Call (801) 590-8516 for free quote."
+        keywords="pond services near salt lake city ut, salt lake city pond services, pond maintenance salt lake city, pond construction salt lake city, pond cleaning salt lake city, utah water gardens"
+        canonical="https://utahwatergardens.com/pond-services/salt-lake-city"
+      />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Utah Water Gardens - Salt Lake City Pond Services",
+          "description": "Professional pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning services.",
+          "url": "https://utahwatergardens.com/pond-services/salt-lake-city",
+          "telephone": "+1-801-590-8516",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "5911 S 1300 E",
+            "addressLocality": "Salt Lake City",
+            "addressRegion": "UT",
+            "postalCode": "84121",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "40.7608",
+            "longitude": "-111.8910"
+          },
+          "openingHours": [
+            "Mo-Sa 10:00-18:00"
+          ],
+          "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "40.7608",
+              "longitude": "-111.8910"
+            },
+            "geoRadius": "50000"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Pond Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Pond Design & Construction",
+                  "description": "Custom pond design and construction services for Salt Lake City properties"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Pond Maintenance & Care",
+                  "description": "Regular maintenance to keep your Salt Lake City pond healthy and beautiful"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Pond Cleaning",
+                  "description": "Deep cleaning and debris removal services with our Truxor T50 equipment"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Equipment Repair",
+                  "description": "Repair and maintenance of pond equipment in Salt Lake City"
+                }
+              }
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127"
+          }
+        })}
+      </script>
+      <div className="service-area-page">
       <PageHero 
         title="Pond Services in Salt Lake City"
         subtitle="Professional pond services for Salt Lake City and surrounding areas"
@@ -77,6 +164,7 @@ const SaltLakeCityPage = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Salt Lake City Service Area"
               ></iframe>
+            
             </div>
           </div>
         </section>
@@ -129,27 +217,13 @@ const SaltLakeCityPage = () => {
             <Link to="/pond-services/bluffdale" className="area-link">Bluffdale</Link>
             <Link to="/pond-services/draper" className="area-link">Draper</Link>
           </div>
-        </section>
-
-        {/* Contact CTA */}
-        <section 
-          className="contact-cta"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          <h2>Ready to Get Started in Salt Lake City?</h2>
-          <p>Contact us today for a free consultation and quote on your Salt Lake City pond project.</p>
-          <div className="cta-buttons">
-            <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-            <Link to="/contact" className="btn btn-secondary">Get Free Quote</Link>
-          </div>
-        </section>
+          </section>
+        </div>
+        
+        {/* CTA Section - Outside container for full width */}
+        <CTA />
       </div>
-    </div>
+    </>
   );
 };
 

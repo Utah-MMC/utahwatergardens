@@ -491,6 +491,17 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Hide Get Quote button on desktop */
+.desktop-hidden {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .desktop-hidden {
+    display: block !important;
+  }
+}
+
 /* Responsive Design */
 @media (min-width: 481px) {
   .contact-info {

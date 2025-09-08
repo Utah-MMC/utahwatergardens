@@ -205,7 +205,7 @@ const Header = ({ className = '' }) => {
               <a href="tel:(801) 590-8516" className="btn btn-primary btn-compact">
                 Call Now
               </a>
-              <Link to="/contact" className="btn btn-secondary btn-compact" onClick={closeMenu}>
+              <Link to="/contact" className="btn btn-secondary btn-compact desktop-hidden" onClick={closeMenu}>
                 Get Quote
               </Link>
             </div>

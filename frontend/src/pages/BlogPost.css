@@ -589,6 +589,100 @@
   border-bottom: none;
 }
 
+/* Dynamic Table of Contents */
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 0.5rem;
+}
+
+.toc-item.toc-level-2 {
+  margin-left: 0;
+}
+
+.toc-item.toc-level-3 {
+  margin-left: 1rem;
+  font-size: 0.85rem;
+}
+
+.toc-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #4b5563;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.toc-link:hover {
+  background: #f3f4f6;
+  color: #1e40af;
+  border-left-color: #1e40af;
+  transform: translateX(2px);
+}
+
+.toc-item.toc-level-3 .toc-link {
+  padding-left: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.toc-item.toc-level-3 .toc-link:hover {
+  transform: translateX(1px);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure headings have proper spacing when scrolled to */
+.post-content h2[id],
+.post-content h3[id] {
+  scroll-margin-top: 2rem;
+}
+
+/* Citation Styles */
+.post-content sup a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+.post-content sup a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.post-content ol {
+  margin: 2rem 0;
+  padding-left: 2rem;
+}
+
+.post-content ol li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.post-content ol li em {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Stat Citation Styles */
+.stat-citation {
+  font-size: 0.7rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
 /* Related Posts */
 .related-posts {
   padding: 4rem 0;
