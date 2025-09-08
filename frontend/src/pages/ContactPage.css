@@ -548,6 +548,17 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .contact-main-content {
+    padding-top: 3rem; /* Reduce top padding on mobile */
+  }
+  
+  /* Ensure cards don't touch header */
+  .contact-form-section,
+  .contact-methods-section,
+  .store-info-section {
+    margin-top: 2rem; /* Extra spacing for mobile */
+  }
+  
   .hero-title {
     font-size: 2.5rem;
   }

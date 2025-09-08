@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import PageHero from '../components/PageHero.js';
 import './TeamDetailPage.css';
 
 const MaintenanceCrewPage = () => {
@@ -44,38 +45,20 @@ const MaintenanceCrewPage = () => {
         canonical="https://utahwatergardens.com/team/maintenance-crew"
       />
       <div className={`team-detail-page ${isVisible ? 'visible' : ''}`}>
-        {/* Hero Section */}
-        <section className="team-hero">
-          <div className="hero-background">
-            <img 
-              src="/images/IMG_2779.jpg" 
-              alt="Professional pond maintenance and care services"
-              className="hero-image"
-            />
-            <div className="hero-overlay"></div>
-          </div>
-          
-          <div className="hero-content">
-            <div className="hero-text-content">
-              <h1 className="hero-title">
-                Maintenance 
-                <span className="hero-title-highlight"> Crew</span>
-              </h1>
-              
-              <p className="hero-subtitle">
-                Care Specialists ensuring your pond stays healthy and beautiful year-round
-              </p>
-              
-              <div className="hero-cta">
-                <Link to="/pond-services/maintenance" className="btn btn-primary">Schedule Service</Link>
-                <a href="tel:(801) 590-8516" className="btn btn-secondary">Call (801) 590-8516</a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero 
+          title="Maintenance Crew"
+          subtitle="Care Specialists ensuring your pond stays healthy and beautiful year-round"
+          backgroundImage="/images/IMG_2779.jpg"
+          backgroundImageAlt="Professional pond maintenance and care services"
+          showCTA={true}
+          ctaButtons={[
+            { text: "Schedule Service", href: "/pond-services/maintenance", type: "primary" },
+            { text: "Call (801) 590-8516", href: "tel:(801) 590-8516", type: "secondary" }
+          ]}
+        />
 
         {/* Main Content */}
-        <section className="team-main-content">
+        <section className="team-main-content first-section-gradient">
           <div className="container">
             <div className="team-intro">
               <h2>Our Maintenance Crew</h2>

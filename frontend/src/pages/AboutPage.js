@@ -259,6 +259,7 @@ const AboutPage = () => {
                 <div className="service-content">
                   <h3>Construction</h3>
                   <p>Custom design and construction of beautiful water features for your property.</p>
+                  <p className="service-description-mobile">Custom water feature design and construction.</p>
                   <span className="service-link">Learn More →</span>
                 </div>
               </Link>
@@ -273,6 +274,7 @@ const AboutPage = () => {
                 <div className="service-content">
                   <h3>Plant Expertise</h3>
                   <p>Largest selection of aquatic plants in Utah with expert advice for your pond.</p>
+                  <p className="service-description-mobile">Largest selection of aquatic plants in Utah.</p>
                   <span className="service-link">View Plants →</span>
                 </div>
               </Link>
@@ -287,6 +289,7 @@ const AboutPage = () => {
                 <div className="service-content">
                   <h3>Maintenance</h3>
                   <p>Professional maintenance services to keep your pond healthy and beautiful year-round.</p>
+                  <p className="service-description-mobile">Professional pond maintenance services.</p>
                   <span className="service-link">Schedule Service →</span>
                 </div>
               </Link>

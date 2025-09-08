@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero';
 import './PondLightingPage.css';
 
 const PondLightingPage = () => {
@@ -160,27 +161,25 @@ const PondLightingPage = () => {
   return (
     <div className="pond-lighting-page">
       {/* Hero Section */}
-      <section 
-        className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="hero-content">
-          <h1>Pond Lighting & Illumination</h1>
-          <p>Transform your pond into a magical nighttime oasis with our professional lighting solutions. From energy-efficient LEDs to stunning underwater effects, we have everything you need.</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Expert Advice</a>
-            <Link to="/pond-supplies" className="secondary-button">View All Supplies</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2780.jpg" alt="Professional pond lighting and illumination systems" />
-        </div>
-      </section>
+      <PageHero
+        title="Pond Lighting & Illumination"
+        subtitle="Transform your pond into a magical nighttime oasis with our professional lighting solutions. From energy-efficient LEDs to stunning underwater effects, we have everything you need."
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImageAlt="Professional pond lighting and illumination systems"
+        showCTA={true}
+        ctaButtons={[
+          {
+            text: "Call for Expert Advice",
+            href: "tel:(801) 590-8516",
+            type: "primary"
+          },
+          {
+            text: "View All Supplies",
+            link: "/pond-supplies",
+            type: "secondary"
+          }
+        ]}
+      />
 
       {/* Lighting Types */}
       <section className="lighting-types-section first-section-gradient">
@@ -469,7 +468,15 @@ const PondLightingPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Illuminate Your Pond?</h2>
           <p>Our experts can help you design the perfect lighting system for your pond</p>

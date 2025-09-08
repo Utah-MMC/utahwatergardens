@@ -116,6 +116,87 @@ main {
   transform: translateY(-2px);
 }
 
+/* Global Header Clearance Fix */
+.page-hero,
+.hero,
+.hero-section,
+.pond-gallery-hero,
+.plants-fish-hero,
+.resources-hero,
+.pond-supplies-hero,
+.about-hero,
+.pond-services-hero,
+.blog-hero,
+.team-hero {
+  padding-top: 140px !important; /* Ensure proper clearance from header */
+}
+
+/* Ensure page-level padding doesn't interfere with hero sections */
+.home-page,
+.pond-lighting-page,
+.equipment-repair-page,
+.tools-accessories-page,
+.water-treatments-page,
+.pond-maintenance-page,
+.water-quality-testing-page,
+.services-page,
+.pond-cleaning-page {
+  padding-top: 0 !important; /* Remove page-level padding to avoid double padding */
+}
+
+/* Ensure main content sections have proper spacing */
+.main-content,
+.content-section,
+.page-content,
+.section-content {
+  margin-top: 2rem !important; /* Add spacing between hero and content */
+}
+
+/* Ensure cards and titles don't go under header */
+.card,
+.content-card,
+.info-card,
+.service-card,
+.product-card {
+  margin-top: 1rem !important; /* Ensure cards have proper spacing */
+}
+
+/* Global Hero Text Contrast Fix */
+.hero-content h1,
+.hero-content h2,
+.hero-content h3 {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+.hero-content p {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+  opacity: 0.95 !important;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 15px !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 2rem !important;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
 /* Global CTA Full-Width Rule */
 .contact-cta,
 .shop-cta,
@@ -125,7 +206,9 @@ main {
 .about-cta,
 .newsletter-signup,
 .custom-solution-cta,
-.get-started-cta {
+.get-started-cta,
+.cta-section,
+.team-cta {
   width: 100vw !important; /* Full viewport width */
   margin-left: calc(-50vw + 50%) !important; /* Center the full-width element */
 }
@@ -140,9 +223,83 @@ main {
   .about-cta,
   .newsletter-signup,
   .custom-solution-cta,
-  .get-started-cta {
+  .get-started-cta,
+  .cta-section,
+  .team-cta {
     width: 100% !important; /* Reset to container width on mobile */
     margin-left: 0 !important; /* Reset margin on mobile */
+  }
+  
+  /* Mobile header clearance adjustments */
+  .page-hero,
+  .hero,
+  .hero-section,
+  .pond-gallery-hero,
+  .plants-fish-hero,
+  .resources-hero,
+  .pond-supplies-hero,
+  .about-hero,
+  .pond-services-hero,
+  .blog-hero,
+  .team-hero {
+    padding-top: 140px !important; /* Ensure proper mobile header clearance */
+  }
+  
+  /* Ensure all content sections have proper spacing on mobile */
+  .lighting-types-section,
+  .systems-section,
+  .effects-section,
+  .installation-section,
+  .why-choose-section,
+  .maintenance-section,
+  .packages-section,
+  .first-section-gradient {
+    padding-top: 60px !important; /* Extra spacing for mobile */
+  }
+  
+  /* Mobile hero text contrast adjustments */
+  .hero-content {
+    padding: 1.5rem !important;
+    margin: 0 1rem !important;
+  }
+  
+  .hero-content h1,
+  .hero-content h2,
+  .hero-content h3 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
+  }
+  
+  .hero-content p {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
+  }
+}
+
+/* Very small screens header clearance */
+@media (max-width: 480px) {
+  .page-hero,
+  .hero,
+  .hero-section,
+  .pond-gallery-hero,
+  .plants-fish-hero,
+  .resources-hero,
+  .pond-supplies-hero,
+  .about-hero,
+  .pond-services-hero,
+  .blog-hero,
+  .team-hero {
+    padding-top: 120px !important; /* Ensure proper clearance on very small screens */
+  }
+  
+  /* Extra spacing for content sections on very small screens */
+  .lighting-types-section,
+  .systems-section,
+  .effects-section,
+  .installation-section,
+  .why-choose-section,
+  .maintenance-section,
+  .packages-section,
+  .first-section-gradient {
+    padding-top: 40px !important; /* Reduced but still adequate spacing */
   }
 }
 
@@ -232,5 +389,34 @@ main {
   .btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
+  }
+}
+
+/* Global Mobile Service Minimization Rules */
+/* Hide mobile service descriptions on desktop */
+.service-description-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop service descriptions on mobile */
+  .service-content p:not(.service-description-mobile),
+  .service-info p:not(.service-description-mobile) {
+    display: none !important;
+  }
+  
+  /* Show mobile service descriptions */
+  .service-description-mobile {
+    display: block !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.4 !important;
+    color: #374151 !important;
+  }
+  
+  /* Hide desktop-only service features */
+  .service-features.desktop-only,
+  .service-details.desktop-only {
+    display: none !important;
   }
 }

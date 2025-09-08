@@ -2,6 +2,11 @@
   padding-top: 80px; /* Account for fixed header */
 }
 
+/* Hide mobile service descriptions on desktop */
+.service-description-mobile {
+  display: none;
+}
+
 .services-hero {
   background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
   color: white;
@@ -211,6 +216,19 @@
   
   .service-content {
     padding: 1.5rem;
+  }
+  
+  /* Service section mobile optimizations */
+  .service-content p:not(.service-description-mobile) {
+    display: none; /* Hide long desktop descriptions */
+  }
+  
+  .service-description-mobile {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: #374151;
   }
   
   .services-hero h1 {

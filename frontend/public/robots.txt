@@ -20,5 +20,8 @@ Allow: /resources/
 Allow: /about/
 Allow: /contact/
 Allow: /shop/
+Allow: /services/
 Allow: /pond-gallery/
 Allow: /free-estimate/
+Allow: /blog/
+Allow: /team/

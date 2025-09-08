@@ -3,17 +3,20 @@
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   color: #333;
+  padding-top: 0 !important; /* Remove page-level padding */
 }
 
 /* Hero Section */
 .hero-section {
   background: linear-gradient(135deg, #7c2d12 0%, #ea580c 100%);
   color: white;
-  padding: 80px 0;
+  padding: 160px 0 80px 0; /* Increased top padding for header clearance */
   display: flex;
   align-items: center;
-  min-height: 500px;
+  min-height: 600px; /* Increased min-height */
   position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); /* Full width */
 }
 
 /* First wave layer - baby blue (behind) */
@@ -47,19 +50,28 @@
 .hero-content {
   flex: 1;
   max-width: 600px;
-  padding: 0 40px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 40px;
 }
 
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  opacity: 0.9;
+  opacity: 0.95;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .hero-buttons {
@@ -85,20 +97,23 @@
 }
 
 .secondary-button {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.2);
   color: white;
   padding: 15px 30px;
   text-decoration: none;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
   display: inline-block;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .secondary-button:hover {
-  background: white;
-  color: #7c2d12;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.8);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .hero-image {
@@ -930,7 +945,10 @@
   .hero-section {
     flex-direction: column;
     text-align: center;
-    padding: 60px 20px;
+    padding: 140px 20px 60px 20px; /* Increased top padding for mobile header clearance */
+    min-height: 500px;
+    width: 100% !important;
+    margin-left: 0 !important;
   }
   
   .hero-content {
@@ -1005,5 +1023,72 @@
   
   .package-card {
     padding: 30px 20px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 120px 15px 40px 15px; /* Even more padding for very small screens */
+    min-height: 400px;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cta-button,
+  .secondary-button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .lighting-types-section,
+  .systems-section,
+  .effects-section,
+  .installation-section,
+  .why-choose-section,
+  .maintenance-section,
+  .packages-section {
+    padding: 40px 15px;
+  }
+  
+  .lighting-types-section h2,
+  .systems-section h2,
+  .effects-section h2,
+  .installation-section h2,
+  .why-choose-section h2,
+  .maintenance-section h2,
+  .packages-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .lighting-card,
+  .system-card,
+  .effect-card,
+  .installation-card {
+    margin: 0 5px 20px 5px;
+  }
+  
+  .package-card {
+    padding: 20px 15px;
   }
 }

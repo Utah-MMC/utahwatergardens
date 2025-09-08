@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
+import PageHero from '../components/PageHero.js';
 import './BlogPage.css';
 
 const BlogPage = () => {
@@ -261,49 +262,29 @@ const BlogPage = () => {
 
   return (
     <div className="blog-page">
-      <Helmet>
-        <title>Blog | Utah Water Gardens - Pond & Water Feature Insights</title>
-        <meta name="description" content="Utah Water Gardens Blog - Expert insights on pond design, water features, aquatic plants, fish care, and creating beautiful water gardens in Utah's unique climate." />
-        <meta name="keywords" content="water gardens, pond design, Utah ponds, water features, aquatic plants, koi fish, pond maintenance, water garden blog" />
-        <link rel="canonical" href="https://utahwatergardens.com/blog" />
-        <link rel="icon" href="/images/favicon.ico?v=3" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=3" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=3" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png?v=3" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png?v=3" />
-      </Helmet>
+      <SEO 
+        title="Blog | Utah Water Gardens - Pond & Water Feature Insights"
+        description="Utah Water Gardens Blog - Expert insights on pond design, water features, aquatic plants, fish care, and creating beautiful water gardens in Utah's unique climate."
+        keywords="water gardens, pond design, Utah ponds, water features, aquatic plants, koi fish, pond maintenance, water garden blog"
+        canonical="https://utahwatergardens.com/blog"
+      />
 
-      {/* Hero Section */}
-      <section className="blog-hero">
-        <div className="hero-background">
-          <img src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" alt="Beautiful Utah water garden with pond and water lilies" />
-          <div className="hero-overlay"></div>
-        </div>
-        <div className="container">
-          <div className="blog-hero-content">
-            <h1>Utah Water Gardens Blog</h1>
-            <p>Expert insights on pond design, water features, aquatic plants, fish care, and creating beautiful water gardens in Utah's unique climate.</p>
-            <div className="blog-stats">
-              <div className="stat">
-                <span className="stat-number">{blogPosts.length}</span>
-                <span className="stat-label">Expert Articles</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">{categories.length}</span>
-                <span className="stat-label">Categories</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">2025</span>
-                <span className="stat-label">Updated Content</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title="Utah Water Gardens Blog"
+        subtitle="Expert insights on pond design, water features, aquatic plants, fish care, and creating beautiful water gardens in Utah's unique climate"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImageAlt="Beautiful Utah water garden with pond and water lilies"
+        showStats={true}
+        stats={[
+          { number: blogPosts.length, label: "Expert Articles", icon: "📝" },
+          { number: categories.length, label: "Categories", icon: "📂" },
+          { number: "2025", label: "Updated Content", icon: "📅" }
+        ]}
+      />
 
       {/* Featured Posts */}
       {featuredPosts.length > 0 && (
-        <section className="featured-posts">
+        <section className="featured-posts first-section-gradient">
           <div className="container">
             <h2>Featured Articles</h2>
             <div className="featured-grid">

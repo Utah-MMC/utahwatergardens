@@ -8,12 +8,14 @@ export const generateSitemap = () => {
     { url: '/about', priority: '0.8', changefreq: 'monthly' },
     { url: '/contact', priority: '0.9', changefreq: 'monthly' },
     { url: '/shop', priority: '0.8', changefreq: 'weekly' },
+    { url: '/services', priority: '0.8', changefreq: 'weekly' },
     { url: '/resources', priority: '0.7', changefreq: 'weekly' },
     { url: '/plants-fish', priority: '0.8', changefreq: 'weekly' },
     { url: '/pond-services', priority: '0.8', changefreq: 'weekly' },
     { url: '/pond-supplies', priority: '0.8', changefreq: 'weekly' },
     { url: '/pond-gallery', priority: '0.7', changefreq: 'monthly' },
     { url: '/free-estimate', priority: '0.9', changefreq: 'monthly' },
+    { url: '/blog', priority: '0.7', changefreq: 'weekly' },
   ];
 
   const serviceAreaPages = [
@@ -42,6 +44,14 @@ export const generateSitemap = () => {
     'pond-maintenance', 'water-quality-testing', 'pond-cleaning',
     'equipment-repair', 'seasonal-services', 'pumps-aeration', 'pond-liners',
     'water-treatments', 'pond-lighting', 'tools-accessories'
+  ];
+
+  const teamPages = [
+    'expert-team', 'plant-experts', 'maintenance-crew'
+  ];
+
+  const additionalPlantPages = [
+    'water-lilies', 'marginal-plants', 'floating-plants'
   ];
 
   const resourcePages = [
@@ -111,6 +121,28 @@ export const generateSitemap = () => {
   </url>`;
   });
 
+  // Add team pages
+  teamPages.forEach(team => {
+    sitemap += `
+  <url>
+    <loc>${baseUrl}/team/${team}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>`;
+  });
+
+  // Add additional plant pages
+  additionalPlantPages.forEach(plant => {
+    sitemap += `
+  <url>
+    <loc>${baseUrl}/plants-fish/${plant}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>`;
+  });
+
   sitemap += `
 </urlset>`;
 
@@ -140,5 +172,10 @@ Allow: /resources/
 Allow: /about/
 Allow: /contact/
 Allow: /shop/
+Allow: /services/
+Allow: /pond-gallery/
+Allow: /free-estimate/
+Allow: /blog/
+Allow: /team/
 Allow: /service-areas/`;
 };

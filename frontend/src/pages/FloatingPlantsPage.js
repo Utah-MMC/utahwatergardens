@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero.js';
 import ImageModal from '../components/ImageModal';
 import { getPlantsByCategory, createPlantSlug } from '../data/plantData';
@@ -21,13 +22,20 @@ const FloatingPlantsPage = () => {
   };
 
   return (
-    <div className="floating-plants-page">
-      <PageHero 
-        title="Floating Plants"
-        subtitle="Natural water coverage and filtration for your pond"
-        backgroundImage="/images/IMG_2775.jpg"
-        backgroundImageAlt="Beautiful floating plants on pond surface"
+    <>
+      <SEO 
+        title="Floating Plants - Natural Water Coverage | Utah Water Gardens"
+        description="Natural water coverage and filtration for your pond. Beautiful floating plants to enhance water quality and aesthetics in Utah."
+        keywords="floating plants, water coverage, pond filtration, aquatic plants, water garden plants, utah floating plants"
+        canonical="https://utahwatergardens.com/plants-fish/floating-plants"
       />
+      <div className="floating-plants-page">
+        <PageHero 
+          title="Floating Plants"
+          subtitle="Natural water coverage and filtration for your pond"
+          backgroundImage="/images/IMG_2775.jpg"
+          backgroundImageAlt="Beautiful floating plants on pond surface"
+        />
 
       <div className="container">
         {/* Introduction */}
@@ -219,13 +227,14 @@ const FloatingPlantsPage = () => {
         </section>
       </div>
       
-      <ImageModal 
-        isOpen={!!modalImage}
-        onClose={closeModal}
-        imageSrc={modalImage}
-        imageAlt={modalAlt}
-      />
-    </div>
+        <ImageModal 
+          isOpen={!!modalImage}
+          onClose={closeModal}
+          imageSrc={modalImage}
+          imageAlt={modalAlt}
+        />
+      </div>
+    </>
   );
 };
 

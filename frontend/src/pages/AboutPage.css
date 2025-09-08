@@ -6,6 +6,11 @@
   transition: opacity 0.6s ease-in-out;
 }
 
+/* Hide mobile service descriptions on desktop */
+.service-description-mobile {
+  display: none;
+}
+
 .about-page.visible {
   opacity: 1;
 }
@@ -661,6 +666,17 @@
     padding-top: 100px; /* More space from mobile header */
   }
   
+  .about-main-content {
+    padding-top: 3rem; /* Reduce top padding on mobile */
+  }
+  
+  /* Ensure cards don't touch header */
+  .tab-content-container,
+  .services-overview-section,
+  .store-info-section {
+    margin-top: 2rem; /* Extra spacing for mobile */
+  }
+  
   .hero-title {
     font-size: 2.5rem;
   }
@@ -672,6 +688,19 @@
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+  
+  /* Service section mobile optimizations */
+  .service-content p:not(.service-description-mobile) {
+    display: none; /* Hide long desktop descriptions */
+  }
+  
+  .service-description-mobile {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: #374151;
   }
   
   .tab-navigation {
@@ -721,20 +750,41 @@
 }
 
 @media (max-width: 480px) {
+  .about-hero {
+    padding-top: 80px; /* Slightly less padding for very small screens */
+    min-height: 600px; /* Reduce min-height for small screens */
+  }
+  
+  .hero-content {
+    padding: 0 1rem; /* Reduce horizontal padding */
+  }
+  
   .hero-title {
     font-size: 2rem;
+    margin-bottom: 1rem; /* Reduce margin */
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem; /* Reduce margin */
   }
   
   .hero-stats {
     grid-template-columns: 1fr;
+    gap: 0.75rem; /* Reduce gap */
+    margin-bottom: 2rem; /* Reduce margin */
   }
   
   .stat-item {
-    padding: 1rem;
+    padding: 0.75rem; /* Reduce padding */
   }
   
   .stat-number {
-    font-size: 2rem;
+    font-size: 1.75rem; /* Slightly smaller */
+  }
+  
+  .stat-label {
+    font-size: 0.8rem; /* Smaller label */
   }
   
   .section-header h2 {

@@ -5,6 +5,11 @@
   color: #333;
 }
 
+/* Hide mobile service descriptions on desktop */
+.service-description-mobile {
+  display: none;
+}
+
 /* Hero Section */
 .hero-section {
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
@@ -47,19 +52,28 @@
 .hero-content {
   flex: 1;
   max-width: 600px;
-  padding: 0 40px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 40px;
 }
 
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  opacity: 0.9;
+  opacity: 0.95;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .hero-buttons {
@@ -85,20 +99,23 @@
 }
 
 .secondary-button {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.2);
   color: white;
   padding: 15px 30px;
   text-decoration: none;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
   display: inline-block;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .secondary-button:hover {
-  background: white;
-  color: #1e3a8a;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.8);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .hero-image {
@@ -647,6 +664,19 @@
   
   .services-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Service section mobile optimizations */
+  .service-info p:not(.service-description-mobile) {
+    display: none; /* Hide long desktop descriptions */
+  }
+  
+  .service-description-mobile {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: #374151;
   }
   
   .issues-content,

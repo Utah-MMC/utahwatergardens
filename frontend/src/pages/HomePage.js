@@ -207,17 +207,11 @@ const HomePage = () => {
       <div className="home-page">
       <section className="hero">
         <div className="hero-background">
-          <video 
-            className="hero-video"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/images/hero-background.jpg"
-          >
-            <source src="/images/hero-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <img 
+            src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
+            alt="Beautiful pond landscape with waterfall and rock features"
+            className="hero-image"
+          />
           <div className="hero-overlay"></div>
         </div>
         
@@ -232,8 +226,36 @@ const HomePage = () => {
               From stunning koi ponds to tranquil water features, we bring your aquatic vision to life with expert design, construction, and maintenance services.
             </p>
             
+            {/* Mobile-only simplified subtitle */}
+            <p className="hero-subtitle-mobile">
+              Expert pond design, construction, and maintenance services.
+            </p>
+            
+            <div className="hero-stats">
+              <div className="stat-item">
+                <div className="stat-icon">Experience</div>
+                <div className="stat-number">15+</div>
+                <div className="stat-label">Years Experience</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-icon">Projects</div>
+                <div className="stat-number">2500+</div>
+                <div className="stat-label">Projects Completed</div>
+              </div>
+              <div className="stat-item desktop-only">
+                <div className="stat-icon">Customers</div>
+                <div className="stat-number">2500+</div>
+                <div className="stat-label">Happy Customers</div>
+              </div>
+              <div className="stat-item desktop-only">
+                <div className="stat-icon">Plants</div>
+                <div className="stat-number">50+</div>
+                <div className="stat-label">Plant Varieties</div>
+              </div>
+            </div>
+            
             <div className="hero-buttons">
-              <Link to="/plants-fish" className="btn btn-secondary btn-large">
+              <Link to="/plants-fish" className="btn btn-secondary btn-large desktop-only">
                 View Plants & Fish →
               </Link>
               <Link to="/pond-services" className="btn btn-secondary btn-large">
@@ -244,12 +266,6 @@ const HomePage = () => {
               </Link>
             </div>
           </div>
-        </div>
-        
-        <div className="hero-side-cta">
-          <Link to="/free-estimate" className="side-cta-button">
-            Free Estimate
-          </Link>
         </div>
       </section>
 
@@ -267,7 +283,8 @@ const HomePage = () => {
               <div className="service-content">
                 <h3>Pond Design & Construction</h3>
                 <p>Transform your vision into reality with our custom pond design and construction services. From intimate water features to expansive koi ponds, we create stunning aquatic landscapes.</p>
-                <ul className="service-features">
+                <p className="service-description-mobile">Custom pond design and construction services for your dream water feature.</p>
+                <ul className="service-features desktop-only">
                   <li>Custom design & planning</li>
                   <li>Professional installation</li>
                   <li>Quality materials & equipment</li>
@@ -287,7 +304,8 @@ const HomePage = () => {
               <div className="service-content">
                 <h3>Pond Maintenance & Care</h3>
                 <p>Keep your water garden thriving with our comprehensive maintenance program. We handle water quality testing, plant care, equipment maintenance, and seasonal preparation.</p>
-                <ul className="service-features">
+                <p className="service-description-mobile">Complete maintenance program to keep your water garden healthy and beautiful.</p>
+                <ul className="service-features desktop-only">
                   <li>Water quality testing & treatment</li>
                   <li>Plant trimming & fertilization</li>
                   <li>Equipment inspection & repair</li>
@@ -307,7 +325,8 @@ const HomePage = () => {
               <div className="service-content">
                 <h3>Lake & Pond Dredging</h3>
                 <p>Restore your pond's depth and functionality with our professional dredging services. We remove accumulated sediment and restore proper water circulation for healthy aquatic life.</p>
-                <ul className="service-features">
+                <p className="service-description-mobile">Professional dredging services to restore your pond's depth and health.</p>
+                <ul className="service-features desktop-only">
                   <li>Sediment removal</li>
                   <li>Depth restoration</li>
                   <li>Water circulation improvement</li>
@@ -327,7 +346,8 @@ const HomePage = () => {
               <div className="service-content">
                 <h3>Plants & Fish Stocking</h3>
                 <p>Complete your water garden with our extensive selection of aquatic plants and fish. We offer the largest variety of aquatic plants in Utah and healthy koi for your pond.</p>
-                <ul className="service-features">
+                <p className="service-description-mobile">Largest selection of aquatic plants and fish in Utah for your water garden.</p>
+                <ul className="service-features desktop-only">
                   <li>Water lilies & aquatic plants</li>
                   <li>Koi & goldfish selection</li>
                   <li>Floating & marginal plants</li>

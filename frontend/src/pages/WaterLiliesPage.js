@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero.js';
 import ImageModal from '../components/ImageModal';
 import { getPlantsByCategory, createPlantSlug } from '../data/plantData';
@@ -21,13 +22,20 @@ const WaterLiliesPage = () => {
   };
 
   return (
-    <div className="water-lilies-page">
-      <PageHero 
-        title="Water Lilies"
-        subtitle="Discover our stunning collection of water lilies in various colors and sizes"
-        backgroundImage="/images/waterLillies-topaz-enhance-4x.jpeg"
-        backgroundImageAlt="Beautiful water lilies in a pond"
+    <>
+      <SEO 
+        title="Water Lilies - Beautiful Aquatic Plants | Utah Water Gardens"
+        description="Discover our stunning collection of water lilies in various colors and sizes. Premium aquatic plants for your pond or water garden in Utah."
+        keywords="water lilies, aquatic plants, pond plants, water garden plants, utah water lilies, pond flowers"
+        canonical="https://utahwatergardens.com/plants-fish/water-lilies"
       />
+      <div className="water-lilies-page">
+        <PageHero 
+          title="Water Lilies"
+          subtitle="Discover our stunning collection of water lilies in various colors and sizes"
+          backgroundImage="/images/waterLillies-topaz-enhance-4x.jpeg"
+          backgroundImageAlt="Beautiful water lilies in a pond"
+        />
 
       <div className="container">
         {/* Introduction */}
@@ -196,13 +204,14 @@ const WaterLiliesPage = () => {
         </section>
       </div>
       
-      <ImageModal 
-        isOpen={!!modalImage}
-        onClose={closeModal}
-        imageSrc={modalImage}
-        imageAlt={modalAlt}
-      />
-    </div>
+        <ImageModal 
+          isOpen={!!modalImage}
+          onClose={closeModal}
+          imageSrc={modalImage}
+          imageAlt={modalAlt}
+        />
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero.js';
 import ImageModal from '../components/ImageModal';
 import { getPlantsByCategory, createPlantSlug } from '../data/plantData';
@@ -21,13 +22,20 @@ const MarginalPlantsPage = () => {
   };
 
   return (
-    <div className="marginal-plants-page">
-      <PageHero 
-        title="Marginal Plants"
-        subtitle="Perfect plants for pond edges and shallow water areas"
-        backgroundImage="/images/IMG_2779.jpg"
-        backgroundImageAlt="Beautiful marginal plants around a pond edge"
+    <>
+      <SEO 
+        title="Marginal Plants - Pond Edge Plants | Utah Water Gardens"
+        description="Perfect plants for pond edges and shallow water areas. Beautiful marginal plants to enhance your water garden in Utah."
+        keywords="marginal plants, pond edge plants, shallow water plants, water garden plants, utah pond plants, aquatic plants"
+        canonical="https://utahwatergardens.com/plants-fish/marginal-plants"
       />
+      <div className="marginal-plants-page">
+        <PageHero 
+          title="Marginal Plants"
+          subtitle="Perfect plants for pond edges and shallow water areas"
+          backgroundImage="/images/IMG_2779.jpg"
+          backgroundImageAlt="Beautiful marginal plants around a pond edge"
+        />
 
       <div className="container">
         {/* Introduction */}
@@ -220,13 +228,14 @@ const MarginalPlantsPage = () => {
         </section>
       </div>
       
-      <ImageModal 
-        isOpen={!!modalImage}
-        onClose={closeModal}
-        imageSrc={modalImage}
-        imageAlt={modalAlt}
-      />
-    </div>
+        <ImageModal 
+          isOpen={!!modalImage}
+          onClose={closeModal}
+          imageSrc={modalImage}
+          imageAlt={modalAlt}
+        />
+      </div>
+    </>
   );
 };
 

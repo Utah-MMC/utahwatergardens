@@ -48,7 +48,7 @@ const PlantDetailPage = () => {
 
       <div className="container">
         {/* Plant Overview */}
-        <section className="plant-overview">
+        <section className="plant-overview first-section-gradient">
           <div className="plant-content">
             <div className="plant-image-section">
               <div className="main-image-container">

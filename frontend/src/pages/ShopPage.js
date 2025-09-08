@@ -167,7 +167,7 @@ const ShopPage = () => {
               className="hero-image"
             />
             <div className="hero-overlay"></div>
-          </div>
+      </div>
           
           <div className="hero-content">
             <div className="hero-text-content">
@@ -186,24 +186,24 @@ const ShopPage = () => {
                 </a>
                 <Link to="/plants-fish" className="btn btn-secondary btn-large">
                   View Plants & Fish →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+    </Link>
+      </div>
+      </div>
+      </div>
+    </section>
 
         {/* Phone CTA Section */}
         <section className="shop-cta-section first-section-gradient">
-          <div className="container">
+        <div className="container">
             <a href="tel:(801) 590-8516" className="hero-cta">
-              Call (801) 590-8516 for Expert Advice
-            </a>
-          </div>
-        </section>
+            Call (801) 590-8516 for Expert Advice
+          </a>
+        </div>
+      </section>
 
-        {/* Featured Products */}
+      {/* Featured Products */}
         <section className="featured-products">
-          <div className="container">
+        <div className="container">
             <div className="section-header">
               <h2>Featured Products</h2>
               <p>Our most popular items and best sellers</p>
@@ -301,13 +301,13 @@ const ShopPage = () => {
                   />
                 ))}
               </div>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Plants Collection */}
         <section className="plants-preview">
-          <div className="container">
+        <div className="container">
             <div className="plants-header">
               <div className="plants-title-section">
                 <h2>Our Plant Collection</h2>
@@ -356,97 +356,97 @@ const ShopPage = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Store Info */}
+      {/* Store Info */}
         <section className="store-info-section">
-          <div className="container">
+        <div className="container">
             <div className="store-info-content">
               <div className="store-info-text">
                 <h2>Visit Our Store Today!</h2>
                 <p>
                   <strong>See our complete selection in person!</strong> Come visit our store to see our
-                  complete selection of aquatic plants, fish, and pond supplies. We also offer delivery and scheduled pickup
-                  options for your convenience. Our knowledgeable staff can help you choose the perfect plants and supplies for your pond.
-                </p>
+                complete selection of aquatic plants, fish, and pond supplies. We also offer delivery and scheduled pickup
+                options for your convenience. Our knowledgeable staff can help you choose the perfect plants and supplies for your pond.
+              </p>
                 <div className="store-details">
                   <div className="store-detail">
-                    <i className="fas fa-map-marker-alt" aria-hidden></i>
+                  <i className="fas fa-map-marker-alt" aria-hidden></i>
                     <span>5911 S 1300 E, Salt Lake City, UT 84121</span>
-                  </div>
-                  <div className="store-detail">
-                    <i className="fas fa-phone" aria-hidden></i>
-                    <a href="tel:(801) 590-8516">(801) 590-8516</a>
-                  </div>
-                  <div className="store-detail">
-                    <i className="fas fa-clock" aria-hidden></i>
-                    <span>Monday - Friday: 10:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 4:00 PM</span>
-                  </div>
                 </div>
-                <div className="store-cta-buttons">
-                  <a href="tel:(801) 590-8516" className="btn btn-primary">Call Us Now</a>
-                  <a
-                    href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary"
-                  >
-                    Get Directions
-                  </a>
+                  <div className="store-detail">
+                  <i className="fas fa-phone" aria-hidden></i>
+                    <a href="tel:(801) 590-8516">(801) 590-8516</a>
+                </div>
+                  <div className="store-detail">
+                  <i className="fas fa-clock" aria-hidden></i>
+                  <span>Monday - Friday: 10:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 4:00 PM</span>
                 </div>
               </div>
+                <div className="store-cta-buttons">
+                  <a href="tel:(801) 590-8516" className="btn btn-primary">Call Us Now</a>
+                <a
+                  href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                >
+                  Get Directions
+                </a>
+              </div>
+            </div>
               <div className="store-info-image">
                 <img src="/images/IMG_2770.jpg" alt="Our store and pond maintenance services" />
               </div>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Help CTA */}
         <section className="help-cta">
-          <div className="container">
+        <div className="container">
             <h2>Need Help Choosing?</h2>
-            <p>Our experts can help you select the perfect plants and supplies for your pond project.</p>
+          <p>Our experts can help you select the perfect plants and supplies for your pond project.</p>
             <a href="tel:(801) 590-8516" className="btn btn-primary">
-              Call (801) 590-8516 for Assistance
-            </a>
-          </div>
-        </section>
+            Call (801) 590-8516 for Assistance
+          </a>
+        </div>
+      </section>
 
-        {/* Retail Highlights */}
+      {/* Retail Highlights */}
         <section className="retail-highlights gradient-wipe-up">
-          <div className="container">
+        <div className="container">
             <h2>What Makes Our Retail Location Special</h2>
             <div className="highlights-grid">
               <Link to="/plants-fish/aquatic-plants" className="highlight-card">
                 <img src="/images/IMG_2775.jpg" alt="Expert plant selection" />
-                <h3>Expert Plant Selection</h3>
-                <p>Our staff hand-picks the healthiest and most beautiful plants for your pond</p>
+              <h3>Expert Plant Selection</h3>
+              <p>Our staff hand-picks the healthiest and most beautiful plants for your pond</p>
                 <a href="tel:(801) 590-8516" className="highlight-cta" onClick={(e) => e.stopPropagation()}>
                   Call for Plant Advice
                 </a>
-              </Link>
+            </Link>
               <Link to="/plants-fish/aquatic-plants" className="highlight-card">
                 <img src="/images/IMG_2779.jpg" alt="Seasonal availability" />
-                <h3>Seasonal Availability</h3>
-                <p>We stock plants that are appropriate for each season and Utah's climate</p>
+              <h3>Seasonal Availability</h3>
+              <p>We stock plants that are appropriate for each season and Utah's climate</p>
                 <a href="tel:(801) 590-8516" className="highlight-cta" onClick={(e) => e.stopPropagation()}>
                   Check Current Stock
                 </a>
-              </Link>
+            </Link>
               <Link to="/contact" className="highlight-card">
                 <img src="/images/IMG_2780.jpg" alt="Local expertise" />
-                <h3>Local Expertise</h3>
-                <p>We know what works in Utah's unique environment and can guide your choices</p>
+              <h3>Local Expertise</h3>
+              <p>We know what works in Utah's unique environment and can guide your choices</p>
                 <a href="tel:(801) 590-8516" className="highlight-cta" onClick={(e) => e.stopPropagation()}>
                   Get Local Advice
                 </a>
-              </Link>
-            </div>
+            </Link>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+    </div>
     </>
   );
 };

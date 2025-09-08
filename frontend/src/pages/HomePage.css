@@ -14,7 +14,7 @@
   overflow: hidden;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  padding-top: 0; /* Remove padding to eliminate white space */
+  padding-top: 120px; /* Add padding for header space */
 }
 
 /* First wave layer - baby blue (behind) */
@@ -74,7 +74,7 @@
   left: 0;
   width: 100vw;
   height: 100%;
-  background: none; /* Remove full-screen overlay */
+  background: rgba(0, 0, 0, 0.6); /* Increased overlay for better text contrast */
   z-index: 2;
 }
 
@@ -82,49 +82,109 @@
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 500px; /* Even smaller width for more compact design */
+  max-width: 1200px;
   margin: 0 auto;
-  margin-top: 0.5rem; /* Minimal top margin */
-  padding: 1.5rem; /* Reduced padding for more compact look */
+  padding: 0 2rem;
   text-align: center;
-  background: rgba(0, 0, 0, 0.4); /* Much more transparent to show video */
-  border-radius: 16px; /* Slightly smaller radius */
-  backdrop-filter: blur(10px); /* Less blur to maintain transparency */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
 }
 
 .hero-text-content {
-  max-width: 450px; /* More compact text width to match container */
+  max-width: 800px;
   margin: 0 auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-title {
-  font-size: 3.5rem; /* Reduced from 4.5rem for more compact design */
+  font-size: 4rem;
   font-weight: 800;
-  margin-bottom: 0.8rem; /* Reduced margin */
+  margin-bottom: 1.5rem;
   line-height: 1.1;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.5);
   color: white;
-  word-wrap: break-word; /* Ensure long words wrap */
-  overflow-wrap: break-word; /* Modern browsers */
-  hyphens: auto; /* Add hyphens for better text flow */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem; /* Reduced from 1.4rem */
-  margin-bottom: 2rem; /* Reduced from 3rem */
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.4);
   font-weight: 400;
-  line-height: 1.5; /* Slightly tighter line height */
+  line-height: 1.6;
   color: white;
+}
+
+/* Hide mobile subtitle on desktop */
+.hero-subtitle-mobile {
+  display: none;
+}
+
+/* Hide mobile service descriptions on desktop */
+.service-description-mobile {
+  display: none;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fbbf24;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem; /* Reduced gap for more compact layout */
+  gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 1rem; /* Reduced bottom margin */
+  margin-bottom: 1rem;
 }
 
 .btn-large {
@@ -269,33 +329,135 @@
   .hero {
     height: 100vh;
     min-height: 600px;
-    padding-top: 0; /* Remove padding to eliminate white space */
+    padding-top: 140px; /* Increased for better header clearance */
   }
   
   .hero-content {
-    padding: 1rem; /* More compact padding on mobile */
-    margin: 0 0.5rem;
-    margin-top: 0.5rem; /* Minimal top margin */
-    max-width: 400px; /* Maintain compact width on mobile */
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+  
+  .hero-text-content {
+    padding: 1.5rem;
+    margin: 0 1rem;
+    background: rgba(0, 0, 0, 0.4); /* Enhanced background for better readability */
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
   
   .hero-title {
-    font-size: 2.5rem; /* Adjusted for compact mobile design */
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
   }
   
   .hero-subtitle {
-    font-size: 0.95rem; /* Adjusted for compact mobile design */
-    margin-bottom: 1.5rem; /* Reduced margin */
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Simplified stats for mobile - show only 2 most important */
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Hide desktop-only stats on mobile */
+  .desktop-only {
+    display: none;
+  }
+  
+  /* Show mobile subtitle, hide desktop subtitle */
+  .hero-subtitle {
+    display: none;
+  }
+  
+  .hero-subtitle-mobile {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Service section mobile optimizations */
+  .service-content p:not(.service-description-mobile) {
+    display: none; /* Hide long desktop descriptions */
+  }
+  
+  .service-description-mobile {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: #374151;
+  }
+  
+  .stat-item {
+    padding: 0.8rem 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+    color: #10b981;
+    font-weight: 800;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+    opacity: 0.9;
   }
   
   .hero-buttons {
     gap: 0.8rem;
+    flex-direction: column;
   }
   
   .btn-large {
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 1.5rem;
     font-size: 1rem;
-    max-width: 280px;
+    max-width: 100%;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Mobile-specific enhancements */
+  .hero-text-content {
+    animation: slideInUp 0.8s ease-out;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Touch-friendly interactions */
+  .service-card:active {
+    transform: scale(0.98);
+  }
+  
+  .btn-large:active {
+    transform: scale(0.95);
   }
 }
 
@@ -303,57 +465,188 @@
   .hero {
     height: 100vh;
     min-height: 500px;
-    padding-top: 0; /* Remove padding to eliminate white space */
+    padding-top: 120px; /* Better header clearance */
   }
   
   .hero-content {
+    padding: 0 0.5rem;
+  }
+  
+  .hero-text-content {
     padding: 1rem;
-    margin: 0 0.25rem;
-    margin-top: 0.25rem; /* Minimal top margin */
-    max-width: 100%; /* Ensure full width on small screens */
-    box-sizing: border-box; /* Include padding in width calculation */
+    margin: 0 0.5rem;
+    border-radius: 15px;
   }
   
   .hero-title {
-    font-size: 2rem; /* Reduced from 2.5rem for better mobile fit */
-    line-height: 1.2; /* Better line height for mobile */
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
   }
   
   .hero-subtitle {
-    font-size: 0.9rem; /* Slightly smaller for mobile */
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+  }
+  
+  /* Single column stats for very small screens */
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .stat-item {
+    padding: 0.6rem 0.5rem;
+    border-radius: 10px;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  .hero-buttons {
+    gap: 0.6rem;
+    flex-direction: column;
+    align-items: center;
   }
   
   .btn-large {
-    padding: 0.7rem 1.2rem;
+    padding: 0.8rem 1rem;
     font-size: 0.9rem;
-    max-width: 250px;
+    max-width: 100%;
+    border-radius: 10px;
   }
 }
 
-/* Extra small mobile screens */
+/* Ultra-minimal mobile experience */
 @media (max-width: 360px) {
+  .hero {
+    min-height: 400px;
+    padding-top: 100px;
+  }
+  
+  .hero-text-content {
+    padding: 0.8rem;
+    margin: 0 0.3rem;
+    border-radius: 12px;
+  }
+  
   .hero-title {
-    font-size: 1.8rem; /* Even smaller for very small screens */
-    line-height: 1.3;
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
   }
   
   .hero-subtitle {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
   }
   
-  .hero-content {
-    padding: 0.75rem;
-    margin: 0 0.15rem;
-    max-width: 100%; /* Ensure full width on very small screens */
-    box-sizing: border-box; /* Include padding in width calculation */
+  /* Hide stats completely on very small screens */
+  .hero-stats {
+    display: none;
+  }
+  
+  .hero-buttons {
+    gap: 0.5rem;
   }
   
   .btn-large {
-    padding: 0.6rem 1rem;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Minimize service cards */
+  .services-overview {
+    padding: 2rem 0;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-header p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .services-grid {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .service-card {
+    border-radius: 15px;
+  }
+  
+  .service-content {
+    padding: 1rem;
+  }
+  
+  .service-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .service-content p {
     font-size: 0.85rem;
-    max-width: 220px;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  
+  .service-image {
+    height: 150px;
+  }
+  
+  .service-features {
+    margin-bottom: 1rem;
+  }
+  
+  .service-features li {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .service-buttons .btn {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  /* Service section mobile optimizations for 768px */
+  .service-content p:not(.service-description-mobile) {
+    display: none; /* Hide long desktop descriptions */
+  }
+  
+  .service-description-mobile {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: #374151;
+  }
+  
+  /* Simplify service buttons on mobile */
+  .service-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .service-buttons .btn {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.7rem 1rem;
   }
 }
+
+/* Clean up complete */
 
 /* Services Section */
 .services-overview {
@@ -493,7 +786,7 @@
 }
 
 .service-content p {
-  color: #64748b;
+  color: #374151; /* Darker color for better contrast */
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
@@ -792,44 +1085,95 @@
   
   .section-header h2 {
     font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
   
   .section-header p {
     font-size: 1.1rem;
     padding: 0 1rem;
+    margin-bottom: 2rem;
   }
   
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: 1fr; /* Single column for better mobile experience */
+    gap: 1.5rem;
     padding: 0 1rem;
   }
   
+  /* Service section mobile optimizations for 768px */
+  .service-content p:not(.service-description-mobile) {
+    display: none; /* Hide long desktop descriptions */
+  }
+  
+  .service-description-mobile {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: #374151;
+  }
+  
   .service-card {
-    border-radius: 15px;
-    min-height: 450px;
+    border-radius: 20px;
+    min-height: auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: #1e40af;
   }
   
   .service-content {
-    padding: 1.25rem;
+    padding: 1.5rem;
   }
   
   .service-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #1e40af;
+  }
+  
+  .service-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
   
   .service-image {
-    height: 180px;
+    height: 200px;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .service-features {
+    margin-bottom: 1.5rem;
+  }
+  
+  .service-features li {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
   }
   
   .service-buttons {
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.8rem;
   }
   
   .service-buttons .btn {
-    font-size: 0.85rem;
-    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .service-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
   
   .services-cta {

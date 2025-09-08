@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero.js';
 import './PondMaintenancePage.css';
 
 const PondMaintenancePage = () => {
@@ -79,20 +80,17 @@ const PondMaintenancePage = () => {
 
   return (
     <div className="pond-maintenance-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Pond Maintenance Services</h1>
-          <p>Professional pond maintenance to keep your water feature healthy and beautiful year-round</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Maintenance Quote</a>
-            <Link to="/pond-services" className="secondary-button">View All Services</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2770.jpg" alt="Professional pond maintenance services" />
-        </div>
-      </section>
+      <PageHero 
+        title="Pond Maintenance Services"
+        subtitle="Professional pond maintenance to keep your water feature healthy and beautiful year-round"
+        backgroundImage="/images/IMG_2770.jpg"
+        backgroundImageAlt="Professional pond maintenance services"
+        showCTA={true}
+        ctaButtons={[
+          { text: "Call for Maintenance Quote", href: "tel:(801) 590-8516", type: "primary" },
+          { text: "View All Services", href: "/pond-services", type: "secondary" }
+        ]}
+      />
 
       {/* Services Overview */}
       <section className="services-section first-section-gradient">

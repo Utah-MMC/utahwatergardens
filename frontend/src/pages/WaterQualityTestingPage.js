@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import PageHero from '../components/PageHero.js';
 import './WaterQualityTestingPage.css';
 
 const WaterQualityTestingPage = () => {
@@ -85,29 +87,25 @@ const WaterQualityTestingPage = () => {
   ];
 
   return (
-    <div className="water-quality-testing-page">
-      {/* Hero Section */}
-      <section 
-        className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="hero-content">
-          <h1>Water Quality Testing Services</h1>
-          <p>Professional water quality testing to ensure your pond maintains optimal conditions for fish and plants</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Testing Quote</a>
-            <Link to="/pond-services" className="secondary-button">View All Services</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2782.jpg" alt="Professional water quality testing" />
-        </div>
-      </section>
+    <>
+      <SEO 
+        title="Water Quality Testing Services - Professional Pond Testing | Utah Water Gardens"
+        description="Professional water quality testing services for ponds and water features. pH, ammonia, nitrite, nitrate, and dissolved oxygen testing to ensure optimal conditions for fish and plants."
+        keywords="water quality testing, pond testing, pH testing, ammonia testing, nitrite testing, nitrate testing, dissolved oxygen, utah pond testing, water quality services"
+        canonical="https://utahwatergardens.com/pond-services/water-quality-testing"
+      />
+      <div className="water-quality-testing-page">
+        <PageHero 
+        title="Water Quality Testing Services"
+        subtitle="Professional water quality testing to ensure your pond maintains optimal conditions for fish and plants"
+        backgroundImage="/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg"
+        backgroundImageAlt="Professional water quality testing services"
+        showCTA={true}
+        ctaButtons={[
+          { text: "Call for Testing Quote", href: "tel:(801) 590-8516", type: "primary" },
+          { text: "View All Services", href: "/pond-services", type: "secondary" }
+        ]}
+      />
 
       {/* Why Water Testing Matters */}
       <section className="importance-section first-section-gradient">
@@ -283,7 +281,15 @@ const WaterQualityTestingPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Test Your Water Quality?</h2>
           <p>Contact us today to schedule professional water quality testing for your pond</p>
@@ -293,7 +299,8 @@ const WaterQualityTestingPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import PageHero from '../components/PageHero.js';
 import './PumpsAerationPage.css';
 
 const PumpsAerationPage = () => {
@@ -104,29 +106,25 @@ const PumpsAerationPage = () => {
   ];
 
   return (
-    <div className="pumps-aeration-page">
-      {/* Hero Section */}
-      <section 
-        className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="hero-content">
-          <h1>Pond Pumps & Aeration Systems</h1>
-          <p>Professional-grade pumps and aeration systems to keep your pond healthy, beautiful, and thriving. From small fountains to large commercial ponds.</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Expert Advice</a>
-            <Link to="/pond-supplies" className="secondary-button">View All Supplies</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2770.jpg" alt="Professional pond pumps and aeration systems" />
-        </div>
-      </section>
+    <>
+      <SEO 
+        title="Pond Pumps & Aeration Systems - Professional Equipment | Utah Water Gardens"
+        description="Professional-grade pond pumps and aeration systems to keep your pond healthy and thriving. Submersible pumps, external pumps, solar pumps, and aeration systems for all pond sizes."
+        keywords="pond pumps, aeration systems, submersible pumps, external pumps, solar pumps, fountain pumps, air pumps, diffuser systems, utah pond equipment"
+        canonical="https://utahwatergardens.com/pond-supplies/pumps-aeration"
+      />
+      <div className="pumps-aeration-page">
+        <PageHero 
+          title="Pond Pumps & Aeration Systems"
+          subtitle="Professional-grade pumps and aeration systems to keep your pond healthy, beautiful, and thriving. From small fountains to large commercial ponds."
+          backgroundImage="/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg"
+          backgroundImageAlt="Professional pond pumps and aeration systems"
+          showCTA={true}
+          ctaButtons={[
+            { text: "Call for Expert Advice", href: "tel:(801) 590-8516", type: "primary" },
+            { text: "View All Supplies", href: "/pond-supplies", type: "secondary" }
+          ]}
+        />
 
       {/* Pump Categories */}
       <section className="pump-categories-section first-section-gradient">
@@ -409,7 +407,15 @@ const PumpsAerationPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Ready to Upgrade Your Pond?</h2>
           <p>Our experts can help you choose the perfect pump and aeration system for your needs</p>
@@ -419,7 +425,8 @@ const PumpsAerationPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

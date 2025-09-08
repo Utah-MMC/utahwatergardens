@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import PageHero from '../components/PageHero.js';
 import './TeamDetailPage.css';
 
 const PlantExpertsPage = () => {
@@ -46,38 +47,20 @@ const PlantExpertsPage = () => {
         canonical="https://utahwatergardens.com/team/plant-experts"
       />
       <div className={`team-detail-page ${isVisible ? 'visible' : ''}`}>
-        {/* Hero Section */}
-        <section className="team-hero">
-          <div className="hero-background">
-            <img 
-              src="/images/IMG_2775.jpg" 
-              alt="Beautiful aquatic plants and water garden"
-              className="hero-image"
-            />
-            <div className="hero-overlay"></div>
-          </div>
-          
-          <div className="hero-content">
-            <div className="hero-text-content">
-              <h1 className="hero-title">
-                Plant 
-                <span className="hero-title-highlight"> Experts</span>
-              </h1>
-              
-              <p className="hero-subtitle">
-                Aquatic Specialists with Utah's largest selection of pond plants
-              </p>
-              
-              <div className="hero-cta">
-                <Link to="/plants-fish" className="btn btn-primary">View Our Plants</Link>
-                <a href="tel:(801) 590-8516" className="btn btn-secondary">Call (801) 590-8516</a>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero 
+          title="Plant Experts"
+          subtitle="Aquatic Specialists with Utah's largest selection of pond plants"
+          backgroundImage="/images/IMG_2775.jpg"
+          backgroundImageAlt="Beautiful aquatic plants and water garden"
+          showCTA={true}
+          ctaButtons={[
+            { text: "View Our Plants", href: "/plants-fish", type: "primary" },
+            { text: "Call (801) 590-8516", href: "tel:(801) 590-8516", type: "secondary" }
+          ]}
+        />
 
         {/* Main Content */}
-        <section className="team-main-content">
+        <section className="team-main-content first-section-gradient">
           <div className="container">
             <div className="team-intro">
               <h2>Our Plant Experts</h2>

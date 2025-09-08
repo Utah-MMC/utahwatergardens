@@ -49,7 +49,7 @@ const SaltLakeCityPage = () => {
 
       <div className="container">
         {/* Location Overview */}
-        <section className="location-overview">
+        <section className="location-overview first-section-gradient">
           <h2>Pond Services in Salt Lake City</h2>
           <p>
             Utah Water Gardens proudly serves Salt Lake City and surrounding areas with comprehensive pond and water feature services. 

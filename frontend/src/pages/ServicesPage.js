@@ -94,7 +94,7 @@ const ServicesPage = () => {
         backgroundImageAlt="Professional pond construction services"
       />
 
-      <section className="services-section">
+      <section className="services-section first-section-gradient">
         <div className="container">
           <div className="services-grid">
             {services.map((service) => (
@@ -105,7 +105,8 @@ const ServicesPage = () => {
                 <div className="service-content">
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
-                  <ul className="service-features">
+                  <p className="service-description-mobile">{service.description.split('.')[0]}.</p>
+                  <ul className="service-features desktop-only">
                     {service.features.map((feature, index) => (
                       <li key={index}>{feature}</li>
                     ))}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import PageHero from '../components/PageHero.js';
 import './TeamDetailPage.css';
 
 const ExpertTeamPage = () => {
@@ -44,38 +45,20 @@ const ExpertTeamPage = () => {
         canonical="https://utahwatergardens.com/team/expert-team"
       />
       <div className={`team-detail-page ${isVisible ? 'visible' : ''}`}>
-        {/* Hero Section */}
-        <section className="team-hero">
-          <div className="hero-background">
-            <img 
-              src="/images/IMG_2770.jpg" 
-              alt="Expert team working on pond construction and maintenance"
-              className="hero-image"
-            />
-            <div className="hero-overlay"></div>
-          </div>
-          
-          <div className="hero-content">
-            <div className="hero-text-content">
-              <h1 className="hero-title">
-                Expert 
-                <span className="hero-title-highlight"> Team</span>
-              </h1>
-              
-              <p className="hero-subtitle">
-                Pond Specialists with years of experience in construction, plant care, and maintenance
-              </p>
-              
-              <div className="hero-cta">
-                <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-                <Link to="/contact" className="btn btn-secondary">Get Consultation</Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero 
+          title="Expert Team"
+          subtitle="Pond Specialists with years of experience in construction, plant care, and maintenance"
+          backgroundImage="/images/IMG_2770.jpg"
+          backgroundImageAlt="Expert team working on pond construction and maintenance"
+          showCTA={true}
+          ctaButtons={[
+            { text: "Call (801) 590-8516", href: "tel:(801) 590-8516", type: "primary" },
+            { text: "Get Consultation", href: "/contact", type: "secondary" }
+          ]}
+        />
 
         {/* Main Content */}
-        <section className="team-main-content">
+        <section className="team-main-content first-section-gradient">
           <div className="container">
             <div className="team-intro">
               <h2>Our Expert Team</h2>

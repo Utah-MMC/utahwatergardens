@@ -74,7 +74,7 @@ const EquipmentRepairPage = () => {
       <section 
         className="hero-section"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -107,7 +107,8 @@ const EquipmentRepairPage = () => {
                 <div className="service-info">
                   <h3>{service.name}</h3>
                   <p>{service.description}</p>
-                  <div className="service-details">
+                  <p className="service-description-mobile">{service.description.split('.')[0]}.</p>
+                  <div className="service-details desktop-only">
                     <h4>What We Fix:</h4>
                     <ul>
                       {service.services.map((detail, detailIndex) => (
@@ -277,7 +278,15 @@ const EquipmentRepairPage = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta">
+      <section 
+        className="contact-cta"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="container">
           <h2>Need Equipment Repair?</h2>
           <p>Our expert technicians are ready to get your pond equipment running perfectly again</p>
