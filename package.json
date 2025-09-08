@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Utah Water Gardens website",
   "scripts": {
-    "build": "cd frontend && npm install && npx react-scripts build",
+    "build": "chmod +x build.sh && ./build.sh",
     "start": "cd frontend && npm start",
     "dev": "cd frontend && npm start"
   },
