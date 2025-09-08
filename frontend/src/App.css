@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+/* Prevent horizontal overflow on all pages */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.App {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -117,7 +128,6 @@ main {
 }
 
 /* Global Header Clearance Fix */
-.page-hero,
 .hero,
 .hero-section,
 .pond-gallery-hero,
@@ -129,6 +139,11 @@ main {
 .blog-hero,
 .team-hero {
   padding-top: 140px !important; /* Ensure proper clearance from header */
+}
+
+/* PageHero has its own padding-top in PageHero.css - don't override it */
+.page-hero {
+  /* Let PageHero.css handle its own padding-top */
 }
 
 /* Ensure page-level padding doesn't interfere with hero sections */
@@ -231,7 +246,6 @@ main {
   }
   
   /* Mobile header clearance adjustments */
-  .page-hero,
   .hero,
   .hero-section,
   .pond-gallery-hero,
@@ -243,6 +257,11 @@ main {
   .blog-hero,
   .team-hero {
     padding-top: 140px !important; /* Ensure proper mobile header clearance */
+  }
+  
+  /* PageHero has its own mobile padding in PageHero.css */
+  .page-hero {
+    /* Let PageHero.css handle its own mobile padding */
   }
   
   /* Ensure all content sections have proper spacing on mobile */
@@ -276,7 +295,6 @@ main {
 
 /* Very small screens header clearance */
 @media (max-width: 480px) {
-  .page-hero,
   .hero,
   .hero-section,
   .pond-gallery-hero,
@@ -288,6 +306,11 @@ main {
   .blog-hero,
   .team-hero {
     padding-top: 120px !important; /* Ensure proper clearance on very small screens */
+  }
+  
+  /* PageHero has its own very small screen padding in PageHero.css */
+  .page-hero {
+    /* Let PageHero.css handle its own very small screen padding */
   }
   
   /* Extra spacing for content sections on very small screens */
@@ -418,5 +441,57 @@ main {
   .service-features.desktop-only,
   .service-details.desktop-only {
     display: none !important;
+  }
+}
+
+/* Global Mobile Overflow Prevention for All Pages */
+@media (max-width: 768px) {
+  /* Prevent horizontal overflow on all pages */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix text overflow on all pages */
+  h1, h2, h3, h4, h5, h6, p, span, div, a, li {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  /* Fix container overflow */
+  .container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Fix first-section-gradient overflow */
+  .first-section-gradient {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Fix image overflow */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+  
+  /* Fix grid layouts */
+  .grid, .services-grid, .plant-grid, .gallery-grid, .specs-grid {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
   }
 }

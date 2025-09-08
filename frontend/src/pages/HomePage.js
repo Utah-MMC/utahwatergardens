@@ -255,14 +255,11 @@ const HomePage = () => {
             </div>
             
             <div className="hero-buttons">
-              <Link to="/plants-fish" className="btn btn-secondary btn-large desktop-only">
-                View Plants & Fish →
-              </Link>
-              <Link to="/pond-services" className="btn btn-secondary btn-large">
-                Our Services →
-              </Link>
-              <Link to="/free-estimate" className="btn btn-primary btn-large">
-                Get a Free Estimate →
+              <a href="tel:(801) 590-8516" className="btn btn-primary btn-large">
+                Call Now
+              </a>
+              <Link to="/contact" className="btn btn-secondary btn-large">
+                Get Quote
               </Link>
             </div>
           </div>

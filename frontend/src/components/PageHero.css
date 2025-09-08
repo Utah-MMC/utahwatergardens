@@ -4,6 +4,14 @@
   margin-top: 0;
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Prevent any scrollbars in hero section */
+.page-hero-wrapper * {
+  overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
 .page-hero-wrapper.visible {
@@ -21,6 +29,7 @@
   color: white;
   overflow: hidden;
   padding-top: 120px; /* More space from fixed header */
+  box-sizing: border-box;
 }
 
 /* First wave layer - baby blue (behind) */
@@ -58,12 +67,16 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .page-hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .page-hero-video {
@@ -87,6 +100,8 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   z-index: 2;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .page-hero-content {
@@ -99,6 +114,9 @@
   border-radius: 15px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .page-hero-title {
@@ -230,6 +248,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Responsive Design */
@@ -250,6 +270,9 @@
   .page-hero-content {
     padding: 1.5rem;
     margin: 0 1rem;
+    max-width: calc(100% - 2rem);
+    overflow: hidden;
+    box-sizing: border-box;
   }
   
   .page-hero-title {
@@ -299,6 +322,9 @@
   .page-hero-content {
     padding: 1rem;
     margin: 0 0.5rem;
+    max-width: calc(100% - 1rem);
+    overflow: hidden;
+    box-sizing: border-box;
   }
   
   .page-hero-title {
