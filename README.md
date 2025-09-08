@@ -1,6 +1,6 @@
 # Utah Water Gardens - Complete Project
 
-This repository contains both a React web application and a Python web scraper for Utah Water Gardens.
+This repository contains a modern React web application and comprehensive web scraping tools for Utah Water Gardens, a premier pond and water feature company serving Salt Lake City and surrounding areas.
 
 ## 🏗️ Project Structure
 
@@ -8,16 +8,24 @@ This repository contains both a React web application and a Python web scraper f
 utahwatergardens/
 ├── frontend/                 # React web application
 │   ├── src/
+│   │   ├── components/       # Reusable React components
+│   │   ├── pages/           # Page components (4000+ files)
+│   │   ├── data/            # Plant and service data
+│   │   └── styles/          # CSS and styling
 │   ├── public/
+│   │   ├── images/          # Optimized images and assets
+│   │   └── videos/          # Video content
+│   ├── build/               # Production build
 │   ├── package.json
-│   └── README.md
-├── scraper/                  # Python web scraper
-│   ├── requirements.txt
-│   ├── main_lead_generator.py
-│   └── README.md
-├── docs/                     # Documentation
-├── assets/                   # Shared assets
-└── README.md                 # This file
+│   └── vercel.json          # Deployment configuration
+├── uwgscrape/               # Web scraping tools
+│   ├── uwg_content_scraper.py
+│   ├── uwg_image_scraper.py
+│   ├── uwg_data/            # Scraped content
+│   └── uwg_images/          # Downloaded images
+├── docs/                    # Project documentation
+├── assets/                  # Shared assets
+└── README.md                # This file
 ```
 
 ## 🚀 Quick Start
@@ -27,85 +35,103 @@ utahwatergardens/
 cd frontend
 npm install
 npm start
+# App runs on http://localhost:3000
 ```
 
 ### Web Scraper
 ```bash
-cd scraper
-pip install -r requirements.txt
-python main_lead_generator.py --mode full
+cd uwgscrape
+python uwg_content_scraper.py    # Scrape full content
+python uwg_image_scraper.py      # Download all images
+```
+
+### Production Deployment
+```bash
+cd frontend
+npm run build
+vercel --prod                    # Deploy to https://utahwatergardens.com
 ```
 
 ## 📁 Detailed Structure
 
 ### Frontend (`/frontend`)
-- **React 19** application with modern routing
-- **Responsive design** optimized for all devices
-- **Component-based architecture** for maintainability
-- **CSS modules** for styling isolation
+- **React 19** application with modern routing and React Router
+- **Mobile-optimized design** with responsive breakpoints
+- **Component-based architecture** with 23+ reusable components
+- **SEO optimized** with meta tags, structured data, and sitemap
+- **Performance optimized** with lazy loading and image optimization
+- **Accessibility compliant** with ARIA labels and keyboard navigation
 
-### Scraper (`/scraper`)
-- **Lead Generation System** for finding potential customers
-- **Competitor Analysis** tools
-- **Data Export** capabilities (CSV, JSON)
-- **Automated Email Campaigns**
-- **Analytics & Reporting**
+### Web Scraper (`/uwgscrape`)
+- **Content Scraper** - Extracts HTML, text, and metadata
+- **Image Scraper** - Downloads all website images
+- **Data Export** - JSON, HTML, and text formats
+- **Respectful scraping** with delays and error handling
+- **URL resolution** for relative and absolute links
 
 ## 🛠️ Development
 
 ### Frontend Development
-- Built with Create React App
-- Uses React Router for navigation
-- Responsive CSS with modern design principles
-- Optimized for SEO and performance
+- Built with Create React App and React 19
+- React Router for client-side navigation
+- Mobile-first responsive design with CSS Grid and Flexbox
+- SEO optimization with React Helmet Async
+- Performance optimization with lazy loading and code splitting
+- Accessibility features with ARIA labels and keyboard navigation
 
 ### Scraper Development
 - Python 3.8+ required
-- Modular architecture for easy maintenance
-- Comprehensive logging and error handling
-- Configurable via JSON files
+- BeautifulSoup4 for HTML parsing
+- Requests library for HTTP operations
+- Modular architecture with error handling
+- Respectful scraping with rate limiting
 
 ## 📊 Features
 
 ### Frontend
-- Home page with company overview
-- Services page showcasing offerings
-- About page with company information
-- Contact page with forms
-- Shop page for products
-- Resources page for customers
+- **Homepage** - Hero section, About section, Services overview, and CTAs
+- **Services Pages** - 6 main services with detailed descriptions
+- **Plant & Fish Pages** - Comprehensive catalog with 4000+ pages
+- **Service Area Pages** - Location-specific landing pages
+- **Contact Page** - Forms and business information
+- **Resources** - Care guides, tips, and troubleshooting
+- **Mobile Optimized** - Compact design with hidden/minimized elements
 
 ### Scraper
-- Multi-source lead generation
-- Intelligent lead scoring
-- Automated lead nurturing
-- Competitor analysis
-- Data analytics and reporting
-- CRM integration capabilities
+- **Content Extraction** - HTML structure, text, and metadata
+- **Image Downloading** - All website images with original filenames
+- **Data Organization** - Structured output in multiple formats
+- **Error Handling** - Continues processing despite individual failures
+- **Rate Limiting** - Respectful scraping with delays
 
 ## 🔧 Configuration
 
 ### Frontend
-- Environment variables in `.env` files
-- Build configuration in `package.json`
-- Deployment ready for Vercel/Netlify
+- **SEO Configuration** - Meta tags, structured data, and sitemap
+- **Domain Setup** - Configured for https://utahwatergardens.com
+- **Redirects** - 307 redirects for www subdomain
+- **Build Optimization** - Webpack configuration for production
+- **Deployment** - Vercel configuration with proper headers
 
 ### Scraper
-- Configuration in `config.json`
-- Email settings for campaigns
-- Database configuration
-- Logging preferences
+- **Output Directories** - Configurable folder structure
+- **Request Headers** - Customizable user agents and headers
+- **Download Delays** - Adjustable rate limiting
+- **Error Handling** - Comprehensive logging and retry logic
 
 ## 📈 Deployment
 
 ### Frontend
-- Build: `npm run build`
-- Deploy to Vercel, Netlify, or any static hosting
+- **Production Build**: `npm run build`
+- **Deploy to Vercel**: `vercel --prod`
+- **Live Site**: https://utahwatergardens.com
+- **Features**: HTTPS, CDN, automatic deployments
 
 ### Scraper
-- Can run on any Python-compatible server
-- Scheduled execution via cron jobs
-- Cloud deployment ready (AWS, GCP, Azure)
+- **Local Execution**: Run Python scripts directly
+- **Scheduled Tasks**: Use cron jobs for regular scraping
+- **Cloud Ready**: Compatible with AWS, GCP, Azure
+- **Output**: Organized folders with scraped content
 
 ## 🤝 Contributing
 
@@ -122,6 +148,21 @@ This project is proprietary to Utah Water Gardens.
 ## 📞 Support
 
 For technical support or questions:
-- Email: icondumpsters@gmail.com
-- Phone: (801) 918-6000
-- Website: www.icondumpsters.com
+- **Utah Water Gardens**: (801) 590-8516
+- **Email**: contact@utahwatergardens.com
+- **Address**: 5911 S 1300 E, Salt Lake City, UT 84121
+- **Website**: https://utahwatergardens.com
+
+## 🎯 Recent Updates
+
+### Mobile Optimization (Latest)
+- **Compact Hero Section** - Reduced from 100vh to 250px on mobile
+- **Hidden Elements** - Subtitle, buttons, and indicators hidden on mobile
+- **Optimized Content** - Smaller fonts and tighter spacing
+- **Better UX** - More content visible without scrolling
+
+### SEO & Performance
+- **Domain Configuration** - Set up for https://utahwatergardens.com
+- **Redirects** - 307 redirects for www subdomain
+- **Structured Data** - Updated business information and hours
+- **Mobile-First Design** - Responsive breakpoints and optimizations
