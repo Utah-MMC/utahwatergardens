@@ -159,20 +159,46 @@ const HomePage = () => {
       />
 
       <main className="home" id="main">
+        {/* MOBILE FIX STYLES */}
+        <style jsx>{`
+          @media screen and (max-width: 768px) {
+            .hero {
+              height: 250px !important;
+              min-height: 250px !important;
+              max-height: 250px !important;
+              position: relative !important;
+              width: 100vw !important;
+              margin-left: 0 !important;
+              left: 0 !important;
+              right: 0 !important;
+              top: 0 !important;
+              background: #f8fafc !important;
+              z-index: 1 !important;
+              overflow: hidden !important;
+            }
+            .hero-sub {
+              display: none !important;
+            }
+            .hero::before {
+              display: none !important;
+            }
+            .section:first-of-type {
+              margin-top: 0 !important;
+              padding-top: 1rem !important;
+            }
+            .card .btn-row {
+              display: none !important;
+            }
+            .crsl-indicators {
+              display: none !important;
+            }
+          }
+        `}</style>
+        
         {/* HERO */}
         <section 
-          className="hero" 
+          className="hero mobile-hero-fix" 
           aria-label="Intro"
-          style={{
-            width: '100vw',
-            marginLeft: '0',
-            left: '0',
-            right: '0',
-            position: 'absolute',
-            top: '0',
-            backgroundColor: 'red',
-            zIndex: 1000
-          }}
         >
           <div className="hero-media">
             <img className="hero-fallback" src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" alt="Pond landscape with waterfall and rock features" loading="eager" />
@@ -187,14 +213,55 @@ const HomePage = () => {
         </div>
       </section>
 
+        {/* ABOUT */}
+        <section 
+          className="section alt" 
+          aria-labelledby="about-h"
+        >
+          <div className="container">
+            <div className="row">
+              <div className="col-6">
+                <header className="section-head">
+                  <h2 id="about-h">About Utah Water Gardens</h2>
+                  <p>Utah's premier pond and water feature specialists since 1995.</p>
+                </header>
+                <div className="content">
+                  <p>With over 30 years of experience, Utah Water Gardens has been transforming outdoor spaces across Salt Lake City and surrounding areas. We specialize in creating beautiful, sustainable water features that enhance your property and provide years of enjoyment.</p>
+                  
+                  <div className="stats">
+                    <div className="stat">
+                      <span className="stat-number">15+</span>
+                      <span className="stat-label">Years Experience</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-number">2500+</span>
+                      <span className="stat-label">Happy Customers</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-number">4.9/5</span>
+                      <span className="stat-label">Customer Rating</span>
+                    </div>
+                  </div>
+
+                  <div className="btn-row">
+                    <Link to="/about" className="btn" data-variant="primary">Learn More About Us</Link>
+                    <a href="tel:(801) 590-8516" className="btn" data-variant="outline">Call (801) 590-8516</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <div className="media">
+                  <img src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" alt="Beautiful pond with waterfall and rock features" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* SERVICES */}
         <section 
           className="section" 
           aria-labelledby="svc-h"
-          style={{
-            marginTop: window.innerWidth <= 768 ? '100vh' : '0',
-            paddingTop: window.innerWidth <= 768 ? '2rem' : '0'
-          }}
         >
         <div className="container">
             <header className="section-head">
@@ -222,6 +289,20 @@ const HomePage = () => {
                 img="/images/pondDredging-topaz-enhance-3.9x.jpeg"
                 alt="Pond dredging and restoration"
               >Restore depth, flow, and ecological balance with professional dredging.</ServiceCard>
+
+              <ServiceCard
+                to="/pond-services/cleaning"
+                title="Pond Cleaning Services"
+                img="/images/pondCleaning.webp"
+                alt="Professional pond cleaning"
+              >Deep cleaning, debris removal, and water clarification for crystal-clear results.</ServiceCard>
+
+              <ServiceCard
+                to="/pond-services/repair"
+                title="Pond Repair & Troubleshooting"
+                img="/images/pumpRepair.webp"
+                alt="Pond repair and maintenance"
+              >Leak detection, pump repairs, and equipment troubleshooting to keep your pond running smoothly.</ServiceCard>
 
               <ServiceCard
                 to="/plants-fish"

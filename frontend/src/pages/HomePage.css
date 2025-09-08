@@ -26,7 +26,7 @@ img, video{max-width:100%;display:block;height:auto}
 .btn[data-variant="ghost"]{background:#fff;border:2px solid #e2e8f0;color:#475569;border-radius:999px;width:40px;height:40px}
 
 /* HERO */
-.hero{position:relative;height:100vh;height:100dvh;width:100vw;margin-left:calc(-50vw + 50%);display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden;min-height:100vh;min-height:100dvh;background:#f8fafc;margin-top:0;margin-bottom:0;left:0;right:0}
+.hero{position:relative;height:80vh;height:80dvh;width:100vw;margin-left:calc(-50vw + 50%);display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden;min-height:80vh;min-height:80dvh;background:#f8fafc;margin-top:0;margin-bottom:0;left:0;right:0}
 .hero-media{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-2;overflow:hidden}
 .hero-fallback{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;position:absolute;top:0;left:0;min-height:100%;min-width:100%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55));z-index:-1}
@@ -36,13 +36,23 @@ img, video{max-width:100%;display:block;height:auto}
 .hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);opacity:.95;margin:0 0 1rem}
 
 /* Wave effect at bottom of hero */
-.hero::before{content:"";position:absolute;bottom:0;left:0;width:100%;height:120px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,110C100,100,200,80,300,70C400,60,500,60,600,70C700,80,800,100,900,110C1000,120,1100,120,1150,120L1200,120V120H0Z' fill='%231e40af' fill-opacity='1'/%3E%3C/svg%3E") no-repeat center bottom;background-size:cover;z-index:5;pointer-events:none}
+.hero::before{content:"";position:absolute;bottom:-60px;left:0;width:100%;height:120px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,110C100,100,200,80,300,70C400,60,500,60,600,70C700,80,800,100,900,110C1000,120,1100,120,1150,120L1200,120V120H0Z' fill='%231e40af' fill-opacity='1'/%3E%3C/svg%3E") no-repeat center bottom;background-size:cover;z-index:5;pointer-events:none}
 
 /* SECTIONS */
 .section{padding-block:clamp(2.5rem,6vw,4rem)}
 .section.alt{background:#f8fafc}
+.section:first-of-type{margin-top:2rem}
 .section-head h2{font-size:clamp(1.75rem,4.5vw,2.75rem);margin:0 0 .25rem;color:var(--ink)}
 .section-head p{margin:0;color:var(--muted)}
+
+/* ABOUT SECTION */
+.col-6{flex:1;padding:0 1rem}
+.content p{margin:0 0 1.5rem;line-height:1.6;color:var(--ink)}
+.stats{display:flex;gap:2rem;margin:2rem 0;flex-wrap:wrap}
+.stat{text-align:center;flex:1;min-width:120px}
+.stat-number{display:block;font-size:2.5rem;font-weight:800;color:var(--primary);line-height:1}
+.stat-label{display:block;font-size:0.9rem;color:var(--muted);margin-top:0.25rem;text-transform:uppercase;letter-spacing:0.05em}
+.media img{border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
 
 /* CARDS */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1rem,3vw,2rem)}
@@ -82,74 +92,160 @@ img, video{max-width:100%;display:block;height:auto}
 }
 @media (max-width: 768px){
   .crsl-slide{grid-template-columns:repeat(2,1fr)}
-  .home .hero{height:100vh;height:100dvh;min-height:100vh;min-height:100dvh;min-height:500px;width:100vw !important;margin-left:0 !important;left:0 !important;right:0 !important;position:absolute !important;top:0 !important;background:red !important}
-  .home .hero-media{width:100vw !important;left:0 !important;right:0 !important}
-  .home .hero-fallback{width:100vw !important;left:0 !important;right:0 !important}
-  .home .hero-inner{padding:1rem}
-  .home .section:first-of-type{margin-top:100vh}
 }
 @media (max-width: 480px){
   .crsl-slide{grid-template-columns:1fr}
-  .home .hero{height:100vh;height:100dvh;min-height:100vh;min-height:100dvh;min-height:400px;width:100vw !important;margin-left:0 !important;left:0 !important;right:0 !important;position:absolute !important;top:0 !important}
-  .home .hero-media{width:100vw !important;left:0 !important;right:0 !important}
-  .home .hero-fallback{width:100vw !important;left:0 !important;right:0 !important}
-  .home .hero-inner{padding:0.75rem}
-  .home .btn-row{flex-direction:column;align-items:center;gap:0.5rem}
-  .home .btn{width:100%;max-width:280px}
-  .home .section:first-of-type{margin-top:100vh}
+  
+  /* Even more compact for small screens */
+  .hero {
+    height: 35vh !important;
+    min-height: 35vh !important;
+    max-height: 35vh !important;
+  }
+  
+  .hero-title {
+    font-size: 1.25rem !important;
+  }
+  
+  .hero-sub {
+    font-size: 0.75rem !important;
+  }
+  
+  .btn-row{flex-direction:column;align-items:center;gap:0.5rem}
+  .btn{width:100%;max-width:280px;padding:0.6rem 1rem !important;font-size:0.9rem !important}
 }
 
 /* Mobile viewport fixes */
 @supports (height: 100dvh) {
-  .hero{height:100dvh;min-height:100dvh}
+  .hero{height:80dvh;min-height:80dvh}
   html,body{height:100dvh}
   body{min-height:100dvh}
 }
 
 /* Debug styles removed */
 
-/* Force full width on mobile - override all other styles */
+/* MOBILE STYLES - AGGRESSIVE OVERRIDE */
 @media (max-width: 768px) {
-  .home main .hero {
+  /* Force hero to be compact */
+  .hero {
+    height: 40vh !important;
+    min-height: 40vh !important;
+    max-height: 40vh !important;
+    position: relative !important;
     width: 100vw !important;
     margin-left: 0 !important;
-    margin-right: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    position: absolute !important;
     top: 0 !important;
-    background: red !important;
-    z-index: 1000 !important;
+    background: #f8fafc !important;
+    z-index: 1 !important;
   }
   
-  .home main .hero .hero-media {
+  .hero-media {
     width: 100vw !important;
     left: 0 !important;
     right: 0 !important;
+    height: 100% !important;
   }
   
-  .home main .hero .hero-fallback {
+  .hero-fallback {
     width: 100vw !important;
     left: 0 !important;
     right: 0 !important;
+    height: 100% !important;
   }
   
-  .home main .section:first-of-type {
-    margin-top: 100vh !important;
+  /* Make hero content very compact */
+  .hero-inner {
+    padding: 0.5rem !important;
+    max-width: 100% !important;
   }
   
-  /* Resources section header on one line for mobile */
-  .home .section-head.row {
+  .hero-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .hero-sub {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .btn-row {
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .btn {
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  /* Remove or minimize wave element */
+  .hero::before {
+    display: none !important;
+  }
+  
+  /* Ensure sections are immediately visible */
+  .section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+  }
+  
+  .section {
+    padding-block: 1.5rem !important;
+  }
+  
+  .section.alt {
+    background: #f8fafc !important;
+  }
+  
+  /* About section mobile styles */
+  .row {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .col-6 {
+    flex: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .stats {
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin: 1rem 0 !important;
+  }
+  
+  .stat {
+    min-width: 80px !important;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Make sure cards are properly sized on mobile */
+  .cards {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Resources section header */
+  .section-head.row {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 0.5rem !important;
   }
   
-  .home .section-head.row > div {
+  .section-head.row > div {
     width: 100% !important;
   }
   
-  .home .section-head.row .btn {
+  .section-head.row .btn {
     white-space: nowrap !important;
     font-size: 0.9rem !important;
   }
@@ -159,4 +255,160 @@ img, video{max-width:100%;display:block;height:auto}
 @media (prefers-reduced-motion: reduce){
   .crsl-track{transition:none}
   .hero-video{display:none}
+}
+
+/* FINAL MOBILE OVERRIDE - MAXIMUM PRIORITY */
+@media screen and (max-width: 768px) {
+  .home .hero,
+  .home .mobile-hero-fix {
+    height: 250px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
+    position: relative !important;
+    width: 100vw !important;
+    margin-left: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    background: #f8fafc !important;
+    z-index: 1 !important;
+    overflow: hidden !important;
+  }
+  
+  .home .hero-media {
+    width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+  }
+  
+  .home .hero-fallback {
+    width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+  }
+  
+  .home .hero-inner {
+    padding: 0.5rem !important;
+    max-width: 100% !important;
+  }
+  
+  .home .hero-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Hide hero subtitle on mobile to save space */
+  .home .hero-sub {
+    display: none !important;
+  }
+  
+  .home .hero::before {
+    display: none !important;
+  }
+  
+  .home .section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+  }
+  
+  .home .section {
+    padding-block: 1.5rem !important;
+  }
+  
+  .home .cards {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* MOBILE OPTIMIZATIONS - Hide/Minimize Elements */
+  
+  /* Minimize About section description */
+  .home .content p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Make stats more compact */
+  .home .stats {
+    gap: 0.75rem !important;
+    margin: 1rem 0 !important;
+  }
+  
+  .home .stat {
+    min-width: 70px !important;
+  }
+  
+  .home .stat-number {
+    font-size: 1.3rem !important;
+  }
+  
+  .home .stat-label {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Hide one of the About section buttons to save space */
+  .home .content .btn-row .btn:last-child {
+    display: none !important;
+  }
+  
+  /* Make About section buttons smaller */
+  .home .content .btn-row .btn {
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  /* Minimize service card content */
+  .home .card .body {
+    padding: 0.75rem !important;
+  }
+  
+  .home .card h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .home .card .muted {
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Hide service card buttons to save space */
+  .home .card .btn-row {
+    display: none !important;
+  }
+  
+  /* Minimize section headers */
+  .home .section-head h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .home .section-head p {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Hide carousel indicators to save space */
+  .home .crsl-indicators {
+    display: none !important;
+  }
+  
+  /* Minimize carousel item content */
+  .home .crsl .item .item-body {
+    padding: 0.75rem !important;
+  }
+  
+  .home .crsl .item h3 {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .home .crsl .item .muted {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+  }
 }

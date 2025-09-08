@@ -2,17 +2,24 @@
   "version": 2,
   "redirects": [
     {
-      "source": "https://www.utahwatergardens.com/(.*)",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.utahwatergardens.com"
+        }
+      ],
       "destination": "https://utahwatergardens.com/$1",
       "statusCode": 307
     },
     {
-      "source": "http://www.utahwatergardens.com/(.*)",
-      "destination": "https://utahwatergardens.com/$1",
-      "statusCode": 307
-    },
-    {
-      "source": "http://utahwatergardens.com/(.*)",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "utahwatergardens.com"
+        }
+      ],
       "destination": "https://utahwatergardens.com/$1",
       "statusCode": 307
     }
