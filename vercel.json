@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm run build",
+  "buildCommand": "cd frontend && npx react-scripts build",
   "outputDirectory": "frontend/build",
   "installCommand": "cd frontend && npm install",
   "framework": "create-react-app",
