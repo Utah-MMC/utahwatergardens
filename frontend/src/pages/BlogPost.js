@@ -5046,7 +5046,7 @@ const BlogPost = () => {
       setRelatedPosts(relatedPostsData);
     }
     setLoading(false);
-  }, [slug]);
+  }, [slug, addAnchorIdsToContent, generateTableOfContents]);
 
   if (loading) {
     return (

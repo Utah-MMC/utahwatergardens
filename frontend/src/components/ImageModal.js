@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './ImageModal.css';
 
 const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt }) => {
@@ -8,11 +8,11 @@ const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt }) => {
     }
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = useCallback((e) => {
     if (e.key === 'Escape') {
       onClose();
     }
-  };
+  }, [onClose]);
 
   React.useEffect(() => {
     if (isOpen) {
@@ -24,7 +24,7 @@ const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt }) => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen]);
+  }, [isOpen, handleKeyDown]);
 
   if (!isOpen) return null;
 

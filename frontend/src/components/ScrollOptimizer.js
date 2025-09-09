@@ -1,25 +1,6 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 
 const ScrollOptimizer = () => {
-  // Throttle scroll events for better performance
-  const throttle = useCallback((func, delay) => {
-    let timeoutId;
-    let lastExecTime = 0;
-    return function (...args) {
-      const currentTime = Date.now();
-      
-      if (currentTime - lastExecTime > delay) {
-        func.apply(this, args);
-        lastExecTime = currentTime;
-      } else {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => {
-          func.apply(this, args);
-          lastExecTime = Date.now();
-        }, delay - (currentTime - lastExecTime));
-      }
-    };
-  }, []);
 
   // Optimize scroll performance - run once on mount instead of on every scroll
   useEffect(() => {

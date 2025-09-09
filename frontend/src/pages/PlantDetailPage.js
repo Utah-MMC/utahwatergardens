@@ -66,7 +66,7 @@ const PlantDetailPage = () => {
                       <div key={index} className="gallery-item">
                         <img 
                           src={image} 
-                          alt={`${plant.name} - Image ${index + 2}`}
+                          alt={`${plant.name} - ${index + 2}`}
                           className="gallery-image"
                         />
                       </div>

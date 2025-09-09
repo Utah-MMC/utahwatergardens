@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ className = '' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
   const headerRef = useRef(null);
   
   const toggleMenu = () => {
@@ -13,14 +12,6 @@ const Header = ({ className = '' }) => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-  };
-
-  const toggleDropdown = (dropdownName) => {
-    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
-  };
-
-  const closeDropdown = () => {
-    setActiveDropdown(null);
   };
 
   // No need for click outside handler with hover dropdowns

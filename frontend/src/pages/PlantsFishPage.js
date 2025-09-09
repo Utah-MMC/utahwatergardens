@@ -59,30 +59,6 @@ const PlantsFishPage = () => {
     }
   ];
 
-  const specificPlants = [
-    'Sunset Changeable Water Lily',
-    'Chromatella Yellow Water Lily',
-    'Pink Water Lily',
-    'White Water Lily',
-    'Chinese Arrowhead',
-    'Marsh Marigold',
-    'Pickerel Rush',
-    'Golden Spike Rush',
-    'Equisetum',
-    'Umbrella Palm',
-    'Water Hyacinth',
-    'Water Lettuce',
-    'Duckweed',
-    'Azolla',
-    'Red Amaranth',
-    'Red Mimulus',
-    'Sensitive Plant',
-    'Slenderleaf Dragonhead',
-    'Utah Water Clover',
-    'Yerba Mansa',
-    'Calla Lily',
-    'Blue Flower'
-  ];
 
   const allPlants = getAllPlants();
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero.js';
 import ImageModal from '../components/ImageModal';
-import { getPlantsByCategory, createPlantSlug } from '../data/plantData';
+import { getPlantsByCategory } from '../data/plantData';
 import './WaterLiliesPage.css';
 
 const WaterLiliesPage = () => {

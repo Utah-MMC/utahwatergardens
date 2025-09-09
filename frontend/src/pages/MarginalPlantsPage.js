@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 import PageHero from '../components/PageHero.js';
 import ImageModal from '../components/ImageModal';
 import CTA from '../components/CTA';
-import { getPlantsByCategory, createPlantSlug } from '../data/plantData';
+import { getPlantsByCategory } from '../data/plantData';
 import './MarginalPlantsPage.css';
 
 const MarginalPlantsPage = () => {
