@@ -284,7 +284,7 @@ const FreeEstimatePage = () => {
                   </div>
                   <div className="contact-item">
                     <strong>Email:</strong>
-                    <a href="mailto:jeremyuwg@gmail.com">jeremyuwg@gmail.com</a>
+                    <a href="mailto:contact@utahwatergardens.com">contact@utahwatergardens.com</a>
                   </div>
                   <div className="contact-item">
                     <strong>Business Hours:</strong>

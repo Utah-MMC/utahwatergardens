@@ -6,7 +6,7 @@ export const siteConfig = {
   description: 'We design, build, and maintain beautiful custom ponds, waterfalls, and aquatic plant features throughout Utah.',
   url: 'https://utahwatergardens.com',
   phone: '(801) 590-8516',
-  email: 'info@utahwatergardens.com',
+  email: 'contact@utahwatergardens.com',
   address: {
     street: '1234 Pond Lane',
     city: 'Salt Lake City',
