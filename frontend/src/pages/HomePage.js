@@ -212,9 +212,9 @@ const HomePage = () => {
             <h1 className="hero-title">Create Your Dream <span>Water Garden</span></h1>
             <p className="hero-sub">From stunning koi ponds to tranquil water features, we bring your aquatic vision to life with expert design, construction, and maintenance.</p>
             <div className="btn-row">
-              <a href="tel:(801) 590-8516" className="btn" data-variant="primary">TALK TO EXPERT</a>
-              <Link to="/pond-services" className="btn" data-variant="outline">POND SERVICE</Link>
-          </div>
+              <a href="tel:+18015908516" className="btn" data-variant="primary">TALK TO EXPERT</a>
+              <Link to="/pond-services" className="btn" data-variant="outline">POND SERVICES</Link>
+            </div>
         </div>
       </section>
 
@@ -250,7 +250,7 @@ const HomePage = () => {
 
                   <div className="btn-row">
                     <Link to="/about" className="btn" data-variant="primary">Learn More About Us</Link>
-                    <a href="tel:(801) 590-8516" className="btn" data-variant="outline">Call (801) 590-8516</a>
+                    <a href="tel:+18015908516" className="btn" data-variant="outline">Call (801) 590-8516</a>
                   </div>
                 </div>
               </div>
