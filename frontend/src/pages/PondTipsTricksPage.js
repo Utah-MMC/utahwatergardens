@@ -96,42 +96,36 @@ const PondTipsTricksPage = () => {
       description: 'Use barley straw to naturally control algae growth',
       method: 'Place barley straw bales in pond - they release compounds that inhibit algae',
       effectiveness: 'High',
-      cost: 'Low'
     },
     {
       trick: 'Homemade Fish Food',
       description: 'Create nutritious fish food using kitchen ingredients',
       method: 'Mix gelatin, fish meal, and vegetables for healthy homemade food',
       effectiveness: 'High',
-      cost: 'Very Low'
     },
     {
       trick: 'Pond De-icer Alternative',
       description: 'Use a floating ball to keep hole in ice',
       method: 'Tennis ball or floating device prevents complete ice coverage',
       effectiveness: 'Medium',
-      cost: 'Very Low'
     },
     {
       trick: 'Natural Water Clarifier',
       description: 'Use activated charcoal for water clarification',
       method: 'Place charcoal in filter media for natural water cleaning',
       effectiveness: 'Medium',
-      cost: 'Low'
     },
     {
       trick: 'Plant Propagation',
       description: 'Easily propagate aquatic plants for more coverage',
       method: 'Cut healthy stems and plant in substrate for new growth',
       effectiveness: 'High',
-      cost: 'Free'
     },
     {
       trick: 'Pond Depth Gauge',
       description: 'Create simple depth measurement tool',
       method: 'Use marked stick or rope to measure pond depth accurately',
       effectiveness: 'High',
-      cost: 'Free'
     }
   ];
 
@@ -237,7 +231,6 @@ const PondTipsTricksPage = () => {
       materials: ['Plastic container', 'Mesh screen', 'PVC pipe', 'Pump'],
       difficulty: 'Easy',
       time: '2 hours',
-      cost: '$15-25'
     },
     {
       project: 'DIY Plant Baskets',
@@ -246,7 +239,6 @@ const PondTipsTricksPage = () => {
       materials: ['Plastic baskets', 'Aquatic soil', 'Gravel', 'Mesh'],
       difficulty: 'Easy',
       time: '1 hour',
-      cost: '$10-15'
     },
     {
       project: 'Pond Waterfall',
@@ -255,7 +247,6 @@ const PondTipsTricksPage = () => {
       materials: ['Pond liner', 'Stones', 'Pump', 'PVC pipe'],
       difficulty: 'Medium',
       time: '1 day',
-      cost: '$50-100'
     },
     {
       project: 'Floating Plant Islands',
@@ -264,7 +255,6 @@ const PondTipsTricksPage = () => {
       materials: ['Styrofoam', 'Mesh', 'Plants', 'Anchors'],
       difficulty: 'Easy',
       time: '3 hours',
-      cost: '$20-30'
     }
   ];
 
@@ -362,7 +352,6 @@ const PondTipsTricksPage = () => {
                     <strong>Effectiveness:</strong> {trick.effectiveness}
                   </div>
                   <div className="trick-cost">
-                    <strong>Cost:</strong> {trick.cost}
                   </div>
                 </div>
               </div>
@@ -454,7 +443,6 @@ const PondTipsTricksPage = () => {
                       <strong>Time:</strong> {project.time}
                     </div>
                     <div className="diy-cost">
-                      <strong>Cost:</strong> {project.cost}
                     </div>
                   </div>
                 </div>

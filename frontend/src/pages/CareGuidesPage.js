@@ -43,7 +43,6 @@ const CareGuidesPage = () => {
       topics: ['Site selection', 'Design planning', 'Excavation', 'Liner installation', 'Equipment setup', 'Initial cycling'],
       difficulty: 'Beginner to Intermediate',
       duration: '2-4 weeks',
-      price: 'Free Guide'
     },
     {
       name: 'Water Quality Management',
@@ -52,7 +51,6 @@ const CareGuidesPage = () => {
       topics: ['pH balance', 'Ammonia control', 'Nitrogen cycle', 'Water testing', 'Treatment options', 'Preventive care'],
       difficulty: 'All Levels',
       duration: 'Ongoing',
-      price: 'Free Guide'
     },
     {
       name: 'Fish Care & Health',
@@ -61,7 +59,6 @@ const CareGuidesPage = () => {
       topics: ['Fish selection', 'Feeding schedules', 'Health monitoring', 'Disease prevention', 'Breeding basics', 'Seasonal care'],
       difficulty: 'All Levels',
       duration: 'Ongoing',
-      price: 'Free Guide'
     },
     {
       name: 'Aquatic Plant Care',
@@ -70,7 +67,6 @@ const CareGuidesPage = () => {
       topics: ['Plant selection', 'Planting techniques', 'Fertilization', 'Pruning', 'Seasonal care', 'Pest control'],
       difficulty: 'Beginner to Advanced',
       duration: 'Seasonal',
-      price: 'Free Guide'
     },
     {
       name: 'Seasonal Pond Maintenance',
@@ -79,7 +75,6 @@ const CareGuidesPage = () => {
       topics: ['Spring startup', 'Summer care', 'Fall preparation', 'Winter protection', 'Seasonal tasks', 'Weather considerations'],
       difficulty: 'All Levels',
       duration: 'Year-round',
-      price: 'Free Guide'
     },
     {
       name: 'Equipment Maintenance',
@@ -88,7 +83,6 @@ const CareGuidesPage = () => {
       topics: ['Pump maintenance', 'Filter cleaning', 'UV sterilizer care', 'Lighting maintenance', 'Troubleshooting', 'Preventive care'],
       difficulty: 'Intermediate to Advanced',
       duration: 'Monthly',
-      price: 'Free Guide'
     }
   ];
 
@@ -279,7 +273,6 @@ const CareGuidesPage = () => {
                     <div className="guide-duration">
                       <strong>Duration:</strong> {guide.duration}
                     </div>
-                    <div className="guide-price">{guide.price}</div>
                   </div>
                   <a href="tel:(801) 590-8516" className="guide-cta">Get Your Free Guide</a>
                 </div>

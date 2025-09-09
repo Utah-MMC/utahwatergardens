@@ -12,7 +12,6 @@ const PondLinersPage = () => {
       features: ['45+ year lifespan', 'Fish safe', 'UV resistant', 'Extremely flexible', 'Easy to install'],
       thicknesses: ['30 mil', '45 mil', '60 mil'],
       applications: ['Koi ponds', 'Large water features', 'Commercial ponds', 'Long-term projects'],
-      price: 'Starting at $2.50/sq ft'
     },
     {
       name: 'PVC Liners',
@@ -21,7 +20,6 @@ const PondLinersPage = () => {
       features: ['Affordable', 'Easy to handle', 'Good flexibility', 'Quick installation', 'Wide availability'],
       thicknesses: ['20 mil', '30 mil', '40 mil'],
       applications: ['Small ponds', 'Garden features', 'Temporary installations', 'Budget projects'],
-      price: 'Starting at $1.25/sq ft'
     },
     {
       name: 'HDPE Liners',
@@ -30,7 +28,6 @@ const PondLinersPage = () => {
       features: ['Chemical resistant', 'High strength', 'Temperature stable', 'Long lifespan', 'Professional grade'],
       thicknesses: ['40 mil', '60 mil', '80 mil'],
       applications: ['Commercial ponds', 'Industrial water features', 'Large installations', 'Harsh environments'],
-      price: 'Starting at $3.50/sq ft'
     },
     {
       name: 'Firestone PondGard',
@@ -39,7 +36,6 @@ const PondLinersPage = () => {
       features: ['Fish safe certified', '25-year warranty', 'Professional grade', 'Easy seaming', 'Proven track record'],
       thicknesses: ['45 mil', '60 mil'],
       applications: ['Premium koi ponds', 'Professional installations', 'Fish breeding ponds', 'High-value projects'],
-      price: 'Starting at $3.75/sq ft'
     }
   ];
 
@@ -50,7 +46,6 @@ const PondLinersPage = () => {
       description: 'Professional underlayment fabric to protect your liner from punctures',
       features: ['Puncture protection', 'Weed barrier', 'Moisture management', 'Easy to install'],
       applications: ['All liner types', 'Rocky soil', 'Root protection', 'Professional installations'],
-      price: 'Starting at $0.75/sq ft'
     },
     {
       name: 'Sand Underlayment',
@@ -58,7 +53,6 @@ const PondLinersPage = () => {
       description: 'Natural sand base for smooth liner installation and drainage',
       features: ['Natural material', 'Good drainage', 'Smooth surface', 'Cost effective'],
       applications: ['Small projects', 'Budget installations', 'Natural ponds', 'DIY projects'],
-      price: 'Starting at $0.25/sq ft'
     },
     {
       name: 'Carpet Underlayment',
@@ -66,7 +60,6 @@ const PondLinersPage = () => {
       description: 'Recycled carpet padding for maximum liner protection',
       features: ['Maximum protection', 'Recycled material', 'Thick cushioning', 'Professional grade'],
       applications: ['Premium installations', 'Rocky terrain', 'Commercial projects', 'High-value ponds'],
-      price: 'Starting at $1.50/sq ft'
     }
   ];
 
@@ -77,7 +70,6 @@ const PondLinersPage = () => {
       description: 'Professional-grade tape for creating watertight seams in EPDM liners',
       features: ['Watertight seals', 'UV resistant', 'Easy application', 'Professional results'],
       applications: ['EPDM liners', 'Large installations', 'Professional projects', 'Seam repairs'],
-      price: 'Starting at $15/roll'
     },
     {
       name: 'PVC Welding Rods',
@@ -85,7 +77,6 @@ const PondLinersPage = () => {
       description: 'Welding rods for creating strong, permanent PVC liner seams',
       features: ['Permanent bonds', 'Chemical resistant', 'Professional strength', 'Long-lasting'],
       applications: ['PVC liners', 'Industrial projects', 'Commercial installations', 'Seam repairs'],
-      price: 'Starting at $8/pack'
     },
     {
       name: 'Seam Cleaner & Primer',
@@ -93,7 +84,6 @@ const PondLinersPage = () => {
       description: 'Cleaning and priming solutions for optimal liner adhesion',
       features: ['Optimal adhesion', 'Professional results', 'Easy application', 'Long-lasting bonds'],
       applications: ['All liner types', 'Seam preparation', 'Repair work', 'Professional installations'],
-      price: 'Starting at $12/bottle'
     }
   ];
 
@@ -104,7 +94,6 @@ const PondLinersPage = () => {
       description: 'Complete liner installation by certified technicians',
       features: ['Site preparation', 'Underlayment installation', 'Liner placement', 'Seaming', 'Testing'],
       benefits: ['Professional results', 'Warranty protection', 'Time savings', 'Peace of mind'],
-      price: 'Starting at $8/sq ft'
     },
     {
       name: 'Custom Liner Fabrication',
@@ -112,7 +101,6 @@ const PondLinersPage = () => {
       description: 'Custom-sized liners fabricated to your exact specifications',
       features: ['Precise sizing', 'Minimal seams', 'Custom shapes', 'Professional cutting', 'Quality control'],
       benefits: ['Perfect fit', 'Reduced waste', 'Professional appearance', 'Longer lifespan'],
-      price: 'Starting at $12/sq ft'
     },
     {
       name: 'Liner Repair Services',
@@ -120,7 +108,6 @@ const PondLinersPage = () => {
       description: 'Professional repair services for damaged or leaking liners',
       features: ['Leak detection', 'Professional repair', 'Warranty work', 'Preventive maintenance'],
       benefits: ['Extend liner life', 'Prevent water loss', 'Maintain pond health', 'Cost savings'],
-      price: 'Starting at $150'
     }
   ];
 
@@ -450,7 +437,6 @@ const PondLinersPage = () => {
           <div className="packages-grid">
             <Link to="/pond-supplies/liners" className="package-card">
               <h3>Basic Liner Package</h3>
-              <div className="package-price">$4.50/sq ft</div>
               <div className="package-description">Perfect for small ponds and DIY projects</div>
               <ul>
                 <li>30 mil EPDM liner</li>
@@ -463,7 +449,6 @@ const PondLinersPage = () => {
             </Link>
             <Link to="/pond-supplies/liners" className="package-card featured">
               <h3>Professional Liner Package</h3>
-              <div className="package-price">$8.50/sq ft</div>
               <div className="package-description">Ideal for medium to large residential ponds</div>
               <ul>
                 <li>45 mil EPDM liner</li>
@@ -477,7 +462,6 @@ const PondLinersPage = () => {
             </Link>
             <Link to="/pond-supplies/liners" className="package-card">
               <h3>Commercial Liner Package</h3>
-              <div className="package-price">$15.50/sq ft</div>
               <div className="package-description">For large ponds and commercial applications</div>
               <ul>
                 <li>60 mil EPDM or HDPE liner</li>

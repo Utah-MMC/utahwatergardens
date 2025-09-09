@@ -12,7 +12,6 @@ const PumpsAerationPage = () => {
       description: 'High-performance pumps designed to operate underwater for maximum efficiency',
       features: ['Energy efficient', 'Quiet operation', 'Easy installation', 'Long lifespan'],
       applications: ['Pond circulation', 'Waterfall systems', 'Fountain displays', 'Filter systems'],
-      price: 'Starting at $89'
     },
     {
       name: 'External Pumps',
@@ -20,7 +19,6 @@ const PumpsAerationPage = () => {
       description: 'Powerful pumps for large ponds and high-flow applications',
       features: ['High flow rates', 'Professional grade', 'Easy maintenance', 'Durable construction'],
       applications: ['Large ponds', 'Commercial systems', 'High waterfalls', 'Multiple features'],
-      price: 'Starting at $199'
     },
     {
       name: 'Solar Pumps',
@@ -28,7 +26,6 @@ const PumpsAerationPage = () => {
       description: 'Eco-friendly pumps powered by solar energy for sustainable pond operation',
       features: ['Solar powered', 'No electricity costs', 'Environmentally friendly', 'Automatic operation'],
       applications: ['Remote locations', 'Eco-friendly ponds', 'Small water features', 'Garden ponds'],
-      price: 'Starting at $149'
     },
     {
       name: 'Fountain Pumps',
@@ -36,7 +33,6 @@ const PumpsAerationPage = () => {
       description: 'Specialized pumps designed for decorative fountain displays',
       features: ['Adjustable flow', 'Multiple nozzle options', 'Decorative designs', 'Easy height adjustment'],
       applications: ['Fountain displays', 'Bird baths', 'Small ponds', 'Decorative features'],
-      price: 'Starting at $45'
     }
   ];
 
@@ -47,7 +43,6 @@ const PumpsAerationPage = () => {
       description: 'High-quality air pumps for oxygenating pond water',
       features: ['Multiple outlets', 'Variable speed', 'Quiet operation', 'Energy efficient'],
       benefits: ['Increased oxygen levels', 'Better fish health', 'Reduced algae growth', 'Improved water clarity'],
-      price: 'Starting at $79'
     },
     {
       name: 'Diffuser Systems',
@@ -55,7 +50,6 @@ const PumpsAerationPage = () => {
       description: 'Advanced diffuser systems for optimal oxygen distribution',
       features: ['Fine bubble technology', 'Even distribution', 'Durable materials', 'Easy installation'],
       benefits: ['Maximum oxygen transfer', 'Better circulation', 'Reduced stratification', 'Enhanced ecosystem'],
-      price: 'Starting at $65'
     },
     {
       name: 'Aerator Kits',
@@ -63,7 +57,6 @@ const PumpsAerationPage = () => {
       description: 'Complete aeration systems with everything you need',
       features: ['Complete system', 'Professional installation', 'Comprehensive warranty', 'Expert support'],
       benefits: ['Turnkey solution', 'Professional results', 'Long-term reliability', 'Peace of mind'],
-      price: 'Starting at $299'
     }
   ];
 
@@ -362,7 +355,6 @@ const PumpsAerationPage = () => {
           <div className="packages-grid">
             <div className="package-card">
               <h3>Starter Package</h3>
-              <div className="package-price">$299</div>
               <div className="package-description">Perfect for small ponds and beginners</div>
               <ul>
                 <li>Submersible pump (500-1000 GPH)</li>
@@ -375,7 +367,6 @@ const PumpsAerationPage = () => {
             </div>
             <div className="package-card featured">
               <h3>Professional Package</h3>
-              <div className="package-price">$599</div>
               <div className="package-description">Ideal for medium to large residential ponds</div>
               <ul>
                 <li>External pump (2000-4000 GPH)</li>
@@ -389,7 +380,6 @@ const PumpsAerationPage = () => {
             </div>
             <div className="package-card">
               <h3>Commercial Package</h3>
-              <div className="package-price">$1,299</div>
               <div className="package-description">For large ponds and commercial applications</div>
               <ul>
                 <li>Commercial pump (6000+ GPH)</li>

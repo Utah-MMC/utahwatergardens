@@ -10,7 +10,6 @@ const PondCleaningPage = () => {
       description: 'Remove leaves, twigs, and other organic debris that can decompose and harm water quality',
       benefits: ['Prevents water quality issues', 'Reduces algae growth', 'Maintains pond aesthetics'],
       frequency: 'Seasonal',
-      price: 'Starting at $75'
     },
     {
       name: 'Algae Control',
@@ -18,7 +17,6 @@ const PondCleaningPage = () => {
       description: 'Professional algae removal and prevention to maintain clear, healthy water',
       benefits: ['Improves water clarity', 'Enhances fish health', 'Prevents oxygen depletion'],
       frequency: 'As needed',
-      price: 'Starting at $95'
     },
     {
       name: 'Sediment Removal',
@@ -26,7 +24,6 @@ const PondCleaningPage = () => {
       description: 'Remove accumulated sediment and sludge from pond bottom',
       benefits: ['Restores pond depth', 'Improves water circulation', 'Prevents toxic buildup'],
       frequency: 'Annual',
-      price: 'Starting at $150'
     },
     {
       name: 'Filter Cleaning',
@@ -34,7 +31,6 @@ const PondCleaningPage = () => {
       description: 'Clean and maintain filtration systems for optimal performance',
       benefits: ['Maintains water quality', 'Extends filter life', 'Improves efficiency'],
       frequency: 'Monthly',
-      price: 'Starting at $45'
     },
     {
       name: 'Plant Maintenance',
@@ -42,7 +38,6 @@ const PondCleaningPage = () => {
       description: 'Trim and maintain aquatic plants to prevent overgrowth',
       benefits: ['Controls plant spread', 'Maintains balance', 'Improves aesthetics'],
       frequency: 'Bi-monthly',
-      price: 'Starting at $65'
     },
     {
       name: 'Water Change',
@@ -50,7 +45,6 @@ const PondCleaningPage = () => {
       description: 'Partial water changes to refresh pond water and remove accumulated waste',
       benefits: ['Improves water quality', 'Reduces toxins', 'Refreshes ecosystem'],
       frequency: 'Seasonal',
-      price: 'Starting at $85'
     }
   ];
 
@@ -58,21 +52,18 @@ const PondCleaningPage = () => {
     {
       name: 'Basic Cleaning',
       services: ['Debris removal', 'Surface cleaning', 'Basic plant trimming'],
-      price: '$125',
       duration: '2-3 hours',
       image: '/images/IMG_2770.jpg'
     },
     {
       name: 'Standard Cleaning',
       services: ['Debris removal', 'Algae control', 'Filter cleaning', 'Plant maintenance'],
-      price: '$195',
       duration: '4-5 hours',
       image: '/images/IMG_2775.jpg'
     },
     {
       name: 'Deep Cleaning',
       services: ['All standard services', 'Sediment removal', 'Water change', 'Equipment inspection'],
-      price: '$295',
       duration: '6-8 hours',
       image: '/images/IMG_2779.jpg'
     }

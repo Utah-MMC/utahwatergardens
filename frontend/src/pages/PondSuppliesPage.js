@@ -66,25 +66,21 @@ const PondSuppliesPage = () => {
     {
       name: 'Premium Koi Food',
       category: 'Fish Care',
-      price: '$24.99',
       image: '/images/koi-topaz-enhance-4x.jpeg'
     },
     {
       name: 'Water Lily Fertilizer',
       category: 'Plant Care',
-      price: '$19.99',
       image: '/images/waterLillies-topaz-enhance-4x.jpeg'
     },
     {
       name: 'Pond Net Cover',
       category: 'Protection',
-      price: '$34.99',
       image: '/images/IMG_2775.jpg'
     },
     {
       name: 'Digital Water Tester',
       category: 'Testing',
-      price: '$89.99',
       image: '/images/IMG_2782.jpg'
     }
   ];
@@ -201,7 +197,6 @@ const PondSuppliesPage = () => {
                     <div className="product-content">
                       <div className="product-category">{product.category}</div>
                       <h3>{product.name}</h3>
-                      <div className="product-price">{product.price}</div>
                       <button className="product-btn">Add to Cart</button>
                     </div>
                   </div>

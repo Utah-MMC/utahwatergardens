@@ -207,7 +207,6 @@ const PlantsFishPage = () => {
                         <h3>{plant.name}</h3>
                         <p className="plant-category">{plant.category}</p>
                         <p className="plant-description">{plant.description}</p>
-                        <div className="plant-price">${plant.price}</div>
                       </div>
                     </Link>
                   ))}

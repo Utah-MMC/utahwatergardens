@@ -11,7 +11,6 @@ const WaterTreatmentsPage = () => {
       features: ['Fast-acting formula', 'Safe for fish and plants', 'Removes suspended particles', 'Improves water clarity'],
       products: ['Pond Clear Pro', 'Crystal Clear Plus', 'Ultra Clarifier', 'Professional Grade'],
       applications: ['Cloudy water', 'Suspended debris', 'Algae blooms', 'General maintenance'],
-      price: 'Starting at $12.99'
     },
     {
       name: 'Algae Control',
@@ -20,7 +19,6 @@ const WaterTreatmentsPage = () => {
       features: ['Prevents algae growth', 'Eliminates existing algae', 'Safe for aquatic life', 'Long-lasting protection'],
       products: ['Algae Block', 'Green Water Control', 'String Algae Remover', 'Algae Prevention'],
       applications: ['Green water', 'String algae', 'Blue-green algae', 'Preventive treatment'],
-      price: 'Starting at $15.99'
     },
     {
       name: 'Beneficial Bacteria',
@@ -29,7 +27,6 @@ const WaterTreatmentsPage = () => {
       features: ['Natural biological filtration', 'Breaks down organic waste', 'Reduces ammonia levels', 'Improves water quality'],
       products: ['Pond Balance Pro', 'Eco-Bacteria Plus', 'Natural Clean', 'Biological Boost'],
       applications: ['Organic waste breakdown', 'Ammonia reduction', 'Ecosystem balance', 'Seasonal maintenance'],
-      price: 'Starting at $18.99'
     },
     {
       name: 'pH Balancers',
@@ -38,7 +35,6 @@ const WaterTreatmentsPage = () => {
       features: ['Precise pH control', 'Safe for fish', 'Easy to use', 'Long-lasting effects'],
       products: ['pH Up', 'pH Down', 'pH Stabilizer', 'Buffer Plus'],
       applications: ['pH adjustment', 'Water chemistry', 'Fish health', 'Seasonal changes'],
-      price: 'Starting at $9.99'
     },
     {
       name: 'Dechlorinators',
@@ -47,7 +43,6 @@ const WaterTreatmentsPage = () => {
       features: ['Removes chlorine', 'Neutralizes chloramines', 'Safe for fish', 'Instant action'],
       products: ['Chlorine Neutralizer', 'Tap Water Conditioner', 'Instant Safe', 'Water Prep'],
       applications: ['Tap water treatment', 'Water changes', 'New pond setup', 'Emergency treatment'],
-      price: 'Starting at $7.99'
     },
     {
       name: 'Sludge Removers',
@@ -56,7 +51,6 @@ const WaterTreatmentsPage = () => {
       features: ['Breaks down sludge', 'Reduces muck buildup', 'Improves water flow', 'Natural enzymes'],
       products: ['Sludge Buster', 'Muck Remover', 'Organic Clean', 'Debris Dissolver'],
       applications: ['Sludge removal', 'Muck reduction', 'Bottom cleaning', 'Maintenance'],
-      price: 'Starting at $14.99'
     }
   ];
 
@@ -67,7 +61,6 @@ const WaterTreatmentsPage = () => {
       description: 'Essential treatments for spring pond startup and maintenance',
       treatments: ['Beneficial bacteria boost', 'Water clarifier', 'pH adjustment', 'Algae prevention'],
       benefits: ['Healthy startup', 'Clear water', 'Balanced chemistry', 'Algae control'],
-      price: 'Starting at $25.99'
     },
     {
       season: 'Summer',
@@ -75,7 +68,6 @@ const WaterTreatmentsPage = () => {
       description: 'Summer maintenance treatments for optimal pond health',
       treatments: ['Algae control', 'Water clarifier', 'Beneficial bacteria', 'pH stabilizer'],
       benefits: ['Algae prevention', 'Clear water', 'Ecosystem balance', 'Stable chemistry'],
-      price: 'Starting at $29.99'
     },
     {
       season: 'Fall',
@@ -83,7 +75,6 @@ const WaterTreatmentsPage = () => {
       description: 'Fall preparation treatments for winter readiness',
       treatments: ['Sludge remover', 'Beneficial bacteria', 'Water clarifier', 'pH adjustment'],
       benefits: ['Clean bottom', 'Healthy bacteria', 'Clear water', 'Winter preparation'],
-      price: 'Starting at $27.99'
     },
     {
       season: 'Winter',
@@ -91,7 +82,6 @@ const WaterTreatmentsPage = () => {
       description: 'Winter maintenance treatments for cold weather care',
       treatments: ['Cold water bacteria', 'pH stabilizer', 'Water clarifier', 'Sludge control'],
       benefits: ['Cold weather protection', 'Stable chemistry', 'Clear water', 'Bottom maintenance'],
-      price: 'Starting at $23.99'
     }
   ];
 
@@ -102,7 +92,6 @@ const WaterTreatmentsPage = () => {
       description: 'Accurate pH testing kits for water chemistry monitoring',
       features: ['Easy to use', 'Accurate results', 'Color-coded', 'Multiple tests'],
       applications: ['pH monitoring', 'Water chemistry', 'Fish health', 'Treatment planning'],
-      price: 'Starting at $8.99'
     },
     {
       name: 'Ammonia Test Kits',
@@ -110,7 +99,6 @@ const WaterTreatmentsPage = () => {
       description: 'Ammonia testing kits to monitor water quality and fish health',
       features: ['Precise measurement', 'Easy reading', 'Multiple tests', 'Professional grade'],
       applications: ['Ammonia monitoring', 'Fish health', 'Water quality', 'Treatment planning'],
-      price: 'Starting at $12.99'
     },
     {
       name: 'Complete Test Kits',
@@ -118,7 +106,6 @@ const WaterTreatmentsPage = () => {
       description: 'Comprehensive water testing kits for complete water analysis',
       features: ['Multiple parameters', 'Professional accuracy', 'Easy to use', 'Complete analysis'],
       applications: ['Complete water analysis', 'Health monitoring', 'Treatment planning', 'Professional use'],
-      price: 'Starting at $24.99'
     }
   ];
 
@@ -130,7 +117,6 @@ const WaterTreatmentsPage = () => {
       includes: ['Water clarifier', 'Beneficial bacteria', 'pH stabilizer', 'Basic test kit'],
       frequency: 'Monthly',
       benefits: ['Clear water', 'Healthy ecosystem', 'Balanced chemistry', 'Easy maintenance'],
-      price: 'Starting at $19.99/month'
     },
     {
       name: 'Professional Maintenance Program',
@@ -139,7 +125,6 @@ const WaterTreatmentsPage = () => {
       includes: ['All basic treatments', 'Algae control', 'Sludge remover', 'Complete test kit', 'Seasonal treatments'],
       frequency: 'Bi-weekly',
       benefits: ['Optimal water quality', 'Algae prevention', 'Clean bottom', 'Professional results'],
-      price: 'Starting at $39.99/month'
     },
     {
       name: 'Commercial Maintenance Program',
@@ -148,7 +133,6 @@ const WaterTreatmentsPage = () => {
       includes: ['All professional treatments', 'Custom formulations', 'Bulk quantities', 'Professional testing', '24/7 support'],
       frequency: 'Weekly',
       benefits: ['Industrial performance', 'Custom solutions', 'Bulk savings', 'Professional support'],
-      price: 'Starting at $79.99/month'
     }
   ];
 
@@ -430,7 +414,6 @@ const WaterTreatmentsPage = () => {
           <div className="packages-grid">
             <div className="package-card">
               <h3>Starter Treatment Package</h3>
-              <div className="package-price">$29.99</div>
               <div className="package-description">Perfect for small ponds and new pond owners</div>
               <ul>
                 <li>Water clarifier</li>
@@ -443,7 +426,6 @@ const WaterTreatmentsPage = () => {
             </div>
             <div className="package-card featured">
               <h3>Professional Treatment Package</h3>
-              <div className="package-price">$59.99</div>
               <div className="package-description">Ideal for medium to large residential ponds</div>
               <ul>
                 <li>All starter treatments</li>
@@ -457,7 +439,6 @@ const WaterTreatmentsPage = () => {
             </div>
             <div className="package-card">
               <h3>Commercial Treatment Package</h3>
-              <div className="package-price">$99.99</div>
               <div className="package-description">For large ponds and commercial applications</div>
               <ul>
                 <li>All professional treatments</li>

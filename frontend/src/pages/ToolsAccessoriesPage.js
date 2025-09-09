@@ -11,7 +11,6 @@ const ToolsAccessoriesPage = () => {
       features: ['Durable construction', 'Ergonomic design', 'Easy to use', 'Long-lasting', 'Professional grade'],
       products: ['Pond skimmers', 'Algae brushes', 'Debris nets', 'Cleaning tools', 'Maintenance kits'],
       applications: ['Daily maintenance', 'Seasonal cleaning', 'Debris removal', 'Algae control'],
-      price: 'Starting at $19.99'
     },
     {
       name: 'Water Testing Equipment',
@@ -20,7 +19,6 @@ const ToolsAccessoriesPage = () => {
       features: ['Accurate readings', 'Easy to use', 'Professional grade', 'Reliable results', 'Multiple parameters'],
       products: ['pH testers', 'Ammonia testers', 'Dissolved oxygen meters', 'Temperature gauges', 'Complete test kits'],
       applications: ['Water quality monitoring', 'Health assessment', 'Treatment planning', 'Preventive care'],
-      price: 'Starting at $24.99'
     },
     {
       name: 'Pond Construction Tools',
@@ -29,7 +27,6 @@ const ToolsAccessoriesPage = () => {
       features: ['Heavy-duty construction', 'Professional grade', 'Precision tools', 'Durable materials', 'Complete sets'],
       products: ['Excavation tools', 'Leveling equipment', 'Measuring tools', 'Installation kits', 'Safety equipment'],
       applications: ['Pond construction', 'Installation projects', 'Renovation work', 'Professional builds'],
-      price: 'Starting at $49.99'
     },
     {
       name: 'Plant Care Tools',
@@ -38,7 +35,6 @@ const ToolsAccessoriesPage = () => {
       features: ['Aquatic plant specific', 'Gentle on plants', 'Easy handling', 'Precision cutting', 'Long reach'],
       products: ['Aquatic plant scissors', 'Plant anchors', 'Fertilizer tools', 'Pruning shears', 'Planting tools'],
       applications: ['Plant maintenance', 'Pruning', 'Fertilizing', 'Planting', 'Seasonal care'],
-      price: 'Starting at $14.99'
     },
     {
       name: 'Fish Care Accessories',
@@ -47,7 +43,6 @@ const ToolsAccessoriesPage = () => {
       features: ['Fish safe materials', 'Easy to use', 'Durable construction', 'Professional quality', 'Safe handling'],
       products: ['Fish nets', 'Feeding tools', 'Health monitoring', 'Breeding accessories', 'Safety equipment'],
       applications: ['Fish handling', 'Health monitoring', 'Feeding management', 'Breeding programs'],
-      price: 'Starting at $12.99'
     },
     {
       name: 'Safety & Protection Gear',
@@ -56,7 +51,6 @@ const ToolsAccessoriesPage = () => {
       features: ['Safety certified', 'Comfortable fit', 'Durable materials', 'Weather resistant', 'Professional grade'],
       products: ['Safety gloves', 'Protective clothing', 'Safety glasses', 'Non-slip boots', 'First aid kits'],
       applications: ['Safety protection', 'Hazard prevention', 'Comfortable work', 'Professional safety'],
-      price: 'Starting at $9.99'
     }
   ];
 
@@ -68,7 +62,6 @@ const ToolsAccessoriesPage = () => {
       features: ['Weather resistant', 'Beautiful design', 'Easy installation', 'Long-lasting', 'Versatile'],
       products: ['Decorative stones', 'Garden ornaments', 'Water features', 'Lighting accessories', 'Artistic elements'],
       applications: ['Aesthetic enhancement', 'Garden design', 'Personalization', 'Visual appeal'],
-      price: 'Starting at $15.99'
     },
     {
       name: 'Functional Accessories',
@@ -77,7 +70,6 @@ const ToolsAccessoriesPage = () => {
       features: ['Functional design', 'Easy to use', 'Durable construction', 'Convenient operation', 'Professional quality'],
       products: ['Automatic feeders', 'Timers', 'Controllers', 'Monitoring systems', 'Convenience items'],
       applications: ['Automation', 'Convenience', 'Monitoring', 'Control systems'],
-      price: 'Starting at $29.99'
     },
     {
       name: 'Seasonal Accessories',
@@ -86,7 +78,6 @@ const ToolsAccessoriesPage = () => {
       features: ['Seasonal specific', 'Weather protection', 'Easy storage', 'Durable materials', 'Versatile use'],
       products: ['Winter covers', 'Summer shades', 'Spring cleaning kits', 'Fall preparation tools', 'Seasonal decorations'],
       applications: ['Seasonal protection', 'Weather preparation', 'Seasonal maintenance', 'Year-round care'],
-      price: 'Starting at $19.99'
     }
   ];
 
@@ -98,7 +89,6 @@ const ToolsAccessoriesPage = () => {
       includes: ['Pond skimmer', 'Algae brush', 'Debris net', 'Basic test kit', 'Cleaning solution', 'Maintenance guide'],
       features: ['Complete basic care', 'Easy to use', 'Professional quality', 'Comprehensive guide'],
       applications: ['Small ponds', 'Basic maintenance', 'DIY care', 'Essential tools'],
-      price: 'Starting at $79.99'
     },
     {
       name: 'Professional Maintenance Kit',
@@ -107,7 +97,6 @@ const ToolsAccessoriesPage = () => {
       includes: ['All basic tools', 'Advanced test kit', 'Specialized brushes', 'Professional skimmer', 'Water treatments', 'Safety gear', 'Professional guide'],
       features: ['Professional grade', 'Complete maintenance', 'Advanced testing', 'Safety included'],
       applications: ['Medium to large ponds', 'Professional maintenance', 'Advanced care', 'Complete service'],
-      price: 'Starting at $149.99'
     },
     {
       name: 'Complete Pond Care Kit',
@@ -116,7 +105,6 @@ const ToolsAccessoriesPage = () => {
       includes: ['All professional tools', 'Complete test equipment', 'Construction tools', 'Plant care tools', 'Fish accessories', 'Safety equipment', 'Seasonal accessories', 'Comprehensive guide'],
       features: ['Complete solution', 'Professional grade', 'All-in-one kit', 'Comprehensive care'],
       applications: ['Large ponds', 'Complete care', 'Professional service', 'Full maintenance'],
-      price: 'Starting at $299.99'
     }
   ];
 
@@ -127,7 +115,6 @@ const ToolsAccessoriesPage = () => {
       description: 'Expert consultation to help you choose the right tools for your pond',
       includes: ['Pond assessment', 'Tool recommendations', 'Usage guidance', 'Maintenance planning', 'Purchase assistance'],
       benefits: ['Expert advice', 'Right tool selection', 'Cost savings', 'Proper maintenance'],
-      price: 'Starting at $75'
     },
     {
       name: 'Tool Installation Service',
@@ -135,7 +122,6 @@ const ToolsAccessoriesPage = () => {
       description: 'Professional installation and setup of pond tools and accessories',
       includes: ['Tool installation', 'System setup', 'Testing and calibration', 'User training', 'Warranty service'],
       benefits: ['Professional installation', 'Proper setup', 'User training', 'Warranty protection'],
-      price: 'Starting at $125'
     },
     {
       name: 'Maintenance Training',
@@ -143,7 +129,6 @@ const ToolsAccessoriesPage = () => {
       description: 'Comprehensive training on proper pond maintenance techniques and tool usage',
       includes: ['Hands-on training', 'Tool demonstration', 'Maintenance schedule', 'Best practices', 'Ongoing support'],
       benefits: ['Proper techniques', 'Confidence building', 'Time savings', 'Better results'],
-      price: 'Starting at $150'
     }
   ];
 
@@ -434,7 +419,6 @@ const ToolsAccessoriesPage = () => {
           <div className="packages-grid">
             <div className="package-card">
               <h3>Starter Tool Package</h3>
-              <div className="package-price">$99.99</div>
               <div className="package-description">Perfect for small ponds and basic maintenance</div>
               <ul>
                 <li>Basic maintenance tools</li>
@@ -447,7 +431,6 @@ const ToolsAccessoriesPage = () => {
             </div>
             <div className="package-card featured">
               <h3>Professional Tool Package</h3>
-              <div className="package-price">$199.99</div>
               <div className="package-description">Ideal for medium to large residential ponds</div>
               <ul>
                 <li>All starter tools</li>
@@ -462,7 +445,6 @@ const ToolsAccessoriesPage = () => {
             </div>
             <div className="package-card">
               <h3>Complete Tool Package</h3>
-              <div className="package-price">$399.99</div>
               <div className="package-description">For large ponds and professional maintenance</div>
               <ul>
                 <li>All professional tools</li>

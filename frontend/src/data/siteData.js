@@ -187,7 +187,6 @@ export const structuredData = {
       "Mo-Fr 10:00-18:00",
       "Sa 09:00-17:00"
     ],
-    "priceRange": "$$",
     "serviceArea": {
       "@type": "State",
       "name": "Utah"

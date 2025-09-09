@@ -16,7 +16,6 @@ const SeasonalServicesPage = () => {
         'Fish health assessment',
         'Equipment maintenance and repair'
       ],
-      price: 'Starting at $149'
     },
     {
       season: 'Summer',
@@ -30,7 +29,6 @@ const SeasonalServicesPage = () => {
         'Equipment performance optimization',
         'Emergency repair services'
       ],
-      price: 'Starting at $99'
     },
     {
       season: 'Fall',
@@ -44,7 +42,6 @@ const SeasonalServicesPage = () => {
         'Water level adjustment',
         'Winter cover installation'
       ],
-      price: 'Starting at $129'
     },
     {
       season: 'Winter',
@@ -58,7 +55,6 @@ const SeasonalServicesPage = () => {
         'Equipment protection',
         'Winter maintenance planning'
       ],
-      price: 'Starting at $89'
     }
   ];
 
@@ -308,7 +304,6 @@ const SeasonalServicesPage = () => {
           <div className="packages-grid">
             <div className="package-card">
               <h3>Basic Seasonal Care</h3>
-              <div className="package-price">$399/year</div>
               <div className="package-description">Essential seasonal maintenance for small ponds</div>
               <ul>
                 <li>4 seasonal visits per year</li>
@@ -321,7 +316,6 @@ const SeasonalServicesPage = () => {
             </div>
             <div className="package-card featured">
               <h3>Premium Seasonal Care</h3>
-              <div className="package-price">$699/year</div>
               <div className="package-description">Comprehensive seasonal care for medium to large ponds</div>
               <ul>
                 <li>6 seasonal visits per year</li>
@@ -336,7 +330,6 @@ const SeasonalServicesPage = () => {
             </div>
             <div className="package-card">
               <h3>Ultimate Seasonal Care</h3>
-              <div className="package-price">$999/year</div>
               <div className="package-description">Complete seasonal care for premium ponds</div>
               <ul>
                 <li>12 monthly visits per year</li>

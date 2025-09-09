@@ -130,7 +130,6 @@ const FiltrationSystemsPage = () => {
                 <span>Flow Rate: 2000-4000 GPH</span>
                 <span>Pond Size: Up to 4000 gallons</span>
               </div>
-              <span className="price">$299.99</span>
             </div>
             
             <div className="product-card">
@@ -141,7 +140,6 @@ const FiltrationSystemsPage = () => {
                 <span>Flow Rate: 1000-3000 GPH</span>
                 <span>Pond Size: Up to 3000 gallons</span>
               </div>
-              <span className="price">$189.99</span>
             </div>
             
             <div className="product-card">
@@ -152,7 +150,6 @@ const FiltrationSystemsPage = () => {
                 <span>Flow Rate: 500-1500 GPH</span>
                 <span>Pond Size: Up to 2000 gallons</span>
               </div>
-              <span className="price">$149.99</span>
             </div>
           </div>
         </div>

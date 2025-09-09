@@ -228,7 +228,6 @@ const ShopPage = () => {
                 <div className="featured-content">
                   <h3>Pond Liners</h3>
                   <p>High-quality EPDM and PVC pond liners - Essential for any pond project</p>
-                  <div className="featured-price">Varies by size</div>
                   <a href="tel:(801) 590-8516" className="btn btn-primary" onClick={(e) => e.stopPropagation()}>
                     Call for Details
                   </a>
@@ -243,7 +242,6 @@ const ShopPage = () => {
                 <div className="featured-content">
                   <h3>Water Lilies</h3>
                   <p>Winter hardy water lilies in various colors for your pond</p>
-                  <div className="featured-price">$15.99</div>
                   <a href="tel:(801) 590-8516" className="btn btn-primary" onClick={(e) => e.stopPropagation()}>
                     Call for Stock
                   </a>
@@ -258,7 +256,6 @@ const ShopPage = () => {
                 <div className="featured-content">
                   <h3>Pond Pumps</h3>
                   <p>Energy-efficient pumps and aeration systems for healthy ponds</p>
-                  <div className="featured-price">Contact for pricing</div>
                   <a href="tel:(801) 590-8516" className="btn btn-primary" onClick={(e) => e.stopPropagation()}>
                     Get Quote
                   </a>
@@ -346,8 +343,7 @@ const ShopPage = () => {
                           <h3>{plant.name}</h3>
                           <p className="plant-category">{plant.category}</p>
                           <p className="plant-description">{plant.description}</p>
-                          <div className="plant-price">
-                            {plant.price && <span className="price">${plant.price}</span>}
+                          <div className="plant-availability">
                             {plant.availability && <span className="availability">{plant.availability}</span>}
                           </div>
                         </div>

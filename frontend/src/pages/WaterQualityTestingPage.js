@@ -13,7 +13,6 @@ const WaterQualityTestingPage = () => {
       importance: 'Critical for fish health and plant growth',
       idealRange: '6.5 - 8.5',
       frequency: 'Weekly',
-      price: 'Starting at $25'
     },
     {
       name: 'Ammonia Testing',
@@ -22,7 +21,6 @@ const WaterQualityTestingPage = () => {
       importance: 'Prevents fish poisoning and stress',
       idealRange: '0 ppm',
       frequency: 'Weekly',
-      price: 'Starting at $30'
     },
     {
       name: 'Nitrite Testing',
@@ -31,7 +29,6 @@ const WaterQualityTestingPage = () => {
       importance: 'Essential for biological filtration health',
       idealRange: '0 ppm',
       frequency: 'Weekly',
-      price: 'Starting at $30'
     },
     {
       name: 'Nitrate Testing',
@@ -40,7 +37,6 @@ const WaterQualityTestingPage = () => {
       importance: 'Controls algae growth and plant health',
       idealRange: 'Below 40 ppm',
       frequency: 'Monthly',
-      price: 'Starting at $25'
     },
     {
       name: 'Dissolved Oxygen Testing',
@@ -49,7 +45,6 @@ const WaterQualityTestingPage = () => {
       importance: 'Critical for fish survival and water clarity',
       idealRange: '5-8 ppm',
       frequency: 'Weekly',
-      price: 'Starting at $35'
     },
     {
       name: 'Alkalinity Testing',
@@ -58,7 +53,6 @@ const WaterQualityTestingPage = () => {
       importance: 'Prevents pH fluctuations and stress',
       idealRange: '80-120 ppm',
       frequency: 'Monthly',
-      price: 'Starting at $25'
     }
   ];
 
@@ -66,21 +60,18 @@ const WaterQualityTestingPage = () => {
     {
       name: 'Basic Water Test',
       tests: ['pH', 'Ammonia', 'Nitrite'],
-      price: '$45',
       turnaround: 'Same day',
       image: '/images/IMG_2770.jpg'
     },
     {
       name: 'Standard Water Test',
       tests: ['pH', 'Ammonia', 'Nitrite', 'Nitrate', 'Dissolved Oxygen'],
-      price: '$75',
       turnaround: 'Same day',
       image: '/images/IMG_2775.jpg'
     },
     {
       name: 'Comprehensive Water Test',
       tests: ['pH', 'Ammonia', 'Nitrite', 'Nitrate', 'Dissolved Oxygen', 'Alkalinity', 'Hardness', 'Phosphate'],
-      price: '$120',
       turnaround: 'Same day',
       image: '/images/IMG_2779.jpg'
     }
@@ -174,7 +165,6 @@ const WaterQualityTestingPage = () => {
                       <strong>Frequency:</strong> {service.frequency}
                     </div>
                     <div className="detail-item">
-                      <strong>Price:</strong> {service.price}
                     </div>
                   </div>
                   <a href="tel:(801) 590-8516" className="testing-service-cta">Call for Testing</a>
