@@ -22,7 +22,6 @@ const urlsToCache = [
   '/images/koi.webp',
   '/images/cleaningBefore1000x750.webp',
   '/images/pondCleanings.webp',
-  '/images/pondMaintenance.webp',
   '/images/pondMaint-topaz-enhance-3.9x.jpeg',
   '/images/pondDredging-topaz-enhance-3.9x.jpeg',
   '/images/uwg_image_1941-topaz-enhance-3.5x.jpeg',

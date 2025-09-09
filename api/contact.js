@@ -25,6 +25,16 @@ export default async function handler(req, res) {
   try {
     const { name, email, phone, service, message } = req.body;
 
+    // Debug logging
+    console.log('Contact form submission received:', { name, email, phone, service, message });
+    console.log('Environment variables check:', {
+      hasGmailUser: !!process.env.GMAIL_USER,
+      hasGmailPass: !!process.env.GMAIL_PASS,
+      hasBusinessEmail: !!process.env.BUSINESS_EMAIL,
+      hasEmailSubject: !!process.env.EMAIL_SUBJECT,
+      hasBusinessPhone: !!process.env.BUSINESS_PHONE
+    });
+
     // Validate required fields
     if (!name || !email || !message) {
       return res.status(400).json({
@@ -157,13 +167,18 @@ export default async function handler(req, res) {
     console.error('Error details:', {
       message: error.message,
       code: error.code,
-      response: error.response
+      response: error.response,
+      stack: error.stack
     });
     
     return res.status(500).json({
       error: 'Internal server error',
-      message: `There was an error sending your message. Please try again or call us directly at ${process.env.BUSINESS_PHONE}.`,
-      debug: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: `There was an error sending your message. Please try again or call us directly at ${process.env.BUSINESS_PHONE || '(801) 590-8516'}.`,
+      debug: process.env.NODE_ENV === 'development' ? {
+        message: error.message,
+        code: error.code,
+        stack: error.stack
+      } : undefined
     });
   }
 }
