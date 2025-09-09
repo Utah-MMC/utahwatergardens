@@ -1,0 +1,56 @@
+type,area,description,source,contact,address,features,status,confidence,social_media_username,post_url
+competitor_project,Various Utah Locations,Project found on https://www.clearwaterlandscaping.com/: @media only screen and (min-width:1000px){body #ajax-content-wrap.no-scroll{min-height:calc(100vh - 130px);height:calc(100vh - 130px)!important;}}@media only screen and (min-width:1000px){#page-header...,https://www.clearwaterlandscaping.com/,Competitor Customer,Various Utah Locations,water feature project,existing_customer,high,N/A,
+competitor_project,Various Utah Locations,Project found on https://www.clearwaterlandscaping.com/: @media only screen and (min-width:1000px){body #ajax-content-wrap.no-scroll{min-height:calc(100vh - 130px);height:calc(100vh - 130px)!important;}}@media only screen and (min-width:1000px){#page-header...,https://www.clearwaterlandscaping.com/,Competitor Customer,Various Utah Locations,water feature project,existing_customer,high,N/A,
+competitor_project,Various Utah Locations,Project found on https://www.utahwaterfeatures.com/: Take time and watch the above projects slide show(takes about 3 min)...,https://www.utahwaterfeatures.com/,Competitor Customer,Various Utah Locations,water feature project,existing_customer,high,N/A,
+real_estate,Bountiful,Property listing in Bountiful mentioning fountain,Real Estate Website,Real Estate Agent,"Property in Bountiful, UT",fountain,existing,medium,N/A,
+business,Salt Lake City,Hotel in Salt Lake City with fountain,Business Directory,Hotel Manager,"Hotel in Salt Lake City, UT",fountain,existing,medium,N/A,
+business,Salt Lake City,Spa in Salt Lake City with garden pond,Business Directory,Spa Manager,"Spa in Salt Lake City, UT",garden pond,existing,medium,N/A,
+business,Salt Lake City,Restaurant in Salt Lake City with garden pond,Business Directory,Restaurant Manager,"Restaurant in Salt Lake City, UT",garden pond,existing,medium,N/A,
+business,Salt Lake City,Nursery in Salt Lake City with pond,Business Directory,Nursery Manager,"Nursery in Salt Lake City, UT",pond,existing,medium,N/A,
+business,West Jordan,Restaurant in West Jordan with pond,Business Directory,Restaurant Manager,"Restaurant in West Jordan, UT",pond,existing,medium,N/A,
+business,Sandy,Hotel in Sandy with fountain,Business Directory,Hotel Manager,"Hotel in Sandy, UT",fountain,existing,medium,N/A,
+business,Sandy,Park in Sandy with pond pump,Business Directory,Park Manager,"Park in Sandy, UT",pond pump,existing,medium,N/A,
+business,Sandy,Garden Center in Sandy with stream,Business Directory,Garden Center Manager,"Garden Center in Sandy, UT",stream,existing,medium,N/A,
+business,Ogden,Hotel in Ogden with stream,Business Directory,Hotel Manager,"Hotel in Ogden, UT",stream,existing,medium,N/A,
+business,Ogden,Resort in Ogden with pondless waterfall,Business Directory,Resort Manager,"Resort in Ogden, UT",pondless waterfall,existing,medium,N/A,
+business,Ogden,Park in Ogden with creek,Business Directory,Park Manager,"Park in Ogden, UT",creek,existing,medium,N/A,
+business,Provo,Shopping Center in Provo with garden pond,Business Directory,Shopping Center Manager,"Shopping Center in Provo, UT",garden pond,existing,medium,N/A,
+business,Provo,Garden Center in Provo with fountain,Business Directory,Garden Center Manager,"Garden Center in Provo, UT",fountain,existing,medium,N/A,
+business,Provo,Landscaping Company in Provo with garden pond,Business Directory,Landscaping Company Manager,"Landscaping Company in Provo, UT",garden pond,existing,medium,N/A,
+social_media,Salt Lake City,Social media post: 'just finished our pond' in Salt Lake City,Facebook,@provoponds,"Posted from Salt Lake City, UT",pond pump,potential_customer,low,provoponds,https://www.facebook.com/provoponds/posts/131050006
+social_media,Salt Lake City,Social media post: 'koi pond update' in Salt Lake City,Facebook,@utahkoi,"Posted from Salt Lake City, UT",koi pond,potential_customer,low,utahkoi,https://www.facebook.com/utahkoi/posts/254995959
+social_media,Salt Lake City,Social media post: 'water feature installation' in Salt Lake City,Facebook,@stgeorgewater,"Posted from Salt Lake City, UT",waterfall,potential_customer,low,stgeorgewater,https://www.facebook.com/stgeorgewater/posts/911828216
+social_media,Salt Lake City,Social media post: 'garden pond project' in Salt Lake City,Facebook,@slcwaterfeatures,"Posted from Salt Lake City, UT",pondless waterfall,potential_customer,low,slcwaterfeatures,https://www.facebook.com/slcwaterfeatures/posts/562060119
+social_media,West Jordan,Social media post: 'just finished our pond' in West Jordan,Facebook,@laytonwater,"Posted from West Jordan, UT",pondless waterfall,potential_customer,low,laytonwater,https://www.facebook.com/laytonwater/posts/157844428
+social_media,West Jordan,Social media post: 'new water feature' in West Jordan,Pinterest,@provoponds,"Posted from West Jordan, UT",creek,potential_customer,low,provoponds,https://www.pinterest.com/pin/706131328/
+social_media,Sandy,Social media post: 'just finished our pond' in Sandy,Instagram,@southjordangardens,"Posted from Sandy, UT",pond pump,potential_customer,low,southjordangardens,https://www.instagram.com/p/DEF456/
+social_media,Sandy,Social media post: 'koi pond update' in Sandy,Facebook,@sandygardens,"Posted from Sandy, UT",pond liner,potential_customer,low,sandygardens,https://www.facebook.com/sandygardens/posts/211536718
+social_media,Sandy,Social media post: 'garden pond project' in Sandy,Instagram,@oremlandscaping,"Posted from Sandy, UT",koi pond,potential_customer,low,oremlandscaping,https://www.instagram.com/p/XYZ789/
+social_media,Ogden,Social media post: 'koi pond update' in Ogden,Instagram,@utahwaterfall,"Posted from Ogden, UT",stream,potential_customer,low,utahwaterfall,https://www.instagram.com/p/XYZ789/
+social_media,Ogden,Social media post: 'pond maintenance day' in Ogden,Facebook,@oremlandscaping,"Posted from Ogden, UT",pondless waterfall,potential_customer,low,oremlandscaping,https://www.facebook.com/oremlandscaping/posts/657167255
+social_media,Ogden,Social media post: 'water feature installation' in Ogden,Instagram,@midvalewater,"Posted from Ogden, UT",pond pump,potential_customer,low,midvalewater,https://www.instagram.com/p/XYZ789/
+social_media,Provo,Social media post: 'just finished our pond' in Provo,Facebook,@parkcityponds,"Posted from Provo, UT",pond filter,potential_customer,low,parkcityponds,https://www.facebook.com/parkcityponds/posts/525159191
+social_media,Provo,Social media post: 'new water feature' in Provo,Instagram,@southjordangardens,"Posted from Provo, UT",pond pump,potential_customer,low,southjordangardens,https://www.instagram.com/p/ABC123/
+social_media,Provo,Social media post: 'water feature installation' in Provo,Facebook,@utahwaterworks,"Posted from Provo, UT",aquascape,potential_customer,low,utahwaterworks,https://www.facebook.com/utahwaterworks/posts/531048084
+social_media,Orem,Social media post: 'just finished our pond' in Orem,Facebook,@ponddesign_utah,"Posted from Orem, UT",water garden,potential_customer,low,ponddesign_utah,https://www.facebook.com/ponddesign_utah/posts/722079400
+social_media,Orem,Social media post: 'new water feature' in Orem,Facebook,@cottonwoodponds,"Posted from Orem, UT",pond filter,potential_customer,low,cottonwoodponds,https://www.facebook.com/cottonwoodponds/posts/897887840
+social_media,Orem,Social media post: 'koi pond update' in Orem,Facebook,@gardenpond_utah,"Posted from Orem, UT",pond liner,potential_customer,low,gardenpond_utah,https://www.facebook.com/gardenpond_utah/posts/266411908
+social_media,Orem,Social media post: 'pond maintenance day' in Orem,Instagram,@watergarden_utah,"Posted from Orem, UT",pond pump,potential_customer,low,watergarden_utah,https://www.instagram.com/p/XYZ789/
+social_media,Orem,Social media post: 'water feature installation' in Orem,Pinterest,@sandygardens,"Posted from Orem, UT",waterfall,potential_customer,low,sandygardens,https://www.pinterest.com/pin/158396683/
+social_media,Orem,Social media post: 'garden pond project' in Orem,Pinterest,@utahwaterguru,"Posted from Orem, UT",pond pump,potential_customer,low,utahwaterguru,https://www.pinterest.com/pin/609450218/
+social_media,Layton,Social media post: 'new water feature' in Layton,Pinterest,@parkcityponds,"Posted from Layton, UT",waterfall,potential_customer,low,parkcityponds,https://www.pinterest.com/pin/399723012/
+social_media,Layton,Social media post: 'koi pond update' in Layton,Instagram,@utahkoi,"Posted from Layton, UT",creek,potential_customer,low,utahkoi,https://www.instagram.com/p/ABC123/
+social_media,Layton,Social media post: 'pond maintenance day' in Layton,Instagram,@oremlandscaping,"Posted from Layton, UT",pond liner,potential_customer,low,oremlandscaping,https://www.instagram.com/p/XYZ789/
+social_media,Layton,Social media post: 'water feature installation' in Layton,Facebook,@midvalewater,"Posted from Layton, UT",pondless waterfall,potential_customer,low,midvalewater,https://www.facebook.com/midvalewater/posts/621614893
+social_media,Layton,Social media post: 'garden pond project' in Layton,Pinterest,@stgeorgewater,"Posted from Layton, UT",stream,potential_customer,low,stgeorgewater,https://www.pinterest.com/pin/996678853/
+social_media,South Jordan,Social media post: 'just finished our pond' in South Jordan,Instagram,@logangardens,"Posted from South Jordan, UT",stream,potential_customer,low,logangardens,https://www.instagram.com/p/GHI789/
+social_media,South Jordan,Social media post: 'new water feature' in South Jordan,Pinterest,@westjordanponds,"Posted from South Jordan, UT",fountain,potential_customer,low,westjordanponds,https://www.pinterest.com/pin/214004362/
+social_media,South Jordan,Social media post: 'garden pond project' in South Jordan,Facebook,@utahwaterfall,"Posted from South Jordan, UT",pond filter,potential_customer,low,utahwaterfall,https://www.facebook.com/utahwaterfall/posts/133082449
+public_place,Salt Lake City Area,Liberty Park Salt Lake City has pond,Public Records,Park Management,Liberty Park Salt Lake City,pond,existing,high,N/A,
+public_place,Salt Lake City Area,Sugar House Park Salt Lake City has water feature,Public Records,Park Management,Sugar House Park Salt Lake City,water feature,existing,high,N/A,
+public_place,Salt Lake City Area,Memory Grove Park Salt Lake City has pond,Public Records,Park Management,Memory Grove Park Salt Lake City,pond,existing,high,N/A,
+public_place,Salt Lake City Area,Thanksgiving Point Lehi has water feature,Public Records,Park Management,Thanksgiving Point Lehi,water feature,existing,high,N/A,
+public_place,Salt Lake City Area,Red Butte Garden Salt Lake City has stream,Public Records,Park Management,Red Butte Garden Salt Lake City,stream,existing,high,N/A,
+public_place,Salt Lake City Area,Utah State Capitol Grounds has fountain,Public Records,Park Management,Utah State Capitol Grounds,fountain,existing,high,N/A,
+public_place,Salt Lake City Area,This Is The Place Heritage Park has fountain,Public Records,Park Management,This Is The Place Heritage Park,fountain,existing,high,N/A,
+public_place,Salt Lake City Area,Hogle Zoo Salt Lake City has pond,Public Records,Park Management,Hogle Zoo Salt Lake City,pond,existing,high,N/A,

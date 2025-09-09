@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
-import PageHero from '../../components/PageHero.js';
+import StandardHero from '../../components/StandardHero';
 import CTA from '../../components/CTA';
 import './ServiceAreaPage.css';
 
@@ -80,12 +80,16 @@ const Pond-repairBountifulPage = () => {
         })}
       </script>
       <div className="service-area-page">
-        <PageHero 
-          title="Pond Repair Services in Bountiful"
-          subtitle="Professional pond repair and equipment maintenance services"
-          backgroundImage="/images/pumpRepair.webp"
-          backgroundImageAlt="Professional pond repair services"
-        />
+        <StandardHero 
+        title="Pond Repair Services in Bountiful"
+        subtitle="Professional pond services for Pond Repair Services in Bountiful and surrounding areas"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImageAlt="Professional pond services in Pond Repair Services in Bountiful"
+        primaryButtonText="CALL (801) 590-8516"
+        primaryButtonLink="tel:(801) 590-8516"
+        secondaryButtonText="GET QUOTE"
+        secondaryButtonLink="/contact"
+      />
 
         <div className="container">
           {/* Service Overview */}

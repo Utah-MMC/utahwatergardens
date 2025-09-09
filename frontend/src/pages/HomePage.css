@@ -26,24 +26,104 @@ img, video{max-width:100%;display:block;height:auto}
 .btn[data-variant="ghost"]{background:#fff;border:2px solid #e2e8f0;color:#475569;border-radius:999px;width:40px;height:40px}
 
 /* HERO */
-.hero{position:relative;height:80vh;height:80dvh;width:100vw;margin-left:calc(-50vw + 50%);display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden;min-height:80vh;min-height:80dvh;background:#f8fafc;margin-top:0;margin-bottom:0;left:0;right:0}
+.hero{position:relative;height:80vh;height:80dvh;width:100vw;margin-left:calc(-50vw + 50%);display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:visible;min-height:80vh;min-height:80dvh;background:#f8fafc;margin-top:0;margin-bottom:0;left:0;right:0;padding-top:120px;box-sizing:border-box}
 .hero-media{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-2;overflow:hidden}
 .hero-fallback{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;position:absolute;top:0;left:0;min-height:100%;min-width:100%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55));z-index:-1}
+
+/* Wave effect using ::before pseudo-element - Baby Blue Upward Wave (50% height) */
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #ADD8E6; /* Baby blue */
+  clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%); /* Natural flowing wave */
+  z-index: 99999;
+  pointer-events: none;
+  animation: hero-wave-simple 3s ease-in-out infinite;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
 .hero-inner{padding:clamp(1rem,3vw,2rem);text-align:center;color:#fff;max-width:760px;z-index:10;position:relative}
 .hero-title{font-size:clamp(2rem,6vw,4rem);line-height:1.05;font-weight:800;margin:0 0 .75rem}
 .hero-title span{color:#bbe3ff}
 .hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);opacity:.95;margin:0 0 1rem}
 
-/* Wave effect at bottom of hero */
-.hero::before{content:"";position:absolute;bottom:-60px;left:0;width:100%;height:120px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,110C100,100,200,80,300,70C400,60,500,60,600,70C700,80,800,100,900,110C1000,120,1100,120,1150,120L1200,120V120H0Z' fill='%231e40af' fill-opacity='1'/%3E%3C/svg%3E") no-repeat center bottom;background-size:cover;z-index:5;pointer-events:none}
+/* Enhanced wave effect at bottom of hero - More visible approach */
+.hero::after,
+.hero.mobile-hero-fix::after{
+  content:"" !important;
+  position:absolute !important;
+  bottom:-50px !important;
+  left:0 !important;
+  width:100% !important;
+  height:50px !important;
+  background:#1e40af !important;
+  clip-path:polygon(0% 0%, 0% 100%, 25% 80%, 50% 100%, 75% 70%, 100% 100%, 100% 0%) !important;
+  z-index:999 !important;
+  pointer-events:none !important;
+  animation:heroWaveFlow 6s ease-in-out infinite !important;
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+/* Hero wave animation */
+@keyframes heroWaveFlow {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+/* Wave Effect - Separate element */
+.hero-wave-effect {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: #ff0000 !important;
+  z-index: 99999 !important;
+  pointer-events: none;
+  border: 5px solid #00ff00 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Natural wave animation with flowing curves */
+@keyframes hero-wave-simple {
+  0%, 100% {
+    clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%);
+  }
+  25% {
+    clip-path: polygon(0% 100%, 0% 25%, 10% 30%, 20% 20%, 30% 35%, 40% 25%, 50% 20%, 60% 30%, 70% 25%, 80% 20%, 90% 30%, 100% 25%, 100% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 100%, 0% 35%, 10% 20%, 20% 30%, 30% 25%, 40% 20%, 50% 30%, 60% 20%, 70% 35%, 80% 25%, 90% 20%, 100% 30%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(0% 100%, 0% 20%, 10% 35%, 20% 25%, 30% 30%, 40% 35%, 50% 25%, 60% 35%, 70% 30%, 80% 35%, 90% 30%, 100% 20%, 100% 100%);
+  }
+}
+
 
 /* SECTIONS */
-.section{padding-block:clamp(2.5rem,6vw,4rem)}
+.section{padding-block:clamp(2.5rem,6vw,4rem);transform:translateZ(0);will-change:scroll-position}
 .section.alt{background:#f8fafc}
 .section:first-of-type{margin-top:2rem}
 .section-head h2{font-size:clamp(1.75rem,4.5vw,2.75rem);margin:0 0 .25rem;color:var(--ink)}
 .section-head p{margin:0;color:var(--muted)}
+
+/* Optimize sections with carousels */
+.section:has(.crsl){contain:layout style paint}
 
 /* ABOUT SECTION */
 .col-6{flex:1;padding:0 1rem}
@@ -70,19 +150,23 @@ img, video{max-width:100%;display:block;height:auto}
 .avail{color:#059669;font-weight:600;font-size:.9rem}
 .clamp-2{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
-/* CAROUSEL */
-.crsl{--dur:.5s}
+/* CAROUSEL - Optimized for scroll performance */
+.crsl{--dur:.5s;transform:translateZ(0);will-change:transform;contain:layout style paint}
 .crsl-head{display:flex;justify-content:flex-end;margin:0 0 .5rem}
-.crsl-viewport{overflow:hidden}
-.crsl-track{display:flex;transition:transform var(--dur) ease}
-.crsl-slide{min-width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,3vw,2rem);padding:0;margin:0;list-style:none}
-.crsl-item{min-width:0}
-.crsl .item{display:flex;flex-direction:column}
-.crsl .item img{width:100%;height:200px;object-fit:cover}
+.crsl-viewport{overflow:hidden;transform:translateZ(0);contain:layout}
+.crsl-track{display:flex;transition:transform var(--dur) ease;will-change:transform;transform:translateZ(0);contain:layout}
+.crsl-slide{min-width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,3vw,2rem);padding:0;margin:0;list-style:none;transform:translateZ(0);contain:layout}
+.crsl-item{min-width:0;transform:translateZ(0);contain:layout}
+.crsl .item{display:flex;flex-direction:column;transform:translateZ(0);contain:layout}
+.crsl .item img{width:100%;height:200px;object-fit:cover;transform:translateZ(0);contain:layout;image-rendering:optimizeSpeed}
 .crsl .item .item-body{padding:1rem}
 .crsl-indicators{display:flex;gap:.4rem;justify-content:center;margin-top:1rem}
 .dot{width:10px;height:10px;border-radius:999px;background:#e2e8f0;border:0}
 .dot.is-active{background:var(--primary)}
+
+/* Additional optimizations for carousel sections */
+.section .crsl{isolation:isolate}
+.section .crsl .item img{backface-visibility:hidden;perspective:1000px}
 
 
 /* RESPONSIVE */
@@ -92,6 +176,17 @@ img, video{max-width:100%;display:block;height:auto}
 }
 @media (max-width: 768px){
   .crsl-slide{grid-template-columns:repeat(2,1fr)}
+  
+  /* Adjust hero wave effect for mobile */
+  .hero::before{
+    bottom:-30px !important;
+    height:60px !important;
+  }
+  
+  .hero::before {
+    bottom: 0px;
+    height: 40px;
+  }
 }
 @media (max-width: 480px){
   .crsl-slide{grid-template-columns:1fr}
@@ -101,6 +196,11 @@ img, video{max-width:100%;display:block;height:auto}
     height: 35vh !important;
     min-height: 35vh !important;
     max-height: 35vh !important;
+  }
+  
+  .hero::before {
+    bottom: 0px;
+    height: 30px;
   }
   
   .hero-title {

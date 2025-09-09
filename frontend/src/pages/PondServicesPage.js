@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { getCitiesByCountyWithPaths } from '../data/utahCities';
 import './PondServicesPage.css';
 
 const PondServicesPage = () => {
@@ -25,71 +26,8 @@ const PondServicesPage = () => {
     { number: '100%', label: 'Satisfaction Rate', icon: 'Satisfaction' }
   ];
 
-  // Organize service areas by county
-  const serviceAreasByCounty = {
-    'Salt Lake County': [
-      { name: 'Salt Lake City', path: '/pond-services/salt-lake-city' },
-      { name: 'West Jordan', path: '/pond-services/west-jordan' },
-      { name: 'Sandy', path: '/pond-services/sandy' },
-      { name: 'Murray', path: '/pond-services/murray' },
-      { name: 'West Valley City', path: '/pond-services/west-valley-city' },
-      { name: 'South Jordan', path: '/pond-services/south-jordan' },
-      { name: 'Riverton', path: '/pond-services/riverton' },
-      { name: 'Herriman', path: '/pond-services/herriman' },
-      { name: 'Bluffdale', path: '/pond-services/bluffdale' },
-      { name: 'Draper', path: '/pond-services/draper' },
-      { name: 'Midvale', path: '/pond-services/midvale' },
-      { name: 'Taylorsville', path: '/pond-services/taylorsville' },
-      { name: 'Kearns', path: '/pond-services/kearns' },
-      { name: 'Magna', path: '/pond-services/magna' },
-      { name: 'Millcreek', path: '/pond-services/millcreek' },
-      { name: 'Holladay', path: '/pond-services/holladay' },
-      { name: 'Cottonwood Heights', path: '/pond-services/cottonwood-heights' }
-    ],
-    'Davis County': [
-      { name: 'Ogden', path: '/pond-services/ogden' },
-      { name: 'Layton', path: '/pond-services/layton' },
-      { name: 'Clearfield', path: '/pond-services/clearfield' },
-      { name: 'Bountiful', path: '/pond-services/bountiful' },
-      { name: 'Kaysville', path: '/pond-services/kaysville' },
-      { name: 'Farmington', path: '/pond-services/farmington' },
-      { name: 'Centerville', path: '/pond-services/centerville' },
-      { name: 'North Salt Lake', path: '/pond-services/north-salt-lake' },
-      { name: 'Woods Cross', path: '/pond-services/woods-cross' },
-      { name: 'Syracuse', path: '/pond-services/syracuse' },
-      { name: 'Clinton', path: '/pond-services/clinton' },
-      { name: 'Roy', path: '/pond-services/roy' },
-      { name: 'South Ogden', path: '/pond-services/south-ogden' },
-      { name: 'Washington Terrace', path: '/pond-services/washington-terrace' },
-      { name: 'Riverdale', path: '/pond-services/riverdale' },
-      { name: 'Fruit Heights', path: '/pond-services/fruit-heights' },
-      { name: 'West Bountiful', path: '/pond-services/west-bountiful' },
-      { name: 'Sunset', path: '/pond-services/sunset' },
-      { name: 'Hooper', path: '/pond-services/hooper' },
-      { name: 'Uintah', path: '/pond-services/uintah' },
-      { name: 'Pleasant View', path: '/pond-services/pleasant-view' },
-      { name: 'South Weber', path: '/pond-services/south-weber' },
-      { name: 'West Haven', path: '/pond-services/west-haven' },
-      { name: 'Harrisville', path: '/pond-services/harrisville' },
-      { name: 'Farr West', path: '/pond-services/farr-west' },
-      { name: 'Plain City', path: '/pond-services/plain-city' },
-      { name: 'Marriott-Slaterville', path: '/pond-services/marriott-slaterville' },
-      { name: 'Huntsville', path: '/pond-services/huntsville' },
-      { name: 'Eden', path: '/pond-services/eden' },
-      { name: 'Liberty', path: '/pond-services/liberty' },
-      { name: 'Mountain Green', path: '/pond-services/mountain-green' },
-      { name: 'Weber Canyon', path: '/pond-services/weber-canyon' },
-      { name: 'Warren', path: '/pond-services/warren' },
-      { name: 'West Warren', path: '/pond-services/west-warren' },
-      { name: 'Taylor', path: '/pond-services/taylor' },
-      { name: 'Callao', path: '/pond-services/callao' },
-      { name: 'Knolls', path: '/pond-services/knolls' },
-      { name: 'Rush Valley', path: '/pond-services/rush-valley' },
-      { name: 'Terra', path: '/pond-services/terra' },
-      { name: 'Timpe', path: '/pond-services/timpe' },
-      { name: 'Trinidad', path: '/pond-services/trinidad' }
-    ]
-  };
+  // Get comprehensive service areas by county
+  const serviceAreasByCounty = getCitiesByCountyWithPaths();
 
   // Featured services - emphasizing cleaning and service
   const featuredServices = [

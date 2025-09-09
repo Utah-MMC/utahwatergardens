@@ -1,7 +1,7 @@
 import React from 'react';
 import CTA from '../../components/CTA';
 import { Link } from 'react-router-dom';
-import PageHero from '../../components/PageHero.js';
+import StandardHero from '../../components/StandardHero';
 import './ServiceAreaPage.css';
 
 const MagnaPage = () => {
@@ -41,11 +41,15 @@ const MagnaPage = () => {
 
   return (
     <div className="service-area-page">
-      <PageHero 
+      <StandardHero 
         title="Pond Services in Magna"
-        subtitle="Professional pond services for Magna and surrounding Salt Lake County areas"
-        backgroundImage="/images/pond-services-hero.jpg"
+        subtitle="Professional pond services for Magna and surrounding areas"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
         backgroundImageAlt="Professional pond services in Magna"
+        primaryButtonText="CALL (801) 590-8516"
+        primaryButtonLink="tel:(801) 590-8516"
+        secondaryButtonText="GET QUOTE"
+        secondaryButtonLink="/contact"
       />
 
       <div className="container">

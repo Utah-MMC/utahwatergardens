@@ -47,7 +47,7 @@ function Carousel({
   const next = useCallback(() => setIndex((p) => (p + 1) % totalSlides), [totalSlides]);
   const prev = useCallback(() => setIndex((p) => (p - 1 + totalSlides) % totalSlides), [totalSlides]);
 
-  // auto-advance (pauses on hover/focus)
+  // auto-advance (pauses on hover/focus) - optimized for performance
   useEffect(() => {
     if (!auto || totalSlides <= 1) return;
     const el = trackRef.current?.closest("[data-carousel]");
@@ -55,10 +55,10 @@ function Carousel({
     const start = () => (id = window.setInterval(next, autoMs));
     const stop = () => id && window.clearInterval(id);
     start();
-    el?.addEventListener("mouseenter", stop);
-    el?.addEventListener("focusin", stop);
-    el?.addEventListener("mouseleave", start);
-    el?.addEventListener("focusout", start);
+    el?.addEventListener("mouseenter", stop, { passive: true });
+    el?.addEventListener("focusin", stop, { passive: true });
+    el?.addEventListener("mouseleave", start, { passive: true });
+    el?.addEventListener("focusout", start, { passive: true });
     return () => { 
       stop(); 
       el?.removeEventListener("mouseenter", stop); 
@@ -68,7 +68,7 @@ function Carousel({
     };
   }, [auto, autoMs, next, totalSlides]);
 
-  // pointer swipe
+  // pointer swipe - optimized for performance
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
@@ -90,10 +90,10 @@ function Carousel({
       dragging = false; 
       dx = 0; 
     };
-    el.addEventListener("pointerdown", down); 
-    el.addEventListener("pointermove", move); 
-    el.addEventListener("pointerup", up); 
-    el.addEventListener("pointercancel", up);
+    el.addEventListener("pointerdown", down, { passive: true }); 
+    el.addEventListener("pointermove", move, { passive: true }); 
+    el.addEventListener("pointerup", up, { passive: true }); 
+    el.addEventListener("pointercancel", up, { passive: true });
     return () => { 
       el.removeEventListener("pointerdown", down); 
       el.removeEventListener("pointermove", move); 
@@ -149,6 +149,7 @@ function Carousel({
 const HomePage = () => {
   const plantList = useMemo(() => getAllPlants(), []);
 
+
   return (
     <>
       <SEO 
@@ -160,7 +161,7 @@ const HomePage = () => {
 
       <main className="home" id="main">
         {/* MOBILE FIX STYLES */}
-        <style jsx>{`
+        <style>{`
           @media screen and (max-width: 768px) {
             .hero {
               height: 250px !important;
@@ -174,13 +175,17 @@ const HomePage = () => {
               top: 0 !important;
               background: #f8fafc !important;
               z-index: 1 !important;
-              overflow: hidden !important;
+              overflow: visible !important;
+              padding-top: 100px !important;
+              box-sizing: border-box !important;
             }
             .hero-sub {
               display: none !important;
             }
             .hero::before {
-              display: none !important;
+              display: block !important;
+              bottom: -40px !important;
+              height: 80px !important;
             }
             .section:first-of-type {
               margin-top: 0 !important;
@@ -207,8 +212,8 @@ const HomePage = () => {
             <h1 className="hero-title">Create Your Dream <span>Water Garden</span></h1>
             <p className="hero-sub">From stunning koi ponds to tranquil water features, we bring your aquatic vision to life with expert design, construction, and maintenance.</p>
             <div className="btn-row">
-              <a href="tel:(801) 590-8516" className="btn" data-variant="primary">Call Now</a>
-              <Link to="/contact" className="btn" data-variant="outline">Get Quote</Link>
+              <a href="tel:(801) 590-8516" className="btn" data-variant="primary">TALK TO EXPERT</a>
+              <Link to="/pond-services" className="btn" data-variant="outline">POND SERVICE</Link>
           </div>
         </div>
       </section>
@@ -329,13 +334,19 @@ const HomePage = () => {
               items={products}
               pageSize={4}
               labelledBy="shop-h"
-              auto
+              auto={false}
               autoMs={6000}
               renderItem={(p) => (
                 <Link to="/shop" className="card item">
                   <picture>
                     <source srcSet={`${p.image}`} type="image/webp" />
-                    <img src={p.image} alt={p.name} loading="lazy" />
+                    <img 
+                      src={p.image} 
+                      alt={p.name} 
+                      loading="lazy"
+                      decoding="async"
+                      style={{ transform: 'translateZ(0)' }}
+                    />
                   </picture>
                   <h3>{p.name}</h3>
                     </Link>
@@ -359,9 +370,16 @@ const HomePage = () => {
               items={plantList}
               pageSize={4}
               labelledBy="plant-h"
+              auto={false}
               renderItem={(plant) => (
                 <Link to={`/plant/${createPlantSlug(plant.name)}`} className="card item">
-                  <img src={plant.image} alt={plant.name} loading="lazy" />
+                  <img 
+                    src={plant.image} 
+                    alt={plant.name} 
+                    loading="lazy" 
+                    decoding="async"
+                    style={{ transform: 'translateZ(0)' }}
+                  />
                   <div className="item-body">
                         <h3>{plant.name}</h3>
                     {plant.category && <p className="chip">{plant.category}</p>}
@@ -440,7 +458,7 @@ function ServiceCard({to, title, img, alt, children}){
         <p className="muted">{children}</p>
         <div className="btn-row">
           <span className="btn" data-variant="primary" role="link" aria-hidden>Learn More</span>
-          <a className="btn" data-variant="outline" href="tel:(801) 590-8516" onClick={(e)=>e.stopPropagation()}>Get Quote</a>
+          <span className="btn" data-variant="outline" role="link" aria-hidden>Get Quote</span>
         </div>
       </div>
     </Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
-import PageHero from '../../components/PageHero.js';
+import StandardHero from '../../components/StandardHero';
 import CTA from '../../components/CTA';
 import './ServiceAreaPage.css';
 
@@ -80,12 +80,16 @@ const Pond-dredgingMontrosePage = () => {
         })}
       </script>
       <div className="service-area-page">
-        <PageHero 
-          title="Pond Dredging Services in Montrose"
-          subtitle="Professional pond dredging services to restore water depth and quality"
-          backgroundImage="/images/pondDredging-topaz-enhance-3.9x.jpeg"
-          backgroundImageAlt="Professional pond dredging services"
-        />
+        <StandardHero 
+        title="Pond Dredging Services in Montrose"
+        subtitle="Professional pond services for Pond Dredging Services in Montrose and surrounding areas"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImageAlt="Professional pond services in Pond Dredging Services in Montrose"
+        primaryButtonText="CALL (801) 590-8516"
+        primaryButtonLink="tel:(801) 590-8516"
+        secondaryButtonText="GET QUOTE"
+        secondaryButtonLink="/contact"
+      />
 
         <div className="container">
           {/* Service Overview */}

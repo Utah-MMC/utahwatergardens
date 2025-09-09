@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
-import PageHero from '../../components/PageHero.js';
+import StandardHero from '../../components/StandardHero';
 import CTA from '../../components/CTA';
 import './ServiceAreaPage.css';
 
@@ -80,12 +80,16 @@ const Water-feature-designLinglePage = () => {
         })}
       </script>
       <div className="service-area-page">
-        <PageHero 
-          title="Water Feature Design Services in Lingle"
-          subtitle="Custom water feature design and installation services"
-          backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
-          backgroundImageAlt="Custom water feature design services"
-        />
+        <StandardHero 
+        title="Water Feature Design Services in Lingle"
+        subtitle="Professional pond services for Water Feature Design Services in Lingle and surrounding areas"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImageAlt="Professional pond services in Water Feature Design Services in Lingle"
+        primaryButtonText="CALL (801) 590-8516"
+        primaryButtonLink="tel:(801) 590-8516"
+        secondaryButtonText="GET QUOTE"
+        secondaryButtonLink="/contact"
+      />
 
         <div className="container">
           {/* Service Overview */}

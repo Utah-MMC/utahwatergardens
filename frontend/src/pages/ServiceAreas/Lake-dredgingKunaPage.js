@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
-import PageHero from '../../components/PageHero.js';
+import StandardHero from '../../components/StandardHero';
 import CTA from '../../components/CTA';
 import './ServiceAreaPage.css';
 
@@ -80,12 +80,16 @@ const Lake-dredgingKunaPage = () => {
         })}
       </script>
       <div className="service-area-page">
-        <PageHero 
-          title="Lake Dredging Services in Kuna"
-          subtitle="Professional lake dredging services for large water bodies"
-          backgroundImage="/images/lakeDredging-topaz-enhance-3.9x.jpeg"
-          backgroundImageAlt="Professional lake dredging services"
-        />
+        <StandardHero 
+        title="Lake Dredging Services in Kuna"
+        subtitle="Professional pond services for Lake Dredging Services in Kuna and surrounding areas"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImageAlt="Professional pond services in Lake Dredging Services in Kuna"
+        primaryButtonText="CALL (801) 590-8516"
+        primaryButtonLink="tel:(801) 590-8516"
+        secondaryButtonText="GET QUOTE"
+        secondaryButtonLink="/contact"
+      />
 
         <div className="container">
           {/* Service Overview */}

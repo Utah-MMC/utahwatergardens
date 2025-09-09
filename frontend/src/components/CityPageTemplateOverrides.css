@@ -1,0 +1,142 @@
+/* City Page Template Overrides for Desktop Optimization */
+
+/* Override global App.css styles that conflict with desktop layout */
+.city-page-template {
+  /* Ensure proper container behavior on desktop */
+  overflow-x: visible !important;
+  max-width: none !important;
+}
+
+.city-page-template .container {
+  /* Override App.css mobile-first container styles */
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Full-width sections override - Force full width */
+.city-page-template section {
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  padding: 0 !important;
+  max-width: none !important;
+  overflow-x: hidden !important;
+}
+
+/* Ensure proper section backgrounds - Force full width */
+.city-page-template .location-overview,
+.city-page-template .services-section,
+.city-page-template .why-choose-section,
+.city-page-template .pond-sizes-section,
+.city-page-template .local-info-section,
+.city-page-template .process-section,
+.city-page-template .faq-section,
+.city-page-template .nearby-areas {
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  max-width: none !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix any potential overflow issues */
+.city-page-template {
+  overflow-x: hidden !important;
+  max-width: none !important;
+}
+
+/* Ensure proper z-index stacking */
+.city-page-template .location-details {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.city-page-template .location-map {
+  position: relative !important;
+  z-index: 1 !important;
+  max-width: 100% !important;
+}
+
+/* Large desktop optimization */
+@media (min-width: 1400px) {
+  .city-page-template .container {
+    max-width: 1400px !important;
+    padding: 0 3rem !important;
+  }
+}
+
+/* Ensure proper grid behavior on desktop */
+.city-page-template .location-details,
+.city-page-template .services-grid,
+.city-page-template .features-grid,
+.city-page-template .pond-sizes-grid,
+.city-page-template .process-steps,
+.city-page-template .faq-grid,
+.city-page-template .areas-grid,
+.city-page-template .districts-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix any potential overflow issues */
+.city-page-template * {
+  box-sizing: border-box !important;
+}
+
+/* Ensure proper text rendering */
+.city-page-template h1,
+.city-page-template h2,
+.city-page-template h3,
+.city-page-template h4,
+.city-page-template h5,
+.city-page-template h6 {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Optimize images and media */
+.city-page-template img,
+.city-page-template iframe {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ensure proper z-index stacking */
+.city-page-template {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Fix any potential transform issues */
+.city-page-template .service-category,
+.city-page-template .feature-card,
+.city-page-template .pond-size-card,
+.city-page-template .district-card,
+.city-page-template .process-step,
+.city-page-template .faq-item {
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+}
+
+/* Ensure proper hover states */
+.city-page-template .service-category:hover,
+.city-page-template .feature-card:hover,
+.city-page-template .pond-size-card:hover,
+.city-page-template .district-card:hover,
+.city-page-template .process-step:hover,
+.city-page-template .area-link:hover {
+  transform: translateY(-5px) translateZ(0) !important;
+  -webkit-transform: translateY(-5px) translateZ(0) !important;
+}

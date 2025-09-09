@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import StandardHero from '../components/StandardHero';
 import './AboutPage.css';
 
 const AboutPage = () => {
@@ -183,39 +184,16 @@ const AboutPage = () => {
       />
       <div className={`about-page ${isVisible ? 'visible' : ''}`}>
         {/* Hero Section */}
-        <section className="about-hero">
-          <div className="hero-background">
-            <img 
-              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
-              alt="Beautiful pond landscape with waterfall and rock features"
-              className="hero-image"
-            />
-            <div className="hero-overlay"></div>
-          </div>
-          
-          <div className="hero-content">
-            <div className="hero-text-content">
-              <h1 className="hero-title">
-                About 
-                <span className="hero-title-highlight"> Utah Water Gardens</span>
-              </h1>
-              
-              <p className="hero-subtitle">
-                Utah's premier pond and water feature company with over 15 years of experience creating beautiful aquatic landscapes.
-              </p>
-              
-              <div className="hero-stats">
-                {stats.map((stat, index) => (
-                  <div key={index} className="stat-item">
-                    <div className="stat-icon">{stat.icon}</div>
-                    <div className="stat-number">{stat.number}</div>
-                    <div className="stat-label">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <StandardHero 
+          title="About Utah Water Gardens"
+          subtitle="Utah's premier pond and water feature company with over 15 years of experience creating beautiful aquatic landscapes."
+          backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+          backgroundImageAlt="Beautiful pond landscape with waterfall and rock features"
+          primaryButtonText="LEARN MORE"
+          primaryButtonLink="#about-main-content"
+          secondaryButtonText="CONTACT US"
+          secondaryButtonLink="/contact"
+        />
 
         {/* Main Content */}
         <section className="about-main-content">

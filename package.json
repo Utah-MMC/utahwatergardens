@@ -1,13 +1,23 @@
 {
   "name": "utahwatergardens",
   "version": "1.0.0",
-  "description": "Utah Water Gardens website",
+  "description": "Utah Water Gardens website with API endpoints",
   "scripts": {
     "build": "chmod +x build.sh && ./build.sh",
     "start": "cd frontend && npm start",
-    "dev": "cd frontend && npm start"
+    "dev": "cd frontend && npm start",
+    "api:dev": "vercel dev"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "vercel": "^32.0.0"
   }
 }

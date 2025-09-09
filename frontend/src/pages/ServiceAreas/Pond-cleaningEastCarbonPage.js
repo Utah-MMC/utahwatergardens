@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
-import PageHero from '../../components/PageHero.js';
+import StandardHero from '../../components/StandardHero';
 import CTA from '../../components/CTA';
 import './ServiceAreaPage.css';
 
@@ -80,12 +80,16 @@ const Pond-cleaningEastCarbonPage = () => {
         })}
       </script>
       <div className="service-area-page">
-        <PageHero 
-          title="Pond Cleaning Services in East Carbon"
-          subtitle="Professional pond cleaning and maintenance services"
-          backgroundImage="/images/pondCleanings-topaz-enhance-3.9x.jpeg"
-          backgroundImageAlt="Professional pond cleaning services"
-        />
+        <StandardHero 
+        title="Pond Cleaning Services in East Carbon"
+        subtitle="Professional pond services for Pond Cleaning Services in East Carbon and surrounding areas"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImageAlt="Professional pond services in Pond Cleaning Services in East Carbon"
+        primaryButtonText="CALL (801) 590-8516"
+        primaryButtonLink="tel:(801) 590-8516"
+        secondaryButtonText="GET QUOTE"
+        secondaryButtonLink="/contact"
+      />
 
         <div className="container">
           {/* Service Overview */}

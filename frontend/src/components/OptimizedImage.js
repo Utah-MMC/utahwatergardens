@@ -23,7 +23,10 @@ const OptimizedImage = ({
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.1,
+        rootMargin: '50px 0px' // Load images earlier to prevent scroll lag
+      }
     );
 
     if (imgRef.current) {

@@ -1,0 +1,39 @@
+{
+  "database_path": "leads.db",
+  "email_config": {
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "lafaverspam@gmail.com",
+    "password": "your-app-password",
+    "from_name": "Utah Water Gardens",
+    "test_mode": true
+  },
+  "scraping_settings": {
+    "max_leads_per_source": 50,
+    "delay_between_requests": 2,
+    "timeout": 10
+  },
+  "lead_scoring": {
+    "high_value_keywords": [
+      "koi pond",
+      "water feature",
+      "pond maintenance",
+      "pond installation",
+      "waterfall"
+    ],
+    "medium_value_keywords": [
+      "pond",
+      "water garden",
+      "fountain",
+      "aquascape"
+    ],
+    "location_bonus": [
+      "Salt Lake City",
+      "West Jordan",
+      "Sandy",
+      "Ogden",
+      "Provo",
+      "Utah"
+    ]
+  }
+}

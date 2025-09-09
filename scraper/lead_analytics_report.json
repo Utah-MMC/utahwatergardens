@@ -1,0 +1,19 @@
+{
+  "summary_stats": {
+    "total_leads": 5,
+    "avg_lead_score": 69.0,
+    "high_priority_leads": 5,
+    "conversion_rate": 0.6,
+    "avg_interactions_per_lead": 5.6,
+    "email_engagement_rate": 0.6
+  },
+  "velocity_metrics": {
+    "avg_time_to_first_contact": NaN,
+    "median_time_to_first_contact": NaN,
+    "avg_lead_age": 0.0,
+    "leads_created_today": 5,
+    "leads_created_this_week": 5,
+    "leads_created_this_month": 5
+  },
+  "source_performance": {
+    

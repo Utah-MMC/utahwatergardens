@@ -38,13 +38,7 @@
 }
 
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 2;
+  display: none; /* Remove overlay completely */
 }
 
 .hero-content {
@@ -318,6 +312,12 @@
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-header {
+  margin-bottom: 2.5rem;
 }
 
 .info-card h3 {
@@ -325,12 +325,14 @@
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .info-card p {
   color: #64748b;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+  font-size: 1rem;
 }
 
 .contact-details {
@@ -343,57 +345,117 @@
   display: flex;
   gap: 1rem;
   align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.contact-detail:last-child {
+  margin-bottom: 0;
 }
 
 .detail-icon {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  width: 40px;
-  height: 40px;
-  background: #f0f9ff;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.phone-icon {
+  background: #dbeafe;
+}
+
+.location-icon {
+  background: #dbeafe;
+}
+
+.hours-icon {
+  background: #dbeafe;
+}
+
+.icon-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   color: #1e40af;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.detail-content {
+  flex: 1;
 }
 
 .detail-content h4 {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #1e293b;
   margin-bottom: 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.detail-content a {
+.phone-number {
   color: #1e40af;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
-.detail-content a:hover {
+.phone-number:hover {
+  color: #1d4ed8;
   text-decoration: underline;
 }
 
-.detail-content p {
-  color: #64748b;
+.detail-description {
+  color: #9ca3af;
   font-size: 0.9rem;
-  margin: 0.5rem 0 0 0;
+  margin: 0;
+  font-weight: 400;
+}
+
+.address-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.street-address {
+  color: #1e293b;
+  font-size: 1rem;
+  font-weight: 400;
+  display: block;
+}
+
+.city-directions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.city-state {
+  color: #1e293b;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .directions-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #1e40af;
+  color: #1e40af !important;
+  font-weight: 500;
   text-decoration: none;
-  font-weight: 600;
   font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .directions-link:hover {
+  color: #1d4ed8 !important;
   text-decoration: underline;
 }
 
@@ -407,22 +469,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #f1f5f9;
-}
-
-.hours-item:last-child {
-  border-bottom: none;
+  padding: 0.25rem 0;
 }
 
 .day {
-  font-weight: 500;
-  color: #374151;
+  font-weight: 400;
+  color: #1e293b;
+  font-size: 1rem;
 }
 
 .hours {
-  color: #64748b;
-  font-size: 0.9rem;
+  color: #9ca3af;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 /* Quick Actions */

@@ -31,38 +31,39 @@ const FreeEstimatePage = () => {
     setSubmitStatus(null);
 
     try {
-      // Create email content
-      const emailContent = `
-New Free Estimate Request from Utah Water Gardens Website
-
-Contact Information:
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Preferred Contact Method: ${formData.preferredContact}
-
-Project Details:
-Project Type: ${formData.projectType}
-Property Size: ${formData.propertySize}
-Budget Range: ${formData.budget}
-Timeline: ${formData.timeline}
-
-Message:
-${formData.message}
-
----
-This request was submitted from the Utah Water Gardens website.
-      `;
-
-      // Create mailto link
-      const subject = encodeURIComponent('New Free Estimate Request - Utah Water Gardens');
-      const body = encodeURIComponent(emailContent);
-      const mailtoLink = `mailto:jeremyuwg@gmail.com?subject=${subject}&body=${body}`;
+      console.log('Submitting estimate form...', formData);
       
-      // Open email client
-      window.location.href = mailtoLink;
-      
-      setSubmitStatus('success');
+            const response = await fetch('http://localhost:3000/api/estimate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          projectSize: formData.propertySize, // Map propertySize to projectSize for API
+          location: formData.preferredContact === 'email' ? 'Email preferred' : 'Phone preferred'
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          projectType: '',
+          propertySize: '',
+          budget: '',
+          timeline: '',
+          message: '',
+          preferredContact: 'phone'
+        });
+      } else {
+        setSubmitStatus('error');
+        console.error('Estimate form submission error:', result.message);
+      }
     } catch (error) {
       setSubmitStatus('error');
     } finally {

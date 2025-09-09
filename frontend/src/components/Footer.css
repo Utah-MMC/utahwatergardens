@@ -11,7 +11,7 @@
 /* Wavy Divider - Enhanced with Continuous Movement */
 .footer-wave {
   position: absolute;
-  top: -120px; /* Reduced further to prevent blocking call buttons */
+  top: -60px; /* Moved up by 50% (from -120px to -60px) */
   left: 0;
   width: 100%;
   height: 150px; /* Reduced height to prevent overlap with CTA */
@@ -381,7 +381,7 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .footer-wave {
-    top: -110px; /* Adjusted to prevent blocking call buttons */
+    top: -55px; /* Moved up by 50% (from -110px to -55px) */
     height: 140px; /* Adjusted for compact footer */
   }
   
@@ -419,7 +419,7 @@
   }
   
   .footer-wave {
-    top: -100px; /* Adjusted to prevent blocking call buttons */
+    top: -50px; /* Moved up by 50% (from -100px to -50px) */
     height: 130px; /* Adjusted for compact footer */
   }
   
@@ -480,7 +480,7 @@
   }
   
   .footer-wave {
-    top: -80px; /* Adjusted to prevent blocking call buttons */
+    top: -40px; /* Moved up by 50% (from -80px to -40px) */
     height: 120px; /* Adjusted for compact footer */
   }
   

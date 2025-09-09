@@ -5,6 +5,21 @@
   box-sizing: border-box;
 }
 
+/* Enable hardware acceleration for better scroll performance */
+html {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto; /* Disable smooth scrolling for better performance */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
 /* Prevent horizontal overflow on all pages */
 html, body {
   overflow-x: hidden;
@@ -72,6 +87,10 @@ main {
   background: white;
   position: relative;
   z-index: 0; /* Ensure main content is below PageHero but above footer */
+  /* Enable hardware acceleration for better scroll performance */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: scroll-position;
 }
 
 /* App container for ripple effect */
@@ -79,6 +98,10 @@ main {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden; /* Prevent horizontal scroll from ripple effects */
+  /* Enable hardware acceleration for better scroll performance */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: scroll-position;
 }
 
 /* Universal Blue Gradient for First Section After Hero */
@@ -123,7 +146,7 @@ main {
   border-radius: 5px;
   font-weight: 500;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   border: none;
   cursor: pointer;
   font-size: 1rem;
@@ -163,7 +186,7 @@ main {
   transform: translateY(-2px);
 }
 
-/* Global Header Clearance Fix */
+/* Global Header Clearance Fix - Adjusted for wave effect */
 .hero,
 .hero-section,
 .pond-gallery-hero,
@@ -174,7 +197,7 @@ main {
 .pond-services-hero,
 .blog-hero,
 .team-hero {
-  padding-top: 140px !important; /* Ensure proper clearance from header */
+  padding-top: 180px !important; /* Extra clearance for wave effect */
 }
 
 /* PageHero has its own padding-top in PageHero.css - don't override it */

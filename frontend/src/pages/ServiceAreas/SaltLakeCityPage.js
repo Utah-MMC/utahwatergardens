@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
-import PageHero from '../../components/PageHero.js';
+import StandardHero from '../../components/StandardHero';
 import CTA from '../../components/CTA';
 import './ServiceAreaPage.css';
 
@@ -127,11 +127,15 @@ const SaltLakeCityPage = () => {
         })}
       </script>
       <div className="service-area-page">
-      <PageHero 
+      <StandardHero 
         title="Pond Services in Salt Lake City"
         subtitle="Professional pond services for Salt Lake City and surrounding areas"
-        backgroundImage="/images/pond-services-hero.jpg"
+        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
         backgroundImageAlt="Professional pond services in Salt Lake City"
+        primaryButtonText="CALL (801) 590-8516"
+        primaryButtonLink="tel:(801) 590-8516"
+        secondaryButtonText="GET QUOTE"
+        secondaryButtonLink="/contact"
       />
 
       <div className="container">

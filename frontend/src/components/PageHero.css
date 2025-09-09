@@ -40,32 +40,147 @@
   max-width: none;
 }
 
-/* First wave layer - baby blue (behind) */
-.page-hero::before {
-  content: '';
+/* Wavy Divider - Copied from Footer with Enhanced Continuous Movement */
+.page-hero-wave {
   position: absolute;
-  bottom: 0;
+  bottom: -120px;
   left: 0;
   width: 100%;
-  height: 100px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,110C100,100,200,80,300,70C400,60,500,60,600,70C700,80,800,100,900,110C1000,120,1100,120,1150,120L1200,120V120H0Z' fill='%2387ceeb' fill-opacity='0.9'/%3E%3C/svg%3E") no-repeat center bottom;
-  background-size: cover;
+  height: 150px;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  cursor: pointer;
   z-index: 100;
-  pointer-events: none;
+  animation: page-hero-wave-container-float 12s ease-in-out infinite;
 }
 
-/* Second wave layer - dark blue (in front) */
-.page-hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120L50,100C100,80,200,40,300,30C400,20,500,40,600,50C700,60,800,60,900,50C1000,40,1100,20,1150,10L1200,0V120H0Z' fill='%231e40af' fill-opacity='1'/%3E%3C/svg%3E") no-repeat center bottom;
-  background-size: cover;
-  z-index: 101;
-  pointer-events: none;
+/* Subtle container animation for overall wave movement */
+@keyframes page-hero-wave-container-float {
+  0%, 100% {
+    transform: rotate(180deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(180deg) translateY(-3px);
+  }
+}
+
+.page-hero-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.page-hero-wave .shape-fill {
+  fill: #1e40af;
+}
+
+/* Wave Animation Layers - Enhanced Continuous Flow */
+.page-hero-wave .wave-layer-1 {
+  animation: page-hero-wave-flow-1 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.page-hero-wave .wave-layer-2 {
+  animation: page-hero-wave-flow-2 8s ease-in-out infinite;
+  transform-origin: center;
+  animation-delay: -1.5s;
+}
+
+.page-hero-wave .wave-layer-3 {
+  animation: page-hero-wave-flow-3 10s ease-in-out infinite;
+  transform-origin: center;
+  animation-delay: -3s;
+}
+
+/* Enhanced Keyframe Animations - More Dynamic Wave Movement */
+@keyframes page-hero-wave-flow-1 {
+  0% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
+  }
+  25% {
+    transform: translateY(-8px) scaleY(1.08) translateX(2px);
+  }
+  50% {
+    transform: translateY(-3px) scaleY(1.02) translateX(0px);
+  }
+  75% {
+    transform: translateY(6px) scaleY(0.94) translateX(-2px);
+  }
+  100% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
+  }
+}
+
+@keyframes page-hero-wave-flow-2 {
+  0% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
+  }
+  20% {
+    transform: translateY(5px) scaleY(0.92) translateX(-1px);
+  }
+  40% {
+    transform: translateY(-6px) scaleY(1.06) translateX(1px);
+  }
+  60% {
+    transform: translateY(3px) scaleY(0.98) translateX(0px);
+  }
+  80% {
+    transform: translateY(-4px) scaleY(1.04) translateX(-1px);
+  }
+  100% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
+  }
+}
+
+@keyframes page-hero-wave-flow-3 {
+  0% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
+  }
+  15% {
+    transform: translateY(-5px) scaleY(1.05) translateX(1px);
+  }
+  30% {
+    transform: translateY(2px) scaleY(0.98) translateX(-1px);
+  }
+  45% {
+    transform: translateY(4px) scaleY(0.96) translateX(0px);
+  }
+  60% {
+    transform: translateY(-2px) scaleY(1.02) translateX(1px);
+  }
+  75% {
+    transform: translateY(3px) scaleY(0.99) translateX(-1px);
+  }
+  90% {
+    transform: translateY(-1px) scaleY(1.01) translateX(0px);
+  }
+  100% {
+    transform: translateY(0px) scaleY(1) translateX(0px);
+  }
+}
+
+/* Enhanced Hover Effects - More Dynamic Interaction */
+.page-hero-wave:hover .wave-layer-1 {
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+
+.page-hero-wave:hover .wave-layer-2 {
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+}
+
+.page-hero-wave:hover .wave-layer-3 {
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+
+/* Additional wave movement on hover */
+.page-hero-wave:hover {
+  transform: rotate(180deg) scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 .page-hero-background {
@@ -279,12 +394,13 @@
   }
   
   /* Adjust wave heights for mobile */
-  .page-hero::before {
-    height: 80px;
+  .page-hero-wave {
+    bottom: -110px;
+    height: 140px;
   }
   
-  .page-hero::after {
-    height: 100px;
+  .page-hero-wave svg {
+    height: 140px;
   }
   
   .page-hero-content {
@@ -350,12 +466,13 @@
   }
   
   /* Adjust wave heights for very small screens */
-  .page-hero::before {
-    height: 60px;
+  .page-hero-wave {
+    bottom: -80px;
+    height: 120px;
   }
   
-  .page-hero::after {
-    height: 80px;
+  .page-hero-wave svg {
+    height: 120px;
   }
   
   .page-hero-content {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
+import StandardHero from '../components/StandardHero';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -31,50 +32,42 @@ const ContactPage = () => {
     setSubmitStatus(null);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      console.log('Submitting contact form...', formData);
       
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
+            const response = await fetch('http://localhost:3000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const result = await response.json();
+      console.log('API Response:', { status: response.status, result });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+        console.error('Form submission error:', result.message);
+      }
     } catch (error) {
       setSubmitStatus('error');
+      console.error('Network error:', error);
+      console.error('Error details:', error.message);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const contactMethods = [
-    {
-      icon: 'Phone',
-      title: 'Call Us',
-      description: 'Speak directly with our experts',
-      contact: '(801) 590-8516',
-      action: 'tel:(801) 590-8516',
-      color: '#10b981'
-    },
-    {
-      icon: 'Email',
-      title: 'Email Us',
-      description: 'Send us a detailed message',
-      contact: 'info@utahwatergardens.com',
-      action: 'mailto:info@utahwatergardens.com',
-      color: '#3b82f6'
-    },
-    {
-      icon: 'Location',
-      title: 'Visit Us',
-      description: 'Come see our store in person',
-      contact: '5911 S 1300 E, Salt Lake City, UT',
-      action: 'https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121',
-      color: '#f59e0b'
-    }
-  ];
+  // Contact methods data removed - now using structured contact details in JSX
 
   const storeHours = [
     { day: 'Monday - Friday', hours: '10:00 AM - 6:00 PM' },
@@ -104,50 +97,16 @@ const ContactPage = () => {
       />
       <div className={`contact-page ${isVisible ? 'visible' : ''}`}>
         {/* Hero Section */}
-        <section className="contact-hero">
-          <div className="hero-background">
-            <img 
-              src="/images/uwg_image_1941-topaz-enhance-3.5x.jpeg" 
-              alt="Professional pond consultation services"
-              className="hero-image"
-            />
-            <div className="hero-overlay"></div>
-          </div>
-          
-          <div className="hero-content">
-            <div className="hero-text-content">
-              <h1 className="hero-title">
-                Contact 
-                <span className="hero-title-highlight"> Utah Water Gardens</span>
-              </h1>
-              
-              <p className="hero-subtitle">
-                Get expert advice, schedule consultations, or visit our store to see our wide variety of plants and pond supplies.
-              </p>
-              
-              <div className="hero-contact-methods">
-                {contactMethods.map((method, index) => (
-                  <a
-                    key={index}
-                    href={method.action}
-                    className="contact-method-card"
-                    target={method.action.startsWith('http') ? '_blank' : undefined}
-                    rel={method.action.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  >
-                    <div className="method-icon" style={{ backgroundColor: method.color }}>
-                      {method.icon}
-                    </div>
-                    <div className="method-content">
-                      <h3>{method.title}</h3>
-                      <p>{method.description}</p>
-                      <span className="method-contact">{method.contact}</span>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <StandardHero 
+          title="Contact Utah Water Gardens"
+          subtitle="Get expert advice, schedule consultations, or visit our store to see our wide variety of plants and pond supplies."
+          backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+          backgroundImageAlt="Professional pond consultation services"
+          primaryButtonText="CALL (801) 590-8516"
+          primaryButtonLink="tel:(801) 590-8516"
+          secondaryButtonText="VISIT STORE"
+          secondaryButtonLink="#contact-main-content"
+        />
 
         {/* Main Content */}
         <section className="contact-main-content">
@@ -263,37 +222,53 @@ const ContactPage = () => {
               {/* Contact Information */}
               <div className="contact-info-section">
                 <div className="info-card">
-                  <h3>Get in Touch</h3>
-                  <p>We're here to help with all your pond and water feature needs. Choose the method that works best for you.</p>
+                  <div className="card-header">
+                    <h3>Get in Touch</h3>
+                    <p>We're here to help with all your pond and water feature needs. Choose the method that works best for you.</p>
+                  </div>
                   
                   <div className="contact-details">
+                    {/* Phone Section */}
                     <div className="contact-detail">
-                      <div className="detail-icon">Phone</div>
+                      <div className="detail-icon phone-icon">
+                        <span className="icon-label">PHONE</span>
+                      </div>
                       <div className="detail-content">
                         <h4>Phone</h4>
-                        <a href="tel:(801) 590-8516">(801) 590-8516</a>
-                        <p>Call for immediate assistance</p>
+                        <a href="tel:(801) 590-8516" className="phone-number">(801) 590-8516</a>
+                        <p className="detail-description">Call for immediate assistance</p>
                       </div>
                     </div>
                     
+                    {/* Address Section */}
                     <div className="contact-detail">
-                      <div className="detail-icon">Location</div>
+                      <div className="detail-icon location-icon">
+                        <span className="icon-label">LOCATION</span>
+                      </div>
                       <div className="detail-content">
                         <h4>Address</h4>
-                        <span>5911 S 1300 E<br />Salt Lake City, UT 84121</span>
-                        <a 
-                          href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="directions-link"
-                        >
-                          Get Directions →
-                        </a>
+                        <div className="address-info">
+                          <span className="street-address">5911 S 1300 E</span>
+                          <div className="city-directions">
+                            <span className="city-state">Salt Lake City, UT 84121</span>
+                            <a 
+                              href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="directions-link"
+                            >
+                              Get Directions →
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     
+                    {/* Store Hours Section */}
                     <div className="contact-detail">
-                      <div className="detail-icon">Hours</div>
+                      <div className="detail-icon hours-icon">
+                        <span className="icon-label">HOURS</span>
+                      </div>
                       <div className="detail-content">
                         <h4>Store Hours</h4>
                         <div className="hours-list">

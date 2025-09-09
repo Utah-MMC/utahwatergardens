@@ -1,0 +1,395 @@
+/* Standard Hero Styles - Based on HomePage Hero */
+:root{
+  --bg: #ffffff;
+  --ink: #0f172a; /* slate-900 */
+  --muted: #64748b; /* slate-500 */
+  --primary: #1e40af; /* indigo-800 */
+  --accent: #10b981; /* emerald-500 */
+  --cta: #dc2626; /* red-600 */
+  --ring: 0 0 0 4px rgba(30,64,175,.2);
+}
+
+/* Prevent horizontal overflow */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* HERO */
+.standard-hero{
+  position:relative;
+  height:80vh;
+  height:80dvh;
+  width:100%;
+  margin-left:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  isolation:isolate;
+  overflow:hidden;
+  min-height:80vh;
+  min-height:80dvh;
+  background:#f8fafc;
+  margin-top:0;
+  margin-bottom:0;
+  left:0;
+  right:0;
+  padding-top:120px;
+  box-sizing:border-box
+}
+
+.standard-hero-media{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-2;
+  overflow:hidden
+}
+
+.standard-hero-fallback{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  min-height:100%;
+  min-width:100%
+}
+
+.standard-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55));
+  z-index:-1
+}
+
+/* Wave effect using ::before pseudo-element - Baby Blue Upward Wave (50% height) */
+.standard-hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #ADD8E6; /* Baby blue */
+  clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%); /* Natural flowing wave */
+  z-index: 99999;
+  pointer-events: none;
+  animation: standard-hero-wave-simple 3s ease-in-out infinite;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.standard-hero-inner{
+  padding:clamp(1rem,3vw,2rem);
+  text-align:center;
+  color:#fff;
+  max-width:760px;
+  z-index:10;
+  position:relative
+}
+
+.standard-hero-title{
+  font-size:clamp(2rem,6vw,4rem);
+  line-height:1.05;
+  font-weight:800;
+  margin:0 0 .75rem
+}
+
+.standard-hero-title span{
+  color:#bbe3ff
+}
+
+.standard-hero-sub{
+  font-size:clamp(1rem,2.5vw,1.25rem);
+  opacity:.95;
+  margin:0 0 1rem
+}
+
+/* Enhanced wave effect at bottom of hero - More visible approach */
+.standard-hero::after,
+.standard-hero.mobile-hero-fix::after{
+  content:"" !important;
+  position:absolute !important;
+  bottom:-50px !important;
+  left:0 !important;
+  width:100% !important;
+  height:50px !important;
+  background:#1e40af !important;
+  clip-path:polygon(0% 0%, 0% 100%, 25% 80%, 50% 100%, 75% 70%, 100% 100%, 100% 0%) !important;
+  z-index:999 !important;
+  pointer-events:none !important;
+  animation:standardHeroWaveFlow 6s ease-in-out infinite !important;
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+/* Hero wave animation */
+@keyframes standardHeroWaveFlow {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+/* Natural wave animation with flowing curves */
+@keyframes standard-hero-wave-simple {
+  0%, 100% {
+    clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%);
+  }
+  25% {
+    clip-path: polygon(0% 100%, 0% 25%, 10% 30%, 20% 20%, 30% 35%, 40% 25%, 50% 20%, 60% 30%, 70% 25%, 80% 20%, 90% 30%, 100% 25%, 100% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 100%, 0% 35%, 10% 20%, 20% 30%, 30% 25%, 40% 20%, 50% 30%, 60% 20%, 70% 35%, 80% 25%, 90% 20%, 100% 30%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(0% 100%, 0% 20%, 10% 35%, 20% 25%, 30% 30%, 40% 35%, 50% 25%, 60% 35%, 70% 30%, 80% 35%, 90% 30%, 100% 20%, 100% 100%);
+  }
+}
+
+/* Button styles - matching HomePage */
+.btn-row{
+  display:flex;
+  gap:.75rem;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.btn{
+  appearance:none;
+  border:0;
+  border-radius:12px;
+  padding:.8rem 1.1rem;
+  font-weight:600;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  outline-offset:2px;
+  transition: all 0.3s ease;
+}
+
+.btn:focus-visible{
+  box-shadow:var(--ring)
+}
+
+.btn[data-variant="primary"]{
+  background:var(--cta);
+  color:#fff;
+  box-shadow:0 4px 15px rgba(220,38,38,0.4)
+}
+
+.btn[data-variant="primary"]:hover{
+  background:#b91c1c;
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(220,38,38,0.5)
+}
+
+.btn[data-variant="outline"]{
+  background:transparent;
+  border:2px solid rgba(255,255,255,0.8);
+  color:#fff;
+  backdrop-filter:blur(10px)
+}
+
+.btn[data-variant="outline"]:hover{
+  background:rgba(255,255,255,0.1);
+  border-color:#fff
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+  .standard-hero::before{
+    bottom:-30px !important;
+    height:60px !important;
+  }
+  
+  .standard-hero::before {
+    bottom: 0px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px){
+  /* Even more compact for small screens */
+  .standard-hero {
+    height: 35vh !important;
+    min-height: 35vh !important;
+    max-height: 35vh !important;
+  }
+  
+  .standard-hero::before {
+    bottom: 0px;
+    height: 30px;
+  }
+  
+  .standard-hero-title {
+    font-size: 1.25rem !important;
+  }
+  
+  .standard-hero-sub {
+    font-size: 0.75rem !important;
+  }
+  
+  .btn-row{
+    flex-direction:column;
+    align-items:center;
+    gap:0.5rem
+  }
+  
+  .btn{
+    width:100%;
+    max-width:280px;
+    padding:0.6rem 1rem !important;
+    font-size:0.9rem !important
+  }
+}
+
+/* Mobile viewport fixes */
+@supports (height: 100dvh) {
+  .standard-hero{
+    height:80dvh;
+    min-height:80dvh
+  }
+}
+
+/* MOBILE STYLES - AGGRESSIVE OVERRIDE */
+@media (max-width: 768px) {
+  /* Force hero to be compact */
+  .standard-hero {
+    height: 40vh !important;
+    min-height: 40vh !important;
+    max-height: 40vh !important;
+    position: relative !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    background: #f8fafc !important;
+    z-index: 1 !important;
+    overflow: hidden !important;
+  }
+  
+  .standard-hero-media {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+  }
+  
+  .standard-hero-fallback {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+  }
+  
+  /* Make hero content very compact */
+  .standard-hero-inner {
+    padding: 0.5rem !important;
+    max-width: 100% !important;
+  }
+  
+  .standard-hero-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .standard-hero-sub {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .btn-row {
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .btn {
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  /* Remove or minimize wave element */
+  .standard-hero::before {
+    display: none !important;
+  }
+}
+
+/* FINAL MOBILE OVERRIDE - MAXIMUM PRIORITY */
+@media screen and (max-width: 768px) {
+  .standard-hero,
+  .standard-hero.mobile-hero-fix {
+    height: 250px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
+    position: relative !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    background: #f8fafc !important;
+    z-index: 1 !important;
+    overflow: hidden !important;
+  }
+  
+  .standard-hero-media {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+  }
+  
+  .standard-hero-fallback {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+  }
+  
+  .standard-hero-inner {
+    padding: 0.5rem !important;
+    max-width: 100% !important;
+  }
+  
+  .standard-hero-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Hide hero subtitle on mobile to save space */
+  .standard-hero-sub {
+    display: none !important;
+  }
+  
+  .standard-hero::before {
+    display: none !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .standard-hero::before{
+    animation:none
+  }
+  .standard-hero::after{
+    animation:none !important
+  }
+}
