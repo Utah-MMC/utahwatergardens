@@ -298,7 +298,7 @@ const HomePage = () => {
               <ServiceCard
                 to="/pond-services/cleaning"
                 title="Pond Cleaning Services"
-                img="/images/pondCleaning.webp"
+                img="/images/pondCleanings-topaz-enhance-3.9x.jpeg"
                 alt="Professional pond cleaning"
               >Deep cleaning, debris removal, and water clarification for crystal-clear results.</ServiceCard>
 
