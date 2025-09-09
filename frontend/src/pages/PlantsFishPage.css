@@ -119,10 +119,84 @@
   font-weight: 500;
 }
 
+/* Gradient Wipe Wrapper */
+.gradient-wipe-wrapper {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 8%,
+    #ffffff 16%,
+    #f0f9ff 24%,
+    #ffffff 32%,
+    #f8fafc 40%,
+    #ffffff 48%,
+    #f0f9ff 56%,
+    #ffffff 64%,
+    #f8fafc 72%,
+    #ffffff 80%,
+    #f0f9ff 88%,
+    #ffffff 96%,
+    #f8fafc 100%
+  );
+  background-size: 100% 300%;
+  animation: gradientWipe 12s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.gradient-wipe-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(16, 185, 129, 0.02) 0%,
+    rgba(30, 64, 175, 0.02) 25%,
+    rgba(16, 185, 129, 0.02) 50%,
+    rgba(30, 64, 175, 0.02) 75%,
+    rgba(16, 185, 129, 0.02) 100%
+  );
+  background-size: 200% 200%;
+  animation: diagonalWipe 15s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes gradientWipe {
+  0% {
+    background-position: 0% 0%;
+  }
+  33% {
+    background-position: 0% 33%;
+  }
+  66% {
+    background-position: 0% 66%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes diagonalWipe {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 /* Main Content */
 .plants-fish-main-content {
   padding: 5rem 0;
-  background: white;
+  background: transparent;
+  position: relative;
+  z-index: 3;
 }
 
 .container {
@@ -408,7 +482,9 @@
 /* Why Choose Section */
 .why-choose-section {
   padding: 5rem 0;
-  background: #f8fafc;
+  background: transparent;
+  position: relative;
+  z-index: 3;
 }
 
 .why-choose-section h2 {
@@ -469,7 +545,9 @@
 /* Store Info Section */
 .store-info-section {
   padding: 5rem 0;
-  background: white;
+  background: transparent;
+  position: relative;
+  z-index: 3;
 }
 
 .store-info-content {
@@ -614,6 +692,15 @@
     margin-top: 2rem; /* Extra spacing for mobile */
   }
   
+  /* Adjust gradient wipe for mobile */
+  .gradient-wipe-wrapper {
+    animation-duration: 10s; /* Slightly faster on mobile */
+  }
+  
+  .gradient-wipe-wrapper::before {
+    animation-duration: 12s; /* Slightly faster on mobile */
+  }
+  
   .hero-title {
     font-size: 2.5rem;
   }
@@ -714,5 +801,14 @@
   
   .contact-cta h2 {
     font-size: 2rem;
+  }
+  
+  /* Optimize gradient wipe for very small screens */
+  .gradient-wipe-wrapper {
+    animation-duration: 8s; /* Faster animation for small screens */
+  }
+  
+  .gradient-wipe-wrapper::before {
+    animation-duration: 10s; /* Faster animation for small screens */
   }
 }

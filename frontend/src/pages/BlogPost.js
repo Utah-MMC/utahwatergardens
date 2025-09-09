@@ -5205,7 +5205,7 @@ const BlogPost = () => {
                     <p>Let Utah Water Gardens help you design and build the perfect water feature for your Utah property.</p>
                     <div className="cta-buttons">
                       <Link to="/contact" className="cta-btn primary">
-                        Get Free Estimate
+                        Contact Us
                       </Link>
                       <Link to="/pond-services" className="cta-btn secondary">
                         View Our Services

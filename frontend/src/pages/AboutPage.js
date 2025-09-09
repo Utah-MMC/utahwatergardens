@@ -196,7 +196,7 @@ const AboutPage = () => {
         />
 
         {/* Main Content */}
-        <section className="about-main-content">
+        <section className="about-main-content first-section-gradient">
           <div className="container">
             {/* Tab Navigation */}
             <div className="tab-navigation">
@@ -220,7 +220,7 @@ const AboutPage = () => {
         </section>
 
         {/* Services Overview */}
-        <section className="services-overview-section">
+        <section className="services-overview-section first-section-gradient">
           <div className="container">
             <div className="section-header">
               <h2>What We Do</h2>
@@ -276,7 +276,7 @@ const AboutPage = () => {
         </section>
 
         {/* Store Information */}
-        <section className="store-info-section">
+        <section className="store-info-section first-section-gradient">
           <div className="container">
             <div className="store-info-content">
               <div className="store-info-text">
@@ -333,7 +333,7 @@ const AboutPage = () => {
             <p>Let us help you create the water feature of your dreams.</p>
             <div className="cta-buttons">
               <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-              <Link to="/free-estimate" className="btn btn-secondary">Get Free Estimate</Link>
+              <Link to="/contact" className="btn btn-secondary">Contact Us</Link>
             </div>
           </div>
         </section>

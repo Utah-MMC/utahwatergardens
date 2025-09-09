@@ -1,9 +1,243 @@
 /* Blog Page Styles */
 .blog-page {
-  padding-top: 120px; /* Account for fixed header height */
+  padding-top: 0; /* Remove padding since we have a hero section */
   background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
   min-height: 100vh;
   position: relative;
+}
+
+/* Blog Hero Section */
+.blog-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 25%, #1e40af 50%, #1e3a8a 75%, #1e40af 100%);
+}
+
+.blog-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.blog-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(30, 64, 175, 0.3) 0%, 
+    rgba(59, 130, 246, 0.2) 25%, 
+    rgba(30, 64, 175, 0.3) 50%, 
+    rgba(29, 78, 216, 0.3) 75%, 
+    rgba(30, 64, 175, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+.blog-hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.blog-hero-text-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.blog-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.blog-hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.blog-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.blog-hero-stat-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem 2rem;
+  min-width: 150px;
+  transition: all 0.3s ease;
+}
+
+.blog-hero-stat-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.blog-hero-stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-hero-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.blog-hero-stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Attached Wave Effect - Outside Hero Section */
+.blog-hero-wave-attached {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin-top: -1px; /* Overlap slightly with hero section */
+  z-index: 10;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 25%, #1e40af 50%, #1e3a8a 75%, #1e40af 100%);
+}
+
+.blog-hero-wave-attached svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  shape-rendering: geometricPrecision;
+}
+
+.blog-hero-wave-attached path {
+  animation: waveAnimation 8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.blog-hero-wave-attached .wave-layer-1 {
+  animation-delay: 0s;
+}
+
+.blog-hero-wave-attached .wave-layer-2 {
+  animation-delay: 2.5s;
+}
+
+.blog-hero-wave-attached .wave-layer-3 {
+  animation-delay: 5s;
+}
+
+@keyframes waveAnimation {
+  0%, 100% {
+    transform: translateY(0px) scaleY(1);
+  }
+  25% {
+    transform: translateY(-5px) scaleY(1.05);
+  }
+  50% {
+    transform: translateY(-8px) scaleY(1.1);
+  }
+  75% {
+    transform: translateY(-5px) scaleY(1.05);
+  }
+}
+
+/* Mobile Responsive Styles for Blog Hero */
+@media (max-width: 768px) {
+  .blog-hero {
+    min-height: 80vh;
+  }
+  
+  .blog-hero-text-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .blog-hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1rem;
+  }
+  
+  .blog-hero-subtitle {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    margin-bottom: 2rem;
+  }
+  
+  .blog-hero-stats {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .blog-hero-stat-item {
+    padding: 1rem 1.5rem;
+    min-width: 120px;
+  }
+  
+  .blog-hero-stat-icon {
+    font-size: 1.5rem;
+  }
+  
+  .blog-hero-stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .blog-hero-stat-label {
+    font-size: 0.8rem;
+  }
+  
+  .blog-hero-wave-attached {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-hero {
+    min-height: 70vh;
+  }
+  
+  .blog-hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .blog-hero-stat-item {
+    width: 100%;
+    max-width: 200px;
+  }
 }
 
 /* Gradient Wipe Effect from Top */

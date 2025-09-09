@@ -154,7 +154,7 @@ const HomePage = () => {
     <>
       <SEO 
         title="Pond Services Near Salt Lake City, UT | Utah Water Gardens"
-        description="Utah's premier pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning. Licensed & insured. Call (801) 590-8516 for free quote."
+        description="Utah's premier pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning. Licensed & insured. Call (801) 590-8516 for consultation."
         keywords="pond services near salt lake city ut, salt lake city pond services, pond maintenance salt lake city, pond construction salt lake city, pond cleaning salt lake city, utah water gardens, pond services utah"
         canonical="https://utahwatergardens.com"
       />
@@ -218,6 +218,17 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Wavy Divider - Attached to Hero with Blue Gradient */}
+      <div className="hero-wave-attached">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path className="wave-layer-1" d="M0,0L50,20C100,40,200,80,300,80C400,80,500,40,600,20C700,0,800,0,900,20C1000,40,1100,80,1150,100L1200,120V0Z" fill="#ffffff" opacity="0.1"></path>
+          <path className="wave-layer-2" d="M0,0L50,15C100,30,200,60,300,60C400,60,500,30,600,15C700,0,800,0,900,15C1000,30,1100,60,1150,75L1200,90V0Z" fill="#ffffff" opacity="0.2"></path>
+          <path className="wave-layer-3" d="M0,0L50,10C100,20,200,40,300,40C400,40,500,20,600,10C700,0,800,0,900,10C1000,20,1100,40,1150,50L1200,60V0Z" fill="#ffffff" opacity="0.3"></path>
+        </svg>
+      </div>
+
+      {/* Main Content Wrapper with Single Gradient */}
+      <div className="main-content-gradient">
         {/* ABOUT */}
         <section 
           className="section alt" 
@@ -385,7 +396,6 @@ const HomePage = () => {
                     {plant.category && <p className="chip">{plant.category}</p>}
                     {plant.description && <p className="muted clamp-2">{plant.description}</p>}
                     <div className="meta">
-                          {plant.price && <span className="price">${plant.price}</span>}
                       {plant.availability && <span className="avail">{plant.availability}</span>}
                         </div>
                       </div>
@@ -439,6 +449,7 @@ const HomePage = () => {
             />
         </div>
       </section>
+      </div>
 
         {/* CTA Section */}
         <CTA />
@@ -458,7 +469,6 @@ function ServiceCard({to, title, img, alt, children}){
         <p className="muted">{children}</p>
         <div className="btn-row">
           <span className="btn" data-variant="primary" role="link" aria-hidden>Learn More</span>
-          <span className="btn" data-variant="outline" role="link" aria-hidden>Get Quote</span>
         </div>
       </div>
     </Link>

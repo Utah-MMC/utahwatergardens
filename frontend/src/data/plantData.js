@@ -80,7 +80,6 @@ export const plantData = {
       '/images/IMG_2780.jpg'
     ],
     image: '/images/waterLillies-topaz-enhance-4x.jpeg',
-    price: 'Contact for pricing',
     availability: 'Seasonal availability - call for current stock'
   },
   'chromatella-yellow-water-lily': {
@@ -118,7 +117,6 @@ export const plantData = {
       '/images/IMG_2780.jpg'
     ],
     image: '/images/waterLillies-topaz-enhance-4x.jpeg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'pink-water-lily': {
@@ -156,7 +154,6 @@ export const plantData = {
       '/images/IMG_2780.jpg'
     ],
     image: '/images/waterLillies-topaz-enhance-4x.jpeg',
-    price: 'Contact for pricing',
     availability: 'Seasonal availability'
   },
   'white-water-lily': {
@@ -194,7 +191,6 @@ export const plantData = {
       '/images/IMG_2780.jpg'
     ],
     image: '/images/waterLillies-topaz-enhance-4x.jpeg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'chinese-arrowhead': {
@@ -232,7 +228,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'marsh-marigold': {
@@ -270,7 +265,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available in spring'
   },
   'pickerel-rush': {
@@ -308,7 +302,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'golden-spike-rush': {
@@ -346,7 +339,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'equisetum': {
@@ -384,7 +376,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'umbrella-palm': {
@@ -422,7 +413,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'water-hyacinth': {
@@ -460,7 +450,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2775.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'water-lettuce': {
@@ -498,7 +487,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2775.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'duckweed': {
@@ -536,7 +524,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2775.jpg',
-    price: 'Contact for pricing',
     availability: 'Available year-round'
   },
   'azolla': {
@@ -574,7 +561,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2775.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'red-amaranth': {
@@ -612,7 +598,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'red-mimulus': {
@@ -650,7 +635,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'sensitive-plant': {
@@ -688,7 +672,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'slenderleaf-dragonhead': {
@@ -726,7 +709,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'utah-water-clover': {
@@ -764,7 +746,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'yerba-mansa': {
@@ -802,7 +783,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'calla-lily': {
@@ -840,7 +820,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   },
   'blue-flower': {
@@ -878,7 +857,6 @@ export const plantData = {
       '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
     ],
     image: '/images/IMG_2779.jpg',
-    price: 'Contact for pricing',
     availability: 'Available spring through fall'
   }
 };

@@ -140,7 +140,7 @@ const Header = ({ className = '' }) => {
                     Call Now
                   </a>
                   <Link to="/contact" className="btn btn-secondary btn-compact" onClick={closeMenu}>
-                    Get Quote
+                    Contact Us
                   </Link>
                 </div>
               )}
@@ -197,7 +197,7 @@ const Header = ({ className = '' }) => {
                 Call Now
               </a>
               <Link to="/contact" className="btn btn-secondary btn-compact desktop-hidden" onClick={closeMenu}>
-                Get Quote
+                Contact Us
               </Link>
             </div>
 

@@ -8,6 +8,347 @@ body {
   background: white;
 }
 
+/* GLOBAL BABY BLUE TO WHITE GRADIENT - APPLIES TO ALL PAGES */
+.first-section-gradient,
+.gradient-wipe-wrapper,
+.main-content-gradient,
+.gradient-wipe-up {
+  background: linear-gradient(to bottom, 
+    #87ceeb 0%,     /* Baby blue at top - connected to wave */
+    #b3e5fc 15%,    /* Light baby blue */
+    #d1ecf1 30%,    /* Very light blue */
+    #e8f4f8 50%,    /* Pale blue */
+    #f0f8ff 70%,    /* Very pale blue */
+    #f8fafc 85%,    /* Almost white */
+    #ffffff 100%    /* Pure white at bottom */
+  ) !important;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* CREATE CONTINUOUS GRADIENT WRAPPER FOR ALL PAGES */
+/* This creates a single gradient background that wraps all content sections */
+
+/* Apply gradient to page containers that don't have explicit wrappers */
+.shop-page:not(:has(.main-content-gradient)),
+.about-page:not(:has(.main-content-gradient)),
+.contact-page:not(:has(.main-content-gradient)),
+.pond-services-page:not(:has(.main-content-gradient)),
+.plants-fish-page:not(:has(.main-content-gradient)),
+.resources-page:not(:has(.main-content-gradient)),
+.blog-page:not(:has(.main-content-gradient)),
+[class*="-page"]:not(:has(.main-content-gradient)):not(.home) {
+  background: linear-gradient(to bottom, 
+    #87ceeb 0%,     /* Baby blue at top - connected to wave */
+    #b3e5fc 15%,    /* Light baby blue */
+    #d1ecf1 30%,    /* Very light blue */
+    #e8f4f8 50%,    /* Pale blue */
+    #f0f8ff 70%,    /* Very pale blue */
+    #f8fafc 85%,    /* Almost white */
+    #ffffff 100%    /* Pure white at bottom */
+  ) !important;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* UNIVERSAL APPROACH: Apply gradient to any page container without explicit gradient */
+/* This catches pages that don't match the specific patterns above */
+main:not(:has(.main-content-gradient)):not(.home),
+.page:not(:has(.main-content-gradient)):not(.home),
+[class*="page"]:not(:has(.main-content-gradient)):not(.home) {
+  background: linear-gradient(to bottom, 
+    #87ceeb 0%,     /* Baby blue at top - connected to wave */
+    #b3e5fc 15%,    /* Light baby blue */
+    #d1ecf1 30%,    /* Very light blue */
+    #e8f4f8 50%,    /* Pale blue */
+    #f0f8ff 70%,    /* Very pale blue */
+    #f8fafc 85%,    /* Almost white */
+    #ffffff 100%    /* Pure white at bottom */
+  ) !important;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure all sections within page containers have transparent backgrounds */
+/* EXCEPT CTA sections which need to maintain their background */
+.shop-page section:not(.cta),
+.about-page section:not(.cta),
+.contact-page section:not(.cta),
+.pond-services-page section:not(.cta),
+.plants-fish-page section:not(.cta),
+.resources-page section:not(.cta),
+.blog-page section:not(.cta),
+[class*="-page"] section:not(.cta),
+main section:not(.cta),
+.page section:not(.cta) {
+  background: transparent !important;
+}
+
+/* Remove any existing section backgrounds that might interfere */
+.shop-page .section,
+.about-page .section,
+.contact-page .section,
+.pond-services-page .section,
+.plants-fish-page .section,
+.resources-page .section,
+.blog-page .section,
+[class*="-page"] .section,
+main .section,
+.page .section {
+  background: transparent !important;
+}
+
+/* PRESERVE CTA SECTION STYLING */
+/* Ensure CTA sections maintain their proper backgrounds and visibility */
+.cta,
+.cta-section,
+.contact-cta,
+.call-to-action,
+[class*="cta"],
+[class*="contact-cta"],
+[class*="call-to-action"] {
+  /* Let the component handle background image via inline styles */
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  color: white !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Ensure CTA sections within page containers are visible */
+.shop-page .cta,
+.about-page .cta,
+.contact-page .cta,
+.pond-services-page .cta,
+.plants-fish-page .cta,
+.resources-page .cta,
+.blog-page .cta,
+[class*="-page"] .cta,
+main .cta,
+.page .cta {
+  /* Let the component handle background image via inline styles */
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  color: white !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* GLOBAL WAVE EFFECT - APPLIES TO ALL PAGES */
+.hero-wave-attached {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  background: #1e40af; /* Blue background to match wave */
+  z-index: 999;
+  pointer-events: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.hero-wave-attached svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-wave-attached .wave-layer-1,
+.hero-wave-attached .wave-layer-2,
+.hero-wave-attached .wave-layer-3 {
+  animation: heroWaveFlow 6s ease-in-out infinite;
+}
+
+@keyframes heroWaveFlow {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+/* AUTO-CREATE WAVE EFFECT FOR PAGES WITHOUT IT */
+/* This creates a wave effect for pages that don't have hero-wave-attached */
+section[class*="hero"]:not(:has(.hero-wave-attached))::after,
+.standard-hero:not(:has(.hero-wave-attached))::after,
+.page-hero:not(:has(.hero-wave-attached))::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: #1e40af;
+  z-index: 999;
+  pointer-events: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+/* Remove individual section gradients - now handled by wrapper approach */
+
+/* Remove any existing backgrounds from sections with gradient */
+.first-section-gradient .section.alt {
+  background: transparent !important;
+}
+
+/* Ensure first section connects to hero wave */
+.first-section-gradient > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Mobile responsive gradient */
+@media (max-width: 768px) {
+  .first-section-gradient,
+  .gradient-wipe-wrapper,
+  .main-content-gradient,
+  .gradient-wipe-up {
+    background: linear-gradient(to bottom, 
+      #87ceeb 0%,     /* Baby blue at top - connected to wave */
+      #b3e5fc 15%,    /* Light baby blue */
+      #d1ecf1 30%,    /* Very light blue */
+      #e8f4f8 50%,    /* Pale blue */
+      #f0f8ff 70%,    /* Very pale blue */
+      #f8fafc 85%,    /* Almost white */
+      #ffffff 100%    /* Pure white at bottom */
+    ) !important;
+    min-height: 100vh !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  .first-section-gradient > *:first-child,
+  .gradient-wipe-wrapper > *:first-child,
+  .main-content-gradient > *:first-child,
+  .gradient-wipe-up > *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Mobile wave effect */
+  .hero-wave-attached {
+    height: 80px !important;
+  }
+  
+  /* Mobile auto-created wave effect */
+  section[class*="hero"]:not(:has(.hero-wave-attached))::after,
+  .standard-hero:not(:has(.hero-wave-attached))::after,
+  .page-hero:not(:has(.hero-wave-attached))::after {
+    height: 80px !important;
+    bottom: -80px !important;
+  }
+  
+  /* Mobile continuous gradient wrapper */
+  .shop-page:not(:has(.main-content-gradient)),
+  .about-page:not(:has(.main-content-gradient)),
+  .contact-page:not(:has(.main-content-gradient)),
+  .pond-services-page:not(:has(.main-content-gradient)),
+  .plants-fish-page:not(:has(.main-content-gradient)),
+  .resources-page:not(:has(.main-content-gradient)),
+  .blog-page:not(:has(.main-content-gradient)),
+  [class*="-page"]:not(:has(.main-content-gradient)):not(.home) {
+    background: linear-gradient(to bottom, 
+      #87ceeb 0%,     /* Baby blue at top - connected to wave */
+      #b3e5fc 15%,    /* Light baby blue */
+      #d1ecf1 30%,    /* Very light blue */
+      #e8f4f8 50%,    /* Pale blue */
+      #f0f8ff 70%,    /* Very pale blue */
+      #f8fafc 85%,    /* Almost white */
+      #ffffff 100%    /* Pure white at bottom */
+    ) !important;
+    min-height: 100vh !important;
+  }
+  
+  /* Mobile universal gradient wrapper */
+  main:not(:has(.main-content-gradient)):not(.home),
+  .page:not(:has(.main-content-gradient)):not(.home),
+  [class*="page"]:not(:has(.main-content-gradient)):not(.home) {
+    background: linear-gradient(to bottom, 
+      #87ceeb 0%,     /* Baby blue at top - connected to wave */
+      #b3e5fc 15%,    /* Light baby blue */
+      #d1ecf1 30%,    /* Very light blue */
+      #e8f4f8 50%,    /* Pale blue */
+      #f0f8ff 70%,    /* Very pale blue */
+      #f8fafc 85%,    /* Almost white */
+      #ffffff 100%    /* Pure white at bottom */
+    ) !important;
+    min-height: 100vh !important;
+  }
+  
+  /* Mobile transparent sections - EXCEPT CTA */
+  .shop-page section:not(.cta),
+  .about-page section:not(.cta),
+  .contact-page section:not(.cta),
+  .pond-services-page section:not(.cta),
+  .plants-fish-page section:not(.cta),
+  .resources-page section:not(.cta),
+  .blog-page section:not(.cta),
+  [class*="-page"] section:not(.cta),
+  main section:not(.cta),
+  .page section:not(.cta) {
+    background: transparent !important;
+  }
+  
+  .shop-page .section,
+  .about-page .section,
+  .contact-page .section,
+  .pond-services-page .section,
+  .plants-fish-page .section,
+  .resources-page .section,
+  .blog-page .section,
+  [class*="-page"] .section,
+  main .section,
+  .page .section {
+    background: transparent !important;
+  }
+  
+  /* Mobile CTA section preservation */
+  .cta,
+  .cta-section,
+  .contact-cta,
+  .call-to-action,
+  [class*="cta"],
+  [class*="contact-cta"],
+  [class*="call-to-action"] {
+    /* Let the component handle background image via inline styles */
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    color: white !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  .shop-page .cta,
+  .about-page .cta,
+  .contact-page .cta,
+  .pond-services-page .cta,
+  .plants-fish-page .cta,
+  .resources-page .cta,
+  .blog-page .cta,
+  [class*="-page"] .cta,
+  main .cta,
+  .page .cta {
+    /* Let the component handle background image via inline styles */
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    color: white !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

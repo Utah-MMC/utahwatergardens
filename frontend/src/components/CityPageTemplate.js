@@ -80,8 +80,8 @@ const CityPageTemplate = ({
       answer: `We build all types of ponds in ${cityName}, including koi ponds, water gardens, natural ponds, and commercial water features. Our designs are customized to your property, budget, and preferences.`
     },
     {
-      question: `How much does pond construction cost in ${cityName}?`,
-      answer: `Pond construction costs in ${cityName} vary based on size, complexity, and materials. We provide free estimates and work within your budget to create the perfect water feature for your property.`
+      question: `What pond services do you offer in ${cityName}?`,
+      answer: `We offer comprehensive pond services in ${cityName} including design, construction, maintenance, and repair. Our experienced team can help you create the perfect water feature for your property.`
     },
     {
       question: `Do I need permits for a pond in ${cityName}?`,
@@ -113,7 +113,7 @@ const CityPageTemplate = ({
           backgroundImageAlt={`Professional pond services in ${cityName}`}
           primaryButtonText="CALL (801) 590-8516"
           primaryButtonLink="tel:(801) 590-8516"
-          secondaryButtonText="GET QUOTE"
+          secondaryButtonText="CONTACT US"
           secondaryButtonLink="/contact"
         />
 

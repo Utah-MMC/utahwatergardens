@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import PageHero from '../components/PageHero.js';
 import './BlogPage.css';
 
 const BlogPage = () => {
@@ -739,18 +738,59 @@ const BlogPage = () => {
         canonical="https://utahwatergardens.com/blog"
       />
 
-      <PageHero 
-        title="Utah Water Gardens Blog"
-        subtitle="Expert insights on pond design, water features, aquatic plants, fish care, and creating beautiful water gardens in Utah's unique climate"
-        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
-        backgroundImageAlt="Beautiful Utah water garden with pond and water lilies"
-        showStats={true}
-        stats={[
-          { number: blogPosts.length, label: "Expert Articles", icon: "📝" },
-          { number: categories.length, label: "Categories", icon: "📂" },
-          { number: "2025", label: "Updated Content", icon: "📅" }
-        ]}
-      />
+      {/* Blog Hero Section */}
+      <section className="blog-hero">
+        <div className="blog-hero-background">
+          <img 
+            src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
+            alt="Beautiful Utah water garden with pond and water lilies"
+            className="blog-hero-image"
+          />
+          <div className="blog-hero-overlay"></div>
+        </div>
+        
+        <div className="blog-hero-content">
+          <div className="container">
+            <div className="blog-hero-text-content">
+              <h1 className="blog-hero-title">
+                Utah Water Gardens Blog
+              </h1>
+              <p className="blog-hero-subtitle">
+                Expert insights on pond design, water features, aquatic plants, fish care, and creating beautiful water gardens in Utah's unique climate
+              </p>
+              
+              {/* Stats Section */}
+              <div className="blog-hero-stats">
+                <div className="blog-hero-stat-item">
+                  <div className="blog-hero-stat-icon">📝</div>
+                  <div className="blog-hero-stat-number">{blogPosts.length}</div>
+                  <div className="blog-hero-stat-label">Expert Articles</div>
+                </div>
+                <div className="blog-hero-stat-item">
+                  <div className="blog-hero-stat-icon">📂</div>
+                  <div className="blog-hero-stat-number">{categories.length}</div>
+                  <div className="blog-hero-stat-label">Categories</div>
+                </div>
+                <div className="blog-hero-stat-item">
+                  <div className="blog-hero-stat-icon">📅</div>
+                  <div className="blog-hero-stat-number">2025</div>
+                  <div className="blog-hero-stat-label">Updated Content</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+
+      {/* Wavy Divider - Attached to Hero */}
+      <div className="blog-hero-wave-attached">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path className="wave-layer-1" d="M0,0L50,20C100,40,200,80,300,80C400,80,500,40,600,20C700,0,800,0,900,20C1000,40,1100,80,1150,100L1200,120V0Z" fill="#ffffff" opacity="0.1"></path>
+          <path className="wave-layer-2" d="M0,0L50,15C100,30,200,60,300,60C400,60,500,30,600,15C700,0,800,0,900,15C1000,30,1100,60,1150,75L1200,90V0Z" fill="#ffffff" opacity="0.2"></path>
+          <path className="wave-layer-3" d="M0,0L50,10C100,20,200,40,300,40C400,40,500,20,600,10C700,0,800,0,900,10C1000,20,1100,40,1150,50L1200,60V0Z" fill="#ffffff" opacity="0.3"></path>
+        </svg>
+      </div>
 
       {/* Featured Posts */}
       {featuredPosts.length > 0 && (
@@ -785,7 +825,7 @@ const BlogPage = () => {
       )}
 
       {/* All Posts */}
-      <section className="all-posts">
+      <section className="all-posts first-section-gradient">
         <div className="container">
         <div className="posts-header">
           <h2>All Articles</h2>
@@ -873,7 +913,7 @@ const BlogPage = () => {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="blog-newsletter">
+      <section className="blog-newsletter first-section-gradient">
         <div className="container">
           <div className="newsletter-content">
             <h2>Stay Updated</h2>

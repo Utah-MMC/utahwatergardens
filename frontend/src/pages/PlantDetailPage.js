@@ -199,15 +199,12 @@ const PlantDetailPage = () => {
           </ul>
         </section>
 
-        {/* Pricing and Availability */}
-        <section className="pricing-availability">
-          <div className="pricing-card">
-            <h3>Pricing & Availability</h3>
-            <div className="pricing-info">
-              <div className="price-item">
-                <strong>Price:</strong> {plant.price}
-              </div>
-              <div className="price-item">
+        {/* Availability */}
+        <section className="availability">
+          <div className="availability-card">
+            <h3>Availability</h3>
+            <div className="availability-info">
+              <div className="availability-item">
                 <strong>Availability:</strong> {plant.availability}
               </div>
             </div>

@@ -81,7 +81,7 @@ const ContactPage = () => {
         />
 
         {/* Main Content */}
-        <section className="contact-main-content">
+        <section className="contact-main-content first-section-gradient">
           <div className="container">
             <div className="contact-grid">
               {/* Contact Form */}
@@ -273,9 +273,9 @@ const ContactPage = () => {
                       <span className="button-icon">Map</span>
                       <span>Get Directions</span>
                     </a>
-                    <a href="/free-estimate" className="action-button secondary">
-                      <span className="button-icon">Estimate</span>
-                      <span>Free Estimate</span>
+                    <a href="/about" className="action-button secondary">
+                      <span className="button-icon">Info</span>
+                      <span>Learn More</span>
                     </a>
                   </div>
                 </div>
@@ -285,7 +285,7 @@ const ContactPage = () => {
         </section>
 
         {/* Map Section */}
-        <section className="map-section">
+        <section className="map-section first-section-gradient">
           <div className="container">
             <h2>Find Us</h2>
             <div className="map-container">
@@ -304,7 +304,7 @@ const ContactPage = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="contact-faq">
+        <section className="contact-faq first-section-gradient">
           <div className="container">
             <h2>Frequently Asked Questions</h2>
             <div className="faq-grid">

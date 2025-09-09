@@ -121,6 +121,42 @@ main {
   background: transparent !important;
 }
 
+/* Ensure text is readable on gradient backgrounds */
+.first-section-gradient {
+  color: #1e293b !important; /* Dark blue-gray for good contrast */
+}
+
+.first-section-gradient h1,
+.first-section-gradient h2,
+.first-section-gradient h3,
+.first-section-gradient h4,
+.first-section-gradient h5,
+.first-section-gradient h6 {
+  color: #1e293b !important; /* Dark blue-gray for headings */
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8) !important; /* White shadow for better contrast */
+}
+
+.first-section-gradient p,
+.first-section-gradient span,
+.first-section-gradient div {
+  color: #334155 !important; /* Slightly lighter but still dark for body text */
+}
+
+/* Ensure buttons are visible on gradient */
+.first-section-gradient .btn-primary {
+  background: #dc2626 !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4) !important;
+  border: none !important;
+}
+
+.first-section-gradient .btn-secondary {
+  background: rgba(30, 64, 175, 0.9) !important;
+  color: white !important;
+  border: 2px solid #1e40af !important;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3) !important;
+}
+
 /* Universal Blue Gradient Wipe Up - for sections above CTA */
 .gradient-wipe-up {
   background: linear-gradient(to top, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #93c5fd 75%, #ffffff 100%) !important;
@@ -136,6 +172,163 @@ main {
 /* Override any existing background colors for wipe up */
 .gradient-wipe-up * {
   background: transparent !important;
+}
+
+/* Ensure text is readable on gradient wipe up backgrounds */
+.gradient-wipe-up {
+  color: #1e293b !important; /* Dark blue-gray for good contrast */
+}
+
+.gradient-wipe-up h1,
+.gradient-wipe-up h2,
+.gradient-wipe-up h3,
+.gradient-wipe-up h4,
+.gradient-wipe-up h5,
+.gradient-wipe-up h6 {
+  color: #1e293b !important; /* Dark blue-gray for headings */
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8) !important; /* White shadow for better contrast */
+}
+
+.gradient-wipe-up p,
+.gradient-wipe-up span,
+.gradient-wipe-up div {
+  color: #334155 !important; /* Slightly lighter but still dark for body text */
+}
+
+/* Ensure buttons are visible on gradient wipe up */
+.gradient-wipe-up .btn-primary {
+  background: #dc2626 !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4) !important;
+  border: none !important;
+}
+
+.gradient-wipe-up .btn-secondary {
+  background: rgba(30, 64, 175, 0.9) !important;
+  color: white !important;
+  border: 2px solid #1e40af !important;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3) !important;
+}
+
+/* Ensure links are visible on gradient backgrounds */
+.gradient-wipe-up a,
+.first-section-gradient a {
+  color: #1e40af !important; /* Blue for links */
+  text-decoration: none !important;
+}
+
+.gradient-wipe-up a:hover,
+.first-section-gradient a:hover {
+  color: #1d4ed8 !important; /* Darker blue on hover */
+  text-decoration: underline !important;
+}
+
+/* Ensure form elements are visible on gradient backgrounds */
+.first-section-gradient input,
+.first-section-gradient textarea,
+.first-section-gradient select,
+.gradient-wipe-up input,
+.gradient-wipe-up textarea,
+.gradient-wipe-up select {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #1e293b !important;
+  border: 2px solid rgba(30, 64, 175, 0.3) !important;
+  border-radius: 8px !important;
+}
+
+.first-section-gradient input:focus,
+.first-section-gradient textarea:focus,
+.first-section-gradient select:focus,
+.gradient-wipe-up input:focus,
+.gradient-wipe-up textarea:focus,
+.gradient-wipe-up select:focus {
+  background: white !important;
+  border-color: #1e40af !important;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1) !important;
+  outline: none !important;
+}
+
+/* Ensure labels are visible */
+.first-section-gradient label,
+.gradient-wipe-up label {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Ensure cards and info sections are visible */
+.first-section-gradient .info-card,
+.first-section-gradient .card,
+.gradient-wipe-up .info-card,
+.gradient-wipe-up .card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(30, 64, 175, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+.first-section-gradient .info-card h3,
+.first-section-gradient .card h3,
+.gradient-wipe-up .info-card h3,
+.gradient-wipe-up .card h3 {
+  color: #1e293b !important;
+  text-shadow: none !important;
+}
+
+.first-section-gradient .info-card p,
+.first-section-gradient .card p,
+.gradient-wipe-up .info-card p,
+.gradient-wipe-up .card p {
+  color: #334155 !important;
+}
+
+/* Ensure lists are visible on gradient backgrounds */
+.first-section-gradient ul,
+.first-section-gradient ol,
+.gradient-wipe-up ul,
+.gradient-wipe-up ol {
+  color: #334155 !important;
+}
+
+.first-section-gradient li,
+.gradient-wipe-up li {
+  color: #334155 !important;
+}
+
+/* Ensure checkmarks and special elements are visible */
+.first-section-gradient .checkmark,
+.gradient-wipe-up .checkmark {
+  color: #059669 !important; /* Green for checkmarks */
+  font-weight: bold !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Ensure step numbers and process elements are visible */
+.first-section-gradient .step-number,
+.gradient-wipe-up .step-number {
+  background: #1e40af !important;
+  color: white !important;
+  border: 2px solid white !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ensure contact info is visible */
+.first-section-gradient .contact-info,
+.gradient-wipe-up .contact-info {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(30, 64, 175, 0.2) !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+}
+
+.first-section-gradient .contact-info strong,
+.gradient-wipe-up .contact-info strong {
+  color: #1e293b !important;
+}
+
+.first-section-gradient .contact-info a,
+.gradient-wipe-up .contact-info a {
+  color: #1e40af !important;
 }
 
 /* Button Styles */
@@ -184,6 +377,56 @@ main {
   background: #1e40af;
   color: white;
   transform: translateY(-2px);
+}
+
+/* Global Wave Effect - Attached to Hero Section */
+.hero-wave-attached {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin-top: -1px; /* Overlap slightly with hero section */
+  z-index: 10;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 25%, #1e40af 50%, #1e3a8a 75%, #1e40af 100%);
+}
+
+.hero-wave-attached svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  shape-rendering: geometricPrecision;
+}
+
+.hero-wave-attached path {
+  animation: waveAnimation 8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.hero-wave-attached .wave-layer-1 {
+  animation-delay: 0s;
+}
+
+.hero-wave-attached .wave-layer-2 {
+  animation-delay: 2.5s;
+}
+
+.hero-wave-attached .wave-layer-3 {
+  animation-delay: 5s;
+}
+
+@keyframes waveAnimation {
+  0%, 100% {
+    transform: translateY(0px) scaleX(1);
+  }
+  50% {
+    transform: translateY(-10px) scaleX(1.03);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-wave-attached {
+    height: 100px;
+  }
 }
 
 /* Global Header Clearance Fix - Adjusted for wave effect */

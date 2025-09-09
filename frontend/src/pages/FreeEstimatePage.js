@@ -8,7 +8,7 @@ const FreeEstimatePage = () => {
     phone: '',
     projectType: '',
     propertySize: '',
-    budget: '',
+    projectSize: '',
     timeline: '',
     message: '',
     preferredContact: 'phone'
@@ -56,6 +56,15 @@ const FreeEstimatePage = () => {
           <h1>Get Your Free Estimate</h1>
           <p>Transform your property with a custom water garden designed just for you</p>
         </div>
+      </div>
+
+      {/* Wavy Divider - Attached to Hero with Blue Gradient */}
+      <div className="hero-wave-attached">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path className="wave-layer-1" d="M0,0L50,20C100,40,200,80,300,80C400,80,500,40,600,20C700,0,800,0,900,20C1000,40,1100,80,1150,100L1200,120V0Z" fill="#ffffff" opacity="0.1"></path>
+          <path className="wave-layer-2" d="M0,0L50,15C100,30,200,60,300,60C400,60,500,30,600,15C700,0,800,0,900,15C1000,30,1100,60,1150,75L1200,90V0Z" fill="#ffffff" opacity="0.2"></path>
+          <path className="wave-layer-3" d="M0,0L50,10C100,20,200,40,300,40C400,40,500,20,600,10C700,0,800,0,900,10C1000,20,1100,40,1150,50L1200,60V0Z" fill="#ffffff" opacity="0.3"></path>
+        </svg>
       </div>
 
       <div className="estimate-content first-section-gradient">
@@ -173,20 +182,19 @@ const FreeEstimatePage = () => {
 
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="budget">Budget Range</label>
+                    <label htmlFor="projectSize">Project Size</label>
                     <select
-                      id="budget"
-                      name="budget"
-                      value={formData.budget}
+                      id="projectSize"
+                      name="projectSize"
+                      value={formData.projectSize}
                       onChange={handleChange}
                     >
-                      <option value="">Select Budget Range</option>
-                      <option value="under-5k">Under $5,000</option>
-                      <option value="5k-10k">$5,000 - $10,000</option>
-                      <option value="10k-25k">$10,000 - $25,000</option>
-                      <option value="25k-50k">$25,000 - $50,000</option>
-                      <option value="over-50k">Over $50,000</option>
-                      <option value="flexible">Flexible</option>
+                      <option value="">Select Project Size</option>
+                      <option value="small">Small Water Feature</option>
+                      <option value="medium">Medium Pond</option>
+                      <option value="large">Large Pond</option>
+                      <option value="commercial">Commercial Project</option>
+                      <option value="not-sure">Not Sure</option>
                     </select>
                   </div>
                   <div className="form-group">
@@ -255,7 +263,7 @@ const FreeEstimatePage = () => {
                     <div className="step-number">2</div>
                     <div className="step-content">
                       <h4>Custom Design</h4>
-                      <p>Detailed plans tailored to your space and budget</p>
+                      <p>Detailed plans tailored to your space and vision</p>
                     </div>
                   </div>
                   <div className="step">
