@@ -14,6 +14,7 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -31,18 +32,11 @@ const ContactPage = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Simulate form submission delay
+    // Show modal after brief delay
     setTimeout(() => {
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
+      setShowModal(true);
       setIsSubmitting(false);
-    }, 1000);
+    }, 500);
   };
 
   // Contact methods data removed - now using structured contact details in JSX
@@ -334,6 +328,33 @@ const ContactPage = () => {
           </div>
         </section>
       </div>
+
+      {/* Maintenance Modal */}
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>Form Under Maintenance</h3>
+              <button 
+                className="modal-close" 
+                onClick={() => setShowModal(false)}
+                aria-label="Close modal"
+              >
+                ×
+              </button>
+            </div>
+            <div className="modal-body">
+              <p>Sorry, our contact form is currently under maintenance. Please give us a call instead!</p>
+              <div className="modal-phone">
+                <a href="tel:+18015908516" className="btn" data-variant="primary">
+                  Call (801) 590-8516
+                </a>
+              </div>
+              <p className="modal-hours">Monday - Friday, 10:00 AM - 6:00 PM</p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
