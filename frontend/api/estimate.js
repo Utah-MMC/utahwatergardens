@@ -53,22 +53,22 @@ export default async function handler(req, res) {
       });
     }
 
-    // Create email transporter
+    // Create email transporter - Gmail settings
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 587,
       secure: false,
       auth: {
-        user: 'jeremyuwg@gmail.com',
-        pass: 'qujn cfie mzfp xlol'
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS
       }
     });
 
     // Email content for business owner
     const businessEmailContent = {
-      from: 'jeremyuwg@gmail.com',
-      to: 'admin@utahwatergardens.com',
-      subject: `New Free Estimate Request - ${projectType}`,
+      from: process.env.GMAIL_USER,
+      to: process.env.BUSINESS_EMAIL,
+      subject: process.env.EMAIL_SUBJECT,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e40af; border-bottom: 2px solid #1e40af; padding-bottom: 10px;">
@@ -117,9 +117,9 @@ export default async function handler(req, res) {
 
     // Auto-reply email for customer
     const customerEmailContent = {
-      from: 'jeremyuwg@gmail.com',
+      from: process.env.GMAIL_USER,
       to: email,
-      subject: 'Your Free Estimate Request - Utah Water Gardens',
+      subject: process.env.EMAIL_SUBJECT,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e40af; text-align: center;">Your Free Estimate Request is Confirmed!</h2>
@@ -151,7 +151,7 @@ export default async function handler(req, res) {
             <h3 style="color: #1e293b; margin-top: 0;">Need Immediate Assistance?</h3>
             <p>While you wait for your estimate, feel free to:</p>
             <ul>
-              <li>Call us at <strong>(801) 590-8516</strong> for immediate questions</li>
+              <li>Call us at <strong>${process.env.BUSINESS_PHONE}</strong> for immediate questions</li>
               <li>Visit our store to see our products and get inspiration</li>
               <li>Check out our <a href="https://utahwatergardens.com/pond-gallery" style="color: #1e40af;">project gallery</a></li>
             </ul>
@@ -191,7 +191,7 @@ export default async function handler(req, res) {
     
     return res.status(500).json({
       error: 'Internal server error',
-      message: 'There was an error submitting your estimate request. Please try again or call us directly at (801) 590-8516.'
+      message: `There was an error submitting your estimate request. Please try again or call us directly at ${process.env.BUSINESS_PHONE}.`
     });
   }
 }

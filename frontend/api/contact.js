@@ -47,8 +47,8 @@ export default async function handler(req, res) {
       host: 'smtp.gmail.com',
       port: 587,
       secure: false,
-      user: 'jeremyuwg@gmail.com',
-      hasPassword: true
+      user: process.env.GMAIL_USER,
+      hasPassword: !!process.env.GMAIL_PASS
     });
 
     const transporter = nodemailer.createTransport({
@@ -56,16 +56,16 @@ export default async function handler(req, res) {
       port: 587,
       secure: false,
       auth: {
-        user: 'jeremyuwg@gmail.com',
-        pass: 'qujn cfie mzfp xlol'
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS
       }
     });
 
     // Email content for business owner
     const businessEmailContent = {
-      from: 'jeremyuwg@gmail.com',
-      to: 'admin@utahwatergardens.com', // Your business email
-      subject: `New Contact Form Submission - ${service || 'General Inquiry'}`,
+      from: process.env.GMAIL_USER,
+      to: process.env.BUSINESS_EMAIL, // Your business email
+      subject: process.env.EMAIL_SUBJECT,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e40af; border-bottom: 2px solid #1e40af; padding-bottom: 10px;">
@@ -102,9 +102,9 @@ export default async function handler(req, res) {
 
     // Auto-reply email for customer
     const customerEmailContent = {
-      from: 'jeremyuwg@gmail.com',
+      from: process.env.GMAIL_USER,
       to: email,
-      subject: 'Thank you for contacting Utah Water Gardens!',
+      subject: process.env.EMAIL_SUBJECT,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e40af; text-align: center;">Thank You for Contacting Utah Water Gardens!</h2>
@@ -117,7 +117,7 @@ export default async function handler(req, res) {
             
             <p>In the meantime, feel free to:</p>
             <ul>
-              <li>Call us directly at <strong>(801) 590-8516</strong> for immediate assistance</li>
+              <li>Call us directly at <strong>${process.env.BUSINESS_PHONE}</strong> for immediate assistance</li>
               <li>Visit our store at <strong>5911 S 1300 E, Salt Lake City, UT 84121</strong></li>
               <li>Check out our <a href="https://utahwatergardens.com/pond-gallery" style="color: #1e40af;">pond gallery</a> for inspiration</li>
             </ul>
@@ -132,7 +132,7 @@ export default async function handler(req, res) {
           
           <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
           <p style="color: #64748b; font-size: 14px; text-align: center;">
-            Utah Water Gardens | 5911 S 1300 E, Salt Lake City, UT 84121 | (801) 590-8516
+            Utah Water Gardens | 5911 S 1300 E, Salt Lake City, UT 84121 | ${process.env.BUSINESS_PHONE}
           </p>
         </div>
       `
@@ -162,7 +162,7 @@ export default async function handler(req, res) {
     
     return res.status(500).json({
       error: 'Internal server error',
-      message: 'There was an error sending your message. Please try again or call us directly at (801) 590-8516.',
+      message: `There was an error sending your message. Please try again or call us directly at ${process.env.BUSINESS_PHONE}.`,
       debug: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
