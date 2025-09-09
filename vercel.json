@@ -3,15 +3,6 @@
   "buildCommand": "cd frontend && npm run build",
   "outputDirectory": "frontend/build",
   "installCommand": "cd frontend && npm install",
-  "framework": "create-react-app",
-  "functions": {
-    "api/contact.js": {
-      "runtime": "@vercel/node@3.0.7"
-    },
-    "api/estimate.js": {
-      "runtime": "@vercel/node@3.0.7"
-    }
-  },
   "redirects": [
     {
       "source": "/(.*)",
