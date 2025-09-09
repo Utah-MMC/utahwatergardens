@@ -30,45 +30,22 @@ const FreeEstimatePage = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    try {
-      console.log('Submitting estimate form...', formData);
-      
-            const response = await fetch('/api/estimate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          projectSize: formData.propertySize, // Map propertySize to projectSize for API
-          location: formData.preferredContact === 'email' ? 'Email preferred' : 'Phone preferred'
-        }),
+    // Simulate form submission delay
+    setTimeout(() => {
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        projectType: '',
+        propertySize: '',
+        budget: '',
+        timeline: '',
+        message: '',
+        preferredContact: 'phone'
       });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          projectType: '',
-          propertySize: '',
-          budget: '',
-          timeline: '',
-          message: '',
-          preferredContact: 'phone'
-        });
-      } else {
-        setSubmitStatus('error');
-        console.error('Estimate form submission error:', result.message);
-      }
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   return (

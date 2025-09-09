@@ -31,40 +31,18 @@ const ContactPage = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    try {
-      console.log('Submitting contact form...', formData);
-      
-            const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+    // Simulate form submission delay
+    setTimeout(() => {
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: ''
       });
-
-      const result = await response.json();
-      console.log('API Response:', { status: response.status, result });
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: ''
-        });
-      } else {
-        setSubmitStatus('error');
-        console.error('Form submission error:', result.message);
-      }
-    } catch (error) {
-      setSubmitStatus('error');
-      console.error('Network error:', error);
-      console.error('Error details:', error.message);
-    } finally {
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   // Contact methods data removed - now using structured contact details in JSX

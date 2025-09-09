@@ -19,6 +19,12 @@ const AboutPage = () => {
     { id: 'team', label: 'Our Team', icon: 'Team' }
   ];
 
+  const stats = [
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '500+', label: 'Projects Completed', icon: 'Projects' },
+    { number: '1000+', label: 'Happy Customers', icon: 'Customers' },
+    { number: '50+', label: 'Plant Varieties', icon: 'Plants' }
+  ];
 
   const values = [
     {

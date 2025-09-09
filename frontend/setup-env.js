@@ -1,12 +1,12 @@
 const { execSync } = require('child_process');
 
 const envVars = [
-  { name: 'GMAIL_USER', value: 'jeremyuwg@gmail.com' },
-  { name: 'GMAIL_PASS', value: 'qujn cfie mzfp xlol' },
+  { name: 'EMAIL_USER', value: 'jeremyuwg@gmail.com' },
+  { name: 'EMAIL_PASS', value: 'qujn cfie mzfp xlol' },
   { name: 'SMTP_HOST', value: 'smtp.gmail.com' },
   { name: 'SMTP_PORT', value: '587' },
   { name: 'SMTP_SECURE', value: 'false' },
-  { name: 'BUSINESS_EMAIL', value: 'contact@utahwatergardens.com' }
+  { name: 'BUSINESS_EMAIL', value: 'admin@utahwatergardens.com' }
 ];
 
 console.log('Setting up Gmail environment variables...');
