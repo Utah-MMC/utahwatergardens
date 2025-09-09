@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './BlogPost.css';
@@ -21,7 +21,7 @@ const BlogPost = () => {
   };
 
   // Function to extract headings and generate table of contents
-  const generateTableOfContents = (content) => {
+  const generateTableOfContents = useCallback((content) => {
     const headingRegex = /<h([2-3])[^>]*>(.*?)<\/h[2-3]>/gi;
     const headings = [];
     let match;
@@ -39,16 +39,16 @@ const BlogPost = () => {
     }
 
     return headings;
-  };
+  }, []);
 
   // Function to add anchor IDs to headings in content
-  const addAnchorIdsToContent = (content) => {
+  const addAnchorIdsToContent = useCallback((content) => {
     return content.replace(/<h([2-3])[^>]*>(.*?)<\/h[2-3]>/gi, (match, level, text) => {
       const cleanText = text.replace(/<[^>]*>/g, '');
       const anchorId = generateAnchorId(cleanText);
       return `<h${level} id="${anchorId}">${text}</h${level}>`;
     });
-  };
+  }, []);
 
   useEffect(() => {
     // Get today's date in YYYY-MM-DD format
