@@ -254,5 +254,5 @@ app.post('/api/estimate', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 API Server running on http://localhost:${PORT}`);
   console.log(`📧 Gmail configured: jeremyuwg@gmail.com`);
-  console.log(`📬 Business email: admin@utahwatergardens.com`);
+  console.log(`📬 Business email: contact@utahwatergardens.com`);
 });
