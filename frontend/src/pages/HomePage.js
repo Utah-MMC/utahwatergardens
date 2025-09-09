@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import SEO from '../components/SEO';
+import PageTemplate from '../components/PageTemplate';
 import CTA from '../components/CTA';
 import { getAllPlants, createPlantSlug } from '../data/plantData';
 import './HomePage.css';
@@ -151,84 +151,21 @@ const HomePage = () => {
 
 
   return (
-    <>
-      <SEO 
-        title="Pond Services Near Salt Lake City, UT | Utah Water Gardens"
-        description="Utah's premier pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning. Licensed & insured. Call (801) 590-8516 for consultation."
-        keywords="pond services near salt lake city ut, salt lake city pond services, pond maintenance salt lake city, pond construction salt lake city, pond cleaning salt lake city, utah water gardens, pond services utah"
-        canonical="https://utahwatergardens.com"
-      />
-
-      <main className="home" id="main">
-        {/* MOBILE FIX STYLES */}
-        <style>{`
-          @media screen and (max-width: 768px) {
-            .hero {
-              height: 250px !important;
-              min-height: 250px !important;
-              max-height: 250px !important;
-              position: relative !important;
-              width: 100vw !important;
-              margin-left: 0 !important;
-              left: 0 !important;
-              right: 0 !important;
-              top: 0 !important;
-              background: #f8fafc !important;
-              z-index: 1 !important;
-              overflow: visible !important;
-              padding-top: 100px !important;
-              box-sizing: border-box !important;
-            }
-            .hero-sub {
-              display: none !important;
-            }
-            .hero::before {
-              display: block !important;
-              bottom: -40px !important;
-              height: 80px !important;
-            }
-            .section:first-of-type {
-              margin-top: 0 !important;
-              padding-top: 1rem !important;
-            }
-            .card .btn-row {
-              display: none !important;
-            }
-            .crsl-indicators {
-              display: none !important;
-            }
-          }
-        `}</style>
-        
-        {/* HERO */}
-        <section 
-          className="hero mobile-hero-fix" 
-          aria-label="Intro"
-        >
-          <div className="hero-media">
-            <img className="hero-fallback" src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" alt="Pond landscape with waterfall and rock features" loading="eager" />
-              </div>
-          <div className="hero-inner">
-            <h1 className="hero-title">Create Your Dream <span>Water Garden</span></h1>
-            <p className="hero-sub">From stunning koi ponds to tranquil water features, we bring your aquatic vision to life with expert design, construction, and maintenance.</p>
-            <div className="btn-row">
-              <a href="tel:+18015908516" className="btn" data-variant="primary">TALK TO EXPERT</a>
-              <Link to="/pond-services" className="btn" data-variant="outline">POND SERVICES</Link>
-            </div>
-        </div>
-      </section>
-
-      {/* Wavy Divider - Attached to Hero with Blue Gradient */}
-      <div className="hero-wave-attached">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path className="wave-layer-1" d="M0,0L50,20C100,40,200,80,300,80C400,80,500,40,600,20C700,0,800,0,900,20C1000,40,1100,80,1150,100L1200,120V0Z" fill="#ffffff" opacity="0.1"></path>
-          <path className="wave-layer-2" d="M0,0L50,15C100,30,200,60,300,60C400,60,500,30,600,15C700,0,800,0,900,15C1000,30,1100,60,1150,75L1200,90V0Z" fill="#ffffff" opacity="0.2"></path>
-          <path className="wave-layer-3" d="M0,0L50,10C100,20,200,40,300,40C400,40,500,20,600,10C700,0,800,0,900,10C1000,20,1100,40,1150,50L1200,60V0Z" fill="#ffffff" opacity="0.3"></path>
-        </svg>
-      </div>
-
-      {/* Main Content Wrapper with Single Gradient */}
-      <div className="main-content-gradient">
+    <PageTemplate
+      title="Pond Services Near Salt Lake City, UT | Utah Water Gardens"
+      description="Utah's premier pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning. Licensed & insured. Call (801) 590-8516 for consultation."
+      keywords="pond services near salt lake city ut, salt lake city pond services, pond maintenance salt lake city, pond construction salt lake city, pond cleaning salt lake city, utah water gardens, pond services utah"
+      canonical="https://utahwatergardens.com"
+      heroTitle="Create Your Dream Water Garden"
+      heroSubtitle="From stunning koi ponds to tranquil water features, we bring your aquatic vision to life with expert design, construction, and maintenance."
+      heroBackgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+      heroBackgroundImageAlt="Pond landscape with waterfall and rock features"
+      primaryButtonText="TALK TO EXPERT"
+      primaryButtonLink="tel:+18015908516"
+      secondaryButtonText="POND SERVICES"
+      secondaryButtonLink="/pond-services"
+      className="home"
+    >
         {/* ABOUT */}
         <section 
           className="section alt" 
@@ -449,12 +386,10 @@ const HomePage = () => {
             />
         </div>
       </section>
-      </div>
 
         {/* CTA Section */}
         <CTA />
-      </main>
-    </>
+    </PageTemplate>
   );
 };
 

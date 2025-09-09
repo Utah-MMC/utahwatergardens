@@ -231,8 +231,10 @@ const HarvestingPage = () => {
         </svg>
       </div>
 
-      {/* Harvesting Services */}
-      <section className="services-section first-section-gradient">
+      {/* Main Content Wrapper with Single Gradient */}
+      <div className="main-content-gradient">
+        {/* Harvesting Services */}
+        <section className="services-section">
         <div className="container">
           <h2>Our Harvesting Services</h2>
           <p>Comprehensive harvesting solutions for all your pond management needs</p>
@@ -431,6 +433,7 @@ const HarvestingPage = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

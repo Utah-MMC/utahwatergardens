@@ -128,7 +128,7 @@ const Pond-constructionPricePage = () => {
 
           {/* Services */}
           <section className="services-section">
-            <h2>Our Price Pond Construction Services</h2>
+            <h2>Our Pond Construction Services</h2>
             <div className="services-grid">
               {services.map((service, index) => (
                 <div key={index} className="service-card">
@@ -149,7 +149,7 @@ const Pond-constructionPricePage = () => {
 
           {/* Testimonials */}
           <section className="testimonials-section">
-            <h2>What Price Customers Say About Our Pond Construction</h2>
+            <h2>What Customers Say About Our Pond Construction</h2>
             <div className="testimonials-grid">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="testimonial-card">

@@ -8,43 +8,37 @@ const EquipmentRepairPage = () => {
       name: 'Pump Repair & Maintenance',
       image: '/images/IMG_2770.jpg',
       description: 'Expert repair and maintenance for all types of pond pumps',
-      services: ['Motor repair', 'Impeller replacement', 'Seal replacement', 'Performance optimization'],
-      price: 'Starting at $89'
+      services: ['Motor repair', 'Impeller replacement', 'Seal replacement', 'Performance optimization']
     },
     {
       name: 'Filtration System Repair',
       image: '/images/IMG_2775.jpg',
       description: 'Complete filtration system diagnostics and repair services',
-      services: ['Filter media replacement', 'UV bulb replacement', 'Valve repair', 'System optimization'],
-      price: 'Starting at $75'
+      services: ['Filter media replacement', 'UV bulb replacement', 'Valve repair', 'System optimization']
     },
     {
       name: 'Aeration System Repair',
       image: '/images/IMG_2779.jpg',
       description: 'Professional repair for air pumps and diffuser systems',
-      services: ['Air pump repair', 'Diffuser replacement', 'Line repair', 'Performance testing'],
-      price: 'Starting at $65'
+      services: ['Air pump repair', 'Diffuser replacement', 'Line repair', 'Performance testing']
     },
     {
       name: 'Lighting System Repair',
       image: '/images/IMG_2780.jpg',
       description: 'Underwater and landscape lighting repair and maintenance',
-      services: ['Fixture repair', 'Transformer replacement', 'Wiring repair', 'LED upgrades'],
-      price: 'Starting at $55'
+      services: ['Fixture repair', 'Transformer replacement', 'Wiring repair', 'LED upgrades']
     },
     {
       name: 'Water Feature Repair',
       image: '/images/IMG_2776.jpg',
       description: 'Repair services for fountains, waterfalls, and water features',
-      services: ['Nozzle replacement', 'Flow adjustment', 'Leak repair', 'Performance optimization'],
-      price: 'Starting at $95'
+      services: ['Nozzle replacement', 'Flow adjustment', 'Leak repair', 'Performance optimization']
     },
     {
       name: 'Control System Repair',
       image: '/images/IMG_2782.jpg',
       description: 'Repair for timers, controllers, and automation systems',
-      services: ['Timer repair', 'Controller replacement', 'Sensor repair', 'Programming'],
-      price: 'Starting at $85'
+      services: ['Timer repair', 'Controller replacement', 'Sensor repair', 'Programming']
     }
   ];
 
@@ -102,8 +96,10 @@ const EquipmentRepairPage = () => {
         </svg>
       </div>
 
-      {/* Services Overview */}
-      <section className="services-section first-section-gradient">
+      {/* Main Content Wrapper with Single Gradient */}
+      <div className="main-content-gradient">
+        {/* Services Overview */}
+        <section className="services-section">
         <div className="container">
           <h2>Our Equipment Repair Services</h2>
           <p>We repair all major brands and types of pond equipment with genuine parts and expert service</p>
@@ -125,7 +121,6 @@ const EquipmentRepairPage = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="service-price">{service.price}</div>
                   <a href="tel:(801) 590-8516" className="service-cta">Call for Repair Quote</a>
                 </div>
               </div>
@@ -245,42 +240,39 @@ const EquipmentRepairPage = () => {
       <section className="maintenance-section gradient-wipe-up">
         <div className="container">
           <h2>Preventive Maintenance Plans</h2>
-          <p>Regular maintenance prevents costly repairs. Choose a plan that fits your needs.</p>
+          <p>Regular maintenance prevents costly repairs. Contact us to discuss a maintenance plan that fits your needs.</p>
           <div className="maintenance-plans">
             <div className="plan-card">
               <h3>Basic Plan</h3>
-              <div className="plan-price">$99/year</div>
               <ul>
                 <li>Annual equipment inspection</li>
                 <li>Basic cleaning and adjustment</li>
                 <li>Performance testing</li>
                 <li>Priority repair scheduling</li>
               </ul>
-              <a href="tel:(801) 590-8516" className="plan-cta">Call to Enroll</a>
+              <a href="tel:(801) 590-8516" className="plan-cta">Call for Details</a>
             </div>
             <div className="plan-card featured">
               <h3>Premium Plan</h3>
-              <div className="plan-price">$199/year</div>
               <ul>
                 <li>Bi-annual equipment inspection</li>
                 <li>Deep cleaning and maintenance</li>
-                <li>Parts replacement (up to $50 value)</li>
+                <li>Parts replacement included</li>
                 <li>Emergency repair priority</li>
                 <li>Annual performance report</li>
               </ul>
-              <a href="tel:(801) 590-8516" className="plan-cta">Call to Enroll</a>
+              <a href="tel:(801) 590-8516" className="plan-cta">Call for Details</a>
             </div>
             <div className="plan-card">
               <h3>Commercial Plan</h3>
-              <div className="plan-price">$399/year</div>
               <ul>
                 <li>Quarterly inspections</li>
                 <li>Full system maintenance</li>
-                <li>Parts replacement (up to $100 value)</li>
+                <li>Parts replacement included</li>
                 <li>24/7 emergency support</li>
                 <li>Detailed maintenance logs</li>
               </ul>
-              <a href="tel:(801) 590-8516" className="plan-cta">Call to Enroll</a>
+              <a href="tel:(801) 590-8516" className="plan-cta">Call for Details</a>
             </div>
           </div>
         </div>
@@ -305,6 +297,7 @@ const EquipmentRepairPage = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

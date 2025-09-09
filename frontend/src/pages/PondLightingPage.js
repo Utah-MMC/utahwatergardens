@@ -10,48 +10,42 @@ const PondLightingPage = () => {
       image: '/images/IMG_2780.jpg',
       description: 'Energy-efficient LED spotlights for dramatic pond illumination',
       features: ['Energy efficient', 'Long lifespan', 'Bright illumination', 'Weather resistant', 'Easy installation'],
-      applications: ['Waterfall lighting', 'Feature highlighting', 'Accent lighting', 'Dramatic effects'],
-      price: 'Starting at $89.99'
+      applications: ['Waterfall lighting', 'Feature highlighting', 'Accent lighting', 'Dramatic effects']
     },
     {
       name: 'Underwater Lights',
       image: '/images/IMG_2776.jpg',
       description: 'Submersible LED lights for stunning underwater illumination',
       features: ['Fully submersible', 'Fish safe', 'Color changing options', 'Remote control', 'Low voltage'],
-      applications: ['Underwater illumination', 'Fish viewing', 'Night ambiance', 'Color effects'],
-      price: 'Starting at $129.99'
+      applications: ['Underwater illumination', 'Fish viewing', 'Night ambiance', 'Color effects']
     },
     {
       name: 'Floating Lights',
       image: '/images/IMG_2779.jpg',
       description: 'Decorative floating lights for surface illumination and ambiance',
       features: ['Floating design', 'Solar powered', 'Automatic on/off', 'Weather resistant', 'Decorative'],
-      applications: ['Surface lighting', 'Decorative effects', 'Party ambiance', 'Garden features'],
-      price: 'Starting at $49.99'
+      applications: ['Surface lighting', 'Decorative effects', 'Party ambiance', 'Garden features']
     },
     {
       name: 'Pathway Lights',
       image: '/images/IMG_2782.jpg',
       description: 'Low-voltage pathway lights for safe pond area navigation',
       features: ['Low voltage', 'Automatic dusk/dawn', 'Weather resistant', 'Easy installation', 'Energy efficient'],
-      applications: ['Pathway illumination', 'Safety lighting', 'Garden paths', 'Perimeter lighting'],
-      price: 'Starting at $39.99'
+      applications: ['Pathway illumination', 'Safety lighting', 'Garden paths', 'Perimeter lighting']
     },
     {
       name: 'String Lights',
       image: '/images/IMG_2770.jpg',
       description: 'Decorative string lights for festive pond area illumination',
       features: ['Decorative design', 'Weather resistant', 'Multiple colors', 'Easy installation', 'Festive ambiance'],
-      applications: ['Party lighting', 'Holiday decoration', 'Garden ambiance', 'Special events'],
-      price: 'Starting at $24.99'
+      applications: ['Party lighting', 'Holiday decoration', 'Garden ambiance', 'Special events']
     },
     {
       name: 'Solar Lights',
       image: '/images/IMG_2775.jpg',
       description: 'Eco-friendly solar-powered lights for sustainable pond illumination',
       features: ['Solar powered', 'No wiring required', 'Automatic operation', 'Eco-friendly', 'Cost effective'],
-      applications: ['Remote locations', 'Eco-friendly lighting', 'No-wire installation', 'Sustainable design'],
-      price: 'Starting at $34.99'
+      applications: ['Remote locations', 'Eco-friendly lighting', 'No-wire installation', 'Sustainable design']
     }
   ];
 
@@ -62,8 +56,7 @@ const PondLightingPage = () => {
       description: 'Essential lighting system for small to medium ponds',
       includes: ['2 LED spotlights', '1 underwater light', 'Transformer', 'Basic timer', 'Installation guide'],
       features: ['Simple setup', 'Energy efficient', 'Weather resistant', 'Easy maintenance'],
-      applications: ['Small ponds', 'Basic illumination', 'Budget projects', 'DIY installation'],
-      price: 'Starting at $199.99'
+      applications: ['Small ponds', 'Basic illumination', 'Budget projects', 'DIY installation']
     },
     {
       name: 'Professional Lighting System',
@@ -71,8 +64,7 @@ const PondLightingPage = () => {
       description: 'Comprehensive lighting system for medium to large ponds',
       includes: ['4 LED spotlights', '2 underwater lights', '1 floating light', 'Smart controller', 'Professional transformer', 'Installation service'],
       features: ['Smart control', 'Multiple zones', 'Color changing', 'Professional installation', 'Warranty coverage'],
-      applications: ['Medium ponds', 'Professional results', 'Smart control', 'Full service'],
-      price: 'Starting at $499.99'
+      applications: ['Medium ponds', 'Professional results', 'Smart control', 'Full service']
     },
     {
       name: 'Premium Lighting System',
@@ -80,8 +72,7 @@ const PondLightingPage = () => {
       description: 'Luxury lighting system for large ponds and commercial installations',
       includes: ['6+ LED spotlights', '4+ underwater lights', '2+ floating lights', 'Advanced controller', 'Commercial transformer', 'Full installation', 'Design consultation'],
       features: ['Advanced control', 'Multiple effects', 'Commercial grade', 'Full service', 'Extended warranty'],
-      applications: ['Large ponds', 'Commercial projects', 'Luxury installations', 'Full service'],
-      price: 'Starting at $999.99'
+      applications: ['Large ponds', 'Commercial projects', 'Luxury installations', 'Full service']
     }
   ];
 
@@ -91,32 +82,28 @@ const PondLightingPage = () => {
       image: '/images/IMG_2782.jpg',
       description: 'Dynamic color-changing lights for stunning visual effects',
       features: ['RGB color control', 'Remote operation', 'Multiple color modes', 'Smooth transitions'],
-      applications: ['Party lighting', 'Seasonal themes', 'Mood lighting', 'Special events'],
-      price: 'Starting at $149.99'
+      applications: ['Party lighting', 'Seasonal themes', 'Mood lighting', 'Special events']
     },
     {
       name: 'Fiber Optic',
       image: '/images/IMG_2770.jpg',
       description: 'Fiber optic lighting for unique and elegant pond illumination',
       features: ['Elegant design', 'No heat emission', 'Flexible installation', 'Long lifespan'],
-      applications: ['Elegant lighting', 'Heat-sensitive areas', 'Artistic effects', 'Premium installations'],
-      price: 'Starting at $299.99'
+      applications: ['Elegant lighting', 'Heat-sensitive areas', 'Artistic effects', 'Premium installations']
     },
     {
       name: 'Moonlight Effect',
       image: '/images/IMG_2775.jpg',
       description: 'Soft moonlight effect lighting for natural nighttime ambiance',
       features: ['Soft illumination', 'Natural appearance', 'Energy efficient', 'Automatic operation'],
-      applications: ['Natural ambiance', 'Night viewing', 'Subtle lighting', 'Eco-friendly'],
-      price: 'Starting at $89.99'
+      applications: ['Natural ambiance', 'Night viewing', 'Subtle lighting', 'Eco-friendly']
     },
     {
       name: 'Strobe Effects',
       image: '/images/IMG_2779.jpg',
       description: 'Dynamic strobe effects for dramatic pond lighting displays',
       features: ['Multiple strobe patterns', 'Remote control', 'Synchronized effects', 'Party mode'],
-      applications: ['Party lighting', 'Dramatic effects', 'Entertainment', 'Special events'],
-      price: 'Starting at $179.99'
+      applications: ['Party lighting', 'Dramatic effects', 'Entertainment', 'Special events']
     }
   ];
 
@@ -126,24 +113,21 @@ const PondLightingPage = () => {
       image: '/images/IMG_2780.jpg',
       description: 'Professional installation of basic lighting systems',
       includes: ['Light placement', 'Wiring', 'Transformer setup', 'Basic timer', 'Testing'],
-      benefits: ['Professional results', 'Warranty protection', 'Time savings', 'Peace of mind'],
-      price: 'Starting at $150'
+      benefits: ['Professional results', 'Warranty protection', 'Time savings', 'Peace of mind']
     },
     {
       name: 'Advanced Installation',
       image: '/images/IMG_2776.jpg',
       description: 'Complete installation of advanced lighting systems with smart controls',
       includes: ['All basic services', 'Smart controller setup', 'Zone programming', 'Remote configuration', 'Training'],
-      benefits: ['Smart control', 'Professional setup', 'Full training', 'Extended warranty'],
-      price: 'Starting at $300'
+      benefits: ['Smart control', 'Professional setup', 'Full training', 'Extended warranty']
     },
     {
       name: 'Custom Design & Installation',
       image: '/images/IMG_2779.jpg',
       description: 'Custom lighting design and installation for unique pond projects',
       includes: ['Custom design', 'Full installation', 'Advanced programming', 'Ongoing support', 'Performance monitoring'],
-      benefits: ['Custom solution', 'Unique design', 'Full service', 'Ongoing support'],
-      price: 'Starting at $500'
+      benefits: ['Custom solution', 'Unique design', 'Full service', 'Ongoing support']
     }
   ];
 
@@ -164,7 +148,7 @@ const PondLightingPage = () => {
       <PageHero
         title="Pond Lighting & Illumination"
         subtitle="Transform your pond into a magical nighttime oasis with our professional lighting solutions. From energy-efficient LEDs to stunning underwater effects, we have everything you need."
-        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+        backgroundImage="/images/3f524798b831b933a60d3f6d15f38e3b-denoise-enhance-4x.jpeg"
         backgroundImageAlt="Professional pond lighting and illumination systems"
         showCTA={true}
         ctaButtons={[
@@ -211,7 +195,6 @@ const PondLightingPage = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="lighting-price">{lighting.price}</div>
                   <a href="tel:(801) 590-8516" className="lighting-cta">Call for Availability</a>
                 </div>
               </div>
@@ -258,7 +241,6 @@ const PondLightingPage = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="system-price">{system.price}</div>
                   <a href="tel:(801) 590-8516" className="system-cta">Call to Order</a>
                 </div>
               </div>
@@ -297,7 +279,6 @@ const PondLightingPage = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="effect-price">{effect.price}</div>
                   <a href="tel:(801) 590-8516" className="effect-cta">Call for Details</a>
                 </div>
               </div>
@@ -336,7 +317,6 @@ const PondLightingPage = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="installation-price">{service.price}</div>
                   <a href="tel:(801) 590-8516" className="installation-cta">Call for Service</a>
                 </div>
               </div>
@@ -420,7 +400,6 @@ const PondLightingPage = () => {
           <div className="packages-grid">
             <div className="package-card">
               <h3>Starter Lighting Package</h3>
-              <div className="package-price">$299.99</div>
               <div className="package-description">Perfect for small ponds and basic illumination</div>
               <ul>
                 <li>2 LED spotlights</li>
@@ -433,7 +412,6 @@ const PondLightingPage = () => {
             </div>
             <div className="package-card featured">
               <h3>Professional Lighting Package</h3>
-              <div className="package-price">$699.99</div>
               <div className="package-description">Ideal for medium to large residential ponds</div>
               <ul>
                 <li>4 LED spotlights</li>
@@ -448,7 +426,6 @@ const PondLightingPage = () => {
             </div>
             <div className="package-card">
               <h3>Premium Lighting Package</h3>
-              <div className="package-price">$1,299.99</div>
               <div className="package-description">For large ponds and commercial applications</div>
               <ul>
                 <li>6+ LED spotlights</li>

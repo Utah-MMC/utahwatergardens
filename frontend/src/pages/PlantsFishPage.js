@@ -115,10 +115,10 @@ const PlantsFishPage = () => {
           </svg>
         </div>
 
-        {/* Gradient Wipe Wrapper */}
-        <div className="gradient-wipe-wrapper">
+        {/* Main Content Wrapper with Single Gradient */}
+        <div className="main-content-gradient">
           {/* Main Content */}
-          <section className="plants-fish-main-content">
+          <section className="section">
             <div className="container">
               <div className="page-intro">
                 <h2>Utah's Premier Aquatic Plant & Fish Selection</h2>

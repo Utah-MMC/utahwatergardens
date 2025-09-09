@@ -1,0 +1,487 @@
+/* GLOBAL STYLES - Common styles used across all pages */
+
+/* CSS Variables */
+:root {
+  --bg: #ffffff;
+  --ink: #0f172a; /* slate-900 */
+  --muted: #64748b; /* slate-500 */
+  --primary: #1e40af; /* indigo-800 */
+  --accent: #10b981; /* emerald-500 */
+  --cta: #dc2626; /* red-600 */
+  --ring: 0 0 0 4px rgba(30,64,175,.2);
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  height: 100dvh;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Container and Layout */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Button Styles */
+.btn-row {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: .8rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline-offset: 2px;
+}
+
+.btn:focus-visible {
+  box-shadow: var(--ring);
+}
+
+.btn[data-variant="primary"] {
+  background: var(--cta);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(220,38,38,0.4);
+}
+
+.btn[data-variant="primary"]:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220,38,38,0.5);
+}
+
+.btn[data-variant="outline"] {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.8);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+.btn[data-variant="outline"]:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+}
+
+.btn[data-variant="link"] {
+  border-bottom: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0 .25rem;
+  border-radius: 0;
+}
+
+.btn[data-variant="ghost"] {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  color: #475569;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+}
+
+/* Section Styles */
+.section {
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+.section.alt {
+  background: transparent; /* Remove alt background since we have gradient wrapper */
+}
+
+.section:first-of-type {
+  margin-top: 0; /* Remove top margin to connect to wave */
+}
+
+.section-head h2 {
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  margin: 0 0 .25rem;
+  color: var(--ink);
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Optimize sections with carousels */
+.section:has(.crsl) {
+  contain: layout style paint;
+}
+
+/* About Section Styles */
+.col-6 {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.content p {
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.media img {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+}
+
+/* Card Styles */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:where(:hover, :focus-visible) {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.1);
+  border-color: #cbd5e1;
+}
+
+.card.svc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 260px;
+}
+
+.card .media {
+  height: 100%;
+}
+
+.card .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .body {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.chip {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #d1fae5;
+  border-radius: 999px;
+  padding: .15rem .5rem;
+  font-size: .8rem;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  align-items: center;
+}
+
+.price {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.avail {
+  color: #059669;
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Carousel Styles */
+.crsl {
+  --dur: .5s;
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout style paint;
+}
+
+.crsl-head {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 .5rem;
+}
+
+.crsl-viewport {
+  overflow: hidden;
+  transform: translateZ(0);
+  contain: layout;
+}
+
+.crsl-track {
+  display: flex;
+  transition: transform var(--dur) ease;
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout;
+}
+
+.crsl-slide {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  transform: translateZ(0);
+  contain: layout;
+}
+
+.crsl-item {
+  min-width: 0;
+  transform: translateZ(0);
+  contain: layout;
+}
+
+.crsl .item {
+  display: flex;
+  flex-direction: column;
+  transform: translateZ(0);
+  contain: layout;
+}
+
+.crsl .item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transform: translateZ(0);
+  contain: layout;
+  image-rendering: optimizeSpeed;
+}
+
+.crsl .item .item-body {
+  padding: 1rem;
+}
+
+.crsl-indicators {
+  display: flex;
+  gap: .4rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  border: 0;
+}
+
+.dot.is-active {
+  background: var(--primary);
+}
+
+/* Additional optimizations for carousel sections */
+.section .crsl {
+  isolation: isolate;
+}
+
+.section .crsl .item img {
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card.svc {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .crsl-slide {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .row {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .col-6 {
+    flex: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .stats {
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin: 1rem 0 !important;
+  }
+  
+  .stat {
+    min-width: 80px !important;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem !important;
+  }
+  
+  .cards {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .section-head.row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+  
+  .section-head.row > div {
+    width: 100% !important;
+  }
+  
+  .section-head.row .btn {
+    white-space: nowrap !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .crsl-indicators {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .crsl-slide {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.6rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Mobile viewport fixes */
+@supports (height: 100dvh) {
+  html, body {
+    height: 100dvh;
+  }
+  body {
+    min-height: 100dvh;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .crsl-track {
+    transition: none;
+  }
+}

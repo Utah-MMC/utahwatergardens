@@ -149,8 +149,10 @@ const PondServicesPage = () => {
           </svg>
         </div>
 
-        {/* Main Content */}
-        <section className="pond-services-main-content">
+        {/* Main Content Wrapper with Single Gradient */}
+        <div className="main-content-gradient">
+          {/* Main Content */}
+          <section className="pond-services-main-content">
           <div className="container">
             <div className="page-intro">
               <h2>Professional Pond Services</h2>
@@ -288,6 +290,7 @@ const PondServicesPage = () => {
             </div>
           </div>
         </section>
+        </div>
 
         {/* CTA Section */}
         <section 

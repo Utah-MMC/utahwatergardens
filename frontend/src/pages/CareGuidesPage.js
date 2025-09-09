@@ -248,8 +248,10 @@ const CareGuidesPage = () => {
         </svg>
       </div>
 
-      {/* Care Guides */}
-      <section className="guides-section first-section-gradient">
+      {/* Main Content Wrapper with Single Gradient */}
+      <div className="main-content-gradient">
+        {/* Care Guides */}
+        <section className="guides-section">
         <div className="container">
           <h2>Complete Care Guides</h2>
           <p>Step-by-step guides covering all aspects of pond care and maintenance</p>
@@ -470,6 +472,7 @@ const CareGuidesPage = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

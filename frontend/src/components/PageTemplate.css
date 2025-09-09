@@ -1,0 +1,265 @@
+/* PAGE TEMPLATE STYLES - Centralized hero and layout styles */
+
+/* Base page template */
+.page-template {
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION - Standardized across all pages */
+.page-hero {
+  position: relative;
+  height: 80vh;
+  height: 80dvh;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: visible;
+  min-height: 80vh;
+  min-height: 80dvh;
+  background: #f8fafc;
+  margin-top: 0;
+  margin-bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 120px;
+  box-sizing: border-box;
+}
+
+.page-hero-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.page-hero-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+/* Hero overlay */
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55));
+  z-index: -1;
+}
+
+/* Wave effect using ::before pseudo-element - Baby Blue Upward Wave */
+.page-hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #ADD8E6; /* Baby blue */
+  clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%);
+  z-index: 99999;
+  pointer-events: none;
+  animation: hero-wave-simple 3s ease-in-out infinite;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.page-hero-inner {
+  padding: clamp(1rem, 3vw, 2rem);
+  text-align: center;
+  color: #fff;
+  max-width: 760px;
+  z-index: 10;
+  position: relative;
+}
+
+.page-hero-title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  margin: 0 0 .75rem;
+}
+
+.page-hero-title span {
+  color: #bbe3ff;
+}
+
+.page-hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  opacity: .95;
+  margin: 0 0 1rem;
+}
+
+/* Enhanced wave effect at bottom of hero */
+.page-hero::after,
+.page-hero.mobile-hero-fix::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -50px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 50px !important;
+  background: #1e40af !important;
+  clip-path: polygon(0% 0%, 0% 100%, 25% 80%, 50% 100%, 75% 70%, 100% 100%, 100% 0%) !important;
+  z-index: 999 !important;
+  pointer-events: none !important;
+  animation: heroWaveFlow 6s ease-in-out infinite !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Hero wave animation */
+@keyframes heroWaveFlow {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+}
+
+/* Natural wave animation with flowing curves */
+@keyframes hero-wave-simple {
+  0%, 100% {
+    clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%);
+  }
+  25% {
+    clip-path: polygon(0% 100%, 0% 25%, 10% 30%, 20% 20%, 30% 35%, 40% 25%, 50% 20%, 60% 30%, 70% 25%, 80% 20%, 90% 30%, 100% 25%, 100% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 100%, 0% 35%, 10% 20%, 20% 30%, 30% 25%, 40% 20%, 50% 30%, 60% 20%, 70% 35%, 80% 25%, 90% 20%, 100% 30%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(0% 100%, 0% 20%, 10% 35%, 20% 25%, 30% 30%, 40% 35%, 50% 25%, 60% 35%, 70% 30%, 80% 35%, 90% 30%, 100% 20%, 100% 100%);
+  }
+}
+
+/* WAVE DIVIDER */
+.hero-wave-attached {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+}
+
+.hero-wave-attached svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* MAIN CONTENT GRADIENT WRAPPER */
+.main-content-gradient {
+  background: linear-gradient(to bottom, 
+    #87ceeb 0%,     /* Baby blue at top - connected to wave */
+    #b3e5fc 15%,    /* Light baby blue */
+    #d1ecf1 30%,    /* Very light blue */
+    #e8f4f8 50%,    /* Pale blue */
+    #f0f8ff 70%,    /* Very pale blue */
+    #f8fafc 85%,    /* Almost white */
+    #ffffff 100%    /* Pure white at bottom */
+  );
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* MOBILE RESPONSIVE STYLES */
+@media screen and (max-width: 768px) {
+  .page-hero {
+    height: 250px !important;
+    min-height: 250px !important;
+    max-height: 250px !important;
+    position: relative !important;
+    width: 100vw !important;
+    margin-left: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    background: #f8fafc !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+    padding-top: 100px !important;
+    box-sizing: border-box !important;
+  }
+  
+  .page-hero-media {
+    width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+  }
+  
+  .page-hero-fallback {
+    width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+  }
+  
+  .page-hero-inner {
+    padding: 0.5rem !important;
+    max-width: 100% !important;
+  }
+  
+  .page-hero-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .page-hero-sub {
+    display: none !important;
+  }
+  
+  .page-hero::before {
+    display: none !important;
+  }
+  
+  .main-content-gradient {
+    min-height: 100vh !important;
+    background: linear-gradient(to bottom, 
+      #87ceeb 0%,     /* Baby blue at top - connected to wave */
+      #b3e5fc 15%,    /* Light baby blue */
+      #d1ecf1 30%,    /* Very light blue */
+      #e8f4f8 50%,    /* Pale blue */
+      #f0f8ff 70%,    /* Very pale blue */
+      #f8fafc 85%,    /* Almost white */
+      #ffffff 100%    /* Pure white at bottom */
+    ) !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .page-hero::before {
+    animation: none;
+  }
+  .page-hero::after {
+    animation: none;
+  }
+}

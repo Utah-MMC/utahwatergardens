@@ -10,7 +10,7 @@ const AquaticPlantsPage = () => {
       <PageHero 
         title="Aquatic Plants for Your Pond"
         subtitle="Transform your water garden with our premium selection of aquatic plants"
-        backgroundImage="/images/IMG_2775.jpg"
+        backgroundImage="/images/waterLillies-topaz-enhance-4x.jpeg"
         backgroundImageAlt="Beautiful floating aquatic plants in a serene pond"
       />
 
@@ -141,19 +141,19 @@ const AquaticPlantsPage = () => {
               <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Water Lily" />
               <h3>Water Lily 'Colorado'</h3>
               <p>Hardy water lily with beautiful pink blooms, perfect for medium to large ponds.</p>
-              <span className="price">$24.99</span>
+              <a href="tel:(801) 590-8516" className="product-cta">Call for Availability</a>
             </div>
             <div className="product-card">
-              <img src="/images/uwg_image_7185.jpg" alt="Anacharis" />
+              <img src="/images/3d2fae9073eaf132d58ccd476da8fdc7-denoise-enhance-4x.jpeg" alt="Anacharis" />
               <h3>Anacharis Bundle</h3>
               <p>Oxygenating plant bundle, great for water quality and fish health.</p>
-              <span className="price">$12.99</span>
+              <a href="tel:(801) 590-8516" className="product-cta">Call for Availability</a>
             </div>
             <div className="product-card">
-              <img src="/images/uwg_image_4887.jpg" alt="Water Hyacinth" />
+              <img src="/images/3e8c02a910ecc02bd046359713860a2c-denoise-enhance-4x.jpeg" alt="Water Hyacinth" />
               <h3>Water Hyacinth</h3>
               <p>Beautiful floating plant with purple flowers, excellent for natural filtration.</p>
-              <span className="price">$8.99</span>
+              <a href="tel:(801) 590-8516" className="product-cta">Call for Availability</a>
             </div>
           </div>
         </div>

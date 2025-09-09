@@ -201,8 +201,10 @@ const ShopPage = () => {
         </svg>
       </div>
 
-        {/* Phone CTA Section */}
-        <section className="shop-cta-section first-section-gradient">
+        {/* Main Content Wrapper with Single Gradient */}
+        <div className="main-content-gradient">
+          {/* Phone CTA Section */}
+          <section className="shop-cta-section">
         <div className="container">
             <a href="tel:(801) 590-8516" className="hero-cta">
             Call (801) 590-8516 for Expert Advice
@@ -455,6 +457,7 @@ const ShopPage = () => {
           </div>
         </div>
       </section>
+    </div>
     </div>
     </>
   );

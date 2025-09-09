@@ -80,8 +80,10 @@ const ContactPage = () => {
           secondaryButtonLink="#contact-main-content"
         />
 
-        {/* Main Content */}
-        <section className="contact-main-content first-section-gradient">
+        {/* Main Content Wrapper with Single Gradient */}
+        <div className="main-content-gradient">
+          {/* Main Content */}
+          <section className="contact-main-content">
           <div className="container">
             <div className="contact-grid">
               {/* Contact Form */}
@@ -327,6 +329,7 @@ const ContactPage = () => {
             </div>
           </div>
         </section>
+        </div>
       </div>
 
       {/* Maintenance Modal */}

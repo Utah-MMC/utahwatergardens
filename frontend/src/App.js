@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import './App.css';
+import './styles/global.css';
 import Header from './components/Header.js';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';

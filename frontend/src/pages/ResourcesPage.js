@@ -151,8 +151,10 @@ const ResourcesPage = () => {
           </svg>
         </div>
 
-        {/* Main Content */}
-        <section className="resources-main-content">
+        {/* Main Content Wrapper with Single Gradient */}
+        <div className="main-content-gradient">
+          {/* Main Content */}
+          <section className="resources-main-content">
           <div className="container">
             <div className="page-intro">
               <h2>Your Complete Pond Resource Library</h2>
@@ -258,6 +260,7 @@ const ResourcesPage = () => {
             </div>
           </div>
         </section>
+        </div>
 
         {/* CTA Section */}
         <section 

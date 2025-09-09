@@ -57,7 +57,7 @@ const FAQPage = () => {
       faqs: [
         {
           question: 'How much does it cost to build a pond?',
-          answer: 'Pond costs vary based on size, features, and complexity. A basic 100-gallon pond starts around $500-800, while larger koi ponds with advanced filtration can range from $3,000-15,000. We provide free consultations to give you accurate estimates for your specific project.'
+          answer: 'Pond costs vary based on size, features, and complexity. We provide free consultations to give you accurate estimates for your specific project and help you choose the best options for your budget.'
         },
         {
           question: 'How long does it take to build a pond?',
@@ -188,7 +188,7 @@ const FAQPage = () => {
   const quickAnswers = [
     {
       question: 'How much does pond maintenance cost?',
-      answer: 'Basic maintenance runs $50-100/month for small ponds, $100-300/month for larger ponds. We offer maintenance packages to fit your budget and needs.'
+      answer: 'Maintenance costs vary based on pond size and service level. We offer maintenance packages to fit your budget and needs. Contact us for a personalized quote.'
     },
     {
       question: 'Do you service existing ponds?',

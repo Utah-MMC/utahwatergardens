@@ -115,9 +115,22 @@ img, video{max-width:100%;display:block;height:auto}
 }
 
 
-/* MAIN CONTENT GRADIENT WRAPPER - Now handled globally in index.css */
+/* MAIN CONTENT GRADIENT WRAPPER */
 .main-content-gradient {
-  /* Gradient styles moved to global index.css for consistency across all pages */
+  background: linear-gradient(to bottom, 
+    #87ceeb 0%,     /* Baby blue at top - connected to wave */
+    #b3e5fc 15%,    /* Light baby blue */
+    #d1ecf1 30%,    /* Very light blue */
+    #e8f4f8 50%,    /* Pale blue */
+    #f0f8ff 70%,    /* Very pale blue */
+    #f8fafc 85%,    /* Almost white */
+    #ffffff 100%    /* Pure white at bottom */
+  );
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  margin-top: 0; /* Remove any top margin */
+  padding-top: 0; /* Remove any top padding */
 }
 
 /* SECTIONS */
@@ -309,7 +322,21 @@ img, video{max-width:100%;display:block;height:auto}
     background: transparent !important;
   }
   
-  /* Gradient wrapper styles now handled globally in index.css */
+  /* Ensure gradient wrapper works on mobile */
+  .main-content-gradient {
+    min-height: 100vh !important;
+    background: linear-gradient(to bottom, 
+      #87ceeb 0%,     /* Baby blue at top - connected to wave */
+      #b3e5fc 15%,    /* Light baby blue */
+      #d1ecf1 30%,    /* Very light blue */
+      #e8f4f8 50%,    /* Pale blue */
+      #f0f8ff 70%,    /* Very pale blue */
+      #f8fafc 85%,    /* Almost white */
+      #ffffff 100%    /* Pure white at bottom */
+    ) !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
   
   /* About section mobile styles */
   .row {

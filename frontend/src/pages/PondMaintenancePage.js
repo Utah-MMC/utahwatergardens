@@ -10,48 +10,42 @@ const PondMaintenancePage = () => {
       image: '/images/IMG_2782.jpg',
       description: 'Comprehensive water quality testing to ensure optimal pond health',
       benefits: ['pH balance monitoring', 'Ammonia levels', 'Nitrite testing', 'Oxygen levels'],
-      frequency: 'Monthly',
-      price: 'Starting at $45'
+      frequency: 'Monthly'
     },
     {
       name: 'Plant Maintenance',
       image: '/images/IMG_2775.jpg',
       description: 'Professional care for aquatic plants including trimming and fertilization',
       benefits: ['Plant trimming', 'Fertilization', 'Disease prevention', 'Growth monitoring'],
-      frequency: 'Bi-weekly',
-      price: 'Starting at $35'
+      frequency: 'Bi-weekly'
     },
     {
       name: 'Fish Health Monitoring',
       image: '/images/IMG_2776.jpg',
       description: 'Regular health checks and monitoring for your pond fish',
       benefits: ['Health assessments', 'Disease prevention', 'Feeding guidance', 'Population control'],
-      frequency: 'Weekly',
-      price: 'Starting at $25'
+      frequency: 'Weekly'
     },
     {
       name: 'Equipment Maintenance',
       image: '/images/pumpRepair.webp',
       description: 'Preventive maintenance for pumps, filters, and other pond equipment',
       benefits: ['Pump cleaning', 'Filter maintenance', 'Performance optimization', 'Emergency repairs'],
-      frequency: 'Monthly',
-      price: 'Starting at $55'
+      frequency: 'Monthly'
     },
     {
       name: 'Seasonal Care',
       image: '/images/IMG_2779.jpg',
       description: 'Specialized care for each season to maintain pond health year-round',
       benefits: ['Spring opening', 'Summer care', 'Fall preparation', 'Winter protection'],
-      frequency: 'Seasonal',
-      price: 'Starting at $75'
+      frequency: 'Seasonal'
     },
     {
       name: 'Water Quality Management',
       image: '/images/IMG_2770.jpg',
       description: 'Professional water treatment and quality management services',
       benefits: ['Algae control', 'Water clarity', 'Nutrient balance', 'Bacterial treatment'],
-      frequency: 'As needed',
-      price: 'Starting at $40'
+      frequency: 'As needed'
     }
   ];
 
@@ -116,7 +110,6 @@ const PondMaintenancePage = () => {
                   </div>
                   <div className="service-details">
                     <span className="frequency">Frequency: {service.frequency}</span>
-                    <span className="price">{service.price}</span>
                   </div>
                   <a href="tel:(801) 590-8516" className="service-cta" onClick={(e) => e.stopPropagation()}>Call for Service</a>
                 </div>
@@ -197,53 +190,6 @@ const PondMaintenancePage = () => {
         </div>
       </section>
 
-      {/* Maintenance Plans */}
-      <section className="plans-section gradient-wipe-up">
-        <div className="container">
-          <h2>Maintenance Plans</h2>
-          <p>Choose the maintenance plan that fits your needs and budget</p>
-          <div className="plans-grid">
-            <Link to="/pond-services/maintenance" className="plan-card">
-              <h3>Basic Plan</h3>
-              <div className="plan-price">$99/month</div>
-              <ul className="plan-features">
-                <li>Monthly water testing</li>
-                <li>Basic equipment check</li>
-                <li>Plant trimming</li>
-                <li>Emergency support</li>
-              </ul>
-              <a href="tel:(801) 590-8516" className="plan-cta" onClick={(e) => e.stopPropagation()}>Call for Basic Plan</a>
-            </Link>
-            <Link to="/pond-services/maintenance" className="plan-card featured">
-              <h3>Standard Plan</h3>
-              <div className="plan-price">$149/month</div>
-              <ul className="plan-features">
-                <li>Bi-weekly maintenance</li>
-                <li>Comprehensive water testing</li>
-                <li>Equipment maintenance</li>
-                <li>Plant care</li>
-                <li>Fish health monitoring</li>
-                <li>Priority support</li>
-              </ul>
-              <a href="tel:(801) 590-8516" className="plan-cta" onClick={(e) => e.stopPropagation()}>Call for Standard Plan</a>
-            </Link>
-            <Link to="/pond-services/maintenance" className="plan-card">
-              <h3>Premium Plan</h3>
-              <div className="plan-price">$199/month</div>
-              <ul className="plan-features">
-                <li>Weekly maintenance</li>
-                <li>Advanced water testing</li>
-                <li>Full equipment service</li>
-                <li>Comprehensive plant care</li>
-                <li>Fish health program</li>
-                <li>Seasonal preparation</li>
-                <li>24/7 emergency support</li>
-              </ul>
-              <a href="tel:(801) 590-8516" className="plan-cta" onClick={(e) => e.stopPropagation()}>Call for Premium Plan</a>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Contact CTA */}
       <section 

@@ -160,8 +160,10 @@ const PondGalleryPage = () => {
           </svg>
         </div>
 
-        {/* Main Content */}
-        <section className="pond-gallery-main-content">
+        {/* Main Content Wrapper with Single Gradient */}
+        <div className="main-content-gradient">
+          {/* Main Content */}
+          <section className="pond-gallery-main-content">
           <div className="container">
             <div className="page-intro">
               <h2>Our Water Garden Portfolio</h2>
@@ -341,6 +343,7 @@ const PondGalleryPage = () => {
             </div>
           </div>
         </section>
+        </div>
 
         {/* CTA Section */}
         <section 

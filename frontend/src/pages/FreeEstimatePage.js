@@ -67,7 +67,9 @@ const FreeEstimatePage = () => {
         </svg>
       </div>
 
-      <div className="estimate-content first-section-gradient">
+      {/* Main Content Wrapper with Single Gradient */}
+      <div className="main-content-gradient">
+        <div className="estimate-content">
         <div className="container">
           <div className="content-grid">
             <div className="form-section">
@@ -302,6 +304,7 @@ const FreeEstimatePage = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
 
