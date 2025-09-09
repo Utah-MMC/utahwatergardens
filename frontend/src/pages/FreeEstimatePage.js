@@ -33,7 +33,7 @@ const FreeEstimatePage = () => {
     try {
       console.log('Submitting estimate form...', formData);
       
-            const response = await fetch('http://localhost:3000/api/estimate', {
+            const response = await fetch('/api/estimate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
