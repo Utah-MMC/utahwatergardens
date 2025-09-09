@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Utah Water Gardens website with API endpoints",
   "scripts": {
-    "build": "chmod +x build.sh && ./build.sh",
+    "build": "cd frontend && npm run build",
     "start": "cd frontend && npm start",
     "dev": "cd frontend && npm start",
     "api:dev": "vercel dev"
