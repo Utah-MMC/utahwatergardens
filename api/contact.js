@@ -42,30 +42,30 @@ export default async function handler(req, res) {
       });
     }
 
-    // Create email transporter
+    // Create email transporter - Gmail settings
     console.log('Email configuration:', {
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: process.env.SMTP_PORT || 587,
-      secure: process.env.SMTP_SECURE === 'true' || false,
-      user: process.env.EMAIL_USER,
-      hasPassword: !!process.env.EMAIL_PASS
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      user: 'jeremyuwg@gmail.com',
+      hasPassword: true
     });
 
-    const transporter = nodemailer.createTransporter({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: process.env.SMTP_PORT || 587,
-      secure: process.env.SMTP_SECURE === 'true' || false,
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
       auth: {
-        user: process.env.EMAIL_USER, // admin@utahwatergardens.com
-        pass: process.env.EMAIL_PASS  // Your email password
+        user: 'jeremyuwg@gmail.com',
+        pass: 'qujn cfie mzfp xlol'
       }
     });
 
     // Email content for business owner
     const businessEmailContent = {
-      from: process.env.EMAIL_USER,
-      to: process.env.BUSINESS_EMAIL || process.env.EMAIL_USER, // Your business email
-      subject: `New Contact Form Submission - ${service || 'General Inquiry'}`,
+      from: 'jeremyuwg@gmail.com',
+      to: 'contact@utahwatergardens.com', // Your business email
+      subject: 'Pond Service Requested',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e40af; border-bottom: 2px solid #1e40af; padding-bottom: 10px;">
@@ -102,9 +102,9 @@ export default async function handler(req, res) {
 
     // Auto-reply email for customer
     const customerEmailContent = {
-      from: process.env.EMAIL_USER,
+      from: 'jeremyuwg@gmail.com',
       to: email,
-      subject: 'Thank you for contacting Utah Water Gardens!',
+      subject: 'Pond Service Requested',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e40af; text-align: center;">Thank You for Contacting Utah Water Gardens!</h2>

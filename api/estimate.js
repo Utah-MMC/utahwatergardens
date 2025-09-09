@@ -53,22 +53,22 @@ export default async function handler(req, res) {
       });
     }
 
-    // Create email transporter
-    const transporter = nodemailer.createTransporter({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: process.env.SMTP_PORT || 587,
-      secure: process.env.SMTP_SECURE === 'true' || false,
+    // Create email transporter - Gmail settings
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
       auth: {
-        user: process.env.EMAIL_USER, // admin@utahwatergardens.com
-        pass: process.env.EMAIL_PASS  // Your email password
+        user: 'jeremyuwg@gmail.com',
+        pass: 'qujn cfie mzfp xlol'
       }
     });
 
     // Email content for business owner
     const businessEmailContent = {
-      from: process.env.EMAIL_USER,
-      to: process.env.BUSINESS_EMAIL || process.env.EMAIL_USER,
-      subject: `New Free Estimate Request - ${projectType}`,
+      from: 'jeremyuwg@gmail.com',
+      to: 'contact@utahwatergardens.com',
+      subject: 'Pond Service Requested',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e40af; border-bottom: 2px solid #1e40af; padding-bottom: 10px;">
@@ -117,9 +117,9 @@ export default async function handler(req, res) {
 
     // Auto-reply email for customer
     const customerEmailContent = {
-      from: process.env.EMAIL_USER,
+      from: 'jeremyuwg@gmail.com',
       to: email,
-      subject: 'Your Free Estimate Request - Utah Water Gardens',
+      subject: 'Pond Service Requested',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e40af; text-align: center;">Your Free Estimate Request is Confirmed!</h2>
