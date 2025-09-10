@@ -63,6 +63,14 @@ const TruxorServicePage = lazy(() => import('./pages/TruxorServicePage'));
 const VideoTutorialsPage = lazy(() => import('./pages/VideoTutorialsPage'));
 const FAQPage = lazy(() => import('./pages/FAQPage'));
 
+// Lazy load pond gallery sub-pages
+const ResidentialPondsPage = lazy(() => import('./pages/ResidentialPondsPage'));
+const CommercialProjectsPage = lazy(() => import('./pages/CommercialProjectsPage'));
+const KoiPondsPage = lazy(() => import('./pages/KoiPondsPage'));
+const WaterFeaturesPage = lazy(() => import('./pages/WaterFeaturesPage'));
+const BeforeAfterPage = lazy(() => import('./pages/BeforeAfterPage'));
+const CustomerProjectsPage = lazy(() => import('./pages/CustomerProjectsPage'));
+
 // Loading component for Suspense
 const LoadingSpinner = () => (
   <div style={{ 
@@ -162,12 +170,12 @@ function App() {
             <Route path="/resources/faq" element={<FAQPage />} />
             
             {/* Pond Gallery Sub-routes */}
-            <Route path="/pond-gallery/residential" element={<PondGalleryPage />} />
-            <Route path="/pond-gallery/commercial" element={<PondGalleryPage />} />
-            <Route path="/pond-gallery/koi-ponds" element={<PondGalleryPage />} />
-            <Route path="/pond-gallery/water-features" element={<PondGalleryPage />} />
-            <Route path="/pond-gallery/before-after" element={<PondGalleryPage />} />
-            <Route path="/pond-gallery/customer-projects" element={<PondGalleryPage />} />
+            <Route path="/pond-gallery/residential" element={<ResidentialPondsPage />} />
+            <Route path="/pond-gallery/commercial" element={<CommercialProjectsPage />} />
+            <Route path="/pond-gallery/koi-ponds" element={<KoiPondsPage />} />
+            <Route path="/pond-gallery/water-features" element={<WaterFeaturesPage />} />
+            <Route path="/pond-gallery/before-after" element={<BeforeAfterPage />} />
+            <Route path="/pond-gallery/customer-projects" element={<CustomerProjectsPage />} />
             
             {/* Old Service Area Routes - REMOVED to prevent conflicts with new dynamic city routes */}
             
