@@ -1,16 +1,15 @@
 import React from 'react';
-import ServiceAreaTemplate from './ServiceAreaTemplate';
+import CityPageTemplate from '../../components/CityPageTemplate';
+import { getCityData } from '../../data/cityData';
 
-const EvansvillePagePage = () => {
-  return (
-    <ServiceAreaTemplate
-      serviceType="harvesting"
-      cityName="EvansvillePage"
-      citySlug="evansvillepage"
-      state="Utah"
-      phoneNumber="(801) 590-8516"
-    />
-  );
+const HarvestingEvansvillePage = () => {
+  const cityData = getCityData('evansville');
+  
+  if (!cityData) {
+    return <div>City not found</div>;
+  }
+
+  return <CityPageTemplate {...cityData} />;
 };
 
-export default EvansvillePagePage;
+export default HarvestingEvansvillePage;

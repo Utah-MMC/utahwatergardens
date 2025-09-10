@@ -1,16 +1,15 @@
 import React from 'react';
-import ServiceAreaTemplate from './ServiceAreaTemplate';
+import CityPageTemplate from '../../components/CityPageTemplate';
+import { getCityData } from '../../data/cityData';
 
 const ErdaPage = () => {
-  return (
-    <ServiceAreaTemplate
-      serviceType="pond-cleaning"
-      cityName="Erda"
-      citySlug="erda"
-      state="Utah"
-      phoneNumber="(801) 590-8516"
-    />
-  );
+  const cityData = getCityData('erda');
+  
+  if (!cityData) {
+    return <div>City not found</div>;
+  }
+
+  return <CityPageTemplate {...cityData} />;
 };
 
 export default ErdaPage;

@@ -1,16 +1,15 @@
 import React from 'react';
-import ServiceAreaTemplate from './ServiceAreaTemplate';
+import CityPageTemplate from '../../components/CityPageTemplate';
+import { getCityData } from '../../data/cityData';
 
 const Lake-dredgingAvonPage = () => {
-  return (
-    <ServiceAreaTemplate
-      serviceType="pond-cleaning"
-      cityName="Lake-dredgingAvon"
-      citySlug="lake-dredgingavon"
-      state="Utah"
-      phoneNumber="(801) 590-8516"
-    />
-  );
+  const cityData = getCityData('lake-dredgingavon');
+  
+  if (!cityData) {
+    return <div>City not found</div>;
+  }
+
+  return <CityPageTemplate {...cityData} />;
 };
 
 export default Lake-dredgingAvonPage;

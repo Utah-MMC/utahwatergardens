@@ -1,16 +1,15 @@
 import React from 'react';
-import ServiceAreaTemplate from './ServiceAreaTemplate';
+import CityPageTemplate from '../../components/CityPageTemplate';
+import { getCityData } from '../../data/cityData';
 
 const Pond-cleaningAustinPage = () => {
-  return (
-    <ServiceAreaTemplate
-      serviceType="pond-cleaning"
-      cityName="Pond-cleaningAustin"
-      citySlug="pond-cleaningaustin"
-      state="Utah"
-      phoneNumber="(801) 590-8516"
-    />
-  );
+  const cityData = getCityData('austin');
+  
+  if (!cityData) {
+    return <div>City not found</div>;
+  }
+
+  return <CityPageTemplate {...cityData} />;
 };
 
 export default Pond-cleaningAustinPage;

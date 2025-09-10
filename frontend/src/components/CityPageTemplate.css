@@ -660,6 +660,150 @@
   }
 }
 
+/* Link Styles */
+.service-link {
+  color: #00d4ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.service-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.inline-link {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.inline-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.external-link {
+  color: #00d4ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.external-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.internal-link {
+  color: #00d4ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.internal-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.service-detail-link {
+  color: #00d4ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.service-detail-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.seasonal-link {
+  color: #00d4ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.seasonal-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.faq-link {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.faq-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.service-area-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary.btn-small {
+  background: linear-gradient(135deg, #00d4ff, #3b82f6);
+  color: white;
+  border-color: transparent;
+}
+
+.btn-primary.btn-small:hover {
+  background: linear-gradient(135deg, #3b82f6, #00d4ff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+.btn-secondary.btn-small {
+  background: rgba(255, 255, 255, 0.1);
+  color: #2c5282;
+  border-color: #2c5282;
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary.btn-small:hover {
+  background: rgba(44, 82, 130, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 82, 130, 0.2);
+}
+
+.btn-outline.btn-small {
+  background: transparent;
+  color: #2c5282;
+  border-color: #2c5282;
+}
+
+.btn-outline.btn-small:hover {
+  background: #2c5282;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 82, 130, 0.2);
+}
+
+.landmark-link, .district-link {
+  margin-left: 0.5rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
@@ -735,5 +879,17 @@
   
   .service-type, .benefit-item, .process-step, .faq-item, .service-detail, .season {
     padding: 1.5rem;
+  }
+  
+  .service-area-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .btn-small {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
   }
 }

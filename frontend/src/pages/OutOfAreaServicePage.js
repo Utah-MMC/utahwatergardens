@@ -107,27 +107,41 @@ const OutOfAreaServicePage = () => {
     setIsSubmitting(true);
     
     try {
-      // Here you would send the form data to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        city: '',
-        state: '',
-        zipCode: '',
-        distance: '',
-        projectType: '',
-        projectDescription: '',
-        timeline: '',
-        budget: '',
-        additionalInfo: ''
+      const response = await fetch('http://localhost:3001/api/extended-service', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        // Reset form data
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          city: '',
+          state: '',
+          zipCode: '',
+          distance: '',
+          projectType: '',
+          projectDescription: '',
+          timeline: '',
+          budget: '',
+          additionalInfo: ''
+        });
+        // Reset to first step
+        setCurrentStep(1);
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

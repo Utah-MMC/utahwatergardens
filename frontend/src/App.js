@@ -74,6 +74,10 @@ const CustomerProjectsPage = lazy(() => import('./pages/CustomerProjectsPage'));
 // Lazy load extended service page
 const OutOfAreaServicePage = lazy(() => import('./pages/OutOfAreaServicePage'));
 
+// Lazy load dynamic city page
+const TestCityPage = lazy(() => import('./pages/TestCityPage'));
+const SimpleCityPage = lazy(() => import('./pages/SimpleCityPage'));
+
 // Loading component for Suspense
 const LoadingSpinner = () => (
   <div style={{ 
@@ -210,8 +214,9 @@ function App() {
             {/* Privacy and Legal */}
             <Route path="/privacy-and-legal-info" element={<AboutPage />} />
             
-            {/* Dynamic City Routes - Must be before catch-all - Temporarily disabled due to webpack HMR issue */}
-            {/* <Route path="/:cityName" element={<CityPage />} /> */}
+            {/* Dynamic City Routes - Must be before catch-all */}
+            <Route path="/test/:citySlug" element={<TestCityPage />} />
+            <Route path="/:citySlug" element={<SimpleCityPage />} />
             
             {/* Catch-all route for 404 errors */}
             <Route path="*" element={<HomePage />} />

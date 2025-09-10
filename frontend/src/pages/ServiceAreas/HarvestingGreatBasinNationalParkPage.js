@@ -1,16 +1,15 @@
 import React from 'react';
-import ServiceAreaTemplate from './ServiceAreaTemplate';
+import CityPageTemplate from '../../components/CityPageTemplate';
+import { getCityData } from '../../data/cityData';
 
-const GreatBasinNationalParkPagePage = () => {
-  return (
-    <ServiceAreaTemplate
-      serviceType="harvesting"
-      cityName="GreatBasinNationalParkPage"
-      citySlug="greatbasinnationalparkpage"
-      state="Utah"
-      phoneNumber="(801) 590-8516"
-    />
-  );
+const HarvestingGreatBasinNationalParkPage = () => {
+  const cityData = getCityData('greatbasinnationalpark');
+  
+  if (!cityData) {
+    return <div>City not found</div>;
+  }
+
+  return <CityPageTemplate {...cityData} />;
 };
 
-export default GreatBasinNationalParkPagePage;
+export default HarvestingGreatBasinNationalParkPage;

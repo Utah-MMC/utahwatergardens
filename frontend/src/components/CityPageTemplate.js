@@ -84,6 +84,9 @@ const CityPageTemplate = ({
                 <Link to="/contact" className="btn btn-secondary btn-large">
                   Get Free Quote →
                 </Link>
+                <Link to="/free-estimate" className="btn btn-outline btn-large">
+                  Free Estimate
+                </Link>
               </div>
             </div>
           </div>
@@ -126,9 +129,26 @@ const CityPageTemplate = ({
                     <img src="/images/7944d6d62f5d2d84190bdcc389014193-enhance-4x.jpeg" alt={`Residential pond services in ${cityName}`} />
                   </div>
                   <ul>
-                    {sections.residentialServices.map((service, index) => (
-                      <li key={index}>• {service}</li>
-                    ))}
+                    {sections.residentialServices.map((service, index) => {
+                      // Create service-specific links
+                      const serviceLinks = {
+                        "Pond Design & Construction": "/pond-services/design-build",
+                        "Pond Cleaning & Maintenance": "/pond-services/cleaning",
+                        "Water Quality Testing": "/pond-services/water-quality",
+                        "Aquatic Plant Installation": "/plants-fish/aquatic-plants",
+                        "Koi & Fish Care": "/plants-fish/koi-goldfish",
+                        "Seasonal Pond Care": "/pond-services/seasonal"
+                      };
+                      const serviceLink = serviceLinks[service] || "/pond-services";
+                      
+                      return (
+                        <li key={index}>
+                          <Link to={serviceLink} className="service-link">
+                            • {service}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
                 
@@ -138,9 +158,26 @@ const CityPageTemplate = ({
                     <img src="/images/79de7c8277e2bbc9d0c748359466150e-denoise-enhance-4x.jpeg" alt={`Commercial pond services in ${cityName}`} />
                   </div>
                   <ul>
-                    {sections.commercialServices.map((service, index) => (
-                      <li key={index}>• {service}</li>
-                    ))}
+                    {sections.commercialServices.map((service, index) => {
+                      // Create commercial service-specific links
+                      const commercialServiceLinks = {
+                        "Commercial Water Features": "/pond-services/design-build",
+                        "Corporate Pond Maintenance": "/pond-services/maintenance",
+                        "Restaurant Water Features": "/pond-services/design-build",
+                        "Hotel Pond Services": "/pond-services/maintenance",
+                        "Office Building Water Gardens": "/pond-services/design-build",
+                        "Retail Center Ponds": "/pond-services/design-build"
+                      };
+                      const serviceLink = commercialServiceLinks[service] || "/pond-services";
+                      
+                      return (
+                        <li key={index}>
+                          <Link to={serviceLink} className="service-link">
+                            • {service}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -163,19 +200,19 @@ const CityPageTemplate = ({
               <div className="benefits-grid">
                 <div className="benefit-item">
                   <h4>🚚 Local Expertise</h4>
-                  <p>We understand {cityName}'s unique climate and soil conditions, providing tailored solutions for your pond.</p>
+                  <p>We understand {cityName}'s unique climate and soil conditions, providing tailored solutions for your pond. <Link to="/about" className="inline-link">Learn more about our team</Link>.</p>
                 </div>
                 <div className="benefit-item">
                   <h4>⚡ Same-Day Service</h4>
-                  <p>Emergency pond services available throughout {cityName} with same-day response when possible.</p>
+                  <p>Emergency pond services available throughout {cityName} with same-day response when possible. <Link to="/contact" className="inline-link">Contact us for emergencies</Link>.</p>
                 </div>
                 <div className="benefit-item">
                   <h4>🔧 Professional Equipment</h4>
-                  <p>State-of-the-art equipment including our Truxor T50 for deep cleaning and maintenance.</p>
+                  <p>State-of-the-art equipment including our <Link to="/pond-services/truxor-t50" className="inline-link">Truxor T50</Link> for deep cleaning and maintenance.</p>
                 </div>
                 <div className="benefit-item">
                   <h4>💰 Competitive Pricing</h4>
-                  <p>Transparent pricing with no hidden fees. Get the best value for pond services in {cityName}.</p>
+                  <p>Transparent pricing with no hidden fees. Get the best value for pond services in {cityName}. <Link to="/free-estimate" className="inline-link">Get your free estimate</Link>.</p>
                 </div>
               </div>
             </div>
@@ -197,6 +234,11 @@ const CityPageTemplate = ({
                       <li key={index}>
                         • <strong>{landmark.name}</strong> - {landmark.address}
                         {landmark.description && <span className="landmark-description"> - {landmark.description}</span>}
+                        {landmark.url && (
+                          <span className="landmark-link">
+                            {' '}<a href={landmark.url} target="_blank" rel="noopener noreferrer" className="external-link">Visit Website</a>
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -208,6 +250,11 @@ const CityPageTemplate = ({
                     {businessDistricts.map((district, index) => (
                       <li key={index}>
                         • <strong>{district.name}</strong> - {district.description}
+                        {district.link && (
+                          <span className="district-link">
+                            {' '}<Link to={district.link} className="internal-link">Learn More</Link>
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -217,6 +264,11 @@ const CityPageTemplate = ({
               <div className="service-areas-info">
                 <h3>🚚 Pond Services Near {cityName} Attractions</h3>
                 <p>{sections.serviceAreas}</p>
+                <div className="service-area-links">
+                  <Link to="/pond-services" className="btn btn-primary btn-small">All Pond Services</Link>
+                  <Link to="/pond-gallery" className="btn btn-secondary btn-small">View Our Work</Link>
+                  <Link to="/contact" className="btn btn-outline btn-small">Contact Us</Link>
+                </div>
               </div>
             </div>
           </section>
@@ -269,10 +321,10 @@ const CityPageTemplate = ({
                     regular testing, pH balancing, and the introduction of beneficial bacteria to create a natural, self-sustaining environment.
                   </p>
                   <ul>
-                    <li>Comprehensive water testing and analysis</li>
+                    <li><Link to="/pond-services/water-quality" className="service-detail-link">Comprehensive water testing and analysis</Link></li>
                     <li>pH and alkalinity adjustment</li>
                     <li>Beneficial bacteria introduction</li>
-                    <li>Algae control and prevention</li>
+                    <li><Link to="/pond-services/cleaning" className="service-detail-link">Algae control and prevention</Link></li>
                     <li>Oxygen level optimization</li>
                   </ul>
                 </div>
@@ -288,7 +340,7 @@ const CityPageTemplate = ({
                     <li>Disease prevention and treatment</li>
                     <li>Nutritional guidance and feeding schedules</li>
                     <li>Breeding and population management</li>
-                    <li>Winter fish care and protection</li>
+                    <li><Link to="/pond-services/seasonal" className="service-detail-link">Winter fish care and protection</Link></li>
                   </ul>
                 </div>
                 
@@ -299,11 +351,11 @@ const CityPageTemplate = ({
                     and ongoing care of water lilies, marginal plants, and submerged vegetation suitable for {cityName}'s climate.
                   </p>
                   <ul>
-                    <li>Plant selection and installation</li>
-                    <li>Seasonal plant care and maintenance</li>
+                    <li><Link to="/plants-fish/aquatic-plants" className="service-detail-link">Plant selection and installation</Link></li>
+                    <li><Link to="/pond-services/seasonal" className="service-detail-link">Seasonal plant care and maintenance</Link></li>
                     <li>Pruning and thinning services</li>
                     <li>Fertilization and growth management</li>
-                    <li>Winter plant protection</li>
+                    <li><Link to="/pond-services/seasonal" className="service-detail-link">Winter plant protection</Link></li>
                   </ul>
                 </div>
                 
@@ -314,11 +366,11 @@ const CityPageTemplate = ({
                     filters, UV sterilizers, and aeration systems, extending their lifespan and optimizing performance.
                   </p>
                   <ul>
-                    <li>Pump cleaning and maintenance</li>
-                    <li>Filter system servicing</li>
+                    <li><Link to="/pond-supplies/pumps-aeration" className="service-detail-link">Pump cleaning and maintenance</Link></li>
+                    <li><Link to="/pond-supplies/filtration" className="service-detail-link">Filter system servicing</Link></li>
                     <li>UV sterilizer bulb replacement</li>
-                    <li>Aeration system maintenance</li>
-                    <li>Emergency equipment repair</li>
+                    <li><Link to="/pond-supplies/pumps-aeration" className="service-detail-link">Aeration system maintenance</Link></li>
+                    <li><Link to="/pond-services/repair" className="service-detail-link">Emergency equipment repair</Link></li>
                   </ul>
                 </div>
               </div>
@@ -342,10 +394,10 @@ const CityPageTemplate = ({
                     include thorough cleaning, equipment startup, and plant preparation for optimal growth.
                   </p>
                   <ul>
-                    <li>Complete pond cleaning and debris removal</li>
+                    <li><Link to="/pond-services/cleaning" className="seasonal-link">Complete pond cleaning and debris removal</Link></li>
                     <li>Equipment startup and testing</li>
-                    <li>Plant division and repotting</li>
-                    <li>Water quality restoration</li>
+                    <li><Link to="/plants-fish/aquatic-plants" className="seasonal-link">Plant division and repotting</Link></li>
+                    <li><Link to="/pond-services/water-quality" className="seasonal-link">Water quality restoration</Link></li>
                     <li>Fish health assessment after winter</li>
                   </ul>
                 </div>
@@ -357,10 +409,10 @@ const CityPageTemplate = ({
                     adequate oxygen levels during the hottest months of the year.
                   </p>
                   <ul>
-                    <li>Regular water quality monitoring</li>
-                    <li>Algae control and management</li>
-                    <li>Increased aeration and circulation</li>
-                    <li>Plant growth management</li>
+                    <li><Link to="/pond-services/water-quality" className="seasonal-link">Regular water quality monitoring</Link></li>
+                    <li><Link to="/pond-services/cleaning" className="seasonal-link">Algae control and management</Link></li>
+                    <li><Link to="/pond-supplies/pumps-aeration" className="seasonal-link">Increased aeration and circulation</Link></li>
+                    <li><Link to="/plants-fish/aquatic-plants" className="seasonal-link">Plant growth management</Link></li>
                     <li>Fish feeding optimization</li>
                   </ul>
                 </div>
@@ -372,11 +424,11 @@ const CityPageTemplate = ({
                     maintaining water quality and protecting your investment.
                   </p>
                   <ul>
-                    <li>Leaf and debris removal</li>
-                    <li>Plant preparation for dormancy</li>
+                    <li><Link to="/pond-services/cleaning" className="seasonal-link">Leaf and debris removal</Link></li>
+                    <li><Link to="/plants-fish/aquatic-plants" className="seasonal-link">Plant preparation for dormancy</Link></li>
                     <li>Equipment winterization</li>
-                    <li>Water quality optimization</li>
-                    <li>Winter protection planning</li>
+                    <li><Link to="/pond-services/water-quality" className="seasonal-link">Water quality optimization</Link></li>
+                    <li><Link to="/pond-services/seasonal" className="seasonal-link">Winter protection planning</Link></li>
                   </ul>
                 </div>
                 
@@ -390,8 +442,8 @@ const CityPageTemplate = ({
                     <li>Ice prevention and management</li>
                     <li>Equipment protection and maintenance</li>
                     <li>Fish winter care and feeding</li>
-                    <li>Water quality monitoring</li>
-                    <li>Emergency winter services</li>
+                    <li><Link to="/pond-services/water-quality" className="seasonal-link">Water quality monitoring</Link></li>
+                    <li><Link to="/contact" className="seasonal-link">Emergency winter services</Link></li>
                   </ul>
                 </div>
               </div>
@@ -406,32 +458,32 @@ const CityPageTemplate = ({
               <div className="faq-grid">
                 <div className="faq-item">
                   <h3>How often should I clean my pond in {cityName}?</h3>
-                  <p>Pond cleaning frequency depends on size, fish load, and season. In {cityName}'s climate, we recommend quarterly maintenance with seasonal deep cleaning. Spring and fall are ideal times for comprehensive cleaning to prepare for seasonal changes.</p>
+                  <p>Pond cleaning frequency depends on size, fish load, and season. In {cityName}'s climate, we recommend quarterly maintenance with seasonal deep cleaning. Spring and fall are ideal times for comprehensive cleaning to prepare for seasonal changes. <Link to="/pond-services/cleaning" className="faq-link">Learn more about our cleaning services</Link>.</p>
                 </div>
                 
                 <div className="faq-item">
                   <h3>Do you service ponds year-round in {cityName}?</h3>
-                  <p>Yes, we provide year-round services in {cityName}. Winter care is especially important to protect your pond from freezing damage. We offer emergency services during extreme weather conditions to ensure your pond's survival.</p>
+                  <p>Yes, we provide year-round services in {cityName}. Winter care is especially important to protect your pond from freezing damage. We offer emergency services during extreme weather conditions to ensure your pond's survival. <Link to="/pond-services/seasonal" className="faq-link">View our seasonal services</Link>.</p>
                 </div>
                 
                 <div className="faq-item">
                   <h3>What types of ponds do you work with in {cityName}?</h3>
-                  <p>We service all types of ponds in {cityName}: koi ponds, water gardens, natural ponds, and commercial water features. Our experience includes both residential and commercial installations throughout the {cityName} area.</p>
+                  <p>We service all types of ponds in {cityName}: koi ponds, water gardens, natural ponds, and commercial water features. Our experience includes both residential and commercial installations throughout the {cityName} area. <Link to="/pond-gallery" className="faq-link">See examples of our work</Link>.</p>
                 </div>
                 
                 <div className="faq-item">
                   <h3>Do you offer emergency pond services in {cityName}?</h3>
-                  <p>Yes, we provide emergency services for pond problems in {cityName}, including pump failures, water quality issues, and weather-related damage. Our rapid response team is available to address urgent pond problems.</p>
+                  <p>Yes, we provide emergency services for pond problems in {cityName}, including pump failures, water quality issues, and weather-related damage. Our rapid response team is available to address urgent pond problems. <Link to="/contact" className="faq-link">Contact us for emergencies</Link>.</p>
                 </div>
                 
                 <div className="faq-item">
                   <h3>What makes {cityName} pond care different?</h3>
-                  <p>{cityName}'s unique climate, altitude, and seasonal patterns require specialized knowledge and techniques. We understand local water chemistry, temperature fluctuations, and seasonal challenges specific to the {cityName} area.</p>
+                  <p>{cityName}'s unique climate, altitude, and seasonal patterns require specialized knowledge and techniques. We understand local water chemistry, temperature fluctuations, and seasonal challenges specific to the {cityName} area. <Link to="/about" className="faq-link">Learn about our local expertise</Link>.</p>
                 </div>
                 
                 <div className="faq-item">
                   <h3>Do you provide pond design services in {cityName}?</h3>
-                  <p>Yes, we offer comprehensive pond design services in {cityName}, including site analysis, custom design, 3D visualization, and permit assistance. Our designs are tailored to {cityName}'s climate and your specific property requirements.</p>
+                  <p>Yes, we offer comprehensive pond design services in {cityName}, including site analysis, custom design, 3D visualization, and permit assistance. Our designs are tailored to {cityName}'s climate and your specific property requirements. <Link to="/pond-services/design-build" className="faq-link">Explore our design services</Link>.</p>
                 </div>
               </div>
             </div>
