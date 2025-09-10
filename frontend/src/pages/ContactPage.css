@@ -6,6 +6,15 @@
   transition: opacity 0.6s ease-in-out;
 }
 
+/* Service Area Checker Section */
+.service-area-checker-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
 /* Modal Styles */
 .modal-overlay {
   position: fixed;

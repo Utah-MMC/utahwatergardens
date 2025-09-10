@@ -5,11 +5,11 @@ import CTA from '../components/CTA';
 import './ResourcesPage.css';
 
 const ResourcesPage = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsVisible(true);
+  // }, []);
 
   const stats = [
     { number: '50+', label: 'Helpful Articles', icon: '📚' },

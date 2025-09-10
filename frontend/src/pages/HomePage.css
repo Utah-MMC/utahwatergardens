@@ -613,3 +613,214 @@ img, video{max-width:100%;display:block;height:auto}
     line-height: 1.2 !important;
   }
 }
+
+/* ---------- CONTACT SECTION ---------- */
+.contact-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 4rem 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-area-card,
+.contact-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(30, 64, 175, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-area-card:hover,
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-header .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card-header h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.card-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(30, 64, 175, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(30, 64, 175, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+  background: rgba(30, 64, 175, 0.06);
+  border-color: rgba(30, 64, 175, 0.15);
+}
+
+.method-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.method-content {
+  flex: 1;
+}
+
+.method-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.contact-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.contact-link:hover {
+  color: var(--primary);
+}
+
+.contact-text {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.method-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-actions .btn {
+  min-width: 140px;
+  padding: 0.875rem 1.5rem;
+  font-weight: 600;
+}
+
+/* Service Area Checker Styling */
+.service-area-card .service-area-checker {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.service-area-card .service-area-checker .checker-header {
+  display: none; /* Hide duplicate header since we have our own */
+}
+
+.service-area-card .service-area-checker .checker-form {
+  margin: 0;
+}
+
+.service-area-card .service-area-checker .form-group {
+  max-width: none;
+  width: 100%;
+}
+
+.service-area-card .service-area-checker .form-group input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 2px solid rgba(30, 64, 175, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+.service-area-card .service-area-checker .form-group input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.service-area-card .service-area-checker .btn-primary {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 0;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-area-card,
+  .contact-card {
+    padding: 2rem;
+  }
+  
+  .card-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-method {
+    padding: 1.25rem;
+  }
+  
+  .contact-actions {
+    flex-direction: column;
+  }
+  
+  .contact-actions .btn {
+    width: 100%;
+  }
+}

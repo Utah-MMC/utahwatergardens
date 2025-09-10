@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import StandardHero from '../components/StandardHero';
+import ServiceAreaChecker from '../components/ServiceAreaChecker';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -63,7 +64,7 @@ const ContactPage = () => {
     <>
       <SEO 
         title="Contact Utah Water Gardens - Get Expert Pond Advice"
-        description="Contact Utah Water Gardens for expert pond advice, consultations, and services. Call (801) 590-8516 or visit our store at 5911 S 1300 E, Salt Lake City, UT."
+        description="Contact Utah Water Gardens for expert pond advice, consultations, and services. Call (801) 590-8516 or visit our store in Utah 84121."
         keywords="contact utah water gardens, pond consultation, pond advice, utah pond services, salt lake city pond company"
         canonical="https://utahwatergardens.com/contact"
       />
@@ -91,6 +92,11 @@ const ContactPage = () => {
                 <div className="form-header">
                   <h2>Send Us a Message</h2>
                   <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                </div>
+
+                {/* Service Area Checker */}
+                <div className="service-area-checker-section">
+                  <ServiceAreaChecker />
                 </div>
                 
                 <form onSubmit={handleSubmit} className="contact-form">
@@ -214,26 +220,23 @@ const ContactPage = () => {
                       </div>
                     </div>
                     
-                    {/* Address Section */}
+                    {/* Location Section */}
                     <div className="contact-detail">
                       <div className="detail-icon location-icon">
                         <span className="icon-label">LOCATION</span>
                       </div>
                       <div className="detail-content">
-                        <h4>Address</h4>
+                        <h4>Location</h4>
                         <div className="address-info">
-                          <span className="street-address">5911 S 1300 E</span>
-                          <div className="city-directions">
-                            <span className="city-state">Salt Lake City, UT 84121</span>
-                            <a 
-                              href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="directions-link"
-                            >
-                              Get Directions →
-                            </a>
-                          </div>
+                          <span className="city-state">Utah 84121</span>
+                          <a 
+                            href="https://maps.google.com/maps?q=5911+S+1300+E,+Salt+Lake+City,+UT+84121"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="directions-link"
+                          >
+                            Get Directions →
+                          </a>
                         </div>
                       </div>
                     </div>

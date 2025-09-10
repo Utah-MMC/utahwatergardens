@@ -37,7 +37,7 @@ const MaintenanceCrewPage = lazy(() => import('./pages/MaintenanceCrewPage'));
 // Old service area pages - REMOVED to prevent conflicts with new dynamic CityPage
 
 // Lazy load other pages
-const CityPage = lazy(() => import('./pages/CityPage'));
+// const CityPage = lazy(() => import('./pages/CityPage')); // Temporarily disabled due to webpack HMR issue
 const AquaticPlantsPage = lazy(() => import('./pages/AquaticPlantsPage'));
 const KoiGoldfishPage = lazy(() => import('./pages/KoiGoldfishPage'));
 const PondDesignBuildPage = lazy(() => import('./pages/PondDesignBuildPage'));
@@ -70,6 +70,9 @@ const KoiPondsPage = lazy(() => import('./pages/KoiPondsPage'));
 const WaterFeaturesPage = lazy(() => import('./pages/WaterFeaturesPage'));
 const BeforeAfterPage = lazy(() => import('./pages/BeforeAfterPage'));
 const CustomerProjectsPage = lazy(() => import('./pages/CustomerProjectsPage'));
+
+// Lazy load extended service page
+const OutOfAreaServicePage = lazy(() => import('./pages/OutOfAreaServicePage'));
 
 // Loading component for Suspense
 const LoadingSpinner = () => (
@@ -177,6 +180,9 @@ function App() {
             <Route path="/pond-gallery/before-after" element={<BeforeAfterPage />} />
             <Route path="/pond-gallery/customer-projects" element={<CustomerProjectsPage />} />
             
+            {/* Extended Service Area */}
+            <Route path="/out-of-area-service" element={<OutOfAreaServicePage />} />
+            
             {/* Old Service Area Routes - REMOVED to prevent conflicts with new dynamic city routes */}
             
             {/* Additional Service Routes from Sitemap */}
@@ -204,8 +210,8 @@ function App() {
             {/* Privacy and Legal */}
             <Route path="/privacy-and-legal-info" element={<AboutPage />} />
             
-            {/* Dynamic City Routes - Must be before catch-all */}
-            <Route path="/:cityName" element={<CityPage />} />
+            {/* Dynamic City Routes - Must be before catch-all - Temporarily disabled due to webpack HMR issue */}
+            {/* <Route path="/:cityName" element={<CityPage />} /> */}
             
             {/* Catch-all route for 404 errors */}
             <Route path="*" element={<HomePage />} />

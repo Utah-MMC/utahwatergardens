@@ -142,6 +142,9 @@ const Header = ({ className = '' }) => {
                   <Link to="/contact" className="btn btn-secondary btn-compact" onClick={closeMenu}>
                     Contact Us
                   </Link>
+                  <Link to="/out-of-area-service" className="btn btn-outline btn-compact" onClick={closeMenu}>
+                    Out of Area?
+                  </Link>
                 </div>
               )}
               <ul className="nav-list">
@@ -198,6 +201,9 @@ const Header = ({ className = '' }) => {
               </a>
               <Link to="/contact" className="btn btn-secondary btn-compact desktop-hidden" onClick={closeMenu}>
                 Contact Us
+              </Link>
+              <Link to="/out-of-area-service" className="btn btn-outline btn-compact desktop-hidden">
+                Out of Area?
               </Link>
             </div>
 

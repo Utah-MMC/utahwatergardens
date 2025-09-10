@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom';
 import PageTemplate from '../components/PageTemplate';
 import CTA from '../components/CTA';
+import ServiceAreaChecker from '../components/ServiceAreaChecker';
 import { getAllPlants, createPlantSlug } from '../data/plantData';
 import './HomePage.css';
 
@@ -412,6 +413,71 @@ const HomePage = () => {
             />
         </div>
       </section>
+
+        {/* CONTACT & SERVICE AREA */}
+        <section className="section contact-section" aria-labelledby="contact-h">
+          <div className="container">
+            <header className="section-head center">
+              <h2 id="contact-h">Ready to Create Your Dream Pond?</h2>
+              <p>Get expert consultation and see if we can serve your area</p>
+            </header>
+            
+            <div className="contact-grid">
+              {/* Service Area Checker - Featured */}
+              <div className="service-area-card">
+                <div className="card-header">
+                  <div className="icon">📍</div>
+                  <h3>Check Service Area</h3>
+                  <p>Enter your zipcode to see if you're within our service area</p>
+                </div>
+                <ServiceAreaChecker />
+              </div>
+
+              {/* Contact Information */}
+              <div className="contact-card">
+                <div className="card-header">
+                  <div className="icon">💬</div>
+                  <h3>Get In Touch</h3>
+                  <p>Ready to start your pond project? Contact us for a consultation.</p>
+                </div>
+                
+                <div className="contact-methods">
+                  <div className="contact-method">
+                    <div className="method-icon">📞</div>
+                    <div className="method-content">
+                      <h4>Call Us</h4>
+                      <a href="tel:+18015908516" className="contact-link">(801) 590-8516</a>
+                      <span className="method-note">Mon-Sat: 10:00AM-6PM</span>
+                    </div>
+                  </div>
+                  
+                  <div className="contact-method">
+                    <div className="method-icon">✉️</div>
+                    <div className="method-content">
+                      <h4>Email Us</h4>
+                      <a href="mailto:contact@utahwatergardens.com" className="contact-link">contact@utahwatergardens.com</a>
+                      <span className="method-note">We respond within 24 hours</span>
+                    </div>
+                  </div>
+                  
+                  <div className="contact-method">
+                    <div className="method-icon">📍</div>
+                    <div className="method-content">
+                      <h4>Visit Us</h4>
+                      <span className="contact-text">Utah 84121</span>
+                      <span className="method-note">Salt Lake City area</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="contact-actions">
+                  <Link to="/contact" className="btn btn-primary">Contact Form</Link>
+                  <a href="tel:+18015908516" className="btn btn-outline">Call Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <CTA />
