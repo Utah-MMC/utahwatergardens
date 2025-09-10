@@ -62,9 +62,8 @@ function Contact({ onFormSubmit, formData, onInputChange }) {
           <h3>Contact Information</h3>
           <p>
             <span className="contact-icon" style={{color:'#1e40af'}}>📍</span> 
-            <strong>Address:</strong><br/>
-            5911 S 1300 E<br/>
-            Salt Lake City, Utah 84121
+            <strong>Location:</strong><br/>
+            Utah 84121
           </p>
           <p>
             <span className="contact-icon" style={{color:'#1e40af'}}>📞</span> 

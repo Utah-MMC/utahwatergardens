@@ -1,0 +1,14 @@
+
+// Auto-generated routing updates for migrated service area pages
+// Generated on: 2025-09-10T04:04:44.030Z
+
+// Add these routes to your App.js Routes section:
+
+{/* Service Area Routes - Auto-generated */}
+{/* Note: These routes should be added before the catch-all route */}
+
+{/* Example routes - you'll need to add all city routes */}
+{/* <Route path="/{city-slug}" element={<{ComponentName} />} /> */}
+
+// To add all routes automatically, you can use a script to generate them
+// from the cityData.js file using getAllCitySlugs() function.

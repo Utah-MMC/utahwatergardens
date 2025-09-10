@@ -10,9 +10,9 @@ Create a `.env` file in the root directory with the following variables:
 
 ```env
 # Email Configuration for Utah Water Gardens
-EMAIL_USER=admin@utahwatergardens.com
-EMAIL_PASS=Uwg2025!
-BUSINESS_EMAIL=admin@utahwatergardens.com
+EMAIL_USER=jeremyuwg@gmail.com
+EMAIL_PASS=your_gmail_app_password_here
+BUSINESS_EMAIL=jeremyuwg@gmail.com
 
 # SMTP Configuration (adjust if needed for your email provider)
 SMTP_HOST=smtp.gmail.com
@@ -71,6 +71,37 @@ When deploying to Vercel, add these environment variables in your Vercel dashboa
 {
   "success": true,
   "message": "Thank you for your message! We'll get back to you soon."
+}
+```
+
+### Extended Service Form (`/api/extended-service`)
+
+**POST** `/api/extended-service`
+
+**Request Body:**
+```json
+{
+  "name": "Jane Smith",
+  "email": "jane@example.com",
+  "phone": "(801) 555-0123",
+  "address": "123 Main Street",
+  "city": "Park City",
+  "state": "UT",
+  "zipCode": "84060",
+  "distance": "35",
+  "projectType": "Residential Pond",
+  "timeline": "Within 3 months",
+  "budget": "$10,000 - $25,000",
+  "projectDescription": "I want to build a beautiful koi pond...",
+  "additionalInfo": "I have a dog, so safety features are important."
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Extended service request submitted successfully! We'll review your project and contact you within 2-3 business days."
 }
 ```
 
@@ -161,6 +192,23 @@ curl -X POST http://localhost:3000/api/contact \
     "name": "Test User",
     "email": "test@example.com",
     "message": "This is a test message"
+  }'
+
+# Test extended service form
+curl -X POST http://localhost:3000/api/extended-service \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Test User",
+    "email": "test@example.com",
+    "phone": "(801) 555-0123",
+    "address": "123 Test St",
+    "city": "Park City",
+    "state": "UT",
+    "zipCode": "84060",
+    "distance": "35",
+    "projectType": "Residential Pond",
+    "timeline": "Within 3 months",
+    "projectDescription": "Test project description"
   }'
 
 # Test estimate form

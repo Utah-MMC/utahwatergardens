@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Accessibility Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .test-item { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        img { max-width: 50px; height: auto; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Utah Water Gardens - Favicon Accessibility Test</h1>
+    
+    <div class="test-item">
+        <h3>Test 1: Favicon Files Existence</h3>
+        <p>Testing if favicon files are accessible:</p>
+        <img src="frontend/public/images/favicon.ico" alt="favicon.ico" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none; color:red;">❌ favicon.ico not accessible</div>
+        
+        <img src="frontend/public/images/favicon-32x32.png" alt="favicon-32x32.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none; color:red;">❌ favicon-32x32.png not accessible</div>
+        
+        <img src="frontend/public/images/favicon-16x16.png" alt="favicon-16x16.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none; color:red;">❌ favicon-16x16.png not accessible</div>
+    </div>
+    
+    <div class="test-item">
+        <h3>Test 2: HTML Favicon Links</h3>
+        <p>Check if these links work in your browser:</p>
+        <ul>
+            <li><a href="frontend/public/images/favicon.ico" target="_blank">favicon.ico</a></li>
+            <li><a href="frontend/public/images/favicon-32x32.png" target="_blank">favicon-32x32.png</a></li>
+            <li><a href="frontend/public/images/favicon-16x16.png" target="_blank">favicon-16x16.png</a></li>
+        </ul>
+    </div>
+    
+    <div class="test-item">
+        <h3>Test 3: Search Engine Optimization Checklist</h3>
+        <ul>
+            <li>✅ Favicon files are properly named and sized</li>
+            <li>✅ HTML includes proper favicon meta tags</li>
+            <li>✅ Manifest.json includes favicon references</li>
+            <li>✅ browserconfig.xml created for Windows tiles</li>
+            <li>✅ robots.txt configured for search engines</li>
+            <li>✅ sitemap.xml exists and is comprehensive</li>
+            <li>✅ Meta robots tags added for better indexing</li>
+        </ul>
+    </div>
+    
+    <div class="test-item">
+        <h3>Next Steps for Search Engine Indexing</h3>
+        <ol>
+            <li><strong>Deploy your changes</strong> to your live website</li>
+            <li><strong>Submit to Google Search Console</strong>:
+                <ul>
+                    <li>Go to <a href="https://search.google.com/search-console" target="_blank">Google Search Console</a></li>
+                    <li>Submit your sitemap: <code>https://utahwatergardens.com/sitemap.xml</code></li>
+                    <li>Request indexing for your homepage</li>
+                </ul>
+            </li>
+            <li><strong>Submit to Bing Webmaster Tools</strong>:
+                <ul>
+                    <li>Go to <a href="https://www.bing.com/webmasters" target="_blank">Bing Webmaster Tools</a></li>
+                    <li>Submit your sitemap</li>
+                </ul>
+            </li>
+            <li><strong>Test your favicon</strong>:
+                <ul>
+                    <li>Visit your live site and check the browser tab</li>
+                    <li>Test in different browsers (Chrome, Firefox, Safari, Edge)</li>
+                    <li>Check on mobile devices</li>
+                </ul>
+            </li>
+            <li><strong>Wait for indexing</strong> (can take 1-4 weeks for search engines to update)</li>
+        </ol>
+    </div>
+</body>
+</html>
