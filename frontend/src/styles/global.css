@@ -286,12 +286,13 @@ img, video {
   overflow: hidden;
 }
 
-/* Carousel Styles */
+/* Carousel Styles - PERFORMANCE OPTIMIZED */
 .crsl {
-  --dur: .5s;
+  --dur: .3s; /* Faster transition for better performance */
   transform: translateZ(0);
   will-change: transform;
-  contain: layout style paint;
+  contain: layout style paint; /* Contain layout recalculations */
+  isolation: isolate; /* Create new stacking context */
 }
 
 .crsl-head {
@@ -303,15 +304,17 @@ img, video {
 .crsl-viewport {
   overflow: hidden;
   transform: translateZ(0);
-  contain: layout;
+  contain: layout style paint; /* Enhanced containment */
+  will-change: scroll-position; /* Optimize for scrolling */
 }
 
 .crsl-track {
   display: flex;
-  transition: transform var(--dur) ease;
+  transition: transform var(--dur) cubic-bezier(0.4, 0, 0.2, 1); /* Better easing for performance */
   will-change: transform;
   transform: translateZ(0);
-  contain: layout;
+  contain: layout style paint; /* Enhanced containment */
+  backface-visibility: hidden; /* Prevent flickering */
 }
 
 .crsl-slide {
@@ -323,13 +326,15 @@ img, video {
   margin: 0;
   list-style: none;
   transform: translateZ(0);
-  contain: layout;
+  contain: layout style paint; /* Enhanced containment */
+  backface-visibility: hidden; /* Prevent flickering */
 }
 
 .crsl-item {
   min-width: 0;
   transform: translateZ(0);
-  contain: layout;
+  contain: layout style paint; /* Enhanced containment */
+  backface-visibility: hidden; /* Prevent flickering */
 }
 
 .crsl .item {
@@ -394,6 +399,16 @@ img, video {
 @media (max-width: 768px) {
   .crsl-slide {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Reduce transition complexity on mobile */
+  .crsl {
+    --dur: .2s; /* Even faster on mobile */
+  }
+  
+  /* Disable will-change on mobile to save memory */
+  .crsl-track {
+    will-change: auto;
   }
   
   .row {

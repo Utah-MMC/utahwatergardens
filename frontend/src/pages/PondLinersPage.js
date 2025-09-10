@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import './PondLinersPage.css';
 
 const PondLinersPage = () => {
+  const stats = [
+    { number: '50+', label: 'Liner Types', icon: 'Types' },
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '100%', label: 'Quality Guaranteed', icon: 'Quality' },
+    { number: '25+', label: 'Year Warranty', icon: 'Warranty' }
+  ];
+
   const linerTypes = [
     {
       name: 'EPDM Rubber Liners',
@@ -154,14 +162,21 @@ const PondLinersPage = () => {
   ];
 
   return (
-    <div className="pond-liners-page">
-      {/* Hero Section */}
-      <PageHero 
-        title="Pond Liners & Underlayment"
-        subtitle="Professional-grade pond liners and underlayment materials to create watertight, long-lasting ponds. From small garden features to large commercial installations."
-        backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
-        backgroundImageAlt="Beautiful pond with koi fish and natural stone edges"
+    <>
+      <SEO 
+        title="Pond Liners & Underlayment - Premium Waterproof Liners | Utah Water Gardens"
+        description="Professional-grade pond liners and underlayment materials in Utah. EPDM, PVC, HDPE liners with 25+ year warranties. 50+ liner types, 15+ years experience. Serving Salt Lake County, Davis County, and surrounding areas."
+        keywords="pond liners, EPDM liners, PVC liners, HDPE liners, pond underlayment, waterproof liners, utah pond liners, salt lake county pond liners, davis county pond liners, pond liner installation, pond liner repair"
+        canonical="https://utahwatergardens.com/pond-supplies/liners"
       />
+      <div className="pond-liners-page">
+        <PageHero 
+          title="Pond Liners & Underlayment"
+          subtitle="Professional-grade pond liners and underlayment materials to create watertight, long-lasting ponds. From small garden features to large commercial installations."
+          backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+          backgroundImageAlt="Beautiful pond with koi fish and natural stone edges"
+          stats={stats}
+        />
 
       {/* Liner Types */}
       <section className="liner-types-section first-section-gradient">
@@ -478,6 +493,75 @@ const PondLinersPage = () => {
         </div>
       </section>
 
+      {/* Service Areas */}
+      <section className="service-areas-section">
+        <div className="container">
+          <h2>Areas We Serve</h2>
+          <p className="service-areas-intro">
+            We proudly serve the greater Salt Lake City area and surrounding communities with our premium 
+            pond liners and underlayment materials. Our experienced team provides expert installation throughout Utah.
+          </p>
+          
+          <div className="service-areas-grid">
+            <div className="service-area-group">
+              <h3>Salt Lake County</h3>
+              <div className="cities-list">
+                <span>Salt Lake City</span>
+                <span>West Jordan</span>
+                <span>Murray</span>
+                <span>Sandy</span>
+                <span>West Valley City</span>
+                <span>Draper</span>
+                <span>Cottonwood Heights</span>
+                <span>Holladay</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Davis County</h3>
+              <div className="cities-list">
+                <span>Layton</span>
+                <span>Bountiful</span>
+                <span>Farmington</span>
+                <span>Centerville</span>
+                <span>Kaysville</span>
+                <span>Clearfield</span>
+                <span>Clinton</span>
+                <span>Syracuse</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Utah County</h3>
+              <div className="cities-list">
+                <span>Provo</span>
+                <span>Orem</span>
+                <span>American Fork</span>
+                <span>Lehi</span>
+                <span>Pleasant Grove</span>
+                <span>Spanish Fork</span>
+                <span>Springville</span>
+                <span>Alpine</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Weber County</h3>
+              <div className="cities-list">
+                <span>Ogden</span>
+                <span>Roy</span>
+                <span>Clearfield</span>
+                <span>South Ogden</span>
+                <span>North Ogden</span>
+                <span>Riverdale</span>
+                <span>Washington Terrace</span>
+                <span>Farr West</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact CTA */}
       <section 
         className="contact-cta"
@@ -497,7 +581,8 @@ const PondLinersPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

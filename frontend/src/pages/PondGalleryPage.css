@@ -10,114 +10,7 @@
   opacity: 1;
 }
 
-/* Hero Section */
-.pond-gallery-hero {
-  position: relative;
-  height: 100vh;
-  min-height: 700px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  overflow: hidden;
-  padding-top: 120px; /* More space from fixed header */
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
-  display: none; /* Remove overlay completely */
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  max-width: 1000px;
-  padding: 0 2rem;
-}
-
-.hero-title {
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
-}
-
-.hero-title-highlight {
-  background: linear-gradient(135deg, #10b981, #059669);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 3rem;
-  line-height: 1.6;
-  opacity: 0.95;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.stat-item:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.stat-icon {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #10b981;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #10b981;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  font-weight: 500;
-}
+/* Hero Section - Now using PageHero component */
 
 /* Main Content */
 .pond-gallery-main-content {
@@ -155,6 +48,45 @@
   margin: 0 auto;
 }
 
+.intro-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.intro-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-overview {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 15px;
+  border: 1px solid #e5e7eb;
+}
+
+.portfolio-overview h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.portfolio-overview p {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
 /* Gallery Categories */
 .gallery-categories {
   margin-bottom: 5rem;
@@ -166,7 +98,7 @@
   color: #1e293b;
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -506,6 +438,100 @@
   line-height: 1.6;
 }
 
+/* Design Process Section */
+.design-process-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+/* Materials Section */
+.materials-section {
+  padding: 5rem 0;
+  background: #f8fafc;
+}
+
+.materials-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.materials-text p {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.materials-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.materials-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Areas Section */
+.service-areas-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.service-areas-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.service-area-group h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cities-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.cities-list span {
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cities-list span:hover {
+  background: #1e40af;
+  color: white;
+  transform: translateY(-2px);
+}
+
 /* Process Section */
 .process-section {
   padding: 5rem 0;
@@ -698,10 +724,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .pond-gallery-hero {
-    padding-top: 100px; /* More space from mobile header */
-  }
-  
   .pond-gallery-main-content {
     padding-top: 3rem; /* Reduce top padding on mobile */
   }
@@ -712,19 +734,6 @@
   .featured-projects,
   .why-choose-section {
     margin-top: 2rem; /* Extra spacing for mobile */
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
   }
   
   .categories-grid {
@@ -757,52 +766,41 @@
     align-items: center;
   }
   
+  .intro-images {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .materials-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .materials-images {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-areas-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .cities-list {
+    grid-template-columns: 1fr;
+  }
+  
   .page-intro h2,
   .gallery-categories h2,
   .featured-projects h2,
   .why-choose-section h2,
-  .process-section h2 {
+  .design-process-section h2,
+  .materials-section h2,
+  .service-areas-section h2 {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .pond-gallery-hero {
-    padding-top: 80px; /* Slightly less padding for very small screens */
-    min-height: 600px; /* Reduce min-height for small screens */
-  }
-  
-  .hero-content {
-    padding: 0 1rem; /* Reduce horizontal padding */
-  }
-  
-  .hero-title {
-    font-size: 2rem;
-    margin-bottom: 1rem; /* Reduce margin */
-  }
-  
-  .hero-subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 2rem; /* Reduce margin */
-  }
-  
-  .hero-stats {
-    grid-template-columns: 1fr;
-    gap: 0.75rem; /* Reduce gap */
-    margin-bottom: 2rem; /* Reduce margin */
-  }
-  
-  .stat-item {
-    padding: 0.75rem; /* Reduce padding */
-  }
-  
-  .stat-number {
-    font-size: 1.75rem; /* Slightly smaller */
-  }
-  
-  .stat-label {
-    font-size: 0.8rem; /* Smaller label */
-  }
   
   .page-intro h2,
   .gallery-categories h2,

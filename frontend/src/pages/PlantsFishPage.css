@@ -36,6 +36,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* WAVE ANIMATION - SUBTLE movement */
+  animation: hero-pond-wave 15s ease-in-out infinite;
+  transform-origin: center center;
 }
 
 .hero-overlay {
@@ -602,6 +605,78 @@
   transform: translateY(-2px);
 }
 
+/* Hero pond image wave animation - SUBTLE movement */
+@keyframes hero-pond-wave {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+  }
+  12.5% {
+    transform: translateX(0.5px) translateY(-0.3px) rotate(0.05deg) scale(1.0002);
+  }
+  25% {
+    transform: translateX(0px) translateY(-0.6px) rotate(0deg) scale(1.0004);
+  }
+  37.5% {
+    transform: translateX(-0.5px) translateY(-0.3px) rotate(-0.05deg) scale(1.0002);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+  }
+  62.5% {
+    transform: translateX(0.3px) translateY(0.3px) rotate(0.03deg) scale(0.9998);
+  }
+  75% {
+    transform: translateX(0px) translateY(0.6px) rotate(0deg) scale(0.9996);
+  }
+  87.5% {
+    transform: translateX(-0.3px) translateY(0.3px) rotate(-0.03deg) scale(0.9998);
+  }
+}
+
+/* Reduced motion - DISABLE WAVE ANIMATIONS */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image {
+    animation: none !important;
+  }
+}
+
+/* Intro Images */
+.intro-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.intro-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Selection Overview */
+.selection-overview {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.selection-overview h3 {
+  color: #2c5282;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.selection-overview p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .plants-fish-hero {
@@ -610,6 +685,11 @@
   
   .plants-fish-main-content {
     padding-top: 3rem; /* Reduce top padding on mobile */
+  }
+  
+  /* Disable wave animation on mobile for performance */
+  .hero-image {
+    animation: none !important;
   }
   
   /* Ensure cards don't touch header */
@@ -640,6 +720,20 @@
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+  
+  /* Mobile styles for new sections */
+  .intro-images {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .intro-image {
+    height: 150px;
+  }
+  
+  .selection-overview {
+    padding: 1.5rem;
   }
   
   .categories-grid {

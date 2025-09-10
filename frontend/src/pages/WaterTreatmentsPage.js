@@ -1,8 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import PageHero from '../components/PageHero';
 import './WaterTreatmentsPage.css';
 
 const WaterTreatmentsPage = () => {
+  const stats = [
+    { number: '100+', label: 'Treatment Products', icon: 'Products' },
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '100%', label: 'Fish Safe', icon: 'Safety' },
+    { number: '24/7', label: 'Expert Support', icon: 'Support' }
+  ];
+
   const treatmentCategories = [
     {
       name: 'Water Clarifiers',
@@ -148,29 +157,21 @@ const WaterTreatmentsPage = () => {
   ];
 
   return (
-    <div className="water-treatments-page">
-      {/* Hero Section */}
-      <section 
-        className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="hero-content">
-          <h1>Water Treatments & Chemicals</h1>
-          <p>Professional-grade water treatments and chemicals to maintain crystal clear, healthy pond water. From algae control to beneficial bacteria, we have everything you need.</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Expert Advice</a>
-            <Link to="/pond-supplies" className="secondary-button">View All Supplies</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2779.jpg" alt="Professional water treatments and chemicals for pond maintenance" />
-        </div>
-      </section>
+    <>
+      <SEO 
+        title="Water Treatments & Chemicals - Professional Pond Water Care | Utah Water Gardens"
+        description="Professional-grade water treatments and chemicals in Utah. Algae control, beneficial bacteria, pH balancers, water clarifiers. 100+ products, 15+ years experience. Serving Salt Lake County, Davis County, and surrounding areas."
+        keywords="water treatments, pond chemicals, algae control, beneficial bacteria, pH balancers, water clarifiers, utah pond treatments, salt lake county pond chemicals, davis county water treatments, pond water care, water quality"
+        canonical="https://utahwatergardens.com/pond-supplies/water-treatments"
+      />
+      <div className="water-treatments-page">
+        <PageHero 
+          title="Water Treatments & Chemicals"
+          subtitle="Professional-grade water treatments and chemicals to maintain crystal clear, healthy pond water. From algae control to beneficial bacteria, we have everything you need."
+          backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+          backgroundImageAlt="Professional water treatments and chemicals for pond maintenance"
+          stats={stats}
+        />
 
       {/* Treatment Categories */}
       <section className="treatments-section first-section-gradient">
@@ -455,6 +456,75 @@ const WaterTreatmentsPage = () => {
         </div>
       </section>
 
+      {/* Service Areas */}
+      <section className="service-areas-section">
+        <div className="container">
+          <h2>Areas We Serve</h2>
+          <p className="service-areas-intro">
+            We proudly serve the greater Salt Lake City area and surrounding communities with our professional 
+            water treatments and chemicals. Our experienced team provides expert guidance throughout Utah.
+          </p>
+          
+          <div className="service-areas-grid">
+            <div className="service-area-group">
+              <h3>Salt Lake County</h3>
+              <div className="cities-list">
+                <span>Salt Lake City</span>
+                <span>West Jordan</span>
+                <span>Murray</span>
+                <span>Sandy</span>
+                <span>West Valley City</span>
+                <span>Draper</span>
+                <span>Cottonwood Heights</span>
+                <span>Holladay</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Davis County</h3>
+              <div className="cities-list">
+                <span>Layton</span>
+                <span>Bountiful</span>
+                <span>Farmington</span>
+                <span>Centerville</span>
+                <span>Kaysville</span>
+                <span>Clearfield</span>
+                <span>Clinton</span>
+                <span>Syracuse</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Utah County</h3>
+              <div className="cities-list">
+                <span>Provo</span>
+                <span>Orem</span>
+                <span>American Fork</span>
+                <span>Lehi</span>
+                <span>Pleasant Grove</span>
+                <span>Spanish Fork</span>
+                <span>Springville</span>
+                <span>Alpine</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Weber County</h3>
+              <div className="cities-list">
+                <span>Ogden</span>
+                <span>Roy</span>
+                <span>Clearfield</span>
+                <span>South Ogden</span>
+                <span>North Ogden</span>
+                <span>Riverdale</span>
+                <span>Washington Terrace</span>
+                <span>Farr West</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact CTA */}
       <section 
         className="contact-cta"
@@ -474,7 +544,8 @@ const WaterTreatmentsPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

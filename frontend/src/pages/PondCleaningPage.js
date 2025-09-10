@@ -1,8 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import PageHero from '../components/PageHero';
 import './PondCleaningPage.css';
 
 const PondCleaningPage = () => {
+  const stats = [
+    { number: '500+', label: 'Ponds Cleaned', icon: 'Ponds' },
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '100%', label: 'Customer Satisfaction', icon: 'Quality' },
+    { number: '24/7', label: 'Emergency Service', icon: 'Support' }
+  ];
+
   const cleaningServices = [
     {
       name: 'Debris Removal',
@@ -70,21 +79,21 @@ const PondCleaningPage = () => {
   ];
 
   return (
-    <div className="pond-cleaning-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Pond Cleaning Services</h1>
-          <p>Professional pond cleaning to restore water clarity and maintain a healthy ecosystem</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Cleaning Quote</a>
-            <Link to="/pond-services" className="secondary-button">View All Services</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2770.jpg" alt="Professional pond cleaning services" />
-        </div>
-      </section>
+    <>
+      <SEO 
+        title="Pond Cleaning Services - Professional Pond Cleaning | Utah Water Gardens"
+        description="Professional pond cleaning services in Utah. Debris removal, algae control, sediment removal, filter cleaning. 15+ years experience, 500+ ponds cleaned. Serving Salt Lake County, Davis County, and surrounding areas."
+        keywords="pond cleaning, pond cleaning services, algae removal, debris removal, sediment removal, filter cleaning, utah pond cleaning, salt lake county pond cleaning, davis county pond cleaning, professional pond cleaning, pond maintenance"
+        canonical="https://utahwatergardens.com/pond-services/cleaning"
+      />
+      <div className="pond-cleaning-page">
+        <PageHero 
+          title="Pond Cleaning Services"
+          subtitle="Professional pond cleaning to restore water clarity and maintain a healthy ecosystem"
+          backgroundImage="/images/a2f13a6fa6605287e6578c3fe26cc94d-enhance-4x.jpeg"
+          backgroundImageAlt="Professional pond cleaning services"
+          stats={stats}
+        />
 
       {/* Why Clean Your Pond */}
       <section className="why-clean-section first-section-gradient">
@@ -204,25 +213,25 @@ const PondCleaningPage = () => {
               <div className="step-number">1</div>
               <h3>Assessment</h3>
               <p>We evaluate your pond's condition and determine the best cleaning approach</p>
-              <img src="/images/IMG_2770.jpg" alt="Pond assessment" />
+              <img src="/images/a5604a70ec7723a9bafd10a9e309e113-enhance-4x.jpeg" alt="Pond assessment" />
             </div>
             <div className="cleaning-process-step">
               <div className="step-number">2</div>
               <h3>Preparation</h3>
               <p>We prepare the area and protect fish and plants during the cleaning process</p>
-              <img src="/images/IMG_2775.jpg" alt="Cleaning preparation" />
+              <img src="/images/a68f5846d64bba8feebcef312d7bfd24-sharpen.jpeg" alt="Cleaning preparation" />
             </div>
             <div className="cleaning-process-step">
               <div className="step-number">3</div>
               <h3>Cleaning</h3>
               <p>Professional cleaning using appropriate tools and techniques for your pond type</p>
-              <img src="/images/IMG_2779.jpg" alt="Professional cleaning" />
+              <img src="/images/a7da75b080b639d3ca4962092011eea0-enhance-4x.jpeg" alt="Professional cleaning" />
             </div>
             <div className="cleaning-process-step">
               <div className="step-number">4</div>
               <h3>Restoration</h3>
               <p>We restore your pond to optimal condition and provide maintenance recommendations</p>
-              <img src="/images/IMG_2782.jpg" alt="Pond restoration" />
+              <img src="/images/a9f0e423dbf4d51fe226bcc8d5f2055f-denoise-enhance-4x.jpeg" alt="Pond restoration" />
             </div>
           </div>
         </div>
@@ -271,6 +280,75 @@ const PondCleaningPage = () => {
         </div>
       </section>
 
+      {/* Service Areas */}
+      <section className="service-areas-section">
+        <div className="container">
+          <h2>Areas We Serve</h2>
+          <p className="service-areas-intro">
+            We proudly serve the greater Salt Lake City area and surrounding communities with our professional 
+            pond cleaning services. Our experienced team provides thorough cleaning throughout Utah.
+          </p>
+          
+          <div className="service-areas-grid">
+            <div className="service-area-group">
+              <h3>Salt Lake County</h3>
+              <div className="cities-list">
+                <span>Salt Lake City</span>
+                <span>West Jordan</span>
+                <span>Murray</span>
+                <span>Sandy</span>
+                <span>West Valley City</span>
+                <span>Draper</span>
+                <span>Cottonwood Heights</span>
+                <span>Holladay</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Davis County</h3>
+              <div className="cities-list">
+                <span>Layton</span>
+                <span>Bountiful</span>
+                <span>Farmington</span>
+                <span>Centerville</span>
+                <span>Kaysville</span>
+                <span>Clearfield</span>
+                <span>Clinton</span>
+                <span>Syracuse</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Utah County</h3>
+              <div className="cities-list">
+                <span>Provo</span>
+                <span>Orem</span>
+                <span>American Fork</span>
+                <span>Lehi</span>
+                <span>Pleasant Grove</span>
+                <span>Spanish Fork</span>
+                <span>Springville</span>
+                <span>Alpine</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Weber County</h3>
+              <div className="cities-list">
+                <span>Ogden</span>
+                <span>Roy</span>
+                <span>Clearfield</span>
+                <span>South Ogden</span>
+                <span>North Ogden</span>
+                <span>Riverdale</span>
+                <span>Washington Terrace</span>
+                <span>Farr West</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact CTA */}
       <section className="contact-cta">
         <div className="container">
@@ -282,7 +360,8 @@ const PondCleaningPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

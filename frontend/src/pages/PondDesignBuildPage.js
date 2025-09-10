@@ -1,18 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import './PondDesignBuildPage.css';
 
 const PondDesignBuildPage = () => {
+  const stats = [
+    { number: '500+', label: 'Ponds Built', icon: 'Projects' },
+    { number: '25+', label: 'Years Experience', icon: 'Experience' },
+    { number: '100%', label: 'Customer Satisfaction', icon: 'Quality' },
+    { number: '50+', label: 'Service Areas', icon: 'Areas' }
+  ];
+
   return (
-    <div className="pond-design-build-page">
-      {/* Hero Section */}
-      <PageHero 
-        title="Pond Design & Build Services"
-        subtitle="Transform your backyard into a stunning water garden with our expert design and construction services"
-        backgroundImage="/images/IMG_2770.jpg"
-        backgroundImageAlt="Beautiful custom water garden design with waterfall and lush plants"
+    <>
+      <SEO 
+        title="Pond Design & Build Services - Custom Water Gardens | Utah Water Gardens"
+        description="Professional pond design and construction services in Utah. Custom koi ponds, water gardens, and swimming ponds. 25+ years experience, 500+ projects completed. Free consultation and comprehensive warranties."
+        keywords="pond design, pond construction, custom ponds, koi pond design, water garden design, swimming pond, pond builder utah, salt lake county pond construction, davis county pond design, pond installation, water feature design"
+        canonical="https://utahwatergardens.com/pond-services/design-build"
       />
+      <div className="pond-design-build-page">
+        {/* Hero Section */}
+        <PageHero 
+          title="Pond Design & Build Services"
+          subtitle="Transform your backyard into a stunning water garden with our expert design and construction services"
+          backgroundImage="/images/IMG_2770.jpg"
+          backgroundImageAlt="Beautiful custom water garden design with waterfall and lush plants"
+          stats={stats}
+        />
 
       {/* Design Process */}
       <section className="design-process first-section-gradient">
@@ -256,6 +272,75 @@ const PondDesignBuildPage = () => {
         </div>
       </section>
 
+      {/* Service Areas */}
+      <section className="service-areas-section">
+        <div className="container">
+          <h2>Areas We Serve</h2>
+          <p className="service-areas-intro">
+            We proudly serve the greater Salt Lake City area and surrounding communities with our professional 
+            pond design and construction services. Our experienced team has completed projects throughout Utah.
+          </p>
+          
+          <div className="service-areas-grid">
+            <div className="service-area-group">
+              <h3>Salt Lake County</h3>
+              <div className="cities-list">
+                <span>Salt Lake City</span>
+                <span>West Jordan</span>
+                <span>Murray</span>
+                <span>Sandy</span>
+                <span>West Valley City</span>
+                <span>Draper</span>
+                <span>Cottonwood Heights</span>
+                <span>Holladay</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Davis County</h3>
+              <div className="cities-list">
+                <span>Layton</span>
+                <span>Bountiful</span>
+                <span>Farmington</span>
+                <span>Centerville</span>
+                <span>Kaysville</span>
+                <span>Clearfield</span>
+                <span>Clinton</span>
+                <span>Syracuse</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Utah County</h3>
+              <div className="cities-list">
+                <span>Provo</span>
+                <span>Orem</span>
+                <span>American Fork</span>
+                <span>Lehi</span>
+                <span>Pleasant Grove</span>
+                <span>Spanish Fork</span>
+                <span>Springville</span>
+                <span>Alpine</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Weber County</h3>
+              <div className="cities-list">
+                <span>Ogden</span>
+                <span>Roy</span>
+                <span>Clearfield</span>
+                <span>South Ogden</span>
+                <span>North Ogden</span>
+                <span>Riverdale</span>
+                <span>Washington Terrace</span>
+                <span>Farr West</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section 
         className="cta-section"
@@ -275,7 +360,8 @@ const PondDesignBuildPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

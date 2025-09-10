@@ -5,6 +5,13 @@ import PageHero from '../components/PageHero.js';
 import './PumpsAerationPage.css';
 
 const PumpsAerationPage = () => {
+  const stats = [
+    { number: '100+', label: 'Pump Models', icon: 'Models' },
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '100%', label: 'Quality Guaranteed', icon: 'Quality' },
+    { number: '24/7', label: 'Expert Support', icon: 'Support' }
+  ];
+
   const pumpCategories = [
     {
       name: 'Submersible Pumps',
@@ -112,11 +119,7 @@ const PumpsAerationPage = () => {
           subtitle="Professional-grade pumps and aeration systems to keep your pond healthy, beautiful, and thriving. From small fountains to large commercial ponds."
           backgroundImage="/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg"
           backgroundImageAlt="Professional pond pumps and aeration systems"
-          showCTA={true}
-          ctaButtons={[
-            { text: "Call for Expert Advice", href: "tel:(801) 590-8516", type: "primary" },
-            { text: "View All Supplies", href: "/pond-supplies", type: "secondary" }
-          ]}
+          stats={stats}
         />
 
       {/* Pump Categories */}
@@ -391,6 +394,75 @@ const PumpsAerationPage = () => {
                 <li>Performance monitoring</li>
               </ul>
               <a href="tel:(801) 590-8516" className="package-cta">Call to Order</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="service-areas-section">
+        <div className="container">
+          <h2>Areas We Serve</h2>
+          <p className="service-areas-intro">
+            We proudly serve the greater Salt Lake City area and surrounding communities with our premium 
+            pond pumps and aeration systems. Our experienced team provides expert installation and support throughout Utah.
+          </p>
+          
+          <div className="service-areas-grid">
+            <div className="service-area-group">
+              <h3>Salt Lake County</h3>
+              <div className="cities-list">
+                <span>Salt Lake City</span>
+                <span>West Jordan</span>
+                <span>Murray</span>
+                <span>Sandy</span>
+                <span>West Valley City</span>
+                <span>Draper</span>
+                <span>Cottonwood Heights</span>
+                <span>Holladay</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Davis County</h3>
+              <div className="cities-list">
+                <span>Layton</span>
+                <span>Bountiful</span>
+                <span>Farmington</span>
+                <span>Centerville</span>
+                <span>Kaysville</span>
+                <span>Clearfield</span>
+                <span>Clinton</span>
+                <span>Syracuse</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Utah County</h3>
+              <div className="cities-list">
+                <span>Provo</span>
+                <span>Orem</span>
+                <span>American Fork</span>
+                <span>Lehi</span>
+                <span>Pleasant Grove</span>
+                <span>Spanish Fork</span>
+                <span>Springville</span>
+                <span>Alpine</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Weber County</h3>
+              <div className="cities-list">
+                <span>Ogden</span>
+                <span>Roy</span>
+                <span>Clearfield</span>
+                <span>South Ogden</span>
+                <span>North Ogden</span>
+                <span>Riverdale</span>
+                <span>Washington Terrace</span>
+                <span>Farr West</span>
+              </div>
             </div>
           </div>
         </div>

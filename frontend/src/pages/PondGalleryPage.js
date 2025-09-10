@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import PageHero from '../components/PageHero';
 import './PondGalleryPage.css';
 
 const PondGalleryPage = () => {
@@ -23,7 +24,7 @@ const PondGalleryPage = () => {
       name: 'Residential Ponds',
       path: '/pond-gallery/residential',
       description: 'Beautiful residential pond installations',
-      image: '/images/IMG_2770.jpg',
+      image: '/images/0b89a8b10a3cdccda885b1d037df7b2d-denoise-enhance-4x.jpeg',
       count: 12,
       features: ['Custom Design', 'Koi Ponds', 'Waterfalls', 'LED Lighting']
     },
@@ -47,7 +48,7 @@ const PondGalleryPage = () => {
       name: 'Water Features',
       path: '/pond-gallery/water-features',
       description: 'Creative water feature installations',
-      image: '/images/IMG_2770.jpg',
+      image: '/images/0b89a8b10a3cdccda885b1d037df7b2d-denoise-enhance-4x.jpeg',
       count: 10,
       features: ['Fountains', 'Streams', 'Waterfalls', 'Decorative Elements']
     },
@@ -109,56 +110,19 @@ const PondGalleryPage = () => {
   return (
     <>
       <SEO 
-        title="Pond Gallery - Our Beautiful Water Garden Projects | Utah Water Gardens"
-        description="Explore our stunning pond gallery featuring residential ponds, commercial water features, koi ponds, and water features. See our 500+ completed projects across Utah."
-        keywords="pond gallery, water garden projects, koi ponds, water features, residential ponds, commercial ponds, utah pond builders, pond design"
+        title="Pond Gallery - Professional Water Garden Projects & Portfolio | Utah Water Gardens"
+        description="Explore our comprehensive pond gallery showcasing 500+ completed water garden projects across Utah. View residential ponds, commercial water features, koi ponds, and custom designs. Professional pond builders serving Salt Lake County, Davis County, and surrounding areas."
+        keywords="pond gallery, water garden projects, koi ponds, water features, residential ponds, commercial ponds, utah pond builders, pond design, pond portfolio, water garden examples, utah pond construction, salt lake county ponds, davis county ponds, pond before and after"
         canonical="https://utahwatergardens.com/pond-gallery"
       />
       <div className={`pond-gallery-page ${isVisible ? 'visible' : ''}`}>
         {/* Hero Section */}
-        <section className="pond-gallery-hero">
-          <div className="hero-background">
-            <img 
-              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
-              alt="Beautiful water garden gallery showcasing our pond projects"
-              className="hero-image"
-            />
-            <div className="hero-overlay"></div>
-          </div>
-          
-          <div className="hero-content">
-            <div className="hero-text-content">
-              <h1 className="hero-title">
-                Pond 
-                <span className="hero-title-highlight"> Gallery</span>
-              </h1>
-              
-              <p className="hero-subtitle">
-                Explore our stunning collection of water garden projects across Utah. 
-                From residential koi ponds to commercial water features.
-              </p>
-              
-              <div className="hero-stats">
-                {stats.map((stat, index) => (
-                  <div key={index} className="stat-item">
-                    <div className="stat-icon">{stat.icon}</div>
-                    <div className="stat-number">{stat.number}</div>
-                    <div className="stat-label">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Wavy Divider - Attached to Hero */}
-        <div className="hero-wave-attached">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path className="wave-layer-1" d="M0,0L50,20C100,40,200,80,300,80C400,80,500,40,600,20C700,0,800,0,900,20C1000,40,1100,80,1150,100L1200,120V0Z" fill="#ffffff" opacity="0.1"></path>
-            <path className="wave-layer-2" d="M0,0L50,15C100,30,200,60,300,60C400,60,500,30,600,15C700,0,800,0,900,15C1000,30,1100,60,1150,75L1200,90V0Z" fill="#ffffff" opacity="0.2"></path>
-            <path className="wave-layer-3" d="M0,0L50,10C100,20,200,40,300,40C400,40,500,20,600,10C700,0,800,0,900,10C1000,20,1100,40,1150,50L1200,60V0Z" fill="#ffffff" opacity="0.3"></path>
-          </svg>
-        </div>
+        <PageHero
+          title="Pond Gallery"
+          subtitle="Explore our stunning collection of water garden projects across Utah. From residential koi ponds to commercial water features."
+          backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+          stats={stats}
+        />
 
         {/* Main Content Wrapper with Single Gradient */}
         <div className="main-content-gradient">
@@ -172,6 +136,28 @@ const PondGalleryPage = () => {
                 Each project is uniquely designed to complement its environment while 
                 providing years of enjoyment and natural beauty.
               </p>
+              
+              <div className="intro-images">
+                <img src="/images/IMG_2770.jpg" alt="Professional pond construction project" className="intro-image" />
+                <img src="/images/IMG_2775.jpg" alt="Beautiful residential pond design" className="intro-image" />
+              </div>
+              
+              <div className="portfolio-overview">
+                <h3>Comprehensive Water Garden Solutions</h3>
+                <p>
+                  At Utah Water Gardens, we specialize in creating stunning water features that transform outdoor spaces. 
+                  Our portfolio showcases over 500 completed projects across Utah, from intimate residential koi ponds 
+                  to large-scale commercial water features. Each project reflects our commitment to quality craftsmanship, 
+                  innovative design, and environmental sustainability.
+                </p>
+                <p>
+                  Our experienced team works closely with clients to understand their vision and create custom water 
+                  gardens that exceed expectations. Whether you're looking for a peaceful backyard retreat or an 
+                  impressive commercial centerpiece, our gallery demonstrates the range and quality of our work. 
+                  We serve clients throughout Salt Lake County, Davis County, and surrounding areas with professional 
+                  installation and ongoing maintenance services.
+                </p>
+              </div>
             </div>
 
             {/* Gallery Categories */}
@@ -279,30 +265,124 @@ const PondGalleryPage = () => {
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="process-section">
+        {/* Design Process Section */}
+        <section className="design-process-section">
           <div className="container">
-            <h2>Our Project Process</h2>
+            <h2>Our Design & Construction Process</h2>
             <div className="process-steps">
               <div className="process-step">
                 <div className="step-number">1</div>
-                <h3>Consultation</h3>
-                <p>We meet with you to understand your vision and requirements</p>
+                <h3>Initial Consultation</h3>
+                <p>We begin with a comprehensive site visit to assess your space, discuss your vision, and understand your specific needs and budget requirements.</p>
               </div>
               <div className="process-step">
                 <div className="step-number">2</div>
-                <h3>Design</h3>
-                <p>Create a custom design that fits your space and budget</p>
+                <h3>Custom Design</h3>
+                <p>Our design team creates detailed plans and 3D renderings that incorporate your preferences, site conditions, and local climate considerations.</p>
               </div>
               <div className="process-step">
                 <div className="step-number">3</div>
-                <h3>Installation</h3>
-                <p>Professional installation by our experienced team</p>
+                <h3>Professional Installation</h3>
+                <p>Our experienced construction team uses professional-grade equipment and proven techniques to bring your water garden vision to life.</p>
               </div>
               <div className="process-step">
                 <div className="step-number">4</div>
-                <h3>Support</h3>
-                <p>Ongoing maintenance and support for your water garden</p>
+                <h3>Ongoing Support</h3>
+                <p>We provide comprehensive maintenance services and support to ensure your water garden remains beautiful and healthy for years to come.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Materials & Technology Section */}
+        <section className="materials-section">
+          <div className="container">
+            <h2>Premium Materials & Construction Technology</h2>
+            <div className="materials-content">
+              <div className="materials-text">
+                <p>
+                  We use only the highest quality materials and state-of-the-art construction techniques to ensure 
+                  your water garden stands the test of time. Our projects feature premium EPDM liners, professional-grade 
+                  filtration systems, and energy-efficient pumps designed for Utah's unique climate conditions.
+                </p>
+                <p>
+                  Our construction process includes proper excavation, professional plumbing installation, and careful 
+                  attention to detail in every aspect of the build. We work with trusted suppliers and manufacturers 
+                  to source the best materials available, ensuring durability and long-term performance of your investment.
+                </p>
+              </div>
+              <div className="materials-images">
+                <img src="/images/pondConstruction1000x800.webp" alt="Professional pond construction materials and equipment" className="materials-image" />
+                <img src="/images/IMG_2782.jpg" alt="High-quality pond filtration system installation" className="materials-image" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Areas */}
+        <section className="service-areas-section">
+          <div className="container">
+            <h2>Areas We Serve</h2>
+            <p className="service-areas-intro">
+              We proudly serve the greater Salt Lake City area and surrounding communities with our water garden 
+              design and construction services. Our portfolio includes projects throughout Utah's most beautiful locations.
+            </p>
+            
+            <div className="service-areas-grid">
+              <div className="service-area-group">
+                <h3>Salt Lake County</h3>
+                <div className="cities-list">
+                  <span>Salt Lake City</span>
+                  <span>West Jordan</span>
+                  <span>Murray</span>
+                  <span>Sandy</span>
+                  <span>West Valley City</span>
+                  <span>Draper</span>
+                  <span>Cottonwood Heights</span>
+                  <span>Holladay</span>
+                </div>
+              </div>
+              
+              <div className="service-area-group">
+                <h3>Davis County</h3>
+                <div className="cities-list">
+                  <span>Layton</span>
+                  <span>Bountiful</span>
+                  <span>Farmington</span>
+                  <span>Centerville</span>
+                  <span>Kaysville</span>
+                  <span>Clearfield</span>
+                  <span>Clinton</span>
+                  <span>Syracuse</span>
+                </div>
+              </div>
+              
+              <div className="service-area-group">
+                <h3>Utah County</h3>
+                <div className="cities-list">
+                  <span>Provo</span>
+                  <span>Orem</span>
+                  <span>American Fork</span>
+                  <span>Lehi</span>
+                  <span>Pleasant Grove</span>
+                  <span>Spanish Fork</span>
+                  <span>Springville</span>
+                  <span>Alpine</span>
+                </div>
+              </div>
+              
+              <div className="service-area-group">
+                <h3>Weber County</h3>
+                <div className="cities-list">
+                  <span>Ogden</span>
+                  <span>Roy</span>
+                  <span>Clearfield</span>
+                  <span>South Ogden</span>
+                  <span>North Ogden</span>
+                  <span>Riverdale</span>
+                  <span>Washington Terrace</span>
+                  <span>Farr West</span>
+                </div>
               </div>
             </div>
           </div>
@@ -338,7 +418,7 @@ const PondGalleryPage = () => {
                 </div>
               </div>
               <div className="store-info-image">
-                <img src="/images/IMG_2770.jpg" alt="Our water garden projects and installations" />
+                <img src="/images/735e2dfc82cdc5f4ee2cede5bd9c631f-enhance-4x.jpeg" alt="Our water garden projects and installations" />
               </div>
             </div>
           </div>

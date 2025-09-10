@@ -1,8 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import PageHero from '../components/PageHero';
 import './EquipmentRepairPage.css';
 
 const EquipmentRepairPage = () => {
+  const stats = [
+    { number: '500+', label: 'Repairs Completed', icon: 'Repairs' },
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '100%', label: 'Satisfaction Rate', icon: 'Quality' },
+    { number: '24/7', label: 'Emergency Service', icon: 'Support' }
+  ];
+
   const repairServices = [
     {
       name: 'Pump Repair & Maintenance',
@@ -63,38 +72,21 @@ const EquipmentRepairPage = () => {
   ];
 
   return (
-    <div className="equipment-repair-page">
-      {/* Hero Section */}
-      <section 
-        className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="hero-content">
-          <h1>Pond Equipment Repair Services</h1>
-          <p>Professional repair and maintenance for all your pond equipment. Keep your pond running smoothly with our expert repair services.</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Emergency Repair</a>
-            <Link to="/pond-services" className="secondary-button">View All Services</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2770.jpg" alt="Professional pond equipment repair service" />
-        </div>
-      </section>
-
-      {/* Wavy Divider - Attached to Hero with Blue Gradient */}
-      <div className="hero-wave-attached">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path className="wave-layer-1" d="M0,0L50,20C100,40,200,80,300,80C400,80,500,40,600,20C700,0,800,0,900,20C1000,40,1100,80,1150,100L1200,120V0Z" fill="#ffffff" opacity="0.1"></path>
-          <path className="wave-layer-2" d="M0,0L50,15C100,30,200,60,300,60C400,60,500,30,600,15C700,0,800,0,900,15C1000,30,1100,60,1150,75L1200,90V0Z" fill="#ffffff" opacity="0.2"></path>
-          <path className="wave-layer-3" d="M0,0L50,10C100,20,200,40,300,40C400,40,500,20,600,10C700,0,800,0,900,10C1000,20,1100,40,1150,50L1200,60V0Z" fill="#ffffff" opacity="0.3"></path>
-        </svg>
-      </div>
+    <>
+      <SEO 
+        title="Pond Equipment Repair Services - Professional Equipment Repair | Utah Water Gardens"
+        description="Professional pond equipment repair services in Utah. Pump repair, filtration repair, aeration repair, lighting repair. 15+ years experience, 500+ repairs completed. Emergency service available."
+        keywords="pond equipment repair, pump repair, filtration repair, aeration repair, lighting repair, utah pond repair, salt lake county equipment repair, davis county pond repair, emergency pond repair, pond maintenance"
+        canonical="https://utahwatergardens.com/pond-services/repair"
+      />
+      <div className="equipment-repair-page">
+        <PageHero 
+          title="Pond Equipment Repair Services"
+          subtitle="Professional repair and maintenance for all your pond equipment. Keep your pond running smoothly with our expert repair services."
+          backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+          backgroundImageAlt="Professional pond equipment repair service"
+          stats={stats}
+        />
 
       {/* Main Content Wrapper with Single Gradient */}
       <div className="main-content-gradient">
@@ -278,6 +270,75 @@ const EquipmentRepairPage = () => {
         </div>
       </section>
 
+      {/* Service Areas */}
+      <section className="service-areas-section">
+        <div className="container">
+          <h2>Areas We Serve</h2>
+          <p className="service-areas-intro">
+            We proudly serve the greater Salt Lake City area and surrounding communities with our professional 
+            pond equipment repair services. Our experienced team provides expert repair throughout Utah.
+          </p>
+          
+          <div className="service-areas-grid">
+            <div className="service-area-group">
+              <h3>Salt Lake County</h3>
+              <div className="cities-list">
+                <span>Salt Lake City</span>
+                <span>West Jordan</span>
+                <span>Murray</span>
+                <span>Sandy</span>
+                <span>West Valley City</span>
+                <span>Draper</span>
+                <span>Cottonwood Heights</span>
+                <span>Holladay</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Davis County</h3>
+              <div className="cities-list">
+                <span>Layton</span>
+                <span>Bountiful</span>
+                <span>Farmington</span>
+                <span>Centerville</span>
+                <span>Kaysville</span>
+                <span>Clearfield</span>
+                <span>Clinton</span>
+                <span>Syracuse</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Utah County</h3>
+              <div className="cities-list">
+                <span>Provo</span>
+                <span>Orem</span>
+                <span>American Fork</span>
+                <span>Lehi</span>
+                <span>Pleasant Grove</span>
+                <span>Spanish Fork</span>
+                <span>Springville</span>
+                <span>Alpine</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Weber County</h3>
+              <div className="cities-list">
+                <span>Ogden</span>
+                <span>Roy</span>
+                <span>Clearfield</span>
+                <span>South Ogden</span>
+                <span>North Ogden</span>
+                <span>Riverdale</span>
+                <span>Washington Terrace</span>
+                <span>Farr West</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact CTA */}
       <section 
         className="contact-cta"
@@ -298,7 +359,8 @@ const EquipmentRepairPage = () => {
         </div>
       </section>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageTemplate from '../components/PageTemplate';
+import CTA from '../components/CTA';
 import './PondTipsTricksPage.css';
 
 const PondTipsTricksPage = () => {
   const tipCategories = [
     {
       name: 'Water Quality Tips',
-      image: '/images/IMG_2779.jpg',
+      image: '/images/df28e743d124a752ed0a69ca677ee6d9-enhance-4x.jpeg',
       description: 'Expert tips for maintaining crystal clear, healthy pond water',
       tips: [
         'Test water weekly during the first month, then monthly',
@@ -20,7 +22,7 @@ const PondTipsTricksPage = () => {
     },
     {
       name: 'Fish Care Tips',
-      image: '/images/IMG_2780.jpg',
+      image: '/images/e565fe286bf3f1fadc33cf8757a93b85-enhance-4x.jpeg',
       description: 'Professional tips for keeping your fish healthy and happy',
       tips: [
         'Feed fish only what they can eat in 5 minutes',
@@ -34,7 +36,7 @@ const PondTipsTricksPage = () => {
     },
     {
       name: 'Plant Care Tips',
-      image: '/images/IMG_2776.jpg',
+      image: '/images/e30a5e90007ece2a114847492481dd9a-enhance-4x.jpeg',
       description: 'Secrets to growing beautiful, thriving aquatic plants',
       tips: [
         'Plant in early spring for best establishment',
@@ -48,7 +50,7 @@ const PondTipsTricksPage = () => {
     },
     {
       name: 'Equipment Tips',
-      image: '/images/IMG_2770.jpg',
+      image: '/images/e6c96ccb6e5cd3efd8a92681c4e717be-enhance-4x.jpeg',
       description: 'Maintenance tips to keep your pond equipment running smoothly',
       tips: [
         'Clean pump intake screens weekly',
@@ -62,7 +64,7 @@ const PondTipsTricksPage = () => {
     },
     {
       name: 'Seasonal Tips',
-      image: '/images/IMG_2782.jpg',
+      image: '/images/f635258ea3d2083ed598d07e9470ac64-denoise.jpeg',
       description: 'Season-specific tips for year-round pond success',
       tips: [
         'Start feeding when water reaches 50°F',
@@ -76,7 +78,7 @@ const PondTipsTricksPage = () => {
     },
     {
       name: 'Problem Prevention',
-      image: '/images/IMG_2775.jpg',
+      image: '/images/f502726727f39aa2a972ad523bed9e85-sharpen.jpeg',
       description: 'Proactive tips to prevent common pond problems',
       tips: [
         'Maintain proper fish-to-water ratio',
@@ -132,7 +134,7 @@ const PondTipsTricksPage = () => {
   const seasonalTricks = [
     {
       season: 'Spring',
-      image: '/images/IMG_2782.jpg',
+      image: '/images/f635258ea3d2083ed598d07e9470ac64-denoise.jpeg',
       tricks: [
         'Use pond vacuum for thorough spring cleaning',
         'Add beneficial bacteria to jumpstart biological filtration',
@@ -145,7 +147,7 @@ const PondTipsTricksPage = () => {
     },
     {
       season: 'Summer',
-      image: '/images/IMG_2775.jpg',
+      image: '/images/f502726727f39aa2a972ad523bed9e85-sharpen.jpeg',
       tricks: [
         'Add floating plants for natural shade',
         'Increase aeration during hot weather',
@@ -158,7 +160,7 @@ const PondTipsTricksPage = () => {
     },
     {
       season: 'Fall',
-      image: '/images/IMG_2779.jpg',
+      image: '/images/df28e743d124a752ed0a69ca677ee6d9-enhance-4x.jpeg',
       tricks: [
         'Install pond net to catch falling leaves',
         'Reduce feeding as temperature drops',
@@ -171,7 +173,7 @@ const PondTipsTricksPage = () => {
     },
     {
       season: 'Winter',
-      image: '/images/IMG_2780.jpg',
+      image: '/images/e565fe286bf3f1fadc33cf8757a93b85-enhance-4x.jpeg',
       tricks: [
         'Keep small area of pond ice-free',
         'Use pond heater for fish survival',
@@ -226,7 +228,7 @@ const PondTipsTricksPage = () => {
   const diyProjects = [
     {
       project: 'Homemade Pond Skimmer',
-      image: '/images/IMG_2770.jpg',
+      image: '/images/e6c96ccb6e5cd3efd8a92681c4e717be-enhance-4x.jpeg',
       description: 'Create an effective pond skimmer using household items',
       materials: ['Plastic container', 'Mesh screen', 'PVC pipe', 'Pump'],
       difficulty: 'Easy',
@@ -234,7 +236,7 @@ const PondTipsTricksPage = () => {
     },
     {
       project: 'DIY Plant Baskets',
-      image: '/images/IMG_2776.jpg',
+      image: '/images/e30a5e90007ece2a114847492481dd9a-enhance-4x.jpeg',
       description: 'Make your own aquatic plant baskets for better organization',
       materials: ['Plastic baskets', 'Aquatic soil', 'Gravel', 'Mesh'],
       difficulty: 'Easy',
@@ -242,7 +244,7 @@ const PondTipsTricksPage = () => {
     },
     {
       project: 'Pond Waterfall',
-      image: '/images/IMG_2775.jpg',
+      image: '/images/f502726727f39aa2a972ad523bed9e85-sharpen.jpeg',
       description: 'Build a beautiful waterfall using natural stones',
       materials: ['Pond liner', 'Stones', 'Pump', 'PVC pipe'],
       difficulty: 'Medium',
@@ -250,7 +252,7 @@ const PondTipsTricksPage = () => {
     },
     {
       project: 'Floating Plant Islands',
-      image: '/images/IMG_2779.jpg',
+      image: '/images/df28e743d124a752ed0a69ca677ee6d9-enhance-4x.jpeg',
       description: 'Create floating platforms for marginal plants',
       materials: ['Styrofoam', 'Mesh', 'Plants', 'Anchors'],
       difficulty: 'Easy',
@@ -286,21 +288,21 @@ const PondTipsTricksPage = () => {
   ];
 
   return (
-    <div className="pond-tips-tricks-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Pond Tips & Tricks</h1>
-          <p>Discover expert tips, clever tricks, and professional secrets to make your pond maintenance easier and more effective. From quick fixes to advanced techniques.</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Expert Tips</a>
-            <Link to="/resources" className="secondary-button">View All Resources</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2779.jpg" alt="Expert pond tips and tricks for better pond care" />
-        </div>
-      </section>
+    <PageTemplate
+      title="Pond Tips & Tricks | Expert Advice | Utah Water Gardens"
+      description="Discover expert tips, clever tricks, and professional secrets to make your pond maintenance easier and more effective. From quick fixes to advanced techniques."
+      keywords="pond tips, pond tricks, pond maintenance tips, pond care advice, water garden tips, pond troubleshooting, expert pond advice"
+      canonical="https://utahwatergardens.com/resources/tips-tricks"
+      heroTitle="Pond Tips & Tricks"
+      heroSubtitle="Discover expert tips, clever tricks, and professional secrets to make your pond maintenance easier and more effective. From quick fixes to advanced techniques."
+      heroBackgroundImage="/images/f502726727f39aa2a972ad523bed9e85-sharpen.jpeg"
+      heroBackgroundImageAlt="Expert pond tips and tricks for better pond care"
+      primaryButtonText="CALL FOR EXPERT TIPS"
+      primaryButtonLink="tel:+18015908516"
+      secondaryButtonText="VIEW ALL RESOURCES"
+      secondaryButtonLink="/resources"
+      className="tips-tricks"
+    >
 
       {/* Tip Categories */}
       <section className="tips-section first-section-gradient">
@@ -526,26 +528,9 @@ const PondTipsTricksPage = () => {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section 
-        className="contact-cta"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container">
-          <h2>Need More Expert Tips?</h2>
-          <p>Our specialists can provide personalized tips for your specific pond situation</p>
-          <div className="cta-buttons">
-            <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-            <Link to="/contact" className="btn btn-secondary">Send Message</Link>
-          </div>
-        </div>
-      </section>
-    </div>
+      {/* CTA Section */}
+      <CTA />
+    </PageTemplate>
   );
 };
 

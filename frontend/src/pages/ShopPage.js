@@ -8,26 +8,20 @@ const ShopPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentPlantSlide, setCurrentPlantSlide] = useState(0);
   
-  // All products from the shop
+  // All products from the shop - LIMITED FOR PERFORMANCE
   const allProducts = [
-    { name: 'Water Lilies', image: '/images/waterLillies.webp', category: 'Aquatic Plants', path: '/plants-fish/water-lilies' },
-    { name: 'Floating Plants', image: '/images/IMG_2775.jpg', category: 'Aquatic Plants', path: '/plants-fish/floating-plants' },
-    { name: 'Marginal Plants', image: '/images/IMG_2779.jpg', category: 'Aquatic Plants', path: '/plants-fish/marginal-plants' },
-    { name: 'Submerged Plants', image: '/images/IMG_2770.jpg', category: 'Aquatic Plants', path: '/plants-fish/aquatic-plants' },
-    { name: 'Koi Fish', image: '/images/koi.webp', category: 'Fish & Koi', path: '/plants-fish/koi-goldfish' },
+    { name: 'Water Lilies', image: '/images/waterLillies-topaz-enhance-4x.jpeg', category: 'Aquatic Plants', path: '/plants-fish/water-lilies' },
+    { name: 'Floating Plants', image: '/images/5f4fbb5840c1b554060a09ace9f579e0-denoise.jpeg', category: 'Aquatic Plants', path: '/plants-fish/floating-plants' },
+    { name: 'Marginal Plants', image: '/images/3e8c02a910ecc02bd046359713860a2c-denoise-enhance-4x.jpeg', category: 'Aquatic Plants', path: '/plants-fish/marginal-plants' },
+    { name: 'Submerged Plants', image: '/images/0b89a8b10a3cdccda885b1d037df7b2d-denoise-enhance-4x.jpeg', category: 'Aquatic Plants', path: '/plants-fish/aquatic-plants' },
+    { name: 'Koi Fish', image: '/images/koi-topaz-enhance-4x.jpeg', category: 'Fish & Koi', path: '/plants-fish/koi-goldfish' },
     { name: 'Pond Pumps', image: '/images/pumpRepair.webp', category: 'Pond Supplies', path: '/pond-supplies/pumps-aeration' },
-    { name: 'Goldfish Varieties', image: '/images/IMG_2780.jpg', category: 'Fish & Koi', path: '/plants-fish/koi-goldfish' },
-    { name: 'Pond Liners', image: '/images/IMG_2776.jpg', category: 'Pond Supplies', path: '/pond-supplies/liners' },
-    { name: 'Filtration Systems', image: '/images/IMG_2782.jpg', category: 'Pond Supplies', path: '/pond-supplies/filtration' },
-    { name: 'Pond Accessories', image: '/images/IMG_2782.jpg', category: 'Pond Supplies', path: '/pond-supplies/accessories' },
-    { name: 'Water Treatments', image: '/images/IMG_2770.jpg', category: 'Pond Supplies', path: '/pond-supplies/water-treatments' },
-    { name: 'Spring Blooms', image: '/images/IMG_2775.jpg', category: 'Seasonal Plants', path: '/plants-fish/aquatic-plants' },
-    { name: 'Summer Collection', image: '/images/IMG_2779.jpg', category: 'Seasonal Plants', path: '/plants-fish/aquatic-plants' },
-    { name: 'Fall Preparations', image: '/images/IMG_2780.jpg', category: 'Seasonal Plants', path: '/plants-fish/aquatic-plants' }
-  ];
+    { name: 'Goldfish Varieties', image: '/images/2b1a14d52ea7e62a36a62f1a2da7203a-enhance-4x.jpeg', category: 'Fish & Koi', path: '/plants-fish/koi-goldfish' },
+    { name: 'Pond Liners', image: '/images/1c7c15865a8fd7d198a5c69c3087e91c-enhance-4x.jpeg', category: 'Pond Supplies', path: '/pond-supplies/liners' }
+  ]; // Limited to 8 items for better performance
 
-  // All plants from the plant data
-  const allPlants = getAllPlants();
+  // All plants from the plant data - LIMITED FOR PERFORMANCE
+  const allPlants = getAllPlants().slice(0, 12); // Limit to 12 plants for better performance
 
   const productsPerSlide = 4;
   const totalSlides = Math.ceil(allProducts.length / productsPerSlide);
@@ -212,6 +206,84 @@ const ShopPage = () => {
         </div>
       </section>
 
+      {/* Shop Introduction */}
+        <section className="shop-intro">
+        <div className="container">
+            <div className="intro-content">
+              <h2>Utah's Premier Pond Supply Store</h2>
+              <p>
+                Welcome to Utah Water Gardens, your one-stop destination for all pond and water garden supplies. 
+                With over 15 years of experience serving Utah's pond enthusiasts, we've built the most comprehensive 
+                selection of aquatic plants, pond equipment, and water garden accessories in the region.
+              </p>
+              <p>
+                Our knowledgeable staff understands the unique challenges of maintaining ponds in Utah's climate, 
+                from our hot summers to cold winters. We carefully select every product in our inventory to ensure 
+                it meets our high standards for quality, durability, and effectiveness in local conditions.
+              </p>
+              
+              <div className="intro-images">
+                <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Beautiful water lilies in bloom" className="intro-image" />
+                <img src="/images/koi-topaz-enhance-4x.jpeg" alt="Colorful koi fish swimming" className="intro-image" />
+                <img src="/images/3e8c02a910ecc02bd046359713860a2c (1)-denoise-enhance-4x.jpeg" alt="High-quality pond liner material" className="intro-image" />
+              </div>
+            </div>
+        </div>
+      </section>
+
+      {/* Product Categories Overview */}
+        <section className="product-categories">
+        <div className="container">
+            <h2>Our Product Categories</h2>
+            <div className="categories-grid">
+              <div className="category-item">
+                <h3>Aquatic Plants</h3>
+                <p>From water lilies to marginal plants, we carry the largest selection of aquatic plants in Utah. All plants are locally grown and adapted to our climate.</p>
+                <ul>
+                  <li>Water Lilies (Hardy & Tropical)</li>
+                  <li>Marginal Plants</li>
+                  <li>Floating Plants</li>
+                  <li>Submerged Plants</li>
+                  <li>Bog Plants</li>
+                </ul>
+              </div>
+              <div className="category-item">
+                <h3>Pond Equipment</h3>
+                <p>Professional-grade pumps, filters, and aeration systems to keep your pond healthy and beautiful year-round.</p>
+                <ul>
+                  <li>Pond Pumps</li>
+                  <li>Filtration Systems</li>
+                  <li>Aeration Equipment</li>
+                  <li>UV Sterilizers</li>
+                  <li>Skimmers & Drains</li>
+                </ul>
+              </div>
+              <div className="category-item">
+                <h3>Pond Liners & Materials</h3>
+                <p>High-quality EPDM and PVC liners, underlayment, and construction materials for building or repairing your pond.</p>
+                <ul>
+                  <li>EPDM Pond Liners</li>
+                  <li>PVC Liners</li>
+                  <li>Underlayment</li>
+                  <li>Adhesives & Sealants</li>
+                  <li>Edge Materials</li>
+                </ul>
+              </div>
+              <div className="category-item">
+                <h3>Water Treatments</h3>
+                <p>Safe and effective treatments to maintain crystal-clear water and healthy aquatic life in your pond.</p>
+                <ul>
+                  <li>Beneficial Bacteria</li>
+                  <li>Algae Control</li>
+                  <li>Water Clarifiers</li>
+                  <li>pH Balancers</li>
+                  <li>Dechlorinators</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </section>
+
       {/* Featured Products */}
         <section className="featured-products">
         <div className="container">
@@ -222,7 +294,7 @@ const ShopPage = () => {
             <div className="featured-grid">
               <Link to="/pond-supplies/liners" className="featured-card">
                 <div className="featured-image">
-                  <img src="/images/pond_liner_40mil.jpg" alt="High-quality pond liners" />
+                  <img src="/images/3f524798b831b933a60d3f6d15f38e3b-denoise-enhance-4x.jpeg" alt="High-quality pond liners" />
                   <div className="featured-badge">Most Popular</div>
                 </div>
                 <div className="featured-content">
@@ -236,7 +308,7 @@ const ShopPage = () => {
               
               <Link to="/plants-fish/water-lilies" className="featured-card">
                 <div className="featured-image">
-                  <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Beautiful water lilies" />
+                  <img src="/images/412a45870a56bf675379c3bde8e2ff95-enhance-4x.jpeg" alt="Beautiful water lilies" />
                   <div className="featured-badge">Best Seller</div>
                 </div>
                 <div className="featured-content">
@@ -250,7 +322,7 @@ const ShopPage = () => {
               
               <Link to="/pond-supplies/pumps-aeration" className="featured-card">
                 <div className="featured-image">
-                  <img src="/images/pumpRepair.webp" alt="Energy-efficient pond pumps" />
+                  <img src="/images/4150c9ec3a4ae862ff09fb4edab8a105-denoise-enhance-4x.jpeg" alt="Energy-efficient pond pumps" />
                   <div className="featured-badge">Professional Grade</div>
                 </div>
                 <div className="featured-content">
@@ -288,7 +360,17 @@ const ShopPage = () => {
                     {allProducts.slice(slideIndex * productsPerSlide, (slideIndex + 1) * productsPerSlide).map((product, index) => (
                       <Link key={index} to={product.path} className="shop-item">
                         <div className="shop-item-image">
-                          <img src={product.image} alt={product.name} />
+                          <img 
+                            src={product.image} 
+                            alt={product.name}
+                            loading="lazy"
+                            decoding="async"
+                            style={{ 
+                              transform: 'translateZ(0)',
+                              backfaceVisibility: 'hidden',
+                              willChange: 'auto'
+                            }}
+                          />
                         </div>
                         <div className="shop-item-content">
                           <h3>{product.name}</h3>
@@ -337,7 +419,17 @@ const ShopPage = () => {
                     {allPlants.slice(slideIndex * plantsPerSlide, (slideIndex + 1) * plantsPerSlide).map((plant, index) => (
                       <Link key={index} to={`/plant/${createPlantSlug(plant.name)}`} className="plant-item">
                         <div className="plant-item-image">
-                          <img src={plant.image} alt={plant.name} />
+                          <img 
+                            src={plant.image} 
+                            alt={plant.name}
+                            loading="lazy"
+                            decoding="async"
+                            style={{ 
+                              transform: 'translateZ(0)',
+                              backfaceVisibility: 'hidden',
+                              willChange: 'auto'
+                            }}
+                          />
                         </div>
                         <div className="plant-item-content">
                           <h3>{plant.name}</h3>
@@ -404,7 +496,7 @@ const ShopPage = () => {
               </div>
             </div>
               <div className="store-info-image">
-                <img src="/images/IMG_2770.jpg" alt="Our store and pond maintenance services" />
+                <img src="/images/41bc4bcb74c80d5770a1168c8373dd89-sharpen.jpeg" alt="Our store and pond maintenance services" />
               </div>
           </div>
         </div>
@@ -427,7 +519,7 @@ const ShopPage = () => {
             <h2>What Makes Our Retail Location Special</h2>
             <div className="highlights-grid">
               <Link to="/plants-fish/aquatic-plants" className="highlight-card">
-                <img src="/images/IMG_2775.jpg" alt="Expert plant selection" />
+                <img src="/images/443bd1b5cddc4d945e924f40dfbcba96-enhance-4x.jpeg" alt="Expert plant selection" />
               <h3>Expert Plant Selection</h3>
               <p>Our staff hand-picks the healthiest and most beautiful plants for your pond</p>
                 <a href="tel:(801) 590-8516" className="highlight-cta" onClick={(e) => e.stopPropagation()}>
@@ -435,7 +527,7 @@ const ShopPage = () => {
                 </a>
             </Link>
               <Link to="/plants-fish/aquatic-plants" className="highlight-card">
-                <img src="/images/IMG_2779.jpg" alt="Seasonal availability" />
+                <img src="/images/50b7c5b5336aff2aeaf6690696e3e42f-denoise-enhance-4x.jpeg" alt="Seasonal availability" />
               <h3>Seasonal Availability</h3>
               <p>We stock plants that are appropriate for each season and Utah's climate</p>
                 <a href="tel:(801) 590-8516" className="highlight-cta" onClick={(e) => e.stopPropagation()}>
@@ -443,7 +535,7 @@ const ShopPage = () => {
                 </a>
             </Link>
               <Link to="/contact" className="highlight-card">
-                <img src="/images/IMG_2780.jpg" alt="Local expertise" />
+                <img src="/images/65f25c8086c8955b83251f79c1f77da1-enhance-4x.jpeg" alt="Local expertise" />
               <h3>Local Expertise</h3>
               <p>We know what works in Utah's unique environment and can guide your choices</p>
                 <a href="tel:(801) 590-8516" className="highlight-cta" onClick={(e) => e.stopPropagation()}>

@@ -5,6 +5,13 @@ import PageHero from '../components/PageHero.js';
 import './WaterQualityTestingPage.css';
 
 const WaterQualityTestingPage = () => {
+  const stats = [
+    { number: '1000+', label: 'Tests Performed', icon: 'Tests' },
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '100%', label: 'Accuracy Guaranteed', icon: 'Quality' },
+    { number: 'Same Day', label: 'Results Available', icon: 'Speed' }
+  ];
+
   const testingServices = [
     {
       name: 'pH Testing',
@@ -87,16 +94,12 @@ const WaterQualityTestingPage = () => {
       />
       <div className="water-quality-testing-page">
         <PageHero 
-        title="Water Quality Testing Services"
-        subtitle="Professional water quality testing to ensure your pond maintains optimal conditions for fish and plants"
-        backgroundImage="/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg"
-        backgroundImageAlt="Professional water quality testing services"
-        showCTA={true}
-        ctaButtons={[
-          { text: "Call for Testing Quote", href: "tel:(801) 590-8516", type: "primary" },
-          { text: "View All Services", href: "/pond-services", type: "secondary" }
-        ]}
-      />
+          title="Water Quality Testing Services"
+          subtitle="Professional water quality testing to ensure your pond maintains optimal conditions for fish and plants"
+          backgroundImage="/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg"
+          backgroundImageAlt="Professional water quality testing services"
+          stats={stats}
+        />
 
       {/* Why Water Testing Matters */}
       <section className="importance-section first-section-gradient">
@@ -265,6 +268,75 @@ const WaterQualityTestingPage = () => {
                 <li>Fall preparation</li>
                 <li>Winter monitoring</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="service-areas-section">
+        <div className="container">
+          <h2>Areas We Serve</h2>
+          <p className="service-areas-intro">
+            We proudly serve the greater Salt Lake City area and surrounding communities with our professional 
+            water quality testing services. Our experienced team provides accurate testing throughout Utah.
+          </p>
+          
+          <div className="service-areas-grid">
+            <div className="service-area-group">
+              <h3>Salt Lake County</h3>
+              <div className="cities-list">
+                <span>Salt Lake City</span>
+                <span>West Jordan</span>
+                <span>Murray</span>
+                <span>Sandy</span>
+                <span>West Valley City</span>
+                <span>Draper</span>
+                <span>Cottonwood Heights</span>
+                <span>Holladay</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Davis County</h3>
+              <div className="cities-list">
+                <span>Layton</span>
+                <span>Bountiful</span>
+                <span>Farmington</span>
+                <span>Centerville</span>
+                <span>Kaysville</span>
+                <span>Clearfield</span>
+                <span>Clinton</span>
+                <span>Syracuse</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Utah County</h3>
+              <div className="cities-list">
+                <span>Provo</span>
+                <span>Orem</span>
+                <span>American Fork</span>
+                <span>Lehi</span>
+                <span>Pleasant Grove</span>
+                <span>Spanish Fork</span>
+                <span>Springville</span>
+                <span>Alpine</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Weber County</h3>
+              <div className="cities-list">
+                <span>Ogden</span>
+                <span>Roy</span>
+                <span>Clearfield</span>
+                <span>South Ogden</span>
+                <span>North Ogden</span>
+                <span>Riverdale</span>
+                <span>Washington Terrace</span>
+                <span>Farr West</span>
+              </div>
             </div>
           </div>
         </div>

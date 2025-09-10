@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import SEO from '../components/SEO';
+import PageTemplate from '../components/PageTemplate';
+import CTA from '../components/CTA';
 import './ResourcesPage.css';
 
 const ResourcesPage = () => {
@@ -11,10 +12,10 @@ const ResourcesPage = () => {
   }, []);
 
   const stats = [
-    { number: '50+', label: 'Helpful Articles', icon: 'Articles' },
-    { number: '6', label: 'Resource Categories', icon: 'Categories' },
-    { number: '15+', label: 'Years of Knowledge', icon: 'Experience' },
-    { number: '100%', label: 'Free Resources', icon: 'Free' }
+    { number: '50+', label: 'Helpful Articles', icon: '📚' },
+    { number: '6', label: 'Resource Categories', icon: '📂' },
+    { number: '15+', label: 'Years of Knowledge', icon: '⭐' },
+    { number: '100%', label: 'Free Resources', icon: '💯' }
   ];
 
   const resourceCategories = [
@@ -22,43 +23,49 @@ const ResourcesPage = () => {
       name: 'Care Guides',
       path: '/resources/care-guides',
       description: 'Comprehensive guides for pond and aquatic life care',
-      icon: 'Guides',
-      articles: ['Pond Maintenance Basics', 'Fish Care Guide', 'Plant Care Tips', 'Seasonal Pond Care']
+      icon: '📖',
+      articles: ['Pond Maintenance Basics', 'Fish Care Guide', 'Plant Care Tips', 'Seasonal Pond Care'],
+      image: '/images/144b4c20031b8d5bdb573f8c9aea03a3-enhance-4x.jpeg'
     },
     {
       name: 'Pond Tips & Tricks',
       path: '/resources/tips-tricks',
       description: 'Expert tips to keep your pond healthy and beautiful',
-      icon: 'Tips',
-      articles: ['Water Quality Management', 'Algae Control Methods', 'Pond Aeration Tips', 'Winter Pond Preparation']
+      icon: '💡',
+      articles: ['Water Quality Management', 'Algae Control Methods', 'Pond Aeration Tips', 'Winter Pond Preparation'],
+      image: '/images/19765b123d1521ca46ded746c375eeef-enhance-4x.jpeg'
     },
     {
       name: 'Seasonal Care',
       path: '/resources/seasonal-care',
       description: 'Season-specific care instructions for your pond',
-      icon: 'Seasonal',
-      articles: ['Spring Pond Opening', 'Summer Pond Maintenance', 'Fall Pond Cleanup', 'Winter Pond Care']
+      icon: '🍂',
+      articles: ['Spring Pond Opening', 'Summer Pond Maintenance', 'Fall Pond Cleanup', 'Winter Pond Care'],
+      image: '/images/1a558e9d94802fd824b157129ebe0e1d-enhance-4x.jpeg'
     },
     {
       name: 'Troubleshooting',
       path: '/resources/troubleshooting',
       description: 'Solutions to common pond problems',
-      icon: 'Troubleshoot',
-      articles: ['Finding a Leak in Your Pond', 'Pond Water Loss Issues', 'Fish Health Problems', 'Plant Disease Solutions']
+      icon: '🔧',
+      articles: ['Finding a Leak in Your Pond', 'Pond Water Loss Issues', 'Fish Health Problems', 'Plant Disease Solutions'],
+      image: '/images/1a9b7904c3461d26b8b9b177164f11c4-denoise.jpeg'
     },
     {
       name: 'Video Tutorials',
       path: '/resources/video-tutorials',
       description: 'Step-by-step video guides for pond care',
-      icon: 'Videos',
-      articles: ['Pond Cleaning Tutorial', 'Filter Maintenance', 'Plant Installation', 'Fish Feeding Guide']
+      icon: '🎥',
+      articles: ['Pond Cleaning Tutorial', 'Filter Maintenance', 'Plant Installation', 'Fish Feeding Guide'],
+      image: '/images/1c7c15865a8fd7d198a5c69c3087e91c-enhance-4x.jpeg'
     },
     {
       name: 'FAQ',
       path: '/resources/faq',
       description: 'Answers to frequently asked questions',
-      icon: 'FAQ',
-      articles: ['Common Pond Questions', 'Equipment FAQs', 'Plant & Fish FAQs', 'Maintenance FAQs']
+      icon: '❓',
+      articles: ['Common Pond Questions', 'Equipment FAQs', 'Plant & Fish FAQs', 'Maintenance FAQs'],
+      image: '/images/1df1ecf8852a8a526517efdf414917a7-denoise-enhance-4x.jpeg'
     }
   ];
 
@@ -69,7 +76,7 @@ const ResourcesPage = () => {
       excerpt: 'Learn how to identify and fix common pond leaks with our step-by-step guide.',
       category: 'Troubleshooting',
       readTime: '5 min read',
-      image: '/images/IMG_2770.jpg'
+      image: '/images/2b1a14d52ea7e62a36a62f1a2da7203a-enhance-4x.jpeg'
     },
     {
       title: 'Pond Water Loss Issues',
@@ -77,7 +84,7 @@ const ResourcesPage = () => {
       excerpt: 'Understanding and solving water loss problems in your pond.',
       category: 'Troubleshooting',
       readTime: '4 min read',
-      image: '/images/IMG_2782.jpg'
+      image: '/images/2d38a8065acb69433f4ac7658de69f6c-enhance-4x.jpeg'
     },
     {
       title: 'Pond Maintenance Guide',
@@ -85,7 +92,7 @@ const ResourcesPage = () => {
       excerpt: 'Essential maintenance tips for keeping your pond healthy year-round.',
       category: 'Care Guides',
       readTime: '8 min read',
-      image: '/images/pondMaintenance-topaz-denoise-enhance-3.9x.jpeg'
+      image: '/images/2f5160e87ccdc3259c69ecd3d8776206-denoise.jpeg'
     }
   ];
 
@@ -99,190 +106,157 @@ const ResourcesPage = () => {
   ];
 
   return (
-    <>
-      <SEO 
-        title="Pond Resources - Expert Guides, Tips & Tutorials | Utah Water Gardens"
-        description="Access our comprehensive library of pond resources including care guides, troubleshooting tips, seasonal care instructions, and video tutorials. Free expert advice for all your pond needs."
-        keywords="pond resources, pond guides, pond tips, pond troubleshooting, seasonal pond care, pond maintenance guide, water garden resources"
-        canonical="https://utahwatergardens.com/resources"
-      />
-      <div className={`resources-page ${isVisible ? 'visible' : ''}`}>
-        {/* Hero Section */}
-        <section className="resources-hero">
-          <div className="hero-background">
-            <img 
-              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
-              alt="Beautiful pond resources and educational content"
-              className="hero-image"
-            />
-            <div className="hero-overlay"></div>
+    <PageTemplate
+      title="Pond Resources & Expert Guides | Utah Water Gardens"
+      description="Comprehensive pond care resources, guides, tips, and troubleshooting. Expert advice for maintaining healthy ponds and water features in Utah."
+      keywords="pond resources, pond guides, pond tips, pond troubleshooting, pond care, water garden resources, Utah pond maintenance"
+      canonical="https://utahwatergardens.com/resources"
+      heroTitle="Pond Resources & Expert Guides"
+      heroSubtitle="Everything you need to know about pond care, maintenance, and troubleshooting. Expert tips, guides, and solutions for healthy water features."
+      heroBackgroundImage="/images/19765b123d1521ca46ded746c375eeef-enhance-4x.jpeg"
+      heroBackgroundImageAlt="Pond resources and expert guides"
+      primaryButtonText="GET EXPERT HELP"
+      primaryButtonLink="tel:+18015908516"
+      secondaryButtonText="VIEW TIPS & TRICKS"
+      secondaryButtonLink="/resources/tips-tricks"
+      className="resources"
+    >
+      {/* Stats Section */}
+      <section className="section" aria-labelledby="stats-h">
+        <div className="container">
+          <header className="section-head">
+            <h2 id="stats-h">Our Resource Library</h2>
+            <p>Comprehensive pond care knowledge at your fingertips</p>
+          </header>
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat-card">
+                <div className="stat-icon">{stat.icon}</div>
+                <div className="stat-number">{stat.number}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
           </div>
-          
-          <div className="hero-content">
-            <div className="hero-text-content">
-              <h1 className="hero-title">
-                Pond 
-                <span className="hero-title-highlight"> Resources</span>
-              </h1>
-              
-              <p className="hero-subtitle">
-                Expert guides, tips, and tutorials to help you create and maintain beautiful water features.
-              </p>
-              
-              <div className="hero-stats">
-                {stats.map((stat, index) => (
-                  <div key={index} className="stat-item">
-                    <div className="stat-icon">{stat.icon}</div>
-                    <div className="stat-number">{stat.number}</div>
-                    <div className="stat-label">{stat.label}</div>
+        </div>
+      </section>
+
+      {/* Resource Categories */}
+      <section className="section alt" aria-labelledby="categories-h">
+        <div className="container">
+          <header className="section-head">
+            <h2 id="categories-h">Resource Categories</h2>
+            <p>Explore our comprehensive collection of pond care resources</p>
+          </header>
+          <div className="categories-grid">
+            {resourceCategories.map((category, index) => (
+              <Link key={index} to={category.path} className="category-card">
+                <div className="category-image">
+                  <img src={category.image} alt={category.name} loading="lazy" />
+                  <div className="category-overlay">
+                    <div className="category-icon">{category.icon}</div>
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+                <div className="category-content">
+                  <h3>{category.name}</h3>
+                  <p>{category.description}</p>
+                  <div className="category-articles">
+                    <h4>Featured Articles:</h4>
+                    <ul>
+                      {category.articles.slice(0, 3).map((article, articleIndex) => (
+                        <li key={articleIndex}>{article}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="category-link">
+                    <span>Explore {category.name} →</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
-        </section>
-
-        {/* Wavy Divider - Attached to Hero */}
-        <div className="hero-wave-attached">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path className="wave-layer-1" d="M0,0L50,20C100,40,200,80,300,80C400,80,500,40,600,20C700,0,800,0,900,20C1000,40,1100,80,1150,100L1200,120V0Z" fill="#ffffff" opacity="0.1"></path>
-            <path className="wave-layer-2" d="M0,0L50,15C100,30,200,60,300,60C400,60,500,30,600,15C700,0,800,0,900,15C1000,30,1100,60,1150,75L1200,90V0Z" fill="#ffffff" opacity="0.2"></path>
-            <path className="wave-layer-3" d="M0,0L50,10C100,20,200,40,300,40C400,40,500,20,600,10C700,0,800,0,900,10C1000,20,1100,40,1150,50L1200,60V0Z" fill="#ffffff" opacity="0.3"></path>
-          </svg>
         </div>
+      </section>
 
-        {/* Main Content Wrapper with Single Gradient */}
-        <div className="main-content-gradient">
-          {/* Main Content */}
-          <section className="resources-main-content">
-          <div className="container">
-            <div className="page-intro">
-              <h2>Your Complete Pond Resource Library</h2>
-              <p>
-                Whether you're a beginner or an experienced pond owner, our comprehensive resource library 
-                provides expert guidance on every aspect of pond care. From basic maintenance to advanced 
-                troubleshooting, we've got you covered with free, professional advice.
-              </p>
-            </div>
-
-            {/* Resource Categories */}
-            <div className="resource-categories">
-              <h2>Browse by Category</h2>
-              <div className="categories-grid">
-                {resourceCategories.map((category, index) => (
-                  <Link key={index} to={category.path} className="category-card">
-                    <div className="category-header">
-                      <div className="category-icon">{category.icon}</div>
-                      <h3>{category.name}</h3>
-                    </div>
-                    <p className="category-description">{category.description}</p>
-                    <div className="category-articles">
-                      <h4>Popular Articles:</h4>
-                      <ul>
-                        {category.articles.slice(0, 3).map((article, articleIndex) => (
-                          <li key={articleIndex}>{article}</li>
-                        ))}
-                        {category.articles.length > 3 && (
-                          <li>+{category.articles.length - 3} more</li>
-                        )}
-                      </ul>
-                    </div>
-                    <span className="category-link">Explore {category.name} →</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Featured Articles */}
-            <div className="featured-articles">
-              <h2>Featured Articles</h2>
-              <div className="articles-grid">
-                {featuredArticles.map((article, index) => (
-                  <Link key={index} to={article.path} className="article-card">
-                    <div className="article-image">
-                      <img src={article.image} alt={article.title} />
-                      <div className="article-category-badge">{article.category}</div>
-                    </div>
-                    <div className="article-content">
-                      <h3>{article.title}</h3>
-                      <p>{article.excerpt}</p>
-                      <div className="article-meta">
-                        <span className="read-time">{article.readTime}</span>
-                        <span className="read-more">Read More →</span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div className="quick-links-section">
-              <h2>Quick Links</h2>
-              <p>Jump to specific topics and services</p>
-              <div className="quick-links-grid">
-                {quickLinks.map((link, index) => (
-                  <Link key={index} to={link.path} className="quick-link-item">
-                    <span className="link-icon">Link</span>
-                    <span>{link.name}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
+      {/* Featured Articles */}
+      <section className="section" aria-labelledby="featured-h">
+        <div className="container">
+          <header className="section-head">
+            <h2 id="featured-h">Featured Articles</h2>
+            <p>Most popular and helpful resources from our experts</p>
+          </header>
+          <div className="articles-grid">
+            {featuredArticles.map((article, index) => (
+              <Link key={index} to={article.path} className="article-card">
+                <div className="article-image">
+                  <img src={article.image} alt={article.title} loading="lazy" />
+                  <div className="article-category">{article.category}</div>
+                </div>
+                <div className="article-content">
+                  <h3>{article.title}</h3>
+                  <p>{article.excerpt}</p>
+                  <div className="article-meta">
+                    <span className="read-time">{article.readTime}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
-        </section>
-
-        {/* Why Use Our Resources */}
-        <section className="why-choose-section">
-          <div className="container">
-            <h2>Why Use Our Resources?</h2>
-            <div className="benefits-grid">
-              <div className="benefit-item">
-                <div className="benefit-icon">Expert</div>
-                <h4>Expert Knowledge</h4>
-                <p>15+ years of professional pond experience in every guide</p>
-              </div>
-              <div className="benefit-item">
-                <div className="benefit-icon">Free</div>
-                <h4>Completely Free</h4>
-                <p>All resources are free to access with no hidden costs</p>
-              </div>
-              <div className="benefit-item">
-                <div className="benefit-icon">Practical</div>
-                <h4>Practical Advice</h4>
-                <p>Real-world solutions that actually work in Utah's climate</p>
-              </div>
-              <div className="benefit-item">
-                <div className="benefit-icon">Updated</div>
-                <h4>Regularly Updated</h4>
-                <p>Content is regularly reviewed and updated with latest information</p>
-              </div>
-            </div>
-          </div>
-        </section>
         </div>
+      </section>
 
-        {/* CTA Section */}
-        <section 
-          className="contact-cta"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          <div className="container">
-            <h2>Need More Help?</h2>
-            <p>Can't find what you're looking for? Our experts are here to help with personalized advice.</p>
-            <div className="cta-buttons">
-              <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-              <Link to="/contact" className="btn btn-secondary">Ask a Question</Link>
+      {/* Quick Links */}
+      <section className="section alt" aria-labelledby="quick-links-h">
+        <div className="container">
+          <header className="section-head">
+            <h2 id="quick-links-h">Quick Links</h2>
+            <p>Popular services and information pages</p>
+          </header>
+          <div className="quick-links-grid">
+            {quickLinks.map((link, index) => (
+              <Link key={index} to={link.path} className="quick-link-card">
+                <div className="quick-link-icon">🔗</div>
+                <span>{link.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Our Resources */}
+      <section className="section" aria-labelledby="why-choose-h">
+        <div className="container">
+          <header className="section-head">
+            <h2 id="why-choose-h">Why Choose Our Resources?</h2>
+            <p>Expert knowledge backed by years of experience</p>
+          </header>
+          <div className="benefits-grid">
+            <div className="benefit-card">
+              <div className="benefit-icon">🎓</div>
+              <h3>Expert Knowledge</h3>
+              <p>All resources are created by certified pond care specialists with 15+ years of experience.</p>
+            </div>
+            <div className="benefit-card">
+              <div className="benefit-icon">🆓</div>
+              <h3>100% Free</h3>
+              <p>Access all our guides, tips, and tutorials completely free of charge.</p>
+            </div>
+            <div className="benefit-card">
+              <div className="benefit-icon">🌱</div>
+              <h3>Utah-Specific</h3>
+              <p>Tailored advice for Utah's unique climate and water conditions.</p>
+            </div>
+            <div className="benefit-card">
+              <div className="benefit-icon">📱</div>
+              <h3>Always Updated</h3>
+              <p>Regularly updated content with the latest pond care techniques and solutions.</p>
             </div>
           </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <CTA />
+    </PageTemplate>
   );
 };
 

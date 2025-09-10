@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import PageHero from '../components/PageHero';
 import './PondSuppliesPage.css';
 
 const PondSuppliesPage = () => {
@@ -88,55 +89,19 @@ const PondSuppliesPage = () => {
   return (
     <>
       <SEO 
-        title="Pond Supplies - Everything You Need for Your Water Garden | Utah Water Gardens"
-        description="Shop our complete selection of pond supplies including filtration systems, pumps, liners, water treatments, lighting, and tools. Quality products for all your pond needs."
-        keywords="pond supplies, pond equipment, filtration systems, pond pumps, pond liners, water treatments, pond lighting, pond tools, utah pond supplies"
+        title="Pond Supplies - Premium Water Garden Equipment & Products | Utah Water Gardens"
+        description="Shop our comprehensive selection of 500+ pond supplies including filtration systems, pumps, liners, water treatments, lighting, and tools. Professional-grade equipment from 50+ top brands. Serving Salt Lake County, Davis County, and surrounding areas with expert advice and quality guaranteed."
+        keywords="pond supplies, pond equipment, filtration systems, pond pumps, pond liners, water treatments, pond lighting, pond tools, utah pond supplies, salt lake county pond supplies, davis county pond equipment, pond maintenance supplies, koi pond supplies, water garden equipment, pond accessories"
         canonical="https://utahwatergardens.com/pond-supplies"
       />
       <div className={`pond-supplies-page ${isVisible ? 'visible' : ''}`}>
         {/* Hero Section */}
-        <section className="pond-supplies-hero">
-          <div className="hero-background">
-            <img 
-              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
-              alt="Beautiful pond with supplies and equipment"
-              className="hero-image"
-            />
-            <div className="hero-overlay"></div>
-          </div>
-          
-          <div className="hero-content">
-            <div className="hero-text-content">
-              <h1 className="hero-title">
-                Pond 
-                <span className="hero-title-highlight"> Supplies</span>
-              </h1>
-              
-              <p className="hero-subtitle">
-                Everything you need to build, maintain, and enhance your pond with quality products and expert advice.
-              </p>
-              
-              <div className="hero-stats">
-                {stats.map((stat, index) => (
-                  <div key={index} className="stat-item">
-                    <div className="stat-icon">{stat.icon}</div>
-                    <div className="stat-number">{stat.number}</div>
-                    <div className="stat-label">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Wavy Divider - Attached to Hero */}
-        <div className="hero-wave-attached">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path className="wave-layer-1" d="M0,0L50,20C100,40,200,80,300,80C400,80,500,40,600,20C700,0,800,0,900,20C1000,40,1100,80,1150,100L1200,120V0Z" fill="#ffffff" opacity="0.1"></path>
-            <path className="wave-layer-2" d="M0,0L50,15C100,30,200,60,300,60C400,60,500,30,600,15C700,0,800,0,900,15C1000,30,1100,60,1150,75L1200,90V0Z" fill="#ffffff" opacity="0.2"></path>
-            <path className="wave-layer-3" d="M0,0L50,10C100,20,200,40,300,40C400,40,500,20,600,10C700,0,800,0,900,10C1000,20,1100,40,1150,50L1200,60V0Z" fill="#ffffff" opacity="0.3"></path>
-          </svg>
-        </div>
+        <PageHero
+          title="Pond Supplies"
+          subtitle="Everything you need to build, maintain, and enhance your pond with quality products and expert advice."
+          backgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+          stats={stats}
+        />
 
         {/* Main Content Wrapper with Single Gradient */}
         <div className="main-content-gradient">
@@ -150,6 +115,29 @@ const PondSuppliesPage = () => {
                 a beautiful, healthy pond. Our extensive inventory includes top-quality products from leading 
                 manufacturers, backed by our expert knowledge and customer service.
               </p>
+              
+              <div className="intro-images">
+                <img src="/images/IMG_2782.jpg" alt="Professional pond filtration systems and equipment" className="intro-image" />
+                <img src="/images/pumpRepair.webp" alt="High-quality pond pumps and aeration equipment" className="intro-image" />
+              </div>
+              
+              <div className="supplies-overview">
+                <h3>Premium Pond Equipment & Supplies</h3>
+                <p>
+                  At Utah Water Gardens, we stock over 500 products from 50+ leading manufacturers to meet all your 
+                  water garden needs. Our comprehensive selection includes everything from basic maintenance supplies 
+                  to professional-grade equipment used by pond contractors. Whether you're building a new pond, 
+                  upgrading existing equipment, or maintaining your current water feature, we have the products 
+                  and expertise to help you succeed.
+                </p>
+                <p>
+                  Our knowledgeable staff has over 15 years of experience in pond care and can provide expert 
+                  advice on product selection, installation, and maintenance. We understand Utah's unique climate 
+                  challenges and can recommend products specifically suited for our region. From energy-efficient 
+                  pumps to UV sterilizers that combat algae in our intense sunlight, we carry products that 
+                  perform reliably in Utah conditions.
+                </p>
+              </div>
             </div>
 
             {/* Supply Categories */}
@@ -206,6 +194,62 @@ const PondSuppliesPage = () => {
           </div>
         </section>
 
+        {/* Product Selection Process */}
+        <section className="product-selection-section">
+          <div className="container">
+            <h2>How to Choose the Right Pond Supplies</h2>
+            <div className="selection-steps">
+              <div className="selection-step">
+                <div className="step-number">1</div>
+                <h3>Assess Your Needs</h3>
+                <p>Determine your pond size, type (koi, water garden, or natural), and specific requirements for filtration, circulation, and maintenance.</p>
+              </div>
+              <div className="selection-step">
+                <div className="step-number">2</div>
+                <h3>Consult Our Experts</h3>
+                <p>Our knowledgeable staff can help you select the right products based on your specific situation, budget, and goals.</p>
+              </div>
+              <div className="selection-step">
+                <div className="step-number">3</div>
+                <h3>Quality Products</h3>
+                <p>Choose from our selection of premium products from trusted manufacturers, all backed by our quality guarantee.</p>
+              </div>
+              <div className="selection-step">
+                <div className="step-number">4</div>
+                <h3>Ongoing Support</h3>
+                <p>We provide installation guidance, maintenance tips, and ongoing support to ensure your equipment performs optimally.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Brands & Manufacturers */}
+        <section className="brands-section">
+          <div className="container">
+            <h2>Trusted Brands & Manufacturers</h2>
+            <div className="brands-content">
+              <div className="brands-text">
+                <p>
+                  We partner with over 50 leading manufacturers to bring you the highest quality pond supplies available. 
+                  Our carefully curated selection includes products from industry leaders like Tetra, Pondmaster, Laguna, 
+                  Aquascape, and many more. Each brand is chosen for their commitment to quality, innovation, and 
+                  reliability in pond care applications.
+                </p>
+                <p>
+                  Our relationships with these manufacturers allow us to offer competitive pricing, access to the latest 
+                  products, and comprehensive warranties. We stay current with new product releases and can recommend 
+                  the most advanced solutions for your specific needs. Whether you need basic maintenance supplies or 
+                  cutting-edge filtration technology, we have the right products from trusted brands.
+                </p>
+              </div>
+              <div className="brands-images">
+                <img src="/images/IMG_2776.jpg" alt="Premium pond liner materials and construction supplies" className="brands-image" />
+                <img src="/images/IMG_2780.jpg" alt="Professional pond lighting and electrical equipment" className="brands-image" />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why Choose Us */}
         <section className="why-choose-section">
           <div className="container">
@@ -230,6 +274,75 @@ const PondSuppliesPage = () => {
                 <div className="benefit-icon">Support</div>
                 <h4>Ongoing Support</h4>
                 <p>We're here to help with installation and maintenance advice</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Areas */}
+        <section className="service-areas-section">
+          <div className="container">
+            <h2>Areas We Serve</h2>
+            <p className="service-areas-intro">
+              We proudly serve the greater Salt Lake City area and surrounding communities with our comprehensive 
+              pond supply services. Our store is conveniently located and we offer expert advice to customers throughout Utah.
+            </p>
+            
+            <div className="service-areas-grid">
+              <div className="service-area-group">
+                <h3>Salt Lake County</h3>
+                <div className="cities-list">
+                  <span>Salt Lake City</span>
+                  <span>West Jordan</span>
+                  <span>Murray</span>
+                  <span>Sandy</span>
+                  <span>West Valley City</span>
+                  <span>Draper</span>
+                  <span>Cottonwood Heights</span>
+                  <span>Holladay</span>
+                </div>
+              </div>
+              
+              <div className="service-area-group">
+                <h3>Davis County</h3>
+                <div className="cities-list">
+                  <span>Layton</span>
+                  <span>Bountiful</span>
+                  <span>Farmington</span>
+                  <span>Centerville</span>
+                  <span>Kaysville</span>
+                  <span>Clearfield</span>
+                  <span>Clinton</span>
+                  <span>Syracuse</span>
+                </div>
+              </div>
+              
+              <div className="service-area-group">
+                <h3>Utah County</h3>
+                <div className="cities-list">
+                  <span>Provo</span>
+                  <span>Orem</span>
+                  <span>American Fork</span>
+                  <span>Lehi</span>
+                  <span>Pleasant Grove</span>
+                  <span>Spanish Fork</span>
+                  <span>Springville</span>
+                  <span>Alpine</span>
+                </div>
+              </div>
+              
+              <div className="service-area-group">
+                <h3>Weber County</h3>
+                <div className="cities-list">
+                  <span>Ogden</span>
+                  <span>Roy</span>
+                  <span>Clearfield</span>
+                  <span>South Ogden</span>
+                  <span>North Ogden</span>
+                  <span>Riverdale</span>
+                  <span>Washington Terrace</span>
+                  <span>Farr West</span>
+                </div>
               </div>
             </div>
           </div>

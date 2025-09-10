@@ -28,7 +28,7 @@ img, video{max-width:100%;display:block;height:auto}
 /* HERO */
 .hero{position:relative;height:80vh;height:80dvh;width:100vw;margin-left:calc(-50vw + 50%);display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:visible;min-height:80vh;min-height:80dvh;background:#f8fafc;margin-top:0;margin-bottom:0;left:0;right:0;padding-top:120px;box-sizing:border-box}
 .hero-media{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-2;overflow:hidden}
-.hero-fallback{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;position:absolute;top:0;left:0;min-height:100%;min-width:100%}
+.hero-fallback{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;position:absolute;top:0;left:0;min-height:100%;min-width:100%;animation:hero-pond-wave 15s ease-in-out infinite;transform-origin:center center}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55));z-index:-1}
 
 /* Wave effect using ::before pseudo-element - Baby Blue Upward Wave (50% height) */
@@ -43,7 +43,11 @@ img, video{max-width:100%;display:block;height:auto}
   clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%); /* Natural flowing wave */
   z-index: 99999;
   pointer-events: none;
-  animation: hero-wave-simple 3s ease-in-out infinite;
+  /* PERFORMANCE OPTIMIZATIONS */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  animation: hero-wave-simple 6s ease-in-out infinite;
   display: block;
   visibility: visible;
   opacity: 1;
@@ -111,6 +115,34 @@ img, video{max-width:100%;display:block;height:auto}
   }
   75% {
     clip-path: polygon(0% 100%, 0% 20%, 10% 35%, 20% 25%, 30% 30%, 40% 35%, 50% 25%, 60% 35%, 70% 30%, 80% 35%, 90% 30%, 100% 20%, 100% 100%);
+  }
+}
+
+/* Hero pond image wave animation - SUBTLE movement */
+@keyframes hero-pond-wave {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+  }
+  12.5% {
+    transform: translateX(0.5px) translateY(-0.3px) rotate(0.05deg) scale(1.0002);
+  }
+  25% {
+    transform: translateX(0px) translateY(-0.6px) rotate(0deg) scale(1.0004);
+  }
+  37.5% {
+    transform: translateX(-0.5px) translateY(-0.3px) rotate(-0.05deg) scale(1.0002);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+  }
+  62.5% {
+    transform: translateX(0.3px) translateY(0.3px) rotate(0.03deg) scale(0.9998);
+  }
+  75% {
+    transform: translateX(0px) translateY(0.6px) rotate(0deg) scale(0.9996);
+  }
+  87.5% {
+    transform: translateX(-0.3px) translateY(0.3px) rotate(-0.03deg) scale(0.9998);
   }
 }
 
@@ -307,6 +339,14 @@ img, video{max-width:100%;display:block;height:auto}
     display: none !important;
   }
   
+  .hero::after {
+    animation: none !important;
+  }
+  
+  .hero-fallback {
+    animation: none !important; /* Disable wave animation on mobile for performance */
+  }
+  
   /* Ensure sections are immediately visible */
   .section:first-of-type {
     margin-top: 0 !important;
@@ -386,10 +426,14 @@ img, video{max-width:100%;display:block;height:auto}
   }
 }
 
-/* Reduced motion */
+/* Reduced motion - DISABLE ALL ANIMATIONS */
 @media (prefers-reduced-motion: reduce){
   .crsl-track{transition:none}
   .hero-video{display:none}
+  .hero::before{animation:none !important}
+  .hero::after{animation:none !important}
+  .hero-fallback{animation:none !important} /* Disable pond wave animation for reduced motion */
+  .hero-wave-attached{display:none !important}
 }
 
 /* FINAL MOBILE OVERRIDE - MAXIMUM PRIORITY */

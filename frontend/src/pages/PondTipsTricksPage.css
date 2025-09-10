@@ -1,125 +1,34 @@
-/* Pond Tips & Tricks Page Styles */
-.pond-tips-tricks-page {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Hero Section */
-.hero-section {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-  color: white;
-  padding: 80px 0;
-  display: flex;
-  align-items: center;
-  min-height: 500px;
-}
-
-.hero-content {
-  flex: 1;
-  max-width: 600px;
-  padding: 0 40px;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.cta-button {
-  background: #dc2626;
-  color: white;
-  padding: 15px 30px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.cta-button:hover {
-  background: #b91c1c;
-  transform: translateY(-2px);
-}
-
-.secondary-button {
-  background: transparent;
-  color: white;
-  padding: 15px 30px;
-  text-decoration: none;
-  border: 2px solid white;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.secondary-button:hover {
-  background: white;
-  color: #7c3aed;
-}
-
-.hero-image {
-  flex: 1;
-  text-align: center;
-  padding: 0 40px;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
+/* Pond Tips & Tricks Page Styles - Modern Theme with Proper Text Readability */
 
 /* Tips Section */
 .tips-section {
-  padding: 80px 0;
-  /* background: #f8fafc; - removed to allow gradient override */
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  padding: 4rem 0;
 }
 
 .tips-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .tips-section > .container > p {
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  color: #64748b;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #4a5568;
 }
 
 .tips-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
+  gap: 2rem;
 }
 
 .tip-category-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -133,9 +42,9 @@
 .tip-category-header {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 20px 25px;
-  background: #f8fafc;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f7fafc;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -147,7 +56,8 @@
 .tip-category-header h3 {
   font-size: 1.3rem;
   margin: 0;
-  color: #7c3aed;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .tip-category-image {
@@ -167,18 +77,20 @@
 }
 
 .tip-category-info {
-  padding: 25px;
+  padding: 1.5rem;
 }
 
 .tip-category-info > p {
-  margin-bottom: 20px;
-  color: #64748b;
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
 .tip-category-tips h4 {
   font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #374151;
+  margin-bottom: 0.75rem;
+  color: #2c5282;
+  font-weight: 600;
 }
 
 .tip-category-tips ul {
@@ -188,114 +100,121 @@
 }
 
 .tip-category-tips li {
-  padding: 5px 0;
-  color: #6b7280;
+  padding: 0.5rem 0;
+  color: #4a5568;
   position: relative;
-  padding-left: 20px;
+  padding-left: 1.5rem;
+  line-height: 1.5;
 }
 
 .tip-category-tips li:before {
   content: "💡";
-  color: #a855f7;
+  color: #4299e1;
   position: absolute;
   left: 0;
+  font-size: 1rem;
 }
 
 /* Tricks Section */
 .tricks-section {
-  padding: 80px 0;
-  background: white;
+  padding: 4rem 0;
+  background: #f7fafc;
 }
 
 .tricks-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .tricks-section > .container > p {
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  color: #64748b;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #4a5568;
 }
 
 .tricks-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  gap: 2rem;
 }
 
 .trick-card {
-  background: #f8fafc;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .trick-card:hover {
   transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .trick-card h3 {
   font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .trick-card > p {
-  margin-bottom: 15px;
-  color: #64748b;
+  margin-bottom: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
 .trick-method {
-  margin-bottom: 15px;
-  color: #374151;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 500;
 }
 
 .trick-details {
   display: flex;
-  gap: 20px;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .trick-effectiveness,
 .trick-cost {
-  color: #64748b;
+  color: #4a5568;
   font-size: 0.9rem;
 }
 
 /* Seasonal Section */
 .seasonal-section {
-  padding: 80px 0;
-  background: #f8fafc;
+  padding: 4rem 0;
 }
 
 .seasonal-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .seasonal-section > .container > p {
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  color: #64748b;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #4a5568;
 }
 
 .seasonal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 2rem;
 }
 
 .seasonal-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -323,24 +242,27 @@
 }
 
 .seasonal-info {
-  padding: 25px;
+  padding: 1.5rem;
 }
 
 .seasonal-info h3 {
   font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .seasonal-priority {
-  margin-bottom: 20px;
-  color: #64748b;
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+  font-weight: 500;
 }
 
 .seasonal-tricks h4 {
   font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #374151;
+  margin-bottom: 0.75rem;
+  color: #2c5282;
+  font-weight: 600;
 }
 
 .seasonal-tricks ul {
@@ -350,119 +272,126 @@
 }
 
 .seasonal-tricks li {
-  padding: 5px 0;
-  color: #6b7280;
+  padding: 0.5rem 0;
+  color: #4a5568;
   position: relative;
-  padding-left: 20px;
+  padding-left: 1.5rem;
+  line-height: 1.5;
 }
 
 .seasonal-tricks li:before {
   content: "🎯";
-  color: #a855f7;
+  color: #4299e1;
   position: absolute;
   left: 0;
+  font-size: 1rem;
 }
 
 /* Secrets Section */
 .secrets-section {
-  padding: 80px 0;
-  background: white;
+  padding: 4rem 0;
+  background: #f7fafc;
 }
 
 .secrets-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .secrets-section > .container > p {
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  color: #64748b;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #4a5568;
 }
 
 .secrets-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  gap: 2rem;
 }
 
 .secret-card {
-  background: #f8fafc;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  border-left: 4px solid #7c3aed;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #4299e1;
 }
 
 .secret-card:hover {
   transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .secret-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .secret-header h3 {
   font-size: 1.2rem;
   margin: 0;
-  color: #7c3aed;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .secret-category {
-  background: #a855f7;
+  background: #4299e1;
   color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
   font-size: 0.8rem;
   font-weight: 600;
 }
 
 .secret-card > p {
-  margin-bottom: 15px;
-  color: #64748b;
+  margin-bottom: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
 .secret-benefit {
-  color: #374151;
+  color: #2c5282;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 /* DIY Section */
 .diy-section {
-  padding: 80px 0;
-  background: #f8fafc;
+  padding: 4rem 0;
 }
 
 .diy-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .diy-section > .container > p {
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  color: #64748b;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #4a5568;
 }
 
 .diy-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
+  gap: 2rem;
 }
 
 .diy-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -490,255 +419,201 @@
 }
 
 .diy-info {
-  padding: 25px;
+  padding: 1.5rem;
 }
 
 .diy-info h3 {
   font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .diy-info > p {
-  margin-bottom: 20px;
-  color: #64748b;
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
 .diy-materials h4 {
   font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #374151;
+  margin-bottom: 0.75rem;
+  color: #2c5282;
+  font-weight: 600;
 }
 
 .diy-materials ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .diy-materials li {
-  padding: 5px 0;
-  color: #6b7280;
+  padding: 0.5rem 0;
+  color: #4a5568;
   position: relative;
-  padding-left: 20px;
+  padding-left: 1.5rem;
+  line-height: 1.5;
 }
 
 .diy-materials li:before {
   content: "🔧";
-  color: #a855f7;
+  color: #4299e1;
   position: absolute;
   left: 0;
+  font-size: 1rem;
 }
 
 .diy-details {
   display: flex;
-  gap: 20px;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .diy-difficulty,
 .diy-time,
 .diy-cost {
-  color: #64748b;
+  color: #4a5568;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 /* Troubleshooting Section */
 .troubleshooting-section {
-  padding: 80px 0;
-  background: white;
+  padding: 4rem 0;
+  background: #f7fafc;
 }
 
 .troubleshooting-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .troubleshooting-section > .container > p {
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  color: #64748b;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #4a5568;
 }
 
 .troubleshooting-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  gap: 2rem;
 }
 
 .troubleshooting-card {
-  background: #f8fafc;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .troubleshooting-card:hover {
   transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .troubleshooting-card h3 {
   font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: #7c3aed;
+  margin-bottom: 1.5rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .troubleshooting-solutions {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1rem;
 }
 
 .quick-fix h4,
 .long-term h4,
 .prevention h4 {
   font-size: 1rem;
-  margin-bottom: 5px;
-  color: #374151;
+  margin-bottom: 0.5rem;
+  color: #2c5282;
+  font-weight: 600;
 }
 
 .quick-fix h4 {
-  color: #ef4444;
+  color: #e53e3e;
 }
 
 .long-term h4 {
-  color: #3b82f6;
+  color: #3182ce;
 }
 
 .prevention h4 {
-  color: #3b82f6;
+  color: #38a169;
 }
 
 .quick-fix p,
 .long-term p,
 .prevention p {
   margin: 0;
-  color: #64748b;
+  color: #4a5568;
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 /* Why Choose Section */
 .why-choose-section {
-  padding: 80px 0;
-  background: #f8fafc;
+  padding: 4rem 0;
 }
 
 .why-choose-section h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: #7c3aed;
+  margin-bottom: 3rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .benefit-item {
   text-align: center;
-  padding: 30px 20px;
+  padding: 2rem 1.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .benefit-icon {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
   display: block;
 }
 
 .benefit-item h3 {
   font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: #7c3aed;
+  margin-bottom: 1rem;
+  color: #2c5282;
+  font-weight: 700;
 }
 
 .benefit-item p {
-  color: #64748b;
+  color: #4a5568;
   line-height: 1.6;
 }
 
-/* Contact CTA */
-.contact-cta {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-  color: white;
-  text-align: center;
-}
-
-.contact-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.contact-cta p {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  opacity: 0.9;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 15px 30px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn-primary {
-  background: #dc2626;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #b91c1c;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: #7c3aed;
-}
-
-/* Responsive Design */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 60px 20px;
-  }
-  
-  .hero-content {
-    padding: 0 20px;
-    margin-bottom: 40px;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-buttons {
-    justify-content: center;
-  }
-  
   .tips-grid,
   .diy-grid {
     grid-template-columns: 1fr;
@@ -754,34 +629,23 @@
   .tip-category-header {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 0.75rem;
   }
   
   .secret-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.75rem;
   }
   
   .diy-details,
   .trick-details {
     flex-direction: column;
-    gap: 10px;
+    gap: 0.75rem;
   }
   
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  
-  .hero-content p {
-    font-size: 1rem;
+  .benefits-grid {
+    grid-template-columns: 1fr;
   }
   
   .tips-section h2,
@@ -790,20 +654,32 @@
   .secrets-section h2,
   .diy-section h2,
   .troubleshooting-section h2,
-  .why-choose-section h2,
-  .contact-cta h2 {
+  .why-choose-section h2 {
     font-size: 2rem;
   }
-  
+}
+
+@media (max-width: 480px) {
   .tip-category-card,
   .diy-card {
-    margin: 0 10px;
+    margin: 0 0.5rem;
   }
   
   .trick-card,
   .seasonal-card,
   .secret-card,
   .troubleshooting-card {
-    margin: 0 10px;
+    margin: 0 0.5rem;
+  }
+  
+  .tip-category-info,
+  .diy-info {
+    padding: 1rem;
+  }
+  
+  .trick-card,
+  .secret-card,
+  .troubleshooting-card {
+    padding: 1.5rem;
   }
 }

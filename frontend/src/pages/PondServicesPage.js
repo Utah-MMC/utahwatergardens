@@ -109,7 +109,7 @@ const PondServicesPage = () => {
         <section className="pond-services-hero">
           <div className="hero-background">
             <img 
-              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
+              src="/images/2a2ff15adcbcad6b2b30001e86d21d40-denoise-enhance-4x.jpeg" 
               alt="Professional pond services and maintenance"
               className="hero-image"
             />
@@ -161,6 +161,27 @@ const PondServicesPage = () => {
                 care for your pond and water features. Our experienced team uses professional equipment and 
                 proven techniques to ensure your pond stays healthy and beautiful throughout the year.
               </p>
+              
+              <div className="intro-images">
+                <img src="/images/2b9aef53da4c2aff799d5b0f08116364-denoise.jpeg" alt="Professional pond cleaning service" className="intro-image" />
+                <img src="/images/2f5160e87ccdc3259c69ecd3d8776206-denoise.jpeg" alt="Pond maintenance and care" className="intro-image" />
+              </div>
+              
+              <div className="service-overview">
+                <h3>Comprehensive Pond Care Solutions</h3>
+                <p>
+                  At Utah Water Gardens, we understand that every pond is unique and requires specialized attention. 
+                  Our comprehensive service approach combines years of experience with cutting-edge equipment to deliver 
+                  exceptional results. Whether you have a small backyard water feature or a large commercial pond, 
+                  our team is equipped to handle all your pond care needs.
+                </p>
+                <p>
+                  Our services are designed to maintain optimal water quality, promote healthy aquatic life, and 
+                  preserve the aesthetic beauty of your pond. We work with both residential and commercial clients 
+                  throughout Utah, providing flexible scheduling and customized service plans to meet your specific 
+                  requirements and budget.
+                </p>
+              </div>
             </div>
 
             {/* Featured Services */}
@@ -220,6 +241,57 @@ const PondServicesPage = () => {
                     </div>
                   </Link>
                 ))}
+              </div>
+            </div>
+            
+            {/* Service Process */}
+            <div className="service-process">
+              <h2>Our Service Process</h2>
+              <div className="process-steps">
+                <div className="process-step">
+                  <div className="step-number">1</div>
+                  <h3>Initial Assessment</h3>
+                  <p>We begin with a thorough evaluation of your pond's current condition, identifying any issues and determining the best approach for maintenance or repair.</p>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">2</div>
+                  <h3>Customized Plan</h3>
+                  <p>Based on our assessment, we develop a customized service plan that addresses your specific needs and fits your schedule and budget.</p>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">3</div>
+                  <h3>Professional Service</h3>
+                  <p>Our experienced technicians perform the work using professional-grade equipment and proven techniques to ensure optimal results.</p>
+                </div>
+                <div className="process-step">
+                  <div className="step-number">4</div>
+                  <h3>Follow-up Care</h3>
+                  <p>We provide ongoing support and maintenance recommendations to keep your pond healthy and beautiful year-round.</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Equipment & Technology */}
+            <div className="equipment-section">
+              <h2>Professional Equipment & Technology</h2>
+              <div className="equipment-content">
+                <div className="equipment-text">
+                  <p>
+                    We invest in the latest pond care technology to deliver superior results. Our equipment includes 
+                    the state-of-the-art Truxor T50 dredging system, high-pressure cleaning equipment, and specialized 
+                    water testing instruments. This professional-grade equipment allows us to work efficiently and 
+                    effectively, reducing service time while improving results.
+                  </p>
+                  <p>
+                    Our team is trained on all equipment and stays current with the latest techniques and best practices 
+                    in pond care. We regularly update our tools and methods to ensure we're providing the most effective 
+                    and efficient service possible.
+                  </p>
+                </div>
+                <div className="equipment-images">
+                  <img src="/images/truxor-equipment-1.jpg" alt="Truxor T50 professional dredging equipment" className="equipment-image" />
+                  <img src="/images/truxor-equipment-2.jpg" alt="Professional pond maintenance equipment" className="equipment-image" />
+                </div>
               </div>
             </div>
           </div>

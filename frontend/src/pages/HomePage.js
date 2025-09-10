@@ -7,32 +7,32 @@ import './HomePage.css';
 
 // Data arrays
 const products = [
-  { name: "Water Lilies", image: "/images/waterLillies.webp", category: "Aquatic Plants" },
-  { name: "Floating Plants", image: "/images/IMG_2775.jpg", category: "Aquatic Plants" },
-  { name: "Marginal Plants", image: "/images/IMG_2779.jpg", category: "Aquatic Plants" },
-  { name: "Submerged Plants", image: "/images/IMG_2770.jpg", category: "Aquatic Plants" },
-  { name: "Koi Fish", image: "/images/koi.webp", category: "Fish & Koi" },
-  { name: "Pond Pumps", image: "/images/pumpRepair.webp", category: "Pond Supplies" },
-  { name: "Goldfish Varieties", image: "/images/IMG_2780.jpg", category: "Fish & Koi" },
-  { name: "Pond Liners", image: "/images/IMG_2776.jpg", category: "Pond Supplies" },
-  { name: "Filtration Systems", image: "/images/IMG_2782.jpg", category: "Pond Supplies" },
-  { name: "Pond Accessories", image: "/images/IMG_2782.jpg", category: "Pond Supplies" },
-  { name: "Water Treatments", image: "/images/IMG_2770.jpg", category: "Pond Supplies" },
-  { name: "Spring Blooms", image: "/images/IMG_2775.jpg", category: "Seasonal Plants" },
-  { name: "Summer Collection", image: "/images/IMG_2779.jpg", category: "Seasonal Plants" },
-  { name: "Fall Preparations", image: "/images/IMG_2780.jpg", category: "Seasonal Plants" }
+  { name: "Water Lilies", image: "/images/waterLillies-topaz-enhance-4x.jpeg", category: "Aquatic Plants" },
+  { name: "Floating Plants", image: "/images/5f4fbb5840c1b554060a09ace9f579e0-denoise.jpeg", category: "Aquatic Plants" },
+  { name: "Marginal Plants", image: "/images/3e8c02a910ecc02bd046359713860a2c-denoise-enhance-4x.jpeg", category: "Aquatic Plants" },
+  { name: "Submerged Plants", image: "/images/0b89a8b10a3cdccda885b1d037df7b2d-denoise-enhance-4x.jpeg", category: "Aquatic Plants" },
+  { name: "Koi Fish", image: "/images/koi-topaz-enhance-4x.jpeg", category: "Fish & Koi" },
+  { name: "Pond Pumps", image: "/images/0791fabd2c70c52627dbb8ec300e2377-enhance-4x.jpeg", category: "Pond Supplies" },
+  { name: "Goldfish Varieties", image: "/images/2b1a14d52ea7e62a36a62f1a2da7203a-enhance-4x.jpeg", category: "Fish & Koi" },
+  { name: "Pond Liners", image: "/images/1c7c15865a8fd7d198a5c69c3087e91c-enhance-4x.jpeg", category: "Pond Supplies" },
+  { name: "Filtration Systems", image: "/images/2d38a8065acb69433f4ac7658de69f6c-enhance-4x.jpeg", category: "Pond Supplies" },
+  { name: "Pond Accessories", image: "/images/31df9f7919a035760e792bef0b3d2bb1-enhance-4x.jpeg", category: "Pond Supplies" },
+  { name: "Water Treatments", image: "/images/0cc109f6c9f0e7a6751414092874206c-enhance-4x.jpeg", category: "Pond Supplies" },
+  { name: "Spring Blooms", image: "/images/5aa18b8372424c85813aa67ea1c6814d-enhance-4x.jpeg", category: "Seasonal Plants" },
+  { name: "Summer Collection", image: "/images/3f988b41a537d10a8d1649a44a64c8be-enhance-4x.jpeg", category: "Seasonal Plants" },
+  { name: "Fall Preparations", image: "/images/2b5d2f918801edaa8047c2741195122c-enhance-4x.jpeg", category: "Seasonal Plants" }
 ];
 
 const resources = [
-  { name: "Care Guides", image: "/images/IMG_2775.jpg", path: "/resources/care-guides", description: "Comprehensive guides for pond and aquatic life care" },
-  { name: "Pond Tips & Tricks", image: "/images/IMG_2779.jpg", path: "/resources/tips-tricks", description: "Expert tips to keep your pond healthy and beautiful" },
-  { name: "Seasonal Care", image: "/images/IMG_2780.jpg", path: "/resources/seasonal-care", description: "Season-specific care instructions for your pond" },
-  { name: "Troubleshooting", image: "/images/IMG_2776.jpg", path: "/resources/troubleshooting", description: "Solutions to common pond problems" },
-  { name: "Video Tutorials", image: "/images/IMG_2782.jpg", path: "/resources/video-tutorials", description: "Step-by-step video guides for pond care" },
-  { name: "FAQ", image: "/images/IMG_2770.jpg", path: "/resources/faq", description: "Answers to frequently asked questions" }
+  { name: "Care Guides", image: "/images/144b4c20031b8d5bdb573f8c9aea03a3-enhance-4x.jpeg", path: "/resources/care-guides", description: "Comprehensive guides for pond and aquatic life care" },
+  { name: "Pond Tips & Tricks", image: "/images/19765b123d1521ca46ded746c375eeef-enhance-4x.jpeg", path: "/resources/tips-tricks", description: "Expert tips to keep your pond healthy and beautiful" },
+  { name: "Seasonal Care", image: "/images/1a558e9d94802fd824b157129ebe0e1d-enhance-4x.jpeg", path: "/resources/seasonal-care", description: "Season-specific care instructions for your pond" },
+  { name: "Troubleshooting", image: "/images/1a9b7904c3461d26b8b9b177164f11c4-denoise.jpeg", path: "/resources/troubleshooting", description: "Solutions to common pond problems" },
+  { name: "Video Tutorials", image: "/images/1c7c15865a8fd7d198a5c69c3087e91c-enhance-4x.jpeg", path: "/resources/video-tutorials", description: "Step-by-step video guides for pond care" },
+  { name: "FAQ", image: "/images/1df1ecf8852a8a526517efdf414917a7-denoise-enhance-4x.jpeg", path: "/resources/faq", description: "Answers to frequently asked questions" }
 ];
 
-// ---------- Accessible, reusable carousel ----------
+// ---------- Accessible, reusable carousel - PERFORMANCE OPTIMIZED ----------
 function Carousel({
   items,
   pageSize = 4,
@@ -44,6 +44,8 @@ function Carousel({
   const totalSlides = Math.ceil(items.length / pageSize);
   const [index, setIndex] = useState(0);
   const trackRef = useRef(null);
+  
+  // Memoize callbacks to prevent unnecessary re-renders
   const next = useCallback(() => setIndex((p) => (p + 1) % totalSlides), [totalSlides]);
   const prev = useCallback(() => setIndex((p) => (p - 1 + totalSlides) % totalSlides), [totalSlides]);
 
@@ -122,7 +124,7 @@ function Carousel({
           {Array.from({ length: totalSlides }, (_, s) => (
             <ul key={s} className="crsl-slide" role="group" aria-roledescription="slide" aria-label={`${s + 1} of ${totalSlides}`}>
               {items.slice(s * pageSize, (s + 1) * pageSize).map((it, i) => (
-                <li key={i} className="crsl-item">{renderItem(it)}</li>
+                <li key={`${s}-${i}`} className="crsl-item">{renderItem(it)}</li>
               ))}
             </ul>
           ))}
@@ -147,15 +149,21 @@ function Carousel({
 
 // ---------- Page ----------
 const HomePage = () => {
-  const plantList = useMemo(() => getAllPlants(), []);
-
+  const plantList = useMemo(() => {
+    try {
+      return getAllPlants();
+    } catch (error) {
+      console.error('Error loading plants:', error);
+      return [];
+    }
+  }, []);
 
   return (
     <PageTemplate
-      title="Pond Services Near Salt Lake City, UT | Utah Water Gardens"
-      description="Utah's premier pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning. Licensed & insured. Call (801) 590-8516 for consultation."
-      keywords="pond services near salt lake city ut, salt lake city pond services, pond maintenance salt lake city, pond construction salt lake city, pond cleaning salt lake city, utah water gardens, pond services utah"
-      canonical="https://utahwatergardens.com"
+        title="Pond Services Near Salt Lake City, UT | Utah Water Gardens"
+        description="Utah's premier pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning. Licensed & insured. Call (801) 590-8516 for consultation."
+        keywords="pond services near salt lake city ut, salt lake city pond services, pond maintenance salt lake city, pond construction salt lake city, pond cleaning salt lake city, utah water gardens, pond services utah"
+        canonical="https://utahwatergardens.com"
       heroTitle="Create Your Dream Water Garden"
       heroSubtitle="From stunning koi ponds to tranquil water features, we bring your aquatic vision to life with expert design, construction, and maintenance."
       heroBackgroundImage="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
@@ -260,12 +268,12 @@ const HomePage = () => {
               </div>
               <div className="col-6">
                 <div className="media">
-                  <img src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" alt="Beautiful pond with waterfall and rock features" loading="lazy" />
+                  <img src="/images/0cc90ccee5b37dfa6aed153a01581727-enhance-4x.jpeg" alt="Beautiful pond with waterfall and rock features" loading="lazy" />
                 </div>
               </div>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* SHOP */}
         <section className="section" aria-labelledby="shop-h">
@@ -293,7 +301,11 @@ const HomePage = () => {
                       alt={p.name} 
                       loading="lazy"
                       decoding="async"
-                      style={{ transform: 'translateZ(0)' }}
+                      style={{ 
+                        transform: 'translateZ(0)',
+                        backfaceVisibility: 'hidden',
+                        willChange: 'auto'
+                      }}
                     />
                   </picture>
                   <h3>{p.name}</h3>
@@ -315,25 +327,29 @@ const HomePage = () => {
             </header>
 
             <Carousel
-              items={plantList}
+              items={plantList.slice(0, 12)} // Limit to 12 items for better performance
               pageSize={4}
               labelledBy="plant-h"
               auto={false}
               renderItem={(plant) => (
-                <Link to={`/plant/${createPlantSlug(plant.name)}`} className="card item">
+                <Link to={`/plant/${plant ? createPlantSlug(plant.name) : 'unknown'}`} className="card item">
                   <img 
-                    src={plant.image} 
-                    alt={plant.name} 
+                    src={plant?.image || '/images/placeholder.jpg'} 
+                    alt={plant?.name || 'Plant'} 
                     loading="lazy" 
                     decoding="async"
-                    style={{ transform: 'translateZ(0)' }}
+                    style={{ 
+                      transform: 'translateZ(0)',
+                      backfaceVisibility: 'hidden',
+                      willChange: 'auto'
+                    }}
                   />
                   <div className="item-body">
-                        <h3>{plant.name}</h3>
-                    {plant.category && <p className="chip">{plant.category}</p>}
-                    {plant.description && <p className="muted clamp-2">{plant.description}</p>}
+                        <h3>{plant?.name || 'Unknown Plant'}</h3>
+                    {plant?.category && <p className="chip">{plant.category}</p>}
+                    {plant?.description && <p className="muted clamp-2">{plant.description}</p>}
                     <div className="meta">
-                      {plant.availability && <span className="avail">{plant.availability}</span>}
+                      {plant?.availability && <span className="avail">{plant.availability}</span>}
                         </div>
                       </div>
                     </Link>
@@ -376,7 +392,17 @@ const HomePage = () => {
               labelledBy="res-h"
               renderItem={(r) => (
                 <Link to={r.path} className="card item">
-                  <img src={r.image} alt="" loading="lazy" />
+                  <img 
+                    src={r.image} 
+                    alt="" 
+                    loading="lazy"
+                    decoding="async"
+                    style={{ 
+                      transform: 'translateZ(0)',
+                      backfaceVisibility: 'hidden',
+                      willChange: 'auto'
+                    }}
+                  />
                   <div className="item-body">
                     <h3>{r.name}</h3>
                     <p className="muted clamp-2">{r.description}</p>

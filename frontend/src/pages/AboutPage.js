@@ -97,7 +97,7 @@ const AboutPage = () => {
                 </div>
               </div>
               <div className="content-image">
-                <img src="/images/IMG_2770.jpg" alt="Beautiful water feature construction" />
+                <img src="/images/9a6a85478f82960b2ce177e0310807c8-denoise.jpeg" alt="Beautiful water feature construction" />
               </div>
             </div>
           </div>
@@ -229,7 +229,7 @@ const AboutPage = () => {
             <div className="services-overview-grid">
               <Link to="/pond-services/design-build" className="service-overview-item">
                 <div className="service-image">
-                  <img src="/images/pondConstruction1000x800.webp" alt="Custom pond construction services" />
+                  <img src="/images/9ab8773a32e35a8b8431ca4c5a2370cb-denoise.jpeg" alt="Custom pond construction services" />
                   <div className="service-overlay">
                     <span className="service-icon">Construction</span>
                   </div>
@@ -244,7 +244,7 @@ const AboutPage = () => {
               
               <Link to="/plants-fish" className="service-overview-item">
                 <div className="service-image">
-                  <img src="/images/IMG_2775.jpg" alt="Aquatic plant expertise and retail" />
+                  <img src="/images/9b722d0d34e1a978dbc09c43207da2c3-enhance-4x.jpeg" alt="Aquatic plant expertise and retail" />
                   <div className="service-overlay">
                     <span className="service-icon">Plants</span>
                   </div>
@@ -259,7 +259,7 @@ const AboutPage = () => {
               
               <Link to="/pond-services/maintenance" className="service-overview-item">
                 <div className="service-image">
-                  <img src="/images/pondMaintenance.webp" alt="Professional pond maintenance services" />
+                  <img src="/images/9e49a00419a2222e5e5fe0a5bebe34f4-enhance-4x.jpeg" alt="Professional pond maintenance services" />
                   <div className="service-overlay">
                     <span className="service-icon">Maintenance</span>
                   </div>
@@ -312,7 +312,7 @@ const AboutPage = () => {
                 </div>
               </div>
               <div className="store-info-image">
-                <img src="/images/IMG_2770.jpg" alt="Our store and pond maintenance services" />
+                <img src="/images/a27cb0627c39a5184b51cc152a9ae837-enhance-4x.jpeg" alt="Our store and pond maintenance services" />
               </div>
             </div>
           </div>

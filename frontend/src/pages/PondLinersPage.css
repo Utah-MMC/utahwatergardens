@@ -1022,6 +1022,60 @@
   color: #1e40af;
 }
 
+/* Service Areas Section */
+.service-areas-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.service-areas-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.service-area-group h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cities-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.cities-list span {
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cities-list span:hover {
+  background: #1e40af;
+  color: white;
+  transform: translateY(-2px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   /* Pond Liners page specific mobile hero adjustments */
@@ -1068,6 +1122,15 @@
   .maintenance-content {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+  
+  .service-areas-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .cities-list {
+    grid-template-columns: 1fr;
   }
   
   .cta-buttons {

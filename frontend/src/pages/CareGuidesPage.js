@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageTemplate from '../components/PageTemplate';
+import CTA from '../components/CTA';
 import './CareGuidesPage.css';
 
 const CareGuidesPage = () => {
@@ -38,7 +40,7 @@ const CareGuidesPage = () => {
   const careGuides = [
     {
       name: 'Pond Setup & Installation',
-      image: '/images/IMG_2775.jpg',
+      image: '/images/d3cb101ddb5ea21f682b256fb7aacf93-enhance-4x.jpeg',
       description: 'Complete guide to planning, designing, and installing your new pond',
       topics: ['Site selection', 'Design planning', 'Excavation', 'Liner installation', 'Equipment setup', 'Initial cycling'],
       difficulty: 'Beginner to Intermediate',
@@ -46,7 +48,7 @@ const CareGuidesPage = () => {
     },
     {
       name: 'Water Quality Management',
-      image: '/images/IMG_2779.jpg',
+      image: '/images/df28e743d124a752ed0a69ca677ee6d9-enhance-4x.jpeg',
       description: 'Essential guide to maintaining optimal water quality for healthy fish and plants',
       topics: ['pH balance', 'Ammonia control', 'Nitrogen cycle', 'Water testing', 'Treatment options', 'Preventive care'],
       difficulty: 'All Levels',
@@ -54,7 +56,7 @@ const CareGuidesPage = () => {
     },
     {
       name: 'Fish Care & Health',
-      image: '/images/IMG_2780.jpg',
+      image: '/images/e565fe286bf3f1fadc33cf8757a93b85-enhance-4x.jpeg',
       description: 'Comprehensive guide to keeping your pond fish healthy and thriving',
       topics: ['Fish selection', 'Feeding schedules', 'Health monitoring', 'Disease prevention', 'Breeding basics', 'Seasonal care'],
       difficulty: 'All Levels',
@@ -62,7 +64,7 @@ const CareGuidesPage = () => {
     },
     {
       name: 'Aquatic Plant Care',
-      image: '/images/IMG_2776.jpg',
+      image: '/images/e30a5e90007ece2a114847492481dd9a-enhance-4x.jpeg',
       description: 'Complete guide to growing and maintaining beautiful aquatic plants',
       topics: ['Plant selection', 'Planting techniques', 'Fertilization', 'Pruning', 'Seasonal care', 'Pest control'],
       difficulty: 'Beginner to Advanced',
@@ -70,7 +72,7 @@ const CareGuidesPage = () => {
     },
     {
       name: 'Seasonal Pond Maintenance',
-      image: '/images/IMG_2782.jpg',
+      image: '/images/f635258ea3d2083ed598d07e9470ac64-denoise.jpeg',
       description: 'Year-round maintenance guide for optimal pond health through all seasons',
       topics: ['Spring startup', 'Summer care', 'Fall preparation', 'Winter protection', 'Seasonal tasks', 'Weather considerations'],
       difficulty: 'All Levels',
@@ -78,7 +80,7 @@ const CareGuidesPage = () => {
     },
     {
       name: 'Equipment Maintenance',
-      image: '/images/IMG_2770.jpg',
+      image: '/images/e6c96ccb6e5cd3efd8a92681c4e717be-enhance-4x.jpeg',
       description: 'Professional guide to maintaining and troubleshooting pond equipment',
       topics: ['Pump maintenance', 'Filter cleaning', 'UV sterilizer care', 'Lighting maintenance', 'Troubleshooting', 'Preventive care'],
       difficulty: 'Intermediate to Advanced',
@@ -157,7 +159,7 @@ const CareGuidesPage = () => {
   const seasonalGuides = [
     {
       season: 'Spring',
-      image: '/images/IMG_2782.jpg',
+      image: '/images/f635258ea3d2083ed598d07e9470ac64-denoise.jpeg',
       description: 'Spring pond startup and preparation guide',
       tasks: ['Remove winter covers', 'Clean filters and equipment', 'Test water quality', 'Start feeding gradually', 'Plant new vegetation', 'Check for damage'],
       timeline: 'March - May',
@@ -165,7 +167,7 @@ const CareGuidesPage = () => {
     },
     {
       season: 'Summer',
-      image: '/images/IMG_2775.jpg',
+      image: '/images/d3cb101ddb5ea21f682b256fb7aacf93-enhance-4x.jpeg',
       description: 'Summer maintenance and care guide',
       tasks: ['Monitor water temperature', 'Increase feeding', 'Maintain filtration', 'Control algae', 'Enjoy your pond', 'Regular maintenance'],
       timeline: 'June - August',
@@ -173,7 +175,7 @@ const CareGuidesPage = () => {
     },
     {
       season: 'Fall',
-      image: '/images/IMG_2779.jpg',
+      image: '/images/df28e743d124a752ed0a69ca677ee6d9-enhance-4x.jpeg',
       description: 'Fall preparation and winterization guide',
       tasks: ['Reduce feeding', 'Clean pond thoroughly', 'Prepare for winter', 'Install covers', 'Store equipment', 'Final maintenance'],
       timeline: 'September - November',
@@ -181,7 +183,7 @@ const CareGuidesPage = () => {
     },
     {
       season: 'Winter',
-      image: '/images/IMG_2780.jpg',
+      image: '/images/e565fe286bf3f1fadc33cf8757a93b85-enhance-4x.jpeg',
       description: 'Winter care and protection guide',
       tasks: ['Monitor ice formation', 'Maintain hole in ice', 'Check equipment', 'Protect from freezing', 'Minimal maintenance', 'Plan for spring'],
       timeline: 'December - February',
@@ -217,21 +219,21 @@ const CareGuidesPage = () => {
   ];
 
   return (
-    <div className="care-guides-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Pond Care Guides</h1>
-          <p>Comprehensive guides to help you create and maintain a beautiful, healthy pond. From beginner basics to advanced techniques, we have everything you need to succeed.</p>
-          <div className="hero-buttons">
-            <a href="tel:(801) 590-8516" className="cta-button">Call for Expert Advice</a>
-            <Link to="/resources" className="secondary-button">View All Resources</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/IMG_2775.jpg" alt="Comprehensive pond care guides and resources" />
-        </div>
-      </section>
+    <PageTemplate
+      title="Pond Care Guides | Expert Advice | Utah Water Gardens"
+      description="Comprehensive guides to help you create and maintain a beautiful, healthy pond. From beginner basics to advanced techniques, we have everything you need to succeed."
+      keywords="pond care guides, pond maintenance, pond setup, water quality, fish care, aquatic plants, pond equipment"
+      canonical="https://utahwatergardens.com/resources/care-guides"
+      heroTitle="Pond Care Guides"
+      heroSubtitle="Comprehensive guides to help you create and maintain a beautiful, healthy pond. From beginner basics to advanced techniques, we have everything you need to succeed."
+      heroBackgroundImage="/images/d3cb101ddb5ea21f682b256fb7aacf93-enhance-4x.jpeg"
+      heroBackgroundImageAlt="Comprehensive pond care guides and resources"
+      primaryButtonText="CALL FOR EXPERT ADVICE"
+      primaryButtonLink="tel:+18015908516"
+      secondaryButtonText="VIEW ALL RESOURCES"
+      secondaryButtonLink="/resources"
+      className="care-guides"
+    >
 
       {/* Wavy Divider - Attached to Hero with Blue Gradient */}
       <div className="hero-wave-attached">
@@ -436,8 +438,8 @@ const CareGuidesPage = () => {
             <div className="benefit-item">
               <div className="feature-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="#007BFF"/>
-  </svg>
+                  <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="#007BFF"/>
+                </svg>
               </div>
               <h3>Expert Support</h3>
               <p>Get personalized help and advice from our pond care specialists</p>
@@ -445,28 +447,11 @@ const CareGuidesPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact CTA */}
-      <section 
-        className="contact-cta"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="container">
-          <h2>Need Personalized Pond Care Advice?</h2>
-          <p>Our experts can provide customized guidance for your specific pond and situation</p>
-          <div className="cta-buttons">
-            <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
-            <Link to="/contact" className="btn btn-secondary">Send Message</Link>
-          </div>
-        </div>
-      </section>
       </div>
-    </div>
+
+      {/* CTA Section */}
+      <CTA />
+    </PageTemplate>
   );
 };
 

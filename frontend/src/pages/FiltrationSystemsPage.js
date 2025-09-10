@@ -1,32 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import PageHero from '../components/PageHero';
 import './FiltrationSystemsPage.css';
 
 const FiltrationSystemsPage = () => {
+  const stats = [
+    { number: '50+', label: 'Filter Systems', icon: 'Systems' },
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '100%', label: 'Quality Guaranteed', icon: 'Quality' },
+    { number: '24/7', label: 'Expert Support', icon: 'Support' }
+  ];
+
   return (
-    <div className="filtration-systems-page">
-      {/* Hero Section */}
-      <section 
-        className="hero-section"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="hero-content">
-          <h1>Pond Filtration Systems</h1>
-          <p>Keep your pond water crystal clear with our premium filtration solutions</p>
-          <div className="hero-buttons">
-            <Link to="/contact" className="cta-button">Get Expert Advice</Link>
-            <Link to="/pond-supplies" className="secondary-button">View All Supplies</Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img src="/images/Pond-Supplies.webp" alt="Professional pond filtration system" />
-        </div>
-      </section>
+    <>
+      <SEO 
+        title="Pond Filtration Systems - Premium Water Filtration | Utah Water Gardens"
+        description="Premium pond filtration systems in Utah. Mechanical, biological, and UV filtration. 50+ systems available, 15+ years experience. Serving Salt Lake County, Davis County, and surrounding areas."
+        keywords="pond filtration, pond filters, biological filtration, mechanical filtration, UV sterilizer, pond water clarity, utah pond filtration, salt lake county pond filters, davis county pond systems, pond water quality"
+        canonical="https://utahwatergardens.com/pond-supplies/filtration"
+      />
+      <div className="filtration-systems-page">
+        <PageHero 
+          title="Pond Filtration Systems"
+          subtitle="Keep your pond water crystal clear with our premium filtration solutions"
+          backgroundImage="/images/cropped-20140919_105345-topaz-enhance-3.2x.jpeg"
+          backgroundImageAlt="Professional pond filtration system"
+          stats={stats}
+        />
 
       {/* Filtration Types */}
       <section className="filtration-types first-section-gradient">
@@ -34,7 +35,7 @@ const FiltrationSystemsPage = () => {
           <h2>Types of Filtration Systems</h2>
           <div className="types-grid">
             <div className="type-card">
-              <img src="/images/Pond-Supplies.webp" alt="Mechanical filter" />
+              <img src="/images/915f46a740c26fb8301437faf19c7711-enhance-4x.jpeg" alt="Mechanical filter" />
               <h3>Mechanical Filtration</h3>
               <p>Removes physical debris like leaves, fish waste, and uneaten food from your pond water.</p>
               <ul>
@@ -46,7 +47,7 @@ const FiltrationSystemsPage = () => {
             </div>
             
             <div className="type-card">
-              <img src="/images/Pond-Supplies.webp" alt="Biological filter" />
+              <img src="/images/95cdafaba2e877860b42f017ad84afab-enhance-4x.jpeg" alt="Biological filter" />
               <h3>Biological Filtration</h3>
               <p>Uses beneficial bacteria to break down harmful ammonia and nitrite into safer nitrate.</p>
               <ul>
@@ -58,7 +59,7 @@ const FiltrationSystemsPage = () => {
             </div>
             
             <div className="type-card">
-              <img src="/images/Pond-Supplies.webp" alt="UV sterilizer" />
+              <img src="/images/e040a38e5f0bcd988e8abc11eaddca1d-enhance-4x.jpeg" alt="UV sterilizer" />
               <h3>UV Sterilization</h3>
               <p>Eliminates algae and harmful microorganisms while maintaining water clarity.</p>
               <ul>
@@ -123,7 +124,7 @@ const FiltrationSystemsPage = () => {
           <h2>Featured Filtration Products</h2>
           <div className="products-grid">
             <div className="product-card">
-              <img src="/images/Pond-Supplies.webp" alt="Premium filter system" />
+              <img src="/images/df28e743d124a752ed0a69ca677ee6d9-enhance-4x.jpeg" alt="Premium filter system" />
               <h3>Premium BioFalls Filter</h3>
               <p>Complete filtration system with mechanical and biological filtration, perfect for medium to large ponds.</p>
               <div className="product-specs">
@@ -133,7 +134,7 @@ const FiltrationSystemsPage = () => {
             </div>
             
             <div className="product-card">
-              <img src="/images/Pond-Supplies.webp" alt="UV sterilizer" />
+              <img src="/images/e040a38e5f0bcd988e8abc11eaddca1d-enhance-4x.jpeg" alt="UV sterilizer" />
               <h3>UV-C Sterilizer Pro</h3>
               <p>High-output UV sterilizer that eliminates algae and harmful microorganisms effectively.</p>
               <div className="product-specs">
@@ -143,7 +144,7 @@ const FiltrationSystemsPage = () => {
             </div>
             
             <div className="product-card">
-              <img src="/images/Pond-Supplies.webp" alt="Skimmer system" />
+              <img src="/images/e6c96ccb6e5cd3efd8a92681c4e717be-enhance-4x.jpeg" alt="Skimmer system" />
               <h3>Floating Skimmer System</h3>
               <p>Automatic surface skimmer that removes floating debris and maintains water clarity.</p>
               <div className="product-specs">
@@ -221,6 +222,75 @@ const FiltrationSystemsPage = () => {
         </div>
       </section>
 
+      {/* Service Areas */}
+      <section className="service-areas-section">
+        <div className="container">
+          <h2>Areas We Serve</h2>
+          <p className="service-areas-intro">
+            We proudly serve the greater Salt Lake City area and surrounding communities with our premium 
+            pond filtration systems. Our experienced team provides expert installation and support throughout Utah.
+          </p>
+          
+          <div className="service-areas-grid">
+            <div className="service-area-group">
+              <h3>Salt Lake County</h3>
+              <div className="cities-list">
+                <span>Salt Lake City</span>
+                <span>West Jordan</span>
+                <span>Murray</span>
+                <span>Sandy</span>
+                <span>West Valley City</span>
+                <span>Draper</span>
+                <span>Cottonwood Heights</span>
+                <span>Holladay</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Davis County</h3>
+              <div className="cities-list">
+                <span>Layton</span>
+                <span>Bountiful</span>
+                <span>Farmington</span>
+                <span>Centerville</span>
+                <span>Kaysville</span>
+                <span>Clearfield</span>
+                <span>Clinton</span>
+                <span>Syracuse</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Utah County</h3>
+              <div className="cities-list">
+                <span>Provo</span>
+                <span>Orem</span>
+                <span>American Fork</span>
+                <span>Lehi</span>
+                <span>Pleasant Grove</span>
+                <span>Spanish Fork</span>
+                <span>Springville</span>
+                <span>Alpine</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Weber County</h3>
+              <div className="cities-list">
+                <span>Ogden</span>
+                <span>Roy</span>
+                <span>Clearfield</span>
+                <span>South Ogden</span>
+                <span>North Ogden</span>
+                <span>Riverdale</span>
+                <span>Washington Terrace</span>
+                <span>Farr West</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section 
         className="cta-section"
@@ -240,7 +310,8 @@ const FiltrationSystemsPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

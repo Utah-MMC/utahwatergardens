@@ -111,6 +111,9 @@
   max-width: 100%;
   height: auto;
   border-radius: 12px;
+  /* WAVE ANIMATION - SUBTLE movement */
+  animation: hero-pond-wave 15s ease-in-out infinite;
+  transform-origin: center center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -657,6 +660,41 @@
   color: #1e40af;
 }
 
+/* Hero pond image wave animation - SUBTLE movement */
+@keyframes hero-pond-wave {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+  }
+  12.5% {
+    transform: translateX(0.5px) translateY(-0.3px) rotate(0.05deg) scale(1.0002);
+  }
+  25% {
+    transform: translateX(0px) translateY(-0.6px) rotate(0deg) scale(1.0004);
+  }
+  37.5% {
+    transform: translateX(-0.5px) translateY(-0.3px) rotate(-0.05deg) scale(1.0002);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+  }
+  62.5% {
+    transform: translateX(0.3px) translateY(0.3px) rotate(0.03deg) scale(0.9998);
+  }
+  75% {
+    transform: translateX(0px) translateY(0.6px) rotate(0deg) scale(0.9996);
+  }
+  87.5% {
+    transform: translateX(-0.3px) translateY(0.3px) rotate(-0.03deg) scale(0.9998);
+  }
+}
+
+/* Reduced motion - DISABLE WAVE ANIMATIONS */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image img {
+    animation: none !important;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
@@ -672,6 +710,11 @@
   
   .hero-content h1 {
     font-size: 2.5rem;
+  }
+  
+  /* Disable wave animation on mobile for performance */
+  .hero-image img {
+    animation: none !important;
   }
   
   .hero-buttons {

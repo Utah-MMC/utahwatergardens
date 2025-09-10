@@ -7,7 +7,7 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   color: white;
   padding: 80px 0;
   display: flex;
@@ -98,7 +98,7 @@
 
 .secondary-button:hover {
   background: white;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .hero-image {
@@ -111,6 +111,9 @@
   max-width: 100%;
   height: auto;
   border-radius: 12px;
+  /* WAVE ANIMATION - SUBTLE movement */
+  animation: hero-pond-wave 15s ease-in-out infinite;
+  transform-origin: center center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -130,7 +133,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .pump-categories-section > .container > p {
@@ -182,7 +185,7 @@
 .pump-info h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .pump-info > p {
@@ -222,7 +225,7 @@
 
 .pump-applications li:before {
   content: "→";
-  color: #7c3aed;
+  color: #1e40af;
   position: absolute;
   left: 0;
   font-weight: bold;
@@ -236,7 +239,7 @@
 }
 
 .pump-cta {
-  background: #7c3aed;
+  background: #1e40af;
   color: white;
   padding: 12px 25px;
   text-decoration: none;
@@ -261,7 +264,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .aeration-section > .container > p {
@@ -313,7 +316,7 @@
 .aeration-info h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .aeration-info > p {
@@ -365,7 +368,7 @@
 }
 
 .aeration-cta {
-  background: #7c3aed;
+  background: #1e40af;
   color: white;
   padding: 12px 25px;
   text-decoration: none;
@@ -390,7 +393,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .sizing-section > .container > p {
@@ -412,7 +415,7 @@
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  border-left: 4px solid #7c3aed;
+  border-left: 4px solid #1e40af;
 }
 
 .size-card:hover {
@@ -422,7 +425,7 @@
 .size-card h3 {
   font-size: 1.4rem;
   margin-bottom: 20px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .size-details {
@@ -454,13 +457,13 @@
 
 .size-recommendations li:before {
   content: "→";
-  color: #7c3aed;
+  color: #1e40af;
   position: absolute;
   left: 0;
 }
 
 .size-cta {
-  background: #7c3aed;
+  background: #1e40af;
   color: white;
   padding: 12px 25px;
   text-decoration: none;
@@ -487,7 +490,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .benefits-grid {
@@ -510,7 +513,7 @@
 .benefit-item h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .benefit-item p {
@@ -528,7 +531,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .installation-content {
@@ -541,7 +544,7 @@
 .installation-text h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .installation-text p {
@@ -567,7 +570,7 @@
 }
 
 .installation-cta {
-  background: #7c3aed;
+  background: #1e40af;
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -599,7 +602,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .maintenance-section > .container > p {
@@ -619,7 +622,7 @@
 .maintenance-tips h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .maintenance-tips ul {
@@ -642,7 +645,7 @@
 }
 
 .maintenance-cta {
-  background: #7c3aed;
+  background: #1e40af;
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -674,7 +677,7 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .packages-section > .container > p {
@@ -701,7 +704,7 @@
 }
 
 .package-card.featured {
-  border: 3px solid #7c3aed;
+  border: 3px solid #1e40af;
   transform: scale(1.05);
 }
 
@@ -716,7 +719,7 @@
 .package-card h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #7c3aed;
+  color: #1e40af;
 }
 
 .package-price {
@@ -755,7 +758,7 @@
 }
 
 .package-cta {
-  background: #7c3aed;
+  background: #1e40af;
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -773,7 +776,7 @@
 /* Contact CTA */
 .contact-cta {
   padding: 80px 0;
-  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   color: white;
   text-align: center;
 }
@@ -823,7 +826,96 @@
 
 .btn-secondary:hover {
   background: white;
-  color: #7c3aed;
+  color: #1e40af;
+}
+
+/* Hero pond image wave animation - SUBTLE movement */
+@keyframes hero-pond-wave {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+  }
+  12.5% {
+    transform: translateX(0.5px) translateY(-0.3px) rotate(0.05deg) scale(1.0002);
+  }
+  25% {
+    transform: translateX(0px) translateY(-0.6px) rotate(0deg) scale(1.0004);
+  }
+  37.5% {
+    transform: translateX(-0.5px) translateY(-0.3px) rotate(-0.05deg) scale(1.0002);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+  }
+  62.5% {
+    transform: translateX(0.3px) translateY(0.3px) rotate(0.03deg) scale(0.9998);
+  }
+  75% {
+    transform: translateX(0px) translateY(0.6px) rotate(0deg) scale(0.9996);
+  }
+  87.5% {
+    transform: translateX(-0.3px) translateY(0.3px) rotate(-0.03deg) scale(0.9998);
+  }
+}
+
+/* Reduced motion - DISABLE WAVE ANIMATIONS */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image img {
+    animation: none !important;
+  }
+}
+
+/* Service Areas Section */
+.service-areas-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.service-areas-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.service-area-group h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cities-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.cities-list span {
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cities-list span:hover {
+  background: #1e40af;
+  color: white;
+  transform: translateY(-2px);
 }
 
 /* Responsive Design */
@@ -865,6 +957,11 @@
     font-size: 2.5rem;
   }
   
+  /* Disable wave animation on mobile for performance */
+  .hero-image img {
+    animation: none !important;
+  }
+  
   .hero-buttons {
     justify-content: center;
   }
@@ -894,6 +991,15 @@
   .maintenance-content {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+  
+  .service-areas-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .cities-list {
+    grid-template-columns: 1fr;
   }
   
   .cta-buttons {

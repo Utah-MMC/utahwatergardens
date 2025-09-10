@@ -75,7 +75,7 @@ const PlantsFishPage = () => {
         <section className="plants-fish-hero">
           <div className="hero-background">
             <img 
-              src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" 
+              src="/images/67ce17ef8342aaab304526d946257b38-denoise.jpeg" 
               alt="Beautiful water garden with aquatic plants and fish"
               className="hero-image"
             />
@@ -127,6 +127,26 @@ const PlantsFishPage = () => {
                   and fish in Utah. Our expert team ensures all our stock is healthy and well-cared for, 
                   providing you with the perfect additions for your water garden.
                 </p>
+                
+                <div className="intro-images">
+                  <img src="/images/e30a5e90007ece2a114847492481dd9a-enhance-4x.jpeg" alt="Beautiful water lilies in full bloom" className="intro-image" />
+                  <img src="/images/e565fe286bf3f1fadc33cf8757a93b85-enhance-4x.jpeg" alt="Colorful koi fish swimming gracefully" className="intro-image" />
+                  <img src="/images/6d56bce84a9110e250216b5dd835c0a5-denoise.jpeg" alt="Floating aquatic plants in pond" className="intro-image" />
+                </div>
+                
+                <div className="selection-overview">
+                  <h3>Why Choose Our Aquatic Plants & Fish?</h3>
+                  <p>
+                    At Utah Water Gardens, we understand that the success of your water garden depends on the quality 
+                    of your aquatic plants and fish. That's why we carefully select and maintain our inventory to ensure 
+                    every plant and fish we offer is healthy, hardy, and well-suited to Utah's unique climate conditions.
+                  </p>
+                  <p>
+                    Our aquatic plants are locally grown whenever possible, making them better adapted to our region's 
+                    temperature fluctuations and seasonal changes. Our fish are sourced from reputable breeders and 
+                    quarantined to ensure they're disease-free before being offered for sale.
+                  </p>
+                </div>
               </div>
 
               {/* Plant Categories */}
@@ -284,7 +304,7 @@ const PlantsFishPage = () => {
                   </div>
                 </div>
                 <div className="store-info-image">
-                  <img src="/images/IMG_2770.jpg" alt="Our store with aquatic plants and fish" />
+                  <img src="/images/6faad4c7e141d47a1b0381312dbdefca-denoise.jpeg" alt="Our store with aquatic plants and fish" />
                 </div>
               </div>
             </div>

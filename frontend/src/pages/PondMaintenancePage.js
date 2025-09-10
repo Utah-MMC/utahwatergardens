@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero.js';
 import './PondMaintenancePage.css';
 
 const PondMaintenancePage = () => {
+  const stats = [
+    { number: '15+', label: 'Years Experience', icon: 'Experience' },
+    { number: '500+', label: 'Ponds Maintained', icon: 'Ponds' },
+    { number: '100%', label: 'Customer Satisfaction', icon: 'Quality' },
+    { number: '24/7', label: 'Emergency Support', icon: 'Support' }
+  ];
+
   const maintenanceServices = [
     {
       name: 'Regular Water Testing',
@@ -73,18 +81,21 @@ const PondMaintenancePage = () => {
   ];
 
   return (
-    <div className="pond-maintenance-page">
-      <PageHero 
-        title="Pond Maintenance Services"
-        subtitle="Professional pond maintenance to keep your water feature healthy and beautiful year-round"
-        backgroundImage="/images/IMG_2770.jpg"
-        backgroundImageAlt="Professional pond maintenance services"
-        showCTA={true}
-        ctaButtons={[
-          { text: "Call for Maintenance Quote", href: "tel:(801) 590-8516", type: "primary" },
-          { text: "View All Services", href: "/pond-services", type: "secondary" }
-        ]}
+    <>
+      <SEO 
+        title="Pond Maintenance Services - Professional Pond Care | Utah Water Gardens"
+        description="Professional pond maintenance services in Utah. Water testing, plant care, fish health monitoring, equipment maintenance. 15+ years experience, 500+ ponds maintained. Serving Salt Lake County, Davis County, and surrounding areas."
+        keywords="pond maintenance, pond care, water quality testing, pond cleaning, fish health monitoring, equipment maintenance, utah pond maintenance, salt lake county pond care, davis county pond services, seasonal pond maintenance, pond health"
+        canonical="https://utahwatergardens.com/pond-services/maintenance"
       />
+      <div className="pond-maintenance-page">
+        <PageHero 
+          title="Pond Maintenance Services"
+          subtitle="Professional pond maintenance to keep your water feature healthy and beautiful year-round"
+          backgroundImage="/images/IMG_2770.jpg"
+          backgroundImageAlt="Professional pond maintenance services"
+          stats={stats}
+        />
 
       {/* Services Overview */}
       <section className="services-section first-section-gradient">
@@ -191,6 +202,75 @@ const PondMaintenancePage = () => {
       </section>
 
 
+      {/* Service Areas */}
+      <section className="service-areas-section">
+        <div className="container">
+          <h2>Areas We Serve</h2>
+          <p className="service-areas-intro">
+            We proudly serve the greater Salt Lake City area and surrounding communities with our professional 
+            pond maintenance services. Our experienced team provides regular maintenance throughout Utah.
+          </p>
+          
+          <div className="service-areas-grid">
+            <div className="service-area-group">
+              <h3>Salt Lake County</h3>
+              <div className="cities-list">
+                <span>Salt Lake City</span>
+                <span>West Jordan</span>
+                <span>Murray</span>
+                <span>Sandy</span>
+                <span>West Valley City</span>
+                <span>Draper</span>
+                <span>Cottonwood Heights</span>
+                <span>Holladay</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Davis County</h3>
+              <div className="cities-list">
+                <span>Layton</span>
+                <span>Bountiful</span>
+                <span>Farmington</span>
+                <span>Centerville</span>
+                <span>Kaysville</span>
+                <span>Clearfield</span>
+                <span>Clinton</span>
+                <span>Syracuse</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Utah County</h3>
+              <div className="cities-list">
+                <span>Provo</span>
+                <span>Orem</span>
+                <span>American Fork</span>
+                <span>Lehi</span>
+                <span>Pleasant Grove</span>
+                <span>Spanish Fork</span>
+                <span>Springville</span>
+                <span>Alpine</span>
+              </div>
+            </div>
+            
+            <div className="service-area-group">
+              <h3>Weber County</h3>
+              <div className="cities-list">
+                <span>Ogden</span>
+                <span>Roy</span>
+                <span>Clearfield</span>
+                <span>South Ogden</span>
+                <span>North Ogden</span>
+                <span>Riverdale</span>
+                <span>Washington Terrace</span>
+                <span>Farr West</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact CTA */}
       <section 
         className="contact-cta"
@@ -210,7 +290,8 @@ const PondMaintenancePage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -88,44 +88,44 @@ const MarginalPlantsPage = () => {
               <h3>Planting Zones</h3>
               <p>Plant in shallow water (1-6 inches) or moist soil at pond edges. Most prefer the transition zone between water and land.</p>
               <div className="care-images">
-                <img src="/images/IMG_2770.jpg" alt="Planting zones example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Planting zones example")} />
-                <img src="/images/IMG_2775.jpg" alt="Shallow water planting example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Shallow water planting example")} />
-                <img src="/images/IMG_2779.jpg" alt="Pond edge planting example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Pond edge planting example")} />
-                <img src="/images/IMG_2780.jpg" alt="Transition zone example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Transition zone example")} />
-                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Moist soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Moist soil example")} />
+                <img src="/images/b4dda81b66ed3f80f0f0a641b09fcf90-enhance-4x.jpeg" alt="Planting zones example" className="care-image clickable-image" onClick={() => handleImageClick("/images/b4dda81b66ed3f80f0f0a641b09fcf90-enhance-4x.jpeg", "Planting zones example")} />
+                <img src="/images/b912a3f21b5bad3ad31288399483df63-enhance-4x.jpeg" alt="Shallow water planting example" className="care-image clickable-image" onClick={() => handleImageClick("/images/b912a3f21b5bad3ad31288399483df63-enhance-4x.jpeg", "Shallow water planting example")} />
+                <img src="/images/b9544836cab7b95d82a578eaf9c8f9df-sharpen.jpeg" alt="Pond edge planting example" className="care-image clickable-image" onClick={() => handleImageClick("/images/b9544836cab7b95d82a578eaf9c8f9df-sharpen.jpeg", "Pond edge planting example")} />
+                <img src="/images/c2658f1b-ae64-4191-ad69-14401733ecff.png" alt="Transition zone example" className="care-image clickable-image" onClick={() => handleImageClick("/images/c2658f1b-ae64-4191-ad69-14401733ecff.png", "Transition zone example")} />
+                <img src="/images/ef0c96a240676467c411d8521154c93b-denoise-enhance-4x.jpeg" alt="Moist soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/ef0c96a240676467c411d8521154c93b-denoise-enhance-4x.jpeg", "Moist soil example")} />
               </div>
             </div>
             <div className="care-item">
               <h3>Sunlight Requirements</h3>
               <p>Most marginal plants prefer partial shade to full sun, depending on the species. Native varieties are adapted to local conditions.</p>
               <div className="care-images">
-                <img src="/images/waterLillies-topaz-enhance-4x.jpeg" alt="Partial shade example" className="care-image clickable-image" onClick={() => handleImageClick("/images/waterLillies-topaz-enhance-4x.jpeg", "Partial shade example")} />
-                <img src="/images/IMG_2770.jpg" alt="Full sun example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Full sun example")} />
-                <img src="/images/IMG_2775.jpg" alt="Light conditions example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Light conditions example")} />
-                <img src="/images/IMG_2779.jpg" alt="Native varieties example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Native varieties example")} />
-                <img src="/images/IMG_2780.jpg" alt="Local adaptation example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Local adaptation example")} />
+                <img src="/images/e6608a4e328ffded9ac60dbcaf4c71b1-enhance-4x.jpeg" alt="Partial shade example" className="care-image clickable-image" onClick={() => handleImageClick("/images/e6608a4e328ffded9ac60dbcaf4c71b1-enhance-4x.jpeg", "Partial shade example")} />
+                <img src="/images/c2e5455e8bace88209b0fe4abf1e033f-denoise-enhance-4x.jpeg" alt="Full sun example" className="care-image clickable-image" onClick={() => handleImageClick("/images/c2e5455e8bace88209b0fe4abf1e033f-denoise-enhance-4x.jpeg", "Full sun example")} />
+                <img src="/images/c3470b7f30ad7f6e6930bdeb0c4f85c8-sharpen.jpeg" alt="Light conditions example" className="care-image clickable-image" onClick={() => handleImageClick("/images/c3470b7f30ad7f6e6930bdeb0c4f85c8-sharpen.jpeg", "Light conditions example")} />
+                <img src="/images/c6c164f38c0f50f8aaf6a8a66152e5db-denoise-enhance-4x.jpeg" alt="Native varieties example" className="care-image clickable-image" onClick={() => handleImageClick("/images/c6c164f38c0f50f8aaf6a8a66152e5db-denoise-enhance-4x.jpeg", "Native varieties example")} />
+                <img src="/images/c73b4863a384bb723ed702f0c2a3aa44-enhance-4x.jpeg" alt="Local adaptation example" className="care-image clickable-image" onClick={() => handleImageClick("/images/c73b4863a384bb723ed702f0c2a3aa44-enhance-4x.jpeg", "Local adaptation example")} />
               </div>
             </div>
             <div className="care-item">
               <h3>Soil & Water</h3>
               <p>Use heavy clay soil or aquatic planting mix. Keep soil consistently moist but not waterlogged for best results.</p>
               <div className="care-images">
-                <img src="/images/IMG_2779.jpg" alt="Clay soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Clay soil example")} />
-                <img src="/images/IMG_2770.jpg" alt="Aquatic planting mix example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Aquatic planting mix example")} />
-                <img src="/images/IMG_2775.jpg" alt="Moist soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Moist soil example")} />
-                <img src="/images/IMG_2780.jpg" alt="Waterlogged prevention example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Waterlogged prevention example")} />
-                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Soil preparation example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Soil preparation example")} />
+                <img src="/images/c7d15d3b1c3ea3c8cbbcabceebfbbf25-sharpen.jpeg" alt="Clay soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/c7d15d3b1c3ea3c8cbbcabceebfbbf25-sharpen.jpeg", "Clay soil example")} />
+                <img src="/images/c9d181c6825a98a44d73180b923bbc69-denoise-enhance-4x.jpeg" alt="Aquatic planting mix example" className="care-image clickable-image" onClick={() => handleImageClick("/images/c9d181c6825a98a44d73180b923bbc69-denoise-enhance-4x.jpeg", "Aquatic planting mix example")} />
+                <img src="/images/c9e8c1cf579a2c9d16324279f60b2873-enhance-4x.jpeg" alt="Moist soil example" className="care-image clickable-image" onClick={() => handleImageClick("/images/c9e8c1cf579a2c9d16324279f60b2873-enhance-4x.jpeg", "Moist soil example")} />
+                <img src="/images/c9fb8447cf9fddf89cafb96a3606b316-sharpen.jpeg" alt="Waterlogged prevention example" className="care-image clickable-image" onClick={() => handleImageClick("/images/c9fb8447cf9fddf89cafb96a3606b316-sharpen.jpeg", "Waterlogged prevention example")} />
+                <img src="/images/f37a8a5be4354f891e25467eebf500b6-enhance-4x.jpeg" alt="Soil preparation example" className="care-image clickable-image" onClick={() => handleImageClick("/images/f37a8a5be4354f891e25467eebf500b6-enhance-4x.jpeg", "Soil preparation example")} />
               </div>
             </div>
             <div className="care-item">
               <h3>Seasonal Care</h3>
               <p>Many are hardy perennials that die back in winter and return in spring. Some may need protection in extreme cold.</p>
               <div className="care-images">
-                <img src="/images/IMG_2780.jpg" alt="Seasonal care example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2780.jpg", "Seasonal care example")} />
-                <img src="/images/IMG_2770.jpg" alt="Hardy perennials example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2770.jpg", "Hardy perennials example")} />
-                <img src="/images/IMG_2775.jpg" alt="Winter dieback example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2775.jpg", "Winter dieback example")} />
-                <img src="/images/IMG_2779.jpg" alt="Spring return example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_2779.jpg", "Spring return example")} />
-                <img src="/images/IMG_3266-topaz-enhance-2x-faceai.jpeg" alt="Cold protection example" className="care-image clickable-image" onClick={() => handleImageClick("/images/IMG_3266-topaz-enhance-2x-faceai.jpeg", "Cold protection example")} />
+                <img src="/images/d3b6a414b3a3cacbe45f6fb330e24419-denoise-enhance-4x.jpeg" alt="Seasonal care example" className="care-image clickable-image" onClick={() => handleImageClick("/images/d3b6a414b3a3cacbe45f6fb330e24419-denoise-enhance-4x.jpeg", "Seasonal care example")} />
+                <img src="/images/d3cb101ddb5ea21f682b256fb7aacf93-enhance-4x.jpeg" alt="Hardy perennials example" className="care-image clickable-image" onClick={() => handleImageClick("/images/d3cb101ddb5ea21f682b256fb7aacf93-enhance-4x.jpeg", "Hardy perennials example")} />
+                <img src="/images/d7db0208422b815e133b7d22542bc71a-denoise.jpeg" alt="Winter dieback example" className="care-image clickable-image" onClick={() => handleImageClick("/images/d7db0208422b815e133b7d22542bc71a-denoise.jpeg", "Winter dieback example")} />
+                <img src="/images/ddaffd5a73e7f7c07e501744e757f4d5-denoise-enhance-4x.jpeg" alt="Spring return example" className="care-image clickable-image" onClick={() => handleImageClick("/images/ddaffd5a73e7f7c07e501744e757f4d5-denoise-enhance-4x.jpeg", "Spring return example")} />
+                <img src="/images/f502726727f39aa2a972ad523bed9e85-sharpen.jpeg" alt="Cold protection example" className="care-image clickable-image" onClick={() => handleImageClick("/images/f502726727f39aa2a972ad523bed9e85-sharpen.jpeg", "Cold protection example")} />
               </div>
             </div>
           </div>
