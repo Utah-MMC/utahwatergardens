@@ -20,17 +20,6 @@
       "destination": "https://utahwatergardens.com/$1",
       "statusCode": 307
     },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "utahwatergardens.com"
-        }
-      ],
-      "destination": "https://utahwatergardens.com/$1",
-      "statusCode": 307
-    }
   ],
   "rewrites": [
     {
