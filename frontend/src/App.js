@@ -74,6 +74,9 @@ const CustomerProjectsPage = lazy(() => import('./pages/CustomerProjectsPage'));
 // Lazy load extended service page
 const OutOfAreaServicePage = lazy(() => import('./pages/OutOfAreaServicePage'));
 
+// Lazy load parks and recreation page
+const ParksAndRecreationPage = lazy(() => import('./pages/ParksAndRecreationPage'));
+
 // Lazy load dynamic city page
 const TestCityPage = lazy(() => import('./pages/TestCityPage'));
 const SimpleCityPage = lazy(() => import('./pages/SimpleCityPage'));
@@ -186,6 +189,9 @@ function App() {
             
             {/* Extended Service Area */}
             <Route path="/out-of-area-service" element={<OutOfAreaServicePage />} />
+            
+            {/* Parks and Recreation */}
+            <Route path="/parksandrecreation" element={<ParksAndRecreationPage />} />
             
             {/* Old Service Area Routes - REMOVED to prevent conflicts with new dynamic city routes */}
             

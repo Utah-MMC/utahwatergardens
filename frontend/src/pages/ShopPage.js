@@ -11,7 +11,7 @@ const ShopPage = () => {
   // All products from the shop - LIMITED FOR PERFORMANCE
   const allProducts = [
     { name: 'Water Lilies', image: '/images/waterLillies-topaz-enhance-4x.jpeg', category: 'Aquatic Plants', path: '/plants-fish/water-lilies' },
-    { name: 'Floating Plants', image: '/images/5f4fbb5840c1b554060a09ace9f579e0-denoise.jpeg', category: 'Aquatic Plants', path: '/plants-fish/floating-plants' },
+    { name: 'Floating Plants', image: '/images/5f4fbb5840c1b554060a09ace9f579e0-denoise-enhance-4x.jpeg', category: 'Aquatic Plants', path: '/plants-fish/floating-plants' },
     { name: 'Marginal Plants', image: '/images/3e8c02a910ecc02bd046359713860a2c-denoise-enhance-4x.jpeg', category: 'Aquatic Plants', path: '/plants-fish/marginal-plants' },
     { name: 'Submerged Plants', image: '/images/0b89a8b10a3cdccda885b1d037df7b2d-denoise-enhance-4x.jpeg', category: 'Aquatic Plants', path: '/plants-fish/aquatic-plants' },
     { name: 'Koi Fish', image: '/images/koi-topaz-enhance-4x.jpeg', category: 'Fish & Koi', path: '/plants-fish/koi-goldfish' },
