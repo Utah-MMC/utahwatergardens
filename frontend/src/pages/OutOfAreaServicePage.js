@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
+import { trackLeadConversion } from '../utils/analytics';
 import './OutOfAreaServicePage.css';
 
 const OutOfAreaServicePage = () => {
@@ -121,9 +122,7 @@ const OutOfAreaServicePage = () => {
         setSubmitStatus('success');
         
         // Track conversion for Google Ads
-        if (typeof window.gtag !== 'undefined') {
-          window.gtag('event', 'conversion', {'send_to': 'AW-999606407/TjczCKS5u6wZEIeR09wD'});
-        }
+        trackLeadConversion();
         
         // Reset form data
         setFormData({

@@ -56,6 +56,38 @@
       gtag('config', 'AW-999606407');
     </script>
     
+    <!-- Global phone link conversion tracking -->
+    <script>
+      // Track phone link clicks for website traffic conversion
+      document.addEventListener('DOMContentLoaded', function() {
+        // Function to track phone link conversions
+        function trackPhoneConversion() {
+          if (typeof window.gtag !== 'undefined') {
+            window.gtag('event', 'conversion', {'send_to': 'AW-999606407/K5hLCLO84_ICEIeR09wD'});
+          }
+        }
+        
+        // Add click listeners to all phone links
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        phoneLinks.forEach(function(link) {
+          link.addEventListener('click', trackPhoneConversion);
+        });
+        
+        // Also track clicks on elements with phone numbers in text content
+        const phoneElements = document.querySelectorAll('*');
+        phoneElements.forEach(function(element) {
+          if (element.textContent && element.textContent.includes('(801) 590-8516') && element.tagName !== 'A') {
+            element.addEventListener('click', function(e) {
+              // Only track if it's a clickable element (button, etc.)
+              if (element.tagName === 'BUTTON' || element.classList.contains('btn') || element.classList.contains('action-button')) {
+                trackPhoneConversion();
+              }
+            });
+          }
+        });
+      });
+    </script>
+    
     <!-- Structured Data for Local Business -->
     <script type="application/ld+json">
     {

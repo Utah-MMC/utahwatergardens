@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { trackLeadConversion } from '../utils/analytics';
 import './FreeEstimatePage.css';
 
 const FreeEstimatePage = () => {
@@ -37,9 +38,7 @@ const FreeEstimatePage = () => {
       setIsSubmitting(false);
       
       // Track conversion for Google Ads
-      if (typeof window.gtag !== 'undefined') {
-        window.gtag('event', 'conversion', {'send_to': 'AW-999606407/TjczCKS5u6wZEIeR09wD'});
-      }
+      trackLeadConversion();
     }, 500);
   };
 

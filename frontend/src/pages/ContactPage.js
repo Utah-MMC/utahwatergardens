@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import StandardHero from '../components/StandardHero';
 import ServiceAreaChecker from '../components/ServiceAreaChecker';
+import { trackLeadConversion } from '../utils/analytics';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -39,9 +40,7 @@ const ContactPage = () => {
       setIsSubmitting(false);
       
       // Track conversion for Google Ads
-      if (typeof window.gtag !== 'undefined') {
-        window.gtag('event', 'conversion', {'send_to': 'AW-999606407/TjczCKS5u6wZEIeR09wD'});
-      }
+      trackLeadConversion();
     }, 500);
   };
 
