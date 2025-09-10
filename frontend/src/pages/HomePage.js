@@ -166,51 +166,6 @@ const HomePage = () => {
       secondaryButtonLink="/pond-services"
       className="home"
     >
-        {/* ABOUT */}
-        <section 
-          className="section alt" 
-          aria-labelledby="about-h"
-        >
-          <div className="container">
-            <div className="row">
-              <div className="col-6">
-                <header className="section-head">
-                  <h2 id="about-h">About Utah Water Gardens</h2>
-                  <p>Utah's premier pond and water feature specialists since 1995.</p>
-                </header>
-                <div className="content">
-                  <p>With over 30 years of experience, Utah Water Gardens has been transforming outdoor spaces across Salt Lake City and surrounding areas. We specialize in creating beautiful, sustainable water features that enhance your property and provide years of enjoyment.</p>
-                  
-                  <div className="stats">
-                    <div className="stat">
-                      <span className="stat-number">15+</span>
-                      <span className="stat-label">Years Experience</span>
-                    </div>
-                    <div className="stat">
-                      <span className="stat-number">2500+</span>
-                      <span className="stat-label">Happy Customers</span>
-                    </div>
-                    <div className="stat">
-                      <span className="stat-number">4.9/5</span>
-                      <span className="stat-label">Customer Rating</span>
-                    </div>
-                  </div>
-
-                  <div className="btn-row">
-                    <Link to="/about" className="btn" data-variant="primary">Learn More About Us</Link>
-                    <a href="tel:+18015908516" className="btn" data-variant="outline">Call (801) 590-8516</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-6">
-                <div className="media">
-                  <img src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" alt="Beautiful pond with waterfall and rock features" loading="lazy" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* SERVICES */}
         <section 
           className="section" 
@@ -266,6 +221,51 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+        {/* ABOUT */}
+        <section 
+          className="section alt" 
+          aria-labelledby="about-h"
+        >
+          <div className="container">
+            <div className="row">
+              <div className="col-6">
+                <header className="section-head">
+                  <h2 id="about-h">About Utah Water Gardens</h2>
+                  <p>Utah's premier pond and water feature specialists since 1995.</p>
+                </header>
+                <div className="content">
+                  <p>With over 30 years of experience, Utah Water Gardens has been transforming outdoor spaces across Salt Lake City and surrounding areas. We specialize in creating beautiful, sustainable water features that enhance your property and provide years of enjoyment.</p>
+                  
+                  <div className="stats">
+                    <div className="stat">
+                      <span className="stat-number">15+</span>
+                      <span className="stat-label">Years Experience</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-number">2500+</span>
+                      <span className="stat-label">Happy Customers</span>
+                    </div>
+                    <div className="stat">
+                      <span className="stat-number">4.9/5</span>
+                      <span className="stat-label">Customer Rating</span>
+                    </div>
+                  </div>
+
+                  <div className="btn-row">
+                    <Link to="/about" className="btn" data-variant="primary">Learn More About Us</Link>
+                    <a href="tel:+18015908516" className="btn" data-variant="outline">Call (801) 590-8516</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <div className="media">
+                  <img src="/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg" alt="Beautiful pond with waterfall and rock features" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* SHOP */}
         <section className="section" aria-labelledby="shop-h">
