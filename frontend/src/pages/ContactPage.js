@@ -37,6 +37,11 @@ const ContactPage = () => {
     setTimeout(() => {
       setShowModal(true);
       setIsSubmitting(false);
+      
+      // Track conversion for Google Ads
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {'send_to': 'AW-999606407/TjczCKS5u6wZEIeR09wD'});
+      }
     }, 500);
   };
 

@@ -119,6 +119,12 @@ const OutOfAreaServicePage = () => {
 
       if (result.success) {
         setSubmitStatus('success');
+        
+        // Track conversion for Google Ads
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'conversion', {'send_to': 'AW-999606407/TjczCKS5u6wZEIeR09wD'});
+        }
+        
         // Reset form data
         setFormData({
           name: '',
