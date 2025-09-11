@@ -441,11 +441,42 @@ main {
 .blog-hero,
 .team-hero {
   padding-top: 180px !important; /* Extra clearance for wave effect */
+  /* Performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  background-color: #1e40af; /* Fallback background color */
 }
 
 /* PageHero has its own padding-top in PageHero.css - don't override it */
 .page-hero {
   /* Let PageHero.css handle its own padding-top */
+}
+
+/* Global Hero Background Image Optimizations */
+.hero-background,
+.hero-bg-img,
+.hero-image,
+.hero-video {
+  /* Ensure full coverage */
+  min-width: 100vw;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  image-rendering: optimizeQuality;
+}
+
+.hero-background {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
 }
 
 /* Ensure page-level padding doesn't interfere with hero sections */
@@ -532,6 +563,21 @@ main {
 
 /* Reset full-width on mobile for CTA sections */
 @media (max-width: 768px) {
+  /* Mobile hero optimizations */
+  .hero,
+  .hero-section,
+  .pond-gallery-hero,
+  .plants-fish-hero,
+  .resources-hero,
+  .pond-supplies-hero,
+  .about-hero,
+  .pond-services-hero,
+  .blog-hero,
+  .team-hero {
+    padding-top: 100px !important; /* Reduced for mobile */
+    margin-top: 60px; /* Reduced margin for mobile */
+  }
+  
   .contact-cta,
   .shop-cta,
   .shop-cta-section,
@@ -558,7 +604,8 @@ main {
   .pond-services-hero,
   .blog-hero,
   .team-hero {
-    padding-top: 140px !important; /* Ensure proper mobile header clearance */
+    padding-top: 100px !important; /* Reduced for mobile */
+    margin-top: 60px; /* Reduced margin for mobile */
   }
   
   /* PageHero has its own mobile padding in PageHero.css */
@@ -607,7 +654,8 @@ main {
   .pond-services-hero,
   .blog-hero,
   .team-hero {
-    padding-top: 120px !important; /* Ensure proper clearance on very small screens */
+    padding-top: 80px !important; /* Further reduced for small mobile */
+    margin-top: 50px; /* Further reduced for small mobile */
   }
   
   /* PageHero has its own very small screen padding in PageHero.css */

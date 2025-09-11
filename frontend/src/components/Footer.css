@@ -161,8 +161,8 @@
 .footer-main {
   display: flex;
   align-items: flex-start;
-  padding: 1rem 0 0.5rem 0; /* Extremely compact padding */
-  gap: 1.5rem;
+  padding: 2rem 0 1rem 0;
+  gap: 2rem;
   position: relative;
   z-index: 2; /* Ensure content appears above the wave */
 }
@@ -176,6 +176,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .brand-line {
@@ -195,9 +196,20 @@
   margin-top: 0.5rem;
 }
 
+.brand-description {
+  margin-top: 1rem;
+}
+
+.brand-description p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0.25rem 0;
+}
+
 .footer-links {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   flex: 2;
 }
 
@@ -206,11 +218,12 @@
 }
 
 .footer-column h4 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: white;
 }
 
 .footer-column h5 {
@@ -229,19 +242,38 @@
 }
 
 .footer-column li {
-  margin-bottom: 0.125rem;
+  margin-bottom: 0.5rem;
 }
 
-.footer-column a {
-  color: white;
+.footer-link {
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 400;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
 }
 
-.footer-column a:hover {
-  color: rgba(255, 255, 255, 0.7);
+.footer-link:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.footer-link::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::before {
+  width: 8px;
 }
 
 /* Contact Action Bar */
@@ -253,6 +285,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
+  gap: 2rem;
 }
 
 .contact-item {
@@ -263,18 +296,24 @@
 }
 
 .contact-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
 
 .contact-icon i {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: white;
 }
 
@@ -285,17 +324,29 @@
 }
 
 .contact-label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .contact-value {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-value:hover {
+  color: #3b82f6;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 /* Footer Logo Flower */
@@ -327,28 +378,76 @@
   }
 }
 
+/* Modern Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.btn-footer {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: white;
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+}
+
 /* Footer Bottom */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 1.5rem 0;
 }
 
 .footer-bottom-left p {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.footer-bottom-left a {
+.footer-bottom-link {
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-bottom-left a:hover {
-  color: rgba(255, 255, 255, 0.7);
+.footer-bottom-link:hover {
+  color: #3b82f6;
 }
 
 .social-links {
@@ -356,9 +455,9 @@
   gap: 1rem;
 }
 
-.social-links a {
-  width: 30px;
-  height: 30px;
+.social-link {
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -367,15 +466,35 @@
   color: white;
   text-decoration: none;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.social-links a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.social-links i {
-  font-size: 0.9rem;
+.social-link:hover::before {
+  opacity: 1;
+}
+
+.social-link:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+}
+
+.social-link i {
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* Responsive Design */
@@ -391,12 +510,13 @@
   
   .footer-main {
     flex-direction: column;
-    gap: 1rem;
-    padding: 1.25rem 0 0.75rem 0; /* Ultra compact padding */
+    gap: 2rem;
+    padding: 2rem 0 1rem 0;
   }
   
   .footer-brand {
     min-width: auto;
+    text-align: center;
   }
   
   .brand-line {
@@ -409,6 +529,26 @@
   
   .footer-links {
     gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-contact-bar {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .contact-actions {
+    justify-content: center;
   }
 }
 
@@ -432,8 +572,8 @@
   }
   
   .footer-main {
-    padding: 1rem 0 0.5rem 0; /* Ultra compact padding */
-    gap: 1rem;
+    padding: 1.5rem 0 1rem 0;
+    gap: 1.5rem;
   }
   
   .brand-line {
@@ -446,13 +586,17 @@
   
   .footer-links {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .footer-column {
+    min-width: auto;
   }
   
   .footer-contact-bar {
     flex-direction: column;
     gap: 1.5rem;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
   
   .contact-item {
@@ -460,10 +604,15 @@
     text-align: center;
   }
   
-  .footer-logo-flower {
-    position: static;
-    transform: none;
-    margin-top: 1rem;
+  .contact-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .btn-footer {
+    width: 100%;
+    justify-content: center;
   }
   
   .footer-bottom {
@@ -489,7 +638,7 @@
   }
   
   .footer-main {
-    padding: 0.75rem 0 0.5rem 0; /* Ultra compact padding */
+    padding: 1rem 0 0.75rem 0;
   }
   
   .brand-line {
@@ -500,12 +649,16 @@
     font-size: 1.5rem;
   }
   
-  .footer-column h4 {
-    font-size: 1rem;
+  .brand-description p {
+    font-size: 0.8rem;
   }
   
-  .footer-column a {
+  .footer-column h4 {
     font-size: 0.9rem;
+  }
+  
+  .footer-link {
+    font-size: 0.8rem;
   }
   
   .contact-item {
@@ -516,5 +669,32 @@
   
   .contact-text {
     align-items: center;
+  }
+  
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .contact-icon i {
+    font-size: 1.1rem;
+  }
+  
+  .contact-value {
+    font-size: 1rem;
+  }
+  
+  .btn-footer {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .social-link i {
+    font-size: 1rem;
   }
 }

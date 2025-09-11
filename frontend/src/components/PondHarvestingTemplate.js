@@ -183,11 +183,40 @@ const PondHarvestingTemplate = ({
     };
   }, []);
   
+  // Mobile viewport height fix
+  React.useEffect(() => {
+    const setVH = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    // Set initial value
+    setVH();
+
+    // Update on resize
+    const handleResize = () => {
+      setVH();
+    };
+
+    // Update on orientation change
+    const handleOrientationChange = () => {
+      setTimeout(setVH, 100);
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleOrientationChange);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleOrientationChange);
+    };
+  }, []);
+  
   // Default content sections for pond harvesting
   const defaultContentSections = {
     overview: `Professional lake harvesting services in ${cityName}, ${state}. Our specialized lake vegetation management and harvesting solutions help maintain healthy lake ecosystems while preserving the natural beauty of your lakes throughout the ${cityName} area. We combine advanced lake harvesting techniques with comprehensive lake maintenance services.`,
     
-    whatIsHarvesting: `Lake harvesting is a sophisticated aquatic vegetation management technique that involves the systematic removal of excess aquatic plants, algae, and organic matter from lakes and water bodies. This advanced lake harvesting process combines mechanical, biological, and environmental engineering principles to maintain optimal lake water quality, prevent oxygen depletion, and preserve the delicate ecological balance of your lake ecosystem.`,
+    whatIsHarvesting: `Lake harvesting is a sophisticated aquatic vegetation management technique that involves the systematic removal of excess aquatic plants, algae, and organic matter from lakes and water bodies. This advanced lake harvesting process combines mechanical, biological, and environmental engineering principles to maintain optimal lake water quality, prevent oxygen depletion, and preserve the delicate ecological balance of your lake ecosystem. Lake harvesting specifically targets problematic vegetation like cattails, water lilies, algae blooms, bullrush, chara, milfoil, duckweed, azolla, and other invasive species that can quickly take over and choke your water body.`,
     
     whyHarvesting: `Regular lake harvesting is crucial for maintaining healthy lake ecosystems. Without proper lake harvesting management, excessive aquatic vegetation can lead to oxygen depletion, fish kills, unpleasant odors, and reduced recreational value. Our advanced lake harvesting services help prevent these issues while promoting sustainable lake management through cutting-edge technology and proven methodologies.`,
     
@@ -332,7 +361,236 @@ const PondHarvestingTemplate = ({
     
     localInfo: `${cityName} is home to numerous lakes and water features that benefit from professional lake harvesting services. Our local knowledge of ${cityName}'s climate, lake water conditions, and seasonal patterns allows us to provide the most effective lake harvesting solutions for your specific needs.`,
     
-    serviceAreas: `We proudly serve all areas of ${cityName} and surrounding communities. Our lake harvesting services are available for residential lakes, commercial water features, municipal lakes, and recreational water bodies throughout the ${cityName} region.`
+    serviceAreas: `We proudly serve all areas of ${cityName} and surrounding communities. Our lake harvesting services are available for residential lakes, commercial water features, municipal lakes, and recreational water bodies throughout the ${cityName} region.`,
+    
+    // Comprehensive Plant Problem Identification and Removal
+    plantProblems: {
+      cattails: {
+        name: "Cattails (Typha)",
+        description: "Cattails are one of the most aggressive pond and lake plants, forming dense stands that can completely take over shallow water areas. These tall, reed-like plants spread rapidly through underground rhizomes and can quickly transform open water into marshland.",
+        problems: [
+          "Rapid spread through underground rhizomes",
+          "Blocks access to water for recreation and livestock",
+          "Reduces open water area for fish habitat",
+          "Creates stagnant water conditions",
+          "Harbors mosquitoes and other pests",
+          "Reduces property values and aesthetic appeal"
+        ],
+        removalMethods: [
+          "Mechanical cutting and removal of root systems",
+          "Amphibious equipment for deep rhizome removal",
+          "Selective herbicide application for large infestations",
+          "Regular maintenance to prevent regrowth"
+        ],
+        ranchPondSpecific: "In ranch ponds, cattail removal is critical for livestock access to water. Our amphibious equipment can remove cattails while maintaining water quality for cattle and horses."
+      },
+      
+      waterLilies: {
+        name: "Water Lilies (Nymphaea)",
+        description: "While beautiful, water lilies can quickly overpopulate ponds and lakes, covering the entire surface and blocking sunlight from reaching underwater plants and fish. They spread through seeds and rhizomes, creating dense mats that impede water circulation.",
+        problems: [
+          "Complete surface coverage blocking sunlight",
+          "Prevents oxygen exchange with atmosphere",
+          "Blocks recreational activities like fishing and boating",
+          "Creates stagnant, low-oxygen conditions",
+          "Harbors algae and other unwanted vegetation",
+          "Reduces fish habitat and spawning areas"
+        ],
+        removalMethods: [
+          "Selective harvesting to maintain some lilies while removing excess",
+          "Root system removal to prevent rapid regrowth",
+          "Mechanical raking and collection systems",
+          "Seasonal maintenance programs"
+        ]
+      },
+      
+      algae: {
+        name: "Algae Blooms (Various Species)",
+        description: "Algae blooms are one of the most visible and problematic issues in ponds and lakes. They can range from surface scum to thick mats that completely cover the water, creating dangerous conditions for fish and wildlife.",
+        problems: [
+          "Blocks sunlight penetration to deeper water",
+          "Creates oxygen depletion during decomposition",
+          "Produces toxins harmful to fish and wildlife",
+          "Creates foul odors and unsightly appearance",
+          "Makes water unsafe for swimming and recreation",
+          "Can cause fish kills and ecosystem collapse"
+        ],
+        removalMethods: [
+          "Mechanical skimming and collection",
+          "Aeration systems to improve water circulation",
+          "Nutrient management to prevent future blooms",
+          "Biological controls and water quality improvement"
+        ]
+      },
+      
+      bullrush: {
+        name: "Bullrush (Schoenoplectus)",
+        description: "Bullrush forms dense stands in shallow water areas, creating impenetrable barriers that block access and reduce open water. These tall, grass-like plants spread quickly and are particularly problematic in ranch ponds and irrigation reservoirs.",
+        problems: [
+          "Forms dense, impenetrable stands",
+          "Blocks livestock access to water",
+          "Reduces open water area for fish",
+          "Creates stagnant water conditions",
+          "Harbors pests and reduces water quality",
+          "Difficult to control once established"
+        ],
+        removalMethods: [
+          "Mechanical cutting below water level",
+          "Root system excavation with specialized equipment",
+          "Seasonal maintenance to prevent regrowth",
+          "Integrated management with other vegetation control"
+        ]
+      },
+      
+      chara: {
+        name: "Chara (Stonewort)",
+        description: "Chara is a submerged aquatic plant that forms dense underwater mats. It has a distinctive musky odor and can completely fill shallow areas, making swimming and fishing difficult while reducing water quality.",
+        problems: [
+          "Forms dense underwater mats",
+          "Produces unpleasant musky odor",
+          "Makes swimming and recreation difficult",
+          "Reduces water clarity and quality",
+          "Can dominate entire pond bottom",
+          "Creates habitat for unwanted aquatic life"
+        ],
+        removalMethods: [
+          "Mechanical harvesting from pond bottom",
+          "Amphibious equipment for shallow water removal",
+          "Seasonal maintenance programs",
+          "Water quality management to prevent regrowth"
+        ]
+      },
+      
+      milfoil: {
+        name: "Milfoil (Myriophyllum)",
+        description: "Milfoil is an invasive submerged plant that forms dense underwater forests. It spreads rapidly through fragmentation and can completely take over a water body, making it nearly impossible to fish or swim.",
+        problems: [
+          "Forms dense underwater forests",
+          "Spreads rapidly through plant fragments",
+          "Makes fishing lines and boat propellers useless",
+          "Reduces water flow and circulation",
+          "Creates stagnant, low-oxygen conditions",
+          "Extremely difficult to control once established"
+        ],
+        removalMethods: [
+          "Mechanical harvesting with specialized equipment",
+          "Careful removal to prevent fragmentation",
+          "Regular maintenance to prevent regrowth",
+          "Integrated management with other control methods"
+        ]
+      },
+      
+      duckweed: {
+        name: "Duckweed (Lemna)",
+        description: "Duckweed forms a green carpet on the water surface, completely covering ponds and lakes. While it provides some benefits, excessive growth can block sunlight and create oxygen depletion problems.",
+        problems: [
+          "Forms complete surface coverage",
+          "Blocks sunlight penetration",
+          "Reduces oxygen levels in water",
+          "Makes water appear stagnant and unhealthy",
+          "Can double in size every few days",
+          "Difficult to control due to rapid growth"
+        ],
+        removalMethods: [
+          "Surface skimming and collection",
+          "Mechanical raking systems",
+          "Biological controls and water quality management",
+          "Regular maintenance to prevent overgrowth"
+        ]
+      },
+      
+      azolla: {
+        name: "Azolla (Water Fern)",
+        description: "Azolla is a small floating fern that can quickly cover the entire surface of ponds and lakes. It forms thick mats that block sunlight and can cause serious water quality problems.",
+        problems: [
+          "Rapid surface coverage",
+          "Blocks sunlight and oxygen exchange",
+          "Creates thick, impenetrable mats",
+          "Reduces water quality and clarity",
+          "Can cause fish kills in severe cases",
+          "Makes recreational activities impossible"
+        ],
+        removalMethods: [
+          "Surface skimming and mechanical removal",
+          "Regular maintenance to prevent overgrowth",
+          "Water quality management",
+          "Integrated control with other vegetation management"
+        ]
+      }
+    },
+    
+    ranchPondHarvesting: {
+      title: "Ranch Pond Harvesting and Cattail Removal",
+      description: `Ranch pond harvesting is a specialized service focused on maintaining water access for livestock while preserving water quality. In ${cityName} and throughout ${state}, ranch ponds are essential for cattle, horses, and other livestock. Our ranch pond harvesting services ensure your animals have clean, accessible water year-round.`,
+      cattailRemoval: {
+        importance: "Cattail removal in ranch ponds is critical for maintaining livestock access to water. Cattails can quickly take over shallow areas, creating impenetrable barriers that prevent cattle and horses from reaching the water's edge.",
+        methods: [
+          "Amphibious equipment for deep rhizome removal",
+          "Selective cutting to maintain some vegetation for erosion control",
+          "Seasonal maintenance to prevent regrowth",
+          "Integrated management with other pond maintenance"
+        ],
+        benefits: [
+          "Improved livestock access to clean water",
+          "Better water quality for animal health",
+          "Reduced mosquito breeding areas",
+          "Maintained property values and aesthetics"
+        ]
+      },
+      livestockConsiderations: [
+        "Safe removal methods that don't harm livestock",
+        "Maintaining water quality during harvesting",
+        "Preserving some vegetation for erosion control",
+        "Scheduling around grazing seasons"
+      ]
+    },
+    
+    underwaterPlantRemoval: {
+      title: "Underwater Plant Removal and Management",
+      description: "Underwater plant removal is essential for maintaining healthy pond and lake ecosystems. Submerged vegetation like chara, milfoil, and other underwater plants can quickly take over, making swimming, fishing, and boating difficult while reducing water quality.",
+      commonUnderwaterPlants: [
+        "Chara (Stonewort) - forms dense underwater mats",
+        "Milfoil - creates underwater forests",
+        "Pondweed - blocks water flow and recreation",
+        "Coontail - forms thick underwater masses",
+        "Water celery - spreads rapidly in shallow areas"
+      ],
+      removalTechniques: [
+        "Mechanical harvesting with specialized underwater equipment",
+        "Amphibious vehicles for shallow water removal",
+        "Precision cutting to prevent fragmentation",
+        "Seasonal maintenance programs"
+      ],
+      benefits: [
+        "Improved water circulation and quality",
+        "Better fish habitat and spawning areas",
+        "Enhanced recreational opportunities",
+        "Reduced mosquito breeding areas"
+      ]
+    },
+    
+    plantMitigationStrategies: {
+      title: "Aquatic Plant Mitigation and Prevention",
+      description: "Effective plant mitigation involves both removal and prevention strategies. Our comprehensive approach combines immediate removal with long-term management to prevent future overgrowth and maintain healthy water bodies.",
+      preventionMethods: [
+        "Regular monitoring and early intervention",
+        "Water quality management to prevent excessive nutrients",
+        "Aeration systems to improve circulation",
+        "Biological controls and beneficial plant introduction"
+      ],
+      mitigationTechniques: [
+        "Selective removal to maintain beneficial vegetation",
+        "Integrated pest management approaches",
+        "Seasonal maintenance schedules",
+        "Environmental monitoring and adjustment"
+      ],
+      longTermManagement: [
+        "Annual maintenance contracts",
+        "Water quality testing and improvement",
+        "Ecosystem balance restoration",
+        "Preventive treatment programs"
+      ]
+    }
   };
 
   const sections = { ...defaultContentSections, ...contentSections };
@@ -709,6 +967,178 @@ const PondHarvestingTemplate = ({
                   <span>{benefit}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comprehensive Plant Problem Identification Section */}
+        <section className="section plant-problems-bg">
+          <div className="section-background">
+            <img src="/images/IMG_3269-faceai-sharpen.jpeg" alt="Overgrown pond with various aquatic plants" />
+            <div className="section-overlay"></div>
+            <div className="section-pattern plant-pattern"></div>
+          </div>
+          <div className="container">
+            <h2>Common Aquatic Plant Problems and Removal Solutions</h2>
+            <p className="section-intro">Understanding the specific plant problems in your pond or lake is crucial for effective harvesting. Here's a comprehensive guide to the most common problematic aquatic vegetation and our specialized removal methods.</p>
+            
+            <div className="plant-problems-grid">
+              {Object.entries(sections.plantProblems).map(([key, plant]) => (
+                <div key={key} className="plant-problem-card">
+                  <h3>{plant.name}</h3>
+                  <p className="plant-description">{plant.description}</p>
+                  
+                  <div className="plant-problems">
+                    <h4>Problems Caused:</h4>
+                    <ul>
+                      {plant.problems.map((problem, index) => (
+                        <li key={index}>{problem}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="plant-removal">
+                    <h4>Our Removal Methods:</h4>
+                    <ul>
+                      {plant.removalMethods.map((method, index) => (
+                        <li key={index}>{method}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  {plant.ranchPondSpecific && (
+                    <div className="ranch-pond-note">
+                      <h4>Ranch Pond Specific:</h4>
+                      <p>{plant.ranchPondSpecific}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Ranch Pond Harvesting Section */}
+        <section className="section alt ranch-pond-bg">
+          <div className="section-background">
+            <img src="/images/pondDredging-topaz-enhance-3.9x.jpeg" alt="Ranch pond with cattle access" />
+            <div className="section-overlay"></div>
+          </div>
+          <div className="container">
+            <h2>{sections.ranchPondHarvesting.title}</h2>
+            <p className="section-intro">{sections.ranchPondHarvesting.description}</p>
+            
+            <div className="ranch-pond-content">
+              <div className="cattail-removal">
+                <h3>Cattail Removal in Ranch Ponds</h3>
+                <p>{sections.ranchPondHarvesting.cattailRemoval.importance}</p>
+                
+                <div className="removal-methods">
+                  <h4>Our Cattail Removal Methods:</h4>
+                  <ul>
+                    {sections.ranchPondHarvesting.cattailRemoval.methods.map((method, index) => (
+                      <li key={index}>{method}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="removal-benefits">
+                  <h4>Benefits of Professional Cattail Removal:</h4>
+                  <ul>
+                    {sections.ranchPondHarvesting.cattailRemoval.benefits.map((benefit, index) => (
+                      <li key={index}>{benefit}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="livestock-considerations">
+                <h3>Livestock Considerations</h3>
+                <ul>
+                  {sections.ranchPondHarvesting.livestockConsiderations.map((consideration, index) => (
+                    <li key={index}>{consideration}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Underwater Plant Removal Section */}
+        <section className="section underwater-removal-bg">
+          <div className="section-background">
+            <img src="/images/IMG_3263-faceai-sharpen.jpeg" alt="Underwater plant removal equipment" />
+            <div className="section-overlay"></div>
+            <div className="section-pattern underwater-pattern"></div>
+          </div>
+          <div className="container">
+            <h2>{sections.underwaterPlantRemoval.title}</h2>
+            <p className="section-intro">{sections.underwaterPlantRemoval.description}</p>
+            
+            <div className="underwater-content">
+              <div className="common-plants">
+                <h3>Common Underwater Plants We Remove:</h3>
+                <ul>
+                  {sections.underwaterPlantRemoval.commonUnderwaterPlants.map((plant, index) => (
+                    <li key={index}>{plant}</li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="removal-techniques">
+                <h3>Our Underwater Removal Techniques:</h3>
+                <ul>
+                  {sections.underwaterPlantRemoval.removalTechniques.map((technique, index) => (
+                    <li key={index}>{technique}</li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="removal-benefits">
+                <h3>Benefits of Underwater Plant Removal:</h3>
+                <ul>
+                  {sections.underwaterPlantRemoval.benefits.map((benefit, index) => (
+                    <li key={index}>{benefit}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Plant Mitigation Strategies Section */}
+        <section className="section alt">
+          <div className="container">
+            <h2>{sections.plantMitigationStrategies.title}</h2>
+            <p className="section-intro">{sections.plantMitigationStrategies.description}</p>
+            
+            <div className="mitigation-grid">
+              <div className="mitigation-card">
+                <h3>Prevention Methods</h3>
+                <ul>
+                  {sections.plantMitigationStrategies.preventionMethods.map((method, index) => (
+                    <li key={index}>{method}</li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="mitigation-card">
+                <h3>Mitigation Techniques</h3>
+                <ul>
+                  {sections.plantMitigationStrategies.mitigationTechniques.map((technique, index) => (
+                    <li key={index}>{technique}</li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="mitigation-card">
+                <h3>Long-Term Management</h3>
+                <ul>
+                  {sections.plantMitigationStrategies.longTermManagement.map((management, index) => (
+                    <li key={index}>{management}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>

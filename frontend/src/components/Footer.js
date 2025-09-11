@@ -74,6 +74,7 @@ const Footer = () => {
           <path className="wave-layer-3" d="M0,0V59.63C149.93,113,314.09,125.32,475.83,96.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,131.22,886,149.24,951.2,144c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#1e40af"></path>
         </svg>
       </div>
+      
       <div className="container">
         {/* Main Footer Content */}
         <div className="footer-main">
@@ -84,55 +85,127 @@ const Footer = () => {
               <span className="brand-line">SOLUTIONS</span>
               <span className="brand-year">SINCE 1995</span>
             </div>
+            <div className="brand-description">
+              <p>Your Complete Pond & Water Feature Solution</p>
+              <p>Professional pond services, supplies, and expert guidance for over 25 years.</p>
+            </div>
           </div>
           
           <div className="footer-links">
             <div className="footer-column">
               <h4>Services</h4>
               <ul>
-                <li><Link to="/pond-services/design-build">Pond Design & Construction</Link></li>
-                <li><Link to="/pond-services/maintenance">Pond Maintenance & Care</Link></li>
-                <li><Link to="/pond-services/pond-dredging">Lake & Pond Dredging</Link></li>
-                <li><Link to="/plants-fish">Plants & Fish Stocking</Link></li>
+                <li><Link to="/pond-services/design-build" className="footer-link">Pond Design & Construction</Link></li>
+                <li><Link to="/pond-services/maintenance" className="footer-link">Pond Maintenance & Care</Link></li>
+                <li><Link to="/pond-services/pond-dredging" className="footer-link">Lake & Pond Dredging</Link></li>
+                <li><Link to="/pond-services/harvesting" className="footer-link">Pond Harvesting</Link></li>
+                <li><Link to="/pond-services/water-quality" className="footer-link">Water Quality Testing</Link></li>
+                <li><Link to="/pond-services/cleaning" className="footer-link">Pond Cleaning</Link></li>
               </ul>
             </div>
             
             <div className="footer-column">
-              <h4>Shop Products</h4>
+              <h4>Plants & Fish</h4>
               <ul>
-                <li><Link to="/shop">All Products</Link></li>
-                <li><Link to="/shop">Aquatic Plants</Link></li>
-                <li><Link to="/shop">Fish & Koi</Link></li>
-                <li><Link to="/shop">Pond Supplies</Link></li>
+                <li><Link to="/plants-fish/aquatic-plants" className="footer-link">Aquatic Plants</Link></li>
+                <li><Link to="/plants-fish/koi-goldfish" className="footer-link">Koi & Goldfish</Link></li>
+                <li><Link to="/plants-fish/water-lilies" className="footer-link">Water Lilies</Link></li>
+                <li><Link to="/plants-fish/floating-plants" className="footer-link">Floating Plants</Link></li>
+                <li><Link to="/plants-fish/marginal-plants" className="footer-link">Marginal Plants</Link></li>
+              </ul>
+            </div>
+            
+            <div className="footer-column">
+              <h4>Pond Supplies</h4>
+              <ul>
+                <li><Link to="/pond-supplies/filtration" className="footer-link">Filtration Systems</Link></li>
+                <li><Link to="/pond-supplies/pumps-aeration" className="footer-link">Pumps & Aeration</Link></li>
+                <li><Link to="/pond-supplies/liners" className="footer-link">Pond Liners</Link></li>
+                <li><Link to="/pond-supplies/water-treatments" className="footer-link">Water Treatments</Link></li>
+                <li><Link to="/pond-supplies/lighting" className="footer-link">Pond Lighting</Link></li>
               </ul>
             </div>
             
             <div className="footer-column">
               <h4>Resources</h4>
               <ul>
-                <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/contact">Contact Us</Link></li>
-              </ul>
-              <h5>Utah Water Gardens</h5>
-              <ul>
-                <li><Link to="/pond-gallery">Pond Gallery</Link></li>
-                <li><Link to="/resources">Care Guides</Link></li>
-                <li><Link to="/resources/tips-tricks">Pond Tips</Link></li>
-                <li><Link to="/resources/seasonal-care">Seasonal Care</Link></li>
+                <li><Link to="/resources/care-guides" className="footer-link">Care Guides</Link></li>
+                <li><Link to="/resources/tips-tricks" className="footer-link">Pond Tips & Tricks</Link></li>
+                <li><Link to="/resources/seasonal-care" className="footer-link">Seasonal Care</Link></li>
+                <li><Link to="/resources/troubleshooting" className="footer-link">Troubleshooting</Link></li>
+                <li><Link to="/blog" className="footer-link">Blog</Link></li>
               </ul>
             </div>
+            
+            <div className="footer-column">
+              <h4>Gallery</h4>
+              <ul>
+                <li><Link to="/pond-gallery/residential" className="footer-link">Residential Ponds</Link></li>
+                <li><Link to="/pond-gallery/commercial" className="footer-link">Commercial Projects</Link></li>
+                <li><Link to="/pond-gallery/koi-ponds" className="footer-link">Koi Ponds</Link></li>
+                <li><Link to="/pond-gallery/before-after" className="footer-link">Before & After</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        {/* Contact Action Bar */}
+        <div className="footer-contact-bar">
+          <div className="contact-item">
+            <div className="contact-icon">
+              <i className="fas fa-phone"></i>
+            </div>
+            <div className="contact-text">
+              <div className="contact-label">Call Now</div>
+              <a href="tel:(801) 590-8516" className="contact-value">(801) 590-8516</a>
+            </div>
+          </div>
+          
+          <div className="contact-item">
+            <div className="contact-icon">
+              <i className="fas fa-envelope"></i>
+            </div>
+            <div className="contact-text">
+              <div className="contact-label">Email Us</div>
+              <a href="mailto:contact@utahwatergardens.com" className="contact-value">contact@utahwatergardens.com</a>
+            </div>
+          </div>
+          
+          <div className="contact-item">
+            <div className="contact-icon">
+              <i className="fas fa-clock"></i>
+            </div>
+            <div className="contact-text">
+              <div className="contact-label">Hours</div>
+              <div className="contact-value">Mon-Sat: 10:00AM-6PM</div>
+            </div>
+          </div>
+          
+          <div className="contact-actions">
+            <Link to="/contact" className="btn btn-primary btn-footer">
+              Get Free Estimate
+            </Link>
+            <Link to="/out-of-area-service" className="btn btn-outline btn-footer">
+              Out of Area?
+            </Link>
           </div>
         </div>
         
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="footer-bottom-left">
-            <p>&copy; 2025 All Rights Reserved, Utah Water Gardens® | <Link to="/privacy">Privacy Policy</Link></p>
+            <p>&copy; 2025 All Rights Reserved, Utah Water Gardens® | <Link to="/privacy-and-legal-info" className="footer-bottom-link">Privacy Policy</Link></p>
           </div>
           <div className="footer-bottom-right">
             <div className="social-links">
-              <a href="https://facebook.com/utahwatergardens" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a href="https://facebook.com/utahwatergardens" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link">
                 <i className="fab fa-facebook"></i>
+              </a>
+              <a href="https://instagram.com/utahwatergardens" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://youtube.com/utahwatergardens" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="social-link">
+                <i className="fab fa-youtube"></i>
               </a>
             </div>
           </div>

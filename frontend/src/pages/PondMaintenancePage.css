@@ -1,5 +1,10 @@
 .pond-maintenance-page {
   padding-top: 80px; /* Account for fixed header */
+  /* Performance optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  contain: layout style paint;
 }
 
 /* Hero Section */
@@ -11,6 +16,15 @@
   padding: 4rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   position: relative;
+  /* Performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  /* Ensure full coverage */
+  min-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
 }
 
 /* First wave layer - baby blue (behind) */
