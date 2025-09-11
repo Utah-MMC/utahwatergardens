@@ -1,12 +1,22 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import CityPageTemplate from '../components/CityPageTemplate';
+import PondHarvestingTemplate from '../components/PondHarvestingTemplate';
 
 const SimpleCityPage = () => {
   const { citySlug } = useParams();
   
+  // Check if this is a harvesting page
+  const isHarvestingPage = citySlug.startsWith('harvesting-');
+  
   // Convert slug to proper city name
-  const cityName = citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  let cityName;
+  if (isHarvestingPage) {
+    // For harvesting pages, extract just the city name
+    cityName = citySlug.replace('harvesting-', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  } else {
+    cityName = citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  }
   
   // Create comprehensive city data object
   const cityData = {
@@ -79,6 +89,11 @@ const SimpleCityPage = () => {
     }
   };
 
+  // Use the appropriate template based on page type
+  if (isHarvestingPage) {
+    return <PondHarvestingTemplate {...cityData} />;
+  }
+  
   return <CityPageTemplate {...cityData} />;
 };
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
+// HomePage component
 import { Link } from 'react-router-dom';
 import PageTemplate from '../components/PageTemplate';
 import CTA from '../components/CTA';

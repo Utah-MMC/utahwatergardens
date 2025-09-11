@@ -1,5 +1,6 @@
 import React from 'react';
 import PondHarvestingTemplate from '../../components/PondHarvestingTemplate';
+// Updated to use PondHarvestingTemplate
 
 const HarvestingMidvalePage = () => {
   const cityData = {

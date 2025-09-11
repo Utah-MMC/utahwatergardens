@@ -130,10 +130,10 @@ const TruxorServicePage = () => {
   return (
     <div className="truxor-service-page">
       <PageHero 
-        title="Truxor T50 Amphibious Service"
+        title="Amphibious Excavator Service"
         subtitle="Professional pond maintenance with our powerful amphibious equipment and specialized attachments"
         backgroundImage="/images/pondCleanings.png"
-        backgroundImageAlt="Truxor T50 amphibious equipment in action"
+        backgroundImageAlt="Amphibious excavator equipment in action"
       />
 
       <div className="container">
@@ -141,14 +141,14 @@ const TruxorServicePage = () => {
         <section className="equipment-overview">
           <div className="overview-content">
             <div className="overview-text">
-              <h2>The Truxor T50: Your Pond Maintenance Solution</h2>
+              <h2>Our Amphibious Excavator: Your Pond Maintenance Solution</h2>
               <p>
-                Our Truxor T50 amphibious equipment represents the cutting edge of pond maintenance technology. 
+                Our amphibious excavator represents the cutting edge of pond maintenance technology. 
                 This versatile machine operates seamlessly on both land and water, making it the perfect tool 
                 for comprehensive pond care and restoration projects.
               </p>
               <p>
-                With four specialized attachments designed for different maintenance tasks, the Truxor T50 
+                With four specialized attachments designed for different maintenance tasks, our amphibious excavator 
                 can handle everything from routine vegetation management to major dredging operations. 
                 Its amphibious design means we can work efficiently without draining your pond, 
                 protecting your aquatic ecosystem while delivering superior results.
@@ -165,7 +165,7 @@ const TruxorServicePage = () => {
               </div>
             </div>
             <div className="overview-image">
-              <img src="/images/truxor-equipment-1.jpg" alt="Truxor T50 amphibious equipment in action" />
+              <img src="/images/truxor-equipment-1.jpg" alt="Amphibious excavator equipment in action" />
             </div>
           </div>
         </section>
@@ -177,7 +177,7 @@ const TruxorServicePage = () => {
             Four powerful attachments designed for specific pond maintenance tasks
           </p>
           <div className="equipment-showcase">
-            <img src="/images/truxor-equipment-2.jpg" alt="Truxor T50 with specialized attachments" />
+            <img src="/images/truxor-equipment-2.jpg" alt="Amphibious excavator with specialized attachments" />
           </div>
           <div className="attachments-grid">
             {attachments.map((attachment, index) => (
@@ -205,7 +205,7 @@ const TruxorServicePage = () => {
 
         {/* Services Section */}
         <section className="services-section">
-          <h2>Our Truxor T50 Services</h2>
+          <h2>Our Amphibious Excavator Services</h2>
           <p className="section-subtitle">
             Comprehensive pond maintenance services using our advanced amphibious equipment
           </p>
@@ -229,7 +229,7 @@ const TruxorServicePage = () => {
 
         {/* Advantages Section */}
         <section className="advantages-section">
-          <h2>Why Choose Our Truxor T50 Service?</h2>
+          <h2>Why Choose Our Amphibious Excavator Service?</h2>
           <div className="advantages-grid">
             {advantages.map((advantage, index) => (
               <div key={index} className="advantage-item">
@@ -256,7 +256,7 @@ const TruxorServicePage = () => {
               <div className="step-number">2</div>
               <div className="step-content">
                 <h3>Equipment Selection</h3>
-                <p>Choose the appropriate Truxor T50 attachments based on your pond's requirements.</p>
+                <p>Choose the appropriate amphibious excavator attachments based on your pond's requirements.</p>
               </div>
             </div>
             <div className="process-step">
@@ -288,7 +288,7 @@ const TruxorServicePage = () => {
         >
           <h2>Ready to Transform Your Pond?</h2>
           <p>
-            Experience the power and efficiency of our Truxor T50 amphibious equipment. 
+            Experience the power and efficiency of our amphibious excavator equipment. 
             Contact us today for a consultation and see how we can restore your pond to its full potential.
           </p>
           <div className="cta-buttons">
