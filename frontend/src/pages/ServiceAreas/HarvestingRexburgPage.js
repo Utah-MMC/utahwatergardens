@@ -1,15 +1,25 @@
 import React from 'react';
-import CityPageTemplate from '../../components/CityPageTemplate';
-import { getCityData } from '../../data/cityData';
+import PondHarvestingTemplate from '../../components/PondHarvestingTemplate';
 
 const HarvestingRexburgPage = () => {
-  const cityData = getCityData('rexburg');
-  
-  if (!cityData) {
-    return <div>City not found</div>;
-  }
+  const cityData = {
+    cityName: 'Rexburg',
+    citySlug: 'rexburg',
+    state: 'Idaho',
+    phoneNumber: '(801) 590-8516',
+    landmarks: [
+      // Add local landmarks here
+    ],
+    businessDistricts: [
+      // Add local business districts here
+    ],
+    contentSections: {
+      localInfo: `Rexburg is a vibrant Idaho community known for its unique character and local attractions. Our pond and lake harvesting services in Rexburg help maintain the natural beauty of this area while preserving water quality for both recreational and ecological purposes.`,
+      serviceAreas: `We provide professional pond and lake harvesting services throughout Rexburg and the surrounding area, including residential neighborhoods, commercial properties, and local water features.`
+    }
+  };
 
-  return <CityPageTemplate {...cityData} />;
+  return <PondHarvestingTemplate {...cityData} />;
 };
 
 export default HarvestingRexburgPage;

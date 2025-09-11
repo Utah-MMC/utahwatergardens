@@ -1,15 +1,25 @@
 import React from 'react';
-import CityPageTemplate from '../../components/CityPageTemplate';
-import { getCityData } from '../../data/cityData';
+import PondHarvestingTemplate from '../../components/PondHarvestingTemplate';
 
 const HarvestingIndependencePage = () => {
-  const cityData = getCityData('independence');
-  
-  if (!cityData) {
-    return <div>City not found</div>;
-  }
+  const cityData = {
+    cityName: 'Independence',
+    citySlug: 'independence',
+    state: 'Utah',
+    phoneNumber: '(801) 590-8516',
+    landmarks: [
+      // Add local landmarks here
+    ],
+    businessDistricts: [
+      // Add local business districts here
+    ],
+    contentSections: {
+      localInfo: `Independence is a beautiful Utah community known for its stunning natural landscapes and outdoor recreation opportunities. Our pond and lake harvesting services in Independence help maintain the natural beauty of this area while preserving water quality for both recreational and ecological purposes.`,
+      serviceAreas: `We provide professional pond and lake harvesting services throughout Independence and the surrounding area, including residential neighborhoods, commercial properties, and local water features.`
+    }
+  };
 
-  return <CityPageTemplate {...cityData} />;
+  return <PondHarvestingTemplate {...cityData} />;
 };
 
 export default HarvestingIndependencePage;

@@ -1,15 +1,25 @@
 import React from 'react';
-import CityPageTemplate from '../../components/CityPageTemplate';
-import { getCityData } from '../../data/cityData';
+import PondHarvestingTemplate from '../../components/PondHarvestingTemplate';
 
 const HarvestingTimberLakesPage = () => {
-  const cityData = getCityData('timberlakes');
-  
-  if (!cityData) {
-    return <div>City not found</div>;
-  }
+  const cityData = {
+    cityName: 'Timber Lakes',
+    citySlug: 'timber-lakes',
+    state: 'Utah',
+    phoneNumber: '(801) 590-8516',
+    landmarks: [
+      // Add local landmarks here
+    ],
+    businessDistricts: [
+      // Add local business districts here
+    ],
+    contentSections: {
+      localInfo: `Timber Lakes is a beautiful Utah community known for its stunning natural landscapes and outdoor recreation opportunities. Our pond and lake harvesting services in Timber Lakes help maintain the natural beauty of this area while preserving water quality for both recreational and ecological purposes.`,
+      serviceAreas: `We provide professional pond and lake harvesting services throughout Timber Lakes and the surrounding area, including residential neighborhoods, commercial properties, and local water features.`
+    }
+  };
 
-  return <CityPageTemplate {...cityData} />;
+  return <PondHarvestingTemplate {...cityData} />;
 };
 
 export default HarvestingTimberLakesPage;
