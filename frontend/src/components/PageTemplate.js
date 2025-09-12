@@ -51,14 +51,6 @@ const PageTemplate = ({
             />
           </div>
           <div className="page-hero-inner">
-            {/* WEBSITE UNDER CONSTRUCTION BANNER */}
-            <div className="construction-banner">
-              <div className="construction-banner-content">
-                <h2 className="construction-title">🚧 WEBSITE IS CURRENTLY UNDER CONSTRUCTION 🚧</h2>
-                <p className="construction-subtitle">We're working hard to improve your experience. Please check back soon!</p>
-              </div>
-            </div>
-            
             <h1 className="page-hero-title">{heroTitle}</h1>
             {heroSubtitle && <p className="page-hero-sub">{heroSubtitle}</p>}
             {showHeroButtons && (
