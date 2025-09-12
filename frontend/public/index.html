@@ -185,24 +185,13 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     
-    <!-- Service Worker Registration with Auto-Upgrade -->
+    <!-- Service Worker Registration -->
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          // Register with cache-busting parameter to force fresh download
-          navigator.serviceWorker.register('/sw.v4.js?v=' + Date.now())
+          navigator.serviceWorker.register('/sw.v4.js')
             .then((registration) => {
               console.log('SW v4 registered: ', registration);
-              
-              // Check for updates on every page load
-              registration.update();
-              
-              // Listen for new service worker taking control
-              navigator.serviceWorker.addEventListener('controllerchange', () => {
-                console.log('New service worker took control, reloading...');
-                // Reload once to get fresh HTML/JS/CSS
-                window.location.reload();
-              });
             })
             .catch((registrationError) => {
               console.log('SW registration failed: ', registrationError);

@@ -28,7 +28,7 @@ const urlsToCache = [
   '/images/IMG_2779-topaz-enhance-2x-sharpen.jpeg'
 ];
 
-// Install event - force immediate activation
+// Install event
 self.addEventListener('install', (event) => {
   console.log('Service Worker v4 installing...');
   event.waitUntil(
@@ -37,34 +37,25 @@ self.addEventListener('install', (event) => {
         console.log('Opened cache v4');
         return cache.addAll(urlsToCache);
       })
-      .then(() => {
-        // Force immediate activation of new service worker
-        return self.skipWaiting();
-      })
   );
 });
 
-// Activate event - take control immediately and clean old caches
+// Activate event - clean old caches
 self.addEventListener('activate', (event) => {
   console.log('Service Worker v4 activating...');
   const KEEP = new Set(['static-v4']); // Only keep current cache
   
   event.waitUntil(
-    Promise.all([
-      // Clean old caches
-      caches.keys().then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (!KEEP.has(cacheName)) {
-              console.log('Deleting old cache:', cacheName);
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      }),
-      // Take control of all clients immediately
-      self.clients.claim()
-    ])
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (!KEEP.has(cacheName)) {
+            console.log('Deleting old cache:', cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
   );
 });
 
