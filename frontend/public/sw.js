@@ -1,4 +1,4 @@
-const CACHE_NAME = 'utah-water-gardens-v1';
+const CACHE_NAME = 'utah-water-gardens-v2';
 const urlsToCache = [
   '/',
   '/static/js/bundle.js',
@@ -41,16 +41,43 @@ self.addEventListener('install', (event) => {
 
 // Fetch event
 self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  const url = new URL(request.url);
+  
+  // Skip caching for analytics and tracking requests
+  if (url.hostname.includes('googletagmanager.com') || 
+      url.hostname.includes('google-analytics.com') ||
+      url.hostname.includes('analytics.ahrefs.com') ||
+      url.hostname.includes('doubleclick.net') ||
+      url.hostname.includes('googleadservices.com') ||
+      url.pathname.includes('gtag') ||
+      url.pathname.includes('analytics')) {
+    // Always fetch from network for analytics
+    event.respondWith(fetch(request));
+    return;
+  }
+  
+  // Skip caching for API requests
+  if (url.pathname.startsWith('/api/')) {
+    event.respondWith(fetch(request));
+    return;
+  }
+  
+  // For other requests, try cache first, then network
   event.respondWith(
-    caches.match(event.request)
+    caches.match(request)
       .then((response) => {
         // Return cached version or fetch from network
         if (response) {
           return response;
         }
-        return fetch(event.request);
-      }
-    )
+        return fetch(request).catch(() => {
+          // If network fails and no cache, return offline page for navigation requests
+          if (request.mode === 'navigate') {
+            return caches.match('/');
+          }
+        });
+      })
   );
 });
 

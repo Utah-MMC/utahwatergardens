@@ -47,13 +47,16 @@
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="kvBrbumil+4QCBIWaSucUQ" async></script>
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-999606407"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-999606407" onerror="console.warn('Google Analytics failed to load')"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'AW-999606407');
+      gtag('config', 'AW-999606407', {
+        'send_page_view': true,
+        'anonymize_ip': true
+      });
     </script>
     
     <!-- Global phone link conversion tracking -->
