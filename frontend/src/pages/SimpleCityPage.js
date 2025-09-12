@@ -6,14 +6,14 @@ import PondHarvestingTemplate from '../components/PondHarvestingTemplate';
 const SimpleCityPage = () => {
   const { citySlug } = useParams();
   
-  // Check if this is a harvesting page
-  const isHarvestingPage = citySlug.startsWith('harvesting-');
+  // Check if this is a harvesting page (support both old and new URL formats)
+  const isHarvestingPage = citySlug.startsWith('harvesting-') || citySlug.startsWith('pond-harvesting-');
   
   // Convert slug to proper city name
   let cityName;
   if (isHarvestingPage) {
-    // For harvesting pages, extract just the city name
-    cityName = citySlug.replace('harvesting-', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    // For harvesting pages, extract just the city name (handle both formats)
+    cityName = citySlug.replace(/^(harvesting-|pond-harvesting-)/, '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   } else {
     cityName = citySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   }

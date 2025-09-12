@@ -15,6 +15,16 @@
       ],
       "destination": "https://utahwatergardens.com/$1",
       "statusCode": 307
+    },
+    {
+      "source": "/harvesting-:city",
+      "destination": "/pond-harvesting-:city",
+      "statusCode": 301
+    },
+    {
+      "source": "/harvesting-:city/",
+      "destination": "/pond-harvesting-:city/",
+      "statusCode": 301
     }
   ],
   "rewrites": [

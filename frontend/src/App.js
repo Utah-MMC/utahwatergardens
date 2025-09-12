@@ -222,6 +222,7 @@ function App() {
             
             {/* Dynamic City Routes - Must be before catch-all */}
             <Route path="/test/:citySlug" element={<TestCityPage />} />
+            <Route path="/pond-harvesting-:citySlug" element={<SimpleCityPage />} />
             <Route path="/:citySlug" element={<SimpleCityPage />} />
             
             {/* Catch-all route for 404 errors */}
