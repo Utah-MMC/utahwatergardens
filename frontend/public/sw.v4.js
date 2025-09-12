@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-v6';
+const CACHE_NAME = 'static-v7';
 const urlsToCache = [
   // Only cache images, not HTML/JS/CSS to prevent white screen issues
   '/images/utahWaterGardensLogo500x463.png',
@@ -41,7 +41,7 @@ self.addEventListener('install', (event) => {
 // Activate event - clean old caches
 self.addEventListener('activate', (event) => {
   console.log('Service Worker v4 activating...');
-  const KEEP = new Set(['static-v6']); // Only keep current cache
+  const KEEP = new Set(['static-v7']); // Only keep current cache
   
   event.waitUntil(
     caches.keys().then((cacheNames) => {
