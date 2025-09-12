@@ -1,8 +1,6 @@
-const CACHE_NAME = 'static-v4';
+const CACHE_NAME = 'static-v5';
 const urlsToCache = [
-  '/',
-  '/static/js/bundle.js',
-  '/static/css/main.css',
+  // Only cache images, not HTML/JS/CSS to prevent white screen issues
   '/images/utahWaterGardensLogo500x463.png',
   '/images/IMG_2770.jpg',
   '/images/IMG_2775.jpg',
@@ -43,7 +41,7 @@ self.addEventListener('install', (event) => {
 // Activate event - clean old caches
 self.addEventListener('activate', (event) => {
   console.log('Service Worker v4 activating...');
-  const KEEP = new Set(['static-v4']); // Only keep current cache
+  const KEEP = new Set(['static-v5']); // Only keep current cache
   
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -75,17 +73,39 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   
-  // For same-origin requests, try network first, fallback to cache
+  // For HTML files (navigation requests), always try network first
+  if (request.mode === 'navigate' || request.headers.get('accept').includes('text/html')) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          // If network succeeds, return the response
+          return response;
+        })
+        .catch(() => {
+          // If network fails, try cache
+          return caches.match(request);
+        })
+        .catch(() => {
+          // If both fail, return the main page
+          return caches.match('/');
+        })
+    );
+    return;
+  }
+  
+  // For static assets (JS, CSS, images), try cache first, then network
   event.respondWith(
-    fetch(request)
-      .catch(() => {
-        // If network fails, try cache
-        return caches.match(request);
+    caches.match(request)
+      .then((response) => {
+        if (response) {
+          return response;
+        }
+        return fetch(request);
       })
       .catch(() => {
-        // If both fail and it's a navigation request, return offline page
-        if (request.mode === 'navigate') {
-          return caches.match('/');
+        // If both fail, return a basic response for images
+        if (request.destination === 'image') {
+          return new Response('', { status: 404 });
         }
       })
   );
