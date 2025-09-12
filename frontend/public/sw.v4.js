@@ -1,4 +1,4 @@
-const CACHE_NAME = 'static-v5';
+const CACHE_NAME = 'static-v6';
 const urlsToCache = [
   // Only cache images, not HTML/JS/CSS to prevent white screen issues
   '/images/utahWaterGardensLogo500x463.png',
@@ -41,7 +41,7 @@ self.addEventListener('install', (event) => {
 // Activate event - clean old caches
 self.addEventListener('activate', (event) => {
   console.log('Service Worker v4 activating...');
-  const KEEP = new Set(['static-v5']); // Only keep current cache
+  const KEEP = new Set(['static-v6']); // Only keep current cache
   
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -88,6 +88,22 @@ self.addEventListener('fetch', (event) => {
         .catch(() => {
           // If both fail, return the main page
           return caches.match('/');
+        })
+    );
+    return;
+  }
+  
+  // For JavaScript and CSS files, always try network first to get fresh versions
+  if (request.url.includes('.js') || request.url.includes('.css')) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          // If network succeeds, return the response
+          return response;
+        })
+        .catch(() => {
+          // If network fails, try cache
+          return caches.match(request);
         })
     );
     return;
