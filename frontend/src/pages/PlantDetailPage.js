@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useParams, Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getPlantById } from '../data/plantData';
 import PageHero from '../components/PageHero.js';
 import ImageModal from '../components/ImageModal';

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PageTemplate from '../components/PageTemplate';
 import CTA from '../components/CTA';
 import './CareGuidesPage.css';
