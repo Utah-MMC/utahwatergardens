@@ -51,15 +51,6 @@ const SEO = ({
       <meta name="twitter:description" content={fullDescription} />
       <meta name="twitter:image" content={fullOgImage} />
       
-      {/* Internal Links for SEO - Always visible to crawlers */}
-      <div style={{ display: 'none' }}>
-        <a href="/contact">utah water gardens</a>
-        <a href="/plants-fish">utah water gardens</a>
-        <a href="/pondsupplies">utah water gardens</a>
-        <a href="/aquatic-plants">utah water gardens</a>
-        <a href="/fish-koi">utah water gardens</a>
-        <a href="/">utah water gardens</a>
-      </div>
     </Helmet>
   );
 };
