@@ -1524,6 +1524,24 @@ const PondHarvestingTemplate = ({
 
         {/* CTA Section */}
         <CTA />
+
+                {/* Internal Links for SEO */}
+
+                <div style={{ display: 'none' }}>
+
+                  <Link to="/contact">utah water gardens</Link>
+
+                  <Link to="/plants-fish">utah water gardens</Link>
+
+                  <Link to="/pondsupplies">utah water gardens</Link>
+
+                  <Link to="/aquatic-plants">utah water gardens</Link>
+
+                  <Link to="/fish-koi">utah water gardens</Link>
+
+                  <Link to="/">utah water gardens</Link>
+
+                </div>
         
         {/* Floating Action Buttons */}
         <div className="floating-actions">

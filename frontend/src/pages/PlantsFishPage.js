@@ -330,6 +330,15 @@ const PlantsFishPage = () => {
             </div>
           </div>
         </section>
+        
+        {/* Internal Links for SEO */}
+        <div style={{ display: 'none' }}>
+          <Link to="/">utah water gardens</Link>
+          <Link to="/contact">utah water gardens</Link>
+          <Link to="/pondsupplies">utah water gardens</Link>
+          <Link to="/aquatic-plants">utah water gardens</Link>
+          <Link to="/fish-koi">utah water gardens</Link>
+        </div>
       </div>
     </>
   );

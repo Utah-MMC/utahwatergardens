@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './BlogPost.css';
@@ -5386,5 +5387,40 @@ const BlogPost = () => {
     </div>
   );
 };
+
+
+// Internal Links for SEO
+
+
+const InternalLinks = () => (
+
+
+  <div style={{ display: 'none' }}>
+
+
+    <Link to="/contact">utah water gardens</Link>
+
+
+    <Link to="/plants-fish">utah water gardens</Link>
+
+
+    <Link to="/pondsupplies">utah water gardens</Link>
+
+
+    <Link to="/aquatic-plants">utah water gardens</Link>
+
+
+    <Link to="/fish-koi">utah water gardens</Link>
+
+
+    <Link to="/">utah water gardens</Link>
+
+
+  </div>
+
+
+);
+
+
 
 export default BlogPost;
