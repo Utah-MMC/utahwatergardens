@@ -192,8 +192,7 @@ export const serviceTypes = [
   'pond-repair',
   'water-feature-design',
   'pond-dredging',
-  'harvesting',
-  'pond-harvesting',
+  'pond-harvesting', // Only include canonical URL, not the redirecting 'harvesting'
   'lake-dredging'
 ];
 
