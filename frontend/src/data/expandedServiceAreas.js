@@ -193,6 +193,7 @@ export const serviceTypes = [
   'water-feature-design',
   'pond-dredging',
   'harvesting',
+  'pond-harvesting',
   'lake-dredging'
 ];
 
