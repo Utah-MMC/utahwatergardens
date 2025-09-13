@@ -374,6 +374,17 @@ const ContactPage = () => {
         <Link to="/pondsupplies">utah water gardens</Link>
         <Link to="/aquatic-plants">utah water gardens</Link>
         <Link to="/fish-koi">utah water gardens</Link>
+        
+        {/* Service Area Links */}
+        <Link to="/pond-harvesting-salt-lake-city">pond harvesting salt lake city</Link>
+        <Link to="/pond-harvesting-provo">pond harvesting provo</Link>
+        <Link to="/pond-harvesting-ogden">pond harvesting ogden</Link>
+        <Link to="/pond-dredging-salt-lake-city">pond dredging salt lake city</Link>
+        <Link to="/pond-dredging-provo">pond dredging provo</Link>
+        <Link to="/pond-dredging-ogden">pond dredging ogden</Link>
+        <Link to="/pond-maintenance-salt-lake-city">pond maintenance salt lake city</Link>
+        <Link to="/pond-maintenance-provo">pond maintenance provo</Link>
+        <Link to="/pond-maintenance-ogden">pond maintenance ogden</Link>
       </div>
     </>
   );

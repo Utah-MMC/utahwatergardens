@@ -601,7 +601,6 @@ const PondHarvestingTemplate = ({
           title={`Lake Harvesting Service in ${cityName} | Utah Water Gardens`}
           description={`Professional lake harvesting services in ${cityName}, ${state}. Expert lake vegetation management, water quality improvement, and ecosystem maintenance. Licensed & insured. Call ${phoneNumber}.`}
           keywords={`lake harvesting ${cityName}, lake harvesting service ${cityName}, lake vegetation management ${cityName}, lake maintenance ${cityName}, lake cleaning ${cityName}, aquatic vegetation removal ${cityName}, ${state} lake services, utah water gardens`}
-          canonical={`https://utahwatergardens.com/lake-harvesting/${citySlug}`}
         />
       
       <div className="pond-harvesting-template">

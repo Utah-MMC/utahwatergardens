@@ -264,7 +264,6 @@ const PondDredgingTemplate = ({
           title={`Pond Dredging Service in ${cityName} | Utah Water Gardens`}
           description={`Professional pond dredging services in ${cityName}, ${state}. Expert sediment removal, pond restoration, and water quality improvement. Licensed & insured. Call ${phoneNumber}.`}
           keywords={`pond dredging ${cityName}, pond dredging service ${cityName}, sediment removal ${cityName}, pond restoration ${cityName}, pond cleaning ${cityName}, pond maintenance ${cityName}, ${state} pond services, utah water gardens`}
-          canonical={`https://utahwatergardens.com/pond-dredging/${citySlug}`}
         />
       
       <div className="pond-dredging-template">

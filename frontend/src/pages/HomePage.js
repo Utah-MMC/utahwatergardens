@@ -485,6 +485,40 @@ const HomePage = () => {
         
         {/* Internal Links for SEO */}
         <InternalLinks />
+        
+        {/* Service Area Links for SEO */}
+        <div style={{ display: 'none' }}>
+          <Link to="/pond-harvesting-salt-lake-city">pond harvesting salt lake city</Link>
+          <Link to="/pond-harvesting-provo">pond harvesting provo</Link>
+          <Link to="/pond-harvesting-ogden">pond harvesting ogden</Link>
+          <Link to="/pond-harvesting-west-valley-city">pond harvesting west valley city</Link>
+          <Link to="/pond-harvesting-west-jordan">pond harvesting west jordan</Link>
+          <Link to="/pond-harvesting-orem">pond harvesting orem</Link>
+          <Link to="/pond-harvesting-sandy">pond harvesting sandy</Link>
+          <Link to="/pond-harvesting-layton">pond harvesting layton</Link>
+          <Link to="/pond-harvesting-taylorsville">pond harvesting taylorsville</Link>
+          <Link to="/pond-harvesting-st-george">pond harvesting st george</Link>
+          <Link to="/pond-dredging-salt-lake-city">pond dredging salt lake city</Link>
+          <Link to="/pond-dredging-provo">pond dredging provo</Link>
+          <Link to="/pond-dredging-ogden">pond dredging ogden</Link>
+          <Link to="/pond-dredging-west-valley-city">pond dredging west valley city</Link>
+          <Link to="/pond-dredging-west-jordan">pond dredging west jordan</Link>
+          <Link to="/pond-dredging-orem">pond dredging orem</Link>
+          <Link to="/pond-dredging-sandy">pond dredging sandy</Link>
+          <Link to="/pond-dredging-layton">pond dredging layton</Link>
+          <Link to="/pond-dredging-taylorsville">pond dredging taylorsville</Link>
+          <Link to="/pond-dredging-st-george">pond dredging st george</Link>
+          <Link to="/pond-maintenance-salt-lake-city">pond maintenance salt lake city</Link>
+          <Link to="/pond-maintenance-provo">pond maintenance provo</Link>
+          <Link to="/pond-maintenance-ogden">pond maintenance ogden</Link>
+          <Link to="/pond-maintenance-west-valley-city">pond maintenance west valley city</Link>
+          <Link to="/pond-maintenance-west-jordan">pond maintenance west jordan</Link>
+          <Link to="/pond-maintenance-orem">pond maintenance orem</Link>
+          <Link to="/pond-maintenance-sandy">pond maintenance sandy</Link>
+          <Link to="/pond-maintenance-layton">pond maintenance layton</Link>
+          <Link to="/pond-maintenance-taylorsville">pond maintenance taylorsville</Link>
+          <Link to="/pond-maintenance-st-george">pond maintenance st george</Link>
+        </div>
     </PageTemplate>
   );
 };

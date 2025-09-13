@@ -51,7 +51,6 @@ const CityPageTemplate = ({
         title={`Pond Services in ${cityName}, ${state} | Utah Water Gardens`}
         description={`Professional pond services in ${cityName}, ${state}. Pond design, construction, maintenance, and cleaning. Licensed & insured. Call ${phoneNumber} for consultation.`}
         keywords={`pond services ${cityName}, ${cityName} pond maintenance, pond cleaning ${cityName}, pond construction ${cityName}, water gardens ${cityName}, ${cityName} pond services, utah water gardens ${cityName}`}
-        canonical={`https://utahwatergardens.com/pond-services/${citySlug}`}
       />
       
       <div className="city-page">
