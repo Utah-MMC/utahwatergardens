@@ -4,17 +4,6 @@
   "outputDirectory": "frontend/build",
   "installCommand": "npm install",
   "framework": "create-react-app",
-  "functions": {
-    "api/contact.js": {
-      "runtime": "nodejs18.x"
-    },
-    "api/schedule.js": {
-      "runtime": "nodejs18.x"
-    },
-    "api/extended-service.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "redirects": [
     {
       "source": "/(.*)",
