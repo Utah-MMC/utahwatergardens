@@ -1,0 +1,67 @@
+/* DISABLE ALL WAVE EFFECTS - Mobile Performance Override */
+
+/* Disable all wave animations */
+@keyframes waveAnimation,
+@keyframes heroWaveFlow,
+@keyframes hero-wave-simple,
+@keyframes hero-pond-wave,
+@keyframes waveFlow,
+@keyframes gradientShift,
+@keyframes rippleEffect {
+  0%, 100% {
+    transform: none !important;
+    clip-path: none !important;
+    background-position: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Disable wave elements */
+.hero-wave-attached,
+.hero-wave-effect,
+.wave-layer-1,
+.wave-layer-2,
+.wave-layer-3 {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Disable wave pseudo-elements */
+.hero::before,
+.hero::after,
+.page-hero::before,
+.page-hero::after,
+.standard-hero::before,
+.standard-hero::after,
+.header::before,
+.header::after {
+  display: none !important;
+  animation: none !important;
+  content: none !important;
+}
+
+/* Disable all animations on mobile */
+@media (max-width: 768px) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .hero-fallback,
+  .page-hero-fallback,
+  .standard-hero-fallback {
+    animation: none !important;
+  }
+}
+
+/* Disable for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

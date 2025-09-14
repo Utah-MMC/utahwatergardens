@@ -1,10 +1,13 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
-import './App.css';
-import './styles/global.css';
-import './styles/mobile-hero-fix.css';
-import Header from './components/Header.js';
+import './styles/mobile-first.css';
+import './styles/disable-waves.css';
+// import './App.css'; // Replaced with mobile-first.css
+// import './styles/global.css'; // Replaced with mobile-first.css
+// import './styles/mobile-hero-fix.css'; // Replaced with mobile-first.css
+import HeaderMobile from './components/HeaderMobile.js';
+// import Header from './components/Header.js'; // Replaced with mobile-first header
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 // Mobile-Optimized Performance Components
@@ -13,14 +16,16 @@ import MobileErrorBoundary from './components/MobileErrorBoundary';
 import MobileDiagnostics from './components/MobileDiagnostics';
 import MobileHeroFix from './components/MobileHeroFix';
 import ViewportFix from './components/ViewportFix';
+// import MobileTest from './components/MobileTest'; // Development only - removed for production
 // Temporarily disabled for mobile stability
 // import ScrollOptimizer from './components/ScrollOptimizer';
 // import ScrollPerformanceFix from './components/ScrollPerformanceFix';
 // import CarouselOptimizer from './components/CarouselOptimizer';
-import WaterRipple from './components/WaterRipple.js';
+// import WaterRipple from './components/WaterRipple.js'; // Removed for mobile performance
 
 // Lazy load components for better performance
-const HomePage = lazy(() => import('./pages/HomePage'));
+const HomePageMobile = lazy(() => import('./pages/HomePageMobile'));
+// const HomePage = lazy(() => import('./pages/HomePage')); // Replaced with mobile-first version
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -128,7 +133,7 @@ function App() {
       <MobileErrorBoundary>
         <Router>
           <ScrollToTop />
-          <WaterRipple />
+          {/* <WaterRipple /> */} {/* Removed for mobile performance */}
           <div className="App">
         {/* <PerformanceMonitor /> */}
         {/* Simple Mobile Performance Optimizer */}
@@ -147,12 +152,12 @@ function App() {
         {/* <ScrollOptimizer /> */}
         {/* <ScrollPerformanceFix /> */}
         {/* <CarouselOptimizer /> */}
-        <Header />
+        <HeaderMobile />
         <main>
           <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             {/* Main Navigation Routes */}
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePageMobile />} />
             <Route path="/plants-fish" element={<PlantsFishPage />} />
             <Route path="/pond-services" element={<PondServicesPage />} />
             <Route path="/pond-supplies" element={<PondSuppliesPage />} />
@@ -267,7 +272,7 @@ function App() {
             <Route path="/:citySlug" element={<SimpleCityPage />} />
             
             {/* Catch-all route for 404 errors */}
-            <Route path="*" element={<HomePage />} />
+            <Route path="*" element={<HomePageMobile />} />
           </Routes>
           </Suspense>
         </main>
