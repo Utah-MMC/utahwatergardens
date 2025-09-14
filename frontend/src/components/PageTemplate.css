@@ -230,9 +230,9 @@
 /* MOBILE RESPONSIVE STYLES */
 @media screen and (max-width: 768px) {
   .page-hero {
-    height: 250px !important;
-    min-height: 250px !important;
-    max-height: 250px !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
     position: relative !important;
     width: 100vw !important;
     margin-left: 0 !important;
@@ -242,7 +242,8 @@
     background: #f8fafc !important;
     z-index: 1 !important;
     overflow: visible !important;
-    padding-top: 100px !important;
+    padding-top: 80px !important;
+    margin-top: 60px !important;
     box-sizing: border-box !important;
   }
   

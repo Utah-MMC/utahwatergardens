@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import './App.css';
 import './styles/global.css';
+import './styles/mobile-hero-fix.css';
 import Header from './components/Header.js';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -10,6 +11,7 @@ import ScrollToTop from './components/ScrollToTop';
 import SimpleMobileOptimizer from './components/SimpleMobileOptimizer';
 import MobileErrorBoundary from './components/MobileErrorBoundary';
 import MobileDiagnostics from './components/MobileDiagnostics';
+import MobileHeroFix from './components/MobileHeroFix';
 // Temporarily disabled for mobile stability
 // import ScrollOptimizer from './components/ScrollOptimizer';
 // import ScrollPerformanceFix from './components/ScrollPerformanceFix';
@@ -133,6 +135,9 @@ function App() {
         
         {/* Mobile Diagnostics - Enable for debugging */}
         <MobileDiagnostics enabled={process.env.NODE_ENV === 'development'} />
+        
+        {/* Mobile Hero Fix - Ensures hero sections are visible on mobile */}
+        <MobileHeroFix />
         
         {/* Legacy Performance Components - Temporarily disabled for mobile stability */}
         {/* <ScrollOptimizer /> */}
