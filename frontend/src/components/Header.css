@@ -577,7 +577,7 @@
   border-radius: 8px;
   transition: transform 0.3s ease, opacity 0.3s ease;
   position: relative;
-  z-index: 10001;
+  z-index: 10001 !important;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -611,14 +611,35 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Hide Get Quote button on desktop */
+/* Hide elements on desktop */
 .desktop-hidden {
   display: none !important;
 }
 
+/* Mobile responsive rules */
 @media (max-width: 768px) {
   .desktop-hidden {
     display: block !important;
+  }
+  
+  /* Hide desktop navigation on mobile */
+  .nav {
+    display: none !important;
+  }
+  
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: flex !important;
+  }
+  
+  /* Hide desktop action buttons on mobile */
+  .header-actions {
+    display: none !important;
+  }
+  
+  /* Show mobile action buttons when menu is open */
+  .nav-open .header-actions {
+    display: flex !important;
   }
 }
 
@@ -700,14 +721,16 @@
   }
   
   .header-content {
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .logo-section {
     order: 1;
     flex: 1;
-    justify-content: center;
+    justify-content: flex-start;
     min-width: 0; /* Allow shrinking */
   }
   
@@ -737,29 +760,11 @@
     font-size: 0.75rem;
   }
 
-  .header-actions {
-    order: 2;
-    width: 100%;
-    justify-content: center;
-    gap: 0.6rem;
-  }
-
-  .btn {
-    flex: 1;
-    max-width: 140px;
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-  }
-
-  .btn-compact {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
-  }
-
+  /* Desktop navigation and buttons are already hidden by earlier rules */
   .nav {
     order: 3;
     width: 100%;
-    display: none;
+    display: none !important;
   }
 
   .nav-open {
@@ -774,7 +779,7 @@
     padding: 0;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8) !important;
     backdrop-filter: blur(20px) !important;
-    z-index: 10000;
+    z-index: 10001 !important;
     animation: slideInFromTop 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
     width: 100vw;
@@ -963,8 +968,9 @@
   }
 
   .mobile-menu-toggle {
-    display: flex;
-    order: 4;
+    display: flex !important;
+    order: 2;
+    margin-left: auto;
   }
 
   /* Mobile menu action buttons */

@@ -80,17 +80,24 @@ body {
   }
 }
 
-/* Main Content - No padding since header overlays content */
+/* Main Content - Add padding to account for fixed header */
 main {
-  padding-top: 0 !important; /* Remove padding so hero can start from top */
+  padding-top: 120px; /* Add padding to account for fixed header height */
   min-height: 100vh;
   background: white;
   position: relative;
-  z-index: 0; /* Ensure main content is below PageHero but above footer */
+  z-index: 0; /* Ensure main content is below header but above footer */
   /* Enable hardware acceleration for better scroll performance */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   will-change: scroll-position;
+}
+
+/* Mobile responsive padding for main content */
+@media (max-width: 768px) {
+  main {
+    padding-top: 100px; /* Smaller padding for mobile header */
+  }
 }
 
 /* App container for ripple effect */

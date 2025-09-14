@@ -46,8 +46,6 @@ const ExpertTeamPage = lazy(() => import('./pages/ExpertTeamPage'));
 const PlantExpertsPage = lazy(() => import('./pages/PlantExpertsPage'));
 const MaintenanceCrewPage = lazy(() => import('./pages/MaintenanceCrewPage'));
 
-const XMindPage = lazy(() => import('./pages/XMindPage'));
-
 // Citation Pages for AI and Expert Authority
 const ExpertCitationPage = lazy(() => import('./pages/ExpertCitationPage'));
 const UtahPondRegulationsPage = lazy(() => import('./pages/UtahPondRegulationsPage'));
@@ -183,9 +181,6 @@ function App() {
             <Route path="/expert-citation" element={<ExpertCitationPage />} />
             <Route path="/utah-pond-regulations" element={<UtahPondRegulationsPage />} />
             <Route path="/aquatic-plant-care-guide" element={<AquaticPlantCareCitationPage />} />
-            
-            {/* XMind Integration */}
-            <Route path="/xmind" element={<XMindPage />} />
             
             {/* Legacy routes for backward compatibility */}
             <Route path="/services" element={<ServicesPage />} />
