@@ -6,13 +6,13 @@
   "framework": "create-react-app",
   "functions": {
     "api/contact.js": {
-      "runtime": "@vercel/node@3.0.7"
+      "runtime": "nodejs18.x"
     },
     "api/schedule.js": {
-      "runtime": "@vercel/node@3.0.7"
+      "runtime": "nodejs18.x"
     },
     "api/extended-service.js": {
-      "runtime": "@vercel/node@3.0.7"
+      "runtime": "nodejs18.x"
     }
   },
   "redirects": [

@@ -1,0 +1,12 @@
+{
+  "name": "utahwatergardens-api",
+  "version": "1.0.0",
+  "description": "API functions for Utah Water Gardens",
+  "main": "index.js",
+  "dependencies": {
+    "nodemailer": "^6.10.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
