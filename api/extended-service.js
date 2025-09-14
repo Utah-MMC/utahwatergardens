@@ -38,19 +38,21 @@ const emailTemplates = {
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> ${formData.email}</p>
           <p><strong>Phone:</strong> ${formData.phone}</p>
-          <p><strong>Location:</strong> ${formData.location}</p>
-          <p><strong>Service Type:</strong> ${formData.serviceType}</p>
-          <p><strong>Property Size:</strong> ${formData.propertySize}</p>
-          <p><strong>Current Water Feature:</strong> ${formData.currentFeature}</p>
+          <p><strong>Address:</strong> ${formData.address}</p>
+          <p><strong>City:</strong> ${formData.city}</p>
+          <p><strong>State:</strong> ${formData.state}</p>
+          <p><strong>ZIP Code:</strong> ${formData.zipCode}</p>
+          <p><strong>Distance from Salt Lake City:</strong> ${formData.distance}</p>
+          <p><strong>Project Type:</strong> ${formData.projectType}</p>
           <p><strong>Timeline:</strong> ${formData.timeline}</p>
           <p><strong>Budget Range:</strong> ${formData.budget}</p>
           <p><strong>Project Description:</strong></p>
           <p style="background-color: white; padding: 15px; border-radius: 4px; border-left: 4px solid #2c5530;">
-            ${formData.description.replace(/\n/g, '<br>')}
+            ${formData.projectDescription ? formData.projectDescription.replace(/\n/g, '<br>') : 'No description provided'}
           </p>
-          <p><strong>Additional Requirements:</strong></p>
+          <p><strong>Additional Information:</strong></p>
           <p style="background-color: white; padding: 15px; border-radius: 4px; border-left: 4px solid #2c5530;">
-            ${formData.additionalRequirements.replace(/\n/g, '<br>')}
+            ${formData.additionalInfo ? formData.additionalInfo.replace(/\n/g, '<br>') : 'No additional information provided'}
           </p>
         </div>
         <p style="color: #666; font-size: 12px; margin-top: 20px;">
