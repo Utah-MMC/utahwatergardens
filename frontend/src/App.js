@@ -12,6 +12,7 @@ import SimpleMobileOptimizer from './components/SimpleMobileOptimizer';
 import MobileErrorBoundary from './components/MobileErrorBoundary';
 import MobileDiagnostics from './components/MobileDiagnostics';
 import MobileHeroFix from './components/MobileHeroFix';
+import ViewportFix from './components/ViewportFix';
 // Temporarily disabled for mobile stability
 // import ScrollOptimizer from './components/ScrollOptimizer';
 // import ScrollPerformanceFix from './components/ScrollPerformanceFix';
@@ -135,6 +136,9 @@ function App() {
         
         {/* Mobile Diagnostics - Disabled to prevent infinite loop */}
         {/* <MobileDiagnostics enabled={process.env.NODE_ENV === 'development'} /> */}
+        
+        {/* Viewport Fix - Ensures proper mobile scaling */}
+        <ViewportFix />
         
         {/* Mobile Hero Fix - Ensures hero sections are visible on mobile */}
         <MobileHeroFix />

@@ -42,7 +42,7 @@ const SEO = ({
       <meta name="description" content={fullDescription} />
       <meta name="keywords" content={fullKeywords} />
       <link rel="canonical" href={fullCanonical} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
       <meta charSet="utf-8" />
       <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
       <meta name="author" content="Utah Water Gardens" />

@@ -46,14 +46,21 @@ const SimpleMobileOptimizer = () => {
       }
     };
 
-    // Optimize viewport for mobile
+    // Optimize viewport for mobile - FORCE CORRECT VIEWPORT
     const optimizeViewport = () => {
-      const viewport = document.querySelector('meta[name="viewport"]');
-      if (viewport) {
-        viewport.setAttribute('content', 
-          'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes'
-        );
-      }
+      // Remove any existing viewport meta tags
+      const existingViewports = document.querySelectorAll('meta[name="viewport"]');
+      existingViewports.forEach(vp => vp.remove());
+      
+      // Create new viewport meta tag with correct settings
+      const viewport = document.createElement('meta');
+      viewport.name = 'viewport';
+      viewport.content = 'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover';
+      document.head.insertBefore(viewport, document.head.firstChild);
+      
+      // Also set CSS viewport units
+      document.documentElement.style.setProperty('--vw', '1vw');
+      document.documentElement.style.setProperty('--vh', '1vh');
     };
 
     // Run optimizations
