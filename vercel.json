@@ -4,6 +4,17 @@
   "outputDirectory": "frontend/build",
   "installCommand": "npm install",
   "framework": "create-react-app",
+  "functions": {
+    "api/contact.js": {
+      "runtime": "@vercel/node@3.0.7"
+    },
+    "api/schedule.js": {
+      "runtime": "@vercel/node@3.0.7"
+    },
+    "api/extended-service.js": {
+      "runtime": "@vercel/node@3.0.7"
+    }
+  },
   "redirects": [
     {
       "source": "/(.*)",

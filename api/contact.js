@@ -107,11 +107,21 @@ const emailTemplates = {
 };
 
 export default async function handler(req, res) {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
   try {
+    console.log('Contact form submission received:', req.body);
     const formData = req.body;
 
     // Send business email
@@ -147,6 +157,15 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error('Error sending contact form email:', error);
-    res.status(500).json({ success: false, error: error.message });
+    console.error('Error details:', {
+      message: error.message,
+      stack: error.stack,
+      code: error.code
+    });
+    res.status(500).json({ 
+      success: false, 
+      error: error.message,
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 }
