@@ -1,18 +1,14 @@
 # Email System Setup - Utah Water Gardens
 
 ## Overview
-This email system uses Nodemailer to send form submissions from the Utah Water Gardens website to all three business email addresses:
-- jeremyuwg@gmail.com
-- utahwatergardens@gmail.com  
+This email system uses Nodemailer to send form submissions from the Utah Water Gardens website to:
 - contact@utahwatergardens.com
 
 ## Configuration
-- **From Email**: jeremyuwg@gmail.com
-- **App Password**: egrn oriw jdys xdjo
-- **Service**: Gmail
+- **From Email**: services@utahwatergardens.com (HostGator)
+- **Password**: Uwg2025!
+- **Service**: HostGator SMTP
 - **Recipients**: All form submissions are sent to:
-  - jeremyuwg@gmail.com
-  - utahwatergardens@gmail.com
   - contact@utahwatergardens.com
 
 ## Forms Connected

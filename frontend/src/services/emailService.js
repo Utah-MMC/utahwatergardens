@@ -1,16 +1,32 @@
 const nodemailer = require('nodemailer');
 
-// Gmail configuration
-const emailConfig = {
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER || 'jeremyuwg@gmail.com',
-    pass: process.env.EMAIL_PASS || 'egrn oriw jdys xdjo' // App password
-  }
+// Function to get email configuration dynamically
+const getEmailConfig = () => {
+  return process.env.EMAIL_SERVICE === 'hostgator' ? {
+    host: process.env.SMTP_HOST || 'mail.utahwatergardens.com',
+    port: parseInt(process.env.SMTP_PORT) || 587,
+    secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+    requireTLS: true,
+    auth: {
+      user: process.env.EMAIL_USER || 'services@utahwatergardens.com',
+      pass: process.env.EMAIL_PASS || 'Uwg2025!'
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  } : {
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER || 'jeremyuwg@gmail.com',
+      pass: process.env.EMAIL_PASS || 'egrn oriw jdys xdjo' // App password
+    }
+  };
 };
 
-// Create transporter
-const transporter = nodemailer.createTransport(emailConfig);
+// Create transporter function
+const createTransporter = () => {
+  return nodemailer.createTransport(getEmailConfig());
+};
 
 // Email templates
 const emailTemplates = {
@@ -200,6 +216,7 @@ const emailService = {
         html: template.html
       };
 
+      const transporter = createTransporter();
       const result = await transporter.sendMail(mailOptions);
       console.log('Customer follow-up email sent successfully:', result.messageId);
       return { success: true, messageId: result.messageId };
@@ -216,15 +233,12 @@ const emailService = {
       const template = emailTemplates.outOfAreaService(formData);
       const mailOptions = {
         from: 'jeremyuwg@gmail.com',
-        to: [
-          'jeremyuwg@gmail.com',
-          'utahwatergardens@gmail.com',
-          'contact@utahwatergardens.com'
-        ].join(', '),
+        to: 'contact@utahwatergardens.com',
         subject: template.subject,
         html: template.html
       };
 
+      const transporter = createTransporter();
       const result = await transporter.sendMail(mailOptions);
       console.log('Extended service email sent successfully:', result.messageId);
 
@@ -246,15 +260,12 @@ const emailService = {
       const template = emailTemplates.contactForm(formData);
       const mailOptions = {
         from: 'jeremyuwg@gmail.com',
-        to: [
-          'jeremyuwg@gmail.com',
-          'utahwatergardens@gmail.com',
-          'contact@utahwatergardens.com'
-        ].join(', '),
+        to: 'contact@utahwatergardens.com',
         subject: template.subject,
         html: template.html
       };
 
+      const transporter = createTransporter();
       const result = await transporter.sendMail(mailOptions);
       console.log('Contact form email sent successfully:', result.messageId);
 
@@ -276,15 +287,12 @@ const emailService = {
       const template = emailTemplates.scheduleForm(formData);
       const mailOptions = {
         from: 'jeremyuwg@gmail.com',
-        to: [
-          'jeremyuwg@gmail.com',
-          'utahwatergardens@gmail.com',
-          'contact@utahwatergardens.com'
-        ].join(', '),
+        to: 'contact@utahwatergardens.com',
         subject: template.subject,
         html: template.html
       };
 
+      const transporter = createTransporter();
       const result = await transporter.sendMail(mailOptions);
       console.log('Schedule form email sent successfully:', result.messageId);
 
@@ -306,15 +314,12 @@ const emailService = {
       const template = emailTemplates.generalForm(formData, formType);
       const mailOptions = {
         from: 'jeremyuwg@gmail.com',
-        to: [
-          'jeremyuwg@gmail.com',
-          'utahwatergardens@gmail.com',
-          'contact@utahwatergardens.com'
-        ].join(', '),
+        to: 'contact@utahwatergardens.com',
         subject: template.subject,
         html: template.html
       };
 
+      const transporter = createTransporter();
       const result = await transporter.sendMail(mailOptions);
       console.log(`${formType} form email sent successfully:`, result.messageId);
 

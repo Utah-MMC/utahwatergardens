@@ -108,7 +108,7 @@ const OutOfAreaServicePage = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:3000/api/extended-service', {
+      const response = await fetch('http://localhost:3001/api/extended-service', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
