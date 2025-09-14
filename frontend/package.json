@@ -10,6 +10,7 @@
     "nodemailer": "^7.0.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-error-boundary": "^6.0.0",
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
@@ -21,11 +22,17 @@
     "build:optimize": "npx react-scripts build && node scripts/build-optimize.js",
     "build:analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "build:prod": "NODE_ENV=production npm run build",
+    "build:performance": "npm run build && npm run optimize && npm run lighthouse",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "optimize": "node scripts/build-optimize.js",
-    "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html",
-    "vercel-build": "npm run build"
+    "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html --chrome-flags=\"--headless\"",
+    "lighthouse:ci": "lighthouse http://localhost:3000 --output json --output-path ./lighthouse-results.json --chrome-flags=\"--headless\"",
+    "performance:test": "npm run start & sleep 10 && npm run lighthouse:ci && npm run build:analyze",
+    "performance:monitor": "node scripts/performance-monitor.js",
+    "bundle:analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js --mode static --report",
+    "cache:clear": "node scripts/clear-cache.js",
+    "vercel-build": "npm run build:performance"
   },
   "eslintConfig": {
     "extends": [

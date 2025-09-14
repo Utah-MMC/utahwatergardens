@@ -6,10 +6,14 @@ import './styles/global.css';
 import Header from './components/Header.js';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-// import PerformanceMonitor from './components/PerformanceMonitor'; // Disabled for production performance
-import ScrollOptimizer from './components/ScrollOptimizer';
-import ScrollPerformanceFix from './components/ScrollPerformanceFix';
-import CarouselOptimizer from './components/CarouselOptimizer';
+// Mobile-Optimized Performance Components
+import SimpleMobileOptimizer from './components/SimpleMobileOptimizer';
+import MobileErrorBoundary from './components/MobileErrorBoundary';
+import MobileDiagnostics from './components/MobileDiagnostics';
+// Temporarily disabled for mobile stability
+// import ScrollOptimizer from './components/ScrollOptimizer';
+// import ScrollPerformanceFix from './components/ScrollPerformanceFix';
+// import CarouselOptimizer from './components/CarouselOptimizer';
 import WaterRipple from './components/WaterRipple.js';
 
 // Lazy load components for better performance
@@ -118,14 +122,22 @@ function App() {
         <link rel="shortcut icon" href="/images/favicon.ico?v=3" />
         <meta name="theme-color" content="#1e40af" />
       </Helmet>
-      <Router>
-        <ScrollToTop />
-        <WaterRipple />
-        <div className="App">
+      <MobileErrorBoundary>
+        <Router>
+          <ScrollToTop />
+          <WaterRipple />
+          <div className="App">
         {/* <PerformanceMonitor /> */}
-        <ScrollOptimizer />
-        <ScrollPerformanceFix />
-        <CarouselOptimizer />
+        {/* Simple Mobile Performance Optimizer */}
+        <SimpleMobileOptimizer />
+        
+        {/* Mobile Diagnostics - Enable for debugging */}
+        <MobileDiagnostics enabled={process.env.NODE_ENV === 'development'} />
+        
+        {/* Legacy Performance Components - Temporarily disabled for mobile stability */}
+        {/* <ScrollOptimizer /> */}
+        {/* <ScrollPerformanceFix /> */}
+        {/* <CarouselOptimizer /> */}
         <Header />
         <main>
           <Suspense fallback={<LoadingSpinner />}>
@@ -251,8 +263,9 @@ function App() {
           </Suspense>
         </main>
         <Footer />
-        </div>
-      </Router>
+          </div>
+        </Router>
+      </MobileErrorBoundary>
     </HelmetProvider>
   );
 }

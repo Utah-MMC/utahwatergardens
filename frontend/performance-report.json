@@ -1,0 +1,126 @@
+{
+  "timestamp": "2025-09-14T07:10:45.636Z",
+  "metrics": {
+    "build": {
+      "duration": 37,
+      "timestamp": 1757833845635
+    },
+    "runtime": {
+      "memoryUsage": {
+        "rss": 44605440,
+        "heapTotal": 6868992,
+        "heapUsed": 5047632,
+        "external": 1540082,
+        "arrayBuffers": 10515
+      },
+      "uptime": 0.0668111,
+      "timestamp": 1757833845636
+    },
+    "bundle": {
+      "totalSize": 330186434,
+      "jsChunks": 71,
+      "cssChunks": 49,
+      "images": 173,
+      "largestFiles": [
+        {
+          "path": "\\videos\\IMG_1548.MOV",
+          "size": 35865308,
+          "type": ".mov"
+        },
+        {
+          "path": "\\images\\truxorharvestingshort.mp4",
+          "size": 15329908,
+          "type": ".mp4"
+        },
+        {
+          "path": "\\images\\IMG_3266-topaz-enhance-2x-faceai.jpeg",
+          "size": 7154053,
+          "type": ".jpeg"
+        },
+        {
+          "path": "\\images\\contact-bg.jpeg",
+          "size": 6654097,
+          "type": ".jpeg"
+        },
+        {
+          "path": "\\images\\footer-background.jpeg",
+          "size": 6654097,
+          "type": ".jpeg"
+        },
+        {
+          "path": "\\images\\IMG_2779-topaz-enhance-2x-sharpen.jpeg",
+          "size": 6654097,
+          "type": ".jpeg"
+        },
+        {
+          "path": "\\images\\20140919_110730.jpg",
+          "size": 5511697,
+          "type": ".jpg"
+        },
+        {
+          "path": "\\images\\P1020119.jpg",
+          "size": 5454848,
+          "type": ".jpg"
+        },
+        {
+          "path": "\\images\\IMG_3269.jpg",
+          "size": 5074450,
+          "type": ".jpg"
+        },
+        {
+          "path": "\\images\\IMG_3266.jpg",
+          "size": 4857540,
+          "type": ".jpg"
+        }
+      ]
+    },
+    "recommendations": [
+      {
+        "type": "bundle_size",
+        "priority": "high",
+        "message": "Bundle size is very large",
+        "suggestion": "Consider code splitting and tree shaking",
+        "impact": "Improve initial load time"
+      },
+      {
+        "type": "js_chunks",
+        "priority": "medium",
+        "message": "Too many JS chunks",
+        "suggestion": "Consolidate smaller chunks",
+        "impact": "Reduce HTTP requests"
+      },
+      {
+        "type": "images",
+        "priority": "medium",
+        "message": "Many images detected",
+        "suggestion": "Implement lazy loading and WebP format",
+        "impact": "Improve page load performance"
+      },
+      {
+        "type": "large_files",
+        "priority": "high",
+        "message": "10 large files detected",
+        "suggestion": "Optimize or split large files",
+        "impact": "Reduce initial load time",
+        "files": [
+          "\\videos\\IMG_1548.MOV",
+          "\\images\\truxorharvestingshort.mp4",
+          "\\images\\IMG_3266-topaz-enhance-2x-faceai.jpeg",
+          "\\images\\contact-bg.jpeg",
+          "\\images\\footer-background.jpeg"
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "score": 60,
+    "issues": [
+      "Large bundle size",
+      "Too many JS chunks"
+    ],
+    "optimizations": [
+      "Consider code splitting and tree shaking",
+      "Optimize or split large files"
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+/* Advanced Image Optimizer Styles */
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.image-optimizer {
+  /* Hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+  
+  /* Smooth transitions */
+  transition: all 0.3s ease-in-out;
+}
+
+.image-optimizer img {
+  /* Optimize image rendering */
+  image-rendering: optimizeQuality;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  /* Prevent layout shift */
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Blur-up effect for progressive loading */
+.image-optimizer img[src*="placeholder"] {
+  filter: blur(5px);
+  transform: scale(1.05);
+}
+
+/* Performance optimizations for different screen sizes */
+@media (max-width: 768px) {
+  .image-optimizer {
+    /* Reduce quality on mobile for faster loading */
+    image-rendering: optimizeSpeed;
+  }
+}
+
+@media (min-width: 769px) {
+  .image-optimizer {
+    /* Higher quality on desktop */
+    image-rendering: optimizeQuality;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .image-optimizer {
+    background-color: #374151;
+  }
+  
+  .image-optimizer img[src*="placeholder"] {
+    filter: blur(5px) brightness(0.8);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .image-optimizer img {
+    transition: none;
+  }
+  
+  .image-optimizer {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .image-optimizer {
+    border: 2px solid currentColor;
+  }
+}
