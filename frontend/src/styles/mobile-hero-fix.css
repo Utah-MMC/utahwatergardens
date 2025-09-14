@@ -3,48 +3,52 @@
 /* Force hero sections to be visible on mobile */
 @media screen and (max-width: 768px) {
   
-  /* Page Hero Fix */
+  /* Page Hero Fix - COMPLETE MOBILE OVERRIDE */
   .page-hero,
   .page-hero.mobile-hero-fix {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
-    height: 300px !important;
-    min-height: 300px !important;
-    max-height: 300px !important;
+    height: 400px !important;
+    min-height: 400px !important;
+    max-height: 400px !important;
     position: relative !important;
     width: 100vw !important;
-    margin: 60px 0 0 0 !important;
+    margin: 0 !important;
     padding: 80px 0 0 0 !important;
     left: 0 !important;
     right: 0 !important;
     top: 0 !important;
-    background: #f8fafc !important;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
     z-index: 1 !important;
-    overflow: visible !important;
+    overflow: hidden !important;
     box-sizing: border-box !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
   }
   
-  /* Standard Hero Fix */
+  /* Standard Hero Fix - COMPLETE MOBILE OVERRIDE */
   .standard-hero,
   .standard-hero.mobile-hero-fix {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
-    height: 300px !important;
-    min-height: 300px !important;
-    max-height: 300px !important;
+    height: 400px !important;
+    min-height: 400px !important;
+    max-height: 400px !important;
     position: relative !important;
     width: 100vw !important;
-    margin: 60px 0 0 0 !important;
+    margin: 0 !important;
     padding: 80px 0 0 0 !important;
     left: 0 !important;
     right: 0 !important;
     top: 0 !important;
-    background: #f8fafc !important;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;
     z-index: 1 !important;
-    overflow: visible !important;
+    overflow: hidden !important;
     box-sizing: border-box !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
   }
   
   /* Legacy Hero Fix */
@@ -69,7 +73,7 @@
     box-sizing: border-box !important;
   }
   
-  /* Hero Media Elements */
+  /* Hero Media Elements - FORCE VISIBLE */
   .page-hero-media,
   .standard-hero-media,
   .hero-media {
@@ -80,9 +84,12 @@
     height: 100% !important;
     z-index: -1 !important;
     overflow: hidden !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
-  /* Hero Background Images */
+  /* Hero Background Images - FORCE LOADING */
   .page-hero-fallback,
   .standard-hero-fallback,
   .hero-fallback {
@@ -91,14 +98,20 @@
     object-fit: cover !important;
     object-position: center center !important;
     display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: -1 !important;
   }
   
-  /* Hero Content */
+  /* Hero Content - FORCE VISIBLE */
   .page-hero-inner,
   .standard-hero-inner,
   .hero-inner {
     position: relative !important;
-    z-index: 2 !important;
+    z-index: 10 !important;
     padding: 1rem !important;
     display: flex !important;
     flex-direction: column !important;
@@ -106,27 +119,95 @@
     align-items: center !important;
     text-align: center !important;
     max-width: 100% !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: white !important;
   }
   
-  /* Hero Titles */
+  /* Hero Titles - FORCE VISIBLE */
   .page-hero-title,
   .standard-hero-title,
   .hero-title {
-    font-size: 1.4rem !important;
-    margin-bottom: 0.25rem !important;
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
     line-height: 1.2 !important;
-    color: #1e40af !important;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+    font-weight: 800 !important;
   }
   
-  /* Hero Subtitles - Hide on mobile to save space */
+  /* Hero Subtitles - SHOW ON MOBILE */
   .page-hero-sub,
   .standard-hero-sub,
   .hero-sub {
+    display: block !important;
+    font-size: 1rem !important;
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+    margin-bottom: 1rem !important;
+    opacity: 0.9 !important;
+    visibility: visible !important;
+  }
+  
+  /* Hero Buttons - FORCE VISIBLE */
+  .page-hero .btn-row,
+  .standard-hero .btn-row,
+  .hero .btn-row {
+    display: flex !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .page-hero .btn,
+  .standard-hero .btn,
+  .hero .btn {
+    display: inline-block !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.5rem !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .page-hero .btn[data-variant="primary"],
+  .standard-hero .btn[data-variant="primary"],
+  .hero .btn[data-variant="primary"] {
+    background: #dc2626 !important;
+    color: white !important;
+  }
+  
+  .page-hero .btn[data-variant="outline"],
+  .standard-hero .btn[data-variant="outline"],
+  .hero .btn[data-variant="outline"] {
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid white !important;
+  }
+  
+  /* Remove any pseudo-elements that might be hiding content */
+  .page-hero::before,
+  .page-hero::after,
+  .standard-hero::before,
+  .standard-hero::after,
+  .hero::before,
+  .hero::after {
     display: none !important;
   }
   
-  /* Hero Buttons */
+  /* Ensure no conflicting styles */
+  .page-hero *,
+  .standard-hero *,
+  .hero * {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
   .btn-row {
     gap: 0.5rem !important;
     flex-wrap: wrap !important;

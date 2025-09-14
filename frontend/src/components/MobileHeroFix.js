@@ -15,30 +15,33 @@ const MobileHeroFix = () => {
         const heroSections = document.querySelectorAll('.page-hero, .hero, .standard-hero');
         
         heroSections.forEach(hero => {
-          // Ensure hero is visible
+          // FORCE hero to be visible
           hero.style.display = 'flex';
           hero.style.visibility = 'visible';
           hero.style.opacity = '1';
           
-          // Fix positioning
+          // Fix positioning - REMOVE margins that push it down
           hero.style.position = 'relative';
           hero.style.top = '0';
           hero.style.left = '0';
           hero.style.right = '0';
           hero.style.width = '100vw';
-          hero.style.height = '300px';
-          hero.style.minHeight = '300px';
-          hero.style.maxHeight = '300px';
+          hero.style.height = '400px';
+          hero.style.minHeight = '400px';
+          hero.style.maxHeight = '400px';
           
-          // Fix header clearance
-          hero.style.marginTop = '60px';
+          // Remove problematic margins and padding
+          hero.style.marginTop = '0';
+          hero.style.marginBottom = '0';
           hero.style.paddingTop = '80px';
+          hero.style.marginLeft = 'calc(-50vw + 50%)';
+          hero.style.marginRight = 'calc(-50vw + 50%)';
           
-          // Ensure background is visible
-          hero.style.background = '#f8fafc';
+          // FORCE background - use gradient instead of relying on image
+          hero.style.background = 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)';
           hero.style.zIndex = '1';
           
-          // Fix media elements
+          // FORCE media elements to be visible
           const media = hero.querySelector('.page-hero-media, .hero-media, .standard-hero-media');
           if (media) {
             media.style.position = 'absolute';
@@ -47,29 +50,80 @@ const MobileHeroFix = () => {
             media.style.width = '100%';
             media.style.height = '100%';
             media.style.zIndex = '-1';
+            media.style.display = 'block';
+            media.style.visibility = 'visible';
+            media.style.opacity = '1';
           }
           
-          // Fix background images
+          // FORCE background images to load
           const bgImage = hero.querySelector('.page-hero-fallback, .hero-fallback, .standard-hero-fallback');
           if (bgImage) {
             bgImage.style.width = '100%';
             bgImage.style.height = '100%';
             bgImage.style.objectFit = 'cover';
             bgImage.style.objectPosition = 'center center';
+            bgImage.style.display = 'block';
+            bgImage.style.visibility = 'visible';
+            bgImage.style.opacity = '1';
+            bgImage.style.position = 'absolute';
+            bgImage.style.top = '0';
+            bgImage.style.left = '0';
+            bgImage.style.zIndex = '-1';
           }
           
-          // Fix content positioning
+          // FORCE content to be visible
           const content = hero.querySelector('.page-hero-inner, .hero-inner, .standard-hero-inner');
           if (content) {
             content.style.position = 'relative';
-            content.style.zIndex = '2';
+            content.style.zIndex = '10';
             content.style.padding = '1rem';
             content.style.display = 'flex';
             content.style.flexDirection = 'column';
             content.style.justifyContent = 'center';
             content.style.alignItems = 'center';
             content.style.textAlign = 'center';
+            content.style.visibility = 'visible';
+            content.style.opacity = '1';
+            content.style.color = 'white';
           }
+          
+          // FORCE titles to be visible
+          const title = hero.querySelector('.page-hero-title, .hero-title, .standard-hero-title');
+          if (title) {
+            title.style.fontSize = '2rem';
+            title.style.color = 'white';
+            title.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)';
+            title.style.visibility = 'visible';
+            title.style.opacity = '1';
+            title.style.display = 'block';
+            title.style.fontWeight = '800';
+          }
+          
+          // FORCE subtitles to be visible
+          const subtitle = hero.querySelector('.page-hero-sub, .hero-sub, .standard-hero-sub');
+          if (subtitle) {
+            subtitle.style.display = 'block';
+            subtitle.style.color = 'white';
+            subtitle.style.textShadow = '1px 1px 2px rgba(0, 0, 0, 0.5)';
+            subtitle.style.visibility = 'visible';
+            subtitle.style.opacity = '0.9';
+          }
+          
+          // FORCE buttons to be visible
+          const buttons = hero.querySelectorAll('.btn');
+          buttons.forEach(btn => {
+            btn.style.display = 'inline-block';
+            btn.style.visibility = 'visible';
+            btn.style.opacity = '1';
+            if (btn.getAttribute('data-variant') === 'primary') {
+              btn.style.background = '#dc2626';
+              btn.style.color = 'white';
+            } else {
+              btn.style.background = 'transparent';
+              btn.style.color = 'white';
+              btn.style.border = '2px solid white';
+            }
+          });
         });
         
         // Fix gradient wrapper and wave effects
