@@ -176,7 +176,7 @@ const emailTemplates = {
         <div style="background-color: #e8f5e8; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
           <h3 style="color: #2c5530; margin-top: 0;">Why Choose Utah Water Gardens?</h3>
           <ul style="color: #333; line-height: 1.6;">
-            <li>Over 25 years of experience in water feature design and installation</li>
+            <li>Over 15 years of experience in water feature design and installation</li>
             <li>Licensed and insured professionals</li>
             <li>Custom designs tailored to your space and budget</li>
             <li>Comprehensive maintenance and repair services</li>

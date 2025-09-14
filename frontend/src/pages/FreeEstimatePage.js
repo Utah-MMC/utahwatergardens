@@ -35,7 +35,7 @@ const FreeEstimatePage = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('http://localhost:3001/api/schedule', {
+      const response = await fetch('/api/schedule', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
