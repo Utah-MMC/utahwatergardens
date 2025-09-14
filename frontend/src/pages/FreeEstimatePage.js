@@ -34,14 +34,45 @@ const FreeEstimatePage = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Show modal after brief delay
-    setTimeout(() => {
-      setShowModal(true);
+    try {
+      const response = await fetch('http://localhost:3001/api/schedule', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setShowModal(true);
+        
+        // Track conversion for Google Ads
+        trackLeadConversion();
+        
+        // Reset form data
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          projectType: '',
+          propertySize: '',
+          projectSize: '',
+          timeline: '',
+          message: '',
+          preferredContact: 'phone'
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
       setIsSubmitting(false);
-      
-      // Track conversion for Google Ads
-      trackLeadConversion();
-    }, 500);
+    }
   };
 
   return (
@@ -325,12 +356,12 @@ const FreeEstimatePage = () => {
         </div>
       </div>
 
-      {/* Maintenance Modal */}
+      {/* Success Modal */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h3>Form Under Maintenance</h3>
+              <h3>Estimate Request Sent Successfully!</h3>
               <button 
                 className="modal-close" 
                 onClick={() => setShowModal(false)}
@@ -340,7 +371,7 @@ const FreeEstimatePage = () => {
               </button>
             </div>
             <div className="modal-body">
-              <p>Sorry, our estimate form is currently under maintenance. Please give us a call instead!</p>
+              <p>Thank you for requesting a free estimate! We've received your request and will contact you within 24 hours to schedule your consultation.</p>
               <div className="modal-phone">
                 <a href="tel:+18015908516" className="btn" data-variant="primary">
                   Call (801) 590-8516

@@ -35,14 +35,41 @@ const ContactPage = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Show modal after brief delay
-    setTimeout(() => {
-      setShowModal(true);
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setShowModal(true);
+        
+        // Track conversion for Google Ads
+        trackLeadConversion();
+        
+        // Reset form data
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
       setIsSubmitting(false);
-      
-      // Track conversion for Google Ads
-      trackLeadConversion();
-    }, 500);
+    }
   };
 
   // Contact methods data removed - now using structured contact details in JSX
@@ -379,12 +406,12 @@ const ContactPage = () => {
         </div>
       </div>
 
-      {/* Maintenance Modal */}
+      {/* Success Modal */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h3>Form Under Maintenance</h3>
+              <h3>Message Sent Successfully!</h3>
               <button 
                 className="modal-close" 
                 onClick={() => setShowModal(false)}
@@ -394,7 +421,7 @@ const ContactPage = () => {
               </button>
             </div>
             <div className="modal-body">
-              <p>Sorry, our contact form is currently under maintenance. Please give us a call instead!</p>
+              <p>Thank you for contacting Utah Water Gardens! We've received your message and will get back to you within 24 hours.</p>
               <div className="modal-phone">
                 <a href="tel:+18015908516" className="btn" data-variant="primary">
                   Call (801) 590-8516

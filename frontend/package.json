@@ -18,6 +18,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:email": "node src/server.js",
+    "start:dev": "concurrently \"npm run start\" \"npm run start:email\"",
     "build": "npx react-scripts build",
     "build:optimize": "npx react-scripts build && node scripts/build-optimize.js",
     "build:analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
