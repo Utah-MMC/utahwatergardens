@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
-import './App.css'; // Fallback CSS
 import './styles/mobile-first.css';
 import './styles/disable-waves.css';
+// import './App.css'; // Replaced with mobile-first.css
 // import './styles/global.css'; // Replaced with mobile-first.css
 // import './styles/mobile-hero-fix.css'; // Replaced with mobile-first.css
 import HeaderMobile from './components/HeaderMobile.js';
