@@ -1,4 +1,6 @@
 import React from 'react';
+import SEO from '../components/SEO';
+
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import './PondLightingPage.css';
@@ -141,9 +143,19 @@ const PondLightingPage = () => {
     'Check transformer connections and voltage',
     'Update lighting programs for seasonal changes'
   ];
-
   return (
-    <div className="pond-lighting-page">
+    <>
+      <SEO 
+        title="Pond Lighting Systems | Underwater & Landscape Lighting | Utah Water Gardens"
+        description="Professional pond lighting systems and underwater lighting. Transform your pond with beautiful lighting effects."
+        keywords="pond lighting, underwater lighting, pond lights, landscape lighting, water feature lighting"
+        canonical="https://utahwatergardens.com/pond-supplies/lighting"
+        ogTitle="Pond Lighting Systems"
+        ogDescription="Professional pond lighting and underwater lighting"
+        ogImage="/images/pond-lighting.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="ondlightingpage-page">
       {/* Hero Section */}
       <PageHero
         title="Pond Lighting & Illumination"
@@ -495,11 +507,10 @@ const InternalLinks = () => (
     <Link to="/">utah water gardens</Link>
 
 
-  </div>
-
-
-);
-
-
+  
+      </div>
+    </>
+  );
+};
 
 export default PondLightingPage;

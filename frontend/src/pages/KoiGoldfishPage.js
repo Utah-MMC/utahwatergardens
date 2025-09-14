@@ -38,7 +38,7 @@ const KoiGoldfishPage = () => {
             </div>
             
             <div className="category-card">
-              <img src="/images/uwg_image_6472.jpg" alt="Goldfish varieties" />
+              <img src="/images/2b1a14d52ea7e62a36a62f1a2da7203a-enhance-4x.jpeg" alt="Goldfish varieties" />
               <h3>Goldfish Varieties</h3>
               <p>Classic pond fish that come in many beautiful varieties, perfect for beginners and experts.</p>
               <ul>
@@ -108,7 +108,7 @@ const KoiGoldfishPage = () => {
           <h2>Goldfish Varieties for Ponds</h2>
           <div className="varieties-grid">
             <div className="variety-card">
-              <img src="/images/uwg_image_6472.jpg" alt="Comet goldfish" />
+              <img src="/images/2b1a14d52ea7e62a36a62f1a2da7203a-enhance-4x.jpeg" alt="Comet goldfish" />
               <h3>Comet Goldfish</h3>
               <p>Fast-swimming goldfish with a long, flowing tail. Excellent for active ponds and water features.</p>
               <div className="variety-details">
@@ -118,7 +118,7 @@ const KoiGoldfishPage = () => {
             </div>
             
             <div className="variety-card">
-              <img src="/images/uwg_image_6472.jpg" alt="Shubunkin goldfish" />
+              <img src="/images/2b1a14d52ea7e62a36a62f1a2da7203a-enhance-4x.jpeg" alt="Shubunkin goldfish" />
               <h3>Shubunkin</h3>
               <p>Calico goldfish with beautiful multi-colored scales. Hardy and perfect for outdoor ponds.</p>
               <div className="variety-details">
@@ -128,7 +128,7 @@ const KoiGoldfishPage = () => {
             </div>
             
             <div className="variety-card">
-              <img src="/images/uwg_image_6472.jpg" alt="Common goldfish" />
+              <img src="/images/2b1a14d52ea7e62a36a62f1a2da7203a-enhance-4x.jpeg" alt="Common goldfish" />
               <h3>Common Goldfish</h3>
               <p>Classic orange goldfish that are extremely hardy and perfect for beginners.</p>
               <div className="variety-details">
@@ -171,7 +171,7 @@ const KoiGoldfishPage = () => {
               </ul>
             </div>
             <div className="care-image">
-              <img src="/images/uwg_image_7117.jpg" alt="Proper fish care and feeding" />
+              <img src="/images/uwg_image_1941-topaz-enhance-3.5x.jpeg" alt="Proper fish care and feeding" />
             </div>
           </div>
         </div>
@@ -266,17 +266,13 @@ const KoiGoldfishPage = () => {
           </div>
         </div>
       </section>
+      <InternalLinks />
     </div>
   );
 };
 
-
 // Internal Links for SEO
-
-
 const InternalLinks = () => (
-
-
   <div style={{ display: 'none' }}>
 
 
@@ -299,10 +295,6 @@ const InternalLinks = () => (
 
 
   </div>
-
-
 );
-
-
 
 export default KoiGoldfishPage;

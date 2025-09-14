@@ -1,4 +1,6 @@
 import React from 'react';
+import SEO from '../components/SEO';
+
 import { Link } from 'react-router-dom';
 import './LakeDredgingPage.css';
 
@@ -212,7 +214,18 @@ const LakeDredgingPage = () => {
   ];
 
   return (
-    <div className="lake-dredging-page">
+    <>
+      <SEO 
+        title="Lake Dredging Services | Professional Lake Maintenance | Utah Water Gardens"
+        description="Professional lake dredging and maintenance services. Expert lake cleaning and sediment removal in Utah."
+        keywords="lake dredging, lake maintenance, lake cleaning, sediment removal, lake restoration"
+        canonical="https://utahwatergardens.com/pond-services/lake-dredging"
+        ogTitle="Lake Dredging Services"
+        ogDescription="Professional lake dredging and maintenance"
+        ogImage="/images/lake-dredging.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="lake-dredging-page">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
@@ -444,43 +457,38 @@ const LakeDredgingPage = () => {
           </div>
         </div>
       </section>
+        
+      {/* Service Images */}
+      <section className="service-images-section">
+        <div className="container">
+          <h2>Our Services</h2>
+          <div className="service-images-grid">
+            <div className="service-image-card">
+              <img src="/images/IMG_2770.jpg" alt="Professional pond services and maintenance" />
+              <h3>Expert Service</h3>
+              <p>Professional pond care and maintenance</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2775.jpg" alt="Quality pond equipment and supplies" />
+              <h3>Quality Equipment</h3>
+              <p>Only the best pond equipment and supplies</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2779.jpg" alt="Custom pond design and installation" />
+              <h3>Custom Design</h3>
+              <p>Custom pond design and installation services</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2780.jpg" alt="Ongoing pond maintenance and support" />
+              <h3>Ongoing Support</h3>
+              <p>Continuous maintenance and support services</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+    </>
   );
 };
-
-
-// Internal Links for SEO
-
-
-const InternalLinks = () => (
-
-
-  <div style={{ display: 'none' }}>
-
-
-    <Link to="/contact">utah water gardens</Link>
-
-
-    <Link to="/plants-fish">utah water gardens</Link>
-
-
-    <Link to="/pondsupplies">utah water gardens</Link>
-
-
-    <Link to="/aquatic-plants">utah water gardens</Link>
-
-
-    <Link to="/fish-koi">utah water gardens</Link>
-
-
-    <Link to="/">utah water gardens</Link>
-
-
-  </div>
-
-
-);
-
-
 
 export default LakeDredgingPage;

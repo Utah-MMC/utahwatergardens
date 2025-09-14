@@ -423,7 +423,7 @@
 
 .seasonal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
@@ -698,6 +698,73 @@
 }
 
 /* Responsive Design */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tips-grid,
+  .tricks-grid,
+  .secrets-grid,
+  .diy-grid,
+  .troubleshooting-grid,
+  .seasonal-grid,
+  .seasons-grid,
+  .categories-grid,
+  .products-grid,
+  .varieties-grid,
+  .requirements-grid,
+  .testing-grid,
+  .maintenance-grid,
+  .packages-grid,
+  .services-grid,
+  .benefits-grid,
+  .local-content,
+  .service-details-grid,
+  .faq-grid,
+  .process-steps,
+  .equipment-grid,
+  .seasonal-info,
+  .environmental-features,
+  .regulations-info,
+  .why-choose-grid,
+  .contact-methods,
+  .methods-grid,
+  .attachments-grid,
+  .tech-features,
+  .testimonials-carousel,
+  .plant-problems-grid,
+  .mitigation-grid,
+  .cleaning-services-grid,
+  .cleaning-packages-grid,
+  .cleaning-process-steps,
+  .why-clean-grid,
+  .plans-grid,
+  .selection-steps,
+  .projects-grid,
+  .blog-grid,
+  .team-grid,
+  .plant-grid,
+  .service-grid,
+  .resource-grid,
+  .shop-grid,
+  .parks-grid,
+  .tools-grid,
+  .harvesting-grid,
+  .city-grid,
+  .service-areas-grid,
+  .marginal-grid,
+  .lighting-grid,
+  .floating-grid,
+  .water-lilies-grid,
+  .seasonal-care-grid,
+  .lake-dredging-grid,
+  .troubleshooting-grid,
+  .video-grid,
+  .faq-grid,
+  .truxor-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     min-height: 80vh;

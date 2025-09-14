@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
+
 import { Link } from 'react-router-dom';
 import './VideoTutorialsPage.css';
 
@@ -292,7 +294,18 @@ const VideoTutorialsPage = () => {
     : videoCategories.filter(category => category.name === selectedCategory);
 
   return (
-    <div className="video-tutorials-page">
+    <>
+      <SEO 
+        title="Pond Care Video Tutorials | Educational Videos | Utah Water Gardens"
+        description="Educational video tutorials for pond care and maintenance. Learn from our experts with step-by-step guides."
+        keywords="pond tutorials, pond care videos, educational videos, pond maintenance guide, how to care for pond"
+        canonical="https://utahwatergardens.com/resources/video-tutorials"
+        ogTitle="Pond Care Video Tutorials"
+        ogDescription="Educational videos for pond care and maintenance"
+        ogImage="/images/video-tutorials.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="video-tutorials-page">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
@@ -519,43 +532,48 @@ const VideoTutorialsPage = () => {
           </div>
         </div>
       </section>
-    </div>
+        
+      {/* Service Images */}
+      <section className="service-images-section">
+        <div className="container">
+          <h2>Our Services</h2>
+          <div className="service-images-grid">
+            <div className="service-image-card">
+              <img src="/images/IMG_2770.jpg" alt="Professional pond services and maintenance" />
+              <h3>Expert Service</h3>
+              <p>Professional pond care and maintenance</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2775.jpg" alt="Quality pond equipment and supplies" />
+              <h3>Quality Equipment</h3>
+              <p>Only the best pond equipment and supplies</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2779.jpg" alt="Custom pond design and installation" />
+              <h3>Custom Design</h3>
+              <p>Custom pond design and installation services</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2780.jpg" alt="Ongoing pond maintenance and support" />
+              <h3>Ongoing Support</h3>
+              <p>Continuous maintenance and support services</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Links for SEO */}
+      <div style={{ display: 'none' }}>
+        <Link to="/contact">utah water gardens</Link>
+        <Link to="/plants-fish">utah water gardens</Link>
+        <Link to="/pondsupplies">utah water gardens</Link>
+        <Link to="/aquatic-plants">utah water gardens</Link>
+        <Link to="/fish-koi">utah water gardens</Link>
+        <Link to="/">utah water gardens</Link>
+      </div>
+      </div>
+    </>
   );
 };
-
-
-// Internal Links for SEO
-
-
-const InternalLinks = () => (
-
-
-  <div style={{ display: 'none' }}>
-
-
-    <Link to="/contact">utah water gardens</Link>
-
-
-    <Link to="/plants-fish">utah water gardens</Link>
-
-
-    <Link to="/pondsupplies">utah water gardens</Link>
-
-
-    <Link to="/aquatic-plants">utah water gardens</Link>
-
-
-    <Link to="/fish-koi">utah water gardens</Link>
-
-
-    <Link to="/">utah water gardens</Link>
-
-
-  </div>
-
-
-);
-
-
 
 export default VideoTutorialsPage;

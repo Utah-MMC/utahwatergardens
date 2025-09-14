@@ -16,13 +16,17 @@ const CityPageTemplate = ({
   permitInfo = {},
   contentSections = {},
   heroBackgroundImage = "/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg",
-  heroBackgroundImageAlt = "Beautiful pond landscape with waterfall and rock features"
+  heroBackgroundImageAlt = "Beautiful pond landscape with waterfall and rock features",
+  // Randomized content props
+  heroTitle,
+  heroSubtitle,
+  templateType
 }) => {
   
   // Default content sections if not provided
   const defaultContentSections = {
-    overview: `Professional pond services in ${cityName}, ${state}. From pond design and construction to maintenance and cleaning, we provide comprehensive water garden solutions for residential and commercial properties throughout the ${cityName} area.`,
-    residentialServices: [
+    overview: contentSections.overview || `Professional pond services in ${cityName}, ${state}. From pond design and construction to maintenance and cleaning, we provide comprehensive water garden solutions for residential and commercial properties throughout the ${cityName} area.`,
+    residentialServices: contentSections.residentialServices || [
       "Pond Design & Construction",
       "Pond Cleaning & Maintenance", 
       "Water Quality Testing",
@@ -38,7 +42,7 @@ const CityPageTemplate = ({
       "Office Building Water Gardens",
       "Retail Center Ponds"
     ],
-    whyChooseUs: `Utah Water Gardens has been serving ${cityName} and surrounding areas for over 15 years. Our local expertise, professional equipment, and commitment to quality make us the premier choice for pond services in ${cityName}.`,
+    whyChooseUs: contentSections.whyChooseUs || `Utah Water Gardens has been serving ${cityName} and surrounding areas for over 15 years. Our local expertise, professional equipment, and commitment to quality make us the premier choice for pond services in ${cityName}.`,
     localInfo: `${cityName} is a beautiful city in ${state} with a growing community of water garden enthusiasts. Our local knowledge of ${cityName}'s climate, soil conditions, and seasonal changes allows us to provide the most effective pond care solutions.`,
     serviceAreas: `We proudly serve all areas of ${cityName} and surrounding communities. Our service area includes residential neighborhoods, commercial districts, and local attractions throughout the ${cityName} region.`
   };
@@ -68,12 +72,11 @@ const CityPageTemplate = ({
           <div className="hero-content">
             <div className="hero-text-content">
               <h1 className="hero-title">
-                Pond Services in 
-                <span className="hero-title-highlight"> {cityName}</span>
+                {heroTitle || `Pond Services in ${cityName}`}
               </h1>
               
               <p className="hero-subtitle">
-                Professional pond design, construction, and maintenance services for {cityName} residents and businesses.
+                {heroSubtitle || `Professional pond design, construction, and maintenance services for ${cityName} residents and businesses.`}
               </p>
               
               <div className="hero-buttons">

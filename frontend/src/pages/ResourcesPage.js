@@ -93,6 +93,22 @@ const ResourcesPage = () => {
       category: 'Care Guides',
       readTime: '8 min read',
       image: '/images/2f5160e87ccdc3259c69ecd3d8776206-denoise.jpeg'
+    },
+    {
+      title: 'Aquatic Plant Care',
+      path: '/aquatic-plants',
+      excerpt: 'Complete guide to caring for water lilies, marginal plants, and floating plants.',
+      category: 'Care Guides',
+      readTime: '6 min read',
+      image: '/images/waterLillies-topaz-enhance-4x.jpeg'
+    },
+    {
+      title: 'Koi Fish Care Guide',
+      path: '/koi-goldfish',
+      excerpt: 'Complete guide to caring for koi and goldfish in your pond.',
+      category: 'Care Guides',
+      readTime: '7 min read',
+      image: '/images/koi-topaz-enhance-4x.jpeg'
     }
   ];
 
@@ -251,7 +267,35 @@ const ResourcesPage = () => {
               <p>Regularly updated content with the latest pond care techniques and solutions.</p>
             </div>
           </div>
+        
+      {/* Service Images */}
+      <section className="service-images-section">
+        <div className="container">
+          <h2>Our Services</h2>
+          <div className="service-images-grid">
+            <div className="service-image-card">
+              <img src="/images/IMG_2770.jpg" alt="Professional pond services and maintenance" />
+              <h3>Expert Service</h3>
+              <p>Professional pond care and maintenance</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2775.jpg" alt="Quality pond equipment and supplies" />
+              <h3>Quality Equipment</h3>
+              <p>Only the best pond equipment and supplies</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2779.jpg" alt="Custom pond design and installation" />
+              <h3>Custom Design</h3>
+              <p>Custom pond design and installation services</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2780.jpg" alt="Ongoing pond maintenance and support" />
+              <h3>Ongoing Support</h3>
+              <p>Continuous maintenance and support services</p>
+            </div>
+          </div>
         </div>
+      </section></div>
       </section>
 
       {/* CTA Section */}
@@ -259,40 +303,6 @@ const ResourcesPage = () => {
     </PageTemplate>
   );
 };
-
-
-// Internal Links for SEO
-
-
-const InternalLinks = () => (
-
-
-  <div style={{ display: 'none' }}>
-
-
-    <Link to="/contact">utah water gardens</Link>
-
-
-    <Link to="/plants-fish">utah water gardens</Link>
-
-
-    <Link to="/pondsupplies">utah water gardens</Link>
-
-
-    <Link to="/aquatic-plants">utah water gardens</Link>
-
-
-    <Link to="/fish-koi">utah water gardens</Link>
-
-
-    <Link to="/">utah water gardens</Link>
-
-
-  </div>
-
-
-);
-
 
 
 export default ResourcesPage;

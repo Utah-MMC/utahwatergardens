@@ -335,7 +335,35 @@ const ContactPage = () => {
                 <p>We serve the greater Salt Lake City area and surrounding communities throughout Utah. Contact us to confirm service in your area.</p>
               </div>
             </div>
+          
+      {/* Contact Images */}
+      <section className="contact-images-section">
+        <div className="container">
+          <h2>Visit Our Showroom</h2>
+          <div className="contact-images-grid">
+            <div className="contact-image-card">
+              <img src="/images/IMG_2770.jpg" alt="Utah Water Gardens showroom entrance" />
+              <h3>Our Showroom</h3>
+              <p>Visit our showroom to see our products in person</p>
+            </div>
+            <div className="contact-image-card">
+              <img src="/images/IMG_2775.jpg" alt="Expert consultation and customer service" />
+              <h3>Expert Consultation</h3>
+              <p>Get personalized advice from our pond experts</p>
+            </div>
+            <div className="contact-image-card">
+              <img src="/images/IMG_2779.jpg" alt="Professional installation services" />
+              <h3>Professional Installation</h3>
+              <p>We provide complete installation services</p>
+            </div>
+            <div className="contact-image-card">
+              <img src="/images/IMG_2780.jpg" alt="Quality pond supplies and equipment" />
+              <h3>Quality Products</h3>
+              <p>We carry only the highest quality pond supplies</p>
+            </div>
           </div>
+        </div>
+      </section></div>
         </section>
         </div>
       </div>

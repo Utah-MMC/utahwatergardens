@@ -286,56 +286,56 @@ const WaterQualityTestingPage = () => {
             <div className="service-area-group">
               <h3>Salt Lake County</h3>
               <div className="cities-list">
-                <span>Salt Lake City</span>
-                <span>West Jordan</span>
-                <span>Murray</span>
-                <span>Sandy</span>
-                <span>West Valley City</span>
-                <span>Draper</span>
-                <span>Cottonwood Heights</span>
-                <span>Holladay</span>
+                <Link to="/pond-services/water-quality/salt-lake-city" className="city-link">Salt Lake City</Link>
+                <Link to="/pond-services/water-quality/west-jordan" className="city-link">West Jordan</Link>
+                <Link to="/pond-services/water-quality/murray" className="city-link">Murray</Link>
+                <Link to="/pond-services/water-quality/sandy" className="city-link">Sandy</Link>
+                <Link to="/pond-services/water-quality/west-valley-city" className="city-link">West Valley City</Link>
+                <Link to="/pond-services/water-quality/draper" className="city-link">Draper</Link>
+                <Link to="/pond-services/water-quality/cottonwood-heights" className="city-link">Cottonwood Heights</Link>
+                <Link to="/pond-services/water-quality/holladay" className="city-link">Holladay</Link>
               </div>
             </div>
             
             <div className="service-area-group">
               <h3>Davis County</h3>
               <div className="cities-list">
-                <span>Layton</span>
-                <span>Bountiful</span>
-                <span>Farmington</span>
-                <span>Centerville</span>
-                <span>Kaysville</span>
-                <span>Clearfield</span>
-                <span>Clinton</span>
-                <span>Syracuse</span>
+                <Link to="/pond-services/water-quality/layton" className="city-link">Layton</Link>
+                <Link to="/pond-services/water-quality/bountiful" className="city-link">Bountiful</Link>
+                <Link to="/pond-services/water-quality/farmington" className="city-link">Farmington</Link>
+                <Link to="/pond-services/water-quality/centerville" className="city-link">Centerville</Link>
+                <Link to="/pond-services/water-quality/kaysville" className="city-link">Kaysville</Link>
+                <Link to="/pond-services/water-quality/clearfield" className="city-link">Clearfield</Link>
+                <Link to="/pond-services/water-quality/clinton" className="city-link">Clinton</Link>
+                <Link to="/pond-services/water-quality/syracuse" className="city-link">Syracuse</Link>
               </div>
             </div>
             
             <div className="service-area-group">
               <h3>Utah County</h3>
               <div className="cities-list">
-                <span>Provo</span>
-                <span>Orem</span>
-                <span>American Fork</span>
-                <span>Lehi</span>
-                <span>Pleasant Grove</span>
-                <span>Spanish Fork</span>
-                <span>Springville</span>
-                <span>Alpine</span>
+                <Link to="/pond-services/water-quality/provo" className="city-link">Provo</Link>
+                <Link to="/pond-services/water-quality/orem" className="city-link">Orem</Link>
+                <Link to="/pond-services/water-quality/american-fork" className="city-link">American Fork</Link>
+                <Link to="/pond-services/water-quality/lehi" className="city-link">Lehi</Link>
+                <Link to="/pond-services/water-quality/pleasant-grove" className="city-link">Pleasant Grove</Link>
+                <Link to="/pond-services/water-quality/spanish-fork" className="city-link">Spanish Fork</Link>
+                <Link to="/pond-services/water-quality/springville" className="city-link">Springville</Link>
+                <Link to="/pond-services/water-quality/alpine" className="city-link">Alpine</Link>
               </div>
             </div>
             
             <div className="service-area-group">
               <h3>Weber County</h3>
               <div className="cities-list">
-                <span>Ogden</span>
-                <span>Roy</span>
-                <span>Clearfield</span>
-                <span>South Ogden</span>
-                <span>North Ogden</span>
-                <span>Riverdale</span>
-                <span>Washington Terrace</span>
-                <span>Farr West</span>
+                <Link to="/pond-services/water-quality/ogden" className="city-link">Ogden</Link>
+                <Link to="/pond-services/water-quality/roy" className="city-link">Roy</Link>
+                <Link to="/pond-services/water-quality/clearfield" className="city-link">Clearfield</Link>
+                <Link to="/pond-services/water-quality/south-ogden" className="city-link">South Ogden</Link>
+                <Link to="/pond-services/water-quality/north-ogden" className="city-link">North Ogden</Link>
+                <Link to="/pond-services/water-quality/riverdale" className="city-link">Riverdale</Link>
+                <Link to="/pond-services/water-quality/washington-terrace" className="city-link">Washington Terrace</Link>
+                <Link to="/pond-services/water-quality/farr-west" className="city-link">Farr West</Link>
               </div>
             </div>
           </div>
@@ -371,8 +371,6 @@ const WaterQualityTestingPage = () => {
 
 
 const InternalLinks = () => (
-
-
   <div style={{ display: 'none' }}>
 
 
@@ -395,10 +393,6 @@ const InternalLinks = () => (
 
 
   </div>
-
-
 );
-
-
 
 export default WaterQualityTestingPage;

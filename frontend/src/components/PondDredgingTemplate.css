@@ -393,7 +393,7 @@
 /* Process Steps */
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -436,7 +436,7 @@
 /* Equipment Grid */
 .equipment-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -480,7 +480,7 @@
 /* Benefits Grid */
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -516,7 +516,7 @@
 /* Seasonal Info */
 .seasonal-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -543,7 +543,7 @@
 /* Environmental Features */
 .environmental-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -633,7 +633,7 @@
 /* Regulations Info */
 .regulations-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -660,7 +660,7 @@
 /* Why Choose Grid */
 .why-choose-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -762,7 +762,7 @@
 
 .contact-methods {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -837,7 +837,7 @@
 /* Methods Grid */
 .methods-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -1010,7 +1010,7 @@
 
 .attachments-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -1065,7 +1065,7 @@
 /* Tech Features */
 .tech-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -1235,7 +1235,7 @@
 /* Testimonials Styles */
 .testimonials-carousel {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -1535,7 +1535,7 @@
 
 .why-choose-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -1759,6 +1759,53 @@
 }
 
 /* Responsive Design */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tips-grid,
+  .tricks-grid,
+  .secrets-grid,
+  .diy-grid,
+  .troubleshooting-grid,
+  .seasonal-grid,
+  .seasons-grid,
+  .categories-grid,
+  .products-grid,
+  .varieties-grid,
+  .requirements-grid,
+  .testing-grid,
+  .maintenance-grid,
+  .packages-grid,
+  .services-grid,
+  .benefits-grid,
+  .local-content,
+  .service-details-grid,
+  .faq-grid,
+  .process-steps,
+  .equipment-grid,
+  .seasonal-info,
+  .environmental-features,
+  .regulations-info,
+  .why-choose-grid,
+  .contact-methods,
+  .methods-grid,
+  .attachments-grid,
+  .tech-features,
+  .testimonials-carousel,
+  .plant-problems-grid,
+  .mitigation-grid,
+  .cleaning-services-grid,
+  .cleaning-packages-grid,
+  .cleaning-process-steps,
+  .why-clean-grid,
+  .plans-grid,
+  .selection-steps,
+  .projects-grid,
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     margin-top: 60px; /* Reduced margin for mobile */
@@ -1826,7 +1873,7 @@
   }
   
   .equipment-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   
@@ -1866,7 +1913,7 @@
   }
   
   .why-choose-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   
@@ -1879,7 +1926,7 @@
   }
   
   .methods-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   
@@ -1893,7 +1940,7 @@
   }
   
   .tech-features {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   

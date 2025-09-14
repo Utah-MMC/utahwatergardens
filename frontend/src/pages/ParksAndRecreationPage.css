@@ -38,7 +38,7 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -96,7 +96,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -170,7 +170,7 @@
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -220,7 +220,7 @@
 
 .equipment-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -281,7 +281,7 @@
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -332,7 +332,7 @@
 
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
@@ -480,6 +480,73 @@
 }
 
 /* Responsive Design */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tips-grid,
+  .tricks-grid,
+  .secrets-grid,
+  .diy-grid,
+  .troubleshooting-grid,
+  .seasonal-grid,
+  .seasons-grid,
+  .categories-grid,
+  .products-grid,
+  .varieties-grid,
+  .requirements-grid,
+  .testing-grid,
+  .maintenance-grid,
+  .packages-grid,
+  .services-grid,
+  .benefits-grid,
+  .local-content,
+  .service-details-grid,
+  .faq-grid,
+  .process-steps,
+  .equipment-grid,
+  .seasonal-info,
+  .environmental-features,
+  .regulations-info,
+  .why-choose-grid,
+  .contact-methods,
+  .methods-grid,
+  .attachments-grid,
+  .tech-features,
+  .testimonials-carousel,
+  .plant-problems-grid,
+  .mitigation-grid,
+  .cleaning-services-grid,
+  .cleaning-packages-grid,
+  .cleaning-process-steps,
+  .why-clean-grid,
+  .plans-grid,
+  .selection-steps,
+  .projects-grid,
+  .blog-grid,
+  .team-grid,
+  .plant-grid,
+  .service-grid,
+  .resource-grid,
+  .shop-grid,
+  .parks-grid,
+  .tools-grid,
+  .harvesting-grid,
+  .city-grid,
+  .service-areas-grid,
+  .marginal-grid,
+  .lighting-grid,
+  .floating-grid,
+  .water-lilies-grid,
+  .seasonal-care-grid,
+  .lake-dredging-grid,
+  .troubleshooting-grid,
+  .video-grid,
+  .faq-grid,
+  .truxor-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .intro-content h2,
   .parks-services h2,
@@ -492,7 +559,7 @@
   }
   
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
   

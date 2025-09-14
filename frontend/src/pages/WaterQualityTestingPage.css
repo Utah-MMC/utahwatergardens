@@ -129,7 +129,7 @@
 
 .importance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -179,7 +179,7 @@
 
 .testing-services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -285,7 +285,7 @@
 
 .packages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -415,7 +415,7 @@
 
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -480,7 +480,7 @@
 
 .testing-schedule {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -614,7 +614,7 @@
 
 .service-areas-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 }
 
@@ -650,6 +650,52 @@
 }
 
 /* Responsive Design */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tips-grid,
+  .tricks-grid,
+  .secrets-grid,
+  .diy-grid,
+  .troubleshooting-grid,
+  .seasonal-grid,
+  .seasons-grid,
+  .categories-grid,
+  .products-grid,
+  .varieties-grid,
+  .requirements-grid,
+  .testing-grid,
+  .maintenance-grid,
+  .packages-grid,
+  .services-grid,
+  .benefits-grid,
+  .local-content,
+  .service-details-grid,
+  .faq-grid,
+  .process-steps,
+  .equipment-grid,
+  .seasonal-info,
+  .environmental-features,
+  .regulations-info,
+  .why-choose-grid,
+  .contact-methods,
+  .methods-grid,
+  .attachments-grid,
+  .tech-features,
+  .testimonials-carousel,
+  .plant-problems-grid,
+  .mitigation-grid,
+  .cleaning-services-grid,
+  .cleaning-packages-grid,
+  .cleaning-process-steps,
+  .why-clean-grid,
+  .plans-grid,
+  .selection-steps,
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     grid-template-columns: 1fr;

@@ -20,7 +20,7 @@ const AquaticPlantsPage = () => {
           <h2>Types of Aquatic Plants</h2>
           <div className="categories-grid">
             <div className="category-card">
-              <img src="/images/uwg_image_4887.jpg" alt="Submerged plants" />
+              <img src="/images/0b89a8b10a3cdccda885b1d037df7b2d-denoise-enhance-4x.jpeg" alt="Submerged plants" />
               <h3>Submerged Plants</h3>
               <p>Oxygenating plants that grow below the water surface, providing essential oxygen for fish and beneficial bacteria.</p>
               <ul>
@@ -32,7 +32,7 @@ const AquaticPlantsPage = () => {
             </div>
             
             <div className="category-card">
-              <img src="/images/uwg_image_6472.jpg" alt="Floating plants" />
+              <img src="/images/5f4fbb5840c1b554060a09ace9f579e0-denoise-enhance-4x.jpeg" alt="Floating plants" />
               <h3>Floating Plants</h3>
               <p>Plants that float on the water surface, providing shade and natural filtration while adding beauty.</p>
               <ul>
@@ -126,7 +126,7 @@ const AquaticPlantsPage = () => {
               </ul>
             </div>
             <div className="care-image">
-              <img src="/images/uwg_image_7117.jpg" alt="Proper aquatic plant care" />
+              <img src="/images/uwg_image_1941-topaz-enhance-3.5x.jpeg" alt="Proper aquatic plant care" />
             </div>
           </div>
         </div>
@@ -203,6 +203,7 @@ const AquaticPlantsPage = () => {
           </div>
         </div>
       </section>
+      <InternalLinks />
     </div>
   );
 };
@@ -233,13 +234,7 @@ const InternalLinks = () => (
 
 
     <Link to="/">utah water gardens</Link>
-
-
   </div>
-
-
 );
-
-
 
 export default AquaticPlantsPage;

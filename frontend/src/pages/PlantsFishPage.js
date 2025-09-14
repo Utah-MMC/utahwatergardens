@@ -56,6 +56,13 @@ const PlantsFishPage = () => {
       description: 'Energy-efficient pumps and aeration systems',
       image: '/images/pumpRepair.webp',
       features: ['Pond Pumps', 'Aeration Systems', 'Filtration', 'Maintenance']
+    },
+    {
+      name: 'Pond Supplies',
+      path: '/pond-supplies',
+      description: 'Complete selection of pond supplies and accessories',
+      image: '/images/IMG_2770.jpg',
+      features: ['Water Treatments', 'Pond Liners', 'Lighting', 'Accessories']
     }
   ];
 

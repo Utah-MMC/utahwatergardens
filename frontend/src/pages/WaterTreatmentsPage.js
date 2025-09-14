@@ -469,56 +469,56 @@ const WaterTreatmentsPage = () => {
             <div className="service-area-group">
               <h3>Salt Lake County</h3>
               <div className="cities-list">
-                <span>Salt Lake City</span>
-                <span>West Jordan</span>
-                <span>Murray</span>
-                <span>Sandy</span>
-                <span>West Valley City</span>
-                <span>Draper</span>
-                <span>Cottonwood Heights</span>
-                <span>Holladay</span>
+                <Link to="/water-treatments/salt-lake-city" className="city-link">Salt Lake City</Link>
+                <Link to="/water-treatments/west-jordan" className="city-link">West Jordan</Link>
+                <Link to="/water-treatments/murray" className="city-link">Murray</Link>
+                <Link to="/water-treatments/sandy" className="city-link">Sandy</Link>
+                <Link to="/water-treatments/west-valley-city" className="city-link">West Valley City</Link>
+                <Link to="/water-treatments/draper" className="city-link">Draper</Link>
+                <Link to="/water-treatments/cottonwood-heights" className="city-link">Cottonwood Heights</Link>
+                <Link to="/water-treatments/holladay" className="city-link">Holladay</Link>
               </div>
             </div>
             
             <div className="service-area-group">
               <h3>Davis County</h3>
               <div className="cities-list">
-                <span>Layton</span>
-                <span>Bountiful</span>
-                <span>Farmington</span>
-                <span>Centerville</span>
-                <span>Kaysville</span>
-                <span>Clearfield</span>
-                <span>Clinton</span>
-                <span>Syracuse</span>
+                <Link to="/water-treatments/layton" className="city-link">Layton</Link>
+                <Link to="/water-treatments/bountiful" className="city-link">Bountiful</Link>
+                <Link to="/water-treatments/farmington" className="city-link">Farmington</Link>
+                <Link to="/water-treatments/centerville" className="city-link">Centerville</Link>
+                <Link to="/water-treatments/kaysville" className="city-link">Kaysville</Link>
+                <Link to="/water-treatments/clearfield" className="city-link">Clearfield</Link>
+                <Link to="/water-treatments/clinton" className="city-link">Clinton</Link>
+                <Link to="/water-treatments/syracuse" className="city-link">Syracuse</Link>
               </div>
             </div>
             
             <div className="service-area-group">
               <h3>Utah County</h3>
               <div className="cities-list">
-                <span>Provo</span>
-                <span>Orem</span>
-                <span>American Fork</span>
-                <span>Lehi</span>
-                <span>Pleasant Grove</span>
-                <span>Spanish Fork</span>
-                <span>Springville</span>
-                <span>Alpine</span>
+                <Link to="/water-treatments/provo" className="city-link">Provo</Link>
+                <Link to="/water-treatments/orem" className="city-link">Orem</Link>
+                <Link to="/water-treatments/american-fork" className="city-link">American Fork</Link>
+                <Link to="/water-treatments/lehi" className="city-link">Lehi</Link>
+                <Link to="/water-treatments/pleasant-grove" className="city-link">Pleasant Grove</Link>
+                <Link to="/water-treatments/spanish-fork" className="city-link">Spanish Fork</Link>
+                <Link to="/water-treatments/springville" className="city-link">Springville</Link>
+                <Link to="/water-treatments/alpine" className="city-link">Alpine</Link>
               </div>
             </div>
             
             <div className="service-area-group">
               <h3>Weber County</h3>
               <div className="cities-list">
-                <span>Ogden</span>
-                <span>Roy</span>
-                <span>Clearfield</span>
-                <span>South Ogden</span>
-                <span>North Ogden</span>
-                <span>Riverdale</span>
-                <span>Washington Terrace</span>
-                <span>Farr West</span>
+                <Link to="/water-treatments/ogden" className="city-link">Ogden</Link>
+                <Link to="/water-treatments/roy" className="city-link">Roy</Link>
+                <Link to="/water-treatments/clearfield" className="city-link">Clearfield</Link>
+                <Link to="/water-treatments/south-ogden" className="city-link">South Ogden</Link>
+                <Link to="/water-treatments/north-ogden" className="city-link">North Ogden</Link>
+                <Link to="/water-treatments/riverdale" className="city-link">Riverdale</Link>
+                <Link to="/water-treatments/washington-terrace" className="city-link">Washington Terrace</Link>
+                <Link to="/water-treatments/farr-west" className="city-link">Farr West</Link>
               </div>
             </div>
           </div>
@@ -554,8 +554,6 @@ const WaterTreatmentsPage = () => {
 
 
 const InternalLinks = () => (
-
-
   <div style={{ display: 'none' }}>
 
 
@@ -578,10 +576,6 @@ const InternalLinks = () => (
 
 
   </div>
-
-
 );
-
-
 
 export default WaterTreatmentsPage;

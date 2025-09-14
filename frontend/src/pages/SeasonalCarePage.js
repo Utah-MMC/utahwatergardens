@@ -1,4 +1,6 @@
 import React from 'react';
+import SEO from '../components/SEO';
+
 import { Link } from 'react-router-dom';
 import './SeasonalCarePage.css';
 
@@ -280,9 +282,19 @@ const SeasonalCarePage = () => {
       prevention: 'Maintain nutrient balance, proper stocking'
     }
   ];
-
   return (
-    <div className="seasonal-care-page">
+    <>
+      <SEO 
+        title="Seasonal Pond Care | Year-Round Pond Maintenance | Utah Water Gardens"
+        description="Seasonal pond care guide for year-round maintenance. Spring, summer, fall, and winter pond care tips."
+        keywords="seasonal pond care, year-round pond maintenance, spring pond care, winter pond care, seasonal pond tips"
+        canonical="https://utahwatergardens.com/resources/seasonal-care"
+        ogTitle="Seasonal Pond Care"
+        ogDescription="Year-round pond maintenance guide"
+        ogImage="/images/seasonal-care.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="easonalcarepage-page">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
@@ -586,7 +598,35 @@ const SeasonalCarePage = () => {
             <a href="tel:(801) 590-8516" className="btn btn-primary">Call (801) 590-8516</a>
             <Link to="/contact" className="btn btn-secondary">Send Message</Link>
           </div>
+        
+      {/* Service Images */}
+      <section className="service-images-section">
+        <div className="container">
+          <h2>Our Services</h2>
+          <div className="service-images-grid">
+            <div className="service-image-card">
+              <img src="/images/IMG_2770.jpg" alt="Professional pond services and maintenance" />
+              <h3>Expert Service</h3>
+              <p>Professional pond care and maintenance</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2775.jpg" alt="Quality pond equipment and supplies" />
+              <h3>Quality Equipment</h3>
+              <p>Only the best pond equipment and supplies</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2779.jpg" alt="Custom pond design and installation" />
+              <h3>Custom Design</h3>
+              <p>Custom pond design and installation services</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2780.jpg" alt="Ongoing pond maintenance and support" />
+              <h3>Ongoing Support</h3>
+              <p>Continuous maintenance and support services</p>
+            </div>
+          </div>
         </div>
+      </section></div>
       </section>
     </div>
   );
@@ -620,11 +660,10 @@ const InternalLinks = () => (
     <Link to="/">utah water gardens</Link>
 
 
-  </div>
-
-
-);
-
-
+  
+      </div>
+    </>
+  );
+};
 
 export default SeasonalCarePage;

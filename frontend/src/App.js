@@ -56,7 +56,7 @@ const CareGuidesPage = lazy(() => import('./pages/CareGuidesPage'));
 const PondTipsTricksPage = lazy(() => import('./pages/PondTipsTricksPage'));
 const SeasonalCarePage = lazy(() => import('./pages/SeasonalCarePage'));
 const TroubleshootingPage = lazy(() => import('./pages/TroubleshootingPage'));
-const HarvestingPage = lazy(() => import('./pages/HarvestingPage'));
+// const HarvestingPage = lazy(() => import('./pages/HarvestingPage')); // Temporarily disabled
 const LakeDredgingPage = lazy(() => import('./pages/LakeDredgingPage'));
 const PondDredgingPage = lazy(() => import('./pages/PondDredgingPage'));
 const TruxorServicePage = lazy(() => import('./pages/TruxorServicePage'));
@@ -80,6 +80,10 @@ const ParksAndRecreationPage = lazy(() => import('./pages/ParksAndRecreationPage
 // Lazy load dynamic city page
 const TestCityPage = lazy(() => import('./pages/TestCityPage'));
 const SimpleCityPage = lazy(() => import('./pages/SimpleCityPage'));
+
+// Lazy load randomized service area page
+const RandomizedServiceAreaPage = lazy(() => import('./components/RandomizedServiceAreaPage'));
+const DebugRandomizedPage = lazy(() => import('./components/DebugRandomizedPage'));
 
 // Loading component for Suspense
 const LoadingSpinner = () => (
@@ -158,7 +162,7 @@ function App() {
             <Route path="/pond-services/cleaning" element={<PondCleaningPage />} />
             <Route path="/pond-services/repair" element={<EquipmentRepairPage />} />
             <Route path="/pond-services/seasonal" element={<SeasonalServicesPage />} />
-            <Route path="/pond-services/harvesting" element={<HarvestingPage />} />
+            {/* <Route path="/pond-services/harvesting" element={<HarvestingPage />} /> */}
             <Route path="/pond-services/lake-dredging" element={<LakeDredgingPage />} />
             <Route path="/pond-services/pond-dredging" element={<PondDredgingPage />} />
             <Route path="/pond-services/truxor-t50" element={<TruxorServicePage />} />
@@ -219,6 +223,12 @@ function App() {
             
             {/* Privacy and Legal */}
             <Route path="/privacy-and-legal-info" element={<AboutPage />} />
+            
+            {/* Debug route for testing randomization */}
+            <Route path="/debug/:serviceType/:citySlug" element={<DebugRandomizedPage />} />
+            
+            {/* Dynamic Service Area Routes - Must be before catch-all */}
+            <Route path="/:serviceType/:citySlug" element={<RandomizedServiceAreaPage />} />
             
             {/* Dynamic City Routes - Must be before catch-all */}
             <Route path="/test/:citySlug" element={<TestCityPage />} />

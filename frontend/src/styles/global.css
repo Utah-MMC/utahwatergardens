@@ -201,7 +201,7 @@ img, video {
 /* Card Styles */
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: clamp(1rem, 3vw, 2rem);
 }
 
@@ -398,7 +398,7 @@ img, video {
 
 @media (max-width: 768px) {
   .crsl-slide {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   
   /* Reduce transition complexity on mobile */

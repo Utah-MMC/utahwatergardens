@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
+
 import { Link, useParams } from 'react-router-dom';
 import { getPlantById } from '../data/plantData';
 import PageHero from '../components/PageHero.js';
@@ -38,7 +40,18 @@ const PlantDetailPage = () => {
   }
 
   return (
-    <div className="plant-detail-page">
+    <>
+      <SEO 
+        title="Aquatic Plant Details | Plant Care Guide | Utah Water Gardens"
+        description="Detailed information about aquatic plants. Care guides, planting tips, and plant selection for your pond."
+        keywords="aquatic plant details, plant care guide, water plants, pond plants"
+        canonical="https://utahwatergardens.com/plant-detail"
+        ogTitle="Aquatic Plant Details"
+        ogDescription="Detailed aquatic plant information and care guides"
+        ogImage="/images/plant-detail.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="plant-detail-page">
       <PageHero 
         title={plant.name}
         subtitle={plant.description}
@@ -327,11 +340,10 @@ const InternalLinks = () => (
     <Link to="/">utah water gardens</Link>
 
 
-  </div>
-
-
-);
-
-
+  
+      </div>
+    </>
+  );
+};
 
 export default PlantDetailPage;

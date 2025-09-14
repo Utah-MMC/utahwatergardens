@@ -16,7 +16,8 @@ const AboutPage = () => {
     { id: 'story', label: 'Our Story', icon: 'Story' },
     { id: 'mission', label: 'Our Mission', icon: 'Mission' },
     { id: 'values', label: 'Our Values', icon: 'Values' },
-    { id: 'team', label: 'Our Team', icon: 'Team' }
+    { id: 'team', label: 'Our Team', icon: 'Team' },
+    { id: 'services', label: 'Our Services', icon: 'Services' }
   ];
 
   // const stats = [
@@ -46,6 +47,11 @@ const AboutPage = () => {
       title: 'Local Expertise',
       description: 'We understand Utah\'s unique climate and can recommend the best solutions for your location.',
       icon: 'Local'
+    },
+    {
+      title: 'Innovation',
+      description: 'We stay current with the latest pond technology and design trends to provide cutting-edge solutions.',
+      icon: 'Innovation'
     }
   ];
 
@@ -67,6 +73,18 @@ const AboutPage = () => {
       role: 'Care Specialists',
       description: 'Our maintenance team ensures your pond stays healthy and beautiful year-round with professional care.',
       image: '/images/IMG_2779.jpg'
+    },
+    {
+      name: 'Design Team',
+      role: 'Creative Specialists',
+      description: 'Our design team creates stunning water features that complement your landscape and exceed your expectations.',
+      image: '/images/IMG_2780.jpg'
+    },
+    {
+      name: 'Installation Team',
+      role: 'Installation Specialists',
+      description: 'Our installation team ensures your pond is built to perfection with professional craftsmanship.',
+      image: '/images/IMG_2781.jpg'
     }
   ];
 
@@ -166,6 +184,42 @@ const AboutPage = () => {
                   </Link>
                 );
               })}
+            </div>
+          </div>
+        );
+      case 'services':
+        return (
+          <div className="tab-content">
+            <div className="services-content">
+              <h3>Our Services</h3>
+              <p>Utah Water Gardens offers comprehensive water feature services to meet all your pond and aquatic needs.</p>
+              <div className="services-grid">
+                <div className="service-item">
+                  <div className="service-icon">Design</div>
+                  <h4>Pond Design & Build</h4>
+                  <p>Custom pond design and construction services for residential and commercial properties.</p>
+                </div>
+                <div className="service-item">
+                  <div className="service-icon">Maintenance</div>
+                  <h4>Pond Maintenance</h4>
+                  <p>Regular maintenance services to keep your pond healthy and beautiful year-round.</p>
+                </div>
+                <div className="service-item">
+                  <div className="service-icon">Plants</div>
+                  <h4>Aquatic Plant Care</h4>
+                  <p>Expert care and maintenance of aquatic plants and water gardens.</p>
+                </div>
+                <div className="service-item">
+                  <div className="service-icon">Repair</div>
+                  <h4>Equipment Repair</h4>
+                  <p>Professional repair and maintenance of pond pumps, filters, and equipment.</p>
+                </div>
+                <div className="service-item">
+                  <div className="service-icon">Consultation</div>
+                  <h4>Expert Consultation</h4>
+                  <p>Professional advice on pond design, plant selection, and maintenance.</p>
+                </div>
+              </div>
             </div>
           </div>
         );
@@ -338,43 +392,21 @@ const AboutPage = () => {
           </div>
         </section>
       </div>
+      <InternalLinks />
     </>
   );
 };
 
-
 // Internal Links for SEO
-
-
 const InternalLinks = () => (
-
-
   <div style={{ display: 'none' }}>
-
-
     <Link to="/contact">utah water gardens</Link>
-
-
     <Link to="/plants-fish">utah water gardens</Link>
-
-
     <Link to="/pondsupplies">utah water gardens</Link>
-
-
     <Link to="/aquatic-plants">utah water gardens</Link>
-
-
     <Link to="/fish-koi">utah water gardens</Link>
-
-
     <Link to="/">utah water gardens</Link>
-
-
   </div>
-
-
 );
-
-
 
 export default AboutPage;

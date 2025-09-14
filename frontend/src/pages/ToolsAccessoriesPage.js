@@ -1,4 +1,6 @@
 import React from 'react';
+import SEO from '../components/SEO';
+
 import { Link } from 'react-router-dom';
 import './ToolsAccessoriesPage.css';
 
@@ -142,9 +144,19 @@ const ToolsAccessoriesPage = () => {
     'Follow manufacturer instructions for proper care',
     'Keep safety equipment in good condition'
   ];
-
   return (
-    <div className="tools-accessories-page">
+    <>
+      <SEO 
+        title="Pond Tools & Accessories | Maintenance Equipment | Utah Water Gardens"
+        description="Professional pond tools and accessories. Nets, vacuums, test kits, and maintenance equipment for your pond."
+        keywords="pond tools, pond accessories, pond maintenance equipment, pond nets, pond vacuums"
+        canonical="https://utahwatergardens.com/pond-supplies/tools-accessories"
+        ogTitle="Pond Tools & Accessories"
+        ogDescription="Professional pond tools and maintenance equipment"
+        ogImage="/images/pond-tools.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="oolsaccessoriespage-page">
       {/* Hero Section */}
       <section 
         className="hero-section"
@@ -514,11 +526,10 @@ const InternalLinks = () => (
     <Link to="/">utah water gardens</Link>
 
 
-  </div>
-
-
-);
-
-
+  
+      </div>
+    </>
+  );
+};
 
 export default ToolsAccessoriesPage;

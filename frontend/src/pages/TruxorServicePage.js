@@ -1,4 +1,6 @@
 import React from 'react';
+import SEO from '../components/SEO';
+
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero.js';
 import './TruxorServicePage.css';
@@ -126,9 +128,19 @@ const TruxorServicePage = () => {
       description: 'Four specialized attachments handle any pond maintenance challenge'
     }
   ];
-
   return (
-    <div className="truxor-service-page">
+    <>
+      <SEO 
+        title="Truxor Service | Professional Lake Maintenance Equipment | Utah Water Gardens"
+        description="Professional Truxor service for lake and pond maintenance. Expert aquatic vegetation management and lake cleaning."
+        keywords="truxor service, lake maintenance equipment, aquatic vegetation management, professional lake cleaning"
+        canonical="https://utahwatergardens.com/pond-services/truxor"
+        ogTitle="Truxor Service"
+        ogDescription="Professional lake maintenance with Truxor equipment"
+        ogImage="/images/truxor-service.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="ruxorservicepage-page">
       <PageHero 
         title="Amphibious Excavator Service"
         subtitle="Professional pond maintenance with our powerful amphibious equipment and specialized attachments"
@@ -275,6 +287,7 @@ const TruxorServicePage = () => {
             </div>
           </div>
         </section>
+      </div>
 
         {/* Contact CTA */}
         <section 
@@ -300,44 +313,48 @@ const TruxorServicePage = () => {
             </Link>
           </div>
         </section>
+          
+      {/* Service Images */}
+      <section className="service-images-section">
+        <div className="container">
+          <h2>Our Services</h2>
+          <div className="service-images-grid">
+            <div className="service-image-card">
+              <img src="/images/IMG_2770.jpg" alt="Professional pond services and maintenance" />
+              <h3>Expert Service</h3>
+              <p>Professional pond care and maintenance</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2775.jpg" alt="Quality pond equipment and supplies" />
+              <h3>Quality Equipment</h3>
+              <p>Only the best pond equipment and supplies</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2779.jpg" alt="Custom pond design and installation" />
+              <h3>Custom Design</h3>
+              <p>Custom pond design and installation services</p>
+            </div>
+            <div className="service-image-card">
+              <img src="/images/IMG_2780.jpg" alt="Ongoing pond maintenance and support" />
+              <h3>Ongoing Support</h3>
+              <p>Continuous maintenance and support services</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Links for SEO */}
+      <div style={{ display: 'none' }}>
+        <Link to="/contact">utah water gardens</Link>
+        <Link to="/plants-fish">utah water gardens</Link>
+        <Link to="/pondsupplies">utah water gardens</Link>
+        <Link to="/aquatic-plants">utah water gardens</Link>
+        <Link to="/fish-koi">utah water gardens</Link>
+        <Link to="/">utah water gardens</Link>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
-
-
-// Internal Links for SEO
-
-
-const InternalLinks = () => (
-
-
-  <div style={{ display: 'none' }}>
-
-
-    <Link to="/contact">utah water gardens</Link>
-
-
-    <Link to="/plants-fish">utah water gardens</Link>
-
-
-    <Link to="/pondsupplies">utah water gardens</Link>
-
-
-    <Link to="/aquatic-plants">utah water gardens</Link>
-
-
-    <Link to="/fish-koi">utah water gardens</Link>
-
-
-    <Link to="/">utah water gardens</Link>
-
-
-  </div>
-
-
-);
-
-
 
 export default TruxorServicePage;

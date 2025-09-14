@@ -539,8 +539,6 @@ const PondTipsTricksPage = () => {
 
 
 const InternalLinks = () => (
-
-
   <div style={{ display: 'none' }}>
 
 
@@ -563,10 +561,6 @@ const InternalLinks = () => (
 
 
   </div>
-
-
 );
-
-
 
 export default PondTipsTricksPage;

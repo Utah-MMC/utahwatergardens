@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
+
 import { Link } from 'react-router-dom';
 import './TroubleshootingPage.css';
 
@@ -437,7 +439,18 @@ const TroubleshootingPage = () => {
     : problemCategories.filter(category => category.name === selectedCategory);
 
   return (
-    <div className="troubleshooting-page">
+    <>
+      <SEO 
+        title="Pond Troubleshooting Guide | Common Pond Problems | Utah Water Gardens"
+        description="Comprehensive pond troubleshooting guide. Solutions to common pond problems and maintenance issues."
+        keywords="pond troubleshooting, pond problems, pond maintenance issues, pond repair, pond solutions"
+        canonical="https://utahwatergardens.com/resources/troubleshooting"
+        ogTitle="Pond Troubleshooting Guide"
+        ogDescription="Solutions to common pond problems"
+        ogImage="/images/troubleshooting.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="troubleshooting-page">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
@@ -665,43 +678,48 @@ const TroubleshootingPage = () => {
           </div>
         </div>
       </section>
-    </div>
+        
+      {/* Troubleshooting Images */}
+      <section className="troubleshooting-images-section">
+        <div className="container">
+          <h2>Common Pond Issues</h2>
+          <div className="troubleshooting-images-grid">
+            <div className="troubleshooting-image-card">
+              <img src="/images/IMG_2770.jpg" alt="Cloudy water troubleshooting and solutions" />
+              <h3>Cloudy Water</h3>
+              <p>Solutions for cloudy pond water issues</p>
+            </div>
+            <div className="troubleshooting-image-card">
+              <img src="/images/IMG_2775.jpg" alt="Algae problems and treatment solutions" />
+              <h3>Algae Problems</h3>
+              <p>Effective algae control and prevention</p>
+            </div>
+            <div className="troubleshooting-image-card">
+              <img src="/images/IMG_2779.jpg" alt="Pump and equipment troubleshooting" />
+              <h3>Equipment Issues</h3>
+              <p>Diagnosing and fixing equipment problems</p>
+            </div>
+            <div className="troubleshooting-image-card">
+              <img src="/images/IMG_2780.jpg" alt="Fish health and water quality issues" />
+              <h3>Fish Health</h3>
+              <p>Maintaining healthy fish and water quality</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Links for SEO */}
+      <div style={{ display: 'none' }}>
+        <Link to="/contact">utah water gardens</Link>
+        <Link to="/plants-fish">utah water gardens</Link>
+        <Link to="/pondsupplies">utah water gardens</Link>
+        <Link to="/aquatic-plants">utah water gardens</Link>
+        <Link to="/fish-koi">utah water gardens</Link>
+        <Link to="/">utah water gardens</Link>
+      </div>
+      </div>
+    </>
   );
 };
-
-
-// Internal Links for SEO
-
-
-const InternalLinks = () => (
-
-
-  <div style={{ display: 'none' }}>
-
-
-    <Link to="/contact">utah water gardens</Link>
-
-
-    <Link to="/plants-fish">utah water gardens</Link>
-
-
-    <Link to="/pondsupplies">utah water gardens</Link>
-
-
-    <Link to="/aquatic-plants">utah water gardens</Link>
-
-
-    <Link to="/fish-koi">utah water gardens</Link>
-
-
-    <Link to="/">utah water gardens</Link>
-
-
-  </div>
-
-
-);
-
-
 
 export default TroubleshootingPage;

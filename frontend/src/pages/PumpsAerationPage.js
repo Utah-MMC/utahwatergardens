@@ -357,6 +357,9 @@ const PumpsAerationPage = () => {
           <p>Save money with our complete pump and aeration packages</p>
           <div className="packages-grid">
             <div className="package-card">
+              <div className="package-image">
+                <img src="/images/IMG_2770.jpg" alt="Starter pump and aeration package for small ponds" />
+              </div>
               <h3>Starter Package</h3>
               <div className="package-description">Perfect for small ponds and beginners</div>
               <ul>
@@ -369,6 +372,9 @@ const PumpsAerationPage = () => {
               <a href="tel:(801) 590-8516" className="package-cta">Call to Order</a>
             </div>
             <div className="package-card featured">
+              <div className="package-image">
+                <img src="/images/IMG_2775.jpg" alt="Professional pump and aeration package for medium to large ponds" />
+              </div>
               <h3>Professional Package</h3>
               <div className="package-description">Ideal for medium to large residential ponds</div>
               <ul>
@@ -382,6 +388,9 @@ const PumpsAerationPage = () => {
               <a href="tel:(801) 590-8516" className="package-cta">Call to Order</a>
             </div>
             <div className="package-card">
+              <div className="package-image">
+                <img src="/images/IMG_2779.jpg" alt="Commercial pump and aeration package for large ponds and commercial applications" />
+              </div>
               <h3>Commercial Package</h3>
               <div className="package-description">For large ponds and commercial applications</div>
               <ul>
@@ -412,56 +421,56 @@ const PumpsAerationPage = () => {
             <div className="service-area-group">
               <h3>Salt Lake County</h3>
               <div className="cities-list">
-                <span>Salt Lake City</span>
-                <span>West Jordan</span>
-                <span>Murray</span>
-                <span>Sandy</span>
-                <span>West Valley City</span>
-                <span>Draper</span>
-                <span>Cottonwood Heights</span>
-                <span>Holladay</span>
+                <Link to="/pond-supplies/pumps-aeration/salt-lake-city" className="city-link">Salt Lake City</Link>
+                <Link to="/pond-supplies/pumps-aeration/west-jordan" className="city-link">West Jordan</Link>
+                <Link to="/pond-supplies/pumps-aeration/murray" className="city-link">Murray</Link>
+                <Link to="/pond-supplies/pumps-aeration/sandy" className="city-link">Sandy</Link>
+                <Link to="/pond-supplies/pumps-aeration/west-valley-city" className="city-link">West Valley City</Link>
+                <Link to="/pond-supplies/pumps-aeration/draper" className="city-link">Draper</Link>
+                <Link to="/pond-supplies/pumps-aeration/cottonwood-heights" className="city-link">Cottonwood Heights</Link>
+                <Link to="/pond-supplies/pumps-aeration/holladay" className="city-link">Holladay</Link>
               </div>
             </div>
             
             <div className="service-area-group">
               <h3>Davis County</h3>
               <div className="cities-list">
-                <span>Layton</span>
-                <span>Bountiful</span>
-                <span>Farmington</span>
-                <span>Centerville</span>
-                <span>Kaysville</span>
-                <span>Clearfield</span>
-                <span>Clinton</span>
-                <span>Syracuse</span>
+                <Link to="/pond-supplies/pumps-aeration/layton" className="city-link">Layton</Link>
+                <Link to="/pond-supplies/pumps-aeration/bountiful" className="city-link">Bountiful</Link>
+                <Link to="/pond-supplies/pumps-aeration/farmington" className="city-link">Farmington</Link>
+                <Link to="/pond-supplies/pumps-aeration/centerville" className="city-link">Centerville</Link>
+                <Link to="/pond-supplies/pumps-aeration/kaysville" className="city-link">Kaysville</Link>
+                <Link to="/pond-supplies/pumps-aeration/clearfield" className="city-link">Clearfield</Link>
+                <Link to="/pond-supplies/pumps-aeration/clinton" className="city-link">Clinton</Link>
+                <Link to="/pond-supplies/pumps-aeration/syracuse" className="city-link">Syracuse</Link>
               </div>
             </div>
             
             <div className="service-area-group">
               <h3>Utah County</h3>
               <div className="cities-list">
-                <span>Provo</span>
-                <span>Orem</span>
-                <span>American Fork</span>
-                <span>Lehi</span>
-                <span>Pleasant Grove</span>
-                <span>Spanish Fork</span>
-                <span>Springville</span>
-                <span>Alpine</span>
+                <Link to="/pond-supplies/pumps-aeration/provo" className="city-link">Provo</Link>
+                <Link to="/pond-supplies/pumps-aeration/orem" className="city-link">Orem</Link>
+                <Link to="/pond-supplies/pumps-aeration/american-fork" className="city-link">American Fork</Link>
+                <Link to="/pond-supplies/pumps-aeration/lehi" className="city-link">Lehi</Link>
+                <Link to="/pond-supplies/pumps-aeration/pleasant-grove" className="city-link">Pleasant Grove</Link>
+                <Link to="/pond-supplies/pumps-aeration/spanish-fork" className="city-link">Spanish Fork</Link>
+                <Link to="/pond-supplies/pumps-aeration/springville" className="city-link">Springville</Link>
+                <Link to="/pond-supplies/pumps-aeration/alpine" className="city-link">Alpine</Link>
               </div>
             </div>
             
             <div className="service-area-group">
               <h3>Weber County</h3>
               <div className="cities-list">
-                <span>Ogden</span>
-                <span>Roy</span>
-                <span>Clearfield</span>
-                <span>South Ogden</span>
-                <span>North Ogden</span>
-                <span>Riverdale</span>
-                <span>Washington Terrace</span>
-                <span>Farr West</span>
+                <Link to="/pond-supplies/pumps-aeration/ogden" className="city-link">Ogden</Link>
+                <Link to="/pond-supplies/pumps-aeration/roy" className="city-link">Roy</Link>
+                <Link to="/pond-supplies/pumps-aeration/clearfield" className="city-link">Clearfield</Link>
+                <Link to="/pond-supplies/pumps-aeration/south-ogden" className="city-link">South Ogden</Link>
+                <Link to="/pond-supplies/pumps-aeration/north-ogden" className="city-link">North Ogden</Link>
+                <Link to="/pond-supplies/pumps-aeration/riverdale" className="city-link">Riverdale</Link>
+                <Link to="/pond-supplies/pumps-aeration/washington-terrace" className="city-link">Washington Terrace</Link>
+                <Link to="/pond-supplies/pumps-aeration/farr-west" className="city-link">Farr West</Link>
               </div>
             </div>
           </div>
@@ -491,40 +500,6 @@ const PumpsAerationPage = () => {
     </>
   );
 };
-
-
-// Internal Links for SEO
-
-
-const InternalLinks = () => (
-
-
-  <div style={{ display: 'none' }}>
-
-
-    <Link to="/contact">utah water gardens</Link>
-
-
-    <Link to="/plants-fish">utah water gardens</Link>
-
-
-    <Link to="/pondsupplies">utah water gardens</Link>
-
-
-    <Link to="/aquatic-plants">utah water gardens</Link>
-
-
-    <Link to="/fish-koi">utah water gardens</Link>
-
-
-    <Link to="/">utah water gardens</Link>
-
-
-  </div>
-
-
-);
-
 
 
 export default PumpsAerationPage;
