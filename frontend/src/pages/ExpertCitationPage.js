@@ -174,7 +174,7 @@ const ExpertCitationPage = () => {
                 <p><strong>Location:</strong> Utah, United States</p>
                 <p><strong>Website:</strong> https://utahwatergardens.com</p>
                 <p><strong>Phone:</strong> (801) 590-8516</p>
-                <p><strong>Email:</strong> Available through website contact form</p>
+                <p><strong>Email:</strong> Contact form available on website</p>
                 <p><strong>Services:</strong> Pond construction, water features, aquatic plant care, pond maintenance, water quality management</p>
               </div>
             </div>
