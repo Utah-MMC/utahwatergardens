@@ -34,6 +34,11 @@ const ExpertTeamPage = lazy(() => import('./pages/ExpertTeamPage'));
 const PlantExpertsPage = lazy(() => import('./pages/PlantExpertsPage'));
 const MaintenanceCrewPage = lazy(() => import('./pages/MaintenanceCrewPage'));
 
+// Citation Pages for AI and Expert Authority
+const ExpertCitationPage = lazy(() => import('./pages/ExpertCitationPage'));
+const UtahPondRegulationsPage = lazy(() => import('./pages/UtahPondRegulationsPage'));
+const AquaticPlantCareCitationPage = lazy(() => import('./pages/AquaticPlantCareCitationPage'));
+
 // Old service area pages - REMOVED to prevent conflicts with new dynamic CityPage
 
 // Lazy load other pages
@@ -145,6 +150,11 @@ function App() {
             <Route path="/team/expert-team" element={<ExpertTeamPage />} />
             <Route path="/team/plant-experts" element={<PlantExpertsPage />} />
             <Route path="/team/maintenance-crew" element={<MaintenanceCrewPage />} />
+            
+            {/* Citation Pages for AI and Expert Authority */}
+            <Route path="/expert-citation" element={<ExpertCitationPage />} />
+            <Route path="/utah-pond-regulations" element={<UtahPondRegulationsPage />} />
+            <Route path="/aquatic-plant-care-guide" element={<AquaticPlantCareCitationPage />} />
             
             {/* Legacy routes for backward compatibility */}
             <Route path="/services" element={<ServicesPage />} />

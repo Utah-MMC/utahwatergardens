@@ -129,7 +129,7 @@ const ResidentialPondsPage = () => {
     <>
       <SEO 
         title="Residential Ponds - Custom Home Water Gardens & Koi Ponds | Utah Water Gardens"
-        description="Transform your backyard with a custom residential pond. View our gallery of 200+ beautiful home water gardens, koi ponds, and water features across Utah. Professional pond design and installation serving Salt Lake County, Davis County, and surrounding areas."
+        description="Transform your backyard with a custom residential pond. View our gallery of 200+ beautiful home water gardens, koi ponds, and water features across Utah."
         keywords="residential ponds, home water gardens, koi ponds, backyard ponds, custom pond design, residential water features, utah pond builders, home pond installation, koi pond design, residential pond gallery, salt lake county ponds, davis county ponds, backyard water features"
         canonical="https://utahwatergardens.com/pond-gallery/residential"
       />

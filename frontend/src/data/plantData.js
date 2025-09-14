@@ -378,6 +378,43 @@ export const plantData = {
     image: '/images/IMG_2779.jpg',
     availability: 'Available spring through fall'
   },
+  'equisetum-horsetail': {
+    id: 'equisetum-horsetail',
+    name: 'Equisetum (Horsetail)',
+    scientificName: 'Equisetum hyemale',
+    category: 'Marginal Plants',
+    description: 'Ancient, architectural plant with jointed stems, perfect for modern pond designs.',
+    detailedDescription: 'Equisetum, also known as Horsetail, is an ancient plant with a unique architectural form. Its jointed, bamboo-like stems create striking vertical lines and add a modern, minimalist touch to contemporary pond designs.',
+    careInstructions: createCareInstructions(
+      'Plant in 2-4 inches of water or moist soil.',
+      'Full sun to partial shade.',
+      'Minimal fertilization needed.',
+      'Evergreen in mild climates, cut back in cold areas.'
+    ),
+    specifications: {
+      height: '2-4 feet',
+      spread: '12-18 inches',
+      bloomTime: 'No flowers (spore-producing)',
+      hardiness: 'Zones 4-9',
+      waterDepth: '2-4 inches'
+    },
+    benefits: [
+      'Unique architectural form',
+      'Modern design appeal',
+      'Low maintenance',
+      'Evergreen in mild climates',
+      'Striking vertical accent'
+    ],
+    images: [
+      '/images/IMG_2779.jpg',
+      '/images/IMG_2770.jpg',
+      '/images/IMG_2775.jpg',
+      '/images/IMG_2780.jpg',
+      '/images/IMG_3266-topaz-enhance-2x-faceai.jpeg'
+    ],
+    image: '/images/IMG_2779.jpg',
+    availability: 'Available spring through fall'
+  },
   'umbrella-palm': {
     id: 'umbrella-palm',
     name: 'Umbrella Palm',

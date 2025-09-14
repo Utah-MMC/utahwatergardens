@@ -45,6 +45,10 @@ const PlantExpertsPage = () => {
         description="Meet our plant experts with the largest selection of aquatic plants in Utah. Expert advice on water lilies, marginal plants, and floating plants."
         keywords="plant experts, aquatic plants, water lilies, marginal plants, floating plants, utah aquatic plants, pond plants"
         canonical="https://utahwatergardens.com/team/plant-experts"
+        ogTitle="Plant Experts - Aquatic Specialists | Utah Water Gardens"
+        ogDescription="Meet our plant experts with the largest selection of aquatic plants in Utah. Expert advice on water lilies, marginal plants, and floating plants."
+        ogImage="https://utahwatergardens.com/images/IMG_2775.jpg"
+        twitterCard="summary_large_image"
       />
       <div className={`team-detail-page ${isVisible ? 'visible' : ''}`}>
         <PageHero 

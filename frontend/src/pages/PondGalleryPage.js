@@ -111,7 +111,7 @@ const PondGalleryPage = () => {
     <>
       <SEO 
         title="Pond Gallery - Professional Water Garden Projects & Portfolio | Utah Water Gardens"
-        description="Explore our comprehensive pond gallery showcasing 500+ completed water garden projects across Utah. View residential ponds, commercial water features, koi ponds, and custom designs. Professional pond builders serving Salt Lake County, Davis County, and surrounding areas."
+        description="Explore our pond gallery showcasing 500+ completed water garden projects across Utah. View residential ponds, commercial features, and custom designs."
         keywords="pond gallery, water garden projects, koi ponds, water features, residential ponds, commercial ponds, utah pond builders, pond design, pond portfolio, water garden examples, utah pond construction, salt lake county ponds, davis county ponds, pond before and after"
         canonical="https://utahwatergardens.com/pond-gallery"
       />

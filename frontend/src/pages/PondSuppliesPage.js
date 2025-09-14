@@ -95,7 +95,7 @@ const PondSuppliesPage = () => {
     <>
       <SEO 
         title="Pond Supplies - Premium Water Garden Equipment & Products | Utah Water Gardens"
-        description="Shop our comprehensive selection of 500+ pond supplies including filtration systems, pumps, liners, water treatments, lighting, and tools. Professional-grade equipment from 50+ top brands. Serving Salt Lake County, Davis County, and surrounding areas with expert advice and quality guaranteed."
+        description="Shop 500+ pond supplies including filtration systems, pumps, liners, water treatments, and lighting. Professional-grade equipment with expert advice."
         keywords="pond supplies, pond equipment, filtration systems, pond pumps, pond liners, water treatments, pond lighting, pond tools, utah pond supplies, salt lake county pond supplies, davis county pond equipment, pond maintenance supplies, koi pond supplies, water garden equipment, pond accessories"
         canonical="https://utahwatergardens.com/pond-supplies"
       />

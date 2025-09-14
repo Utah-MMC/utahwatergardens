@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero.js';
+import SEO from '../components/SEO';
 import './ServicesPage.css';
 
 const ServicesPage = () => {
@@ -92,6 +93,17 @@ const ServicesPage = () => {
         subtitle="Complete pond and water feature solutions for Utah properties"
         backgroundImage="/images/IMG_2770.jpg"
         backgroundImageAlt="Professional pond construction services"
+      />
+
+      <SEO
+        title="Pond Services Utah - Professional Pond Construction & Maintenance"
+        description="Professional pond construction, maintenance, and water feature services in Utah. Expert design, installation, and year-round care for residential and commercial properties."
+        keywords="pond services utah, pond construction, pond maintenance, water features, utah pond builders, pond installation"
+        canonical="https://utahwatergardens.com/services"
+        ogTitle="Professional Pond Services in Utah - Construction & Maintenance"
+        ogDescription="Expert pond construction, maintenance, and water feature services in Utah. Professional design and installation for residential and commercial properties."
+        ogImage="https://utahwatergardens.com/images/IMG_2770.jpg"
+        twitterCard="summary_large_image"
       />
 
       <section className="services-section first-section-gradient">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { trackLeadConversion } from '../utils/analytics';
 import './FreeEstimatePage.css';
 
@@ -44,7 +45,18 @@ const FreeEstimatePage = () => {
   };
 
   return (
-    <div className="free-estimate-page">
+    <>
+      <SEO 
+        title="Free Pond Estimate | Professional Pond Design Consultation | Utah Water Gardens"
+        description="Get a free estimate for your pond project. Professional consultation for pond design, construction, and maintenance. No obligation, expert advice guaranteed."
+        keywords="free pond estimate, pond consultation, pond design estimate, water garden estimate, pond construction quote"
+        canonical="https://utahwatergardens.com/free-estimate"
+        ogTitle="Free Pond Estimate"
+        ogDescription="Get professional consultation for your pond project"
+        ogImage="/images/estimate-hero.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="free-estimate-page">
       <div className="estimate-hero">
         <div 
           className="hero-background"
@@ -339,43 +351,18 @@ const FreeEstimatePage = () => {
           </div>
         </div>
       )}
+      {/* Internal Links for SEO */}
+      <div style={{ display: 'none' }}>
+        <Link to="/contact">utah water gardens</Link>
+        <Link to="/plants-fish">utah water gardens</Link>
+        <Link to="/pondsupplies">utah water gardens</Link>
+        <Link to="/aquatic-plants">utah water gardens</Link>
+        <Link to="/fish-koi">utah water gardens</Link>
+        <Link to="/">utah water gardens</Link>
+      </div>
     </div>
+    </>
   );
 };
-
-
-// Internal Links for SEO
-
-
-const InternalLinks = () => (
-
-
-  <div style={{ display: 'none' }}>
-
-
-    <Link to="/contact">utah water gardens</Link>
-
-
-    <Link to="/plants-fish">utah water gardens</Link>
-
-
-    <Link to="/pondsupplies">utah water gardens</Link>
-
-
-    <Link to="/aquatic-plants">utah water gardens</Link>
-
-
-    <Link to="/fish-koi">utah water gardens</Link>
-
-
-    <Link to="/">utah water gardens</Link>
-
-
-  </div>
-
-
-);
-
-
 
 export default FreeEstimatePage;

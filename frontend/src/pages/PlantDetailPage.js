@@ -42,13 +42,13 @@ const PlantDetailPage = () => {
   return (
     <>
       <SEO 
-        title="Aquatic Plant Details | Plant Care Guide | Utah Water Gardens"
-        description="Detailed information about aquatic plants. Care guides, planting tips, and plant selection for your pond."
-        keywords="aquatic plant details, plant care guide, water plants, pond plants"
-        canonical="https://utahwatergardens.com/plant-detail"
-        ogTitle="Aquatic Plant Details"
-        ogDescription="Detailed aquatic plant information and care guides"
-        ogImage="/images/plant-detail.jpg"
+        title={`${plant.name} - ${plant.scientificName} | Plant Care Guide | Utah Water Gardens`}
+        description={plant.description}
+        keywords={`${plant.name.toLowerCase()}, ${plant.scientificName.toLowerCase()}, ${plant.category.toLowerCase()}, aquatic plants, pond plants, water plants, utah plants`}
+        canonical={`https://utahwatergardens.com/plant/${plant.id}`}
+        ogTitle={`${plant.name} - ${plant.scientificName}`}
+        ogDescription={plant.description}
+        ogImage={`https://utahwatergardens.com${plant.image}`}
         twitterCard="summary_large_image"
       />
       <div className="plant-detail-page">

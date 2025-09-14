@@ -86,6 +86,17 @@ const ContactPage = () => {
           secondaryButtonLink="#contact-main-content"
         />
 
+        <SEO
+          title="Contact Utah Water Gardens - Expert Pond Consultation & Store Visit"
+          description="Get expert pond consultation, schedule visits, or contact our team. Call (801) 590-8516 or visit our store for professional pond services in Utah."
+          keywords="contact utah water gardens, pond consultation, pond expert advice, visit pond store, utah pond services"
+          canonical="https://utahwatergardens.com/contact"
+          ogTitle="Contact Utah Water Gardens - Expert Pond Consultation"
+          ogDescription="Get expert pond consultation and visit our store. Professional pond services and advice in Utah. Call (801) 590-8516."
+          ogImage="https://utahwatergardens.com/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
+          twitterCard="summary_large_image"
+        />
+
         {/* Main Content Wrapper with Single Gradient */}
         <div className="main-content-gradient">
           {/* Main Content */}

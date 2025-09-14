@@ -1,11 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
 import './AquaticPlantsPage.css';
 
 const AquaticPlantsPage = () => {
   return (
-    <div className="aquatic-plants-page">
+    <>
+      <SEO 
+        title="Aquatic Plants for Ponds | Water Garden Plants | Utah Water Gardens"
+        description="Premium aquatic plants for your pond. Water lilies, marginal plants, floating plants, and submerged plants. Expert advice and healthy plants guaranteed."
+        keywords="aquatic plants, pond plants, water lilies, marginal plants, floating plants, submerged plants, water garden plants"
+        canonical="https://utahwatergardens.com/plants-fish/aquatic-plants"
+        ogTitle="Aquatic Plants for Your Pond"
+        ogDescription="Transform your water garden with our premium selection of aquatic plants"
+        ogImage="/images/waterLillies-topaz-enhance-4x.jpeg"
+        twitterCard="summary_large_image"
+      />
+      <div className="aquatic-plants-page">
       {/* Hero Section */}
       <PageHero 
         title="Aquatic Plants for Your Pond"
@@ -203,38 +215,19 @@ const AquaticPlantsPage = () => {
           </div>
         </div>
       </section>
-      <InternalLinks />
-    </div>
+
+      {/* Internal Links for SEO */}
+      <div style={{ display: 'none' }}>
+        <Link to="/contact">utah water gardens</Link>
+        <Link to="/plants-fish">utah water gardens</Link>
+        <Link to="/pondsupplies">utah water gardens</Link>
+        <Link to="/aquatic-plants">utah water gardens</Link>
+        <Link to="/fish-koi">utah water gardens</Link>
+        <Link to="/">utah water gardens</Link>
+      </div>
+      </div>
+    </>
   );
 };
-
-
-// Internal Links for SEO
-
-
-const InternalLinks = () => (
-
-
-  <div style={{ display: 'none' }}>
-
-
-    <Link to="/contact">utah water gardens</Link>
-
-
-    <Link to="/plants-fish">utah water gardens</Link>
-
-
-    <Link to="/pondsupplies">utah water gardens</Link>
-
-
-    <Link to="/aquatic-plants">utah water gardens</Link>
-
-
-    <Link to="/fish-koi">utah water gardens</Link>
-
-
-    <Link to="/">utah water gardens</Link>
-  </div>
-);
 
 export default AquaticPlantsPage;

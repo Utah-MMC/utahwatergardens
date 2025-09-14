@@ -1,10 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import './KoiGoldfishPage.css';
 
 const KoiGoldfishPage = () => {
   return (
-    <div className="koi-goldfish-page">
+    <>
+      <SEO 
+        title="Koi & Goldfish for Ponds | Pond Fish Selection | Utah Water Gardens"
+        description="Premium koi and goldfish for your pond. Expert advice on fish selection, care, and compatibility. Healthy fish guaranteed with professional guidance."
+        keywords="koi fish, goldfish, pond fish, koi care, goldfish varieties, pond fish selection, aquatic fish"
+        canonical="https://utahwatergardens.com/plants-fish/koi-goldfish"
+        ogTitle="Koi & Goldfish for Your Pond"
+        ogDescription="Discover the perfect fish companions for your water garden"
+        ogImage="/images/koi-topaz-enhance-4x.jpeg"
+        twitterCard="summary_large_image"
+      />
+      <div className="koi-goldfish-page">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
@@ -266,35 +278,19 @@ const KoiGoldfishPage = () => {
           </div>
         </div>
       </section>
-      <InternalLinks />
-    </div>
+
+      {/* Internal Links for SEO */}
+      <div style={{ display: 'none' }}>
+        <Link to="/contact">utah water gardens</Link>
+        <Link to="/plants-fish">utah water gardens</Link>
+        <Link to="/pondsupplies">utah water gardens</Link>
+        <Link to="/aquatic-plants">utah water gardens</Link>
+        <Link to="/fish-koi">utah water gardens</Link>
+        <Link to="/">utah water gardens</Link>
+      </div>
+      </div>
+    </>
   );
 };
-
-// Internal Links for SEO
-const InternalLinks = () => (
-  <div style={{ display: 'none' }}>
-
-
-    <Link to="/contact">utah water gardens</Link>
-
-
-    <Link to="/plants-fish">utah water gardens</Link>
-
-
-    <Link to="/pondsupplies">utah water gardens</Link>
-
-
-    <Link to="/aquatic-plants">utah water gardens</Link>
-
-
-    <Link to="/fish-koi">utah water gardens</Link>
-
-
-    <Link to="/">utah water gardens</Link>
-
-
-  </div>
-);
 
 export default KoiGoldfishPage;

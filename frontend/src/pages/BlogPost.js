@@ -4976,6 +4976,118 @@ const BlogPost = () => {
         authorBio: 'Our experienced team has been designing, building, and maintaining water gardens throughout Utah since 2009. We specialize in creating beautiful, functional ponds that thrive in Utah\'s unique mountain climate.',
         authorImage: '/images/team-photo.jpg',
         tags: ['utah water quality', 'water quality standards', 'utah regulations', 'pond compliance', 'dwq standards', 'water testing']
+      },
+      'aquatic-plant-harvesting-management-guide': {
+        id: 'aquatic-plant-harvesting-management-guide',
+        title: 'Aquatic Plant Harvesting & Management Guide for Utah Ponds',
+        slug: 'aquatic-plant-harvesting-management-guide',
+        content: `
+          <p>Aquatic plant harvesting is essential for maintaining healthy pond ecosystems in Utah. This comprehensive guide covers proper harvesting techniques, timing, and management strategies for optimal pond health.</p>
+          
+          <img src="/images/IMG_2770.jpg" alt="Aquatic plant harvesting in Utah ponds" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin: 20px 0;" />
+          
+          <h2>Understanding Aquatic Plant Growth in Utah</h2>
+          <p>Utah's climate presents unique challenges for aquatic plant management. Understanding seasonal growth patterns and local species is crucial for effective harvesting.</p>
+          
+          <h2>Best Harvesting Techniques</h2>
+          <p>Learn professional techniques for removing excess aquatic vegetation while maintaining beneficial plants for ecosystem balance.</p>
+          
+          <h2>Timing and Frequency</h2>
+          <p>Discover the optimal timing for plant harvesting throughout Utah's growing season to maintain water quality and fish health.</p>
+        `,
+        excerpt: 'Complete guide to aquatic plant harvesting and management for Utah ponds. Learn proper techniques, timing, and strategies for healthy pond ecosystems.',
+        date: today,
+        category: 'Pond Care',
+        readTime: '8 min read',
+        image: '/images/IMG_2770.jpg',
+        author: 'Utah Water Gardens Team',
+        authorBio: 'Our experienced team has been designing, building, and maintaining water gardens throughout Utah since 2009.',
+        authorImage: '/images/team-photo.jpg',
+        tags: ['aquatic plants', 'plant harvesting', 'pond management', 'utah ponds', 'water quality']
+      },
+      'pond-filtration-systems-complete-guide': {
+        id: 'pond-filtration-systems-complete-guide',
+        title: 'Pond Filtration Systems: Complete Guide for Utah Water Gardens',
+        slug: 'pond-filtration-systems-complete-guide',
+        content: `
+          <p>Proper filtration is the foundation of a healthy pond ecosystem. This comprehensive guide covers all types of filtration systems and their applications in Utah's challenging climate.</p>
+          
+          <img src="/images/IMG_2775.jpg" alt="Pond filtration systems for Utah water gardens" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin: 20px 0;" />
+          
+          <h2>Types of Filtration Systems</h2>
+          <p>Explore mechanical, biological, and UV filtration systems designed specifically for Utah's water conditions and seasonal variations.</p>
+          
+          <h2>Sizing Your Filtration System</h2>
+          <p>Learn how to properly size filtration systems based on pond volume, fish load, and local water quality requirements.</p>
+          
+          <h2>Maintenance and Care</h2>
+          <p>Essential maintenance routines to keep your filtration system operating efficiently year-round in Utah's climate.</p>
+        `,
+        excerpt: 'Complete guide to pond filtration systems for Utah water gardens. Learn about mechanical, biological, and UV filtration options.',
+        date: today,
+        category: 'Pond Equipment',
+        readTime: '10 min read',
+        image: '/images/IMG_2775.jpg',
+        author: 'Utah Water Gardens Team',
+        authorBio: 'Our experienced team has been designing, building, and maintaining water gardens throughout Utah since 2009.',
+        authorImage: '/images/team-photo.jpg',
+        tags: ['filtration systems', 'pond equipment', 'water quality', 'utah ponds', 'pond maintenance']
+      },
+      'lake-dredging-large-water-bodies-guide': {
+        id: 'lake-dredging-large-water-bodies-guide',
+        title: 'Lake Dredging Guide: Managing Large Water Bodies in Utah',
+        slug: 'lake-dredging-large-water-bodies-guide',
+        content: `
+          <p>Lake dredging is a specialized service for maintaining large water bodies in Utah. This guide covers when dredging is necessary, methods, and environmental considerations.</p>
+          
+          <img src="/images/IMG_2779.jpg" alt="Lake dredging services in Utah" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin: 20px 0;" />
+          
+          <h2>When Dredging is Necessary</h2>
+          <p>Learn the signs that indicate your lake or large pond needs professional dredging services to maintain water quality and depth.</p>
+          
+          <h2>Dredging Methods and Equipment</h2>
+          <p>Explore different dredging techniques including mechanical, hydraulic, and environmental dredging methods suitable for Utah's conditions.</p>
+          
+          <h2>Environmental Considerations</h2>
+          <p>Important environmental factors to consider when planning lake dredging projects in Utah, including permits and wildlife protection.</p>
+        `,
+        excerpt: 'Complete guide to lake dredging for large water bodies in Utah. Learn about dredging methods, timing, and environmental considerations.',
+        date: today,
+        category: 'Lake Services',
+        readTime: '9 min read',
+        image: '/images/IMG_2779.jpg',
+        author: 'Utah Water Gardens Team',
+        authorBio: 'Our experienced team has been designing, building, and maintaining water gardens throughout Utah since 2009.',
+        authorImage: '/images/team-photo.jpg',
+        tags: ['lake dredging', 'large water bodies', 'utah lakes', 'dredging services', 'water management']
+      },
+      'pond-dredging-when-why-how-guide': {
+        id: 'pond-dredging-when-why-how-guide',
+        title: 'Pond Dredging: When, Why, and How Guide for Utah Ponds',
+        slug: 'pond-dredging-when-why-how-guide',
+        content: `
+          <p>Pond dredging is essential for maintaining water quality and depth in aging ponds. This comprehensive guide explains when, why, and how to dredge your Utah pond.</p>
+          
+          <img src="/images/IMG_2780.jpg" alt="Pond dredging services in Utah" style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin: 20px 0;" />
+          
+          <h2>When to Dredge Your Pond</h2>
+          <p>Learn the key indicators that your pond needs dredging, including sediment buildup, reduced depth, and water quality issues.</p>
+          
+          <h2>Why Dredging is Important</h2>
+          <p>Understand the benefits of regular dredging for fish health, water quality, and overall pond ecosystem balance in Utah's climate.</p>
+          
+          <h2>How to Plan Your Dredging Project</h2>
+          <p>Step-by-step guide to planning and executing a successful pond dredging project, including timing, permits, and professional considerations.</p>
+        `,
+        excerpt: 'Complete guide to pond dredging in Utah. Learn when, why, and how to dredge your pond for optimal water quality and fish health.',
+        date: today,
+        category: 'Pond Services',
+        readTime: '7 min read',
+        image: '/images/IMG_2780.jpg',
+        author: 'Utah Water Gardens Team',
+        authorBio: 'Our experienced team has been designing, building, and maintaining water gardens throughout Utah since 2009.',
+        authorImage: '/images/team-photo.jpg',
+        tags: ['pond dredging', 'pond maintenance', 'water quality', 'utah ponds', 'sediment removal']
       }
       // Add more blog posts as needed
     };

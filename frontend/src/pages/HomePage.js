@@ -26,12 +26,12 @@ const products = [
 ];
 
 const resources = [
-  { name: "Care Guides", image: "/images/144b4c20031b8d5bdb573f8c9aea03a3-enhance-4x.jpeg", path: "/resources/care-guides", description: "Comprehensive guides for pond and aquatic life care" },
-  { name: "Pond Tips & Tricks", image: "/images/19765b123d1521ca46ded746c375eeef-enhance-4x.jpeg", path: "/resources/tips-tricks", description: "Expert tips to keep your pond healthy and beautiful" },
-  { name: "Seasonal Care", image: "/images/1a558e9d94802fd824b157129ebe0e1d-enhance-4x.jpeg", path: "/resources/seasonal-care", description: "Season-specific care instructions for your pond" },
-  { name: "Troubleshooting", image: "/images/1a9b7904c3461d26b8b9b177164f11c4-denoise.jpeg", path: "/resources/troubleshooting", description: "Solutions to common pond problems" },
-  { name: "Video Tutorials", image: "/images/1c7c15865a8fd7d198a5c69c3087e91c-enhance-4x.jpeg", path: "/resources/video-tutorials", description: "Step-by-step video guides for pond care" },
-  { name: "FAQ", image: "/images/1df1ecf8852a8a526517efdf414917a7-denoise-enhance-4x.jpeg", path: "/resources/faq", description: "Answers to frequently asked questions" }
+  { name: "Care Guides", image: "/images/144b4c20031b8d5bdb573f8c9aea03a3-enhance-4x.jpeg", alt: "Pond care guides and aquatic life maintenance resources", path: "/resources/care-guides", description: "Comprehensive guides for pond and aquatic life care" },
+  { name: "Pond Tips & Tricks", image: "/images/19765b123d1521ca46ded746c375eeef-enhance-4x.jpeg", alt: "Expert pond tips and tricks for healthy water gardens", path: "/resources/tips-tricks", description: "Expert tips to keep your pond healthy and beautiful" },
+  { name: "Seasonal Care", image: "/images/1a558e9d94802fd824b157129ebe0e1d-enhance-4x.jpeg", alt: "Seasonal pond care instructions for Utah climate", path: "/resources/seasonal-care", description: "Season-specific care instructions for your pond" },
+  { name: "Troubleshooting", image: "/images/1a9b7904c3461d26b8b9b177164f11c4-denoise.jpeg", alt: "Pond troubleshooting solutions and problem-solving guides", path: "/resources/troubleshooting", description: "Solutions to common pond problems" },
+  { name: "Video Tutorials", image: "/images/1c7c15865a8fd7d198a5c69c3087e91c-enhance-4x.jpeg", alt: "Video tutorials for pond care and maintenance", path: "/resources/video-tutorials", description: "Step-by-step video guides for pond care" },
+  { name: "FAQ", image: "/images/1df1ecf8852a8a526517efdf414917a7-denoise-enhance-4x.jpeg", alt: "Frequently asked questions about pond care and maintenance", path: "/resources/faq", description: "Answers to frequently asked questions" }
 ];
 
 // ---------- Accessible, reusable carousel - PERFORMANCE OPTIMIZED ----------
@@ -163,7 +163,7 @@ const HomePage = () => {
   return (
     <PageTemplate
         title="Pond Services Near Salt Lake City, UT | Utah Water Gardens"
-        description="Utah's premier pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning. Licensed & insured. Call (801) 590-8516 for consultation."
+        description="Utah's premier pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning. Licensed & insured. Call (801) 590-8516."
         keywords="pond services near salt lake city ut, salt lake city pond services, pond maintenance salt lake city, pond construction salt lake city, pond cleaning salt lake city, utah water gardens, pond services utah"
         canonical="https://utahwatergardens.com"
       heroTitle="Create Your Dream Water Garden"
@@ -396,7 +396,7 @@ const HomePage = () => {
                 <Link to={r.path} className="card item">
                   <img 
                     src={r.image} 
-                    alt="" 
+                    alt={r.alt} 
                     loading="lazy"
                     decoding="async"
                     style={{ 

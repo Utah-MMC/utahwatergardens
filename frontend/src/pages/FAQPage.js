@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import './FAQPage.css';
 
 const FAQPage = () => {
@@ -205,7 +206,18 @@ const FAQPage = () => {
   ];
 
   return (
-    <div className="faq-page">
+    <>
+      <SEO 
+        title="FAQ - Pond & Water Garden Questions | Utah Water Gardens"
+        description="Get answers to common pond and water garden questions. Expert advice on pond maintenance, fish care, plant selection, and water quality issues."
+        keywords="pond FAQ, water garden questions, pond maintenance FAQ, fish care questions, aquatic plant FAQ"
+        canonical="https://utahwatergardens.com/resources/faq"
+        ogTitle="Frequently Asked Questions"
+        ogDescription="Get expert answers to your pond and water garden questions"
+        ogImage="/images/faq-hero.jpg"
+        twitterCard="summary_large_image"
+      />
+      <div className="faq-page">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
@@ -397,6 +409,8 @@ const FAQPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Internal Links for SEO */}
       <div style={{ display: 'none' }}>
         <Link to="/contact">utah water gardens</Link>
         <Link to="/plants-fish">utah water gardens</Link>
@@ -405,7 +419,8 @@ const FAQPage = () => {
         <Link to="/fish-koi">utah water gardens</Link>
         <Link to="/">utah water gardens</Link>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
