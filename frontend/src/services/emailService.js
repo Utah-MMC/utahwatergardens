@@ -186,16 +186,16 @@ const emailTemplates = {
 
         <div style="text-align: center; margin: 30px 0;">
           <p style="font-size: 16px; color: #2c5530; font-weight: bold;">
-            Questions? Call us at (801) 555-0123
+            Questions? Call us at (801) 590-8516
           </p>
           <p style="font-size: 14px; color: #666;">
-            Monday - Friday: 8:00 AM - 6:00 PM<br>
+            Monday - Friday: 10:00 AM - 6:00 PM<br>
             Saturday: 9:00 AM - 4:00 PM
           </p>
         </div>
 
         <div style="border-top: 1px solid #ddd; padding-top: 20px; text-align: center; color: #666; font-size: 12px;">
-          <p>Utah Water Gardens | 1234 Water Feature Way, Salt Lake City, UT 84101</p>
+          <p>Utah Water Gardens | Serving Utah County and Surrounding Areas</p>
           <p>This email was sent to ${formData.email} because you submitted a form on our website.</p>
         </div>
       </div>
@@ -210,7 +210,7 @@ const emailService = {
     try {
       const template = emailTemplates.customerFollowUp(formData, formType);
       const mailOptions = {
-        from: 'jeremyuwg@gmail.com',
+        from: getEmailConfig().auth.user,
         to: formData.email,
         subject: template.subject,
         html: template.html
@@ -232,7 +232,7 @@ const emailService = {
       // Send business email
       const template = emailTemplates.outOfAreaService(formData);
       const mailOptions = {
-        from: 'jeremyuwg@gmail.com',
+        from: getEmailConfig().auth.user,
         to: 'contact@utahwatergardens.com',
         subject: template.subject,
         html: template.html
@@ -259,7 +259,7 @@ const emailService = {
       // Send business email
       const template = emailTemplates.contactForm(formData);
       const mailOptions = {
-        from: 'jeremyuwg@gmail.com',
+        from: getEmailConfig().auth.user,
         to: 'contact@utahwatergardens.com',
         subject: template.subject,
         html: template.html
@@ -286,7 +286,7 @@ const emailService = {
       // Send business email
       const template = emailTemplates.scheduleForm(formData);
       const mailOptions = {
-        from: 'jeremyuwg@gmail.com',
+        from: getEmailConfig().auth.user,
         to: 'contact@utahwatergardens.com',
         subject: template.subject,
         html: template.html
@@ -313,7 +313,7 @@ const emailService = {
       // Send business email
       const template = emailTemplates.generalForm(formData, formType);
       const mailOptions = {
-        from: 'jeremyuwg@gmail.com',
+        from: getEmailConfig().auth.user,
         to: 'contact@utahwatergardens.com',
         subject: template.subject,
         html: template.html
