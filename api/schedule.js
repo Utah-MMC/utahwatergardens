@@ -29,28 +29,22 @@ const createTransporter = () => {
 
 // Email templates
 const emailTemplates = {
-  outOfAreaService: (formData) => ({
-    subject: `New Extended Service Request from ${formData.name}`,
+  scheduleForm: (formData) => ({
+    subject: `New Free Estimate Request from ${formData.name}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <h2 style="color: #2c5530;">New Extended Service Request</h2>
+        <h2 style="color: #2c5530;">New Free Estimate Request</h2>
         <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px;">
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> ${formData.email}</p>
           <p><strong>Phone:</strong> ${formData.phone}</p>
-          <p><strong>Location:</strong> ${formData.location}</p>
-          <p><strong>Service Type:</strong> ${formData.serviceType}</p>
-          <p><strong>Property Size:</strong> ${formData.propertySize}</p>
-          <p><strong>Current Water Feature:</strong> ${formData.currentFeature}</p>
+          <p><strong>Property Address:</strong> ${formData.address}</p>
+          <p><strong>Project Type:</strong> ${formData.projectType}</p>
           <p><strong>Timeline:</strong> ${formData.timeline}</p>
           <p><strong>Budget Range:</strong> ${formData.budget}</p>
           <p><strong>Project Description:</strong></p>
           <p style="background-color: white; padding: 15px; border-radius: 4px; border-left: 4px solid #2c5530;">
             ${formData.description.replace(/\n/g, '<br>')}
-          </p>
-          <p><strong>Additional Requirements:</strong></p>
-          <p style="background-color: white; padding: 15px; border-radius: 4px; border-left: 4px solid #2c5530;">
-            ${formData.additionalRequirements.replace(/\n/g, '<br>')}
           </p>
         </div>
         <p style="color: #666; font-size: 12px; margin-top: 20px;">
@@ -124,7 +118,7 @@ export default async function handler(req, res) {
     const formData = req.body;
 
     // Send business email
-    const template = emailTemplates.outOfAreaService(formData);
+    const template = emailTemplates.scheduleForm(formData);
     const mailOptions = {
       from: getEmailConfig().auth.user,
       to: 'contact@utahwatergardens.com',
@@ -134,10 +128,10 @@ export default async function handler(req, res) {
 
     const transporter = createTransporter();
     const result = await transporter.sendMail(mailOptions);
-    console.log('Extended service email sent successfully:', result.messageId);
+    console.log('Schedule form email sent successfully:', result.messageId);
 
     // Send customer follow-up email
-    const followUpTemplate = emailTemplates.customerFollowUp(formData, 'Extended Service Request');
+    const followUpTemplate = emailTemplates.customerFollowUp(formData, 'Free Estimate Request');
     const followUpOptions = {
       from: getEmailConfig().auth.user,
       to: formData.email,
@@ -155,7 +149,7 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('Error sending extended service email:', error);
+    console.error('Error sending schedule form email:', error);
     res.status(500).json({ success: false, error: error.message });
   }
 }
