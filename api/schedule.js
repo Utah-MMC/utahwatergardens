@@ -38,13 +38,14 @@ const emailTemplates = {
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> ${formData.email}</p>
           <p><strong>Phone:</strong> ${formData.phone}</p>
-          <p><strong>Property Address:</strong> ${formData.address}</p>
           <p><strong>Project Type:</strong> ${formData.projectType}</p>
+          <p><strong>Project Size:</strong> ${formData.projectSize}</p>
+          <p><strong>Property Size:</strong> ${formData.propertySize}</p>
           <p><strong>Timeline:</strong> ${formData.timeline}</p>
-          <p><strong>Budget Range:</strong> ${formData.budget}</p>
-          <p><strong>Project Description:</strong></p>
+          <p><strong>Preferred Contact:</strong> ${formData.preferredContact}</p>
+          <p><strong>Message:</strong></p>
           <p style="background-color: white; padding: 15px; border-radius: 4px; border-left: 4px solid #2c5530;">
-            ${formData.description.replace(/\n/g, '<br>')}
+            ${formData.message ? formData.message.replace(/\n/g, '<br>') : 'No message provided'}
           </p>
         </div>
         <p style="color: #666; font-size: 12px; margin-top: 20px;">
