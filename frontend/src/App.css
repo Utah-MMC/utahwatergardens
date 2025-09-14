@@ -1,898 +1,119 @@
-/* Global Styles */
-* {
+/* Basic App Styles - Fallback */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background: #ffffff;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Enable hardware acceleration for better scroll performance */
-html {
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: auto; /* Disable smooth scrolling for better performance */
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  /* Enable hardware acceleration */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-}
-
-/* Prevent horizontal overflow on all pages */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-.App {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: white;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
-/* Make containers full-width on mobile */
-@media (max-width: 768px) {
-  .container {
-    max-width: none !important;
-    padding: 0 1rem !important;
-    margin: 0 !important;
-    width: 100% !important;
-  }
-  
-  /* Make all sections full-width on mobile */
-  section {
-    width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important;
-    margin-right: calc(-50vw + 50%) !important;
-    max-width: none !important;
-  }
-  
-  /* Make all divs with container class full-width */
-  div.container {
-    max-width: none !important;
-    padding: 0 1rem !important;
-    margin: 0 !important;
-    width: 100% !important;
-  }
-  
-  /* Make page wrappers full-width */
-  .pumps-aeration-page,
-  .service-area-page,
-  .page-hero-wrapper {
-    width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important;
-    margin-right: calc(-50vw + 50%) !important;
-    max-width: none !important;
-  }
+/* Contact Page Styles */
+.contact-page {
+  padding: 2rem 0;
 }
 
-/* Main Content - No padding since header overlays content */
-main {
-  padding-top: 0 !important; /* Remove padding so hero can start from top */
-  min-height: 100vh;
-  background: white;
-  position: relative;
-  z-index: 0; /* Ensure main content is below PageHero but above footer */
-  /* Enable hardware acceleration for better scroll performance */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  will-change: scroll-position;
+.contact-form {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
 }
 
-/* App container for ripple effect */
-.App {
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden; /* Prevent horizontal scroll from ripple effects */
-  /* Enable hardware acceleration for better scroll performance */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  will-change: scroll-position;
+.form-group {
+  margin-bottom: 1.5rem;
 }
 
-/* Universal Blue Gradient for First Section After Hero */
-.first-section-gradient {
-  background: linear-gradient(to bottom, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #93c5fd 75%, #ffffff 100%) !important;
-  padding: 4rem 0 !important;
-  position: relative;
-  overflow: hidden;
-  width: 100vw !important;
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
-  z-index: 1 !important;
-}
-
-/* Override any existing background colors */
-.first-section-gradient * {
-  background: transparent !important;
-}
-
-/* Ensure text is readable on gradient backgrounds */
-.first-section-gradient {
-  color: #1e293b !important; /* Dark blue-gray for good contrast */
-}
-
-.first-section-gradient h1,
-.first-section-gradient h2,
-.first-section-gradient h3,
-.first-section-gradient h4,
-.first-section-gradient h5,
-.first-section-gradient h6 {
-  color: #1e293b !important; /* Dark blue-gray for headings */
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8) !important; /* White shadow for better contrast */
-}
-
-.first-section-gradient p,
-.first-section-gradient span,
-.first-section-gradient div {
-  color: #334155 !important; /* Slightly lighter but still dark for body text */
-}
-
-/* Ensure buttons are visible on gradient */
-.first-section-gradient .btn-primary {
-  background: #dc2626 !important;
-  color: white !important;
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4) !important;
-  border: none !important;
-}
-
-.first-section-gradient .btn-secondary {
-  background: rgba(30, 64, 175, 0.9) !important;
-  color: white !important;
-  border: 2px solid #1e40af !important;
-  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3) !important;
-}
-
-/* Universal Blue Gradient Wipe Up - for sections above CTA */
-.gradient-wipe-up {
-  background: linear-gradient(to top, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #93c5fd 75%, #ffffff 100%) !important;
-  padding: 4rem 0 !important;
-  position: relative;
-  overflow: hidden;
-  width: 100vw !important;
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
-  z-index: 1 !important;
-}
-
-/* Override any existing background colors for wipe up */
-.gradient-wipe-up * {
-  background: transparent !important;
-}
-
-/* Ensure text is readable on gradient wipe up backgrounds */
-.gradient-wipe-up {
-  color: #1e293b !important; /* Dark blue-gray for good contrast */
-}
-
-.gradient-wipe-up h1,
-.gradient-wipe-up h2,
-.gradient-wipe-up h3,
-.gradient-wipe-up h4,
-.gradient-wipe-up h5,
-.gradient-wipe-up h6 {
-  color: #1e293b !important; /* Dark blue-gray for headings */
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8) !important; /* White shadow for better contrast */
-}
-
-.gradient-wipe-up p,
-.gradient-wipe-up span,
-.gradient-wipe-up div {
-  color: #334155 !important; /* Slightly lighter but still dark for body text */
-}
-
-/* Ensure buttons are visible on gradient wipe up */
-.gradient-wipe-up .btn-primary {
-  background: #dc2626 !important;
-  color: white !important;
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4) !important;
-  border: none !important;
-}
-
-.gradient-wipe-up .btn-secondary {
-  background: rgba(30, 64, 175, 0.9) !important;
-  color: white !important;
-  border: 2px solid #1e40af !important;
-  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3) !important;
-}
-
-/* Ensure links are visible on gradient backgrounds */
-.gradient-wipe-up a,
-.first-section-gradient a {
-  color: #1e40af !important; /* Blue for links */
-  text-decoration: none !important;
-}
-
-.gradient-wipe-up a:hover,
-.first-section-gradient a:hover {
-  color: #1d4ed8 !important; /* Darker blue on hover */
-  text-decoration: underline !important;
-}
-
-/* Ensure form elements are visible on gradient backgrounds */
-.first-section-gradient input,
-.first-section-gradient textarea,
-.first-section-gradient select,
-.gradient-wipe-up input,
-.gradient-wipe-up textarea,
-.gradient-wipe-up select {
-  background: rgba(255, 255, 255, 0.9) !important;
-  color: #1e293b !important;
-  border: 2px solid rgba(30, 64, 175, 0.3) !important;
-  border-radius: 8px !important;
-}
-
-.first-section-gradient input:focus,
-.first-section-gradient textarea:focus,
-.first-section-gradient select:focus,
-.gradient-wipe-up input:focus,
-.gradient-wipe-up textarea:focus,
-.gradient-wipe-up select:focus {
-  background: white !important;
-  border-color: #1e40af !important;
-  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1) !important;
-  outline: none !important;
-}
-
-/* Ensure labels are visible */
-.first-section-gradient label,
-.gradient-wipe-up label {
-  color: #1e293b !important;
-  font-weight: 600 !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
-}
-
-/* Ensure cards and info sections are visible */
-.first-section-gradient .info-card,
-.first-section-gradient .card,
-.gradient-wipe-up .info-card,
-.gradient-wipe-up .card {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid rgba(30, 64, 175, 0.2) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
-  border-radius: 12px !important;
-}
-
-.first-section-gradient .info-card h3,
-.first-section-gradient .card h3,
-.gradient-wipe-up .info-card h3,
-.gradient-wipe-up .card h3 {
-  color: #1e293b !important;
-  text-shadow: none !important;
-}
-
-.first-section-gradient .info-card p,
-.first-section-gradient .card p,
-.gradient-wipe-up .info-card p,
-.gradient-wipe-up .card p {
-  color: #334155 !important;
-}
-
-/* Ensure lists are visible on gradient backgrounds */
-.first-section-gradient ul,
-.first-section-gradient ol,
-.gradient-wipe-up ul,
-.gradient-wipe-up ol {
-  color: #334155 !important;
-}
-
-.first-section-gradient li,
-.gradient-wipe-up li {
-  color: #334155 !important;
-}
-
-/* Ensure checkmarks and special elements are visible */
-.first-section-gradient .checkmark,
-.gradient-wipe-up .checkmark {
-  color: #059669 !important; /* Green for checkmarks */
-  font-weight: bold !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
-}
-
-/* Ensure step numbers and process elements are visible */
-.first-section-gradient .step-number,
-.gradient-wipe-up .step-number {
-  background: #1e40af !important;
-  color: white !important;
-  border: 2px solid white !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Ensure contact info is visible */
-.first-section-gradient .contact-info,
-.gradient-wipe-up .contact-info {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border: 1px solid rgba(30, 64, 175, 0.2) !important;
-  border-radius: 8px !important;
-  padding: 1rem !important;
-}
-
-.first-section-gradient .contact-info strong,
-.gradient-wipe-up .contact-info strong {
-  color: #1e293b !important;
-}
-
-.first-section-gradient .contact-info a,
-.gradient-wipe-up .contact-info a {
-  color: #1e40af !important;
-}
-
-/* Button Styles */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: 500;
-  text-align: center;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.btn-primary {
-  background: #dc2626;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #b91c1c;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: #1e40af;
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #1e40af;
-  border: 2px solid #1e40af;
-}
-
-.btn-outline:hover {
-  background: #1e40af;
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* Global Wave Effect - Attached to Hero Section */
-.hero-wave-attached {
-  position: relative;
-  width: 100%;
-  height: 120px;
-  margin-top: -1px; /* Overlap slightly with hero section */
-  z-index: 10;
-  overflow: hidden;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 25%, #1e40af 50%, #1e3a8a 75%, #1e40af 100%);
-}
-
-.hero-wave-attached svg {
-  width: 100%;
-  height: 100%;
+.form-group label {
   display: block;
-  shape-rendering: geometricPrecision;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
 }
 
-.hero-wave-attached path {
-  animation: waveAnimation 8s ease-in-out infinite;
-  transform-origin: center;
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
 }
 
-.hero-wave-attached .wave-layer-1 {
-  animation-delay: 0s;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.hero-wave-attached .wave-layer-2 {
-  animation-delay: 2.5s;
+.btn {
+  background: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.hero-wave-attached .wave-layer-3 {
-  animation-delay: 5s;
+.btn:hover {
+  background: #2563eb;
 }
 
-@keyframes waveAnimation {
-  0%, 100% {
-    transform: translateY(0px) scaleX(1);
-  }
-  50% {
-    transform: translateY(-10px) scaleX(1.03);
-  }
+.btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
 }
 
-@media (max-width: 768px) {
-  .hero-wave-attached {
-    height: 100px;
-  }
+.error-message {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+  margin-bottom: 1rem;
 }
 
-/* Global Header Clearance Fix - Adjusted for wave effect */
-.hero,
-.hero-section,
-.pond-gallery-hero,
-.plants-fish-hero,
-.resources-hero,
-.pond-supplies-hero,
-.about-hero,
-.pond-services-hero,
-.blog-hero,
-.team-hero {
-  padding-top: 180px !important; /* Extra clearance for wave effect */
-  /* Performance optimizations */
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  background-color: #1e40af; /* Fallback background color */
+.success-message {
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #bbf7d0;
+  margin-bottom: 1rem;
 }
 
-/* PageHero has its own padding-top in PageHero.css - don't override it */
-.page-hero {
-  /* Let PageHero.css handle its own padding-top */
+/* Professional Installation Section */
+.professional-installation {
+  padding: 3rem 0;
+  background: #f8fafc;
 }
 
-/* Global Hero Background Image Optimizations */
-.hero-background,
-.hero-bg-img,
-.hero-image,
-.hero-video {
-  /* Ensure full coverage */
-  min-width: 100vw;
-  min-height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Performance optimizations */
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  image-rendering: optimizeQuality;
-}
-
-.hero-background {
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  max-width: none;
-}
-
-/* Ensure page-level padding doesn't interfere with hero sections */
-.home-page,
-.pond-lighting-page,
-.equipment-repair-page,
-.tools-accessories-page,
-.water-treatments-page,
-.pond-maintenance-page,
-.water-quality-testing-page,
-.services-page,
-.pond-cleaning-page {
-  padding-top: 0 !important; /* Remove page-level padding to avoid double padding */
-}
-
-/* Ensure main content sections have proper spacing */
-.main-content,
-.content-section,
-.page-content,
-.section-content {
-  margin-top: 2rem !important; /* Add spacing between hero and content */
-}
-
-/* Ensure cards and titles don't go under header */
-.card,
-.content-card,
-.info-card,
-.service-card,
-.product-card {
-  margin-top: 1rem !important; /* Ensure cards have proper spacing */
-}
-
-/* Global Hero Text Contrast Fix */
-.hero-content h1,
-.hero-content h2,
-.hero-content h3 {
-  color: #ffffff !important;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
-}
-
-.hero-content p {
-  color: #ffffff !important;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
-  opacity: 0.95 !important;
-}
-
-.hero-content {
-  background: rgba(0, 0, 0, 0.3) !important;
-  border-radius: 15px !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  padding: 2rem !important;
-}
-
-.secondary-button {
-  background: rgba(255, 255, 255, 0.2) !important;
-  color: white !important;
-  border: 2px solid rgba(255, 255, 255, 0.6) !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
-}
-
-.secondary-button:hover {
-  background: rgba(255, 255, 255, 0.3) !important;
-  border-color: rgba(255, 255, 255, 0.8) !important;
-  color: white !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
-}
-
-/* Global CTA Full-Width Rule */
-.contact-cta,
-.shop-cta,
-.shop-cta-section,
-.services-cta,
-.service-cta,
-.about-cta,
-.newsletter-signup,
-.custom-solution-cta,
-.get-started-cta,
-.cta-section,
-.team-cta {
-  width: 100vw !important; /* Full viewport width */
-  margin-left: calc(-50vw + 50%) !important; /* Center the full-width element */
-}
-
-/* Reset full-width on mobile for CTA sections */
-@media (max-width: 768px) {
-  /* Mobile hero optimizations */
-  .hero,
-  .hero-section,
-  .pond-gallery-hero,
-  .plants-fish-hero,
-  .resources-hero,
-  .pond-supplies-hero,
-  .about-hero,
-  .pond-services-hero,
-  .blog-hero,
-  .team-hero {
-    padding-top: 100px !important; /* Reduced for mobile */
-    margin-top: 60px; /* Reduced margin for mobile */
-  }
-  
-  .contact-cta,
-  .shop-cta,
-  .shop-cta-section,
-  .services-cta,
-  .service-cta,
-  .about-cta,
-  .newsletter-signup,
-  .custom-solution-cta,
-  .get-started-cta,
-  .cta-section,
-  .team-cta {
-    width: 100% !important; /* Reset to container width on mobile */
-    margin-left: 0 !important; /* Reset margin on mobile */
-  }
-  
-  /* Mobile header clearance adjustments */
-  .hero,
-  .hero-section,
-  .pond-gallery-hero,
-  .plants-fish-hero,
-  .resources-hero,
-  .pond-supplies-hero,
-  .about-hero,
-  .pond-services-hero,
-  .blog-hero,
-  .team-hero {
-    padding-top: 100px !important; /* Reduced for mobile */
-    margin-top: 60px; /* Reduced margin for mobile */
-  }
-  
-  /* PageHero has its own mobile padding in PageHero.css */
-  .page-hero {
-    /* Let PageHero.css handle its own mobile padding */
-  }
-  
-  /* Ensure all content sections have proper spacing on mobile */
-  .lighting-types-section,
-  .systems-section,
-  .effects-section,
-  .installation-section,
-  .why-choose-section,
-  .maintenance-section,
-  .packages-section,
-  .first-section-gradient {
-    padding-top: 60px !important; /* Extra spacing for mobile */
-  }
-  
-  /* Mobile hero text contrast adjustments */
-  .hero-content {
-    padding: 1.5rem !important;
-    margin: 0 1rem !important;
-  }
-  
-  .hero-content h1,
-  .hero-content h2,
-  .hero-content h3 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9) !important;
-  }
-  
-  .hero-content p {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
-  }
-}
-
-/* Very small screens header clearance */
-@media (max-width: 480px) {
-  .hero,
-  .hero-section,
-  .pond-gallery-hero,
-  .plants-fish-hero,
-  .resources-hero,
-  .pond-supplies-hero,
-  .about-hero,
-  .pond-services-hero,
-  .blog-hero,
-  .team-hero {
-    padding-top: 80px !important; /* Further reduced for small mobile */
-    margin-top: 50px; /* Further reduced for small mobile */
-  }
-  
-  /* PageHero has its own very small screen padding in PageHero.css */
-  .page-hero {
-    /* Let PageHero.css handle its own very small screen padding */
-  }
-  
-  /* Extra spacing for content sections on very small screens */
-  .lighting-types-section,
-  .systems-section,
-  .effects-section,
-  .installation-section,
-  .why-choose-section,
-  .maintenance-section,
-  .packages-section,
-  .first-section-gradient {
-    padding-top: 40px !important; /* Reduced but still adequate spacing */
-  }
-}
-
-/* Utility Classes */
-.text-center {
+.professional-installation h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.mb-4 { margin-bottom: 2rem; }
-
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
-
-/* Mobile-First Responsive Design */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 0.75rem;
-  }
-  
-  .btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    min-height: 44px; /* Touch-friendly minimum size */
-  }
-  
-  main {
-    padding-top: 0; /* Remove padding to eliminate white space */
-  }
-  
-  /* Improve touch targets */
-  a, button, input, select, textarea {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  /* Optimize text for mobile reading */
-  body {
-    font-size: 16px; /* Prevent zoom on iOS */
-    line-height: 1.5;
-  }
-  
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.3rem; }
-  h4 { font-size: 1.1rem; }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-  }
-  
-  .btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-    min-height: 44px; /* Touch-friendly minimum size */
-  }
-  
-  main {
-    padding-top: 0; /* Remove padding to eliminate white space */
-  }
-  
-  /* Improve touch targets */
-  a, button, input, select, textarea {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  /* Optimize text for mobile reading */
-  body {
-    font-size: 16px; /* Prevent zoom on iOS */
-    line-height: 1.5;
-  }
-}
-
-@media (min-width: 769px) {
-  /* Desktop optimizations */
-  .container {
-    padding: 0 2rem;
-  }
-  
-  .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-  }
-}
-
-/* Global Mobile Service Minimization Rules */
-/* Hide mobile service descriptions on desktop */
-.service-description-mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  /* Hide desktop service descriptions on mobile */
-  .service-content p:not(.service-description-mobile),
-  .service-info p:not(.service-description-mobile) {
-    display: none !important;
-  }
-  
-  /* Show mobile service descriptions */
-  .service-description-mobile {
-    display: block !important;
-    font-size: 0.9rem !important;
-    margin-bottom: 1rem !important;
-    line-height: 1.4 !important;
-    color: #374151 !important;
-  }
-  
-  /* Hide desktop-only service features */
-  .service-features.desktop-only,
-  .service-details.desktop-only {
-    display: none !important;
-  }
-}
-
-/* Global Mobile Overflow Prevention for All Pages */
-@media (max-width: 768px) {
-  /* Force hero full width on home page */
-  .home .hero {
-    width: 100vw !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    position: absolute !important;
-    top: 0 !important;
-    background: red !important;
-    z-index: 1000 !important;
-  }
-  
-  /* Resources section header on one line for mobile */
-  .home .section-head.row {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.5rem !important;
-  }
-  
-  .home .section-head.row > div {
-    width: 100% !important;
-  }
-  
-  .home .section-head.row .btn {
-    white-space: nowrap !important;
-    font-size: 0.9rem !important;
-  }
-  
-  .home .hero .hero-media {
-    width: 100vw !important;
-    left: 0 !important;
-    right: 0 !important;
-  }
-  
-  .home .hero .hero-fallback {
-    width: 100vw !important;
-    left: 0 !important;
-    right: 0 !important;
-  }
-  
-  .home .section:first-of-type {
-    margin-top: 100vh !important;
-    padding-top: 2rem !important;
-  }
-  
-  .home .section {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-  
-  /* Prevent horizontal overflow on all pages */
-  * {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  
-  /* Fix text overflow on all pages */
-  h1, h2, h3, h4, h5, h6, p, span, div, a, li {
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
-  }
-  
-  /* Fix container overflow */
-  .container {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-  
-  /* Fix first-section-gradient overflow */
-  .first-section-gradient {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    overflow-x: hidden !important;
-  }
-  
-  /* Fix image overflow */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: cover !important;
-  }
-  
-  /* Fix grid layouts */
-  .grid, .services-grid, .plant-grid, .gallery-grid, .specs-grid {
-    width: 100% !important;
-    overflow-x: hidden !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-  }
+.professional-installation p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
