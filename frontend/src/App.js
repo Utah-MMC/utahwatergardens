@@ -133,8 +133,8 @@ function App() {
         {/* Simple Mobile Performance Optimizer */}
         <SimpleMobileOptimizer />
         
-        {/* Mobile Diagnostics - Enable for debugging */}
-        <MobileDiagnostics enabled={process.env.NODE_ENV === 'development'} />
+        {/* Mobile Diagnostics - Disabled to prevent infinite loop */}
+        {/* <MobileDiagnostics enabled={process.env.NODE_ENV === 'development'} /> */}
         
         {/* Mobile Hero Fix - Ensures hero sections are visible on mobile */}
         <MobileHeroFix />

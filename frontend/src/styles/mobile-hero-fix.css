@@ -158,6 +158,41 @@
     margin-top: 0 !important;
     padding-top: 1rem !important;
   }
+  
+  /* Remove white space below hero by fixing gradient and wave */
+  .main-content-gradient {
+    min-height: auto !important;
+    background: transparent !important;
+    margin-top: -50px !important;
+    padding-top: 0 !important;
+  }
+  
+  .hero-wave-attached {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Remove any wave effects */
+  .hero-wave-attached svg {
+    display: none !important;
+  }
+  
+  /* Ensure first section connects to hero */
+  .section:first-of-type {
+    margin-top: -50px !important;
+    padding-top: 2rem !important;
+    background: linear-gradient(to bottom, 
+      #87ceeb 0%,     /* Baby blue at top */
+      #b3e5fc 15%,    /* Light baby blue */
+      #d1ecf1 30%,    /* Very light blue */
+      #e8f4f8 50%,    /* Pale blue */
+      #f0f8ff 70%,    /* Very pale blue */
+      #f8fafc 85%,    /* Almost white */
+      #ffffff 100%    /* Pure white at bottom */
+    ) !important;
+  }
 }
 
 /* Extra small screens */

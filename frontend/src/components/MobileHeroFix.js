@@ -72,6 +72,32 @@ const MobileHeroFix = () => {
           }
         });
         
+        // Fix gradient wrapper and wave effects
+        const gradientWrapper = document.querySelector('.main-content-gradient');
+        if (gradientWrapper) {
+          gradientWrapper.style.minHeight = 'auto';
+          gradientWrapper.style.background = 'transparent';
+          gradientWrapper.style.marginTop = '-50px';
+          gradientWrapper.style.paddingTop = '0';
+        }
+        
+        // Hide wave effects
+        const waveAttached = document.querySelector('.hero-wave-attached');
+        if (waveAttached) {
+          waveAttached.style.display = 'none';
+          waveAttached.style.height = '0';
+          waveAttached.style.margin = '0';
+          waveAttached.style.padding = '0';
+        }
+        
+        // Fix first section to connect to hero
+        const firstSection = document.querySelector('.section:first-of-type');
+        if (firstSection) {
+          firstSection.style.marginTop = '-50px';
+          firstSection.style.paddingTop = '2rem';
+          firstSection.style.background = 'linear-gradient(to bottom, #87ceeb 0%, #b3e5fc 15%, #d1ecf1 30%, #e8f4f8 50%, #f0f8ff 70%, #f8fafc 85%, #ffffff 100%)';
+        }
+        
         console.log('Mobile hero fix applied to', heroSections.length, 'hero sections');
       }
     };

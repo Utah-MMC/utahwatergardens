@@ -43,13 +43,13 @@ const MobileDiagnostics = ({ enabled = false }) => {
       }
 
       setDiagnostics(newDiagnostics);
+      
+      // Log to console for debugging
+      console.log('Mobile Diagnostics:', newDiagnostics);
     };
 
     runDiagnostics();
-
-    // Log to console for debugging
-    console.log('Mobile Diagnostics:', diagnostics);
-  }, [enabled, diagnostics]);
+  }, [enabled]);
 
   if (!enabled) return null;
 

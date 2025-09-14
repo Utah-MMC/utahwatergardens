@@ -289,18 +289,17 @@
   }
   
   .main-content-gradient {
-    min-height: 100vh !important;
-    background: linear-gradient(to bottom, 
-      #87ceeb 0%,     /* Baby blue at top - connected to wave */
-      #b3e5fc 15%,    /* Light baby blue */
-      #d1ecf1 30%,    /* Very light blue */
-      #e8f4f8 50%,    /* Pale blue */
-      #f0f8ff 70%,    /* Very pale blue */
-      #f8fafc 85%,    /* Almost white */
-      #ffffff 100%    /* Pure white at bottom */
-    ) !important;
-    margin-top: 0 !important;
+    min-height: auto !important;
+    background: transparent !important;
+    margin-top: -50px !important;
     padding-top: 0 !important;
+  }
+  
+  .hero-wave-attached {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 
