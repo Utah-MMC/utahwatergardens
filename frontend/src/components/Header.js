@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-const Header = ({ className = '' }) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const headerRef = useRef(null);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -12,9 +12,16 @@ const Header = ({ className = '' }) => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    setActiveDropdown(null);
   };
 
-  // No need for click outside handler with hover dropdowns
+  const handleDropdownHover = (dropdownKey) => {
+    setActiveDropdown(dropdownKey);
+  };
+
+  const handleDropdownLeave = () => {
+    setActiveDropdown(null);
+  };
 
   // Dropdown menu data
   const dropdownMenus = {
@@ -24,7 +31,6 @@ const Header = ({ className = '' }) => {
       items: [
         { name: 'Aquatic Plants', path: '/plants-fish/aquatic-plants' },
         { name: 'Koi & Goldfish', path: '/plants-fish/koi-goldfish' },
-        { name: 'Pond Pumps', path: '/pond-supplies/pumps-aeration' },
         { name: 'Water Lilies', path: '/plants-fish/water-lilies' },
         { name: 'Floating Plants', path: '/plants-fish/floating-plants' },
         { name: 'Marginal Plants', path: '/plants-fish/marginal-plants' }
@@ -86,7 +92,7 @@ const Header = ({ className = '' }) => {
   };
 
   return (
-    <header ref={headerRef} className={`header ${className}`}>
+    <header className="header">
       {/* Top Section - Contact Info */}
       <div className="header-top">
         <div className="header-container">
@@ -134,39 +140,27 @@ const Header = ({ className = '' }) => {
                   </button>
                 </div>
               )}
-              {isMenuOpen && (
-                <div className="header-actions">
-                  <a href="tel:(801) 590-8516" className="btn btn-primary btn-compact" onClick={closeMenu}>
-                    Call Now
-                  </a>
-                  <Link to="/contact" className="btn btn-secondary btn-compact" onClick={closeMenu}>
-                    Contact Us
-                  </Link>
-                  <Link to="/out-of-area-service" className="btn btn-outline btn-compact" onClick={closeMenu}>
-                    Out of Area?
-                  </Link>
-                </div>
-              )}
+              
               <ul className="nav-list">
                 {Object.entries(dropdownMenus).map(([key, menu]) => (
                   <li 
                     key={key}
                     className="nav-item"
+                    onMouseEnter={() => handleDropdownHover(key)}
+                    onMouseLeave={handleDropdownLeave}
                   >
                     <div className="nav-link-container">
                       <Link 
                         to={menu.mainPath}
                         className="nav-link"
-                        onClick={() => {
-                          closeMenu();
-                        }}
+                        onClick={closeMenu}
                       >
                         {menu.title}
                       </Link>
                     </div>
                     
                     {/* Dropdown Menu */}
-                    <div className="dropdown-menu">
+                    <div className={`dropdown-menu ${activeDropdown === key ? 'dropdown-active' : ''}`}>
                       <div className="dropdown-content">
                         <div className="dropdown-header">
                           <h3>{menu.title}</h3>
@@ -176,9 +170,7 @@ const Header = ({ className = '' }) => {
                             <li key={index}>
                               <Link 
                                 to={item.path} 
-                                onClick={() => {
-                                  closeMenu();
-                                }}
+                                onClick={closeMenu}
                                 className="dropdown-link"
                               >
                                 {item.name}
@@ -190,8 +182,22 @@ const Header = ({ className = '' }) => {
                     </div>
                   </li>
                 ))}
-                
               </ul>
+              
+              {/* Mobile Menu Action Buttons */}
+              {isMenuOpen && (
+                <div className="header-actions mobile-actions">
+                  <a href="tel:(801) 590-8516" className="btn btn-primary btn-compact" onClick={closeMenu}>
+                    Call Now
+                  </a>
+                  <Link to="/contact" className="btn btn-secondary btn-compact" onClick={closeMenu}>
+                    Contact Us
+                  </Link>
+                  <Link to="/out-of-area-service" className="btn btn-outline btn-compact" onClick={closeMenu}>
+                    Out of Area?
+                  </Link>
+                </div>
+              )}
             </nav>
 
             {/* Action Buttons */}
@@ -199,7 +205,7 @@ const Header = ({ className = '' }) => {
               <a href="tel:(801) 590-8516" className="btn btn-primary btn-compact">
                 Call Now
               </a>
-              <Link to="/contact" className="btn btn-secondary btn-compact desktop-hidden" onClick={closeMenu}>
+              <Link to="/contact" className="btn btn-secondary btn-compact desktop-hidden">
                 Contact Us
               </Link>
               <Link to="/out-of-area-service" className="btn btn-outline btn-compact desktop-hidden">
