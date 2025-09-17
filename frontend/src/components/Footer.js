@@ -97,8 +97,6 @@ const Footer = () => {
               <ul>
                 <li><Link to="/pond-services/design-build" className="footer-link">Pond Design & Construction</Link></li>
                 <li><Link to="/pond-services/maintenance" className="footer-link">Pond Maintenance & Care</Link></li>
-                <li><Link to="/pond-services/pond-dredging" className="footer-link">Lake & Pond Dredging</Link></li>
-                <li><Link to="/pond-services/harvesting" className="footer-link">Pond Harvesting</Link></li>
                 <li><Link to="/pond-services/water-quality" className="footer-link">Water Quality Testing</Link></li>
                 <li><Link to="/pond-services/cleaning" className="footer-link">Pond Cleaning</Link></li>
               </ul>

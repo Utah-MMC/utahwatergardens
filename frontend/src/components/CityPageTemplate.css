@@ -812,6 +812,13 @@
 }
 
 @media (max-width: 768px) {
+  .city-hero {
+    padding-top: 60px !important; /* Reduced padding for mobile header */
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+  }
+  
   .hero-title {
     font-size: 2.5rem;
   }

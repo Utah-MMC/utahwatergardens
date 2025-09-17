@@ -49,148 +49,15 @@
   background-color: #1e40af; /* Fallback background color */
 }
 
-/* Wavy Divider - Copied from Footer with Enhanced Continuous Movement */
-.page-hero-wave {
-  position: absolute;
-  bottom: -120px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  cursor: pointer;
-  z-index: 100;
-  animation: page-hero-wave-container-float 12s ease-in-out infinite;
-}
+/* Wavy divider removed to eliminate dead space */
 
-/* Subtle container animation for overall wave movement */
-@keyframes page-hero-wave-container-float {
-  0%, 100% {
-    transform: rotate(180deg) translateY(0px);
-  }
-  50% {
-    transform: rotate(180deg) translateY(-3px);
-  }
-}
+/* Wave animations and styles removed to eliminate dead space */
 
-.page-hero-wave svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 150px;
-}
+/* Wave animation layers removed to eliminate dead space */
 
-.page-hero-wave .shape-fill {
-  fill: #1e40af;
-}
+/* Wave keyframe animations removed to eliminate dead space */
 
-/* Wave Animation Layers - Enhanced Continuous Flow */
-.page-hero-wave .wave-layer-1 {
-  animation: page-hero-wave-flow-1 6s ease-in-out infinite;
-  transform-origin: center;
-}
-
-.page-hero-wave .wave-layer-2 {
-  animation: page-hero-wave-flow-2 8s ease-in-out infinite;
-  transform-origin: center;
-  animation-delay: -1.5s;
-}
-
-.page-hero-wave .wave-layer-3 {
-  animation: page-hero-wave-flow-3 10s ease-in-out infinite;
-  transform-origin: center;
-  animation-delay: -3s;
-}
-
-/* Enhanced Keyframe Animations - More Dynamic Wave Movement */
-@keyframes page-hero-wave-flow-1 {
-  0% {
-    transform: translateY(0px) scaleY(1) translateX(0px);
-  }
-  25% {
-    transform: translateY(-8px) scaleY(1.08) translateX(2px);
-  }
-  50% {
-    transform: translateY(-3px) scaleY(1.02) translateX(0px);
-  }
-  75% {
-    transform: translateY(6px) scaleY(0.94) translateX(-2px);
-  }
-  100% {
-    transform: translateY(0px) scaleY(1) translateX(0px);
-  }
-}
-
-@keyframes page-hero-wave-flow-2 {
-  0% {
-    transform: translateY(0px) scaleY(1) translateX(0px);
-  }
-  20% {
-    transform: translateY(5px) scaleY(0.92) translateX(-1px);
-  }
-  40% {
-    transform: translateY(-6px) scaleY(1.06) translateX(1px);
-  }
-  60% {
-    transform: translateY(3px) scaleY(0.98) translateX(0px);
-  }
-  80% {
-    transform: translateY(-4px) scaleY(1.04) translateX(-1px);
-  }
-  100% {
-    transform: translateY(0px) scaleY(1) translateX(0px);
-  }
-}
-
-@keyframes page-hero-wave-flow-3 {
-  0% {
-    transform: translateY(0px) scaleY(1) translateX(0px);
-  }
-  15% {
-    transform: translateY(-5px) scaleY(1.05) translateX(1px);
-  }
-  30% {
-    transform: translateY(2px) scaleY(0.98) translateX(-1px);
-  }
-  45% {
-    transform: translateY(4px) scaleY(0.96) translateX(0px);
-  }
-  60% {
-    transform: translateY(-2px) scaleY(1.02) translateX(1px);
-  }
-  75% {
-    transform: translateY(3px) scaleY(0.99) translateX(-1px);
-  }
-  90% {
-    transform: translateY(-1px) scaleY(1.01) translateX(0px);
-  }
-  100% {
-    transform: translateY(0px) scaleY(1) translateX(0px);
-  }
-}
-
-/* Enhanced Hover Effects - More Dynamic Interaction */
-.page-hero-wave:hover .wave-layer-1 {
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-}
-
-.page-hero-wave:hover .wave-layer-2 {
-  animation-duration: 4s;
-  animation-timing-function: ease-in-out;
-}
-
-.page-hero-wave:hover .wave-layer-3 {
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-}
-
-/* Additional wave movement on hover */
-.page-hero-wave:hover {
-  transform: rotate(180deg) scale(1.02);
-  transition: transform 0.3s ease;
-}
+/* Wave hover effects removed to eliminate dead space */
 
 .page-hero-background {
   position: absolute;
@@ -612,4 +479,42 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* MOBILE RESPONSIVE STYLES */
+@media screen and (max-width: 768px) {
+  .page-hero {
+    padding-top: 60px !important; /* Reduced padding for mobile header */
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+  }
+  
+  .page-hero-title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .page-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .page-hero-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .page-hero-stat-item {
+    padding: 1rem !important;
+  }
+  
+  .page-hero-stat-number {
+    font-size: 1.5rem !important;
+  }
+  
+  .page-hero-stat-label {
+    font-size: 0.8rem !important;
+  }
 }

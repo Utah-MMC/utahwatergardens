@@ -1,5 +1,5 @@
 .pond-design-build-page {
-  padding-top: 80px;
+  padding-top: 60px !important; /* Reduced padding for mobile header */
 }
 
 /* Hero Section */

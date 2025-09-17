@@ -1,5 +1,5 @@
 .water-quality-testing-page {
-  padding-top: 80px; /* Account for fixed header */
+  padding-top: 60px !important; /* Reduced padding for mobile header */
 }
 
 /* Hero Section */

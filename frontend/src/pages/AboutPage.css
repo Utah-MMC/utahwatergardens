@@ -657,7 +657,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .about-hero {
-    padding-top: 100px; /* More space from mobile header */
+    padding-top: 60px !important; /* Reduced padding for mobile header */
   }
   
   .about-main-content {
@@ -745,7 +745,7 @@
 
 @media (max-width: 480px) {
   .about-hero {
-    padding-top: 80px; /* Slightly less padding for very small screens */
+    padding-top: 60px !important; /* Reduced padding for mobile header */
     min-height: 600px; /* Reduce min-height for small screens */
   }
   

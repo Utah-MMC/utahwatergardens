@@ -708,7 +708,7 @@
 
 @media (max-width: 768px) {
   .pond-supplies-hero {
-    padding-top: 100px; /* More space from mobile header */
+    padding-top: 60px !important; /* Reduced padding for mobile header */
   }
   
   .pond-supplies-main-content {
@@ -803,7 +803,7 @@
 
 @media (max-width: 480px) {
   .pond-supplies-hero {
-    padding-top: 80px; /* Slightly less padding for very small screens */
+    padding-top: 60px !important; /* Reduced padding for mobile header */
     min-height: 600px; /* Reduce min-height for small screens */
   }
   

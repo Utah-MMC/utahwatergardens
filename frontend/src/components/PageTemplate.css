@@ -68,28 +68,7 @@
   z-index: -1;
 }
 
-/* Wave effect using ::before pseudo-element - Baby Blue Upward Wave - OPTIMIZED */
-.page-hero::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: #ADD8E6; /* Baby blue */
-  clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%);
-  z-index: 99999;
-  pointer-events: none;
-  /* PERFORMANCE OPTIMIZATIONS */
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  /* Disable animation on mobile and reduce frequency */
-  animation: hero-wave-simple 6s ease-in-out infinite;
-  display: block;
-  visibility: visible;
-  opacity: 1;
-}
+/* Wave effect removed to eliminate dead space under hero */
 
 .page-hero-inner {
   padding: clamp(1rem, 3vw, 2rem);
@@ -137,55 +116,11 @@
   font-weight: 500;
 }
 
-/* Enhanced wave effect at bottom of hero - OPTIMIZED */
-.page-hero::after,
-.page-hero.mobile-hero-fix::after {
-  content: "" !important;
-  position: absolute !important;
-  bottom: -50px !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 50px !important;
-  background: #1e40af !important;
-  clip-path: polygon(0% 0%, 0% 100%, 25% 80%, 50% 100%, 75% 70%, 100% 100%, 100% 0%) !important;
-  z-index: 999 !important;
-  pointer-events: none !important;
-  /* PERFORMANCE OPTIMIZATIONS */
-  will-change: transform !important;
-  transform: translateZ(0) !important;
-  backface-visibility: hidden !important;
-  /* Slower animation for better performance */
-  animation: heroWaveFlow 8s ease-in-out infinite !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
+/* Enhanced wave effect removed to eliminate dead space */
 
-/* Hero wave animation */
-@keyframes heroWaveFlow {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-10px);
-  }
-}
+/* Hero wave animation removed */
 
-/* Natural wave animation with flowing curves */
-@keyframes hero-wave-simple {
-  0%, 100% {
-    clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%);
-  }
-  25% {
-    clip-path: polygon(0% 100%, 0% 25%, 10% 30%, 20% 20%, 30% 35%, 40% 25%, 50% 20%, 60% 30%, 70% 25%, 80% 20%, 90% 30%, 100% 25%, 100% 100%);
-  }
-  50% {
-    clip-path: polygon(0% 100%, 0% 35%, 10% 20%, 20% 30%, 30% 25%, 40% 20%, 50% 30%, 60% 20%, 70% 35%, 80% 25%, 90% 20%, 100% 30%, 100% 100%);
-  }
-  75% {
-    clip-path: polygon(0% 100%, 0% 20%, 10% 35%, 20% 25%, 30% 30%, 40% 35%, 50% 25%, 60% 35%, 70% 30%, 80% 35%, 90% 30%, 100% 20%, 100% 100%);
-  }
-}
+/* Wave animations removed to eliminate dead space */
 
 /* Hero pond image wave animation - SUBTLE movement */
 @keyframes hero-pond-wave {
@@ -262,8 +197,8 @@
     background: #f8fafc !important;
     z-index: 1 !important;
     overflow: visible !important;
-    padding-top: 80px !important;
-    margin-top: 60px !important;
+    padding-top: 60px !important;
+    margin-top: 0 !important;
     box-sizing: border-box !important;
   }
   
@@ -311,7 +246,7 @@
   .main-content-gradient {
     min-height: auto !important;
     background: transparent !important;
-    margin-top: -50px !important;
+    margin-top: 0 !important;
     padding-top: 0 !important;
   }
   

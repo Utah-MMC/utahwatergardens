@@ -62,7 +62,7 @@ export const generateSitemap = () => {
   ];
 
   const servicePages = [
-    'pond-dredging', 'lake-dredging', 'harvesting', 'truxor-service'
+    'pond-dredging', 'lake-dredging', 'harvesting'
   ];
 
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>

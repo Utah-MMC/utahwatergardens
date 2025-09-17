@@ -195,8 +195,8 @@ const CityPageTemplate = ({
               </p>
               
               <div className="equipment-showcase">
-                <img src="/images/truxor-equipment-1.jpg" alt={`Professional pond equipment in ${cityName}`} className="equipment-image" />
-                <img src="/images/truxor-equipment-2.jpg" alt={`Advanced pond maintenance equipment in ${cityName}`} className="equipment-image" />
+                <img src="/images/pond-equipment-1.jpg" alt={`Professional pond equipment in ${cityName}`} className="equipment-image" />
+                <img src="/images/pond-equipment-2.jpg" alt={`Advanced pond maintenance equipment in ${cityName}`} className="equipment-image" />
             </div>
             
               <div className="benefits-grid">
@@ -210,7 +210,7 @@ const CityPageTemplate = ({
                   </div>
                 <div className="benefit-item">
                   <h4>🔧 Professional Equipment</h4>
-                    <p>State-of-the-art equipment including our <Link to="/pond-services/truxor-t50" className="inline-link">Truxor T50</Link> for deep cleaning and maintenance.</p>
+                    <p>State-of-the-art equipment for deep cleaning and maintenance.</p>
                   </div>
                 <div className="benefit-item">
                   <h4>💰 Competitive Pricing</h4>

@@ -52,7 +52,6 @@ const TroubleshootingPage = lazy(() => import('./pages/TroubleshootingPage'));
 const HarvestingPage = lazy(() => import('./pages/HarvestingPage'));
 const LakeDredgingPage = lazy(() => import('./pages/LakeDredgingPage'));
 const PondDredgingPage = lazy(() => import('./pages/PondDredgingPage'));
-const TruxorServicePage = lazy(() => import('./pages/TruxorServicePage'));
 const VideoTutorialsPage = lazy(() => import('./pages/VideoTutorialsPage'));
 const FAQPage = lazy(() => import('./pages/FAQPage'));
 
@@ -131,7 +130,6 @@ const App = () => {
                 <Route path="/pond-services/harvesting" element={<HarvestingPage />} />
                 <Route path="/pond-services/lake-dredging" element={<LakeDredgingPage />} />
                 <Route path="/pond-services/pond-dredging" element={<PondDredgingPage />} />
-                <Route path="/pond-services/truxor-t50" element={<TruxorServicePage />} />
                 
                 {/* Pond Supplies Sub-routes */}
                 <Route path="/pond-supplies/filtration" element={<FiltrationSystemsPage />} />

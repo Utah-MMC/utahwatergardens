@@ -45,11 +45,7 @@ const Header = () => {
         { name: 'Water Quality Testing', path: '/pond-services/water-quality' },
         { name: 'Pond Cleaning', path: '/pond-services/cleaning' },
         { name: 'Equipment Repair', path: '/pond-services/repair' },
-        { name: 'Seasonal Services', path: '/pond-services/seasonal' },
-        { name: 'Harvesting', path: '/pond-services/harvesting' },
-        { name: 'Lake Dredging', path: '/pond-services/lake-dredging' },
-        { name: 'Pond Dredging', path: '/pond-services/pond-dredging' },
-        { name: 'Truxor T50 Service', path: '/pond-services/truxor-t50' }
+        { name: 'Seasonal Services', path: '/pond-services/seasonal' }
       ]
     },
     'pond-supplies': {

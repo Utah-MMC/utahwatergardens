@@ -49,7 +49,7 @@ const DynamicServiceAreaPage = () => {
         "Maintenance Programs",
         "Emergency Commercial Services"
       ],
-      whyChooseUs: `Utah Water Gardens has been serving ${cityName} and surrounding areas for over 15 years. Our local expertise, professional equipment including the Truxor T50 system, and commitment to quality make us the premier choice for ${serviceType} services in ${cityName}. We understand the unique challenges of ${cityName}'s climate and provide tailored solutions for your water feature needs.`,
+      whyChooseUs: `Utah Water Gardens has been serving ${cityName} and surrounding areas for over 15 years. Our local expertise, professional equipment, and commitment to quality make us the premier choice for ${serviceType} services in ${cityName}. We understand the unique challenges of ${cityName}'s climate and provide tailored solutions for your water feature needs.`,
       localInfo: `${cityName} is a beautiful city in ${state} with a growing community of water garden enthusiasts. Our local knowledge of ${cityName}'s climate, soil conditions, and seasonal changes allows us to provide the most effective ${serviceType} care solutions. We're familiar with local regulations and can help with permit requirements for your pond project.`,
       serviceAreas: `We proudly serve all areas of ${cityName} and surrounding communities. Our service area includes residential neighborhoods, commercial districts, and local attractions throughout the ${cityName} region. We provide same-day service for emergencies and regular maintenance programs for ongoing ${serviceType} care.`
     };

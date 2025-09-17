@@ -26,97 +26,24 @@ img, video{max-width:100%;display:block;height:auto}
 .btn[data-variant="ghost"]{background:#fff;border:2px solid #e2e8f0;color:#475569;border-radius:999px;width:40px;height:40px}
 
 /* HERO */
-.hero{position:relative;height:80vh;height:80dvh;width:100vw;margin-left:calc(-50vw + 50%);display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:visible;min-height:80vh;min-height:80dvh;background:#f8fafc;margin-top:0;margin-bottom:0;left:0;right:0;padding-top:120px;box-sizing:border-box}
+.hero{position:relative;height:80vh;height:80dvh;width:100vw;margin-left:calc(-50vw + 50%);display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden;min-height:80vh;min-height:80dvh;background:#f8fafc;margin-top:0;margin-bottom:0;left:0;right:0;padding-top:120px;box-sizing:border-box}
 .hero-media{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-2;overflow:hidden}
 .hero-fallback{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;position:absolute;top:0;left:0;min-height:100%;min-width:100%;animation:hero-pond-wave 15s ease-in-out infinite;transform-origin:center center}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55));z-index:-1}
 
-/* Wave effect using ::before pseudo-element - Baby Blue Upward Wave (50% height) */
-.hero::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: #ADD8E6; /* Baby blue */
-  clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%); /* Natural flowing wave */
-  z-index: 99999;
-  pointer-events: none;
-  /* PERFORMANCE OPTIMIZATIONS */
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  animation: hero-wave-simple 6s ease-in-out infinite;
-  display: block;
-  visibility: visible;
-  opacity: 1;
-}
+/* Wave effect removed to eliminate dead space under hero */
 .hero-inner{padding:clamp(1rem,3vw,2rem);text-align:center;color:#fff;max-width:760px;z-index:10;position:relative}
 .hero-title{font-size:clamp(2rem,6vw,4rem);line-height:1.05;font-weight:800;margin:0 0 .75rem}
 .hero-title span{color:#bbe3ff}
 .hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);opacity:.95;margin:0 0 1rem}
 
-/* Enhanced wave effect at bottom of hero - More visible approach */
-.hero::after,
-.hero.mobile-hero-fix::after{
-  content:"" !important;
-  position:absolute !important;
-  bottom:-50px !important;
-  left:0 !important;
-  width:100% !important;
-  height:50px !important;
-  background:#1e40af !important;
-  clip-path:polygon(0% 0%, 0% 100%, 25% 80%, 50% 100%, 75% 70%, 100% 100%, 100% 0%) !important;
-  z-index:999 !important;
-  pointer-events:none !important;
-  animation:heroWaveFlow 6s ease-in-out infinite !important;
-  display:block !important;
-  visibility:visible !important;
-  opacity:1 !important;
-}
+/* Enhanced wave effect removed to eliminate dead space */
 
-/* Hero wave animation */
-@keyframes heroWaveFlow {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-10px);
-  }
-}
+/* Hero wave animation removed */
 
-/* Wave Effect - Separate element */
-.hero-wave-effect {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  background: #ff0000 !important;
-  z-index: 99999 !important;
-  pointer-events: none;
-  border: 5px solid #00ff00 !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  margin-top: 0;
-  margin-bottom: 0;
-}
+/* Wave effect element removed to eliminate dead space */
 
-/* Natural wave animation with flowing curves */
-@keyframes hero-wave-simple {
-  0%, 100% {
-    clip-path: polygon(0% 100%, 0% 30%, 10% 25%, 20% 35%, 30% 20%, 40% 30%, 50% 15%, 60% 25%, 70% 20%, 80% 30%, 90% 25%, 100% 35%, 100% 100%);
-  }
-  25% {
-    clip-path: polygon(0% 100%, 0% 25%, 10% 30%, 20% 20%, 30% 35%, 40% 25%, 50% 20%, 60% 30%, 70% 25%, 80% 20%, 90% 30%, 100% 25%, 100% 100%);
-  }
-  50% {
-    clip-path: polygon(0% 100%, 0% 35%, 10% 20%, 20% 30%, 30% 25%, 40% 20%, 50% 30%, 60% 20%, 70% 35%, 80% 25%, 90% 20%, 100% 30%, 100% 100%);
-  }
-  75% {
-    clip-path: polygon(0% 100%, 0% 20%, 10% 35%, 20% 25%, 30% 30%, 40% 35%, 50% 25%, 60% 35%, 70% 30%, 80% 35%, 90% 30%, 100% 20%, 100% 100%);
-  }
-}
+/* Wave animations removed to eliminate dead space */
 
 /* Hero pond image wave animation - SUBTLE movement */
 @keyframes hero-pond-wave {
@@ -452,6 +379,9 @@ img, video{max-width:100%;display:block;height:auto}
     background: #f8fafc !important;
     z-index: 1 !important;
     overflow: hidden !important;
+    padding-top: 60px !important;
+    margin-top: 0 !important;
+    box-sizing: border-box !important;
   }
   
   .home .hero-media {
