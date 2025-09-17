@@ -105,6 +105,17 @@
   line-height: 1.05;
   font-weight: 800;
   margin: 0 0 .75rem;
+  /* Enhanced accessibility for older users */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  /* Improved contrast and readability */
+  color: #ffffff;
+  letter-spacing: -0.02em;
 }
 
 .page-hero-title span {
@@ -115,6 +126,15 @@
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   opacity: .95;
   margin: 0 0 1rem;
+  /* Enhanced readability for older users */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  line-height: 1.4;
+  font-weight: 500;
 }
 
 /* Enhanced wave effect at bottom of hero - OPTIMIZED */
@@ -300,6 +320,41 @@
     height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
+  }
+  
+  /* Enhanced mobile accessibility for hero section */
+  .page-hero-title {
+    font-size: clamp(1.8rem, 8vw, 3rem) !important;
+    padding: 1.5rem 1rem !important;
+    border-width: 4px !important;
+    margin-bottom: 1rem !important;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9) !important;
+  }
+  
+  .page-hero-sub {
+    font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+    padding: 1rem 0.75rem !important;
+    border-width: 3px !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .btn {
+    font-size: 1.2rem !important;
+    padding: 1rem 1.5rem !important;
+    min-height: 56px !important;
+    border-width: 3px !important;
+  }
+  
+  .btn-row {
+    gap: 1rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .btn-row .btn {
+    width: 100% !important;
+    max-width: 280px !important;
   }
 }
 

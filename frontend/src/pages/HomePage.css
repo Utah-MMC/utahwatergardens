@@ -16,11 +16,11 @@ img, video{max-width:100%;display:block;height:auto}
 .row{display:flex;align-items:flex-end;gap:1rem;justify-content:space-between}
 .center{text-align:center}
 .btn-row{display:flex;gap:.75rem;flex-wrap:wrap}
-.btn{appearance:none;border:0;border-radius:12px;padding:.8rem 1.1rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;outline-offset:2px}
+.btn{appearance:none;border:0;border-radius:12px;padding:.8rem 1.1rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;outline-offset:2px;font-size:1.1rem;min-height:48px;transition:all 0.3s ease}
 .btn:focus-visible{box-shadow:var(--ring)}
-.btn[data-variant="primary"]{background:var(--cta);color:#fff;box-shadow:0 4px 15px rgba(220,38,38,0.4)}
+.btn[data-variant="primary"]{background:var(--cta);color:#fff;box-shadow:0 4px 15px rgba(220,38,38,0.4);border:3px solid rgba(255,255,255,0.8);font-weight:700;text-shadow:1px 1px 2px rgba(0,0,0,0.5)}
 .btn[data-variant="primary"]:hover{background:#b91c1c;transform:translateY(-2px);box-shadow:0 6px 20px rgba(220,38,38,0.5)}
-.btn[data-variant="outline"]{background:transparent;border:2px solid rgba(255,255,255,0.8);color:#fff;backdrop-filter:blur(10px)}
+.btn[data-variant="outline"]{background:transparent;border:3px solid rgba(255,255,255,0.9);color:#fff;backdrop-filter:blur(10px);font-weight:600;text-shadow:1px 1px 2px rgba(0,0,0,0.7)}
 .btn[data-variant="outline"]:hover{background:rgba(255,255,255,0.1);border-color:#fff}
 .btn[data-variant="link"]{border-bottom:2px solid var(--primary);color:var(--primary);padding:0 .25rem;border-radius:0}
 .btn[data-variant="ghost"]{background:#fff;border:2px solid #e2e8f0;color:#475569;border-radius:999px;width:40px;height:40px}
@@ -822,5 +822,38 @@ img, video{max-width:100%;display:block;height:auto}
   
   .contact-actions .btn {
     width: 100%;
+  }
+  
+  /* Enhanced mobile accessibility for hero section */
+  .hero-title {
+    font-size: clamp(1.8rem, 8vw, 3rem) !important;
+    padding: 1.5rem 1rem !important;
+    border-width: 4px !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-sub {
+    font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+    padding: 1rem 0.75rem !important;
+    border-width: 3px !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .btn {
+    font-size: 1.2rem !important;
+    padding: 1rem 1.5rem !important;
+    min-height: 56px !important;
+    border-width: 3px !important;
+  }
+  
+  .btn-row {
+    gap: 1rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .btn-row .btn {
+    width: 100% !important;
+    max-width: 280px !important;
   }
 }
