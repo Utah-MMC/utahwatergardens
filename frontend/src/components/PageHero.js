@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import OptimizedHeroImage from './OptimizedHeroImage';
 import './PageHero.css';
 
 const PageHero = ({
@@ -114,17 +115,21 @@ const PageHero = ({
                   <source src={backgroundVideo} type="video/quicktime" />
                   Your browser does not support the video tag.
                 </video>
-                <img 
+                <OptimizedHeroImage 
                   src={selectedImage.src} 
                   alt={selectedImage.alt}
                   className="page-hero-image page-hero-fallback"
+                  priority={true}
+                  sizes="100vw"
                 />
               </>
             ) : (
-              <img 
+              <OptimizedHeroImage 
                 src={selectedImage.src} 
                 alt={selectedImage.alt}
                 className="page-hero-image"
+                priority={true}
+                sizes="100vw"
               />
             )}
             <div className="page-hero-overlay"></div>

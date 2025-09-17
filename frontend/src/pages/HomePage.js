@@ -5,6 +5,8 @@ import PageTemplate from '../components/PageTemplate';
 import CTA from '../components/CTA';
 import ServiceAreaChecker from '../components/ServiceAreaChecker';
 import { getAllPlants, createPlantSlug } from '../data/plantData';
+import { generateMetaDescription } from '../utils/metaDescriptionGenerator';
+import { generatePageTitle } from '../utils/titleGenerator';
 import './HomePage.css';
 
 // Data arrays
@@ -162,8 +164,8 @@ const HomePage = () => {
 
   return (
     <PageTemplate
-        title="Pond Services Near Salt Lake City, UT | Utah Water Gardens"
-        description="Utah's premier pond services near Salt Lake City, UT. Expert pond design, construction, maintenance, and cleaning. Licensed & insured. Call (801) 590-8516."
+        title={generatePageTitle('homepage')}
+        description={generateMetaDescription('homepage')}
         keywords="pond services near salt lake city ut, salt lake city pond services, pond maintenance salt lake city, pond construction salt lake city, pond cleaning salt lake city, utah water gardens, pond services utah"
         canonical="https://utahwatergardens.com"
       heroTitle="Create Your Dream Water Garden"

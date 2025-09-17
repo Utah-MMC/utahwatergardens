@@ -835,6 +835,13 @@
   /* Disable wave animation on mobile for performance */
   .hero-image {
     animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Optimize hero section for LCP */
+  .city-hero {
+    will-change: auto !important;
+    transform: none !important;
   }
   
   .intro-images {

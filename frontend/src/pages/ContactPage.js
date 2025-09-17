@@ -4,6 +4,8 @@ import SEO from '../components/SEO';
 import StandardHero from '../components/StandardHero';
 import ServiceAreaChecker from '../components/ServiceAreaChecker';
 import { trackLeadConversion } from '../utils/analytics';
+import { generateMetaDescription } from '../utils/metaDescriptionGenerator';
+import { generatePageTitle } from '../utils/titleGenerator';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -95,8 +97,8 @@ const ContactPage = () => {
   return (
     <>
       <SEO 
-        title="Contact Utah Water Gardens - Get Expert Pond Advice"
-        description="Contact Utah Water Gardens for expert pond advice, consultations, and services. Call (801) 590-8516 or visit our store in Utah 84121."
+        title={generatePageTitle('contact')}
+        description={generateMetaDescription('contact')}
         keywords="contact utah water gardens, pond consultation, pond advice, utah pond services, salt lake city pond company"
         canonical="https://utahwatergardens.com/contact"
       />
@@ -113,16 +115,6 @@ const ContactPage = () => {
           secondaryButtonLink="#contact-main-content"
         />
 
-        <SEO
-          title="Contact Utah Water Gardens - Expert Pond Consultation & Store Visit"
-          description="Get expert pond consultation, schedule visits, or contact our team. Call (801) 590-8516 or visit our store for professional pond services in Utah."
-          keywords="contact utah water gardens, pond consultation, pond expert advice, visit pond store, utah pond services"
-          canonical="https://utahwatergardens.com/contact"
-          ogTitle="Contact Utah Water Gardens - Expert Pond Consultation"
-          ogDescription="Get expert pond consultation and visit our store. Professional pond services and advice in Utah. Call (801) 590-8516."
-          ogImage="https://utahwatergardens.com/images/IMG_8910-rotated-topaz-enhance-2.1x.jpeg"
-          twitterCard="summary_large_image"
-        />
 
         {/* Main Content Wrapper with Single Gradient */}
         <div className="main-content-gradient">

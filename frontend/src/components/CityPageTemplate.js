@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from './SEO';
 import CTA from './CTA';
+import OptimizedHeroImage from './OptimizedHeroImage';
+import { generateMetaDescription } from '../utils/metaDescriptionGenerator';
+import { generatePageTitle } from '../utils/titleGenerator';
 import './CityPageTemplate.css';
 
 const CityPageTemplate = ({
@@ -52,8 +55,8 @@ const CityPageTemplate = ({
   return (
     <>
       <SEO 
-      title={`Pond Services in ${cityName}, ${state} | Utah Water Gardens`}
-      description={`Professional pond services in ${cityName}, ${state}. Pond design, construction, maintenance, and cleaning. Licensed & insured. Call ${phoneNumber} for consultation.`}
+      title={generatePageTitle('city-page', { cityName, state })}
+      description={generateMetaDescription('city-page', { cityName, state })}
       keywords={`pond services ${cityName}, ${cityName} pond maintenance, pond cleaning ${cityName}, pond construction ${cityName}, water gardens ${cityName}, ${cityName} pond services, utah water gardens ${cityName}`}
       />
       
@@ -61,10 +64,12 @@ const CityPageTemplate = ({
         {/* Hero Section */}
         <section className="city-hero">
           <div className="hero-background">
-            <img 
+            <OptimizedHeroImage 
               src={heroBackgroundImage}
               alt={heroBackgroundImageAlt}
               className="hero-image"
+              priority={true}
+              sizes="100vw"
             />
             <div className="hero-overlay"></div>
             </div>

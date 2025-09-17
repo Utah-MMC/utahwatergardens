@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import { generateMetaDescriptionFromUrl } from '../utils/metaDescriptionGenerator';
+import { generateTitleFromUrl, cleanTitle } from '../utils/titleGenerator';
 
 const SEO = ({ 
   title, 
@@ -27,8 +29,8 @@ const SEO = ({
     return `https://utahwatergardens.com${cleanPath}`;
   };
   
-  const fullTitle = title ? `${title} | Utah Water Gardens` : 'Utah Water Gardens - Complete Pond & Water Feature Solutions';
-  const fullDescription = description || 'Utah\'s premier pond and water feature specialists. We design, build, and maintain beautiful custom ponds, waterfalls, and aquatic plant features throughout Utah.';
+  const fullTitle = cleanTitle(title ? `${title} | Utah Water Gardens` : generateTitleFromUrl(location.pathname));
+  const fullDescription = description || generateMetaDescriptionFromUrl(location.pathname);
   const fullKeywords = keywords || 'pond maintenance, pond cleaning, pond construction, pond dredging, aquatic plants, koi fish, pond supplies, utah water gardens';
   const fullCanonical = generateCanonicalUrl();
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `https://utahwatergardens.com${ogImage}`;

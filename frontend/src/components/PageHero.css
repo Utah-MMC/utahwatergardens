@@ -490,6 +490,14 @@
     max-height: 300px !important;
   }
   
+  /* Disable animations on mobile for better LCP performance */
+  .page-hero-image,
+  .page-hero-background,
+  .page-hero-overlay {
+    animation: none !important;
+    transition: none !important;
+  }
+  
   .page-hero-title {
     font-size: 2rem !important;
     margin-bottom: 1rem !important;

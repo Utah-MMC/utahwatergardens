@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from './SEO';
+import OptimizedHeroImage from './OptimizedHeroImage';
+import PreloadHeroImage from './PreloadHeroImage';
 import './PageTemplate.css';
 
 const PageTemplate = ({
@@ -34,6 +36,7 @@ const PageTemplate = ({
         keywords={keywords}
         canonical={canonical}
       />
+      <PreloadHeroImage src={heroBackgroundImage} priority={true} />
 
       <main className={`page-template ${className}`} id="main">
         {/* HERO SECTION */}
@@ -42,11 +45,12 @@ const PageTemplate = ({
           aria-label="Intro"
         >
           <div className="page-hero-media">
-            <img 
+            <OptimizedHeroImage 
               className="page-hero-fallback" 
               src={heroBackgroundImage} 
               alt={heroBackgroundImageAlt} 
-              loading="eager" 
+              priority={true}
+              sizes="100vw"
             />
           </div>
           <div className="page-hero-inner">

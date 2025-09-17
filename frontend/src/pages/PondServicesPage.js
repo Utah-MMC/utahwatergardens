@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { getCitiesByCountyWithPaths } from '../data/utahCities';
+import { generateMetaDescription } from '../utils/metaDescriptionGenerator';
+import { generatePageTitle } from '../utils/titleGenerator';
 import './PondServicesPage.css';
 
 const PondServicesPage = () => {
@@ -99,8 +101,8 @@ const PondServicesPage = () => {
   return (
     <>
       <SEO 
-        title="Pond Services - Professional Pond Care & Maintenance | Utah Water Gardens"
-        description="Professional pond services including cleaning, maintenance, repair, and dredging. Serving Salt Lake County, Davis County, and surrounding areas with 15+ years of experience."
+        title={generatePageTitle('pond-services')}
+        description={generateMetaDescription('services')}
         keywords="pond services, pond cleaning, pond maintenance, pond repair, pond dredging, water quality testing, utah pond services, salt lake county pond services"
         canonical="https://utahwatergardens.com/pond-services"
       />
